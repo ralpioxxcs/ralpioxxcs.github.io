@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Data Structure</title><meta name="description" itemprop="description" content="this blog is for only" id="desc"><meta name="generator" content="Hugo 0.56.3" /><link rel="alternate" type="application/rss+xml" title="My Dev Blog Feed" href="https://ralpioxxcs.github.io/tags/data-structure/index.xml"><link rel="canonical" href="https://ralpioxxcs.github.io/tags/data-structure/">
+        
+
+<meta name="thumbnail" content="https://ralpioxxcs.github.io/images/moon.png" /><link rel="dns-prefetch" href="https://use.fontawesome.com/" />
+<link rel="preconnect" href="https://use.fontawesome.com/" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/foundation.min.css" integrity="sha512-Rd0Ui3eNZsRTe4UNVA+6WeU5VwpGAqqd/+xTbWI/T/OmcYqnrNWfJC02AjPbt5TuDGA3l4SFJdTH91QPP3vAFg==">
+  <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/dark.min.css" integrity="sha512-gQpDgduBgmlAz6RR6+MVgbcrPEu+langkA9ngZtIrAjV8Hwcno+rUvaRjfUrzceGtO+gpoCAm4fLeMuAd/5v7Q=="><link rel="stylesheet" href="/styles.css" >
+    <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/reset.min.css" integrity="sha512-xwmF/g6mhf+NqX9hnHhGV+cKVithh9ncEOreDW6jZXIqMiqsX5sxvVZXYuzz+8jLI7+wPFr/2/sg2x8Pp0a1VA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/fonts.min.css" integrity="sha512-xROhFE8XAZAs3OvW3/LUg6jCH7LgsxPMimBO/cpzYV7EgJgY5hbDX9rHqaOG5VrAv52NMXFuHiQ4xqnSgFvmqQ=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/classes.min.css" integrity="sha512-VtHTX2MGmhT+/gSeNEwz2TD+OEFpz9G9AUjHc9mAjEgneeX2RiJphzfxqHrU+7afnuHkTkwMtY4hP5XAJCZ8eA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/pagination.min.css" integrity="sha512-exBmcmBqVqp5QRaF99l0MQPpD6X4/7RMJa9KY4pv/SP9R31qyqwuAIcPXZPm5jn7EMDVdviT45APg0RBfBA3Ow=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/page.min.css" integrity="sha512-Eqq5awgR8Hau+25mfXATwps47CVesfD4jrw/QozL3eib52HmmlFnvxsERXuGCVQH1S1FSaQD/oycWN/WyGE5Aw=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/widgets.min.css" integrity="sha512-KkbwfnV4akqRv+GVWIAa0UazaiDzkMev+Iq6AkHnzvOhQnb9tJnZwHySGGBjfwH3LOmMuaXl7an5uR36EuftaQ==">
+    <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/list.min.css" integrity="sha512-3ZCnmHG9wdnrM61q1Uk5UIdZNFp0JuyCDmgJuDGELiWJbORHppj9xUg4kCfAEP5swWJKMOmkCfvGpxtvSBfudQ==">
+
+
+<link rel="preload" media="print" type="text/css" href="https://ralpioxxcs.github.io/css/print.min.2e0961e511885e38a09cc9a9ff3de5ce7d7d2186bb9ed98a61f176688d4ef61a.css" integrity="sha256-Lglh5RGIXjignMmp/z3lzn19IYa7ntmKYfF2aI1O9ho=" as="style"><link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/" />
+<link rel="preconnect" href="https://cdnjs.cloudflare.com/" />
+
+<link rel="preload" href="https://ralpioxxcs.github.io/index.json" as="fetch" />
+
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/widgets/search.min.css" integrity="sha512-7Otnz4Nae1tx47YRSs6kqu108FeNUGViWaATAkZTN2g/kps4bOyu+ukQwTyPMnZBM2U9epLm+YXnArC+I+UMgA==">
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/widgets/taglist.min.css" integrity="sha512-0mtvLycPchph/Kw1OcdI3KmQ5qi8oOdiS35lFD+pNcEPTQ6rmiMAF9dztJkhsuuQsAuXADQCj2gC/O+axKh/Pw==">
+<link rel="icon" href="https://ralpioxxcs.github.io/favicon.ico?nocache" />
+    <meta name="theme-color" content="#2073c9">
+    <meta name="apple-mobile-web-app-title" content="My Dev Blog">
+    <meta name="application-name" content="My Dev Blog">
+
+    </head>
+    <body itemscope itemtype="http://schema.org/WebPage">
+        <div class="off-canvas-wrapper">
+            <button id="off-canvas-toggle" type="button" class="button hide-for-medium" aria-label="Open Menu" data-toggle="main-nav-off-canvas">
+                <span class="fas fa-bars"></span>
+            </button>
+            <div class="off-canvas position-left" id="main-nav-off-canvas" data-off-canvas>
+                <nav>
+                    <ul class="vertical menu drilldown" data-drilldown><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/about/" >
+            ABOUT ME
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/project/" >
+            PROJECT
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/" >
+            STUDY
+        </a><ul class="vertical menu">
+                <li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/post/study/cmake/head/" >
+            CMAKE
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/post/study/datastructure/head/" >
+            DATA STRUCTURE
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/post/study/opencv/head/" >
+            OPENCV
+        </a></li>
+            </ul></li></ul>
+                </nav>
+            </div>
+        <div id="site-container" class="grid-container full off-canvas-content">
+                <div class="grid-x full grid-container data-off-canvas-content">
+                    <div id="site-header" class="cell">
+                        <a href="https://ralpioxxcs.github.io/">
+                            <header class="small-text-left medium-text-left grid-x">
+                                <img id="site-thumbnail" class="cell shrink" src="https://ralpioxxcs.github.io/images/moon.png" data-width="93">
+                                <div id="site-title-container" class="cell shrink grid-y">
+                                    <div id="site-title" class="cell shrink" itemprop="name">My Dev Blog</div>
+                                    <div class="cell shrink" id="site-tagline">personal development diary</div>
+                                </div>
+                            </header>
+                        </a>
+                        <nav id="main-nav" class="small-hide">
+                          <ul class="dropdown menu" data-dropdown-menu><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/about/" >
+            ABOUT ME
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/project/" >
+            PROJECT
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/" >
+            STUDY
+        </a><ul class="vertical menu">
+                <li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/post/study/cmake/head/" >
+            CMAKE
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/post/study/datastructure/head/" >
+            DATA STRUCTURE
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/post/study/opencv/head/" >
+            OPENCV
+        </a></li>
+            </ul></li></ul>
+                        </nav>
+                        </div>
+                    <div id="main-container" class="cell grid-x grid-padding-x grid-container" role="main" itemprop="mainContentOfPage">
+                        
+                            <div class="callout cell text-center">
+                                Interested in using Midnight? Check out the <a href="https://bluestnight.com/guides/midnight/getting-started/">getting started</a>
+guide and the <a href="https://bluestnight.com/docs/midnight/users/">user documentation</a> for more information.
+                            </div>
+                        
+                        
+                        
+                        
+                        
+                        
+<main id="post-list" class="cell medium-8"><header id="page-header">
+			<h1 id="page-title">Tag: Data Structure</h1>
+		</header>
+<article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><div>
+        <header class="post-list-title">
+            <a href="https://ralpioxxcs.github.io/post/study/datastructure/head/">
+                <h2 itemprop="headline">Study: Data Structure</h2>
+            </a>
+            <div class="metadata"></div>
+        </header>
+        <div class="post-list-summary" itemprop="description">
+            <p>
+                    </p>
+        </div>
+    </div>
+</article>
+</main>
+                        <aside class="cell small-12 small-order-2 medium-4" itemscope itemtype="http://schema.org/WPSideBar"><div class="widget">
+	<header>
+		<span class="widget-header">
+			<span class="fas fa-folder fa-xs" aria-hidden></span>
+            <a href="https://ralpioxxcs.github.io/categories/">Categories</a>
+        </span>
+	</header>
+	<ul><li>
+            <a href="https://ralpioxxcs.github.io/categories/study/">
+                Study
+            </a>
+        </li>
+		<li>
+            <a href="https://ralpioxxcs.github.io/categories/cmake/">
+                Cmake
+            </a>
+        </li>
+		
+	</ul>
+</div>
+<div class="widget" id="search-container">
+    <header>
+        <span class="widget-header"><span class="fas fa-search fa-xs" aria-hidden></span> Search</span>
+    </header>
+    <input type="search" name="search" id="searchbox" placeholder="Search..." autocomplete="off"/>
+    <div id="search-results" class="grid-y hide"></div>
+</div>
+<div class="widget">
+    
+    
+        
+    
+
+    
+        
+            
+        
+	
+	<header>
+		<span class="widget-header"><span class="fas fa-pencil-alt fa-xs" aria-hidden></span> <a href="https://ralpioxxcs.github.io/post/">Recent Posts</a></span>
+	</header>
+	
+			<a class="widget-header-small button" href="https://ralpioxxcs.github.io/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to the Site</a>
+		<a class="widget-header-small button" href="https://ralpioxxcs.github.io/tags/data-structure/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to Data Structure</a><ul><li><a href="https://ralpioxxcs.github.io/post/study/cmake/head/">Study: Cmake</a></li><li><a href="https://ralpioxxcs.github.io/post/study/datastructure/head/">Study: Data Structure</a></li><li><a href="https://ralpioxxcs.github.io/post/study/opencv/installation/">Installation</a></li><li><a href="https://ralpioxxcs.github.io/post/study/cmake/installation/">Installation</a></li><li><a href="https://ralpioxxcs.github.io/post/study/datastructure/stack/">Stack</a></li><li><a href="https://ralpioxxcs.github.io/post/study/opencv/head/">Study: OpenCV</a></li></ul>
+</div>
+<div class="widget">
+	<header>
+		<span class="widget-header"><span class="fas fa-tags fa-xs" aria-hidden></span> <a href="https://ralpioxxcs.github.io/tags/">Tags</a></span>
+	</header>
+	<div class="grid-x grid-padding-x" id="sidebar-tags"><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/cmake/" title="cmake">
+                cmake
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/data-structure/" title="data structure">
+                data structure
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/opencv/" title="opencv">
+                opencv
+			</a></div>
+</div>
+</aside>
+
+                    </div>
+                    <footer class="cell grid-x full align-middle">
+    <div class="cell medium-4 small-text-center medium-text-left medium-left small-order-1 grid-x">
+        <div class="cell">
+            <small>
+                &copy; 2019
+                <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                    <span itemprop="name">
+                        My Dev Blog.
+                    </span>
+                </span>
+            </small>
+        </div>
+        <div class="cell">
+            <small>
+                Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://bluestnight.com/products/midnight/">Midnight</a>.
+            </small>
+        </div>
+        
+    </div>
+    <div class="cell medium-4 small-text-center medium-text-center small-order-2 grid-x">
+        
+        <div class="cell small-full small-text-center grid-x">
+            
+            
+            
+        </div>
+    </div>
+    <div id="social-icons" class="grid-x cell medium-4 small-text-center small-order-3 medium-text-right">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="https://gitlab.com/BluestNight/Midnight" class="cell shrink" rel="me nofollow" title="GitLab" aria-title="Fork me on GitLab!">
+
+    <span class="fa-stack fa-xs">
+        <span class="fas fa-square fa-stack-2x"></span>
+        <span class="fab fa-gitlab fa-stack-1x fa-inverse"></span>
+    </span>
+
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</footer>
+
+                </div>
+            </div>
+            
+<script type="text/javascript" src="https://ralpioxxcs.github.io/js/iubenda.min.js" integrity="sha512-z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP&#43;DGNKHfuwvY7kxvUdBeoGlODJ6&#43;SfaPg=="></script>
+
+<script type="text/javascript" src="https://ralpioxxcs.github.io/js/jquery.slim.min.js" integrity="sha512-Vh3gVmRI2jSBsal9/runMkMofsFtK8Y853PR0gU05T7GALp&#43;LkR&#43;7eJVOEfLccmsW6YPcJZttDIy6At3hyfk3g==" defer></script><script type="text/javascript" src="https://ralpioxxcs.github.io/js/foundation.min.js" integrity="sha512-xk8mY&#43;d42YkkVC6T2d6aO7SczKKDotCA3sZk1/gY0/QCzFrp8UNt&#43;x03xSnVS0mJUfmLH2QTzEZ2dN9&#43;XNIy0w==" defer></script><script type="text/javascript" src="https://ralpioxxcs.github.io/js/thumbnail.min.js" integrity="sha512-uNl2h75OUmzThaBo7EMkHEjys8w9EtYpRZ/q5S3kjiqewZ9lAKf5jeW9Y3yXi/aD08M7mvq7VVHZZL5KBk0gXg==" defer></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.3/lunr.min.js" defer></script><script type="text/javascript" src="https://ralpioxxcs.github.io/js/widgets/search.min.js" integrity="sha512-eeaJboa5EoSnroVyXDKbKugQHsg0g8aabWxLeM8103eaqBcFZA6cvOyw1v9N48SyLitoVqkrV/nbkhPIj6BbTg==" defer></script><script type="text/javascript" src="https://ralpioxxcs.github.io/js/index.min.js" integrity="sha512-YtQNoHzM2e3Fogp&#43;RCYOYoBOzEIGHgvaTGNDrBnvwl47l195xvC1h4YbG9oAbREHMq&#43;Ed3Kx6NYT2xe6KNPGvg==" defer></script>
+        </div>
+    </body>
+</html>
