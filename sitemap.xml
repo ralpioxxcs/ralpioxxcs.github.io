@@ -7,19 +7,19 @@
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/study/cmake/head/</loc>
+    <loc>https://ralpioxxcs.github.io/study/cmake/</loc>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/study/datastructure/head/</loc>
+    <loc>https://ralpioxxcs.github.io/study/cmake/installation/</loc>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/study/opencv/installation/</loc>
+    <loc>https://ralpioxxcs.github.io/study/opencv/installation/</loc>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/study/cmake/installation/</loc>
+    <loc>https://ralpioxxcs.github.io/study/datastructure/</loc>
   </url>
   
   <url>
@@ -27,15 +27,32 @@
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/study/datastructure/stack/</loc>
+    <loc>https://ralpioxxcs.github.io/study/datastructure/stack/</loc>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/study/</loc>
+    <loc>https://ralpioxxcs.github.io/post/</loc>
+    <lastmod>2019-08-10T13:36:24+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/study/opencv/head/</loc>
+    <loc>https://ralpioxxcs.github.io/study/opencv/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/post/hugo_manual/</loc>
+    <lastmod>2019-08-10T13:36:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/</loc>
+    <lastmod>2019-08-10T13:36:24+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/post/toc/</loc>
+    <lastmod>2013-11-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -49,17 +66,7 @@
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://ralpioxxcs.github.io/tags/opencv/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ralpioxxcs.github.io/post/</loc>
     <priority>0</priority>
   </url>
   
@@ -81,6 +88,10 @@
   <url>
     <loc>https://ralpioxxcs.github.io/tags/cmake/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/study/</loc>
   </url>
   
 </urlset>

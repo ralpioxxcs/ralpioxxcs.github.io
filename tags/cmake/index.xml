@@ -12,11 +12,20 @@
     
     <item>
       <title>Study: Cmake</title>
-      <link>https://ralpioxxcs.github.io/post/study/cmake/head/</link>
+      <link>https://ralpioxxcs.github.io/study/cmake/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/post/study/cmake/head/</guid>
-      <description></description>
+      <guid>https://ralpioxxcs.github.io/study/cmake/</guid>
+      <description>This section is contain all about cmake</description>
+    </item>
+    
+    <item>
+      <title>Installation</title>
+      <link>https://ralpioxxcs.github.io/study/cmake/installation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/study/cmake/installation/</guid>
+      <description> Step 1 : Install Step 2 : Pre-requisite </description>
     </item>
     
   </channel>

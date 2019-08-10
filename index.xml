@@ -5,12 +5,33 @@
     <description>Recent content on My Dev Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sat, 10 Aug 2019 13:36:24 +0900</lastBuildDate>
     <atom:link href="https://ralpioxxcs.github.io/" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Hugo 사용해 Github 블로그 생성하기</title>
+      <link>https://ralpioxxcs.github.io/post/hugo_manual/</link>
+      <pubDate>Sat, 10 Aug 2019 13:36:24 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/hugo_manual/</guid>
+      <description> Hugo란? Hugo란 정적사이트생성를 도와주는 도구중 하나이다.
+Step 1 : Hugo 설치하기 (Windows) Hugo를 설치하는 방법은 간단하다.
+아래의 URL을 클릭하여 32bit, 64bit 를 확인하여 다운로드 한다.
+Hugo Download Link
+Step 2 : 환경 세팅 </description>
+    </item>
     
     
     
+    <item>
+      <title>Permalinks</title>
+      <link>https://ralpioxxcs.github.io/post/toc/</link>
+      <pubDate>Mon, 18 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/toc/</guid>
+      <description></description>
+    </item>
     
     
     
