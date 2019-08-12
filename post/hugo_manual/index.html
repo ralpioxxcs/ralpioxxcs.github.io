@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Hugo - Github 블로그 생성하기</title><meta name="description" itemprop="description" content="Hugo란? Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 Jekyll (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다. Step 1 : Hugo 설치하기 (Windows) 1.1 다운로드 Hugo를 설치하는 방법은 간단하다. 아래의 URL을 클릭하여 다운로드 사이트로 이동한 뒤, 32bit, 64bit 를 확인하여 다운로드 한다. Hugo download link 1.2 환경 설정 C드라이브에 hugo폴더를 생성한 뒤 그 안에 bin폴더를 생성,압축파일에 있던 hugo." id="desc"><meta name="generator" content="Hugo 0.56.3" /><meta name="keywords" itemprop="keywords" content="hugo" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/hugo_manual/">
+        <title>Hugo - Github 블로그 생성하기</title><meta name="description" itemprop="description" content="Hugo란? Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 Jekyll (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다. Step 1 : Hugo 설치 (Windows) 1.1 다운로드 Hugo를 설치하는 방법은 간단하다. 아래의 URL을 클릭하여 다운로드 사이트로 이동한 뒤, 32bit, 64bit 를 확인하여 다운로드 한다. Hugo download link 1.2 환경 설정 C드라이브에 hugo폴더를 생성한 뒤 그 안에 bin폴더를 생성,압축파일에 있던 hugo." id="desc"><meta name="generator" content="Hugo 0.56.3" /><meta name="keywords" itemprop="keywords" content="hugo" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/hugo_manual/">
         
 
 <meta name="thumbnail" content="https://ralpioxxcs.github.io/images/moon.png" /><link rel="dns-prefetch" href="https://use.fontawesome.com/" />
@@ -146,34 +146,38 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 <li>
 <ul>
 <li><a href="#hugo란">Hugo란?</a></li>
-<li><a href="#step-1-hugo-설치하기-windows">Step 1 : Hugo 설치하기 (Windows)</a>
+<li><a href="#step-1-hugo-설치-windows">Step 1 : Hugo 설치 (Windows)</a>
 <ul>
 <li><a href="#1-1-다운로드">1.1 다운로드</a></li>
 <li><a href="#1-2-환경-설정">1.2 환경 설정</a></li>
 </ul></li>
-<li><a href="#step-2-블로그-생성하기">Step 2 : 블로그 생성하기</a>
+<li><a href="#step-2-블로그-생성">Step 2 : 블로그 생성</a>
 <ul>
 <li><a href="#2-1-폴더-생성">2.1 폴더 생성</a></li>
-<li><a href="#2-테스트">2. 테스트</a></li>
+<li><a href="#2-2-테스트">2.2 테스트</a></li>
 </ul></li>
-<li><a href="#step-3-블로그-꾸미기">Step 3 : 블로그 꾸미기</a>
+<li><a href="#step-3-블로그-설정">Step 3 : 블로그 설정</a>
 <ul>
 <li><a href="#3-1-테마-고르기">3.1 테마 고르기</a></li>
 <li><a href="#3-2-테마-다운로드">3.2 테마 다운로드</a></li>
 <li><a href="#3-3-테마-적용">3.3 테마 적용</a></li>
 </ul></li>
-<li><a href="#step-4-컨텐츠-포스팅-해보기">Step 4 : 컨텐츠 포스팅 해보기</a>
+<li><a href="#step-4-컨텐츠-포스팅">Step 4 : 컨텐츠 포스팅</a>
 <ul>
-<li><a href="#임시-파일-생성">임시 파일 생성</a></li>
-<li><a href="#확인하기">확인하기</a></li>
-<li><a href="#기타">기타</a></li>
+<li><a href="#4-1-테스트-파일-생성">4.1 테스트 파일 생성</a></li>
+<li><a href="#4-2-확인하기">4.2 확인하기</a></li>
+<li><a href="#4-3-참고">4.3 참고</a></li>
 </ul></li>
-<li><a href="#step-5-레포지토리-연동">Step 5 : 레포지토리 연동</a>
+<li><a href="#step-5-repository-연동">Step 5 : repository 연동</a>
 <ul>
-<li><a href="#github-레포지토리-생성">github 레포지토리 생성</a></li>
-<li><a href="#원격-레포지토리-연동">원격 레포지토리 연동</a></li>
+<li><a href="#5-1-github-repository-생성">5.1 github repository 생성</a></li>
+<li><a href="#5-2-remote-repository-연동">5.2 remote repository 연동</a></li>
 </ul></li>
-<li><a href="#step-6-확인">Step 6 : 확인</a></li>
+<li><a href="#step-6-컨텐츠-배포">Step 6 : 컨텐츠 배포</a>
+<ul>
+<li><a href="#6-1-커밋">6.1 커밋</a></li>
+<li><a href="#6-2-확인하기">6.2 확인하기</a></li>
+</ul></li>
 <li><a href="#추가-사항">추가 사항</a></li>
 </ul></li>
 </ul>
@@ -181,12 +185,11 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 
 <h2 id="hugo란">Hugo란?</h2>
 
-<p>Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 <strong>Jekyll</strong> (지킬이라고 부른다)이 있다.<br />
-처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다.</p>
+<p>Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 <strong>Jekyll</strong> (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다.</p>
 
 <hr />
 
-<h2 id="step-1-hugo-설치하기-windows">Step 1 : Hugo 설치하기 (Windows)</h2>
+<h2 id="step-1-hugo-설치-windows">Step 1 : Hugo 설치 (Windows)</h2>
 
 <h3 id="1-1-다운로드">1.1 다운로드</h3>
 
@@ -199,19 +202,19 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 
 <hr />
 
-<h2 id="step-2-블로그-생성하기">Step 2 : 블로그 생성하기</h2>
+<h2 id="step-2-블로그-생성">Step 2 : 블로그 생성</h2>
 
 <h3 id="2-1-폴더-생성">2.1 폴더 생성</h3>
 
 <p>이제 hugo를 이용해 사이트를 생성해볼 차례다. <strong>c://hugo</strong> 의 위치에서 <code>$ hugo new site [폴더이름]</code> 을 입력한다. 여기서 폴더이름은 말 그대로 앞으로 터미널 상에서 접근할 폴더이름일 뿐, 생성하고자 하는 블로그의 이름이 되진 않는다. (본인은 <strong>blog</strong>로 하였다.) 폴더를 만들었으면 <code>$ cd blog &amp;&amp; ls</code> 를 하여 생성된 폴더의 내부를 확인한다. 정상적으로 생성이 되었으면 archtypes, assets, config.toml 등 여러 파일과 폴더들이 생성된 것을 확인할 수 있다.</p>
 
-<h3 id="2-테스트">2. 테스트</h3>
+<h3 id="2-2-테스트">2.2 테스트</h3>
 
 <p><code>$ hugo server</code> 명령어를 입력하고 <strong>localhost:1313</strong> 을 주소창에 입력해 생성된 사이트를 확인해보자. 아직은 빈 화면만 있을것이다.</p>
 
 <hr />
 
-<h2 id="step-3-블로그-꾸미기">Step 3 : 블로그 꾸미기</h2>
+<h2 id="step-3-블로그-설정">Step 3 : 블로그 설정</h2>
 
 <h3 id="3-1-테마-고르기">3.1 테마 고르기</h3>
 
@@ -219,7 +222,7 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 
 <h3 id="3-2-테마-다운로드">3.2 테마 다운로드</h3>
 
-<p>아까 생성되었던 폴더들중 <strong>themes</strong>라는 폴더에 테마를 넣어주어야한다. 테마의 레포지포리 url를 복사하고 <code>c://hugo/blog/themes</code> 경로에서 <code>$ git clone [repository url]</code>를 입력하여 테마를 다운로드한다.<br />
+<p>아까 생성되었던 폴더들중 <strong>themes</strong>라는 폴더에 테마를 넣어주어야한다. 테마의 repository url를 복사하고 <code>c://hugo/blog/themes</code> 경로에서 <code>$ git clone [repository url]</code>를 입력하여 테마를 다운로드한다.<br />
 (<code>$ git submodule</code> 명령어를 사용하여도 된다. 사실 <a href="https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme">hugo getting started</a>에서는 submodule 명령어로 테마를 추가하라고 명시되어있다.)</p>
 
 <h3 id="3-3-테마-적용">3.3 테마 적용</h3>
@@ -228,32 +231,45 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 
 <hr />
 
-<h2 id="step-4-컨텐츠-포스팅-해보기">Step 4 : 컨텐츠 포스팅 해보기</h2>
+<h2 id="step-4-컨텐츠-포스팅">Step 4 : 컨텐츠 포스팅</h2>
 
-<h3 id="임시-파일-생성">임시 파일 생성</h3>
+<h3 id="4-1-테스트-파일-생성">4.1 테스트 파일 생성</h3>
 
 <p>테마가 적용되었으면 포스팅을 해볼 차례이다. <code>c://hugo/blog</code>의 경로로 돌아가 <code>$ hugo new post/test.md</code> 커맨드를 입력한다. 그러면 <strong>content</strong> 폴더안에 <strong>post</strong> 라는 폴더가 생기고 그 안에 <strong>test.md</strong> 가 생성이 된다. 기본적으로 hugo를 이용해 포스팅을 할때는 <code>$ hugo new [폴더명]/[파일이름]</code>의 구조로 커맨드를 입력하면 된다.</p>
 
-<h3 id="확인하기">확인하기</h3>
+<h3 id="4-2-확인하기">4.2 확인하기</h3>
 
 <p>다시한번 <code>$ hugo server -D</code> 커맨드를 입력하고 <strong>localhost:1313</strong>으로 들어가본다. 그러면 아까 생성한 <strong>test.md</strong> 글이 올라온 것을 확인해 볼 수 있을것이다.</p>
 
-<h3 id="기타">기타</h3>
+<h3 id="4-3-참고">4.3 참고</h3>
 
 <p>각 테마마다 폴더 구성이 조금씩 다르지만, 기본적으로 테마를 받은 폴더안에는 <strong>exampleSite</strong>라는 폴더가 있을것이다. 만약 잘 안된다면 이 폴더를 잘보고 자신의 blog 로컬경로와 비교해가며 확인해보는 것도 좋다.</p>
 
 <hr />
 
-<h2 id="step-5-레포지토리-연동">Step 5 : 레포지토리 연동</h2>
+<h2 id="step-5-repository-연동">Step 5 : repository 연동</h2>
 
-<h3 id="github-레포지토리-생성">github 레포지토리 생성</h3>
+<p>이제 로컬에 저장돼있는 hugo 사이트를 github repository와 연동하여 실제로 주소를 갖는 블로그를 만들어보자.</p>
 
-<h3 id="원격-레포지토리-연동">원격 레포지토리 연동</h3>
+<h3 id="5-1-github-repository-생성">5.1 github repository 생성</h3>
 
-<p><code>$ git init</code>
-<code>$ git remote origin []</code></p>
+<p>github에 로그인하여 총 2개의 repository를 생성한다. 첫번째는 blog폴더 자체를 저장할 repository, 두번째는 hugo로 빌드된 파일들을 저장할 repository이다. 두번째 repository의 이름은 <code>[github계정명].github.io</code>로 만들어야 한다.</p>
 
-<h2 id="step-6-확인">Step 6 : 확인</h2>
+<h3 id="5-2-remote-repository-연동">5.2 remote repository 연동</h3>
+
+<p><code>c://hugo/blog</code> 경로에서 <code>$ git init .</code>으로 로컬 repository를 생성하고
+<code>$ git remote add origin [첫번째 repository url]</code>를 입력한다. 그 다음 <code>$ git submodule add -b master [두번째 repository url] public</code>을 입력하여 hugo로 빌드될 public폴더를 서브모듈로 연결한다. 마지막으로, <code>$ hugo -t [테마폴더명]</code>을 하면 <strong>public</strong> 폴더가 생성이 된다.</p>
+
+<h2 id="step-6-컨텐츠-배포">Step 6 : 컨텐츠 배포</h2>
+
+<h3 id="6-1-커밋">6.1 커밋</h3>
+
+<p>마지막단계로 <code>c://hugo/blog/public</code> 경로에서 <code>git add .</code> , <code>$ git commit -m &quot;first commit&quot;</code> , <code>$ git push origin master</code> 를 하고
+똑같이 <code>c://hugo/blog</code> 경로에서 <strong>add</strong>, <strong>commit</strong> , <strong>push</strong>를 해주면 끝이다.</p>
+
+<h3 id="6-2-확인하기">6.2 확인하기</h3>
+
+<p>이제 <code>https://github.com/계정명.github.io</code>로 들어가 제대로 연동이 되었나 확인해본다.</p>
 
 <h2 id="추가-사항">추가 사항</h2>
 
