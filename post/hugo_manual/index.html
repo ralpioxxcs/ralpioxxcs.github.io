@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Hugo 사용해 Github 블로그 생성하기</title><meta name="description" itemprop="description" content=" Hugo란? Hugo란 정적사이트생성를 도와주는 도구중 하나이다. Step 1 : Hugo 설치하기 (Windows) Hugo를 설치하는 방법은 간단하다. 아래의 URL을 클릭하여 32bit, 64bit 를 확인하여 다운로드 한다. Hugo Download Link Step 2 : 환경 세팅 " id="desc"><meta name="generator" content="Hugo 0.56.3" /><link rel="canonical" href="https://ralpioxxcs.github.io/post/hugo_manual/">
+        <title>Hugo - Github 블로그 생성하기</title><meta name="description" itemprop="description" content="Hugo란? Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 Jekyll (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다. Step 1 : Hugo 설치하기 (Windows) 1.1 다운로드 Hugo를 설치하는 방법은 간단하다. 아래의 URL을 클릭하여 다운로드 사이트로 이동한 뒤, 32bit, 64bit 를 확인하여 다운로드 한다. Hugo download link 1.2 환경 설정 C드라이브에 hugo폴더를 생성한 뒤 그 안에 bin폴더를 생성,압축파일에 있던 hugo." id="desc"><meta name="generator" content="Hugo 0.56.3" /><meta name="keywords" itemprop="keywords" content="hugo" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/hugo_manual/">
         
 
 <meta name="thumbnail" content="https://ralpioxxcs.github.io/images/moon.png" /><link rel="dns-prefetch" href="https://use.fontawesome.com/" />
@@ -122,17 +122,22 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
                         
                         
 <main class="cell medium-8" >
-    <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="desc">
+    <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
         <header id="page-header">
-            <h1 itemprop="headline">Hugo 사용해 Github 블로그 생성하기</h1><p id="post-metadata" class="grid-x grid-padding-x"><span class="cell shrink">
+            <h1 itemprop="headline">Hugo - Github 블로그 생성하기</h1><p id="post-metadata" class="grid-x grid-padding-x"><span class="cell shrink">
                         <span class="far fa-clock fa-sm fa-fw" aria-hidden></span>
                         <strong>Published:</strong>
                         <time datetime="2019-08-10" content="2019-08-10" itemprop="datePublished">August 10, 2019</time>
                     </span><span class="cell shrink">
                         <span class="fas fa-book fa-sm fa-fw" aria-hidden></span>
                         <strong>Estimated Reading Time:</strong>
-                        ~<span itemprop="timeRequired">1 minute</span>
-                    </span></p>
+                        ~<span itemprop="timeRequired">3 minutes</span>
+                    </span><span class="cell shrink">
+                        <span class="fas fa-tag fa-sm fa-fw" aria-hidden></span>
+                            
+                            
+                            <a itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL" href="https://ralpioxxcs.github.io/tags/hugo" rel="tag" itemprop="url">hugo</a>
+                        </span></p>
             
         </header>
         
@@ -141,25 +146,116 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 <li>
 <ul>
 <li><a href="#hugo란">Hugo란?</a></li>
-<li><a href="#step-1-hugo-설치하기-windows">Step 1 : Hugo 설치하기 (Windows)</a></li>
-<li><a href="#step-2-환경-세팅">Step 2 : 환경 세팅</a></li>
+<li><a href="#step-1-hugo-설치하기-windows">Step 1 : Hugo 설치하기 (Windows)</a>
+<ul>
+<li><a href="#1-1-다운로드">1.1 다운로드</a></li>
+<li><a href="#1-2-환경-설정">1.2 환경 설정</a></li>
+</ul></li>
+<li><a href="#step-2-블로그-생성하기">Step 2 : 블로그 생성하기</a>
+<ul>
+<li><a href="#2-1-폴더-생성">2.1 폴더 생성</a></li>
+<li><a href="#2-테스트">2. 테스트</a></li>
+</ul></li>
+<li><a href="#step-3-블로그-꾸미기">Step 3 : 블로그 꾸미기</a>
+<ul>
+<li><a href="#3-1-테마-고르기">3.1 테마 고르기</a></li>
+<li><a href="#3-2-테마-다운로드">3.2 테마 다운로드</a></li>
+<li><a href="#3-3-테마-적용">3.3 테마 적용</a></li>
+</ul></li>
+<li><a href="#step-4-컨텐츠-포스팅-해보기">Step 4 : 컨텐츠 포스팅 해보기</a>
+<ul>
+<li><a href="#임시-파일-생성">임시 파일 생성</a></li>
+<li><a href="#확인하기">확인하기</a></li>
+<li><a href="#기타">기타</a></li>
+</ul></li>
+<li><a href="#step-5-레포지토리-연동">Step 5 : 레포지토리 연동</a>
+<ul>
+<li><a href="#github-레포지토리-생성">github 레포지토리 생성</a></li>
+<li><a href="#원격-레포지토리-연동">원격 레포지토리 연동</a></li>
+</ul></li>
+<li><a href="#step-6-확인">Step 6 : 확인</a></li>
+<li><a href="#추가-사항">추가 사항</a></li>
 </ul></li>
 </ul>
 </nav><span itemprop="articleBody">
 
 <h2 id="hugo란">Hugo란?</h2>
 
-<p>Hugo란 정적사이트생성를 도와주는 도구중 하나이다.</p>
+<p>Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 <strong>Jekyll</strong> (지킬이라고 부른다)이 있다.<br />
+처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다.</p>
+
+<hr />
 
 <h2 id="step-1-hugo-설치하기-windows">Step 1 : Hugo 설치하기 (Windows)</h2>
 
-<p>Hugo를 설치하는 방법은 간단하다.</p>
+<h3 id="1-1-다운로드">1.1 다운로드</h3>
 
-<p>아래의 URL을 클릭하여 32bit, 64bit 를 확인하여 다운로드 한다.</p>
+<p>Hugo를 설치하는 방법은 간단하다. 아래의 URL을 클릭하여 다운로드 사이트로 이동한 뒤, 32bit, 64bit 를 확인하여 다운로드 한다.<br />
+<a href="https://github.com/gohugoio/hugo/releases">Hugo download link</a></p>
 
-<p><a href="https://github.com/gohugoio/hugo/releases">Hugo Download Link</a></p>
+<h3 id="1-2-환경-설정">1.2 환경 설정</h3>
 
-<h2 id="step-2-환경-세팅">Step 2 : 환경 세팅</h2>
+<p>C드라이브에 hugo폴더를 생성한 뒤 그 안에 bin폴더를 생성,압축파일에 있던 <strong>hugo.exe</strong> 파일을 복사하여 bin폴더에 붙여넣는다. 그리고 시스템 속성 - 환경변수의 PATH에 <strong>c://hugo/bin</strong> 경로를 추가한다. powershell 혹은 git-bash등 terminal 프로그램을 실행시키고 <code>$ hugo -help</code> 커맨드를 입력하여 hugo가 잘 설치되었는지 확인이 되면 hugo를 사용하기 위한 준비는 끝난다.</p>
+
+<hr />
+
+<h2 id="step-2-블로그-생성하기">Step 2 : 블로그 생성하기</h2>
+
+<h3 id="2-1-폴더-생성">2.1 폴더 생성</h3>
+
+<p>이제 hugo를 이용해 사이트를 생성해볼 차례다. <strong>c://hugo</strong> 의 위치에서 <code>$ hugo new site [폴더이름]</code> 을 입력한다. 여기서 폴더이름은 말 그대로 앞으로 터미널 상에서 접근할 폴더이름일 뿐, 생성하고자 하는 블로그의 이름이 되진 않는다. (본인은 <strong>blog</strong>로 하였다.) 폴더를 만들었으면 <code>$ cd blog &amp;&amp; ls</code> 를 하여 생성된 폴더의 내부를 확인한다. 정상적으로 생성이 되었으면 archtypes, assets, config.toml 등 여러 파일과 폴더들이 생성된 것을 확인할 수 있다.</p>
+
+<h3 id="2-테스트">2. 테스트</h3>
+
+<p><code>$ hugo server</code> 명령어를 입력하고 <strong>localhost:1313</strong> 을 주소창에 입력해 생성된 사이트를 확인해보자. 아직은 빈 화면만 있을것이다.</p>
+
+<hr />
+
+<h2 id="step-3-블로그-꾸미기">Step 3 : 블로그 꾸미기</h2>
+
+<h3 id="3-1-테마-고르기">3.1 테마 고르기</h3>
+
+<p><a href="https://themes.gohugo.io/">hugo themes link</a> 로 이동하여 원하는 테마를 선택한다. 각 테마 소개 화면에서 <strong>Demo</strong>를 클릭하면 각 블로그의 예시를 체험해볼 수 있다. 마음에 드는 테마를 찾았으면 <strong>Download</strong> 버튼을 클릭 후 테마의 repository 로 이동한다.</p>
+
+<h3 id="3-2-테마-다운로드">3.2 테마 다운로드</h3>
+
+<p>아까 생성되었던 폴더들중 <strong>themes</strong>라는 폴더에 테마를 넣어주어야한다. 테마의 레포지포리 url를 복사하고 <code>c://hugo/blog/themes</code> 경로에서 <code>$ git clone [repository url]</code>를 입력하여 테마를 다운로드한다.<br />
+(<code>$ git submodule</code> 명령어를 사용하여도 된다. 사실 <a href="https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme">hugo getting started</a>에서는 submodule 명령어로 테마를 추가하라고 명시되어있다.)</p>
+
+<h3 id="3-3-테마-적용">3.3 테마 적용</h3>
+
+<p>테마 다운로드를 완료하였으면 <code>c://hugo/blog</code>경로안에 있는 <strong>config.toml</strong>을 살짝 수정하여 적용시켜주여야 한다. 편집기를 이용해 <strong>config.toml</strong>를 연뒤, 마지막줄에 <code>theme = &quot;다운로드받은 테마 폴더명&quot;</code>을 추가해준다.</p>
+
+<hr />
+
+<h2 id="step-4-컨텐츠-포스팅-해보기">Step 4 : 컨텐츠 포스팅 해보기</h2>
+
+<h3 id="임시-파일-생성">임시 파일 생성</h3>
+
+<p>테마가 적용되었으면 포스팅을 해볼 차례이다. <code>c://hugo/blog</code>의 경로로 돌아가 <code>$ hugo new post/test.md</code> 커맨드를 입력한다. 그러면 <strong>content</strong> 폴더안에 <strong>post</strong> 라는 폴더가 생기고 그 안에 <strong>test.md</strong> 가 생성이 된다. 기본적으로 hugo를 이용해 포스팅을 할때는 <code>$ hugo new [폴더명]/[파일이름]</code>의 구조로 커맨드를 입력하면 된다.</p>
+
+<h3 id="확인하기">확인하기</h3>
+
+<p>다시한번 <code>$ hugo server -D</code> 커맨드를 입력하고 <strong>localhost:1313</strong>으로 들어가본다. 그러면 아까 생성한 <strong>test.md</strong> 글이 올라온 것을 확인해 볼 수 있을것이다.</p>
+
+<h3 id="기타">기타</h3>
+
+<p>각 테마마다 폴더 구성이 조금씩 다르지만, 기본적으로 테마를 받은 폴더안에는 <strong>exampleSite</strong>라는 폴더가 있을것이다. 만약 잘 안된다면 이 폴더를 잘보고 자신의 blog 로컬경로와 비교해가며 확인해보는 것도 좋다.</p>
+
+<hr />
+
+<h2 id="step-5-레포지토리-연동">Step 5 : 레포지토리 연동</h2>
+
+<h3 id="github-레포지토리-생성">github 레포지토리 생성</h3>
+
+<h3 id="원격-레포지토리-연동">원격 레포지토리 연동</h3>
+
+<p><code>$ git init</code>
+<code>$ git remote origin []</code></p>
+
+<h2 id="step-6-확인">Step 6 : 확인</h2>
+
+<h2 id="추가-사항">추가 사항</h2>
 
 </span>
         </div></article>
@@ -167,12 +263,12 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
     <nav id="post-nav" aria-label="Pagination">
             <ul class="pagination grid-x grid-x-padding full">
                 
-                <li class="pagination-previous cell small-order-2 medium-5 medium-order-1">
-                    <a class="button" href="https://ralpioxxcs.github.io/post/toc/" rel="prev">
-                        <span class="sr-text">Previous:</span>
-                        Permalinks</a>
-                </li>
                 
+                <li class="pagination-next cell small-order-1 medium-5 medium-order-2 medium-offset-7">
+                    <a class="button" href="https://ralpioxxcs.github.io/post/hugo_frontmatter/" rel="next">
+                        <span class="sr-text">Next:</span>Hugo - Front Matter
+                    </a>
+                </li>
                 
             </ul>
         </nav>
@@ -223,7 +319,7 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 	</header>
 	
 			<a class="widget-header-small button" href="https://ralpioxxcs.github.io/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to the Site</a>
-		<a class="widget-header-small button" href="https://ralpioxxcs.github.io/post/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to Posts</a><ul><li><a href="https://ralpioxxcs.github.io/post/hugo_manual/">Hugo 사용해 Github 블로그 생성하기</a></li><li><a href="https://ralpioxxcs.github.io/post/toc/">Permalinks</a></li></ul>
+		<a class="widget-header-small button" href="https://ralpioxxcs.github.io/post/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to Posts</a><ul><li><a href="https://ralpioxxcs.github.io/post/hugo_frontmatter/">Hugo - Front Matter</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_manual/">Hugo - Github 블로그 생성하기</a></li></ul>
 </div>
 <div class="widget">
 	<header>
@@ -231,6 +327,8 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 	</header>
 	<div class="grid-x grid-padding-x" id="sidebar-tags"><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/cmake/" title="cmake">
                 cmake
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/hugo/" title="hugo">
+                hugo
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/data-structure/" title="data structure">
                 data structure
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/opencv/" title="opencv">
@@ -290,7 +388,7 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 
 
 
-<a href="https://github.com/https://github.com/ralpioxxcs/" class="cell shrink" rel="me nofollow" title="GitHub" aria-title="Fork me on GitHub!">
+<a href="https://github.com/ralpioxxcs" class="cell shrink" rel="me nofollow" title="GitHub" aria-title="Fork me on GitHub!">
 
     <span class="fa-stack fa-xs">
         <span class="fas fa-square fa-stack-2x"></span>
