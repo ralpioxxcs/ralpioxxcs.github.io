@@ -11,12 +11,14 @@
     
     
     <item>
-      <title>Installation</title>
+      <title>OpenCV 설치하기 (Visual Studio 2015)</title>
       <link>https://ralpioxxcs.github.io/study/opencv/installation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ralpioxxcs.github.io/study/opencv/installation/</guid>
-      <description> Pre-requisite Step 1 : Install </description>
+      <description> Step 1 : OpenCV 다운로드 OpenCV 공식 홈페이지 으로 이동해 Release 탭에서 원하는 버전을 받는다.
+Step 2 : 환경 설정 다운로드가 완료되었다면, 이제 OpenCV 라이브러리를 사용할 수 있도록 몇가지 작업이 필요하다. 우선 제어판 - 시스템 - 고급 시스템 설정으로 이동, 고급 탭에서 &amp;ldquo;환경변수&amp;rdquo; 를 클릭
+Step 3 : 테스트 </description>
     </item>
     
   </channel>

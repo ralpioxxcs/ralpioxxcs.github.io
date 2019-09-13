@@ -10,24 +10,23 @@
     
     
     <item>
-      <title>Hugo - Front Matter</title>
+      <title>Getting Started Hugo [3] - Front Matter</title>
       <link>https://ralpioxxcs.github.io/post/hugo_frontmatter/</link>
       <pubDate>Sun, 11 Aug 2019 10:36:14 +0200</pubDate>
       
       <guid>https://ralpioxxcs.github.io/post/hugo_frontmatter/</guid>
-      <description></description>
+      <description>FrontMatter? FrontMatter is meta</description>
     </item>
     
     
     
     <item>
-      <title>Hugo - Github 블로그 생성하기</title>
+      <title>Getting Started Hugo [1] - Github 블로그 생성</title>
       <link>https://ralpioxxcs.github.io/post/hugo_manual/</link>
       <pubDate>Sat, 10 Aug 2019 13:36:24 +0900</pubDate>
       
       <guid>https://ralpioxxcs.github.io/post/hugo_manual/</guid>
       <description>Hugo란? Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 Jekyll (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다.
-
 Step 1 : Hugo 설치 (Windows) 1.1 다운로드 Hugo를 설치하는 방법은 간단하다. 아래의 URL을 클릭하여 다운로드 사이트로 이동한 뒤, 32bit, 64bit 를 확인하여 다운로드 한다.
 Hugo download link
 1.2 환경 설정 C드라이브에 hugo폴더를 생성한 뒤 그 안에 bin폴더를 생성,압축파일에 있던 hugo.</description>

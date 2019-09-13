@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ralpioxxcs.github.io/post/hugo_manual/</loc>
+    <lastmod>2019-08-10T13:36:24+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ralpioxxcs.github.io/about/</loc>
   </url>
   
@@ -31,6 +36,11 @@
   </url>
   
   <url>
+    <loc>https://ralpioxxcs.github.io/post/hugo_frontmatter/</loc>
+    <lastmod>2019-08-11T10:36:14+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ralpioxxcs.github.io/post/</loc>
     <lastmod>2019-08-11T10:36:14+02:00</lastmod>
   </url>
@@ -40,8 +50,7 @@
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/hugo_frontmatter/</loc>
-    <lastmod>2019-08-11T10:36:14+02:00</lastmod>
+    <loc>https://ralpioxxcs.github.io/study/linux-basic/</loc>
   </url>
   
   <url>
@@ -63,17 +72,17 @@
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/hugo_manual/</loc>
-    <lastmod>2019-08-10T13:36:24+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ralpioxxcs.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ralpioxxcs.github.io/tags/data-structure/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/tags/linux/</loc>
     <priority>0</priority>
   </url>
   
