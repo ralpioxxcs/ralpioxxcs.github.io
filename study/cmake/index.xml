@@ -6,6 +6,7 @@
     <description>Recent content in Study: Cmake on My Dev Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sat, 10 Aug 2019 14:00:13 +0900</lastBuildDate>
     
 	<atom:link href="https://ralpioxxcs.github.io/study/cmake/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,6 +18,15 @@
       
       <guid>https://ralpioxxcs.github.io/study/cmake/installation/</guid>
       <description> Step 1 : Install Step 2 : Pre-requisite </description>
+    </item>
+    
+    <item>
+      <title>Syntaxs</title>
+      <link>https://ralpioxxcs.github.io/study/cmake/syntaxs/</link>
+      <pubDate>Sat, 10 Aug 2019 14:00:13 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/study/cmake/syntaxs/</guid>
+      <description> cmake 문법 </description>
     </item>
     
   </channel>

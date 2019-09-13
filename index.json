@@ -19,6 +19,11 @@
   "body": " Step 1 : OpenCV 다운로드 OpenCV 공식 홈페이지 으로 이동해 Release 탭에서 원하는 버전을 받는다.Step 2 : 환경 설정 다운로드가 완료되었다면, 이제 OpenCV 라이브러리를 사용할 수 있도록 몇가지 작업이 필요하다. 우선 제어판 - 시스템 - 고급 시스템 설정으로 이동, 고급 탭에서 &amp;ldquo;환경변수&amp;rdquo; 를 클릭Step 3 : 테스트 ",
   "url": "https://ralpioxxcs.github.io/study/opencv/installation/"
 },{
+  "name": "Getting Started Hugo [2] - 디렉터리 구조",
+  "description": "명령창에 $ hugo new site를 입력하면 아래의 구조를 가진 폴더가 하나 생성되는것을 보았을것이다. 각각의 폴더의 역할은 다음과 같다.. ├─ archetypes ├─ content ├─ data ├─ layouts ├─ static ├─ themes ├─ config.toml  archetypes $ hugo new 커맨드를 이용해 새로운 contents 파일을 만들때, 이 폴더내의 default.md 의 front matter 형태를 갖는 content를 자동으로 초기화 하여 만들어준다. 많은양의 content를 만들 때 유용하게 사용될수 있고, front matter field를 직접 수정하여 하나의 archtypes로 만들 수 있다.",
+  "body": " 명령창에 $ hugo new site를 입력하면 아래의 구조를 가진 폴더가 하나 생성되는것을 보았을것이다. 각각의 폴더의 역할은 다음과 같다.. ├─ archetypes ├─ content ├─ data ├─ layouts ├─ static ├─ themes ├─ config.toml  archetypes $ hugo new 커맨드를 이용해 새로운 contents 파일을 만들때, 이 폴더내의 default.md 의 front matter 형태를 갖는 content를 자동으로 초기화 하여 만들어준다. 많은양의 content를 만들 때 유용하게 사용될수 있고, front matter field를 직접 수정하여 하나의 archtypes로 만들 수 있다.content 모든 게시글들 (contents)파일들은 content 디렉토리내에 쓰여지고 저장된다. 예를들면 사이트내에 3개의 주요 카테고리 (eg. blog, articles, tutorials) 가 있다고하면 content폴더내의 디렉토리 구조는 content/blog, content/articels, content/totorials의 구조를 갖게된다.data Hugo에서 site를 생성할 떄, 구성파일들을 저장하는데 사용되는 폴더이다. yaml, toml, json 형태로 쓸 수 있다.layouts static site를 구성하는 모든 ~.html 확장자를 갖는 파일들을 저장한다. list pages, homepage, single page 등 더 많은 템플릿을 포함하고, hugo theme를 이용하는 사용자의 측면에서 가장 중요한 폴더이며, 이 부분을 수정하여 입맛에 맞게 수정하여 사용할 수도 있다.static CSS, JavaScript, image등의 정적인 파일들이 저장된 폴더이다. Hugo에 의해서 site를 생성할때, static폴더내의 파일들이 사용된다.themes 이미 만들어진 hugo의 theme를 저장하는 폴더. theme를 사용하려면 이 폴더에 theme폴더를 저장하고 config를 수정하여야 한다.config config.toml, config.yaml, config.json의 형태로 작성되며, hugo site를 생성할 때 기본 설정파일의 역할을 한다. theme를 사용할 때, 이 부분을 수정하여 theme를 적용하듯이 site를 생성하는데 중요한 역할을 한다. 보통 theme마다 config를 적용하는 방법이 달라 각 theme의 config 내부를 잘 살펴보면 사용법이 적혀있다.",
+  "url": "https://ralpioxxcs.github.io/post/hugo_structure/"
+},{
   "name": "Stack",
   "description": " Overview ",
   "body": " Overview ",
@@ -28,5 +33,10 @@
   "description": "FrontMatter? FrontMatter is meta",
   "body": " FrontMatter? FrontMatter is meta",
   "url": "https://ralpioxxcs.github.io/post/hugo_frontmatter/"
+},{
+  "name": "Syntaxs",
+  "description": " cmake 문법 ",
+  "body": " cmake 문법 ",
+  "url": "https://ralpioxxcs.github.io/study/cmake/syntaxs/"
 }
 ]

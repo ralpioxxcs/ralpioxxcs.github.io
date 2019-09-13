@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ralpioxxcs.github.io/study/cmake/</loc>
+    <lastmod>2019-08-10T14:00:13+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ralpioxxcs.github.io/post/hugo_manual/</loc>
     <lastmod>2019-08-10T13:36:24+09:00</lastmod>
   </url>
@@ -12,15 +17,16 @@
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/study/cmake/</loc>
-  </url>
-  
-  <url>
     <loc>https://ralpioxxcs.github.io/study/cmake/installation/</loc>
   </url>
   
   <url>
     <loc>https://ralpioxxcs.github.io/study/opencv/installation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/post/hugo_structure/</loc>
+    <lastmod>2019-09-13T20:15:50+09:00</lastmod>
   </url>
   
   <url>
@@ -36,12 +42,12 @@
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/hugo_frontmatter/</loc>
-    <lastmod>2019-08-11T10:36:14+02:00</lastmod>
+    <loc>https://ralpioxxcs.github.io/post/</loc>
+    <lastmod>2019-09-13T20:15:50+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/</loc>
+    <loc>https://ralpioxxcs.github.io/post/hugo_frontmatter/</loc>
     <lastmod>2019-08-11T10:36:14+02:00</lastmod>
   </url>
   
@@ -55,20 +61,25 @@
   
   <url>
     <loc>https://ralpioxxcs.github.io/</loc>
-    <lastmod>2019-08-11T10:36:14+02:00</lastmod>
+    <lastmod>2019-09-13T20:15:50+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ralpioxxcs.github.io/tags/</loc>
-    <lastmod>2019-08-11T10:36:14+02:00</lastmod>
+    <lastmod>2019-09-13T20:15:50+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ralpioxxcs.github.io/tags/hugo/</loc>
-    <lastmod>2019-08-11T10:36:14+02:00</lastmod>
+    <lastmod>2019-09-13T20:15:50+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/study/cmake/syntaxs/</loc>
+    <lastmod>2019-08-10T14:00:13+09:00</lastmod>
   </url>
   
   <url>

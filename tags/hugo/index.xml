@@ -6,7 +6,7 @@
     <description>Recent content in hugo on My Dev Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Aug 2019 10:36:14 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 13 Sep 2019 20:15:50 +0900</lastBuildDate>
     
 	<atom:link href="https://ralpioxxcs.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
@@ -21,6 +21,16 @@
 Step 1 : Hugo 설치 (Windows) 1.1 다운로드 Hugo를 설치하는 방법은 간단하다. 아래의 URL을 클릭하여 다운로드 사이트로 이동한 뒤, 32bit, 64bit 를 확인하여 다운로드 한다.
 Hugo download link
 1.2 환경 설정 C드라이브에 hugo폴더를 생성한 뒤 그 안에 bin폴더를 생성,압축파일에 있던 hugo.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started Hugo [2] - 디렉터리 구조</title>
+      <link>https://ralpioxxcs.github.io/post/hugo_structure/</link>
+      <pubDate>Fri, 13 Sep 2019 20:15:50 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/hugo_structure/</guid>
+      <description>명령창에 $ hugo new site를 입력하면 아래의 구조를 가진 폴더가 하나 생성되는것을 보았을것이다. 각각의 폴더의 역할은 다음과 같다.
+. ├─ archetypes ├─ content ├─ data ├─ layouts ├─ static ├─ themes ├─ config.toml  archetypes $ hugo new 커맨드를 이용해 새로운 contents 파일을 만들때, 이 폴더내의 default.md 의 front matter 형태를 갖는 content를 자동으로 초기화 하여 만들어준다. 많은양의 content를 만들 때 유용하게 사용될수 있고, front matter field를 직접 수정하여 하나의 archtypes로 만들 수 있다.</description>
     </item>
     
     <item>
