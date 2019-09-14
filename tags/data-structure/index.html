@@ -127,6 +127,27 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 		</header>
 <article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><div>
         <header class="post-list-title">
+            <a href="https://ralpioxxcs.github.io/study/datastructure/stack/">
+                <h2 itemprop="headline">Stack</h2>
+            </a>
+            <div class="metadata"><div>
+                <span class="far fa-clock" aria-hidden></span>
+                <span class="sr-text">Published: </span>
+                <time datetime="" itemprop="datePublished">September 13, 2019</time>
+                </div></div>
+        </header>
+        <div class="post-list-summary" itemprop="description">
+            <p>1. 개요 후입선출(後入先出, Last In First Out; LIFO) 의 자료구조로, 상자의 형태를 한 자료구조이다. 데이터의 삽입을 Push, 데이터의 출력을 Pop이라고 하며, 스택을 크게 두 가지로 나누면 Ascending Stack VS Descending Stack으로 나눌 수 있다. 스택은 배열과 링크드 리스트로 구현할 수 있는데, 여기서는 링크드리스트를 이용한 스택을 구현해 보겠다. 2. 코드 구현 2-1. define structure typedef struct _stacknode Snode; struct _stacknode { DataType data; Snode *next; }; typedef struct _stack { Snode *head; Snode *tail; Snode *cur; }Stack; 스택관리구조체 Stack은 링크드리스트 구조체처럼 head와 tail을 고정적으로 가리키는 노드포인터와 현재 노드를 가리키는 cur 포인터로 이루어져있다.
+                    
+                        <a href="https://ralpioxxcs.github.io/study/datastructure/stack/">
+                            [Read more<span class="sr-text"> from Stack</span>...]
+                        </a>
+                    </p>
+        </div>
+    </div>
+</article>
+<article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><div>
+        <header class="post-list-title">
             <a href="https://ralpioxxcs.github.io/study/datastructure/">
                 <h2 itemprop="headline">Study: Data Structure</h2>
             </a>
@@ -138,6 +159,27 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
         </header>
         <div class="post-list-summary" itemprop="description">
             <p>This section is contain all about Data structure.
+                    </p>
+        </div>
+    </div>
+</article>
+<article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><div>
+        <header class="post-list-title">
+            <a href="https://ralpioxxcs.github.io/study/datastructure/linkedlist/">
+                <h2 itemprop="headline">LinkedList</h2>
+            </a>
+            <div class="metadata"><div>
+                <span class="far fa-clock" aria-hidden></span>
+                <span class="sr-text">Published: </span>
+                <time datetime="" itemprop="datePublished">September 14, 2019</time>
+                </div></div>
+        </header>
+        <div class="post-list-summary" itemprop="description">
+            <p>1. 개요 비슷한 방식으로 배열이 있지만 배열은 처음부터 메모리를 할당하고 시작하기 때문에, 링크드리스트에 비해 데이터의 삽입이나 삭제가 어렵다. 반면, 링크드리스트는 노드를 데이터를 삽입할 때마다 메모리를 할당하고 데이터를 이어주는 형식이라 배열에 비해 메모리 낭비가 덜 하다는 장점이 있다. 단순 연결 리스트는 단 방향이기 때문에 Head 노드의 주소를 잃어버릴 경우 모든 자료들의 접근이 불가능해지므로 안정적인 자료구조는 아니다. 이전, 다음 노드의 참조가 모두 가능하므로 탐색에 용이하고, 단순 연결 리스트에서 삭제를 하려면 시간이 오래 걸리는 것에 비해 이중 연결 리스트에서의 노드 삭제는 훨씬 간단하다.
+                    
+                        <a href="https://ralpioxxcs.github.io/study/datastructure/linkedlist/">
+                            [Read more<span class="sr-text"> from LinkedList</span>...]
+                        </a>
                     </p>
         </div>
     </div>
@@ -192,14 +234,12 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 	<header>
 		<span class="widget-header"><span class="fas fa-tags fa-xs" aria-hidden></span> <a href="https://ralpioxxcs.github.io/tags/">Tags</a></span>
 	</header>
-	<div class="grid-x grid-padding-x" id="sidebar-tags"><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/hugo/" title="hugo">
+	<div class="grid-x grid-padding-x" id="sidebar-tags"><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/data-structure/" title="data structure">
+                data structure
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/hugo/" title="hugo">
                 hugo
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/cmake/" title="cmake">
                 cmake
-			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/datastructure/" title="datastructure">
-                datastructure
-			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/data-structure/" title="data structure">
-                data structure
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/linux/" title="linux">
                 linux
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/opencv/" title="opencv">

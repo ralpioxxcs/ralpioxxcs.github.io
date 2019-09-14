@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>LinkedList</title><meta name="description" itemprop="description" content=" 개요 비슷한 방식으로 배열이 있지만 배열은 처음부터 메모리를 할당하고 시작하기 때문에, 링크드리스트에 비해 데이터의 삽입이나 삭제가 어렵다. 반면, 링크드리스트는 노드를 데이터를 삽입할 때마다 메모리를 할당하고 데이터를 이어주는 형식이라 배열에 비해 메모리 낭비가 덜 하다는 장점이 있다. 코드 구현 typedef struct _node Node; // 구조체 노드 형명재지정 struct _node{ // 데이터를 보관할 노드(자기참조 구조체) Node *prev; // 앞 노드를 가리키는 멤버 DataType data; // 데이터 저장 멤버 Node *next; // 뒷 노드를 가리키는 멤버 }; typedef struct _linkedList{ // 리스트 관리 구조체 Node *head; // 헤드포인터 (헤드노드 가리킴) Node *cur; // 특정 작업 시 노드를 가리키기 위한 포인터 Node *tail; // 테일포인터 (테일노드 가리킴) int length; // 실제 데이터노드의 갯수 }LinkedList;  " id="desc"><meta name="generator" content="Hugo 0.56.3" /><meta name="keywords" itemprop="keywords" content="datastructure" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/study/datastructure/linkedlist/">
+        <title>LinkedList</title><meta name="description" itemprop="description" content="1. 개요 비슷한 방식으로 배열이 있지만 배열은 처음부터 메모리를 할당하고 시작하기 때문에, 링크드리스트에 비해 데이터의 삽입이나 삭제가 어렵다. 반면, 링크드리스트는 노드를 데이터를 삽입할 때마다 메모리를 할당하고 데이터를 이어주는 형식이라 배열에 비해 메모리 낭비가 덜 하다는 장점이 있다. 단순 연결 리스트는 단 방향이기 때문에 Head 노드의 주소를 잃어버릴 경우 모든 자료들의 접근이 불가능해지므로 안정적인 자료구조는 아니다. 이전, 다음 노드의 참조가 모두 가능하므로 탐색에 용이하고, 단순 연결 리스트에서 삭제를 하려면 시간이 오래 걸리는 것에 비해 이중 연결 리스트에서의 노드 삭제는 훨씬 간단하다." id="desc"><meta name="generator" content="Hugo 0.56.3" /><meta name="keywords" itemprop="keywords" content="Data Structure" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/study/datastructure/linkedlist/">
         
 
 <meta name="thumbnail" content="https://ralpioxxcs.github.io/images/moon.png" /><link rel="dns-prefetch" href="https://use.fontawesome.com/" />
@@ -137,42 +137,177 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
                     </span><span class="cell shrink">
                         <span class="fas fa-book fa-sm fa-fw" aria-hidden></span>
                         <strong>Estimated Reading Time:</strong>
-                        ~<span itemprop="timeRequired">1 minute</span>
+                        ~<span itemprop="timeRequired">4 minutes</span>
                     </span><span class="cell shrink">
                         <span class="fas fa-tag fa-sm fa-fw" aria-hidden></span>
                             
                             
-                            <a itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL" href="https://ralpioxxcs.github.io/tags/datastructure" rel="tag" itemprop="url">datastructure</a>
+                            <a itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL" href="https://ralpioxxcs.github.io/tags/data-structure" rel="tag" itemprop="url">data structure</a>
                         </span></p>
             
         </header>
         
-        <div id="post-content"><span itemprop="articleBody">
+        <div id="post-content"><nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#1-개요">1. 개요</a></li>
+<li><a href="#2-코드-구현">2. 코드 구현</a>
+<ul>
+<li><a href="#2-1-define-structure">2-1. define structure</a></li>
+<li><a href="#2-2-init-linkedlist">2-2. Init LinkedList</a></li>
+<li><a href="#2-3-add-node">2-3. Add Node</a></li>
+<li><a href="#2-4-delete-node">2-4. Delete Node</a></li>
+<li><a href="#2-5-arragne-node">2-5. Arragne Node</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav><span itemprop="articleBody">
 
-<h2 id="개요">개요</h2>
+<h2 id="1-개요">1. 개요</h2>
 
 <p>비슷한 방식으로 배열이 있지만 배열은 처음부터 메모리를 할당하고 시작하기 때문에, 링크드리스트에 비해 데이터의 삽입이나 삭제가 어렵다.
 반면, 링크드리스트는 노드를 데이터를 삽입할 때마다 메모리를 할당하고 데이터를 이어주는 형식이라 배열에 비해 메모리 낭비가 덜 하다는 장점이 있다.</p>
 
-<p><img src="images/linkedlist_1.jpg" alt="linkedlistimage12" /></p>
+<p><img src="/images/linkedlist_1.jpg" alt="linkedlist_img_1" /></p>
 
-<h2 id="코드-구현">코드 구현</h2>
+<p>단순 연결 리스트는 단 방향이기 때문에 Head 노드의 주소를 잃어버릴 경우 모든 자료들의 접근이 불가능해지므로 안정적인 자료구조는 아니다.</p>
 
-<pre><code>typedef struct _node Node;    // 구조체 노드 형명재지정
- 
-struct _node{         // 데이터를 보관할 노드(자기참조 구조체)
-    Node *prev;               // 앞 노드를 가리키는 멤버
-    DataType data;            // 데이터 저장 멤버
-    Node *next;               // 뒷 노드를 가리키는 멤버
-};
- 
-typedef struct _linkedList{   // 리스트 관리 구조체
-    Node *head;               // 헤드포인터 (헤드노드 가리킴)
-    Node *cur;                // 특정 작업 시 노드를 가리키기 위한 포인터
-    Node *tail;               // 테일포인터 (테일노드 가리킴)
-    int length;               // 실제 데이터노드의 갯수
-}LinkedList;
-</code></pre>
+<p><img src="/images/linkedlist_2.jpg" alt="linkedlist_img_2" /></p>
+
+<p>이전, 다음 노드의 참조가 모두 가능하므로 탐색에 용이하고, 단순 연결 리스트에서 삭제를 하려면 시간이 오래 걸리는 것에 비해 이중 연결 리스트에서의 노드 삭제는 훨씬 간단하다. 또한, Head 노드와 Tail 노드를 가지고 있으므로 둘 중 하나가 유일되더라도 리스트를 순회할 수 있기 때문에 손상에 강한 편이다.</p>
+
+<hr />
+
+<h2 id="2-코드-구현">2. 코드 구현</h2>
+
+<h3 id="2-1-define-structure">2-1. define structure</h3>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6">typedef</span> <span style="color:#ff79c6">struct</span> _node Node;    <span style="color:#6272a4">// 구조체 노드 형명재지정
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">struct</span> _node {                 <span style="color:#6272a4">// 데이터를 보관할 노드(자기참조 구조체)
+</span><span style="color:#6272a4"></span>    Node <span style="color:#ff79c6">*</span>prev;               <span style="color:#6272a4">// 앞 노드를 가리키는 멤버
+</span><span style="color:#6272a4"></span>    DataType data;            <span style="color:#6272a4">// 데이터 저장 멤버
+</span><span style="color:#6272a4"></span>    Node <span style="color:#ff79c6">*</span>next;               <span style="color:#6272a4">// 뒷 노드를 가리키는 멤버
+</span><span style="color:#6272a4"></span>};
+<span style="color:#ff79c6">typedef</span> <span style="color:#ff79c6">struct</span> _linkedList {   <span style="color:#6272a4">// 리스트 관리 구조체
+</span><span style="color:#6272a4"></span>    Node <span style="color:#ff79c6">*</span>head;               <span style="color:#6272a4">// 헤드포인터 (헤드노드 가리킴)
+</span><span style="color:#6272a4"></span>    Node <span style="color:#ff79c6">*</span>cur;                <span style="color:#6272a4">// 특정 작업 시 노드를 가리키기 위한 포인터
+</span><span style="color:#6272a4"></span>    Node <span style="color:#ff79c6">*</span>tail;               <span style="color:#6272a4">// 테일포인터 (테일노드 가리킴)
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">int</span> length;               <span style="color:#6272a4">// 실제 데이터노드의 갯수
+</span><span style="color:#6272a4"></span>} LinkedList;
+</code></pre></div>
+LinkedList 구조체는 리스트 관리 구조체로서,
+1) 순회를 하기 위한 Head, Tail 노드만을 가리키는 노드 포인터와
+2) 현재 노드 가리킴 및 여러 용도로 쓰이는 노드 포인터,
+3) 노드의 개수를 저장하는 int형 변수로 이루어져 있다.</p>
+
+<h3 id="2-2-init-linkedlist">2-2. Init LinkedList</h3>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">create</span>(LinkedList <span style="color:#ff79c6">*</span> lp) {
+    lp<span style="color:#ff79c6">-&gt;</span>head <span style="color:#ff79c6">=</span> (Node <span style="color:#ff79c6">*</span>)malloc(<span style="color:#ff79c6">sizeof</span>(Node)); <span style="color:#6272a4">//헤드 노드 생성
+</span><span style="color:#6272a4"></span>    assert(lp<span style="color:#ff79c6">-&gt;</span>head<span style="color:#ff79c6">!=</span><span style="color:#8be9fd;font-style:italic">NULL</span>);
+    lp<span style="color:#ff79c6">-&gt;</span>tail <span style="color:#ff79c6">=</span> (Node <span style="color:#ff79c6">*</span>)malloc(<span style="color:#ff79c6">sizeof</span>(Node)); <span style="color:#6272a4">//테일 노드 생성
+</span><span style="color:#6272a4"></span>    assert(lp<span style="color:#ff79c6">-&gt;</span>tail<span style="color:#ff79c6">!=</span><span style="color:#8be9fd;font-style:italic">NULL</span>);
+    <span style="color:#6272a4">/*head node와 tail node를 연결 함*/</span>
+    lp<span style="color:#ff79c6">-&gt;</span>head<span style="color:#ff79c6">-&gt;</span>prev<span style="color:#ff79c6">=</span>lp<span style="color:#ff79c6">-&gt;</span>head;
+    lp<span style="color:#ff79c6">-&gt;</span>head<span style="color:#ff79c6">-&gt;</span>next<span style="color:#ff79c6">=</span>lp<span style="color:#ff79c6">-&gt;</span>tail;
+    lp<span style="color:#ff79c6">-&gt;</span>tail<span style="color:#ff79c6">-&gt;</span>prev<span style="color:#ff79c6">=</span>lp<span style="color:#ff79c6">-&gt;</span>head;
+    lp<span style="color:#ff79c6">-&gt;</span>tail<span style="color:#ff79c6">-&gt;</span>next<span style="color:#ff79c6">=</span>lp<span style="color:#ff79c6">-&gt;</span>tail;
+    lp<span style="color:#ff79c6">-&gt;</span>cur<span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">NULL</span>; <span style="color:#6272a4">//cur가 NULL pointer로 초기화
+</span><span style="color:#6272a4"></span>    lp<span style="color:#ff79c6">-&gt;</span>length<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>; <span style="color:#6272a4">//데이터 노드의 개수를 0으로 초기화
+</span><span style="color:#6272a4"></span> 
+    <span style="color:#ff79c6">return</span> ;
+}
+</code></pre></div>
+헤드 노드, 테일노드를 할당 후, 헤드 노드와 테일 노드를 서로 연결해준다.</p>
+
+<h3 id="2-3-add-node">2-3. Add Node</h3>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">Node<span style="color:#ff79c6">*</span> <span style="color:#50fa7b">makeNode</span>(DataType<span style="color:#ff79c6">*</span> dataPtr, Node<span style="color:#ff79c6">*</span> prev, Node<span style="color:#ff79c6">*</span> next) {
+    Node<span style="color:#ff79c6">*</span> np;
+    np <span style="color:#ff79c6">=</span> (Node <span style="color:#ff79c6">*</span>)malloc(<span style="color:#ff79c6">sizeof</span>(Node)); <span style="color:#6272a4">//새로운 노드 생성
+</span><span style="color:#6272a4"></span>    assert(np<span style="color:#ff79c6">!=</span><span style="color:#8be9fd;font-style:italic">NULL</span>);
+    np<span style="color:#ff79c6">-&gt;</span>prev <span style="color:#ff79c6">=</span> prev;
+    np<span style="color:#ff79c6">-&gt;</span>next <span style="color:#ff79c6">=</span> next;
+    np<span style="color:#ff79c6">-&gt;</span>data <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">*</span>dataPtr;
+    <span style="color:#ff79c6">if</span>(prev <span style="color:#ff79c6">!=</span> <span style="color:#8be9fd;font-style:italic">NULL</span>) 
+        prev<span style="color:#ff79c6">-&gt;</span>next <span style="color:#ff79c6">=</span> np;
+    <span style="color:#ff79c6">if</span>(next <span style="color:#ff79c6">!=</span> <span style="color:#8be9fd;font-style:italic">NULL</span>)
+        next<span style="color:#ff79c6">-&gt;</span>prev <span style="color:#ff79c6">=</span> np;
+    <span style="color:#ff79c6">return</span> np;
+}
+<span style="color:#ff79c6">======================================================================================</span>
+Node<span style="color:#ff79c6">*</span> appendFromTail(LinkedList<span style="color:#ff79c6">*</span> lp, DataType<span style="color:#ff79c6">*</span> dataPtr) {
+    lp<span style="color:#ff79c6">-&gt;</span>cur <span style="color:#ff79c6">=</span> makeNode(dataPtr, lp<span style="color:#ff79c6">-&gt;</span>tail<span style="color:#ff79c6">-&gt;</span>prev, lp<span style="color:#ff79c6">-&gt;</span>tail);  <span style="color:#6272a4">//새로운 노드 생성
+</span><span style="color:#6272a4"></span>    assert(lp<span style="color:#ff79c6">-&gt;</span>cur<span style="color:#ff79c6">!=</span><span style="color:#8be9fd;font-style:italic">NULL</span>);
+    lp<span style="color:#ff79c6">-&gt;</span>length<span style="color:#ff79c6">++</span>; <span style="color:#6272a4">//데이터개수 1 증가
+</span><span style="color:#6272a4"></span> 
+    <span style="color:#ff79c6">return</span> lp<span style="color:#ff79c6">-&gt;</span>cur;
+}
+</code></pre></div>
+양방향 연결 리스트에서 노드를 삽입하는 방법은 두 가지가 있다, 첫 번째는 헤드 노드 앞으로 데이터를 삽입하는 법과 테일 노드 뒤쪽으로 데이터를 삽입하는 방식이다.<br />
+헤드 노드 앞으로 데이터를 삽입하는 방법은 데이터를 다 넣고 출력을 하게 되면 데이터의 순서가 들어온 순서랑 역순이 되므로 여기선, 테일 노드 뒤로 삽입하는 코드를 썼다.<br />
+우선, 첫째로 <strong>makeNode</strong> 함수를 이용하여 노드를 하나 할당 후, 데이터 개수를 1개 증가시켜준다. makeNode 함수는 malloc을 통해 메모리를 할당 후, 전달인자로 이전 노드, 다음 노드를 가져와 서로 선을 이어주는 함수이다.</p>
+
+<h3 id="2-4-delete-node">2-4. Delete Node</h3>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">deleteNode</span> (LinkedList<span style="color:#ff79c6">*</span> lp, Node<span style="color:#ff79c6">*</span> target) {
+    <span style="color:#ff79c6">if</span>(target<span style="color:#ff79c6">==</span><span style="color:#8be9fd;font-style:italic">NULL</span>)
+        <span style="color:#ff79c6">return</span>;
+    <span style="color:#6272a4">//삭제할 데이터의 앞,뒤 노드를 연결시킴
+</span><span style="color:#6272a4"></span>    target<span style="color:#ff79c6">-&gt;</span>prev<span style="color:#ff79c6">-&gt;</span>next<span style="color:#ff79c6">=</span>target<span style="color:#ff79c6">-&gt;</span>next;
+    target<span style="color:#ff79c6">-&gt;</span>next<span style="color:#ff79c6">-&gt;</span>prev<span style="color:#ff79c6">=</span>target<span style="color:#ff79c6">-&gt;</span>prev;
+    free(target);       <span style="color:#6272a4">// target노드 삭제
+</span><span style="color:#6272a4"></span>    lp<span style="color:#ff79c6">-&gt;</span>length<span style="color:#ff79c6">--</span>;       <span style="color:#6272a4">// 데이터 개수 1 감소
+</span><span style="color:#6272a4"></span>}
+<span style="color:#ff79c6">======================================================================================</span>
+<span style="color:#8be9fd">void</span> destroy (LinkedList<span style="color:#ff79c6">*</span> lp) {
+    <span style="color:#6272a4">// 데이터 노드가 있다면 해제
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">while</span>(lp<span style="color:#ff79c6">-&gt;</span>head<span style="color:#ff79c6">-&gt;</span>next <span style="color:#ff79c6">!=</span> lp<span style="color:#ff79c6">-&gt;</span>tail) {
+        deleteNode(lp,lp<span style="color:#ff79c6">-&gt;</span>head<span style="color:#ff79c6">-&gt;</span>next); <span style="color:#6272a4">// head 노드 바로 뒷 노드를 삭제
+</span><span style="color:#6272a4"></span>    }
+    free(lp<span style="color:#ff79c6">-&gt;</span>head); <span style="color:#6272a4">// head 노드 삭제
+</span><span style="color:#6272a4"></span>    free(lp<span style="color:#ff79c6">-&gt;</span>tail); <span style="color:#6272a4">// tail 노드 삭제
+</span><span style="color:#6272a4"></span>    lp<span style="color:#ff79c6">-&gt;</span>head <span style="color:#ff79c6">=</span> lp<span style="color:#ff79c6">-&gt;</span>cur <span style="color:#ff79c6">=</span> lp<span style="color:#ff79c6">-&gt;</span>tail <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">NULL</span>; <span style="color:#6272a4">//모든 포인터를 NULL로 초기화
+</span><span style="color:#6272a4"></span>    lp<span style="color:#ff79c6">-&gt;</span>length <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; <span style="color:#6272a4">//데이터개수 0으로 초기화
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">return</span> ;
+}
+</code></pre></div>
+노드를 삭제하는 함수, 모든 노드를 삭제하는 함수이다.<br />
+<strong>deleteNode</strong>함수는 전달인자로 삭제할 노드 (target)을 받아 target노드의 이전노드와 target노드의 다음노드를 서로 이어준 뒤, target노드를 free함수를 통해 메모리를 해제하는 방식으로 이루어져있다.<br />
+<strong>destory</strong>함수는 우선 헤드 노드와 테일 노드를 삭제 한 후, 나머지 데이터노드들을 순차적으로 메모리 해제해주는 방식이다.</p>
+
+<h3 id="2-5-arragne-node">2-5. Arragne Node</h3>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">sortList</span>(LinkedList <span style="color:#ff79c6">*</span>lp, <span style="color:#8be9fd">int</span> (<span style="color:#ff79c6">*</span>compare)(DataType <span style="color:#ff79c6">*</span>, DataType <span style="color:#ff79c6">*</span>)) {
+    Node <span style="color:#ff79c6">*</span>tp;
+    Node <span style="color:#ff79c6">*</span>target;
+    DataType temp;  <span style="color:#6272a4">// swap용 임시변수
+</span><span style="color:#6272a4"></span> 
+    lp<span style="color:#ff79c6">-&gt;</span>cur<span style="color:#ff79c6">=</span>lp<span style="color:#ff79c6">-&gt;</span>head<span style="color:#ff79c6">-&gt;</span>next;  <span style="color:#6272a4">// 첫 데이터 노드를 가리키게 하고
+</span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// 맨 뒷 노드까지 검색
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">while</span>(lp<span style="color:#ff79c6">-&gt;</span>cur<span style="color:#ff79c6">!=</span>lp<span style="color:#ff79c6">-&gt;</span>tail) {
+        target <span style="color:#ff79c6">=</span> lp<span style="color:#ff79c6">-&gt;</span>cur;
+        tp<span style="color:#ff79c6">=</span>lp<span style="color:#ff79c6">-&gt;</span>cur<span style="color:#ff79c6">-&gt;</span>next; <span style="color:#6272a4">// cur의 다음 노드를 가리키게 함
+</span><span style="color:#6272a4"></span>        <span style="color:#ff79c6">while</span>(tp<span style="color:#ff79c6">!=</span>lp<span style="color:#ff79c6">-&gt;</span>tail) {
+            <span style="color:#ff79c6">if</span>(compare(<span style="color:#ff79c6">&amp;</span>target<span style="color:#ff79c6">-&gt;</span>data, <span style="color:#ff79c6">&amp;</span>tp<span style="color:#ff79c6">-&gt;</span>data) <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span>) {
+                target <span style="color:#ff79c6">=</span> tp;
+            }
+            tp<span style="color:#ff79c6">=</span>tp<span style="color:#ff79c6">-&gt;</span>next;
+        }
+        temp <span style="color:#ff79c6">=</span> lp<span style="color:#ff79c6">-&gt;</span>cur<span style="color:#ff79c6">-&gt;</span>data;
+        lp<span style="color:#ff79c6">-&gt;</span>cur<span style="color:#ff79c6">-&gt;</span>data <span style="color:#ff79c6">=</span> target<span style="color:#ff79c6">-&gt;</span>data;
+        target<span style="color:#ff79c6">-&gt;</span>data <span style="color:#ff79c6">=</span> temp;
+        lp<span style="color:#ff79c6">-&gt;</span>cur<span style="color:#ff79c6">=</span>lp<span style="color:#ff79c6">-&gt;</span>cur<span style="color:#ff79c6">-&gt;</span>next;
+    }
+    <span style="color:#ff79c6">return</span>;
+}
+</code></pre></div>
+변수로는 임시 노드 포인터 tp와 정렬할때 바뀜이 되는 대상 임시 노드 포인터 target, 그리고 Data Swap을 위해 필요한 temp변수가 있다.<br />
+링크드리스트 관리 구조체의 cur포인터를 헤드노드 뒷 노드 즉, 첫번째 데이터노드를 가리키게 한 뒤, 반복문을 통해 데이터 끝까지 갈 수 있도록 해준다.<br />
+여기서, target노드는 현재 cur포인터로 지정해주고 임시 tp포인터는 cur포인터의 다음 노드를 가리키게 한다.<br />
+(ex) 45 - 25 - 11 - 5 - 23 의 구조로 이루어져있는 링크드 리스트일때 target을 45, tp를 25로 지정)<br />
+compare함수를 통해 비교하고 그것이 참이면 서로 swap해준다.</p>
 
 </span>
         </div></article>
@@ -242,14 +377,12 @@ typedef struct _linkedList{   // 리스트 관리 구조체
 	<header>
 		<span class="widget-header"><span class="fas fa-tags fa-xs" aria-hidden></span> <a href="https://ralpioxxcs.github.io/tags/">Tags</a></span>
 	</header>
-	<div class="grid-x grid-padding-x" id="sidebar-tags"><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/hugo/" title="hugo">
+	<div class="grid-x grid-padding-x" id="sidebar-tags"><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/data-structure/" title="data structure">
+                data structure
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/hugo/" title="hugo">
                 hugo
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/cmake/" title="cmake">
                 cmake
-			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/datastructure/" title="datastructure">
-                datastructure
-			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/data-structure/" title="data structure">
-                data structure
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/linux/" title="linux">
                 linux
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/opencv/" title="opencv">
