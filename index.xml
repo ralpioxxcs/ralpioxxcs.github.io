@@ -5,8 +5,20 @@
     <description>Recent content on My Dev Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Sep 2019 20:15:50 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 14 Sep 2019 13:54:02 +0900</lastBuildDate>
     <atom:link href="https://ralpioxxcs.github.io/" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LinkedList</title>
+      <link>https://ralpioxxcs.github.io/study/datastructure/linkedlist/</link>
+      <pubDate>Sat, 14 Sep 2019 13:54:02 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/study/datastructure/linkedlist/</guid>
+      <description> 개요 비슷한 방식으로 배열이 있지만 배열은 처음부터 메모리를 할당하고 시작하기 때문에, 링크드리스트에 비해 데이터의 삽입이나 삭제가 어렵다. 반면, 링크드리스트는 노드를 데이터를 삽입할 때마다 메모리를 할당하고 데이터를 이어주는 형식이라 배열에 비해 메모리 낭비가 덜 하다는 장점이 있다.
+코드 구현 typedef struct _node Node; // 구조체 노드 형명재지정 struct _node{ // 데이터를 보관할 노드(자기참조 구조체) Node *prev; // 앞 노드를 가리키는 멤버 DataType data; // 데이터 저장 멤버 Node *next; // 뒷 노드를 가리키는 멤버 }; typedef struct _linkedList{ // 리스트 관리 구조체 Node *head; // 헤드포인터 (헤드노드 가리킴) Node *cur; // 특정 작업 시 노드를 가리키기 위한 포인터 Node *tail; // 테일포인터 (테일노드 가리킴) int length; // 실제 데이터노드의 갯수 }LinkedList;  </description>
+    </item>
+    
     
     
     <item>
@@ -16,7 +28,18 @@
       
       <guid>https://ralpioxxcs.github.io/post/hugo_structure/</guid>
       <description>명령창에 $ hugo new site를 입력하면 아래의 구조를 가진 폴더가 하나 생성되는것을 보았을것이다. 각각의 폴더의 역할은 다음과 같다.
-. ├─ archetypes ├─ content ├─ data ├─ layouts ├─ static ├─ themes ├─ config.toml  archetypes $ hugo new 커맨드를 이용해 새로운 contents 파일을 만들때, 이 폴더내의 default.md 의 front matter 형태를 갖는 content를 자동으로 초기화 하여 만들어준다. 많은양의 content를 만들 때 유용하게 사용될수 있고, front matter field를 직접 수정하여 하나의 archtypes로 만들 수 있다.</description>
+( root ) ├─ archetypes ├─ content ├─ data ├─ layouts ├─ static ├─ themes ├─ config.toml  archetypes $ hugo new 커맨드를 이용해 새로운 contents 파일을 만들때, 이 폴더내의 default.md 의 front matter 형태를 갖는 content를 자동으로 초기화 하여 만들어준다. 많은양의 content를 만들 때 유용하게 사용될수 있고, front matter field를 직접 수정하여 하나의 archtypes로 만들 수 있다.</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Stack</title>
+      <link>https://ralpioxxcs.github.io/study/datastructure/stack/</link>
+      <pubDate>Fri, 13 Sep 2019 13:54:02 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/study/datastructure/stack/</guid>
+      <description> Overview </description>
     </item>
     
     
@@ -54,8 +77,6 @@ Step 1 : Hugo 설치 (Windows) 1.1 다운로드 Hugo를 설치하는 방법은 �
 Hugo download link
 1.2 환경 설정 C드라이브에 hugo폴더를 생성한 뒤 그 안에 bin폴더를 생성,압축파일에 있던 hugo.</description>
     </item>
-    
-    
     
     
     

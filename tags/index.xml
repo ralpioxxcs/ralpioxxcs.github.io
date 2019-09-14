@@ -6,10 +6,19 @@
     <description>Recent content in Tags on My Dev Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Sep 2019 20:15:50 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 14 Sep 2019 13:54:02 +0900</lastBuildDate>
     
 	<atom:link href="https://ralpioxxcs.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>datastructure</title>
+      <link>https://ralpioxxcs.github.io/tags/datastructure/</link>
+      <pubDate>Sat, 14 Sep 2019 13:54:02 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/tags/datastructure/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>hugo</title>

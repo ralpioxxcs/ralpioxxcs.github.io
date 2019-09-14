@@ -161,10 +161,35 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
             <a href="https://ralpioxxcs.github.io/study/datastructure/stack/">
                 <h2 itemprop="headline">Stack</h2>
             </a>
-            <div class="metadata"></div>
+            <div class="metadata"><div>
+                <span class="far fa-clock" aria-hidden></span>
+                <span class="sr-text">Published: </span>
+                <time datetime="" itemprop="datePublished">September 13, 2019</time>
+                </div></div>
         </header>
         <div class="post-list-summary" itemprop="description">
             <p> Overview 
+                    </p>
+        </div>
+    </div>
+</article>
+
+            
+        
+            
+                <article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><div>
+        <header class="post-list-title">
+            <a href="https://ralpioxxcs.github.io/study/datastructure/linkedlist/">
+                <h2 itemprop="headline">LinkedList</h2>
+            </a>
+            <div class="metadata"><div>
+                <span class="far fa-clock" aria-hidden></span>
+                <span class="sr-text">Published: </span>
+                <time datetime="" itemprop="datePublished">September 14, 2019</time>
+                </div></div>
+        </header>
+        <div class="post-list-summary" itemprop="description">
+            <p> 개요 비슷한 방식으로 배열이 있지만 배열은 처음부터 메모리를 할당하고 시작하기 때문에, 링크드리스트에 비해 데이터의 삽입이나 삭제가 어렵다. 반면, 링크드리스트는 노드를 데이터를 삽입할 때마다 메모리를 할당하고 데이터를 이어주는 형식이라 배열에 비해 메모리 낭비가 덜 하다는 장점이 있다. 코드 구현 typedef struct _node Node; // 구조체 노드 형명재지정 struct _node{ // 데이터를 보관할 노드(자기참조 구조체) Node *prev; // 앞 노드를 가리키는 멤버 DataType data; // 데이터 저장 멤버 Node *next; // 뒷 노드를 가리키는 멤버 }; typedef struct _linkedList{ // 리스트 관리 구조체 Node *head; // 헤드포인터 (헤드노드 가리킴) Node *cur; // 특정 작업 시 노드를 가리키기 위한 포인터 Node *tail; // 테일포인터 (테일노드 가리킴) int length; // 실제 데이터노드의 갯수 }LinkedList; 
                     </p>
         </div>
     </div>
@@ -230,6 +255,8 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
                 hugo
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/cmake/" title="cmake">
                 cmake
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/datastructure/" title="datastructure">
+                datastructure
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/data-structure/" title="data structure">
                 data structure
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/linux/" title="linux">
