@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Stack</title><meta name="description" itemprop="description" content="1. 개요 후입선출(後入先出, Last In First Out; LIFO) 의 자료구조로, 상자의 형태를 한 자료구조이다. 데이터의 삽입을 Push, 데이터의 출력을 Pop이라고 하며, 스택을 크게 두 가지로 나누면 Ascending Stack VS Descending Stack으로 나눌 수 있다. 스택은 배열과 링크드 리스트로 구현할 수 있는데, 여기서는 링크드리스트를 이용한 스택을 구현해 보겠다. 2. 코드 구현 2-1. define structure typedef struct _stacknode Snode;struct _stacknode {DataType data;Snode *next;};typedef struct _stack {Snode *head;Snode *tail;Snode *cur;}Stack;  스택관리구조체 Stack은 링크드리스트 구조체처럼 head와 tail을 고정적으로 가리키는 노드포인터와 현재 노드를 가리키는 cur 포인터로 이루어져있다." id="desc"><meta name="generator" content="Hugo 0.56.3" /><meta name="keywords" itemprop="keywords" content="Data Structure" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/study/datastructure/stack/">
+        <title>Stack</title><meta name="description" itemprop="description" content="후입선출(後入先出, Last In First Out; LIFO) 의 자료구조로, 상자의 형태를 한 자료구조이다. 데이터의 삽입을 Push, 데이터의 출력을 Pop이라고 하며, 스택을 크게 두 가지로 나누면 **Ascending Stack** VS **Descending Stack**으로 나눌 수 있다." id="desc"><meta name="generator" content="Hugo 0.56.3" /><meta name="keywords" itemprop="keywords" content="Data Structure" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/study/datastructure/stack/">
         
 
 <meta name="thumbnail" content="https://ralpioxxcs.github.io/images/moon.png" /><link rel="dns-prefetch" href="https://use.fontawesome.com/" />
@@ -255,11 +255,17 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
             <ul class="pagination grid-x grid-x-padding full">
                 
                 <li class="pagination-previous cell small-order-2 medium-5 medium-order-1">
-                    <a class="button" href="https://ralpioxxcs.github.io/study/datastructure/linkedlist/" rel="prev">
+                    <a class="button" href="https://ralpioxxcs.github.io/study/datastructure/circulaqueue/" rel="prev">
                         <span class="sr-text">Previous:</span>
-                        LinkedList</a>
+                        CirculaQueue</a>
                 </li>
                 
+                
+                <li class="pagination-next cell small-order-1 medium-5 medium-order-2 medium-offset-2">
+                    <a class="button" href="https://ralpioxxcs.github.io/study/datastructure/linkedlist/" rel="next">
+                        <span class="sr-text">Next:</span>LinkedList
+                    </a>
+                </li>
                 
             </ul>
         </nav>
