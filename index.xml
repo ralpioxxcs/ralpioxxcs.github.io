@@ -5,8 +5,19 @@
     <description>Recent content on My Dev Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Sep 2019 21:59:22 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 09 Oct 2019 22:40:55 +0900</lastBuildDate>
     <atom:link href="https://ralpioxxcs.github.io/" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bash Shell 색상 지정하기</title>
+      <link>https://ralpioxxcs.github.io/study/linux/shell_color/</link>
+      <pubDate>Wed, 09 Oct 2019 22:40:55 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/study/linux/shell_color/</guid>
+      <description>shell script에 색상을 사용하는 방법이 있다.</description>
+    </item>
+    
     
     
     <item>
@@ -68,17 +79,6 @@ Ascending Stack VS Descending Stack으로 나눌 수 있다.
       
       <guid>https://ralpioxxcs.github.io/post/hugo_frontmatter/</guid>
       <description>FrontMatter? FrontMatter is meta this is test aha</description>
-    </item>
-    
-    
-    
-    <item>
-      <title>Syntaxs</title>
-      <link>https://ralpioxxcs.github.io/study/cmake/syntaxs/</link>
-      <pubDate>Sat, 10 Aug 2019 14:00:13 +0900</pubDate>
-      
-      <guid>https://ralpioxxcs.github.io/study/cmake/syntaxs/</guid>
-      <description> cmake 문법 </description>
     </item>
     
     

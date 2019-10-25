@@ -14,11 +14,6 @@
   "body": " Software DeveloperProgramming Languages  C/C++ Shell Script Python (learning..)  Skills  Qt Git Cmake OpenCV  IDE  Visual Studio  Editor  VS Code Vim  Keyboard  Massdrop Alt (high profile) Leopold FC660M ABKO K945 v2  ",
   "url": "https://ralpioxxcs.github.io/about/"
 },{
-  "name": "Installation",
-  "description": " Step 1 : Install Step 2 : Pre-requisite ",
-  "body": " Step 1 : Install Step 2 : Pre-requisite ",
-  "url": "https://ralpioxxcs.github.io/study/cmake/installation/"
-},{
   "name": "OpenCV 설치하기 (Visual Studio 2015)",
   "description": " Step 1 : OpenCV 다운로드 OpenCV 공식 홈페이지 으로 이동해 Release 탭에서 원하는 버전을 받는다.Step 2 : 환경 설정 다운로드가 완료되었다면, 이제 OpenCV 라이브러리를 사용할 수 있도록 몇가지 작업이 필요하다. 우선 제어판 - 시스템 - 고급 시스템 설정으로 이동, 고급 탭에서 &amp;ldquo;환경변수&amp;rdquo; 를 클릭Step 3 : 테스트 ",
   "body": " Step 1 : OpenCV 다운로드 OpenCV 공식 홈페이지 으로 이동해 Release 탭에서 원하는 버전을 받는다.Step 2 : 환경 설정 다운로드가 완료되었다면, 이제 OpenCV 라이브러리를 사용할 수 있도록 몇가지 작업이 필요하다. 우선 제어판 - 시스템 - 고급 시스템 설정으로 이동, 고급 탭에서 &amp;ldquo;환경변수&amp;rdquo; 를 클릭Step 3 : 테스트 ",
@@ -44,9 +39,14 @@
   "body": " FrontMatter? FrontMatter is meta this is test aha",
   "url": "https://ralpioxxcs.github.io/post/hugo_frontmatter/"
 },{
-  "name": "Syntaxs",
-  "description": " cmake 문법 ",
-  "body": " cmake 문법 ",
-  "url": "https://ralpioxxcs.github.io/study/cmake/syntaxs/"
+  "name": "CMake 정리 Part1",
+  "description": " ",
+  "body": " CMake? cmake란 cross platform 기반의 프로젝트 전체 빌드 프로세스를 관리해주는 유용한 툴이다. 직접 빌드를 수행하지는 않지만 지정된 OS에 맞는 Make파일 혹은 솔루션(sln)파일의 생성을 도와주어 소스코드 빌드를 편리하게 해준다.Install $ sudo apt install cmake 의 명령어를 입력해 간단하게 설치할 수 있다.$ cmake --version 명령어를 입력해 cmake가 제대로 install 되었는지 확인한다.",
+  "url": "https://ralpioxxcs.github.io/post/cmake_1/"
+},{
+  "name": "Bash Shell 색상 지정하기",
+  "description": " ",
+  "body": "shell script에 색상을 사용하는 방법이 있다.",
+  "url": "https://ralpioxxcs.github.io/study/linux/shell_color/"
 }
 ]

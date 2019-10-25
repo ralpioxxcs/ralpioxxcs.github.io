@@ -6,10 +6,28 @@
     <description>Recent content in Tags on My Dev Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Sep 2019 21:59:22 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 09 Oct 2019 22:40:55 +0900</lastBuildDate>
     
 	<atom:link href="https://ralpioxxcs.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux</title>
+      <link>https://ralpioxxcs.github.io/tags/linux/</link>
+      <pubDate>Wed, 09 Oct 2019 22:40:55 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shell</title>
+      <link>https://ralpioxxcs.github.io/tags/shell/</link>
+      <pubDate>Wed, 09 Oct 2019 22:40:55 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Data Structure</title>
@@ -26,15 +44,6 @@
       <pubDate>Fri, 13 Sep 2019 20:15:50 +0900</pubDate>
       
       <guid>https://ralpioxxcs.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://ralpioxxcs.github.io/tags/linux/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ralpioxxcs.github.io/tags/linux/</guid>
       <description></description>
     </item>
     

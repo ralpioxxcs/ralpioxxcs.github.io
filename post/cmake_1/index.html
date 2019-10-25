@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>cmake</title><meta name="description" itemprop="description" content="this blog is for only" id="desc"><meta name="generator" content="Hugo 0.56.3" /><link rel="alternate" type="application/rss+xml" title="My Dev Blog Feed" href="https://ralpioxxcs.github.io/tags/cmake/index.xml"><link rel="canonical" href="https://ralpioxxcs.github.io/tags/cmake/">
+        <title>CMake 정리 Part1</title><meta name="description" itemprop="description" content=" " id="desc"><meta name="generator" content="Hugo 0.56.3" /><meta name="keywords" itemprop="keywords" content="cmake" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/cmake_1/">
         
 
 <meta name="thumbnail" content="https://ralpioxxcs.github.io/images/moon.png" /><link rel="dns-prefetch" href="https://use.fontawesome.com/" />
@@ -16,9 +16,14 @@
 <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/foundation.min.css" integrity="sha512-Rd0Ui3eNZsRTe4UNVA+6WeU5VwpGAqqd/+xTbWI/T/OmcYqnrNWfJC02AjPbt5TuDGA3l4SFJdTH91QPP3vAFg==">
   <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/dark.min.css" integrity="sha512-gQpDgduBgmlAz6RR6+MVgbcrPEu+langkA9ngZtIrAjV8Hwcno+rUvaRjfUrzceGtO+gpoCAm4fLeMuAd/5v7Q=="><link rel="stylesheet" href="/styles.css" >
     <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/reset.min.css" integrity="sha512-xwmF/g6mhf+NqX9hnHhGV+cKVithh9ncEOreDW6jZXIqMiqsX5sxvVZXYuzz+8jLI7+wPFr/2/sg2x8Pp0a1VA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/fonts.min.css" integrity="sha512-xROhFE8XAZAs3OvW3/LUg6jCH7LgsxPMimBO/cpzYV7EgJgY5hbDX9rHqaOG5VrAv52NMXFuHiQ4xqnSgFvmqQ=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/classes.min.css" integrity="sha512-VtHTX2MGmhT+/gSeNEwz2TD+OEFpz9G9AUjHc9mAjEgneeX2RiJphzfxqHrU+7afnuHkTkwMtY4hP5XAJCZ8eA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/pagination.min.css" integrity="sha512-exBmcmBqVqp5QRaF99l0MQPpD6X4/7RMJa9KY4pv/SP9R31qyqwuAIcPXZPm5jn7EMDVdviT45APg0RBfBA3Ow=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/page.min.css" integrity="sha512-Eqq5awgR8Hau+25mfXATwps47CVesfD4jrw/QozL3eib52HmmlFnvxsERXuGCVQH1S1FSaQD/oycWN/WyGE5Aw=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/widgets.min.css" integrity="sha512-KkbwfnV4akqRv+GVWIAa0UazaiDzkMev+Iq6AkHnzvOhQnb9tJnZwHySGGBjfwH3LOmMuaXl7an5uR36EuftaQ==">
-    <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/list.min.css" integrity="sha512-3ZCnmHG9wdnrM61q1Uk5UIdZNFp0JuyCDmgJuDGELiWJbORHppj9xUg4kCfAEP5swWJKMOmkCfvGpxtvSBfudQ==">
+    <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/single.min.css" integrity="sha512-Q1Zy+J4r0j/8Mjf7DVoh6X/Q1gWZqmvMf5IX7vxV7k97/NLY5novAjHRMReD9WWrDOq54t3sHsR7i8HwXlumlg==">
 
 
+
+    
+    
+    
+    
 <link rel="preload" media="print" type="text/css" href="https://ralpioxxcs.github.io/css/print.min.2e0961e511885e38a09cc9a9ff3de5ce7d7d2186bb9ed98a61f176688d4ef61a.css" integrity="sha256-Lglh5RGIXjignMmp/z3lzn19IYa7ntmKYfF2aI1O9ho=" as="style"><link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/" />
 <link rel="preconnect" href="https://cdnjs.cloudflare.com/" />
 
@@ -116,25 +121,54 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
                         
                         
                         
-<main id="post-list" class="cell medium-8"><header id="page-header">
-			<h1 id="page-title">Tag: cmake</h1>
-		</header>
-<article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><div>
-        <header class="post-list-title">
-            <a href="https://ralpioxxcs.github.io/post/cmake_1/">
-                <h2 itemprop="headline">CMake 정리 Part1</h2>
-            </a>
-            <div class="metadata"></div>
+<main class="cell medium-8" >
+    <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
+        <header id="page-header">
+            <h1 itemprop="headline">CMake 정리 Part1</h1>
         </header>
-        <div class="post-list-summary" itemprop="description">
-            <p> 
-                    <a href="https://ralpioxxcs.github.io/post/cmake_1/">
-                        [Read more<span class="sr-text"> from CMake 정리 Part1</span>...]
-                    </a></p>
-        </div>
-    </div>
-</article>
+        
+        <div id="post-content"><nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#cmake">CMake?</a>
+<ul>
+<li><a href="#install">Install</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav><span itemprop="articleBody">
+
+<h2 id="cmake">CMake?</h2>
+
+<p>cmake란 cross platform 기반의 프로젝트 전체 빌드 프로세스를 관리해주는 유용한 툴이다. 직접 빌드를 수행하지는 않지만 지정된 OS에 맞는 <strong>Make</strong>파일 혹은 <strong>솔루션(sln)</strong>파일의 생성을 도와주어 소스코드 빌드를 편리하게 해준다.</p>
+
+<h3 id="install">Install</h3>
+
+<p><code>$ sudo apt install cmake</code> 의 명령어를 입력해 간단하게 설치할 수 있다.<br />
+<code>$ cmake --version</code> 명령어를 입력해 cmake가 제대로 install 되었는지 확인한다.</p>
+
+<hr />
+
+</span>
+        </div></article>
+
+    <nav id="post-nav" aria-label="Pagination">
+            <ul class="pagination grid-x grid-x-padding full">
+                
+                
+                <li class="pagination-next cell small-order-1 medium-5 medium-order-2 medium-offset-7">
+                    <a class="button" href="https://ralpioxxcs.github.io/post/hugo_frontmatter/" rel="next">
+                        <span class="sr-text">Next:</span>Getting Started Hugo [3] - Front Matter
+                    </a>
+                </li>
+                
+            </ul>
+        </nav>
+
+    
 </main>
+
                         <aside class="cell small-12 small-order-2 medium-4" itemscope itemtype="http://schema.org/WPSideBar"><div class="widget">
 	<header>
 		<span class="widget-header">
@@ -173,7 +207,7 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 	</header>
 	
 			<a class="widget-header-small button" href="https://ralpioxxcs.github.io/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to the Site</a>
-		<a class="widget-header-small button" href="https://ralpioxxcs.github.io/tags/cmake/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to Cmake</a><ul><li><a href="https://ralpioxxcs.github.io/post/hugo_manual/">Getting Started Hugo [1] - Github 블로그 생성</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_structure/">Getting Started Hugo [2] - 디렉터리 구조</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_frontmatter/">Getting Started Hugo [3] - Front Matter</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_1/">CMake 정리 Part1</a></li></ul>
+		<a class="widget-header-small button" href="https://ralpioxxcs.github.io/post/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to Posts</a><ul><li><a href="https://ralpioxxcs.github.io/post/hugo_manual/">Getting Started Hugo [1] - Github 블로그 생성</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_structure/">Getting Started Hugo [2] - 디렉터리 구조</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_frontmatter/">Getting Started Hugo [3] - Front Matter</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_1/">CMake 정리 Part1</a></li></ul>
 </div>
 <div class="widget">
 	<header>

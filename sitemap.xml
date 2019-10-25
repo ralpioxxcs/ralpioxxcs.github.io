@@ -8,21 +8,12 @@
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/study/cmake/</loc>
-    <lastmod>2019-08-10T14:00:13+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ralpioxxcs.github.io/post/hugo_manual/</loc>
     <lastmod>2019-08-10T13:36:24+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://ralpioxxcs.github.io/about/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ralpioxxcs.github.io/study/cmake/installation/</loc>
   </url>
   
   <url>
@@ -68,23 +59,45 @@
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/study/linux-basic/</loc>
+    <loc>https://ralpioxxcs.github.io/study/linux/</loc>
+    <lastmod>2019-10-09T22:40:55+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/tags/data-structure/</loc>
-    <lastmod>2019-09-18T21:59:22+09:00</lastmod>
+    <loc>https://ralpioxxcs.github.io/post/cmake_1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/study/linux/shell_color/</loc>
+    <lastmod>2019-10-09T22:40:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/tags/linux/</loc>
+    <lastmod>2019-10-09T22:40:55+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ralpioxxcs.github.io/</loc>
-    <lastmod>2019-09-18T21:59:22+09:00</lastmod>
+    <lastmod>2019-10-09T22:40:55+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/tags/shell/</loc>
+    <lastmod>2019-10-09T22:40:55+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ralpioxxcs.github.io/tags/</loc>
+    <lastmod>2019-10-09T22:40:55+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/tags/data-structure/</loc>
     <lastmod>2019-09-18T21:59:22+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -96,17 +109,7 @@
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/study/cmake/syntaxs/</loc>
-    <lastmod>2019-08-10T14:00:13+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ralpioxxcs.github.io/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ralpioxxcs.github.io/tags/linux/</loc>
     <priority>0</priority>
   </url>
   
@@ -122,11 +125,6 @@
   
   <url>
     <loc>https://ralpioxxcs.github.io/tags/cmake/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ralpioxxcs.github.io/categories/cmake/</loc>
     <priority>0</priority>
   </url>
   
