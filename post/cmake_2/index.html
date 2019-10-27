@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Study</title><meta name="description" itemprop="description" content=" Here you can find what you want to read. " id="desc"><meta name="generator" content="Hugo 0.56.3" /><link rel="alternate" type="application/rss+xml" title="My Dev Blog Feed" href="https://ralpioxxcs.github.io/study/index.xml"><link rel="canonical" href="https://ralpioxxcs.github.io/study/">
+        <title>CMake 정리 Part2</title><meta name="description" itemprop="description" content=" " id="desc"><meta name="generator" content="Hugo 0.56.3" /><meta name="keywords" itemprop="keywords" content="cmake" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/cmake_2/">
         
 
 <meta name="thumbnail" content="https://ralpioxxcs.github.io/images/moon.png" /><link rel="dns-prefetch" href="https://use.fontawesome.com/" />
@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/foundation.min.css" integrity="sha512-Rd0Ui3eNZsRTe4UNVA+6WeU5VwpGAqqd/+xTbWI/T/OmcYqnrNWfJC02AjPbt5TuDGA3l4SFJdTH91QPP3vAFg==">
   <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/dark.min.css" integrity="sha512-gQpDgduBgmlAz6RR6+MVgbcrPEu+langkA9ngZtIrAjV8Hwcno+rUvaRjfUrzceGtO+gpoCAm4fLeMuAd/5v7Q=="><link rel="stylesheet" href="/styles.css" >
     <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/reset.min.css" integrity="sha512-xwmF/g6mhf+NqX9hnHhGV+cKVithh9ncEOreDW6jZXIqMiqsX5sxvVZXYuzz+8jLI7+wPFr/2/sg2x8Pp0a1VA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/fonts.min.css" integrity="sha512-xROhFE8XAZAs3OvW3/LUg6jCH7LgsxPMimBO/cpzYV7EgJgY5hbDX9rHqaOG5VrAv52NMXFuHiQ4xqnSgFvmqQ=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/classes.min.css" integrity="sha512-VtHTX2MGmhT+/gSeNEwz2TD+OEFpz9G9AUjHc9mAjEgneeX2RiJphzfxqHrU+7afnuHkTkwMtY4hP5XAJCZ8eA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/pagination.min.css" integrity="sha512-exBmcmBqVqp5QRaF99l0MQPpD6X4/7RMJa9KY4pv/SP9R31qyqwuAIcPXZPm5jn7EMDVdviT45APg0RBfBA3Ow=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/page.min.css" integrity="sha512-Eqq5awgR8Hau+25mfXATwps47CVesfD4jrw/QozL3eib52HmmlFnvxsERXuGCVQH1S1FSaQD/oycWN/WyGE5Aw=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/widgets.min.css" integrity="sha512-KkbwfnV4akqRv+GVWIAa0UazaiDzkMev+Iq6AkHnzvOhQnb9tJnZwHySGGBjfwH3LOmMuaXl7an5uR36EuftaQ==">
-    <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/list.min.css" integrity="sha512-3ZCnmHG9wdnrM61q1Uk5UIdZNFp0JuyCDmgJuDGELiWJbORHppj9xUg4kCfAEP5swWJKMOmkCfvGpxtvSBfudQ==">
+    <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/single.min.css" integrity="sha512-Q1Zy+J4r0j/8Mjf7DVoh6X/Q1gWZqmvMf5IX7vxV7k97/NLY5novAjHRMReD9WWrDOq54t3sHsR7i8HwXlumlg==">
 
 
 
@@ -54,7 +54,7 @@
         <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/post/" >
             POSTS
         </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <a class="main-nav button active" tabindex="0" href="https://ralpioxxcs.github.io/study/" >
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/" >
             STUDY
         </a><ul class="vertical menu">
                 <li itemscope itemtype="http://schema.org/SiteNavigationElement">
@@ -93,7 +93,7 @@
         <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/post/" >
             POSTS
         </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <a class="main-nav button active" tabindex="0" href="https://ralpioxxcs.github.io/study/" >
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/" >
             STUDY
         </a><ul class="vertical menu">
                 <li itemscope itemtype="http://schema.org/SiteNavigationElement">
@@ -121,94 +121,244 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
                         
                         
                         
-<main id="post-list" class="cell medium-8">
-    
+<main class="cell medium-8" >
+    <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
         <header id="page-header">
-            <h1 id="page-title">Study</h1>
+            <h1 itemprop="headline">CMake 정리 Part2</h1><p id="post-metadata" class="grid-x grid-padding-x"><span class="cell shrink">
+                        <span class="far fa-clock fa-sm fa-fw" aria-hidden></span>
+                        <strong>Published:</strong>
+                        <time datetime="2019-10-27" content="2019-10-27" itemprop="datePublished">October 27, 2019</time>
+                    </span><span class="cell shrink">
+                        <span class="fas fa-book fa-sm fa-fw" aria-hidden></span>
+                        <strong>Estimated Reading Time:</strong>
+                        ~<span itemprop="timeRequired">2 minutes</span>
+                    </span><span class="cell shrink">
+                        <span class="fas fa-tag fa-sm fa-fw" aria-hidden></span>
+                            
+                            
+                            <a itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL" href="https://ralpioxxcs.github.io/tags/cmake" rel="tag" itemprop="url">cmake</a>
+                        </span></p>
+            
         </header>
-    
-    
-    
-
-<h5 id="here-you-can-find-what-you-want-to-read">Here you can find what you want to read.</h5>
-
-
-    
-        <hr/>
-    
-
-    
         
-        
-            
-            
-                <article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><div>
-        <header class="post-list-title">
-            <a href="https://ralpioxxcs.github.io/study/datastructure/">
-                <h2 itemprop="headline">Study: Data Structure</h2>
-            </a>
-            <div class="metadata"><div>
-                <span class="far fa-clock" aria-hidden></span>
-                <span class="sr-text">Published: </span>
-                <time datetime="" itemprop="datePublished">September 18, 2019</time>
-                </div></div>
-        </header>
-        <div class="post-list-summary" itemprop="description">
-            <p>Data structure study section
-                    </p>
-        </div>
-    </div>
-</article>
+        <div id="post-content"><nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#cmake-commands">Cmake commands</a>
+<ul>
+<li><a href="#0-example">0. example</a></li>
+<li><a href="#1-cmake-minimum-required">1. cmake_minimum_required</a></li>
+<li><a href="#2-project">2. project</a></li>
+<li><a href="#3-set">3. set</a></li>
+<li><a href="#4-include">4. include</a></li>
+<li><a href="#5-include-directories">5. include_directories</a></li>
+<li><a href="#5-add-subdirectory">5. add_subdirectory</a></li>
+<li><a href="#6-add-executable">6. add_executable</a></li>
+<li><a href="#7-target-link-libraries">7. target_link_libraries</a></li>
+<li><a href="#8-file">8. file</a></li>
+<li><a href="#9-install">9. install</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav><span itemprop="articleBody">
 
-            
-                <article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><div>
-        <header class="post-list-title">
-            <a href="https://ralpioxxcs.github.io/study/opencv/">
-                <h2 itemprop="headline">Study: OpenCV</h2>
-            </a>
-            <div class="metadata"></div>
-        </header>
-        <div class="post-list-summary" itemprop="description">
-            <p>이 섹션은 OpenCV를 설치하고, OpenCV 함수들을 사용하는 방법에 대해서 다룹니다.
-                    </p>
-        </div>
-    </div>
-</article>
+<h2 id="cmake-commands">Cmake commands</h2>
 
-            
-                <article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><div>
-        <header class="post-list-title">
-            <a href="https://ralpioxxcs.github.io/study/linux/">
-                <h2 itemprop="headline">Study: Linux</h2>
-            </a>
-            <div class="metadata"><div>
-                <span class="far fa-clock" aria-hidden></span>
-                <span class="sr-text">Published: </span>
-                <time datetime="" itemprop="datePublished">October 09, 2019</time>
-                </div></div>
-        </header>
-        <div class="post-list-summary" itemprop="description">
-            <p>
-                    </p>
-        </div>
-    </div>
-</article>
+<h3 id="0-example">0. example</h3>
 
-            
-        
+<p>어떤 프로젝트를 cmake를 이용하여 관리 및 빌드하고자 할때, <u>CMakeLists.txt</u>를 작성 시 자주 사용되는 cmake 기본 명령어들이 있다.</p>
 
-        
-        
-        
+<pre><code>(Root)
+|- CMakeLists.txt
+|- README.md
+|- [src]
+|    |- CMakeListst.txt
+|    |- foo.cpp
+|    |- poo.cpp
+|    |- main.cpp
+|- [include]
+|    |- foo.h
+|    |- poo.h
+|- [cmake]
+|    |- options.cmake
+</code></pre>
 
-        
+<p>이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6"># [/CMakeListst.txt]
+</span><span style="color:#ff79c6"></span>cmake_minimum_required( VERSION <span style="color:#bd93f9">3.3</span> )
+project( foo CXX )
 
-        
+<span style="color:#ff79c6"># cmake files
+</span><span style="color:#ff79c6"></span>list( APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}<span style="color:#ff79c6">/</span>cmake )
+include( options )
 
-        
-        
+<span style="color:#ff79c6"># build configure
+</span><span style="color:#ff79c6"></span>set( CMAKE_BUILD_TYPE Debug )
+set( CMAKE_VERBOSE_MAKEFILE <span style="color:#8be9fd;font-style:italic">true</span> )
 
-        
+<span style="color:#ff79c6"># include files
+</span><span style="color:#ff79c6"></span>include_directories( ${CMAKE_CURRENT_LIST_DIR}<span style="color:#ff79c6">/</span>include)
+add_subdirectory( src )
+</code></pre></div></p>
+
+<p>src폴더 내, CMakeLists.txt파일은
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6"># [src/CMakeListst.txt]
+</span><span style="color:#ff79c6"></span>
+<span style="color:#ff79c6"># src files..
+</span><span style="color:#ff79c6"></span>set ( SRC_PATH
+    ${CMAKE_CURRENT_LIST_DIR}<span style="color:#ff79c6">/</span>main.cpp
+    ${CMAKE_CURRENT_LIST_DIR}<span style="color:#ff79c6">/</span>foo.cpp
+    ${CMAKE_CURRENT_LIST_DIR}<span style="color:#ff79c6">/</span>poo.cpp
+    )
+set ( OUTPUT_EFL test.out )
+
+<span style="color:#ff79c6"># generate executable file
+</span><span style="color:#ff79c6"></span>add_executable( ${OUTPUT_ELF} ${SRC_PATH} )
+taget_link_libraries( ${OUTPUT_ELF} libs )
+file( MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}<span style="color:#ff79c6">/</span>install )
+install( TARGETS ${OUTPUT_ELF} DESTINATION ${CMAKE_SOURCE_DIR}<span style="color:#ff79c6">/</span>install )
+</code></pre></div></p>
+
+<hr />
+
+<h3 id="1-cmake-minimum-required">1. cmake_minimum_required</h3>
+
+<p><strong>[용법]</strong></p>
+
+<pre><code>cmake_minimum_required(VERSION major.minor[.patch[.tweak]][FATAL_ERROR])
+</code></pre>
+
+<p>만약 어떤 오픈소스 라이브러리가 cmake 3.0 버전 이상으로 작성 되었고, 현재 나의 빌드환경은 cmake 2.8버전 미만이라면 아래 커맨드에 의해 에러가 출력된다.
+<code>CMake 3.0 or higher is required. You are running version 2.8.12.2</code>
+이 커맨드는 반드시 CMakeListst.txt 작성시 맨 처음에 선언해놓아야 정상적인 버전 호환 에러를 출력할 수 있다.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6"># Bad example
+</span><span style="color:#ff79c6"></span>project(foo)
+cmake_minimum_required(VERSION <span style="color:#bd93f9">3.0</span>)
+message(<span style="color:#f1fa8c">&#34;Using CMake version ${CMAKE_VERSION}&#34;</span>)
+</code></pre></div>
+
+<h3 id="2-project">2. project</h3>
+
+<p><strong>[용법]</strong></p>
+
+<pre><code>project(&lt;PROJECT-NAME&gt; [LANGUAGES] [&lt;language-name&gt;...])
+project(&lt;PROJECT-NAME&gt;
+        [VERSION &lt;major&gt;[.&lt;minor&gt;[.&lt;patch&gt;[.&lt;tweak&gt;]]]]
+        [LANGUAGES &lt;language-name&gt;...])
+</code></pre>
+
+<p>이름 및 버전, 언어등 전체 프로젝트에 대한 정의를 한다.<br />
+<code>project( foo C CXX VERSION 1.0 )</code><br />
+와 같이 1.0 버전의 c/c++로 작성된 <strong>foo</strong>라는 프로젝트를 명시할 수 있다. Visual Studio로 예를 들자면 솔루션 탐색기의 최상단에 위치하는 프로젝트의 이름이 된다.</p>
+
+<h3 id="3-set">3. set</h3>
+
+<p><strong>[용법]</strong></p>
+
+<pre><code># Normal Variable
+set(&lt;variable&gt; &lt;value&gt;... [PARENT_SCOPE])
+# Cache Entry
+set(&lt;variable&gt; &lt;value&gt;... CACHE &lt;type&gt; &lt;docstring&gt; [FORCE])
+</code></pre>
+
+<p>각종 변수를 정의하는데 사용되는 명령어이다.<br />
+<code>set( var1 10 )</code>일때 var1은 10의 값을 가지고 현재 디렉토리내에서만 유효하다. 하지만 만약 마지막에 <code>PARENT_SCOPE</code> 옵션을 사용한다면 var1의 scope는 부모 디렉터리까지 유효하게 된다. 또한, <strong>ENV</strong>옵션을 사용해 아래처럼 환경변수를 정의할 수도 있다.
+<code>set(ENV{LOG_LEVEL} TRACE)</code></p>
+
+<h3 id="4-include">4. include</h3>
+
+<p><strong>[용법]</strong></p>
+
+<pre><code># Normal Variable
+set(&lt;variable&gt; &lt;value&gt;... [PARENT_SCOPE])
+# Cache Entry
+set(&lt;variable&gt; &lt;value&gt;... CACHE &lt;type&gt; &lt;docstring&gt; [FORCE])
+</code></pre>
+
+<p>.cmake 로 작성된 파일들을 사용할수 있도록 프로젝트에 포함시킨다. <code>CMAKE_MODULE_PATH</code>라는 예약변수에 의해 경로가 설정되며, 해당 경로를 통해 .cmake 파일을 탐색한다.</p>
+
+<h3 id="5-include-directories">5. include_directories</h3>
+
+<p><strong>[용법]</strong></p>
+
+<pre><code>include_directories([AFTER|BEFORE] [SYSTEM] dir1 [dir2 ...])
+</code></pre>
+
+<p>말 그대로</p>
+
+<h3 id="5-add-subdirectory">5. add_subdirectory</h3>
+
+<p><strong>[용법]</strong></p>
+
+<pre><code>add_subdirectory(source_dir [binary_dir]
+                 [EXCLUDE_FROM_ALL])
+
+</code></pre>
+
+<h3 id="6-add-executable">6. add_executable</h3>
+
+<p><strong>[용법]</strong></p>
+
+<pre><code>add_executable(&lt;name&gt; [WIN32] [MACOSX_BUNDLE]
+               [EXCLUDE_FROM_ALL]
+               source1 [source2 ...])
+</code></pre>
+
+<h3 id="7-target-link-libraries">7. target_link_libraries</h3>
+
+<p><strong>[용법]</strong></p>
+
+<pre><code>target_link_libraries(&lt;target&gt; ... &lt;item&gt;... ...)
+# depend
+target_link_libraries(&lt;target&gt;
+                      &lt;PRIVATE|PUBLIC|INTERFACE&gt; &lt;item&gt;...
+                     [&lt;PRIVATE|PUBLIC|INTERFACE&gt; &lt;item&gt;...]...)
+</code></pre>
+
+<h3 id="8-file">8. file</h3>
+
+<p><strong>[용법]</strong></p>
+
+<pre><code>file(WRITE &lt;filename&gt; &lt;content&gt;...)
+file(APPEND &lt;filename&gt; &lt;content&gt;...)
+</code></pre>
+
+<h3 id="9-install">9. install</h3>
+
+<p><strong>[용법]</strong></p>
+
+<pre><code>install(TARGETS targets... [EXPORT &lt;export-name&gt;]
+        [[ARCHIVE|LIBRARY|RUNTIME|FRAMEWORK|BUNDLE|
+          PRIVATE_HEADER|PUBLIC_HEADER|RESOURCE]
+         [DESTINATION &lt;dir&gt;]
+         [PERMISSIONS permissions...]
+         [CONFIGURATIONS [Debug|Release|...]]
+         [COMPONENT &lt;component&gt;]
+         [OPTIONAL] [EXCLUDE_FROM_ALL]
+         [NAMELINK_ONLY|NAMELINK_SKIP]
+        ] [...]
+        [INCLUDES DESTINATION [&lt;dir&gt; ...]]
+        )
+</code></pre>
+
+</span>
+        </div></article>
+
+    <nav id="post-nav" aria-label="Pagination">
+            <ul class="pagination grid-x grid-x-padding full">
+                
+                
+                <li class="pagination-next cell small-order-1 medium-5 medium-order-2 medium-offset-7">
+                    <a class="button" href="https://ralpioxxcs.github.io/post/cmake_1/" rel="next">
+                        <span class="sr-text">Next:</span>CMake 정리 Part1
+                    </a>
+                </li>
+                
+            </ul>
+        </nav>
+
     
 </main>
 
@@ -250,7 +400,7 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 	</header>
 	
 			<a class="widget-header-small button" href="https://ralpioxxcs.github.io/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to the Site</a>
-		<a class="widget-header-small button" href="https://ralpioxxcs.github.io/study/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to Study</a><ul><li><a href="https://ralpioxxcs.github.io/post/hugo_manual/">Getting Started Hugo [1] - Github 블로그 생성</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_structure/">Getting Started Hugo [2] - 디렉터리 구조</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_frontmatter/">Getting Started Hugo [3] - Front Matter</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_1/">CMake 정리 Part1</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_2/">CMake 정리 Part2</a></li></ul>
+		<a class="widget-header-small button" href="https://ralpioxxcs.github.io/post/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to Posts</a><ul><li><a href="https://ralpioxxcs.github.io/post/hugo_manual/">Getting Started Hugo [1] - Github 블로그 생성</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_structure/">Getting Started Hugo [2] - 디렉터리 구조</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_frontmatter/">Getting Started Hugo [3] - Front Matter</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_1/">CMake 정리 Part1</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_2/">CMake 정리 Part2</a></li></ul>
 </div>
 <div class="widget">
 	<header>

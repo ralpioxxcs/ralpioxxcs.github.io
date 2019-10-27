@@ -133,7 +133,14 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 <ul>
 <li><a href="#cmake">CMake?</a>
 <ul>
+<li><a href="#cmake의-장점">Cmake의 장점</a></li>
 <li><a href="#install">Install</a></li>
+<li><a href="#example">Example</a>
+<ul>
+<li><a href="#1-configure">1. Configure</a></li>
+<li><a href="#2-generate">2. Generate</a></li>
+</ul></li>
+<li><a href="#3-build">3. Build</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -143,6 +150,15 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 
 <p>cmake란 cross platform 기반의 프로젝트 전체 빌드 프로세스를 관리해주는 유용한 툴이다. 직접 빌드를 수행하지는 않지만 지정된 OS에 맞는 <strong>Make</strong>파일 혹은 <strong>솔루션(sln)</strong>파일의 생성을 도와주어 소스코드 빌드를 편리하게 해준다.</p>
 
+<h3 id="cmake의-장점">Cmake의 장점</h3>
+
+<pre><code>(root)
+|- foo.cpp
+|- CMakeLists.txt
+</code></pre>
+
+<p><strong>foo.cpp</strong> 라는 소스코드가 하나 있다고 가정하자. 이 소스코드를 각각의 다른 OS에서 빌드할 때, 윈도우즈라면 Visual Studio를, OSX라면 Xcode, Linux라면 Makefile을 이용할것이다. Cmake는 이런 귀찮은 과정을 <strong>CMakeLists.txt</strong>라는 프로젝트를 정의하는 파일을 하나 만듦으로써, 각 OS에 맞는 Build tool을 파악해 build command만 입력하면 될수 있도록 해준다.</p>
+
 <h3 id="install">Install</h3>
 
 <p><code>$ sudo apt install cmake</code> 의 명령어를 입력해 간단하게 설치할 수 있다.<br />
@@ -150,14 +166,47 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 
 <hr />
 
+<h3 id="example">Example</h3>
+
+<h4 id="1-configure">1. Configure</h4>
+
+<p><strong>main.cpp</strong> 라는 파일이 있다고 하면, 같은 폴더 내 <strong>&lsquo;CMakeLists.txt&rsquo;</strong> 라는 파일을 새로 생성 후 아래와 같이 작성한다.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6"># CMakeListst.txt
+</span><span style="color:#ff79c6"></span>
+cmake minimum required( VERSION <span style="color:#bd93f9">3.3</span> )
+project ( test )
+
+add_executable( test main.cpp )
+</code></pre></div></p>
+
+<h4 id="2-generate">2. Generate</h4>
+
+<p>이제 작성된 CMakeLists.txt를 기반으로 CMake가 native build tool을 생성할 것이다.<br />
+커맨드창에 <code>$ cmake .</code>를 입력하면 마지막 줄에 아래처럼 나오며 <strong>Makefile</strong>이 생성된다.</p>
+
+<pre><code>-- Configure done
+-- Generating done
+-- Build files have been written to: ...
+</code></pre>
+
+<h3 id="3-build">3. Build</h3>
+
+<p><code>$ make</code> 커맨드를 입력하면 작성된 Makefile에 의하여 <strong>foo.cpp -&gt; foo.cpp.o -&gt; foo</strong> 의 과정을 통해 executable 파일이 생성된다.</p>
+
 </span>
         </div></article>
 
     <nav id="post-nav" aria-label="Pagination">
             <ul class="pagination grid-x grid-x-padding full">
                 
+                <li class="pagination-previous cell small-order-2 medium-5 medium-order-1">
+                    <a class="button" href="https://ralpioxxcs.github.io/post/cmake_2/" rel="prev">
+                        <span class="sr-text">Previous:</span>
+                        CMake 정리 Part2</a>
+                </li>
                 
-                <li class="pagination-next cell small-order-1 medium-5 medium-order-2 medium-offset-7">
+                
+                <li class="pagination-next cell small-order-1 medium-5 medium-order-2 medium-offset-2">
                     <a class="button" href="https://ralpioxxcs.github.io/post/hugo_frontmatter/" rel="next">
                         <span class="sr-text">Next:</span>Getting Started Hugo [3] - Front Matter
                     </a>
@@ -207,7 +256,7 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 	</header>
 	
 			<a class="widget-header-small button" href="https://ralpioxxcs.github.io/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to the Site</a>
-		<a class="widget-header-small button" href="https://ralpioxxcs.github.io/post/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to Posts</a><ul><li><a href="https://ralpioxxcs.github.io/post/hugo_manual/">Getting Started Hugo [1] - Github 블로그 생성</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_structure/">Getting Started Hugo [2] - 디렉터리 구조</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_frontmatter/">Getting Started Hugo [3] - Front Matter</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_1/">CMake 정리 Part1</a></li></ul>
+		<a class="widget-header-small button" href="https://ralpioxxcs.github.io/post/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to Posts</a><ul><li><a href="https://ralpioxxcs.github.io/post/hugo_manual/">Getting Started Hugo [1] - Github 블로그 생성</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_structure/">Getting Started Hugo [2] - 디렉터리 구조</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_frontmatter/">Getting Started Hugo [3] - Front Matter</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_1/">CMake 정리 Part1</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_2/">CMake 정리 Part2</a></li></ul>
 </div>
 <div class="widget">
 	<header>
@@ -217,10 +266,10 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
                 data structure
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/hugo/" title="hugo">
                 hugo
-			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/linux/" title="linux">
-                linux
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/cmake/" title="cmake">
                 cmake
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/linux/" title="linux">
+                linux
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/opencv/" title="opencv">
                 opencv
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/shell/" title="shell">

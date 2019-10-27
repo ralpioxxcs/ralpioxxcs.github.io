@@ -6,10 +6,19 @@
     <description>Recent content in Tags on My Dev Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Oct 2019 22:40:55 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 27 Oct 2019 14:23:25 +0900</lastBuildDate>
     
 	<atom:link href="https://ralpioxxcs.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>cmake</title>
+      <link>https://ralpioxxcs.github.io/tags/cmake/</link>
+      <pubDate>Sun, 27 Oct 2019 14:23:25 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/tags/cmake/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Linux</title>
@@ -53,15 +62,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ralpioxxcs.github.io/tags/opencv/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cmake</title>
-      <link>https://ralpioxxcs.github.io/tags/cmake/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ralpioxxcs.github.io/tags/cmake/</guid>
       <description></description>
     </item>
     

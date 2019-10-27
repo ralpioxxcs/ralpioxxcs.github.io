@@ -6,7 +6,7 @@
     <description>Recent content in Posts on My Dev Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Sep 2019 20:15:50 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 27 Oct 2019 14:23:25 +0900</lastBuildDate>
     
 	<atom:link href="https://ralpioxxcs.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
@@ -49,8 +49,17 @@ Hugo download link
       
       <guid>https://ralpioxxcs.github.io/post/cmake_1/</guid>
       <description>CMake? cmake란 cross platform 기반의 프로젝트 전체 빌드 프로세스를 관리해주는 유용한 툴이다. 직접 빌드를 수행하지는 않지만 지정된 OS에 맞는 Make파일 혹은 솔루션(sln)파일의 생성을 도와주어 소스코드 빌드를 편리하게 해준다.
-Install $ sudo apt install cmake 의 명령어를 입력해 간단하게 설치할 수 있다.
-$ cmake --version 명령어를 입력해 cmake가 제대로 install 되었는지 확인한다.</description>
+Cmake의 장점 (root) |- foo.cpp |- CMakeLists.txt  foo.cpp 라는 소스코드가 하나 있다고 가정하자. 이 소스코드를 각각의 다른 OS에서 빌드할 때, 윈도우즈라면 Visual Studio를, OSX라면 Xcode, Linux라면 Makefile을 이용할것이다. Cmake는 이런 귀찮은 과정을 CMakeLists.txt라는 프로젝트를 정의하는 파일을 하나 만듦으로써, 각 OS에 맞는 Build tool을 파악해 build command만 입력하면 될수 있도록 해준다.</description>
+    </item>
+    
+    <item>
+      <title>CMake 정리 Part2</title>
+      <link>https://ralpioxxcs.github.io/post/cmake_2/</link>
+      <pubDate>Sun, 27 Oct 2019 14:23:25 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/cmake_2/</guid>
+      <description>Cmake commands 0. example 어떤 프로젝트를 cmake를 이용하여 관리 및 빌드하고자 할때, CMakeLists.txt를 작성 시 자주 사용되는 cmake 기본 명령어들이 있다.
+(Root) |- CMakeLists.txt |- README.md |- [src] | |- CMakeListst.txt | |- foo.cpp | |- poo.cpp | |- main.cpp |- [include] | |- foo.h | |- poo.h |- [cmake] | |- options.cmake  이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다. # [/CMakeListst.txt] cmake_minimum_required( VERSION 3.</description>
     </item>
     
   </channel>

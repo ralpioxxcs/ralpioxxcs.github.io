@@ -40,13 +40,13 @@
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/study/datastructure/circulaqueue/</loc>
-    <lastmod>2019-09-18T21:59:22+09:00</lastmod>
+    <loc>https://ralpioxxcs.github.io/post/</loc>
+    <lastmod>2019-10-27T14:23:25+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/</loc>
-    <lastmod>2019-09-13T20:15:50+09:00</lastmod>
+    <loc>https://ralpioxxcs.github.io/study/datastructure/circulaqueue/</loc>
+    <lastmod>2019-09-18T21:59:22+09:00</lastmod>
   </url>
   
   <url>
@@ -68,6 +68,29 @@
   </url>
   
   <url>
+    <loc>https://ralpioxxcs.github.io/post/cmake_2/</loc>
+    <lastmod>2019-10-27T14:23:25+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/</loc>
+    <lastmod>2019-10-27T14:23:25+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/tags/</loc>
+    <lastmod>2019-10-27T14:23:25+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/tags/cmake/</loc>
+    <lastmod>2019-10-27T14:23:25+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ralpioxxcs.github.io/study/linux/shell_color/</loc>
     <lastmod>2019-10-09T22:40:55+09:00</lastmod>
   </url>
@@ -79,19 +102,7 @@
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/</loc>
-    <lastmod>2019-10-09T22:40:55+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://ralpioxxcs.github.io/tags/shell/</loc>
-    <lastmod>2019-10-09T22:40:55+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ralpioxxcs.github.io/tags/</loc>
     <lastmod>2019-10-09T22:40:55+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -120,11 +131,6 @@
   
   <url>
     <loc>https://ralpioxxcs.github.io/categories/study/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ralpioxxcs.github.io/tags/cmake/</loc>
     <priority>0</priority>
   </url>
   
