@@ -131,7 +131,7 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
                     </span><span class="cell shrink">
                         <span class="fas fa-book fa-sm fa-fw" aria-hidden></span>
                         <strong>Estimated Reading Time:</strong>
-                        ~<span itemprop="timeRequired">4 minutes</span>
+                        ~<span itemprop="timeRequired">5 minutes</span>
                     </span><span class="cell shrink">
                         <span class="fas fa-tag fa-sm fa-fw" aria-hidden></span>
                             
@@ -168,10 +168,11 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 <li><a href="#span-style-color-lightblue-strong-link-libraries-strong-span"><span style="color:lightblue"><strong>LINK_LIBRARIES</strong></span></a></li>
 <li><a href="#span-style-color-lightblue-strong-install-strong-span"><span style="color:lightblue"><strong>INSTALL</strong></span></a></li>
 </ul></li>
-<li><a href="#4-기타">4. 기타</a>
+<li><a href="#strong-4-기타-strong"><strong>4. 기타</strong></a>
 <ul>
 <li><a href="#span-style-color-lightblue-strong-find-file-strong-span"><span style="color:lightblue"><strong>FIND_FILE</strong></span></a></li>
 <li><a href="#span-style-color-lightblue-strong-find-package-strong-span"><span style="color:lightblue"><strong>FIND_PACKAGE</strong></span></a></li>
+<li><a href="#span-style-color-lightblue-strong-find-library-strong-span"><span style="color:lightblue"><strong>FIND_LIBRARY</strong></span></a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -249,8 +250,7 @@ set(&lt;variable&gt; &lt;value&gt;... CACHE &lt;type&gt; &lt;docstring&gt; [FORC
 <p>.cmake 로 작성된 파일들을 사용할수 있도록 프로젝트에 포함시킨다. <code>CMAKE_MODULE_PATH</code>라는 예약변수에 의해 경로가 설정되며, 해당 경로를 통해 .cmake 파일을 탐색한다.<br />
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#6272a4"># EXAMPLE
 </span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">list</span>( <span style="color:#f1fa8c">APPEND</span> <span style="color:#f1fa8c">CMAKE_MODULE_PATH</span> <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_CURRENT_SOURCE_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/cmake</span> ) <span style="color:#6272a4"># cmake폴더 path 추가
-</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">include</span>( <span style="color:#f1fa8c">options</span> ) <span style="color:#6272a4"># options.cmake 파일 Load
-</span><span style="color:#6272a4"></span> </code></pre></div></p>
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">include</span>( <span style="color:#f1fa8c">options</span> ) # options.cmake 파일 Load</code></pre></div></p>
 
 <p><br></p>
 
@@ -263,8 +263,8 @@ set(&lt;variable&gt; &lt;value&gt;... CACHE &lt;type&gt; &lt;docstring&gt; [FORC
 
 <p>컴파일러에게 각 소스파일에 있는 <code>#include</code>로 포함된 헤더파일들을 포함시킬 수 있도록 하는 명령이다. 아래 예시를 들면 <strong>include</strong>폴더에 있는 모든 헤더파일을 찾을 수 있도록 한다.<br />
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#6272a4"># EXAMPLE
-</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">include_directories</span>( <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_CURRENT_LIST_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/include</span> )
-# 현재 CMakeLists.txt가 실행되는 파일 위치의 경로에서 include라는 폴더를 포함함</code></pre></div></p>
+</span><span style="color:#6272a4"># 현재 CMakeLists.txt가 실행되는 파일 위치의 경로에서 include라는 폴더를 포함함
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">include_directories</span>( <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_CURRENT_LIST_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/include</span> )</code></pre></div></p>
 
 <p><br></p>
 
@@ -278,8 +278,8 @@ set(&lt;variable&gt; &lt;value&gt;... CACHE &lt;type&gt; &lt;docstring&gt; [FORC
 
 <p>cmake 빌드에 필요한 디렉토리를 추가하는 명령이다. 만약 모듈별, 폴더별로 <code>CMakeLists.txt</code>가 나누어져 있다고 하면, 이 명령어를 통해서 <code>CMakeListst.txt</code>가 있는 폴더의 위치를 명시해줌으로써, 하위 모듈의 <code>CMakeLists.txt</code>파일들을 <code>source_dir</code>에 추가시킬 수 있도록 한다.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#6272a4"># EXAMPLE
-</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">add_subdirectory</span>( <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_CURRENT_LIST_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/src</span> )
-# src 폴더내의 CMakeLists.txt를 포함해 실행될수 있도록 함</code></pre></div></p>
+</span><span style="color:#6272a4"># src 폴더내의 CMakeLists.txt를 포함해 실행될수 있도록 함
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">add_subdirectory</span>( <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_CURRENT_LIST_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/src</span> )</code></pre></div></p>
 
 <p><br></p>
 
@@ -321,7 +321,8 @@ set(&lt;variable&gt; &lt;value&gt;... CACHE &lt;type&gt; &lt;docstring&gt; [FORC
 - <code>RelWithDebInfo</code> : 디버깅 정보를 포함하는 릴리즈 빌드<br />
 - <code>MinSizeRel</code> : 최소크기를 가지는 릴리즈 빌드<br />
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#6272a4"># EXAMPLE
-</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">set</span> ( <span style="color:#f1fa8c">CMAKE_BUILD_TYPE</span> <span style="color:#f1fa8c">Release</span> ) # 릴리즈로 빌드</code></pre></div></p>
+</span><span style="color:#6272a4"># 릴리즈로 빌드
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">set</span> ( <span style="color:#f1fa8c">CMAKE_BUILD_TYPE</span> <span style="color:#f1fa8c">Release</span> )</code></pre></div></p>
 
 <p><br></p>
 
@@ -360,7 +361,8 @@ true로 설정시, 빌드 중 Makefile의 빌드 과정을 출력한다.</p>
 <p><code>&lt;name&gt;</code>으로 설정된 project 타겟에 대하여 source list로부터 실행가능한 <strong>executable 파일</strong>을 생성한다. 기본적으로 생성된 파일의 위치는 명령어가 발생한 곳의 위치에 생성되며, <code>RUNTIME_OUTPUT_DIRECTORY</code> 변수를 통해 위치를 변경할 수 있다.<br />
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#6272a4"># EXAMPLE
 </span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">set</span> ( <span style="color:#f1fa8c">src</span> <span style="color:#f1fa8c">main.cpp</span> <span style="color:#f1fa8c">foo.cpp</span> <span style="color:#f1fa8c">boo.cpp</span>)
-<span style="color:#8be9fd;font-style:italic">add_executable</span>( <span style="color:#f1fa8c">test.out</span> <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">src</span><span style="color:#ff79c6">}</span> ) # test.out의 실행파일을 생성</code></pre></div></p>
+<span style="color:#6272a4"># test.out의 실행파일을 생성
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">add_executable</span>( <span style="color:#f1fa8c">test.out</span> <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">src</span><span style="color:#ff79c6">}</span> )</code></pre></div></p>
 
 <p><br></p>
 
@@ -374,7 +376,8 @@ true로 설정시, 빌드 중 Makefile의 빌드 과정을 출력한다.</p>
 
 <p>모든 타겟에 대해 사용될 라이브러리를 링크하는 명령. gcc 옵션중 <code>-l</code>에 대치되는 명령이며 링크옵션 또한 사용가능하다.<br />
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#6272a4"># EXAMPLE
-</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">link_libraries</span>( <span style="color:#f1fa8c">bluetooth</span> ) # libbluetooth 라이브러리를 링크</code></pre></div></p>
+</span><span style="color:#6272a4"></span> <span style="color:#6272a4"># libbluetooth 라이브러리를 링크
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">link_libraries</span>( <span style="color:#f1fa8c">bluetooth</span> )</code></pre></div></p>
 
 <p><br></p>
 
@@ -398,8 +401,8 @@ true로 설정시, 빌드 중 Makefile의 빌드 과정을 출력한다.</p>
 
 <p><code>make install</code> 명령어 입력시 진행되는 과정을 정의하는 명령. 주로 cmake 빌드 과정을 통해 나오는 결과물 ( 실행파일, 라이브러리, 리소스) 등을 특정한 위치로 복사하는 동작을 한다.<br />
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#6272a4"># EXAMPLE
-</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">install</span>( <span style="color:#f1fa8c">TARGETS</span> <span style="color:#f1fa8c">output.out</span> <span style="color:#f1fa8c">DESTINATION</span> <span style="color:#f1fa8c">usr/local/bin</span> )
-# output.out 바이너리 파일을 /usr/local/bin의 위치로 설치함</code></pre></div></p>
+</span><span style="color:#6272a4"># output.out 바이너리 파일을 /usr/local/bin의 위치로 설치함
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">install</span>( <span style="color:#f1fa8c">TARGETS</span> <span style="color:#f1fa8c">output.out</span> <span style="color:#f1fa8c">DESTINATION</span> <span style="color:#f1fa8c">usr/local/bin</span> )</code></pre></div></p>
 
 <p><br></p>
 
@@ -407,7 +410,7 @@ true로 설정시, 빌드 중 Makefile의 빌드 과정을 출력한다.</p>
 
 <p><br></p>
 
-<h2 id="4-기타">4. 기타</h2>
+<h2 id="strong-4-기타-strong"><strong>4. 기타</strong></h2>
 
 <h3 id="span-style-color-lightblue-strong-find-file-strong-span"><span style="color:lightblue"><strong>FIND_FILE</strong></span></h3>
 
@@ -433,8 +436,8 @@ true로 설정시, 빌드 중 Makefile의 빌드 과정을 출력한다.</p>
 
 <p>찾을 파일의 이름의 전체경로를 찾아주는 명령. <code>&lt;VAR&gt;</code>변수에 결과가 저장되도록 한다. 만약 경로를 찾지 못하였을경우 <code>&lt;VAR&gt;-NOTFOUND</code>로 최종적으로 저장이된다.
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#6272a4"># EXAMPLE
-</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">find_file</span>( <span style="color:#f1fa8c">CPP_FILE_PATH</span> <span style="color:#f1fa8c">test.cpp</span> <span style="color:#f1fa8c">PATHS</span> <span style="color:#f1fa8c">/home/test</span> )
-# test.cpp 파일의 전체 경로를 ${CPP_FILE_PATH}변수에 저장</code></pre></div></p>
+</span><span style="color:#6272a4"># test.cpp 파일의 전체 경로를 ${CPP_FILE_PATH}변수에 저장
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">find_file</span>( <span style="color:#f1fa8c">CPP_FILE_PATH</span> <span style="color:#f1fa8c">test.cpp</span> <span style="color:#f1fa8c">PATHS</span> <span style="color:#f1fa8c">/home/test</span> )</code></pre></div></p>
 
 <p><br></p>
 
@@ -468,6 +471,44 @@ true로 설정시, 빌드 중 Makefile의 빌드 과정을 출력한다.</p>
 <span style="color:#6272a4"># pak 이라는 패키지를 찾지 못할경우 오류 메시지 출력 (&#39;REQUIRED&#39;에 의해)
 </span><span style="color:#6272a4"></span> </code></pre></div></p>
 
+<p><br></p>
+
+<h3 id="span-style-color-lightblue-strong-find-library-strong-span"><span style="color:lightblue"><strong>FIND_LIBRARY</strong></span></h3>
+
+<p><strong>[용법]</strong></p>
+
+<pre><code>find_library (
+          &lt;VAR&gt;
+          name | NAMES name1 [name2 ...] [NAMES_PER_DIR]
+          [HINTS path1 [path2 ... ENV var]]
+          [PATHS path1 [path2 ... ENV var]]
+          [PATH_SUFFIXES suffix1 [suffix2 ...]]
+          [DOC &quot;cache documentation string&quot;]
+          [NO_DEFAULT_PATH]
+          [NO_PACKAGE_ROOT_PATH]
+          [NO_CMAKE_PATH]
+          [NO_CMAKE_ENVIRONMENT_PATH]
+          [NO_SYSTEM_ENVIRONMENT_PATH]
+          [NO_CMAKE_SYSTEM_PATH]
+          [CMAKE_FIND_ROOT_PATH_BOTH |
+           ONLY_CMAKE_FIND_ROOT_PATH |
+           NO_CMAKE_FIND_ROOT_PATH]
+         )
+</code></pre>
+
+<p>shared library(.so) , static library(.a) 파일등을 찾는 cmake 명령어이다. 찾고자하는 파일을 발견하면, <code>&lt;VAR&gt;</code>변수에 결과가 저장되며, 라이브러리 파일을 찾지 못하였을 경우 <code>&lt;VAR&gt;-NOTFOUND</code>를 저장한다.<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#6272a4"># EXAMPLE
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">find_library</span> (<span style="color:#f1fa8c"></span>
+  <span style="color:#f1fa8c">FOO_LIBS</span>
+  <span style="color:#f1fa8c">NAMES</span> <span style="color:#f1fa8c">foo</span>
+  <span style="color:#f1fa8c">HINTS</span> <span style="color:#f1fa8c">/usr/lib</span>
+  )
+<span style="color:#6272a4"># /usr/lib의 경로에서 libfoo.so 라이브러리를 찾았으면 if실행
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">if</span>( <span style="color:#f1fa8c">FOO_LIBS</span> )
+  <span style="color:#8be9fd;font-style:italic">set</span>( <span style="color:#f1fa8c">FOO_LIBS_FOUND</span> <span style="color:#f1fa8c">true</span> )
+  <span style="color:#8be9fd;font-style:italic">include_directories</span>(<span style="color:#f1fa8c">...</span>)
+<span style="color:#8be9fd;font-style:italic">endif</span>()</code></pre></div></p>
+
 </span>
         </div></article>
 
@@ -477,7 +518,7 @@ true로 설정시, 빌드 중 Makefile의 빌드 과정을 출력한다.</p>
                 <li class="pagination-previous cell small-order-2 medium-5 medium-order-1">
                     <a class="button" href="https://ralpioxxcs.github.io/post/cmake_3/" rel="prev">
                         <span class="sr-text">Previous:</span>
-                        CMake 정리 Part3 - Project configure</a>
+                        CMake 정리 Part3 - Project configure #1</a>
                 </li>
                 
                 
@@ -531,7 +572,7 @@ true로 설정시, 빌드 중 Makefile의 빌드 과정을 출력한다.</p>
 	</header>
 	
 			<a class="widget-header-small button" href="https://ralpioxxcs.github.io/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to the Site</a>
-		<a class="widget-header-small button" href="https://ralpioxxcs.github.io/post/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to Posts</a><ul><li><a href="https://ralpioxxcs.github.io/post/hugo_manual/">Getting Started Hugo [1] - Github 블로그 생성</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_structure/">Getting Started Hugo [2] - 디렉터리 구조</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_frontmatter/">Getting Started Hugo [3] - Front Matter</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_1/">CMake 정리 Part1 - Overview</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_2/">CMake 정리 Part2 - Commands &amp; Vars</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_3/">CMake 정리 Part3 - Project configure</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_4/">Cmake 정리 Par4 - Example_SDK설치</a></li></ul>
+		<a class="widget-header-small button" href="https://ralpioxxcs.github.io/post/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to Posts</a><ul><li><a href="https://ralpioxxcs.github.io/post/hugo_manual/">Getting Started Hugo [1] - Github 블로그 생성</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_structure/">Getting Started Hugo [2] - 디렉터리 구조</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_frontmatter/">Getting Started Hugo [3] - Front Matter</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_1/">CMake 정리 Part1 - Overview</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_2/">CMake 정리 Part2 - Commands &amp; Vars</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_3/">CMake 정리 Part3 - Project configure #1</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_4/">CMake 정리 Part4 - Project configure #2</a></li></ul>
 </div>
 <div class="widget">
 	<header>

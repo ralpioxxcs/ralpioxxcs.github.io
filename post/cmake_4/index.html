@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Cmake 정리 Par4 - Example_SDK설치</title><meta name="description" itemprop="description" content=" " id="desc"><meta name="generator" content="Hugo 0.56.3" /><meta name="keywords" itemprop="keywords" content="cmake" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/cmake_4/">
+        <title>CMake 정리 Part4 - Project configure #2</title><meta name="description" itemprop="description" content=" " id="desc"><meta name="generator" content="Hugo 0.56.3" /><meta name="keywords" itemprop="keywords" content="cmake" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/cmake_4/">
         
 
 <meta name="thumbnail" content="https://ralpioxxcs.github.io/images/moon.png" /><link rel="dns-prefetch" href="https://use.fontawesome.com/" />
@@ -19,6 +19,11 @@
     <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/single.min.css" integrity="sha512-Q1Zy+J4r0j/8Mjf7DVoh6X/Q1gWZqmvMf5IX7vxV7k97/NLY5novAjHRMReD9WWrDOq54t3sHsR7i8HwXlumlg==">
 
 
+
+    
+    
+    
+    
 <link rel="preload" media="print" type="text/css" href="https://ralpioxxcs.github.io/css/print.min.2e0961e511885e38a09cc9a9ff3de5ce7d7d2186bb9ed98a61f176688d4ef61a.css" integrity="sha256-Lglh5RGIXjignMmp/z3lzn19IYa7ntmKYfF2aI1O9ho=" as="style"><link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/" />
 <link rel="preconnect" href="https://cdnjs.cloudflare.com/" />
 
@@ -119,14 +124,14 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 <main class="cell medium-8" >
     <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
         <header id="page-header">
-            <h1 itemprop="headline">Cmake 정리 Par4 - Example_SDK설치</h1><p id="post-metadata" class="grid-x grid-padding-x"><span class="cell shrink">
+            <h1 itemprop="headline">CMake 정리 Part4 - Project configure #2</h1><p id="post-metadata" class="grid-x grid-padding-x"><span class="cell shrink">
                         <span class="far fa-clock fa-sm fa-fw" aria-hidden></span>
                         <strong>Published:</strong>
                         <time datetime="2019-11-03" content="2019-11-03" itemprop="datePublished">November 03, 2019</time>
                     </span><span class="cell shrink">
                         <span class="fas fa-book fa-sm fa-fw" aria-hidden></span>
                         <strong>Estimated Reading Time:</strong>
-                        ~<span itemprop="timeRequired">0 minutes</span>
+                        ~<span itemprop="timeRequired">1 minute</span>
                     </span><span class="cell shrink">
                         <span class="fas fa-tag fa-sm fa-fw" aria-hidden></span>
                             
@@ -136,7 +141,8 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
             
         </header>
         
-        <div id="post-content"><span itemprop="articleBody">
+        <div id="post-content"><span itemprop="articleBody"><p>Shared library를 생성하고 사용하는 project</p>
+
 </span>
         </div></article>
 
@@ -146,7 +152,7 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
                 
                 <li class="pagination-next cell small-order-1 medium-5 medium-order-2 medium-offset-7">
                     <a class="button" href="https://ralpioxxcs.github.io/post/cmake_3/" rel="next">
-                        <span class="sr-text">Next:</span>CMake 정리 Part3 - Project configure
+                        <span class="sr-text">Next:</span>CMake 정리 Part3 - Project configure #1
                     </a>
                 </li>
                 
@@ -194,7 +200,7 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 	</header>
 	
 			<a class="widget-header-small button" href="https://ralpioxxcs.github.io/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to the Site</a>
-		<a class="widget-header-small button" href="https://ralpioxxcs.github.io/post/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to Posts</a><ul><li><a href="https://ralpioxxcs.github.io/post/hugo_manual/">Getting Started Hugo [1] - Github 블로그 생성</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_structure/">Getting Started Hugo [2] - 디렉터리 구조</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_frontmatter/">Getting Started Hugo [3] - Front Matter</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_1/">CMake 정리 Part1 - Overview</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_2/">CMake 정리 Part2 - Commands &amp; Vars</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_3/">CMake 정리 Part3 - Project configure</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_4/">Cmake 정리 Par4 - Example_SDK설치</a></li></ul>
+		<a class="widget-header-small button" href="https://ralpioxxcs.github.io/post/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to Posts</a><ul><li><a href="https://ralpioxxcs.github.io/post/hugo_manual/">Getting Started Hugo [1] - Github 블로그 생성</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_structure/">Getting Started Hugo [2] - 디렉터리 구조</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_frontmatter/">Getting Started Hugo [3] - Front Matter</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_1/">CMake 정리 Part1 - Overview</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_2/">CMake 정리 Part2 - Commands &amp; Vars</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_3/">CMake 정리 Part3 - Project configure #1</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_4/">CMake 정리 Part4 - Project configure #2</a></li></ul>
 </div>
 <div class="widget">
 	<header>

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>CMake 정리 Part3 - Project configure</title><meta name="description" itemprop="description" content=" " id="desc"><meta name="generator" content="Hugo 0.56.3" /><meta name="keywords" itemprop="keywords" content="cmake" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/cmake_3/">
+        <title>CMake 정리 Part3 - Project configure #1</title><meta name="description" itemprop="description" content=" " id="desc"><meta name="generator" content="Hugo 0.56.3" /><meta name="keywords" itemprop="keywords" content="cmake" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/cmake_3/">
         
 
 <meta name="thumbnail" content="https://ralpioxxcs.github.io/images/moon.png" /><link rel="dns-prefetch" href="https://use.fontawesome.com/" />
@@ -124,7 +124,7 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 <main class="cell medium-8" >
     <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
         <header id="page-header">
-            <h1 itemprop="headline">CMake 정리 Part3 - Project configure</h1><p id="post-metadata" class="grid-x grid-padding-x"><span class="cell shrink">
+            <h1 itemprop="headline">CMake 정리 Part3 - Project configure #1</h1><p id="post-metadata" class="grid-x grid-padding-x"><span class="cell shrink">
                         <span class="far fa-clock fa-sm fa-fw" aria-hidden></span>
                         <strong>Published:</strong>
                         <time datetime="2019-11-03" content="2019-11-03" itemprop="datePublished">November 03, 2019</time>
@@ -141,21 +141,7 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
             
         </header>
         
-        <div id="post-content"><nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#0-example">0. example</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav><span itemprop="articleBody">
-
-<h3 id="0-example">0. example</h3>
-
-<p>어떤 프로젝트를 cmake를 이용하여 관리 및 빌드하고자 할때, <u>CMakeLists.txt</u>를 작성 시 자주 사용되는 cmake 기본 명령어들이 있다.</p>
+        <div id="post-content"><span itemprop="articleBody"><p>어떤 프로젝트를 cmake를 이용하여 관리 및 빌드하고자 할때, <code>CMakeLists.txt</code>를작성 시 자주 사용되는 cmake 기본 명령어들이 있다.</p>
 
 <pre><code>(Root)
 |- CMakeLists.txt
@@ -176,36 +162,42 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#6272a4"># [/CMakeListst.txt]
 </span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">cmake_minimum_required</span>( <span style="color:#f1fa8c">VERSION</span> <span style="color:#f1fa8c">3.3</span> )
 <span style="color:#8be9fd;font-style:italic">project</span>( <span style="color:#f1fa8c">foo</span> <span style="color:#f1fa8c">CXX</span> )
-
+<span style="color:#6272a4"># -&gt; &#39;foo&#39;라는 project를 정의한다.
+</span><span style="color:#6272a4"></span>
 <span style="color:#6272a4"># cmake files
 </span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">list</span>( <span style="color:#f1fa8c">APPEND</span> <span style="color:#f1fa8c">CMAKE_MODULE_PATH</span> <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_CURRENT_SOURCE_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/cmake</span> )
 <span style="color:#8be9fd;font-style:italic">include</span>( <span style="color:#f1fa8c">options</span> )
-
+<span style="color:#6272a4"># -&gt; project 설정관련 전반 .cmake 파일들을 include한다
+</span><span style="color:#6272a4"></span>
 <span style="color:#6272a4"># build configure
 </span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">set</span>( <span style="color:#f1fa8c">CMAKE_BUILD_TYPE</span> <span style="color:#f1fa8c">Debug</span> )
 <span style="color:#8be9fd;font-style:italic">set</span>( <span style="color:#f1fa8c">CMAKE_VERBOSE_MAKEFILE</span> <span style="color:#f1fa8c">true</span> )
-
-<span style="color:#6272a4"># include files
+<span style="color:#6272a4"># -&gt; build 타입및 compile 관련 설정
+</span><span style="color:#6272a4"></span>
+<span style="color:#6272a4"># -&gt; header파일들을 include paht에 포함시키고 src 폴더내의 CMakeLists.txt를 수행
 </span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">include_directories</span>( <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_CURRENT_LIST_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/include</span>)
-<span style="color:#8be9fd;font-style:italic">add_subdirectory</span>( <span style="color:#f1fa8c">src</span> )</code></pre></div></p>
+<span style="color:#8be9fd;font-style:italic">add_subdirectory</span>(<span style="color:#f1fa8c">src</span>)</code></pre></div></p>
 
-<p>src폴더 내, CMakeLists.txt파일은
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6"># [src/CMakeListst.txt]
-</span><span style="color:#ff79c6"></span>
-<span style="color:#ff79c6"># src files..
-</span><span style="color:#ff79c6"></span>set ( SRC_PATH
-    ${CMAKE_CURRENT_LIST_DIR}<span style="color:#ff79c6">/</span>main.cpp
-    ${CMAKE_CURRENT_LIST_DIR}<span style="color:#ff79c6">/</span>foo.cpp
-    ${CMAKE_CURRENT_LIST_DIR}<span style="color:#ff79c6">/</span>poo.cpp
+<p>src폴더 내, CMakeLists.txt파일은</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#6272a4"># [src/CMakeListst.txt]
+</span><span style="color:#6272a4"></span>
+<span style="color:#6272a4"># src files..
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">set</span> ( <span style="color:#f1fa8c">SRC_PATH</span>
+    <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_CURRENT_LIST_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/main.cpp</span>
+    <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_CURRENT_LIST_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/foo.cpp</span>
+    <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_CURRENT_LIST_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/poo.cpp</span>
     )
-set ( OUTPUT_EFL test.out )
-
-<span style="color:#ff79c6"># generate executable file
-</span><span style="color:#ff79c6"></span>add_executable( ${OUTPUT_ELF} ${SRC_PATH} )
-taget_link_libraries( ${OUTPUT_ELF} libs )
-file( MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}<span style="color:#ff79c6">/</span>install )
-install( TARGETS ${OUTPUT_ELF} DESTINATION ${CMAKE_SOURCE_DIR}<span style="color:#ff79c6">/</span>install )
-</code></pre></div></p>
+<span style="color:#8be9fd;font-style:italic">set</span> ( <span style="color:#f1fa8c">OUTPUT_EFL</span> <span style="color:#f1fa8c">test.out</span> )
+<span style="color:#6272a4"># -&gt; build할 파일들을 SRC_PATH 변수에 담는다
+</span><span style="color:#6272a4"></span>
+<span style="color:#6272a4"># generate executable file
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">add_executable</span>( <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">OUTPUT_ELF</span><span style="color:#ff79c6">}</span> <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">SRC_PATH</span><span style="color:#ff79c6">}</span> ) <span style="color:#6272a4"># -&gt; executable 파일을 생성
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">taget_link_libraries</span>( <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">OUTPUT_ELF</span><span style="color:#ff79c6">}</span> <span style="color:#f1fa8c">libs</span> ) <span style="color:#6272a4"># -&gt; 라이브러리 링크
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">file</span>( <span style="color:#f1fa8c">MAKE_DIRECTORY</span> <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_SOURCE_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/install</span> ) <span style="color:#6272a4"># -&gt; install 폴더 생성
+</span><span style="color:#6272a4"></span>
+<span style="color:#6272a4"># install 명령 수행
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">install</span>( <span style="color:#f1fa8c">TARGETS</span> <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">OUTPUT_ELF</span><span style="color:#ff79c6">}</span> <span style="color:#f1fa8c">DESTINATION</span> <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_SOURCE_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/install</span> )</code></pre></div>
 
 </span>
         </div></article>
@@ -216,7 +208,7 @@ install( TARGETS ${OUTPUT_ELF} DESTINATION ${CMAKE_SOURCE_DIR}<span style="color
                 <li class="pagination-previous cell small-order-2 medium-5 medium-order-1">
                     <a class="button" href="https://ralpioxxcs.github.io/post/cmake_4/" rel="prev">
                         <span class="sr-text">Previous:</span>
-                        Cmake 정리 Par4 - Example_SDK설치</a>
+                        CMake 정리 Part4 - Project configure #2</a>
                 </li>
                 
                 
@@ -270,7 +262,7 @@ install( TARGETS ${OUTPUT_ELF} DESTINATION ${CMAKE_SOURCE_DIR}<span style="color
 	</header>
 	
 			<a class="widget-header-small button" href="https://ralpioxxcs.github.io/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to the Site</a>
-		<a class="widget-header-small button" href="https://ralpioxxcs.github.io/post/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to Posts</a><ul><li><a href="https://ralpioxxcs.github.io/post/hugo_manual/">Getting Started Hugo [1] - Github 블로그 생성</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_structure/">Getting Started Hugo [2] - 디렉터리 구조</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_frontmatter/">Getting Started Hugo [3] - Front Matter</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_1/">CMake 정리 Part1 - Overview</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_2/">CMake 정리 Part2 - Commands &amp; Vars</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_3/">CMake 정리 Part3 - Project configure</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_4/">Cmake 정리 Par4 - Example_SDK설치</a></li></ul>
+		<a class="widget-header-small button" href="https://ralpioxxcs.github.io/post/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to Posts</a><ul><li><a href="https://ralpioxxcs.github.io/post/hugo_manual/">Getting Started Hugo [1] - Github 블로그 생성</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_structure/">Getting Started Hugo [2] - 디렉터리 구조</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_frontmatter/">Getting Started Hugo [3] - Front Matter</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_1/">CMake 정리 Part1 - Overview</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_2/">CMake 정리 Part2 - Commands &amp; Vars</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_3/">CMake 정리 Part3 - Project configure #1</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_4/">CMake 정리 Part4 - Project configure #2</a></li></ul>
 </div>
 <div class="widget">
 	<header>

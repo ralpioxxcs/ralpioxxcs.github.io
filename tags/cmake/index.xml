@@ -6,7 +6,7 @@
     <description>Recent content in cmake on My Dev Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Nov 2019 14:44:40 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 03 Nov 2019 14:38:36 +0900</lastBuildDate>
     
 	<atom:link href="https://ralpioxxcs.github.io/tags/cmake/index.xml" rel="self" type="application/rss+xml" />
     
@@ -36,22 +36,22 @@ cmake_minimum_required(VERSION major.minor[.patch[.tweak]][FATAL_ERROR])  만약
     </item>
     
     <item>
-      <title>CMake 정리 Part3 - Project configure</title>
+      <title>CMake 정리 Part3 - Project configure #1</title>
       <link>https://ralpioxxcs.github.io/post/cmake_3/</link>
       <pubDate>Sun, 03 Nov 2019 14:38:36 +0900</pubDate>
       
       <guid>https://ralpioxxcs.github.io/post/cmake_3/</guid>
-      <description>0. example 어떤 프로젝트를 cmake를 이용하여 관리 및 빌드하고자 할때, CMakeLists.txt를 작성 시 자주 사용되는 cmake 기본 명령어들이 있다.
-(Root) |- CMakeLists.txt |- README.md |- [src] | |- CMakeListst.txt | |- foo.cpp | |- poo.cpp | |- main.cpp |- [include] | |- foo.h | |- poo.h |- [cmake] | |- options.cmake  이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다. # [/CMakeListst.txt]cmake_minimum_required( VERSION 3.3 )project( foo CXX )# cmake fileslist( APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake )include( options )# build configureset( CMAKE_BUILD_TYPE Debug )set( CMAKE_VERBOSE_MAKEFILE true )# include filesinclude_directories( ${CMAKE_CURRENT_LIST_DIR}/include)add_subdirectory( src )</description>
+      <description>어떤 프로젝트를 cmake를 이용하여 관리 및 빌드하고자 할때, CMakeLists.txt를작성 시 자주 사용되는 cmake 기본 명령어들이 있다.
+(Root) |- CMakeLists.txt |- README.md |- [src] | |- CMakeListst.txt | |- foo.cpp | |- poo.cpp | |- main.cpp |- [include] | |- foo.h | |- poo.h |- [cmake] | |- options.cmake  이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다. # [/CMakeListst.txt]cmake_minimum_required( VERSION 3.3 )project( foo CXX )# -&amp;gt; &amp;#39;foo&amp;#39;라는 project를 정의한다.</description>
     </item>
     
     <item>
-      <title>Cmake 정리 Par4 - Example_SDK설치</title>
+      <title>CMake 정리 Part4 - Project configure #2</title>
       <link>https://ralpioxxcs.github.io/post/cmake_4/</link>
-      <pubDate>Sun, 03 Nov 2019 14:44:40 +0900</pubDate>
+      <pubDate>Sun, 03 Nov 2019 14:38:36 +0900</pubDate>
       
       <guid>https://ralpioxxcs.github.io/post/cmake_4/</guid>
-      <description></description>
+      <description>Shared library를 생성하고 사용하는 project</description>
     </item>
     
   </channel>
