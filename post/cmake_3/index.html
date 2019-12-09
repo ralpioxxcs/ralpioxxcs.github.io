@@ -159,45 +159,45 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 </code></pre>
 
 <p>이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#6272a4"># [/CMakeListst.txt]
-</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">cmake_minimum_required</span>( <span style="color:#f1fa8c">VERSION</span> <span style="color:#f1fa8c">3.3</span> )
-<span style="color:#8be9fd;font-style:italic">project</span>( <span style="color:#f1fa8c">foo</span> <span style="color:#f1fa8c">CXX</span> )
-<span style="color:#6272a4"># -&gt; &#39;foo&#39;라는 project를 정의한다.
-</span><span style="color:#6272a4"></span>
-<span style="color:#6272a4"># cmake files
-</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">list</span>( <span style="color:#f1fa8c">APPEND</span> <span style="color:#f1fa8c">CMAKE_MODULE_PATH</span> <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_CURRENT_SOURCE_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/cmake</span> )
-<span style="color:#8be9fd;font-style:italic">include</span>( <span style="color:#f1fa8c">options</span> )
-<span style="color:#6272a4"># -&gt; project 설정관련 전반 .cmake 파일들을 include한다
-</span><span style="color:#6272a4"></span>
-<span style="color:#6272a4"># build configure
-</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">set</span>( <span style="color:#f1fa8c">CMAKE_BUILD_TYPE</span> <span style="color:#f1fa8c">Debug</span> )
-<span style="color:#8be9fd;font-style:italic">set</span>( <span style="color:#f1fa8c">CMAKE_VERBOSE_MAKEFILE</span> <span style="color:#f1fa8c">true</span> )
-<span style="color:#6272a4"># -&gt; build 타입및 compile 관련 설정
-</span><span style="color:#6272a4"></span>
-<span style="color:#6272a4"># -&gt; header파일들을 include paht에 포함시키고 src 폴더내의 CMakeLists.txt를 수행
-</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">include_directories</span>( <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_CURRENT_LIST_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/include</span>)
-<span style="color:#8be9fd;font-style:italic">add_subdirectory</span>(<span style="color:#f1fa8c">src</span>)</code></pre></div></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#6272a4"># [/CMakeListst.txt]
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">cmake_minimum_required</span>( <span style="color:#f1fa8c">VERSION</span> <span style="color:#f1fa8c">3.3</span> )
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#8be9fd;font-style:italic">project</span>( <span style="color:#f1fa8c">foo</span> <span style="color:#f1fa8c">CXX</span> )
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#6272a4"># -&gt; &#39;foo&#39;라는 project를 정의한다.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#6272a4"># cmake files
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">list</span>( <span style="color:#f1fa8c">APPEND</span> <span style="color:#f1fa8c">CMAKE_MODULE_PATH</span> <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_CURRENT_SOURCE_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/cmake</span> )
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#8be9fd;font-style:italic">include</span>( <span style="color:#f1fa8c">options</span> )
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#6272a4"># -&gt; project 설정관련 전반 .cmake 파일들을 include한다
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#6272a4"># build configure
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">set</span>( <span style="color:#f1fa8c">CMAKE_BUILD_TYPE</span> <span style="color:#f1fa8c">Debug</span> )
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#8be9fd;font-style:italic">set</span>( <span style="color:#f1fa8c">CMAKE_VERBOSE_MAKEFILE</span> <span style="color:#f1fa8c">true</span> )
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#6272a4"># -&gt; build 타입및 compile 관련 설정
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#6272a4"># -&gt; header파일들을 include paht에 포함시키고 src 폴더내의 CMakeLists.txt를 수행
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">include_directories</span>( <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_CURRENT_LIST_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/include</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#8be9fd;font-style:italic">add_subdirectory</span>(<span style="color:#f1fa8c">src</span>)</code></pre></div></p>
 
 <p>src폴더 내, CMakeLists.txt파일은</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#6272a4"># [src/CMakeListst.txt]
-</span><span style="color:#6272a4"></span>
-<span style="color:#6272a4"># src files..
-</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">set</span> ( <span style="color:#f1fa8c">SRC_PATH</span>
-    <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_CURRENT_LIST_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/main.cpp</span>
-    <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_CURRENT_LIST_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/foo.cpp</span>
-    <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_CURRENT_LIST_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/poo.cpp</span>
-    )
-<span style="color:#8be9fd;font-style:italic">set</span> ( <span style="color:#f1fa8c">OUTPUT_EFL</span> <span style="color:#f1fa8c">test.out</span> )
-<span style="color:#6272a4"># -&gt; build할 파일들을 SRC_PATH 변수에 담는다
-</span><span style="color:#6272a4"></span>
-<span style="color:#6272a4"># generate executable file
-</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">add_executable</span>( <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">OUTPUT_ELF</span><span style="color:#ff79c6">}</span> <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">SRC_PATH</span><span style="color:#ff79c6">}</span> ) <span style="color:#6272a4"># -&gt; executable 파일을 생성
-</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">taget_link_libraries</span>( <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">OUTPUT_ELF</span><span style="color:#ff79c6">}</span> <span style="color:#f1fa8c">libs</span> ) <span style="color:#6272a4"># -&gt; 라이브러리 링크
-</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">file</span>( <span style="color:#f1fa8c">MAKE_DIRECTORY</span> <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_SOURCE_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/install</span> ) <span style="color:#6272a4"># -&gt; install 폴더 생성
-</span><span style="color:#6272a4"></span>
-<span style="color:#6272a4"># install 명령 수행
-</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">install</span>( <span style="color:#f1fa8c">TARGETS</span> <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">OUTPUT_ELF</span><span style="color:#ff79c6">}</span> <span style="color:#f1fa8c">DESTINATION</span> <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_SOURCE_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/install</span> )</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#6272a4"># [src/CMakeListst.txt]
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#6272a4"># src files..
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">set</span> ( <span style="color:#f1fa8c">SRC_PATH</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_CURRENT_LIST_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/main.cpp</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_CURRENT_LIST_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/foo.cpp</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_CURRENT_LIST_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/poo.cpp</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    )
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#8be9fd;font-style:italic">set</span> ( <span style="color:#f1fa8c">OUTPUT_EFL</span> <span style="color:#f1fa8c">test.out</span> )
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#6272a4"># -&gt; build할 파일들을 SRC_PATH 변수에 담는다
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#6272a4"># generate executable file
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">add_executable</span>( <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">OUTPUT_ELF</span><span style="color:#ff79c6">}</span> <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">SRC_PATH</span><span style="color:#ff79c6">}</span> ) <span style="color:#6272a4"># -&gt; executable 파일을 생성
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">taget_link_libraries</span>( <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">OUTPUT_ELF</span><span style="color:#ff79c6">}</span> <span style="color:#f1fa8c">libs</span> ) <span style="color:#6272a4"># -&gt; 라이브러리 링크
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">file</span>( <span style="color:#f1fa8c">MAKE_DIRECTORY</span> <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_SOURCE_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/install</span> ) <span style="color:#6272a4"># -&gt; install 폴더 생성
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#6272a4"># install 명령 수행
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">install</span>( <span style="color:#f1fa8c">TARGETS</span> <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">OUTPUT_ELF</span><span style="color:#ff79c6">}</span> <span style="color:#f1fa8c">DESTINATION</span> <span style="color:#ff79c6">${</span><span style="color:#8be9fd;font-style:italic">CMAKE_SOURCE_DIR</span><span style="color:#ff79c6">}</span><span style="color:#f1fa8c">/install</span> )</code></pre></div>
 
 </span>
         </div></article>
