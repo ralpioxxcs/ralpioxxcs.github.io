@@ -6,10 +6,19 @@
     <description>Recent content in Study: Linux on My Dev Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Oct 2019 22:40:55 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 26 Dec 2019 15:10:46 +0900</lastBuildDate>
     
 	<atom:link href="https://ralpioxxcs.github.io/study/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Basic_1</title>
+      <link>https://ralpioxxcs.github.io/study/linux/basic_1/</link>
+      <pubDate>Thu, 26 Dec 2019 15:10:46 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/study/linux/basic_1/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Bash Shell 색상 지정하기</title>
@@ -17,7 +26,7 @@
       <pubDate>Wed, 09 Oct 2019 22:40:55 +0900</pubDate>
       
       <guid>https://ralpioxxcs.github.io/study/linux/shell_color/</guid>
-      <description>shell script에 색상을 사용하는 방법이 있다.</description>
+      <description></description>
     </item>
     
   </channel>

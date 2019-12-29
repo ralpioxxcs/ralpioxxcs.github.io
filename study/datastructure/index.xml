@@ -23,6 +23,15 @@
     </item>
     
     <item>
+      <title>Linked List Page</title>
+      <link>https://ralpioxxcs.github.io/study/datastructure/linkedlist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/study/datastructure/linkedlist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Stack</title>
       <link>https://ralpioxxcs.github.io/study/datastructure/stack/</link>
       <pubDate>Fri, 13 Sep 2019 13:54:02 +0900</pubDate>
@@ -31,7 +40,16 @@
       <description>1. 개요 후입선출(後入先出, Last In First Out; LIFO) 의 자료구조로, 상자의 형태를 한 자료구조이다. 데이터의 삽입을 Push, 데이터의 출력을 Pop이라고 하며, 스택을 크게 두 가지로 나누면
 Ascending Stack VS Descending Stack으로 나눌 수 있다.
 스택은 배열과 링크드 리스트로 구현할 수 있는데, 여기서는 링크드리스트를 이용한 스택을 구현해 보겠다.
-2. 코드 구현 2-1. define structure typedef struct _stacknode Snode;struct _stacknode {DataType data;Snode *next;};typedef struct _stack {Snode *head;Snode *tail;Snode *cur;}Stack;  스택관리구조체 Stack은 링크드리스트 구조체처럼 head와 tail을 고정적으로 가리키는 노드포인터와 현재 노드를 가리키는 cur 포인터로 이루어져있다.</description>
+2. 코드 구현 2-1. define structure typedef struct _stacknode Snode; struct _stacknode { DataType data; Snode *next; }; typedef struct _stack { Snode *head; Snode *tail; Snode *cur; }Stack;  스택관리구조체 Stack은 링크드리스트 구조체처럼 head와 tail을 고정적으로 가리키는 노드포인터와 현재 노드를 가리키는 cur 포인터로 이루어져있다.</description>
+    </item>
+    
+    <item>
+      <title>Stack Page</title>
+      <link>https://ralpioxxcs.github.io/study/datastructure/stack/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/study/datastructure/stack/</guid>
+      <description>test&amp;hellip;</description>
     </item>
     
     <item>
@@ -43,6 +61,15 @@ Ascending Stack VS Descending Stack으로 나눌 수 있다.
       <description>1. 개요 선입선출(先入先出, First In First Out; FIFO)의 자료구조로써, 데이터가 나가는 위치, 큐의 첫번째 위치를 Front 라고 하고 데이터가 삽입되는 지점, 큐의 마지막 데이터의 한 칸 다음 위치를 Rear 혹은 Back이라고 한다.
 큐에 데이터를 삽입하는 과정을 Enqueue, 빼는 과정을 Dequeue라고 한다. 선입선출 형태이므로 주로 대기열, 줄서기 같은곳에 쓰이는 구조이다.
 2. 선형 큐 (Linear Queue) 예를들어 사이즈가 5인 큐가 있다고 하자. 초기에는 Front와 Rear 둘다 0을 가리키고 있는상태이다. 데이터를 하나 삽입하면 Front값을 그대로 Rear값은 하나 증가한다 (1번방 가리키고있는상태) 그 다음 방금 넣었던 데이터를 삭제하면 Front값이 하나 증가하여 1번방을 가리키고, 이 상태는 큐가 비었다는것을 뜻 한다.</description>
+    </item>
+    
+    <item>
+      <title>Queue Page</title>
+      <link>https://ralpioxxcs.github.io/study/datastructure/queue/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/study/datastructure/queue/</guid>
+      <description></description>
     </item>
     
   </channel>

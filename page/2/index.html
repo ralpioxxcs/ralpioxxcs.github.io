@@ -150,79 +150,6 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
             
                 <article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><div>
         <header class="post-list-title">
-            <a href="https://ralpioxxcs.github.io/post/hugo/hugo_content_management_2_page/">
-                <h2 itemprop="headline">Hugo Content Management [2] - Page Bundle</h2>
-            </a>
-            <div class="metadata"><div>
-                <span class="far fa-clock" aria-hidden></span>
-                <span class="sr-text">Published: </span>
-                <time datetime="" itemprop="datePublished">December 29, 2019</time>
-                </div></div>
-        </header>
-        <div class="post-list-summary" itemprop="description">
-            <p>Hugo에서는 Page Bundles이라는 개념을 사용해 컨텐츠를 관리한다. Page Bundles에는 2가지 종류가 있다. Leaf Bundle Branch Bundle Left Bundle left bundle은 단독 페이지를 구성하는데 사용되고, index.md 파일을 포함하는 폴더로 구성된다. 3 of Leaf Bundle Example content/ ├── project │ ├── index.md ├── posts │ ├── my-post │ │ ├── content1.md │ │ ├── content2.md │ | ├── image1.png │ | └── index.md │ └── study │ ├── first.
-                    
-                        <a href="https://ralpioxxcs.github.io/post/hugo/hugo_content_management_2_page/">
-                            [Read more<span class="sr-text"> from Hugo Content Management [2] - Page Bundle</span>...]
-                        </a>
-                    </p>
-        </div>
-    </div>
-</article>
-
-            
-        
-            
-                <article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><div>
-        <header class="post-list-title">
-            <a href="https://ralpioxxcs.github.io/post/cmake_3/">
-                <h2 itemprop="headline">CMake 정리 Part3 - Project configure #1</h2>
-            </a>
-            <div class="metadata"><div>
-                <span class="far fa-clock" aria-hidden></span>
-                <span class="sr-text">Published: </span>
-                <time datetime="" itemprop="datePublished">November 03, 2019</time>
-                </div></div>
-        </header>
-        <div class="post-list-summary" itemprop="description">
-            <p> 
-                    <a href="https://ralpioxxcs.github.io/post/cmake_3/">
-                        [Read more<span class="sr-text"> from CMake 정리 Part3 - Project Configure #1</span>...]
-                    </a></p>
-        </div>
-    </div>
-</article>
-
-            
-        
-            
-                <article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><div>
-        <header class="post-list-title">
-            <a href="https://ralpioxxcs.github.io/post/hugo/hugo_content_management_3_frontmatter/">
-                <h2 itemprop="headline">Hugo Content Management [3] - Front Matter</h2>
-            </a>
-            <div class="metadata"><div>
-                <span class="far fa-clock" aria-hidden></span>
-                <span class="sr-text">Published: </span>
-                <time datetime="" itemprop="datePublished">December 28, 2019</time>
-                </div></div>
-        </header>
-        <div class="post-list-summary" itemprop="description">
-            <p>Front Matter? front matter란 작성하고자 하는 컨텐츠(파일)의 제목, 날짜, 작성자 등의 기본적인 속성들을 나타내는 meta-data 형식이다. Formats Hugo는 다음 3가지의 마크업 언어를 지원한다. TOML : &#43;&#43;&#43; YAML : --- JSON : {, } 을 이용해 front matter의 시작과 끝을 지정한다. 예를들어, a.md라는 새로운 파일을 만들었다면 --- title: &#34;this is title!&#34; date: 2019-12-27T13:39:03&#43;09:00 draft: true --- this is the markdown file 이렇게 파일의 시작 부분에 front matter를 설정해주면,
-                    
-                        <a href="https://ralpioxxcs.github.io/post/hugo/hugo_content_management_3_frontmatter/">
-                            [Read more<span class="sr-text"> from Hugo Content Management [3] - Front Matter</span>...]
-                        </a>
-                    </p>
-        </div>
-    </div>
-</article>
-
-            
-        
-            
-                <article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><div>
-        <header class="post-list-title">
             <a href="https://ralpioxxcs.github.io/post/cmake_4/">
                 <h2 itemprop="headline">CMake 정리 Part4 - 색상 지정하기</h2>
             </a>
@@ -247,7 +174,7 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
                 <article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><div>
         <header class="post-list-title">
             <a href="https://ralpioxxcs.github.io/post/hugo/hugo_content_management_4_shortcodes/">
-                <h2 itemprop="headline">Hugo Content Management [2] - Shortcodes</h2>
+                <h2 itemprop="headline">Hugo Content Management [4] - Shortcodes</h2>
             </a>
             <div class="metadata"><div>
                 <span class="far fa-clock" aria-hidden></span>
@@ -259,7 +186,7 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
             <p>Shortcode Hugo는 다양한 shortcode 플러그인들을 제공하고 있다. markdown이 제공하는 편리한 문법들로도 충분하지만, code snippet이나 유튜브 영상등을 추가할 때 유용하게 사용할 수 있다. 　Shotcode 사용하기 shortcode는 { {&lt; shortcodename parameters &gt;} } 의 용법으로 간단하게 사용할 수 있다. * shortcodename : 사용할 shortcode의 이름 (ex. highlight, figure..) * parameter : 사용할 shortcode가 어떻게 정의되었느냐에 따라 달라짐 Built-in Shortcodes figure figure는 마크다운이 제공하는 이미지관련 문법보다 더 다양한 기능을 제공한다. parameter를 통해 첨부할 이미지의 title, caption, link등을 지정할 수 있다.
                     
                         <a href="https://ralpioxxcs.github.io/post/hugo/hugo_content_management_4_shortcodes/">
-                            [Read more<span class="sr-text"> from Hugo Content Management [2] - Shortcodes</span>...]
+                            [Read more<span class="sr-text"> from Hugo Content Management [4] - Shortcodes</span>...]
                         </a>
                     </p>
         </div>
@@ -300,11 +227,6 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
             </a>
         </li>
 		<li>
-            <a href="https://ralpioxxcs.github.io/categories/">
-                
-            </a>
-        </li>
-		<li>
             <a href="https://ralpioxxcs.github.io/categories/life/">
                 Life
             </a>
@@ -335,7 +257,7 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 	</header>
 	
 			<a class="widget-header-small button" href="https://ralpioxxcs.github.io/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to the Site</a>
-		<ul><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_1_install/">Getting Started Hugo [1] - 설치 및 환경설정</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_manual/">Getting Started Hugo [1] - Github 블로그 생성</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_2_quick_start/">Getting Started Hugo [2] - 블로그 생성</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_structure/">Getting Started Hugo [2] - 디렉터리 구조</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_3_directory/">Getting Started Hugo [3] - 디렉터리 구조</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_frontmatter/">Getting Started Hugo [3] - Front Matter</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_4_remote_repo_link/">Getting Started Hugo [4] - 레포지토리 연동 및 웹 호스팅</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_1/">CMake 정리 Part1 - Overview</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_content_management_1_contents_path/">Hugo Content Management [1] - Contents Path</a></li></ul>
+		<ul><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_1_install/">Getting Started Hugo [1] - 설치 및 환경설정</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_2_quick_start/">Getting Started Hugo [2] - 블로그 생성</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_3_directory/">Getting Started Hugo [3] - 디렉터리 구조</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_4_remote_repo_link/">Getting Started Hugo [4] - 레포지토리 연동 및 웹 호스팅</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_1/">CMake 정리 Part1 - Overview</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_content_management_1_contents_path/">Hugo Content Management [1] - Contents Path</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_2/">CMake 정리 Part2 - Commands &amp; Vars</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_content_management_2_page/">Hugo Content Management [2] - Page Bundle</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_3/">CMake 정리 Part3 - Project configure #1</a></li></ul>
 </div>
 <div class="widget">
 	<header>

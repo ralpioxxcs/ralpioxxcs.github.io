@@ -6,15 +6,42 @@
     <description>Recent content in Tags on My Dev Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Nov 2019 14:38:36 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 29 Dec 2019 15:21:24 +0900</lastBuildDate>
     
 	<atom:link href="https://ralpioxxcs.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Hugo</title>
+      <link>https://ralpioxxcs.github.io/tags/hugo/</link>
+      <pubDate>Sun, 29 Dec 2019 15:21:24 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>https://ralpioxxcs.github.io/tags/blog/</link>
+      <pubDate>Sat, 28 Dec 2019 16:09:14 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>https://ralpioxxcs.github.io/tags/github/</link>
+      <pubDate>Sat, 28 Dec 2019 15:02:51 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>cmake</title>
       <link>https://ralpioxxcs.github.io/tags/cmake/</link>
-      <pubDate>Sun, 03 Nov 2019 14:38:36 +0900</pubDate>
+      <pubDate>Thu, 26 Dec 2019 15:32:40 +0900</pubDate>
       
       <guid>https://ralpioxxcs.github.io/tags/cmake/</guid>
       <description></description>
@@ -48,20 +75,20 @@
     </item>
     
     <item>
-      <title>hugo</title>
-      <link>https://ralpioxxcs.github.io/tags/hugo/</link>
-      <pubDate>Fri, 13 Sep 2019 20:15:50 +0900</pubDate>
-      
-      <guid>https://ralpioxxcs.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>OpenCV</title>
       <link>https://ralpioxxcs.github.io/tags/opencv/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ralpioxxcs.github.io/tags/opencv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Qt</title>
+      <link>https://ralpioxxcs.github.io/tags/qt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/tags/qt/</guid>
       <description></description>
     </item>
     
