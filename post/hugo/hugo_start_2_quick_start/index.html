@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Getting Started Hugo [2] - 블로그 생성</title><meta name="description" itemprop="description" content="Let&amp;rsquo;s create own blog Step 1. 블로그 폴더 생성 이제 hugo를 이용해 사이트를 생성해볼 차례다. c://hugo 의 경로에서 $ hugo new site [폴더이름] 을 입력한다. 여기서 폴더이름은 말 그대로 터미널 상에서 접근할 폴더이름일 뿐, 생성하고자 하는 블로그의 이름이 되진 않는다. (예시는 blog로 하였다.) 폴더를 만들었으면 $ cd blog &amp;amp;&amp;amp; ls 를 입력해 생성된 폴더의 내부를 확인한다. 정상적으로 생성이 되었으면 archtypes, assets, config.toml 등 여러 파일과 폴더들이 생성된 것을 확인할 수 있다." id="desc"><meta name="generator" content="Hugo 0.56.3" /><meta name="keywords" itemprop="keywords" content="Hugo,blog" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/hugo/hugo_start_2_quick_start/">
+        
+
+<meta name="thumbnail" content="https://ralpioxxcs.github.io/images/moon.png" /><link rel="dns-prefetch" href="https://use.fontawesome.com/" />
+<link rel="preconnect" href="https://use.fontawesome.com/" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/foundation.min.css" integrity="sha512-Rd0Ui3eNZsRTe4UNVA+6WeU5VwpGAqqd/+xTbWI/T/OmcYqnrNWfJC02AjPbt5TuDGA3l4SFJdTH91QPP3vAFg==">
+  <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/dark.min.css" integrity="sha512-gQpDgduBgmlAz6RR6+MVgbcrPEu+langkA9ngZtIrAjV8Hwcno+rUvaRjfUrzceGtO+gpoCAm4fLeMuAd/5v7Q=="><link rel="stylesheet" href="/styles.css" >
+    <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/reset.min.css" integrity="sha512-xwmF/g6mhf+NqX9hnHhGV+cKVithh9ncEOreDW6jZXIqMiqsX5sxvVZXYuzz+8jLI7+wPFr/2/sg2x8Pp0a1VA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/fonts.min.css" integrity="sha512-xROhFE8XAZAs3OvW3/LUg6jCH7LgsxPMimBO/cpzYV7EgJgY5hbDX9rHqaOG5VrAv52NMXFuHiQ4xqnSgFvmqQ=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/classes.min.css" integrity="sha512-VtHTX2MGmhT+/gSeNEwz2TD+OEFpz9G9AUjHc9mAjEgneeX2RiJphzfxqHrU+7afnuHkTkwMtY4hP5XAJCZ8eA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/pagination.min.css" integrity="sha512-exBmcmBqVqp5QRaF99l0MQPpD6X4/7RMJa9KY4pv/SP9R31qyqwuAIcPXZPm5jn7EMDVdviT45APg0RBfBA3Ow=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/page.min.css" integrity="sha512-Eqq5awgR8Hau+25mfXATwps47CVesfD4jrw/QozL3eib52HmmlFnvxsERXuGCVQH1S1FSaQD/oycWN/WyGE5Aw=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/widgets.min.css" integrity="sha512-KkbwfnV4akqRv+GVWIAa0UazaiDzkMev+Iq6AkHnzvOhQnb9tJnZwHySGGBjfwH3LOmMuaXl7an5uR36EuftaQ==">
+    <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/single.min.css" integrity="sha512-Q1Zy+J4r0j/8Mjf7DVoh6X/Q1gWZqmvMf5IX7vxV7k97/NLY5novAjHRMReD9WWrDOq54t3sHsR7i8HwXlumlg==">
+
+
+
+    
+    
+    
+    
+<link rel="preload" media="print" type="text/css" href="https://ralpioxxcs.github.io/css/print.min.2e0961e511885e38a09cc9a9ff3de5ce7d7d2186bb9ed98a61f176688d4ef61a.css" integrity="sha256-Lglh5RGIXjignMmp/z3lzn19IYa7ntmKYfF2aI1O9ho=" as="style"><link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/" />
+<link rel="preconnect" href="https://cdnjs.cloudflare.com/" />
+
+<link rel="preload" href="https://ralpioxxcs.github.io/index.json" as="fetch" />
+
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/widgets/search.min.css" integrity="sha512-7Otnz4Nae1tx47YRSs6kqu108FeNUGViWaATAkZTN2g/kps4bOyu+ukQwTyPMnZBM2U9epLm+YXnArC+I+UMgA==">
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/widgets/taglist.min.css" integrity="sha512-0mtvLycPchph/Kw1OcdI3KmQ5qi8oOdiS35lFD+pNcEPTQ6rmiMAF9dztJkhsuuQsAuXADQCj2gC/O+axKh/Pw==">
+<link rel="icon" href="https://ralpioxxcs.github.io/favicon.ico?nocache" />
+    <meta name="theme-color" content="#2073c9">
+    <meta name="apple-mobile-web-app-title" content="My Dev Blog">
+    <meta name="application-name" content="My Dev Blog">
+
+    </head>
+    <body itemscope itemtype="http://schema.org/WebPage">
+        <div class="off-canvas-wrapper">
+            <button id="off-canvas-toggle" type="button" class="button hide-for-medium" aria-label="Open Menu" data-toggle="main-nav-off-canvas">
+                <span class="fas fa-bars"></span>
+            </button>
+            <div class="off-canvas position-left" id="main-nav-off-canvas" data-off-canvas>
+                <nav>
+                    <ul class="vertical menu drilldown" data-drilldown><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/about/" >
+            ABOUT ME
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/project/" >
+            PROJECT
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/post/" >
+            POST
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/" >
+            STUDY
+        </a><ul class="vertical menu">
+                <li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/datastructure/" >
+            DATA STRUCTURE
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/linux/" >
+            LINUX
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/opencv/" >
+            OPENCV
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/qt/" >
+            QT
+        </a></li>
+            </ul></li></ul>
+                </nav>
+            </div>
+        <div id="site-container" class="grid-container full off-canvas-content">
+                <div class="grid-x full grid-container data-off-canvas-content">
+                    <div id="site-header" class="cell">
+                        <a href="https://ralpioxxcs.github.io/">
+                            <header class="small-text-left medium-text-left grid-x">
+                                <img id="site-thumbnail" class="cell shrink" src="https://ralpioxxcs.github.io/images/moon.png" data-width="93">
+                                <div id="site-title-container" class="cell shrink grid-y">
+                                    <div id="site-title" class="cell shrink" itemprop="name">My Dev Blog</div>
+                                    <div class="cell shrink" id="site-tagline">personal development diary</div>
+                                </div>
+                            </header>
+                        </a>
+                        <nav id="main-nav" class="small-hide">
+                          <ul class="dropdown menu" data-dropdown-menu><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/about/" >
+            ABOUT ME
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/project/" >
+            PROJECT
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/post/" >
+            POST
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/" >
+            STUDY
+        </a><ul class="vertical menu">
+                <li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/datastructure/" >
+            DATA STRUCTURE
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/linux/" >
+            LINUX
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/opencv/" >
+            OPENCV
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/qt/" >
+            QT
+        </a></li>
+            </ul></li></ul>
+                        </nav>
+                        </div>
+                    <div id="main-container" class="cell grid-x grid-padding-x grid-container" role="main" itemprop="mainContentOfPage">
+                        
+                            <div class="callout cell text-center">
+                                Interested in using Midnight? Check out the <a href="https://bluestnight.com/guides/midnight/getting-started/">getting started</a>
+guide and the <a href="https://bluestnight.com/docs/midnight/users/">user documentation</a> for more information.
+                            </div>
+                        
+                        
+                        
+                        
+                        
+                        
+<main class="cell medium-8" >
+    <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
+        <header id="page-header">
+            <h1 itemprop="headline">Getting Started Hugo [2] - 블로그 생성</h1><p id="post-metadata" class="grid-x grid-padding-x"><span class="cell shrink">
+                        <span class="far fa-clock fa-sm fa-fw" aria-hidden></span>
+                        <strong>Published:</strong>
+                        <time datetime="2019-12-28" content="2019-12-28" itemprop="datePublished">December 28, 2019</time>
+                    </span><span class="cell shrink">
+                        <span class="fas fa-book fa-sm fa-fw" aria-hidden></span>
+                        <strong>Estimated Reading Time:</strong>
+                        ~<span itemprop="timeRequired">2 minutes</span>
+                    </span><span class="cell shrink">
+                        <span class="fas fa-tags fa-sm fa-fw" aria-hidden></span>
+                            
+                            
+                            <a itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL" href="https://ralpioxxcs.github.io/tags/hugo" rel="tag" itemprop="url">hugo</a>
+                        
+                            
+                            
+                            <a itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL" href="https://ralpioxxcs.github.io/tags/blog" rel="tag" itemprop="url">blog</a>
+                        </span></p>
+            
+        </header>
+        
+        <div id="post-content"><nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#span-style-color-lightblue-strong-let-s-create-own-blog-strong-span"><span style="color:lightblue"><strong>Let&rsquo;s create own blog</strong></span></a>
+<ul>
+<li><a href="#step-1-블로그-폴더-생성"><strong>Step 1. 블로그 폴더 생성</strong></a>
+<ul>
+<li><a href="#테스트">테스트</a></li>
+</ul></li>
+<li><a href="#step-2-테마-적용하기"><strong>Step 2. 테마 적용하기</strong></a>
+<ul>
+<li><a href="#테마-다운로드">테마 다운로드</a></li>
+<li><a href="#테마-적용">테마 적용</a></li>
+</ul></li>
+<li><a href="#step-3-컨텐츠-포스팅"><strong>Step 3. 컨텐츠 포스팅</strong></a>
+<ul>
+<li><a href="#테스트-파일-생성">테스트 파일 생성</a></li>
+<li><a href="#확인하기">확인하기</a></li>
+<li><a href="#참고">참고</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav><span itemprop="articleBody">
+
+<h2 id="span-style-color-lightblue-strong-let-s-create-own-blog-strong-span"><span style="color:lightblue"><strong>Let&rsquo;s create own blog</strong></span></h2>
+
+<h3 id="step-1-블로그-폴더-생성"><strong>Step 1. 블로그 폴더 생성</strong></h3>
+
+<p>이제 hugo를 이용해 사이트를 생성해볼 차례다.<br />
+<code>c://hugo</code> 의 경로에서 <code>$ hugo new site [폴더이름]</code> 을 입력한다. 여기서 폴더이름은 말 그대로 터미널 상에서 접근할 폴더이름일 뿐, 생성하고자 하는 블로그의 이름이 되진 않는다. (예시는 <strong>blog</strong>로 하였다.) 폴더를 만들었으면 <code>$ cd blog &amp;&amp; ls</code> 를 입력해 생성된 폴더의 내부를 확인한다. 정상적으로 생성이 되었으면 archtypes, assets, config.toml 등 여러 파일과 폴더들이 생성된 것을 확인할 수 있다.</p>
+
+<h4 id="테스트">테스트</h4>
+
+<p><code>$ hugo server</code> 명령어를 입력하고 <code>localhost:1313</code> 을 크롬, 파이어폭스등 웹브라우저 주소창에 입력해 생성된 사이트를 확인해보자. 아직은 빈 화면만 있을것이다.</p>
+
+<hr />
+
+<h3 id="step-2-테마-적용하기"><strong>Step 2. 테마 적용하기</strong></h3>
+
+<p><a href="https://themes.gohugo.io/">hugo themes link</a> 로 이동하여 원하는 테마를 선택한다. 각 테마 소개 화면에서 <strong>Demo</strong>를 클릭하면 각 블로그의 예시를 체험해볼 수 있다. 마음에 드는 테마를 찾았으면 <strong>Download</strong> 버튼을 클릭 후 테마의 repository 로 이동한다.</p>
+
+<h4 id="테마-다운로드">테마 다운로드</h4>
+
+<p>아까 생성되었던 폴더들중 <strong>themes</strong>라는 폴더에 테마를 넣어주어야한다. 테마의 repository url를 복사하고 <code>c://hugo/blog/themes</code> 경로에서 <code>$ git clone [repository url]</code>를 입력하여 테마를 다운로드한다.<br />
+(<code>$ git submodule</code> 명령어를 사용하여도 된다. 사실 <a href="https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme">hugo getting started</a>에서는 submodule 명령어로 테마를 추가하라고 명시되어있다.)</p>
+
+<h4 id="테마-적용">테마 적용</h4>
+
+<p>테마 다운로드를 완료하였으면 <code>c://hugo/blog</code>경로안에 있는 <strong>config.toml</strong>파일을 살짝 수정하여 적용시켜주여야 한다. 편집기를 이용해 <strong>config.toml</strong>파일을 연뒤, 마지막줄에 <code>theme = &quot;다운로드받은 테마 폴더명&quot;</code>을 추가해준다.</p>
+
+<hr />
+
+<h3 id="step-3-컨텐츠-포스팅"><strong>Step 3. 컨텐츠 포스팅</strong></h3>
+
+<h4 id="테스트-파일-생성">테스트 파일 생성</h4>
+
+<p>테마가 적용되었으면 포스팅을 해볼 차례이다. <code>c://hugo/blog</code>의 경로로 돌아가 <code>$ hugo new post/test.md</code> 커맨드를 입력한다. 그러면 <strong>content</strong> 폴더안에 <strong>post</strong> 라는 폴더가 생기고 그 안에 <strong>test.md</strong> 가 생성이 된다. 기본적으로 hugo를 이용해 포스팅을 할때는 <code>$ hugo new [폴더명]/[파일이름]</code>의 구조로 커맨드를 입력하면 된다.</p>
+
+<h4 id="확인하기">확인하기</h4>
+
+<p>다시한번 <code>$ hugo server -D</code> 커맨드를 입력하고 <strong>localhost:1313</strong>으로 들어가본다. 그러면 아까 생성한 <strong>test.md</strong> 글이 올라온 것을 확인해 볼 수 있을것이다.</p>
+
+<h4 id="참고">참고</h4>
+
+<p>각 테마마다 폴더 구성이 조금씩 다르지만, 기본적으로 테마를 받은 폴더안에는 <strong>exampleSite</strong>라는 폴더가 있을것이다. 만약 잘 안된다면 이 폴더를 잘보고 자신의 blog 로컬경로와 비교해가며 확인해보는 것도 좋다.</p>
+
+</span>
+        </div></article>
+
+    <nav id="post-nav" aria-label="Pagination">
+            <ul class="pagination grid-x grid-x-padding full">
+                
+                <li class="pagination-previous cell small-order-2 medium-5 medium-order-1">
+                    <a class="button" href="https://ralpioxxcs.github.io/post/hugo_structure/" rel="prev">
+                        <span class="sr-text">Previous:</span>
+                        Getting Started Hugo [2] - 디렉터리 구조</a>
+                </li>
+                
+                
+                <li class="pagination-next cell small-order-1 medium-5 medium-order-2 medium-offset-2">
+                    <a class="button" href="https://ralpioxxcs.github.io/post/hugo_manual/" rel="next">
+                        <span class="sr-text">Next:</span>Getting Started Hugo [1] - Github 블로그 생성
+                    </a>
+                </li>
+                
+            </ul>
+        </nav>
+
+    
+</main>
+
+                        <aside class="cell small-12 small-order-2 medium-4" itemscope itemtype="http://schema.org/WPSideBar"><div class="widget">
+	<header>
+		<span class="widget-header">
+			<span class="fas fa-folder fa-xs" aria-hidden></span>
+            <a href="https://ralpioxxcs.github.io/categories/">Categories</a>
+        </span>
+	</header>
+	<ul><li>
+            <a href="https://ralpioxxcs.github.io/categories/study/">
+                Study
+            </a>
+        </li>
+		<li>
+            <a href="https://ralpioxxcs.github.io/categories/">
+                
+            </a>
+        </li>
+		<li>
+            <a href="https://ralpioxxcs.github.io/categories/life/">
+                Life
+            </a>
+        </li>
+		
+	</ul>
+</div>
+<div class="widget" id="search-container">
+    <header>
+        <span class="widget-header"><span class="fas fa-search fa-xs" aria-hidden></span> Search</span>
+    </header>
+    <input type="search" name="search" id="searchbox" placeholder="Search..." autocomplete="off"/>
+    <div id="search-results" class="grid-y hide"></div>
+</div>
+<div class="widget">
+    
+    
+        
+    
+
+    
+        
+            
+        
+	
+	<header>
+		<span class="widget-header"><span class="fas fa-pencil-alt fa-xs" aria-hidden></span> <a href="https://ralpioxxcs.github.io/post/">Recent Posts</a></span>
+	</header>
+	
+			<a class="widget-header-small button" href="https://ralpioxxcs.github.io/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to the Site</a>
+		<a class="widget-header-small button" href="https://ralpioxxcs.github.io/post/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to Post</a><ul><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_1_install/">Getting Started Hugo [1] - 설치 및 환경설정</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_manual/">Getting Started Hugo [1] - Github 블로그 생성</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_2_quick_start/">Getting Started Hugo [2] - 블로그 생성</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_structure/">Getting Started Hugo [2] - 디렉터리 구조</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_3_directory/">Getting Started Hugo [3] - 디렉터리 구조</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo_frontmatter/">Getting Started Hugo [3] - Front Matter</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_4_remote_repo_link/">Getting Started Hugo [4] - 레포지토리 연동 및 웹 호스팅</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_1/">CMake 정리 Part1 - Overview</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_content_management_1_contents_path/">Hugo Content Management [1] - Contents Path</a></li></ul>
+</div>
+<div class="widget">
+	<header>
+		<span class="widget-header"><span class="fas fa-tags fa-xs" aria-hidden></span> <a href="https://ralpioxxcs.github.io/tags/">Tags</a></span>
+	</header>
+	<div class="grid-x grid-padding-x" id="sidebar-tags"><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/hugo/" title="hugo">
+                hugo
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/cmake/" title="cmake">
+                cmake
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/data-structure/" title="data structure">
+                data structure
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/blog/" title="blog">
+                blog
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/linux/" title="linux">
+                linux
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/github/" title="github">
+                github
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/opencv/" title="opencv">
+                opencv
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/qt/" title="qt">
+                qt
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/shell/" title="shell">
+                shell
+			</a></div>
+</div>
+</aside>
+
+                    </div>
+                    <footer class="cell grid-x full align-middle">
+    <div class="cell medium-4 small-text-center medium-text-left medium-left small-order-1 grid-x">
+        <div class="cell">
+            <small>
+                &copy; 2019
+                <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                    <span itemprop="name">
+                        My Dev Blog.
+                    </span>
+                </span>
+            </small>
+        </div>
+        <div class="cell">
+            <small>
+                Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://bluestnight.com/products/midnight/">Midnight</a>.
+            </small>
+        </div>
+        
+    </div>
+    <div class="cell medium-4 small-text-center medium-text-center small-order-2 grid-x">
+        
+        <div class="cell small-full small-text-center grid-x">
+            
+            
+            
+        </div>
+    </div>
+    <div id="social-icons" class="grid-x cell medium-4 small-text-center small-order-3 medium-text-right">
+
+
+
+
+<a href="mailto:ralpioxx@gmail.com" class="cell shrink" rel="me nofollow" title="Email" aria-title="Send me an email!">
+
+    <span class="fa-stack fa-xs">
+        <span class="fas fa-square fa-stack-2x"></span>
+        <span class="fas fa-envelope fa-stack-1x fa-inverse"></span>
+    </span>
+
+</a>
+
+
+
+
+
+
+
+
+
+
+<a href="https://github.com/ralpioxxcs" class="cell shrink" rel="me nofollow" title="GitHub" aria-title="Fork me on GitHub!">
+
+    <span class="fa-stack fa-xs">
+        <span class="fas fa-square fa-stack-2x"></span>
+        <span class="fab fa-github fa-stack-1x fa-inverse"></span>
+    </span>
+
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="https://steamcommunity.com/profiles/76561198329384651/" class="cell shrink" rel="me nofollow" title="Steam" aria-title="Find me on Steam!">
+
+    <span class="fa-stack fa-xs">
+        <span class="fas fa-square fa-stack-2x"></span>
+        <span class="fab fa-steam-symbol fa-stack-1x fa-inverse"></span>
+    </span>
+
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</footer>
+
+                </div>
+            </div>
+            
+<script type="text/javascript" src="https://ralpioxxcs.github.io/js/iubenda.min.js" integrity="sha512-z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP&#43;DGNKHfuwvY7kxvUdBeoGlODJ6&#43;SfaPg=="></script>
+
+<script type="text/javascript" src="https://ralpioxxcs.github.io/js/jquery.slim.min.js" integrity="sha512-Vh3gVmRI2jSBsal9/runMkMofsFtK8Y853PR0gU05T7GALp&#43;LkR&#43;7eJVOEfLccmsW6YPcJZttDIy6At3hyfk3g==" defer></script><script type="text/javascript" src="https://ralpioxxcs.github.io/js/foundation.min.js" integrity="sha512-xk8mY&#43;d42YkkVC6T2d6aO7SczKKDotCA3sZk1/gY0/QCzFrp8UNt&#43;x03xSnVS0mJUfmLH2QTzEZ2dN9&#43;XNIy0w==" defer></script><script type="text/javascript" src="https://ralpioxxcs.github.io/js/thumbnail.min.js" integrity="sha512-uNl2h75OUmzThaBo7EMkHEjys8w9EtYpRZ/q5S3kjiqewZ9lAKf5jeW9Y3yXi/aD08M7mvq7VVHZZL5KBk0gXg==" defer></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.3/lunr.min.js" defer></script><script type="text/javascript" src="https://ralpioxxcs.github.io/js/widgets/search.min.js" integrity="sha512-eeaJboa5EoSnroVyXDKbKugQHsg0g8aabWxLeM8103eaqBcFZA6cvOyw1v9N48SyLitoVqkrV/nbkhPIj6BbTg==" defer></script><script type="text/javascript" src="https://ralpioxxcs.github.io/js/index.min.js" integrity="sha512-YtQNoHzM2e3Fogp&#43;RCYOYoBOzEIGHgvaTGNDrBnvwl47l195xvC1h4YbG9oAbREHMq&#43;Ed3Kx6NYT2xe6KNPGvg==" defer></script>
+        </div>
+    </body>
+</html>
