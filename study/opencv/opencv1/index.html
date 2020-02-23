@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Getting Started Hugo [3] - 디렉터리 구조</title><meta name="description" itemprop="description" content="명령창에 `$ hugo new site`를 입력하면 아래의 구조를 가진 폴더가 하나 생성되는것을 보았을것이다.각각의 폴더의 역할은 다음과 같다." id="desc"><meta name="generator" content="Hugo 0.56.3" /><meta name="keywords" itemprop="keywords" content="Hugo" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/hugo/hugo_start_3_directory/">
+        <title>OpenCV 자료형</title><meta name="description" itemprop="description" content="OpenCV를 사용할 때 자주 사용되는 자료형들을 정리해보았다. 주로 `Point`, `Mat` 등이 있다." id="desc"><meta name="generator" content="Hugo 0.56.3" /><link rel="canonical" href="https://ralpioxxcs.github.io/study/opencv/opencv1/">
         
 
 <meta name="thumbnail" content="https://ralpioxxcs.github.io/images/moon.png" /><link rel="dns-prefetch" href="https://use.fontawesome.com/" />
@@ -128,22 +128,17 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
                         
                         
 <main class="cell medium-8" >
-    <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
+    <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="desc">
         <header id="page-header">
-            <h1 itemprop="headline">Getting Started Hugo [3] - 디렉터리 구조</h1><p id="post-metadata" class="grid-x grid-padding-x"><span class="cell shrink">
+            <h1 itemprop="headline">OpenCV 자료형</h1><p id="post-metadata" class="grid-x grid-padding-x"><span class="cell shrink">
                         <span class="far fa-clock fa-sm fa-fw" aria-hidden></span>
                         <strong>Published:</strong>
-                        <time datetime="2019-12-28" content="2019-12-28" itemprop="datePublished">December 28, 2019</time>
+                        <time datetime="2020-01-25" content="2020-01-25" itemprop="datePublished">January 25, 2020</time>
                     </span><span class="cell shrink">
                         <span class="fas fa-book fa-sm fa-fw" aria-hidden></span>
                         <strong>Estimated Reading Time:</strong>
                         ~<span itemprop="timeRequired">2 minutes</span>
-                    </span><span class="cell shrink">
-                        <span class="fas fa-tag fa-sm fa-fw" aria-hidden></span>
-                            
-                            
-                            <a itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL" href="https://ralpioxxcs.github.io/tags/hugo" rel="tag" itemprop="url">hugo</a>
-                        </span></p>
+                    </span></p>
             
         </header>
         
@@ -151,82 +146,122 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 <ul>
 <li>
 <ul>
-<li>
-<ul>
-<li><a href="#archetypes"><strong>archetypes</strong></a></li>
-<li><a href="#content"><strong>content</strong></a></li>
-<li><a href="#data"><strong>data</strong></a></li>
-<li><a href="#layouts"><strong>layouts</strong></a></li>
-<li><a href="#static"><strong>static</strong></a></li>
-<li><a href="#themes"><strong>themes</strong></a></li>
-<li><a href="#config"><strong>config</strong></a></li>
-</ul></li>
+<li><a href="#strong-point-strong"><strong>Point</strong></a></li>
+<li><a href="#strong-size-strong"><strong>Size</strong></a></li>
+<li><a href="#strong-rect-strong"><strong>Rect</strong></a></li>
 </ul></li>
 </ul>
 </nav><span itemprop="articleBody">
 
-<p>명령창에 <code>$ hugo new site</code>를 입력하면 아래의 구조를 가진 폴더가 하나 생성되는것을 보았을것이다.
-각각의 폴더의 역할은 다음과 같다.</p>
+<p>OpenCV를 사용할 때 자주 사용되는 자료형들을 정리해보았다.<br />
+주로 <code>Point</code>, <code>Mat</code> 등이 있다.</p>
 
-<pre><code>( root )
-├─ archetypes  
-├─ content  
-├─ data  
-├─ layouts
-├─ static  
-├─ themes  
-├─ config.toml   
-</code></pre>
+<hr />
 
-<h3 id="archetypes"><strong>archetypes</strong></h3>
+<h2 id="strong-point-strong"><strong>Point</strong></h2>
 
-<p><code>$ hugo new</code> 커맨드를 이용해 새로운 contents 파일을 만들때, 이 폴더내의 <strong>default.md</strong> 의 front matter 형태를 갖는 content를 자동으로 초기화 하여 만들어준다. 많은양의 content를 만들 때 유용하게 사용될수 있고, front matter field를 직접 수정하여 하나의 archtypes로 만들 수 있다.</p>
+<p>point 클래스는 점의 좌표를 표현할 때 자주 사용된다.<br />
+<strong>[ 멤버 변수 ]</strong><br />
+* <code>x</code>, <code>y</code><br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6">template</span><span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">typename</span> _Tp<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">Point_</span> {
+<span style="color:#ff79c6">public</span><span style="color:#ff79c6">:</span>
+    Point_();
+    Point_(_Tp _x, _Tp _y);
+    Point_(<span style="color:#ff79c6">const</span> Point_<span style="color:#ff79c6">&amp;</span> pt);
 
-<h3 id="content"><strong>content</strong></h3>
+    Point<span style="color:#ff79c6">&amp;</span> <span style="color:#ff79c6">operator</span><span style="color:#ff79c6">=</span> (<span style="color:#ff79c6">const</span> Point_<span style="color:#ff79c6">&amp;</span> pt);
 
-<p>모든 게시글들 (contents)파일들은 <strong>content</strong> 디렉토리내에 쓰여지고 저장된다. 예를들면 사이트내에 3개의 주요 카테고리 (eg. blog, articles, tutorials) 가 있다고하면 content폴더내의 디렉토리 구조는 <code>content/blog</code>, <code>content/articels</code>, <code>content/tutorials</code>의 구조를 갖게된다.</p>
+    ....
 
-<h3 id="data"><strong>data</strong></h3>
+    _Tp x, y;
+    
+};
 
-<p>Hugo에서 site를 생성할 떄, 구성파일들을 저장하는데 사용되는 폴더이다. yaml, toml, json 형태로 쓸 수 있다.</p>
+<span style="color:#ff79c6">typedef</span> Point_<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">&gt;</span> Point2i;
+<span style="color:#ff79c6">typedef</span> Point_<span style="color:#ff79c6">&lt;</span>int64<span style="color:#ff79c6">&gt;</span> Point2l;
+<span style="color:#ff79c6">typedef</span> Point_<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">float</span><span style="color:#ff79c6">&gt;</span> Point2f;
+<span style="color:#ff79c6">typedef</span> Point_<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">double</span><span style="color:#ff79c6">&gt;</span> Point2d;
+<span style="color:#ff79c6">typedef</span> Point2i Point
+</code></pre></div>
+point 클래스를 초기화하는 방법은 2가지가 있다.</p>
 
-<h3 id="layouts"><strong>layouts</strong></h3>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">cv<span style="color:#ff79c6">::</span>Point pt(<span style="color:#bd93f9">10</span>,<span style="color:#bd93f9">20</span>); <span style="color:#6272a4">// 선언과 동시에 초기화
+</span><span style="color:#6272a4"></span>cv<span style="color:#ff79c6">::</span>Point pt2 <span style="color:#ff79c6">=</span> pt;  <span style="color:#6272a4">// 대입 연산자를 이용한 초기화
+</span></code></pre></div>
+<br></p>
 
-<p>static site를 구성하는 모든 <code>~.html</code> 확장자를 갖는 파일들을 저장한다. <strong>list pages</strong>, <strong>homepage</strong>, <strong>single page</strong> 등 더 많은 템플릿을 포함하고, hugo theme를 이용하는 사용자의 측면에서 가장 중요한 폴더이며, 이 부분을 수정하여 입맛에 맞게 수정하여 사용할 수도 있다.</p>
+<h2 id="strong-size-strong"><strong>Size</strong></h2>
 
-<h3 id="static"><strong>static</strong></h3>
+<p>size 클래스는 주로 사각형의 크기를 나타낼 때 쓰인다.<br />
+<strong>[ 멤버 변수 ]</strong><br />
+* <code>width</code>, <code>height</code><br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6">template</span><span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">typename</span> _Tp<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">Size_</span> {
+<span style="color:#ff79c6">public</span><span style="color:#ff79c6">:</span>
+    Size();
+    Size(_Tp _width, _Tp _height);
+    Point_(<span style="color:#ff79c6">const</span> Size_<span style="color:#ff79c6">&amp;</span> sz);
 
-<p>CSS, JavaScript, image등의 정적인 파일들이 저장된 폴더이다.  Hugo에 의해서 site를 생성할때, <strong>static</strong>폴더내의 파일들이 사용된다.</p>
+    Point<span style="color:#ff79c6">&amp;</span> <span style="color:#ff79c6">operator</span><span style="color:#ff79c6">=</span> (<span style="color:#ff79c6">const</span> Size<span style="color:#ff79c6">&amp;</span> sz);
 
-<h3 id="themes"><strong>themes</strong></h3>
+    ....
 
-<p>이미 만들어진 hugo의 theme를 저장하는 폴더. theme를 사용하려면 이 폴더에 theme폴더를 저장하고 config파일을 수정하여야 한다.</p>
+    _Tp width, height;
+    
+};
 
-<h3 id="config"><strong>config</strong></h3>
+<span style="color:#ff79c6">typedef</span> Size_<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">&gt;</span> Size2i;
+<span style="color:#ff79c6">typedef</span> Size_<span style="color:#ff79c6">&lt;</span>int64<span style="color:#ff79c6">&gt;</span> Size2l;
+<span style="color:#ff79c6">typedef</span> Size_<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">float</span><span style="color:#ff79c6">&gt;</span> Size2f;
+<span style="color:#ff79c6">typedef</span> Size_<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">double</span><span style="color:#ff79c6">&gt;</span> Size2d;
+<span style="color:#ff79c6">typedef</span> Size2i Size
+</code></pre></div>
+size 클래스 또한 선언과 동시에 초기화 및 대입을 통해 초기화가 가능하다.</p>
 
-<p><code>config.toml</code>, <code>config.yaml</code>, <code>config.json</code>의 형태로 작성되며, hugo site를 생성할 때 기본 설정파일의 역할을 한다. theme를 사용할 때, 이 부분을 수정하여 theme를 적용하듯이 site를 생성하는데 중요한 역할을 한다. 보통 theme마다 config를 적용하는 방법이 달라 각 theme의 config 내부를 잘 살펴보면 사용법이 적혀있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">cv<span style="color:#ff79c6">::</span>Size sz(<span style="color:#bd93f9">100</span>,<span style="color:#bd93f9">200</span>);   <span style="color:#6272a4">// 선언과 동시에 초기화
+</span><span style="color:#6272a4"></span>                        <span style="color:#6272a4">// width : 100, height : 200
+</span><span style="color:#6272a4"></span>cv<span style="color:#ff79c6">::</span>Size sz2 <span style="color:#ff79c6">=</span> sz;      <span style="color:#6272a4">// 대입 연산자를 이용한 초기화
+</span></code></pre></div>
+
+<p><br></p>
+
+<h2 id="strong-rect-strong"><strong>Rect</strong></h2>
+
+<p>Rect 클래스는 사각형의 속성을 나타낼 때 주로쓰인다.<br />
+<strong>[ 멤버 변수 ]</strong><br />
+* <code>x</code>, <code>y</code><br />
+* <code>width</code>, <code>height</code>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6">template</span><span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">typename</span> _Tp<span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">Rect_</span> {
+<span style="color:#ff79c6">public</span><span style="color:#ff79c6">:</span>
+    Rect_();
+    Rect_(_Tp _width, _Tp _height);
+    Point_(<span style="color:#ff79c6">const</span> Size_<span style="color:#ff79c6">&amp;</span> sz);
+
+    Point<span style="color:#ff79c6">&amp;</span> <span style="color:#ff79c6">operator</span><span style="color:#ff79c6">=</span> (<span style="color:#ff79c6">const</span> Size<span style="color:#ff79c6">&amp;</span> sz);
+
+    ....
+
+    _Tp width, height;
+    _Tp x, y
+    
+};
+
+<span style="color:#ff79c6">typedef</span> Size_<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">int</span><span style="color:#ff79c6">&gt;</span> Size2i;
+<span style="color:#ff79c6">typedef</span> Size_<span style="color:#ff79c6">&lt;</span>int64<span style="color:#ff79c6">&gt;</span> Size2l;
+<span style="color:#ff79c6">typedef</span> Size_<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">float</span><span style="color:#ff79c6">&gt;</span> Size2f;
+<span style="color:#ff79c6">typedef</span> Size_<span style="color:#ff79c6">&lt;</span><span style="color:#8be9fd">double</span><span style="color:#ff79c6">&gt;</span> Size2d;
+<span style="color:#ff79c6">typedef</span> Size2i Size
+</code></pre></div>
+size 클래스 또한 선언과 동시에 초기화 및 대입을 통해 초기화가 가능하다.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">cv<span style="color:#ff79c6">::</span>Size sz(<span style="color:#bd93f9">100</span>,<span style="color:#bd93f9">200</span>);   <span style="color:#6272a4">// 선언과 동시에 초기화
+</span><span style="color:#6272a4"></span>                        <span style="color:#6272a4">// width : 100, height : 200
+</span><span style="color:#6272a4"></span>cv<span style="color:#ff79c6">::</span>Size sz2 <span style="color:#ff79c6">=</span> sz;      <span style="color:#6272a4">// 대입 연산자를 이용한 초기화
+</span></code></pre></div>
 
 </span>
         </div></article>
 
-    <nav id="post-nav" aria-label="Pagination">
-            <ul class="pagination grid-x grid-x-padding full">
-                
-                <li class="pagination-previous cell small-order-2 medium-5 medium-order-1">
-                    <a class="button" href="https://ralpioxxcs.github.io/post/hugo/hugo_start_2_quick_start/" rel="prev">
-                        <span class="sr-text">Previous:</span>
-                        Getting Started Hugo [2] - 블로그 생성</a>
-                </li>
-                
-                
-                <li class="pagination-next cell small-order-1 medium-5 medium-order-2 medium-offset-2">
-                    <a class="button" href="https://ralpioxxcs.github.io/post/hugo/hugo_start_4_remote_repo_link/" rel="next">
-                        <span class="sr-text">Next:</span>Getting Started Hugo [4] - 레포지토리 연동 및 웹 호스팅
-                    </a>
-                </li>
-                
-            </ul>
-        </nav>
+    
 
     
 </main>
@@ -274,7 +309,7 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 	</header>
 	
 			<a class="widget-header-small button" href="https://ralpioxxcs.github.io/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to the Site</a>
-		<a class="widget-header-small button" href="https://ralpioxxcs.github.io/post/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to Post</a><ul><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_1_install/">Getting Started Hugo [1] - 설치 및 환경설정</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_2_quick_start/">Getting Started Hugo [2] - 블로그 생성</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_3_directory/">Getting Started Hugo [3] - 디렉터리 구조</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_4_remote_repo_link/">Getting Started Hugo [4] - 레포지토리 연동 및 웹 호스팅</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_1/">CMake 정리 Part1 - Overview</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_content_management_1_contents_path/">Hugo Content Management [1] - Contents Path</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_2/">CMake 정리 Part2 - Commands &amp; Vars</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_content_management_2_page/">Hugo Content Management [2] - Page Bundle</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_3/">CMake 정리 Part3 - Project configure #1</a></li></ul>
+		<a class="widget-header-small button" href="https://ralpioxxcs.github.io/study/opencv/index.xml"><span class="fas fa-rss fa-xs" aria-hidden></span> Subscribe to OpenCV</a><ul><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_1_install/">Getting Started Hugo [1] - 설치 및 환경설정</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_2_quick_start/">Getting Started Hugo [2] - 블로그 생성</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_3_directory/">Getting Started Hugo [3] - 디렉터리 구조</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_4_remote_repo_link/">Getting Started Hugo [4] - 레포지토리 연동 및 웹 호스팅</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_1/">CMake 정리 Part1 - Overview</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_content_management_1_contents_path/">Hugo Content Management [1] - Contents Path</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_2/">CMake 정리 Part2 - Commands &amp; Vars</a></li><li><a href="https://ralpioxxcs.github.io/post/hugo/hugo_content_management_2_page/">Hugo Content Management [2] - Page Bundle</a></li><li><a href="https://ralpioxxcs.github.io/post/cmake_3/">CMake 정리 Part3 - Project configure #1</a></li></ul>
 </div>
 <div class="widget">
 	<header>

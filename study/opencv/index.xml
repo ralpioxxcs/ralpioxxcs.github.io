@@ -6,19 +6,23 @@
     <description>Recent content in Study: OpenCV on My Dev Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sat, 25 Jan 2020 21:42:11 +0900</lastBuildDate>
     
 	<atom:link href="https://ralpioxxcs.github.io/study/opencv/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>OpenCV 설치하기 (Visual Studio 2015)</title>
-      <link>https://ralpioxxcs.github.io/study/opencv/installation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>OpenCV 자료형</title>
+      <link>https://ralpioxxcs.github.io/study/opencv/opencv1/</link>
+      <pubDate>Sat, 25 Jan 2020 21:42:11 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/study/opencv/installation/</guid>
-      <description> Step 1 : OpenCV 다운로드 OpenCV 공식 홈페이지 으로 이동해 Release 탭에서 원하는 버전을 받는다.
-Step 2 : 환경 설정 다운로드가 완료되었다면, 이제 OpenCV 라이브러리를 사용할 수 있도록 몇가지 작업이 필요하다. 우선 제어판 - 시스템 - 고급 시스템 설정으로 이동, 고급 탭에서 &amp;ldquo;환경변수&amp;rdquo; 를 클릭
-Step 3 : 테스트 </description>
+      <guid>https://ralpioxxcs.github.io/study/opencv/opencv1/</guid>
+      <description>OpenCV를 사용할 때 자주 사용되는 자료형들을 정리해보았다.
+주로 Point, Mat 등이 있다.
+Point point 클래스는 점의 좌표를 표현할 때 자주 사용된다.
+[ 멤버 변수 ]
+* x, y
+template&amp;lt;typename _Tp&amp;gt; class Point_ { public: Point_(); Point_(_Tp _x, _Tp _y); Point_(const Point_&amp;amp; pt); Point&amp;amp; operator= (const Point_&amp;amp; pt); .... _Tp x, y; }; typedef Point_&amp;lt;int&amp;gt; Point2i; typedef Point_&amp;lt;int64&amp;gt; Point2l; typedef Point_&amp;lt;float&amp;gt; Point2f; typedef Point_&amp;lt;double&amp;gt; Point2d; typedef Point2i Point  point 클래스를 초기화하는 방법은 2가지가 있다.</description>
     </item>
     
   </channel>

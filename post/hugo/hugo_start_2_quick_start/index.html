@@ -61,11 +61,11 @@
         <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/datastructure/" >
             DATA STRUCTURE
         </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/linux/" >
-            LINUX
-        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
         <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/opencv/" >
             OPENCV
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/linux/" >
+            LINUX
         </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
         <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/qt/" >
             QT
@@ -103,11 +103,11 @@
         <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/datastructure/" >
             DATA STRUCTURE
         </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/linux/" >
-            LINUX
-        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
         <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/opencv/" >
             OPENCV
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/linux/" >
+            LINUX
         </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
         <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/qt/" >
             QT
@@ -179,29 +179,44 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 
 <h2 id="span-style-color-lightblue-strong-let-s-create-own-blog-strong-span"><span style="color:lightblue"><strong>Let&rsquo;s create own blog</strong></span></h2>
 
+<p>　</p>
+
 <h3 id="step-1-블로그-폴더-생성"><strong>Step 1. 블로그 폴더 생성</strong></h3>
 
-<p>이제 hugo를 이용해 사이트를 생성해볼 차례다.<br />
-<code>c://hugo</code> 의 경로에서 <code>$ hugo new site [폴더이름]</code> 을 입력한다. 여기서 폴더이름은 말 그대로 터미널 상에서 접근할 폴더이름일 뿐, 생성하고자 하는 블로그의 이름이 되진 않는다. (예시는 <strong>blog</strong>로 하였다.) 폴더를 만들었으면 <code>$ cd blog &amp;&amp; ls</code> 를 입력해 생성된 폴더의 내부를 확인한다. 정상적으로 생성이 되었으면 archtypes, assets, config.toml 등 여러 파일과 폴더들이 생성된 것을 확인할 수 있다.</p>
+<ul>
+<li><p><code>c://hugo</code> 의 경로에서 <code>$ hugo new site [폴더이름]</code> 을 입력한다. 여기서 폴더이름은 말 그대로 터미널 상에서 접근할 폴더이름일 뿐, 생성하고자 하는 블로그의 이름이 되진 않는다. (예시는 <strong>blog</strong>로 하였다.)</p></li>
+
+<li><p>폴더를 만들었으면 <code>$ cd blog &amp;&amp; ls</code> 를 입력해 생성된 폴더의 내부를 확인한다.<br />
+-&gt; 정상적으로 생성이 되었으면 <strong>archtypes, assets, config.toml</strong> 등 여러 파일과 폴더들이 생성된 것을 확인할 수 있다.</p>
 
 <h4 id="테스트">테스트</h4>
 
-<p><code>$ hugo server</code> 명령어를 입력하고 <code>localhost:1313</code> 을 크롬, 파이어폭스등 웹브라우저 주소창에 입력해 생성된 사이트를 확인해보자. 아직은 빈 화면만 있을것이다.</p>
+<p><code>$ hugo server</code> 명령어를 입력하고 <code>localhost:1313</code> 을 크롬, 파이어폭스등 웹브라우저 주소창에 입력해 생성된 사이트를 확인해보자. 아직은 빈 화면만 있을것이다.</p></li>
+</ul>
 
 <hr />
 
 <h3 id="step-2-테마-적용하기"><strong>Step 2. 테마 적용하기</strong></h3>
 
-<p><a href="https://themes.gohugo.io/">hugo themes link</a> 로 이동하여 원하는 테마를 선택한다. 각 테마 소개 화면에서 <strong>Demo</strong>를 클릭하면 각 블로그의 예시를 체험해볼 수 있다. 마음에 드는 테마를 찾았으면 <strong>Download</strong> 버튼을 클릭 후 테마의 repository 로 이동한다.</p>
+<ul>
+<li><a href="https://themes.gohugo.io/">hugo themes link</a> 로 이동하여 원하는 테마를 선택한다.<br /></li>
+<li>각 테마 소개 화면에서 <strong>Demo</strong>를 클릭하면 각 블로그의 예시를 체험해볼 수 있다. 마음에 드는 테마를 찾았으면 <strong>Download</strong> 버튼을 클릭 후 테마의 repository 로 이동한다.</li>
+</ul>
 
 <h4 id="테마-다운로드">테마 다운로드</h4>
 
-<p>아까 생성되었던 폴더들중 <strong>themes</strong>라는 폴더에 테마를 넣어주어야한다. 테마의 repository url를 복사하고 <code>c://hugo/blog/themes</code> 경로에서 <code>$ git clone [repository url]</code>를 입력하여 테마를 다운로드한다.<br />
-(<code>$ git submodule</code> 명령어를 사용하여도 된다. 사실 <a href="https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme">hugo getting started</a>에서는 submodule 명령어로 테마를 추가하라고 명시되어있다.)</p>
+<ul>
+<li>테마의 repository url를 복사한다.<br /></li>
+<li><code>c://hugo/blog/themes</code> 경로에서 <code>$ git clone [repository url]</code>를 입력하여 테마를 다운로드한다.<br />
+(<code>$ git submodule</code> 명령어를 사용하여도 된다. 사실 <a href="https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme">hugo getting started</a>에서는 submodule 명령어로 테마를 추가하라고 명시되어있다.)</li>
+</ul>
 
 <h4 id="테마-적용">테마 적용</h4>
 
-<p>테마 다운로드를 완료하였으면 <code>c://hugo/blog</code>경로안에 있는 <strong>config.toml</strong>파일을 살짝 수정하여 적용시켜주여야 한다. 편집기를 이용해 <strong>config.toml</strong>파일을 연뒤, 마지막줄에 <code>theme = &quot;다운로드받은 테마 폴더명&quot;</code>을 추가해준다.</p>
+<ul>
+<li>편집기를 이용해 <strong>config.toml</strong>파일을 연뒤, 마지막줄에 <code>theme = &quot;다운로드받은 테마 폴더명&quot;</code>을 추가해준다.<br />
+<br /></li>
+</ul>
 
 <hr />
 
@@ -209,11 +224,17 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 
 <h4 id="테스트-파일-생성">테스트 파일 생성</h4>
 
-<p>테마가 적용되었으면 포스팅을 해볼 차례이다. <code>c://hugo/blog</code>의 경로로 돌아가 <code>$ hugo new post/test.md</code> 커맨드를 입력한다. 그러면 <strong>content</strong> 폴더안에 <strong>post</strong> 라는 폴더가 생기고 그 안에 <strong>test.md</strong> 가 생성이 된다. 기본적으로 hugo를 이용해 포스팅을 할때는 <code>$ hugo new [폴더명]/[파일이름]</code>의 구조로 커맨드를 입력하면 된다.</p>
+<ul>
+<li><code>c://hugo/blog</code>의 경로로 돌아가 <code>$ hugo new post/test.md</code> 커맨드를 입력한다.</li>
+<li>그러면 <strong>content</strong> 폴더안에 <strong>post</strong> 라는 폴더가 생기고 그 안에 <strong>test.md</strong> 파일이 생성된다.<br /></li>
+</ul>
 
 <h4 id="확인하기">확인하기</h4>
 
-<p>다시한번 <code>$ hugo server -D</code> 커맨드를 입력하고 <strong>localhost:1313</strong>으로 들어가본다. 그러면 아까 생성한 <strong>test.md</strong> 글이 올라온 것을 확인해 볼 수 있을것이다.</p>
+<ul>
+<li><code>$ hugo server -D</code> 커맨드를 입력하고 <strong>localhost:1313</strong>으로 들어가본다. 그러면 아까 생성한 <strong>test.md</strong> 글이 업로드 된것을 확인해 볼 수 있을것이다.
+<br /></li>
+</ul>
 
 <h4 id="참고">참고</h4>
 
@@ -226,15 +247,15 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
             <ul class="pagination grid-x grid-x-padding full">
                 
                 <li class="pagination-previous cell small-order-2 medium-5 medium-order-1">
-                    <a class="button" href="https://ralpioxxcs.github.io/post/hugo/hugo_start_3_directory/" rel="prev">
+                    <a class="button" href="https://ralpioxxcs.github.io/post/hugo/hugo_start_1_install/" rel="prev">
                         <span class="sr-text">Previous:</span>
-                        Getting Started Hugo [3] - 디렉터리 구조</a>
+                        Getting Started Hugo [1] - 설치 및 환경설정</a>
                 </li>
                 
                 
                 <li class="pagination-next cell small-order-1 medium-5 medium-order-2 medium-offset-2">
-                    <a class="button" href="https://ralpioxxcs.github.io/post/hugo/hugo_start_1_install/" rel="next">
-                        <span class="sr-text">Next:</span>Getting Started Hugo [1] - 설치 및 환경설정
+                    <a class="button" href="https://ralpioxxcs.github.io/post/hugo/hugo_start_3_directory/" rel="next">
+                        <span class="sr-text">Next:</span>Getting Started Hugo [3] - 디렉터리 구조
                     </a>
                 </li>
                 
@@ -320,7 +341,7 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
     <div class="cell medium-4 small-text-center medium-text-left medium-left small-order-1 grid-x">
         <div class="cell">
             <small>
-                &copy; 2019
+                &copy; 2020
                 <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
                     <span itemprop="name">
                         My Dev Blog.

@@ -61,11 +61,11 @@
         <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/datastructure/" >
             DATA STRUCTURE
         </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/linux/" >
-            LINUX
-        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
         <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/opencv/" >
             OPENCV
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/linux/" >
+            LINUX
         </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
         <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/qt/" >
             QT
@@ -103,11 +103,11 @@
         <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/datastructure/" >
             DATA STRUCTURE
         </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/linux/" >
-            LINUX
-        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
         <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/opencv/" >
             OPENCV
+        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/linux/" >
+            LINUX
         </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
         <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/study/qt/" >
             QT
@@ -162,18 +162,31 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 
 <h2 id="hugo"><strong>Hugo?</strong></h2>
 
-<p>Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 <strong>Jekyll</strong> (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다.</p>
+<p>Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 <strong>Jekyll</strong> (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다.
+　<br />
+　</p>
 
 <hr />
+
+<p>　</p>
 
 <h3 id="install-windows-os">Install (Windows OS)</h3>
 
 <p>Hugo를 설치하는 방법은 간단하다. 아래의 URL을 클릭하여 다운로드 사이트로 이동한 뒤, 컴퓨터의 운영체제 버전(32bit, 64bit)를 확인하여 다운로드 한다.<br />
-<a href="https://github.com/gohugoio/hugo/releases">Hugo download link</a></p>
+<a href="https://github.com/gohugoio/hugo/releases">Hugo download link</a>
+　<br />
+　</p>
 
 <h3 id="configuration">Configuration</h3>
 
-<p>hugo 설치파일을 다운로드 한뒤, C드라이브에 hugo폴더를 생성한 뒤 그 안에 bin폴더를 생성,압축파일에 있던 <strong>hugo.exe</strong> 파일을 복사하여 bin폴더에 붙여넣는다. 그리고 시스템 속성 - 환경변수의 PATH에 <strong>c://hugo/bin</strong> 경로를 추가한다. powershell 혹은 git-bash등 terminal 프로그램을 실행시키고 <code>$ hugo -help</code> 커맨드를 입력하여 아래의 메세지가 정삭적으로 나오는지 확인한다. 메세지가 정삭적으로 잘 나온다면 hugo를 사용하기 위한 준비는 끝난다.</p>
+<ul>
+<li>C드라이브에 hugo폴더, bin 폴더 생성 <code>(C:\hugo\bin)</code><br /></li>
+<li><code>hugo.exe</code> 파일을 복사하여 bin폴더에 붙여넣기</li>
+<li>시스템 속성 - 환경변수의 PATH에 <code>c:\hugo\bin</code> 경로 추가.</li>
+
+<li><p>powershell 혹은 git-bash등 terminal 프로그램을 실행시키고 <code>$ hugo -help</code> 커맨드를 입력하여 아래의 메세지가 정삭적으로 나오는지 확인한다.<br />
+　<br />
+　</p>
 
 <pre><code>hugo is the main command, used to build your Hugo site.
 
@@ -183,63 +196,64 @@ built with love by spf13 and friends in Go.
 Complete documentation is available at https://gohugo.io/.
 
 Usage:
-  hugo [flags]
-  hugo [command]
+hugo [flags]
+hugo [command]
 
 Available Commands:
-  check       Contains some verification checks
-  config      Print the site configuration
-  convert     Convert your content to different formats
-  env         Print Hugo version and environment info
-  gen         A collection of several useful generators.
-  help        Help about any command
-  import      Import your site from others.
-  list        Listing out various types of content
-  new         Create new content for your site
-  server      A high performance webserver
-  version     Print the version number of Hugo
+check       Contains some verification checks
+config      Print the site configuration
+convert     Convert your content to different formats
+env         Print Hugo version and environment info
+gen         A collection of several useful generators.
+help        Help about any command
+import      Import your site from others.
+list        Listing out various types of content
+new         Create new content for your site
+server      A high performance webserver
+version     Print the version number of Hugo
 
 Flags:
-  -b, --baseURL string         hostname (and path) to the root, e.g. https://spf13.com/
-  -D, --buildDrafts            include content marked as draft
-  -E, --buildExpired           include expired content
-  -F, --buildFuture            include content with publishdate in the future
-      --cacheDir string        filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/
-      --cleanDestinationDir    remove files from destination not found in static directories
-      --config string          config file (default is path/config.yaml|json|toml)
-      --configDir string       config dir (default &quot;config&quot;)
-  -c, --contentDir string      filesystem path to content directory
-      --debug                  debug output
-  -d, --destination string     filesystem path to write files to
-      --disableKinds strings   disable different kind of pages (home, RSS etc.)
-      --enableGitInfo          add Git revision, date and author info to the pages
-  -e, --environment string     build environment
-      --forceSyncStatic        copy all files when static is changed.
-      --gc                     enable to run some cleanup tasks (remove unused cache files) after the build
-  -h, --help                   help for hugo
-      --i18n-warnings          print missing translations
-      --ignoreCache            ignores the cache directory
-  -l, --layoutDir string       filesystem path to layout directory
-      --log                    enable Logging
-      --logFile string         log File path (if set, logging enabled automatically)
-      --minify                 minify any supported output format (HTML, XML etc.)
-      --noChmod                don't sync permission mode of files
-      --noTimes                don't sync modification time of files
-      --path-warnings          print warnings on duplicate target paths etc.
-      --quiet                  build in quiet mode
-      --renderToMemory         render to memory (only useful for benchmark testing)
-  -s, --source string          filesystem path to read files relative from
-      --templateMetrics        display metrics about template executions
-      --templateMetricsHints   calculate some improvement hints when combined with --templateMetrics
-  -t, --theme strings          themes to use (located in /themes/THEMENAME/)
-      --themesDir string       filesystem path to themes directory
-      --trace file             write trace to file (not useful in general)
-  -v, --verbose                verbose output
-      --verboseLog             verbose logging
-  -w, --watch                  watch filesystem for changes and recreate as needed
+-b, --baseURL string         hostname (and path) to the root, e.g. https://spf13.com/
+-D, --buildDrafts            include content marked as draft
+-E, --buildExpired           include expired content
+-F, --buildFuture            include content with publishdate in the future
+  --cacheDir string        filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/
+  --cleanDestinationDir    remove files from destination not found in static directories
+  --config string          config file (default is path/config.yaml|json|toml)
+  --configDir string       config dir (default &quot;config&quot;)
+-c, --contentDir string      filesystem path to content directory
+  --debug                  debug output
+-d, --destination string     filesystem path to write files to
+  --disableKinds strings   disable different kind of pages (home, RSS etc.)
+  --enableGitInfo          add Git revision, date and author info to the pages
+-e, --environment string     build environment
+  --forceSyncStatic        copy all files when static is changed.
+  --gc                     enable to run some cleanup tasks (remove unused cache files) after the build
+-h, --help                   help for hugo
+  --i18n-warnings          print missing translations
+  --ignoreCache            ignores the cache directory
+-l, --layoutDir string       filesystem path to layout directory
+  --log                    enable Logging
+  --logFile string         log File path (if set, logging enabled automatically)
+  --minify                 minify any supported output format (HTML, XML etc.)
+  --noChmod                don't sync permission mode of files
+  --noTimes                don't sync modification time of files
+  --path-warnings          print warnings on duplicate target paths etc.
+  --quiet                  build in quiet mode
+  --renderToMemory         render to memory (only useful for benchmark testing)
+-s, --source string          filesystem path to read files relative from
+  --templateMetrics        display metrics about template executions
+  --templateMetricsHints   calculate some improvement hints when combined with --templateMetrics
+-t, --theme strings          themes to use (located in /themes/THEMENAME/)
+  --themesDir string       filesystem path to themes directory
+  --trace file             write trace to file (not useful in general)
+-v, --verbose                verbose output
+  --verboseLog             verbose logging
+-w, --watch                  watch filesystem for changes and recreate as needed
 
 Use &quot;hugo [command] --help&quot; for more information about a command.
-</code></pre>
+</code></pre></li>
+</ul>
 
 </span>
         </div></article>
@@ -248,11 +262,17 @@ Use &quot;hugo [command] --help&quot; for more information about a command.
             <ul class="pagination grid-x grid-x-padding full">
                 
                 <li class="pagination-previous cell small-order-2 medium-5 medium-order-1">
-                    <a class="button" href="https://ralpioxxcs.github.io/post/hugo/hugo_start_2_quick_start/" rel="prev">
+                    <a class="button" href="https://ralpioxxcs.github.io/post/hugo/hugo_start_1_install/" rel="prev">
                         <span class="sr-text">Previous:</span>
-                        Getting Started Hugo [2] - 블로그 생성</a>
+                        Getting Started Hugo [1] - 설치 및 환경설정</a>
                 </li>
                 
+                
+                <li class="pagination-next cell small-order-1 medium-5 medium-order-2 medium-offset-2">
+                    <a class="button" href="https://ralpioxxcs.github.io/post/hugo/hugo_start_2_quick_start/" rel="next">
+                        <span class="sr-text">Next:</span>Getting Started Hugo [2] - 블로그 생성
+                    </a>
+                </li>
                 
             </ul>
         </nav>
@@ -336,7 +356,7 @@ Use &quot;hugo [command] --help&quot; for more information about a command.
     <div class="cell medium-4 small-text-center medium-text-left medium-left small-order-1 grid-x">
         <div class="cell">
             <small>
-                &copy; 2019
+                &copy; 2020
                 <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
                     <span itemprop="name">
                         My Dev Blog.
