@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Getting Started Hugo [4] - 레포지토리 연동 및 웹 호스팅</title><meta name="description" itemprop="description" content="나만의 블로그를 구축하는데 성공하였다. 이제 로컬에 저장돼있는 hugo 사이트를 github repository와 연동하여 실제로 주소를 갖는 블로그를 만들어보자. " id="desc"><meta name="generator" content="Hugo 0.56.3" /><meta name="keywords" itemprop="keywords" content="Hugo,blog,Github" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/hugo/hugo_start_4_remote_repo_link/">
+        <title>Getting Started Hugo [4] - 레포지토리 연동 및 웹 호스팅</title><meta name="description" itemprop="description" content="나만의 블로그를 구축하는데 성공하였다. 이제 로컬에 저장돼있는 hugo 사이트를 github repository와 연동하여 실제로 주소를 갖는 블로그를 만들어보자. " id="desc"><meta name="generator" content="Hugo 0.67.0" /><meta name="keywords" itemprop="keywords" content="Hugo,blog,Github" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/hugo/hugo_start_4_remote_repo_link/">
         
 
 <meta name="thumbnail" content="https://ralpioxxcs.github.io/images/moon.png" /><link rel="dns-prefetch" href="https://use.fontawesome.com/" />
@@ -13,9 +13,9 @@
 
 
 
-<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/foundation.min.css" integrity="sha512-Rd0Ui3eNZsRTe4UNVA+6WeU5VwpGAqqd/+xTbWI/T/OmcYqnrNWfJC02AjPbt5TuDGA3l4SFJdTH91QPP3vAFg==">
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/foundation.min.css" integrity="sha512-t0zEaFIKc0WDtsFgwBHHm+88tQl/5JmmmP2Q19WgrNe1xZdyf25/1YsFe8A1g2wfmm4ZrCULR7SxiN6J/0Dl0A==">
   <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/dark.min.css" integrity="sha512-gQpDgduBgmlAz6RR6+MVgbcrPEu+langkA9ngZtIrAjV8Hwcno+rUvaRjfUrzceGtO+gpoCAm4fLeMuAd/5v7Q=="><link rel="stylesheet" href="/styles.css" >
-    <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/reset.min.css" integrity="sha512-xwmF/g6mhf+NqX9hnHhGV+cKVithh9ncEOreDW6jZXIqMiqsX5sxvVZXYuzz+8jLI7+wPFr/2/sg2x8Pp0a1VA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/fonts.min.css" integrity="sha512-xROhFE8XAZAs3OvW3/LUg6jCH7LgsxPMimBO/cpzYV7EgJgY5hbDX9rHqaOG5VrAv52NMXFuHiQ4xqnSgFvmqQ=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/classes.min.css" integrity="sha512-VtHTX2MGmhT+/gSeNEwz2TD+OEFpz9G9AUjHc9mAjEgneeX2RiJphzfxqHrU+7afnuHkTkwMtY4hP5XAJCZ8eA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/pagination.min.css" integrity="sha512-exBmcmBqVqp5QRaF99l0MQPpD6X4/7RMJa9KY4pv/SP9R31qyqwuAIcPXZPm5jn7EMDVdviT45APg0RBfBA3Ow=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/page.min.css" integrity="sha512-Eqq5awgR8Hau+25mfXATwps47CVesfD4jrw/QozL3eib52HmmlFnvxsERXuGCVQH1S1FSaQD/oycWN/WyGE5Aw=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/widgets.min.css" integrity="sha512-KkbwfnV4akqRv+GVWIAa0UazaiDzkMev+Iq6AkHnzvOhQnb9tJnZwHySGGBjfwH3LOmMuaXl7an5uR36EuftaQ==">
+    <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/reset.min.css" integrity="sha512-xwmF/g6mhf+NqX9hnHhGV+cKVithh9ncEOreDW6jZXIqMiqsX5sxvVZXYuzz+8jLI7+wPFr/2/sg2x8Pp0a1VA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/fonts.min.css" integrity="sha512-cBOwDygT9RQao+0k5Ag4nLlOK2PRKCsbVSbA3dH+OTKEnZxC6D5JBr/AB2C9R+veYNdBCRU/9OudMQPWQMjCdg=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/classes.min.css" integrity="sha512-VtHTX2MGmhT+/gSeNEwz2TD+OEFpz9G9AUjHc9mAjEgneeX2RiJphzfxqHrU+7afnuHkTkwMtY4hP5XAJCZ8eA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/pagination.min.css" integrity="sha512-exBmcmBqVqp5QRaF99l0MQPpD6X4/7RMJa9KY4pv/SP9R31qyqwuAIcPXZPm5jn7EMDVdviT45APg0RBfBA3Ow=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/page.min.css" integrity="sha512-Eqq5awgR8Hau+25mfXATwps47CVesfD4jrw/QozL3eib52HmmlFnvxsERXuGCVQH1S1FSaQD/oycWN/WyGE5Aw=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/widgets.min.css" integrity="sha512-KkbwfnV4akqRv+GVWIAa0UazaiDzkMev+Iq6AkHnzvOhQnb9tJnZwHySGGBjfwH3LOmMuaXl7an5uR36EuftaQ==">
     <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/single.min.css" integrity="sha512-Q1Zy+J4r0j/8Mjf7DVoh6X/Q1gWZqmvMf5IX7vxV7k97/NLY5novAjHRMReD9WWrDOq54t3sHsR7i8HwXlumlg==">
 
 
@@ -78,7 +78,7 @@
                     <div id="site-header" class="cell">
                         <a href="https://ralpioxxcs.github.io/">
                             <header class="small-text-left medium-text-left grid-x">
-                                <img id="site-thumbnail" class="cell shrink" src="https://ralpioxxcs.github.io/images/moon.png" data-width="93">
+                                <img id="site-thumbnail" class="cell shrink" src="https://ralpioxxcs.github.io/images/moon.png" data-width="512">
                                 <div id="site-title-container" class="cell shrink grid-y">
                                     <div id="site-title" class="cell shrink" itemprop="name">My Dev Blog</div>
                                     <div class="cell shrink" id="site-tagline">personal development diary</div>
@@ -156,65 +156,46 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
         </header>
         
         <div id="post-content"><nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#span-style-color-lightblue-stronghosting-blog-strong-span"><span style="color:lightblue"><strongHosting blog</strong></span></a>
-<ul>
-<li><a href="#step-1-github-repository-생성"><strong>Step 1. github repository 생성</strong></a>
-<ul>
-<li><a href="#remote-repository-연동">remote repository 연동</a></li>
-</ul></li>
-<li><a href="#step-2-컨텐츠-배포"><strong>Step 2. 컨텐츠 배포</strong></a>
-<ul>
-<li><a href="#commit">Commit</a></li>
-<li><a href="#check">Check</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav><span itemprop="articleBody">
-
-<h2 id="span-style-color-lightblue-stronghosting-blog-strong-span"><span style="color:lightblue"><strongHosting blog</strong></span></h2>
-
-<p>나만의 블로그를 구축하는데 성공하였다.
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#step-1-github-repository-생성"><strong>Step 1. github repository 생성</strong></a></li>
+        <li><a href="#step-2-컨텐츠-배포"><strong>Step 2. 컨텐츠 배포</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav><span itemprop="articleBody"><p>나만의 블로그를 구축하는데 성공하였다.
 이제 로컬에 저장돼있는 hugo 사이트를 github repository와 연동하여 실제로 주소를 갖는 블로그를 만들어보자.</p>
-
+<p> </p>
 <h3 id="step-1-github-repository-생성"><strong>Step 1. github repository 생성</strong></h3>
-
 <p>github에 로그인하여 총 2개의 repository를 생성한다.</p>
-
 <ul>
 <li>blog 폴더 자체를 저장할 <strong>repository</strong></li>
-<li>hugo로 빌드된 결과파일들을 저장할 <strong>repository</strong><br />
-두번째 repository의 이름은 <code>[github계정명].github.io</code>의 형식으로 만들어야 한다.<br /></li>
+<li>hugo로 빌드된 결과파일들을 저장할 <strong>repository</strong><br>
+두번째 repository의 이름은 <code>[github계정명].github.io</code>의 형식으로 만들어야 한다.</li>
 </ul>
-
+<p> </p>
 <h4 id="remote-repository-연동">remote repository 연동</h4>
-
 <ul>
 <li><code>c://hugo/blog</code> 경로에서 <code>$ git init .</code>으로 로컬 repository를 생성한다.</li>
 <li><code>$ git remote add origin [첫번째 repository url]</code>를 입력한다.</li>
 <li><code>$ git submodule add -b master [두번째 repository url] public</code>을 입력하여 hugo로 빌드될 public폴더를 서브모듈로 연결한다.</li>
 <li><code>$ hugo -t [테마 폴더명]</code>를 입력하면 hugo가 빌드를 시작하고 <strong>public</strong> 폴더가 생성이 된다.</li>
 </ul>
-
-<hr />
-
+<hr>
+<p> </p>
 <h3 id="step-2-컨텐츠-배포"><strong>Step 2. 컨텐츠 배포</strong></h3>
-
 <h4 id="commit">Commit</h4>
-
 <ul>
-<li><code>c://hugo/blog/public</code> 경로에서 <code>git add .</code><br /></li>
-<li><code>$ git commit -m &quot;first commit&quot;</code><br /></li>
+<li><code>c://hugo/blog/public</code> 경로에서 <code>git add .</code></li>
+<li><code>$ git commit -m &quot;first commit&quot;</code></li>
 <li><code>$ git push origin master</code></li>
-<li><code>c://hugo/blog</code> 경로에서 위의 3과정 반복<br /></li>
+<li><code>c://hugo/blog</code> 경로에서 위의 3과정 반복</li>
 </ul>
-
+<p> </p>
 <h4 id="check">Check</h4>
-
 <p>이제 <code>https://github.com/계정명.github.io</code>로 접속하여 블로그의 컨텐츠들이 업로드 되었는지 확인한다.</p>
+<p> </p>
 
 </span>
         </div></article>
@@ -256,6 +237,11 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 		<li>
             <a href="https://ralpioxxcs.github.io/categories/life/">
                 Life
+            </a>
+        </li>
+		<li>
+            <a href="https://ralpioxxcs.github.io/categories/linux/">
+                Linux
             </a>
         </li>
 		
@@ -300,6 +286,8 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
                 blog
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/linux/" title="linux">
                 linux
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/gdb/" title="gdb">
+                gdb
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/github/" title="github">
                 github
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/opencv/" title="opencv">

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Study: OpenCV on My Dev Blog</title>
@@ -19,9 +19,9 @@
       <guid>https://ralpioxxcs.github.io/study/opencv/opencv1/</guid>
       <description>OpenCV를 사용할 때 자주 사용되는 자료형들을 정리해보았다.
 주로 Point, Mat 등이 있다.
-Point point 클래스는 점의 좌표를 표현할 때 자주 사용된다.
+ Point point 클래스는 점의 좌표를 표현할 때 자주 사용된다.
 [ 멤버 변수 ]
-* x, y
+ x, y
 template&amp;lt;typename _Tp&amp;gt; class Point_ { public: Point_(); Point_(_Tp _x, _Tp _y); Point_(const Point_&amp;amp; pt); Point&amp;amp; operator= (const Point_&amp;amp; pt); .... _Tp x, y; }; typedef Point_&amp;lt;int&amp;gt; Point2i; typedef Point_&amp;lt;int64&amp;gt; Point2l; typedef Point_&amp;lt;float&amp;gt; Point2f; typedef Point_&amp;lt;double&amp;gt; Point2d; typedef Point2i Point  point 클래스를 초기화하는 방법은 2가지가 있다.</description>
     </item>
     

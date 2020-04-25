@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Github on My Dev Blog</title>
@@ -18,10 +18,9 @@
       
       <guid>https://ralpioxxcs.github.io/post/hugo/hugo_start_4_remote_repo_link/</guid>
       <description>나만의 블로그를 구축하는데 성공하였다. 이제 로컬에 저장돼있는 hugo 사이트를 github repository와 연동하여 실제로 주소를 갖는 블로그를 만들어보자.
-Step 1. github repository 생성 github에 로그인하여 총 2개의 repository를 생성한다.
+ Step 1. github repository 생성 github에 로그인하여 총 2개의 repository를 생성한다.
  blog 폴더 자체를 저장할 repository hugo로 빌드된 결과파일들을 저장할 repository
-두번째 repository의 이름은 [github계정명].github.io의 형식으로 만들어야 한다.
-  remote repository 연동  c://hugo/blog 경로에서 $ git init .으로 로컬 repository를 생성한다. $ git remote add origin [첫번째 repository url]를 입력한다.</description>
+두번째 repository의 이름은 [github계정명].github.io의 형식으로 만들어야 한다.   remote repository 연동  c://hugo/blog 경로에서 $ git init .으로 로컬 repository를 생성한다. $ git remote add origin [첫번째 repository url]를 입력한다.</description>
     </item>
     
   </channel>

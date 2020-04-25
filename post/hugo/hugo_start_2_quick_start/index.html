@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Getting Started Hugo [2] - 블로그 생성</title><meta name="description" itemprop="description" content="이제 hugo를 이용해 사이트를 생성해볼 차례다.`c://hugo` 의 경로에서 `$ hugo new site [폴더이름]` 을 입력한다. 여기서 폴더이름은 말 그대로 터미널 상에서 접근할 폴더이름일 뿐, 생성하고자 하는 블로그의 이름이 되진 않는다. (예시는 **blog**로 하였다.) 폴더를 만들었으면 `$ cd blog &amp;&amp; ls ` 를 입력해 생성된 폴더의 내부를 확인한다. 정상적으로 생성이 되었으면 archtypes, assets, config.toml 등 여러 파일과 폴더들이 생성된 것을 확인할 수 있다. " id="desc"><meta name="generator" content="Hugo 0.56.3" /><meta name="keywords" itemprop="keywords" content="Hugo,blog" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/hugo/hugo_start_2_quick_start/">
+        <title>Getting Started Hugo [2] - 블로그 생성</title><meta name="description" itemprop="description" content="이제 hugo를 이용해 사이트를 생성해볼 차례다.`c://hugo` 의 경로에서 `$ hugo new site [폴더이름]` 을 입력한다. 여기서 폴더이름은 말 그대로 터미널 상에서 접근할 폴더이름일 뿐, 생성하고자 하는 블로그의 이름이 되진 않는다. (예시는 **blog**로 하였다.) 폴더를 만들었으면 `$ cd blog &amp;&amp; ls ` 를 입력해 생성된 폴더의 내부를 확인한다. 정상적으로 생성이 되었으면 archtypes, assets, config.toml 등 여러 파일과 폴더들이 생성된 것을 확인할 수 있다. " id="desc"><meta name="generator" content="Hugo 0.67.0" /><meta name="keywords" itemprop="keywords" content="Hugo,blog" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/hugo/hugo_start_2_quick_start/">
         
 
 <meta name="thumbnail" content="https://ralpioxxcs.github.io/images/moon.png" /><link rel="dns-prefetch" href="https://use.fontawesome.com/" />
@@ -13,9 +13,9 @@
 
 
 
-<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/foundation.min.css" integrity="sha512-Rd0Ui3eNZsRTe4UNVA+6WeU5VwpGAqqd/+xTbWI/T/OmcYqnrNWfJC02AjPbt5TuDGA3l4SFJdTH91QPP3vAFg==">
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/foundation.min.css" integrity="sha512-t0zEaFIKc0WDtsFgwBHHm+88tQl/5JmmmP2Q19WgrNe1xZdyf25/1YsFe8A1g2wfmm4ZrCULR7SxiN6J/0Dl0A==">
   <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/dark.min.css" integrity="sha512-gQpDgduBgmlAz6RR6+MVgbcrPEu+langkA9ngZtIrAjV8Hwcno+rUvaRjfUrzceGtO+gpoCAm4fLeMuAd/5v7Q=="><link rel="stylesheet" href="/styles.css" >
-    <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/reset.min.css" integrity="sha512-xwmF/g6mhf+NqX9hnHhGV+cKVithh9ncEOreDW6jZXIqMiqsX5sxvVZXYuzz+8jLI7+wPFr/2/sg2x8Pp0a1VA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/fonts.min.css" integrity="sha512-xROhFE8XAZAs3OvW3/LUg6jCH7LgsxPMimBO/cpzYV7EgJgY5hbDX9rHqaOG5VrAv52NMXFuHiQ4xqnSgFvmqQ=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/classes.min.css" integrity="sha512-VtHTX2MGmhT+/gSeNEwz2TD+OEFpz9G9AUjHc9mAjEgneeX2RiJphzfxqHrU+7afnuHkTkwMtY4hP5XAJCZ8eA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/pagination.min.css" integrity="sha512-exBmcmBqVqp5QRaF99l0MQPpD6X4/7RMJa9KY4pv/SP9R31qyqwuAIcPXZPm5jn7EMDVdviT45APg0RBfBA3Ow=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/page.min.css" integrity="sha512-Eqq5awgR8Hau+25mfXATwps47CVesfD4jrw/QozL3eib52HmmlFnvxsERXuGCVQH1S1FSaQD/oycWN/WyGE5Aw=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/widgets.min.css" integrity="sha512-KkbwfnV4akqRv+GVWIAa0UazaiDzkMev+Iq6AkHnzvOhQnb9tJnZwHySGGBjfwH3LOmMuaXl7an5uR36EuftaQ==">
+    <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/reset.min.css" integrity="sha512-xwmF/g6mhf+NqX9hnHhGV+cKVithh9ncEOreDW6jZXIqMiqsX5sxvVZXYuzz+8jLI7+wPFr/2/sg2x8Pp0a1VA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/fonts.min.css" integrity="sha512-cBOwDygT9RQao+0k5Ag4nLlOK2PRKCsbVSbA3dH+OTKEnZxC6D5JBr/AB2C9R+veYNdBCRU/9OudMQPWQMjCdg=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/classes.min.css" integrity="sha512-VtHTX2MGmhT+/gSeNEwz2TD+OEFpz9G9AUjHc9mAjEgneeX2RiJphzfxqHrU+7afnuHkTkwMtY4hP5XAJCZ8eA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/pagination.min.css" integrity="sha512-exBmcmBqVqp5QRaF99l0MQPpD6X4/7RMJa9KY4pv/SP9R31qyqwuAIcPXZPm5jn7EMDVdviT45APg0RBfBA3Ow=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/page.min.css" integrity="sha512-Eqq5awgR8Hau+25mfXATwps47CVesfD4jrw/QozL3eib52HmmlFnvxsERXuGCVQH1S1FSaQD/oycWN/WyGE5Aw=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/widgets.min.css" integrity="sha512-KkbwfnV4akqRv+GVWIAa0UazaiDzkMev+Iq6AkHnzvOhQnb9tJnZwHySGGBjfwH3LOmMuaXl7an5uR36EuftaQ==">
     <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/single.min.css" integrity="sha512-Q1Zy+J4r0j/8Mjf7DVoh6X/Q1gWZqmvMf5IX7vxV7k97/NLY5novAjHRMReD9WWrDOq54t3sHsR7i8HwXlumlg==">
 
 
@@ -78,7 +78,7 @@
                     <div id="site-header" class="cell">
                         <a href="https://ralpioxxcs.github.io/">
                             <header class="small-text-left medium-text-left grid-x">
-                                <img id="site-thumbnail" class="cell shrink" src="https://ralpioxxcs.github.io/images/moon.png" data-width="93">
+                                <img id="site-thumbnail" class="cell shrink" src="https://ralpioxxcs.github.io/images/moon.png" data-width="512">
                                 <div id="site-title-container" class="cell shrink grid-y">
                                     <div id="site-title" class="cell shrink" itemprop="name">My Dev Blog</div>
                                     <div class="cell shrink" id="site-tagline">personal development diary</div>
@@ -152,93 +152,63 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
         </header>
         
         <div id="post-content"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#span-stylecolorlightbluestronglets-create-own-blogstrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->Let&rsquo;s create own blog<!-- raw HTML omitted --><!-- raw HTML omitted --></a>
+      <ul>
+        <li><a href="#step-1-블로그-폴더-생성"><strong>Step 1. 블로그 폴더 생성</strong></a></li>
+        <li><a href="#step-2-테마-적용하기"><strong>Step 2. 테마 적용하기</strong></a></li>
+        <li><a href="#step-3-컨텐츠-포스팅"><strong>Step 3. 컨텐츠 포스팅</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav><span itemprop="articleBody"><h2 id="span-stylecolorlightbluestronglets-create-own-blogstrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->Let&rsquo;s create own blog<!-- raw HTML omitted --><!-- raw HTML omitted --></h2>
+<p>　</p>
+<h3 id="step-1-블로그-폴더-생성"><strong>Step 1. 블로그 폴더 생성</strong></h3>
 <ul>
 <li>
-<ul>
-<li><a href="#span-style-color-lightblue-strong-let-s-create-own-blog-strong-span"><span style="color:lightblue"><strong>Let&rsquo;s create own blog</strong></span></a>
-<ul>
-<li><a href="#step-1-블로그-폴더-생성"><strong>Step 1. 블로그 폴더 생성</strong></a>
-<ul>
-<li><a href="#테스트">테스트</a></li>
-</ul></li>
-<li><a href="#step-2-테마-적용하기"><strong>Step 2. 테마 적용하기</strong></a>
-<ul>
-<li><a href="#테마-다운로드">테마 다운로드</a></li>
-<li><a href="#테마-적용">테마 적용</a></li>
-</ul></li>
-<li><a href="#step-3-컨텐츠-포스팅"><strong>Step 3. 컨텐츠 포스팅</strong></a>
-<ul>
-<li><a href="#테스트-파일-생성">테스트 파일 생성</a></li>
-<li><a href="#확인하기">확인하기</a></li>
-<li><a href="#참고">참고</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav><span itemprop="articleBody">
-
-<h2 id="span-style-color-lightblue-strong-let-s-create-own-blog-strong-span"><span style="color:lightblue"><strong>Let&rsquo;s create own blog</strong></span></h2>
-
-<p>　</p>
-
-<h3 id="step-1-블로그-폴더-생성"><strong>Step 1. 블로그 폴더 생성</strong></h3>
-
-<ul>
-<li><p><code>c://hugo</code> 의 경로에서 <code>$ hugo new site [폴더이름]</code> 을 입력한다. 여기서 폴더이름은 말 그대로 터미널 상에서 접근할 폴더이름일 뿐, 생성하고자 하는 블로그의 이름이 되진 않는다. (예시는 <strong>blog</strong>로 하였다.)</p></li>
-
-<li><p>폴더를 만들었으면 <code>$ cd blog &amp;&amp; ls</code> 를 입력해 생성된 폴더의 내부를 확인한다.<br />
+<p><code>c://hugo</code> 의 경로에서 <code>$ hugo new site [폴더이름]</code> 을 입력한다. 여기서 폴더이름은 말 그대로 터미널 상에서 접근할 폴더이름일 뿐, 생성하고자 하는 블로그의 이름이 되진 않는다. (예시는 <strong>blog</strong>로 하였다.)</p>
+</li>
+<li>
+<p>폴더를 만들었으면 <code>$ cd blog &amp;&amp; ls </code> 를 입력해 생성된 폴더의 내부를 확인한다.<br>
 -&gt; 정상적으로 생성이 되었으면 <strong>archtypes, assets, config.toml</strong> 등 여러 파일과 폴더들이 생성된 것을 확인할 수 있다.</p>
-
-<h4 id="테스트">테스트</h4>
-
-<p><code>$ hugo server</code> 명령어를 입력하고 <code>localhost:1313</code> 을 크롬, 파이어폭스등 웹브라우저 주소창에 입력해 생성된 사이트를 확인해보자. 아직은 빈 화면만 있을것이다.</p></li>
+</li>
 </ul>
-
-<hr />
-
+<h4 id="테스트">테스트</h4>
+<p><code>$ hugo server</code> 명령어를 입력하고 <code>localhost:1313</code> 을 크롬, 파이어폭스등 웹브라우저 주소창에 입력해 생성된 사이트를 확인해보자. 아직은 빈 화면만 있을것이다.</p>
+<p>　</p>
+<hr>
+<p>　</p>
 <h3 id="step-2-테마-적용하기"><strong>Step 2. 테마 적용하기</strong></h3>
-
 <ul>
-<li><a href="https://themes.gohugo.io/">hugo themes link</a> 로 이동하여 원하는 테마를 선택한다.<br /></li>
+<li><a href="https://themes.gohugo.io/">hugo themes link</a> 로 이동하여 원하는 테마를 선택한다.</li>
 <li>각 테마 소개 화면에서 <strong>Demo</strong>를 클릭하면 각 블로그의 예시를 체험해볼 수 있다. 마음에 드는 테마를 찾았으면 <strong>Download</strong> 버튼을 클릭 후 테마의 repository 로 이동한다.</li>
 </ul>
-
 <h4 id="테마-다운로드">테마 다운로드</h4>
-
 <ul>
-<li>테마의 repository url를 복사한다.<br /></li>
-<li><code>c://hugo/blog/themes</code> 경로에서 <code>$ git clone [repository url]</code>를 입력하여 테마를 다운로드한다.<br />
+<li>테마의 repository url를 복사한다.</li>
+<li><code>c://hugo/blog/themes</code> 경로에서 <code>$ git clone [repository url]</code>를 입력하여 테마를 다운로드한다.<br>
 (<code>$ git submodule</code> 명령어를 사용하여도 된다. 사실 <a href="https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme">hugo getting started</a>에서는 submodule 명령어로 테마를 추가하라고 명시되어있다.)</li>
 </ul>
-
 <h4 id="테마-적용">테마 적용</h4>
-
 <ul>
-<li>편집기를 이용해 <strong>config.toml</strong>파일을 연뒤, 마지막줄에 <code>theme = &quot;다운로드받은 테마 폴더명&quot;</code>을 추가해준다.<br />
-<br /></li>
+<li>편집기를 이용해 <strong>config.toml</strong>파일을 연뒤, 마지막줄에 <code>theme = &quot;다운로드받은 테마 폴더명&quot;</code>을 추가해준다.</li>
 </ul>
-
-<hr />
-
+<p>　</p>
+<hr>
+<p>　</p>
 <h3 id="step-3-컨텐츠-포스팅"><strong>Step 3. 컨텐츠 포스팅</strong></h3>
-
 <h4 id="테스트-파일-생성">테스트 파일 생성</h4>
-
 <ul>
 <li><code>c://hugo/blog</code>의 경로로 돌아가 <code>$ hugo new post/test.md</code> 커맨드를 입력한다.</li>
-<li>그러면 <strong>content</strong> 폴더안에 <strong>post</strong> 라는 폴더가 생기고 그 안에 <strong>test.md</strong> 파일이 생성된다.<br /></li>
+<li>그러면 <strong>content</strong> 폴더안에 <strong>post</strong> 라는 폴더가 생기고 그 안에 <strong>test.md</strong> 파일이 생성된다.</li>
 </ul>
-
 <h4 id="확인하기">확인하기</h4>
-
 <ul>
-<li><code>$ hugo server -D</code> 커맨드를 입력하고 <strong>localhost:1313</strong>으로 들어가본다. 그러면 아까 생성한 <strong>test.md</strong> 글이 업로드 된것을 확인해 볼 수 있을것이다.
-<br /></li>
+<li><code>$ hugo server -D</code> 커맨드를 입력하고 <strong>localhost:1313</strong>으로 들어가본다. 그러면 아까 생성한 <strong>test.md</strong> 글이 업로드 된것을 확인해 볼 수 있을것이다.</li>
 </ul>
-
 <h4 id="참고">참고</h4>
-
 <p>각 테마마다 폴더 구성이 조금씩 다르지만, 기본적으로 테마를 받은 폴더안에는 <strong>exampleSite</strong>라는 폴더가 있을것이다. 만약 잘 안된다면 이 폴더를 잘보고 자신의 blog 로컬경로와 비교해가며 확인해보는 것도 좋다.</p>
+<p> </p>
 
 </span>
         </div></article>
@@ -280,6 +250,11 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 		<li>
             <a href="https://ralpioxxcs.github.io/categories/life/">
                 Life
+            </a>
+        </li>
+		<li>
+            <a href="https://ralpioxxcs.github.io/categories/linux/">
+                Linux
             </a>
         </li>
 		
@@ -324,6 +299,8 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
                 blog
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/linux/" title="linux">
                 linux
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/gdb/" title="gdb">
+                gdb
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/github/" title="github">
                 github
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/opencv/" title="opencv">

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Getting Started Hugo [1] - 설치 및 환경설정</title><meta name="description" itemprop="description" content="Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 **Jekyll** (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다." id="desc"><meta name="generator" content="Hugo 0.56.3" /><meta name="keywords" itemprop="keywords" content="Hugo" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/hugo/hugo_start_1_install/">
+        <title>Getting Started Hugo [1] - 설치 및 환경설정</title><meta name="description" itemprop="description" content="Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 **Jekyll** (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다." id="desc"><meta name="generator" content="Hugo 0.67.0" /><meta name="keywords" itemprop="keywords" content="Hugo" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/hugo/hugo_start_1_install/">
         
 
 <meta name="thumbnail" content="https://ralpioxxcs.github.io/images/moon.png" /><link rel="dns-prefetch" href="https://use.fontawesome.com/" />
@@ -13,9 +13,9 @@
 
 
 
-<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/foundation.min.css" integrity="sha512-Rd0Ui3eNZsRTe4UNVA+6WeU5VwpGAqqd/+xTbWI/T/OmcYqnrNWfJC02AjPbt5TuDGA3l4SFJdTH91QPP3vAFg==">
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/foundation.min.css" integrity="sha512-t0zEaFIKc0WDtsFgwBHHm+88tQl/5JmmmP2Q19WgrNe1xZdyf25/1YsFe8A1g2wfmm4ZrCULR7SxiN6J/0Dl0A==">
   <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/dark.min.css" integrity="sha512-gQpDgduBgmlAz6RR6+MVgbcrPEu+langkA9ngZtIrAjV8Hwcno+rUvaRjfUrzceGtO+gpoCAm4fLeMuAd/5v7Q=="><link rel="stylesheet" href="/styles.css" >
-    <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/reset.min.css" integrity="sha512-xwmF/g6mhf+NqX9hnHhGV+cKVithh9ncEOreDW6jZXIqMiqsX5sxvVZXYuzz+8jLI7+wPFr/2/sg2x8Pp0a1VA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/fonts.min.css" integrity="sha512-xROhFE8XAZAs3OvW3/LUg6jCH7LgsxPMimBO/cpzYV7EgJgY5hbDX9rHqaOG5VrAv52NMXFuHiQ4xqnSgFvmqQ=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/classes.min.css" integrity="sha512-VtHTX2MGmhT+/gSeNEwz2TD+OEFpz9G9AUjHc9mAjEgneeX2RiJphzfxqHrU+7afnuHkTkwMtY4hP5XAJCZ8eA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/pagination.min.css" integrity="sha512-exBmcmBqVqp5QRaF99l0MQPpD6X4/7RMJa9KY4pv/SP9R31qyqwuAIcPXZPm5jn7EMDVdviT45APg0RBfBA3Ow=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/page.min.css" integrity="sha512-Eqq5awgR8Hau+25mfXATwps47CVesfD4jrw/QozL3eib52HmmlFnvxsERXuGCVQH1S1FSaQD/oycWN/WyGE5Aw=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/widgets.min.css" integrity="sha512-KkbwfnV4akqRv+GVWIAa0UazaiDzkMev+Iq6AkHnzvOhQnb9tJnZwHySGGBjfwH3LOmMuaXl7an5uR36EuftaQ==">
+    <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/reset.min.css" integrity="sha512-xwmF/g6mhf+NqX9hnHhGV+cKVithh9ncEOreDW6jZXIqMiqsX5sxvVZXYuzz+8jLI7+wPFr/2/sg2x8Pp0a1VA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/fonts.min.css" integrity="sha512-cBOwDygT9RQao+0k5Ag4nLlOK2PRKCsbVSbA3dH+OTKEnZxC6D5JBr/AB2C9R+veYNdBCRU/9OudMQPWQMjCdg=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/classes.min.css" integrity="sha512-VtHTX2MGmhT+/gSeNEwz2TD+OEFpz9G9AUjHc9mAjEgneeX2RiJphzfxqHrU+7afnuHkTkwMtY4hP5XAJCZ8eA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/pagination.min.css" integrity="sha512-exBmcmBqVqp5QRaF99l0MQPpD6X4/7RMJa9KY4pv/SP9R31qyqwuAIcPXZPm5jn7EMDVdviT45APg0RBfBA3Ow=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/page.min.css" integrity="sha512-Eqq5awgR8Hau+25mfXATwps47CVesfD4jrw/QozL3eib52HmmlFnvxsERXuGCVQH1S1FSaQD/oycWN/WyGE5Aw=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/widgets.min.css" integrity="sha512-KkbwfnV4akqRv+GVWIAa0UazaiDzkMev+Iq6AkHnzvOhQnb9tJnZwHySGGBjfwH3LOmMuaXl7an5uR36EuftaQ==">
     <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/single.min.css" integrity="sha512-Q1Zy+J4r0j/8Mjf7DVoh6X/Q1gWZqmvMf5IX7vxV7k97/NLY5novAjHRMReD9WWrDOq54t3sHsR7i8HwXlumlg==">
 
 
@@ -78,7 +78,7 @@
                     <div id="site-header" class="cell">
                         <a href="https://ralpioxxcs.github.io/">
                             <header class="small-text-left medium-text-left grid-x">
-                                <img id="site-thumbnail" class="cell shrink" src="https://ralpioxxcs.github.io/images/moon.png" data-width="93">
+                                <img id="site-thumbnail" class="cell shrink" src="https://ralpioxxcs.github.io/images/moon.png" data-width="512">
                                 <div id="site-title-container" class="cell shrink grid-y">
                                     <div id="site-title" class="cell shrink" itemprop="name">My Dev Blog</div>
                                     <div class="cell shrink" id="site-tagline">personal development diary</div>
@@ -148,46 +148,34 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
         </header>
         
         <div id="post-content"><nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#hugo"><strong>Hugo?</strong></a>
-<ul>
-<li><a href="#install-windows-os">Install (Windows OS)</a></li>
-<li><a href="#configuration">Configuration</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav><span itemprop="articleBody">
-
-<h2 id="hugo"><strong>Hugo?</strong></h2>
-
+  <ul>
+    <li><a href="#hugo"><strong>Hugo?</strong></a>
+      <ul>
+        <li><a href="#install-windows-os">Install (Windows OS)</a></li>
+        <li><a href="#configuration">Configuration</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav><span itemprop="articleBody"><h2 id="hugo"><strong>Hugo?</strong></h2>
 <p>Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 <strong>Jekyll</strong> (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다.
-　<br />
+　<br>
 　</p>
-
-<hr />
-
+<hr>
 <p>　</p>
-
 <h3 id="install-windows-os">Install (Windows OS)</h3>
-
-<p>Hugo를 설치하는 방법은 간단하다. 아래의 URL을 클릭하여 다운로드 사이트로 이동한 뒤, 컴퓨터의 운영체제 버전(32bit, 64bit)를 확인하여 다운로드 한다.<br />
+<p>Hugo를 설치하는 방법은 간단하다. 아래의 URL을 클릭하여 다운로드 사이트로 이동한 뒤, 컴퓨터의 운영체제 버전(32bit, 64bit)를 확인하여 다운로드 한다.<br>
 <a href="https://github.com/gohugoio/hugo/releases">Hugo download link</a>
-　<br />
+　<br>
 　</p>
-
 <h3 id="configuration">Configuration</h3>
-
 <ul>
-<li>C드라이브에 hugo폴더, bin 폴더 생성 <code>(C:\hugo\bin)</code><br /></li>
+<li>C드라이브에 hugo폴더, bin 폴더 생성 <code>(C:\hugo\bin)</code></li>
 <li><code>hugo.exe</code> 파일을 복사하여 bin폴더에 붙여넣기</li>
 <li>시스템 속성 - 환경변수의 PATH에 <code>c:\hugo\bin</code> 경로 추가.</li>
-
-<li><p>powershell 혹은 git-bash등 terminal 프로그램을 실행시키고 <code>$ hugo -help</code> 커맨드를 입력하여 아래의 메세지가 정삭적으로 나오는지 확인한다.<br />
-　<br />
-　</p>
-
+<li>powershell 혹은 git-bash등 terminal 프로그램을 실행시키고 <code>$ hugo -help</code> 커맨드를 입력하여 아래의 메세지가 정삭적으로 나오는지 확인한다.<br>
+　<br>
+　</li>
+</ul>
 <pre><code>hugo is the main command, used to build your Hugo site.
 
 Hugo is a Fast and Flexible Static Site Generator
@@ -196,65 +184,63 @@ built with love by spf13 and friends in Go.
 Complete documentation is available at https://gohugo.io/.
 
 Usage:
-hugo [flags]
-hugo [command]
+  hugo [flags]
+  hugo [command]
 
 Available Commands:
-check       Contains some verification checks
-config      Print the site configuration
-convert     Convert your content to different formats
-env         Print Hugo version and environment info
-gen         A collection of several useful generators.
-help        Help about any command
-import      Import your site from others.
-list        Listing out various types of content
-new         Create new content for your site
-server      A high performance webserver
-version     Print the version number of Hugo
+  check       Contains some verification checks
+  config      Print the site configuration
+  convert     Convert your content to different formats
+  env         Print Hugo version and environment info
+  gen         A collection of several useful generators.
+  help        Help about any command
+  import      Import your site from others.
+  list        Listing out various types of content
+  new         Create new content for your site
+  server      A high performance webserver
+  version     Print the version number of Hugo
 
 Flags:
--b, --baseURL string         hostname (and path) to the root, e.g. https://spf13.com/
--D, --buildDrafts            include content marked as draft
--E, --buildExpired           include expired content
--F, --buildFuture            include content with publishdate in the future
-  --cacheDir string        filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/
-  --cleanDestinationDir    remove files from destination not found in static directories
-  --config string          config file (default is path/config.yaml|json|toml)
-  --configDir string       config dir (default &quot;config&quot;)
--c, --contentDir string      filesystem path to content directory
-  --debug                  debug output
--d, --destination string     filesystem path to write files to
-  --disableKinds strings   disable different kind of pages (home, RSS etc.)
-  --enableGitInfo          add Git revision, date and author info to the pages
--e, --environment string     build environment
-  --forceSyncStatic        copy all files when static is changed.
-  --gc                     enable to run some cleanup tasks (remove unused cache files) after the build
--h, --help                   help for hugo
-  --i18n-warnings          print missing translations
-  --ignoreCache            ignores the cache directory
--l, --layoutDir string       filesystem path to layout directory
-  --log                    enable Logging
-  --logFile string         log File path (if set, logging enabled automatically)
-  --minify                 minify any supported output format (HTML, XML etc.)
-  --noChmod                don't sync permission mode of files
-  --noTimes                don't sync modification time of files
-  --path-warnings          print warnings on duplicate target paths etc.
-  --quiet                  build in quiet mode
-  --renderToMemory         render to memory (only useful for benchmark testing)
--s, --source string          filesystem path to read files relative from
-  --templateMetrics        display metrics about template executions
-  --templateMetricsHints   calculate some improvement hints when combined with --templateMetrics
--t, --theme strings          themes to use (located in /themes/THEMENAME/)
-  --themesDir string       filesystem path to themes directory
-  --trace file             write trace to file (not useful in general)
--v, --verbose                verbose output
-  --verboseLog             verbose logging
--w, --watch                  watch filesystem for changes and recreate as needed
+  -b, --baseURL string         hostname (and path) to the root, e.g. https://spf13.com/
+  -D, --buildDrafts            include content marked as draft
+  -E, --buildExpired           include expired content
+  -F, --buildFuture            include content with publishdate in the future
+      --cacheDir string        filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/
+      --cleanDestinationDir    remove files from destination not found in static directories
+      --config string          config file (default is path/config.yaml|json|toml)
+      --configDir string       config dir (default &quot;config&quot;)
+  -c, --contentDir string      filesystem path to content directory
+      --debug                  debug output
+  -d, --destination string     filesystem path to write files to
+      --disableKinds strings   disable different kind of pages (home, RSS etc.)
+      --enableGitInfo          add Git revision, date and author info to the pages
+  -e, --environment string     build environment
+      --forceSyncStatic        copy all files when static is changed.
+      --gc                     enable to run some cleanup tasks (remove unused cache files) after the build
+  -h, --help                   help for hugo
+      --i18n-warnings          print missing translations
+      --ignoreCache            ignores the cache directory
+  -l, --layoutDir string       filesystem path to layout directory
+      --log                    enable Logging
+      --logFile string         log File path (if set, logging enabled automatically)
+      --minify                 minify any supported output format (HTML, XML etc.)
+      --noChmod                don't sync permission mode of files
+      --noTimes                don't sync modification time of files
+      --path-warnings          print warnings on duplicate target paths etc.
+      --quiet                  build in quiet mode
+      --renderToMemory         render to memory (only useful for benchmark testing)
+  -s, --source string          filesystem path to read files relative from
+      --templateMetrics        display metrics about template executions
+      --templateMetricsHints   calculate some improvement hints when combined with --templateMetrics
+  -t, --theme strings          themes to use (located in /themes/THEMENAME/)
+      --themesDir string       filesystem path to themes directory
+      --trace file             write trace to file (not useful in general)
+  -v, --verbose                verbose output
+      --verboseLog             verbose logging
+  -w, --watch                  watch filesystem for changes and recreate as needed
 
 Use &quot;hugo [command] --help&quot; for more information about a command.
-</code></pre></li>
-</ul>
-
+</code></pre>
 </span>
         </div></article>
 
@@ -295,6 +281,11 @@ Use &quot;hugo [command] --help&quot; for more information about a command.
 		<li>
             <a href="https://ralpioxxcs.github.io/categories/life/">
                 Life
+            </a>
+        </li>
+		<li>
+            <a href="https://ralpioxxcs.github.io/categories/linux/">
+                Linux
             </a>
         </li>
 		
@@ -339,6 +330,8 @@ Use &quot;hugo [command] --help&quot; for more information about a command.
                 blog
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/linux/" title="linux">
                 linux
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/gdb/" title="gdb">
+                gdb
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/github/" title="github">
                 github
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/opencv/" title="opencv">

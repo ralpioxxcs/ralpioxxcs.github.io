@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Getting Started Hugo [3] - 디렉터리 구조</title><meta name="description" itemprop="description" content="명령창에 `$ hugo new site`를 입력하면 아래의 구조를 가진 폴더가 하나 생성되는것을 보았을것이다.각각의 폴더의 역할은 다음과 같다." id="desc"><meta name="generator" content="Hugo 0.56.3" /><meta name="keywords" itemprop="keywords" content="Hugo" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/hugo/hugo_start_3_directory/">
+        <title>Getting Started Hugo [3] - 디렉터리 구조</title><meta name="description" itemprop="description" content="명령창에 `$ hugo new site`를 입력하면 아래의 구조를 가진 폴더가 하나 생성되는것을 보았을것이다.각각의 폴더의 역할은 다음과 같다." id="desc"><meta name="generator" content="Hugo 0.67.0" /><meta name="keywords" itemprop="keywords" content="Hugo" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/hugo/hugo_start_3_directory/">
         
 
 <meta name="thumbnail" content="https://ralpioxxcs.github.io/images/moon.png" /><link rel="dns-prefetch" href="https://use.fontawesome.com/" />
@@ -13,9 +13,9 @@
 
 
 
-<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/foundation.min.css" integrity="sha512-Rd0Ui3eNZsRTe4UNVA+6WeU5VwpGAqqd/+xTbWI/T/OmcYqnrNWfJC02AjPbt5TuDGA3l4SFJdTH91QPP3vAFg==">
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/foundation.min.css" integrity="sha512-t0zEaFIKc0WDtsFgwBHHm+88tQl/5JmmmP2Q19WgrNe1xZdyf25/1YsFe8A1g2wfmm4ZrCULR7SxiN6J/0Dl0A==">
   <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/dark.min.css" integrity="sha512-gQpDgduBgmlAz6RR6+MVgbcrPEu+langkA9ngZtIrAjV8Hwcno+rUvaRjfUrzceGtO+gpoCAm4fLeMuAd/5v7Q=="><link rel="stylesheet" href="/styles.css" >
-    <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/reset.min.css" integrity="sha512-xwmF/g6mhf+NqX9hnHhGV+cKVithh9ncEOreDW6jZXIqMiqsX5sxvVZXYuzz+8jLI7+wPFr/2/sg2x8Pp0a1VA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/fonts.min.css" integrity="sha512-xROhFE8XAZAs3OvW3/LUg6jCH7LgsxPMimBO/cpzYV7EgJgY5hbDX9rHqaOG5VrAv52NMXFuHiQ4xqnSgFvmqQ=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/classes.min.css" integrity="sha512-VtHTX2MGmhT+/gSeNEwz2TD+OEFpz9G9AUjHc9mAjEgneeX2RiJphzfxqHrU+7afnuHkTkwMtY4hP5XAJCZ8eA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/pagination.min.css" integrity="sha512-exBmcmBqVqp5QRaF99l0MQPpD6X4/7RMJa9KY4pv/SP9R31qyqwuAIcPXZPm5jn7EMDVdviT45APg0RBfBA3Ow=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/page.min.css" integrity="sha512-Eqq5awgR8Hau+25mfXATwps47CVesfD4jrw/QozL3eib52HmmlFnvxsERXuGCVQH1S1FSaQD/oycWN/WyGE5Aw=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/widgets.min.css" integrity="sha512-KkbwfnV4akqRv+GVWIAa0UazaiDzkMev+Iq6AkHnzvOhQnb9tJnZwHySGGBjfwH3LOmMuaXl7an5uR36EuftaQ==">
+    <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/reset.min.css" integrity="sha512-xwmF/g6mhf+NqX9hnHhGV+cKVithh9ncEOreDW6jZXIqMiqsX5sxvVZXYuzz+8jLI7+wPFr/2/sg2x8Pp0a1VA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/fonts.min.css" integrity="sha512-cBOwDygT9RQao+0k5Ag4nLlOK2PRKCsbVSbA3dH+OTKEnZxC6D5JBr/AB2C9R+veYNdBCRU/9OudMQPWQMjCdg=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/classes.min.css" integrity="sha512-VtHTX2MGmhT+/gSeNEwz2TD+OEFpz9G9AUjHc9mAjEgneeX2RiJphzfxqHrU+7afnuHkTkwMtY4hP5XAJCZ8eA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/pagination.min.css" integrity="sha512-exBmcmBqVqp5QRaF99l0MQPpD6X4/7RMJa9KY4pv/SP9R31qyqwuAIcPXZPm5jn7EMDVdviT45APg0RBfBA3Ow=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/page.min.css" integrity="sha512-Eqq5awgR8Hau+25mfXATwps47CVesfD4jrw/QozL3eib52HmmlFnvxsERXuGCVQH1S1FSaQD/oycWN/WyGE5Aw=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/widgets.min.css" integrity="sha512-KkbwfnV4akqRv+GVWIAa0UazaiDzkMev+Iq6AkHnzvOhQnb9tJnZwHySGGBjfwH3LOmMuaXl7an5uR36EuftaQ==">
     <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/single.min.css" integrity="sha512-Q1Zy+J4r0j/8Mjf7DVoh6X/Q1gWZqmvMf5IX7vxV7k97/NLY5novAjHRMReD9WWrDOq54t3sHsR7i8HwXlumlg==">
 
 
@@ -78,7 +78,7 @@
                     <div id="site-header" class="cell">
                         <a href="https://ralpioxxcs.github.io/">
                             <header class="small-text-left medium-text-left grid-x">
-                                <img id="site-thumbnail" class="cell shrink" src="https://ralpioxxcs.github.io/images/moon.png" data-width="93">
+                                <img id="site-thumbnail" class="cell shrink" src="https://ralpioxxcs.github.io/images/moon.png" data-width="512">
                                 <div id="site-title-container" class="cell shrink grid-y">
                                     <div id="site-title" class="cell shrink" itemprop="name">My Dev Blog</div>
                                     <div class="cell shrink" id="site-tagline">personal development diary</div>
@@ -148,26 +148,21 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
         </header>
         
         <div id="post-content"><nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#archetypes"><strong>archetypes</strong></a></li>
-<li><a href="#content"><strong>content</strong></a></li>
-<li><a href="#data"><strong>data</strong></a></li>
-<li><a href="#layouts"><strong>layouts</strong></a></li>
-<li><a href="#static"><strong>static</strong></a></li>
-<li><a href="#themes"><strong>themes</strong></a></li>
-<li><a href="#config"><strong>config</strong></a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav><span itemprop="articleBody">
-
-<p>명령창에 <code>$ hugo new site</code>를 입력하면 아래의 구조를 가진 폴더가 하나 생성되는것을 보았을것이다.
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#archetypes"><strong>archetypes</strong></a></li>
+        <li><a href="#content"><strong>content</strong></a></li>
+        <li><a href="#data"><strong>data</strong></a></li>
+        <li><a href="#layouts"><strong>layouts</strong></a></li>
+        <li><a href="#static"><strong>static</strong></a></li>
+        <li><a href="#themes"><strong>themes</strong></a></li>
+        <li><a href="#config"><strong>config</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav><span itemprop="articleBody"><p>명령창에 <code>$ hugo new site</code>를 입력하면 아래의 구조를 가진 폴더가 하나 생성되는것을 보았을것이다.
 각각의 폴더의 역할은 다음과 같다.</p>
-
 <pre><code>( root )
 ├─ archetypes  
 ├─ content  
@@ -176,35 +171,29 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 ├─ static  
 ├─ themes  
 ├─ config.toml   
-</code></pre>
-
+</code></pre><p> </p>
 <h3 id="archetypes"><strong>archetypes</strong></h3>
-
 <p><code>$ hugo new</code> 커맨드를 이용해 새로운 contents 파일을 만들때, 이 폴더내의 <strong>default.md</strong> 의 front matter 형태를 갖는 content를 자동으로 초기화 하여 만들어준다. 많은양의 content를 만들 때 유용하게 사용될수 있고, front matter field를 직접 수정하여 하나의 archtypes로 만들 수 있다.</p>
-
+<p> </p>
 <h3 id="content"><strong>content</strong></h3>
-
 <p>모든 게시글들 (contents)파일들은 <strong>content</strong> 디렉토리내에 쓰여지고 저장된다. 예를들면 사이트내에 3개의 주요 카테고리 (eg. blog, articles, tutorials) 가 있다고하면 content폴더내의 디렉토리 구조는 <code>content/blog</code>, <code>content/articels</code>, <code>content/tutorials</code>의 구조를 갖게된다.</p>
-
+<p> </p>
 <h3 id="data"><strong>data</strong></h3>
-
 <p>Hugo에서 site를 생성할 떄, 구성파일들을 저장하는데 사용되는 폴더이다. yaml, toml, json 형태로 쓸 수 있다.</p>
-
+<p> </p>
 <h3 id="layouts"><strong>layouts</strong></h3>
-
 <p>static site를 구성하는 모든 <code>~.html</code> 확장자를 갖는 파일들을 저장한다. <strong>list pages</strong>, <strong>homepage</strong>, <strong>single page</strong> 등 더 많은 템플릿을 포함하고, hugo theme를 이용하는 사용자의 측면에서 가장 중요한 폴더이며, 이 부분을 수정하여 입맛에 맞게 수정하여 사용할 수도 있다.</p>
-
+<p> </p>
 <h3 id="static"><strong>static</strong></h3>
-
 <p>CSS, JavaScript, image등의 정적인 파일들이 저장된 폴더이다.  Hugo에 의해서 site를 생성할때, <strong>static</strong>폴더내의 파일들이 사용된다.</p>
-
+<p> </p>
 <h3 id="themes"><strong>themes</strong></h3>
-
 <p>이미 만들어진 hugo의 theme를 저장하는 폴더. theme를 사용하려면 이 폴더에 theme폴더를 저장하고 config파일을 수정하여야 한다.</p>
-
+<p> </p>
 <h3 id="config"><strong>config</strong></h3>
-
 <p><code>config.toml</code>, <code>config.yaml</code>, <code>config.json</code>의 형태로 작성되며, hugo site를 생성할 때 기본 설정파일의 역할을 한다. theme를 사용할 때, 이 부분을 수정하여 theme를 적용하듯이 site를 생성하는데 중요한 역할을 한다. 보통 theme마다 config를 적용하는 방법이 달라 각 theme의 config 내부를 잘 살펴보면 사용법이 적혀있다.</p>
+<p> 
+ </p>
 
 </span>
         </div></article>
@@ -246,6 +235,11 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 		<li>
             <a href="https://ralpioxxcs.github.io/categories/life/">
                 Life
+            </a>
+        </li>
+		<li>
+            <a href="https://ralpioxxcs.github.io/categories/linux/">
+                Linux
             </a>
         </li>
 		
@@ -290,6 +284,8 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
                 blog
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/linux/" title="linux">
                 linux
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/gdb/" title="gdb">
+                gdb
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/github/" title="github">
                 github
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/opencv/" title="opencv">

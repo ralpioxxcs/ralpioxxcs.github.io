@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Stack</title><meta name="description" itemprop="description" content="후입선출(後入先出, Last In First Out; LIFO) 의 자료구조로, 상자의 형태를 한 자료구조이다. 데이터의 삽입을 Push, 데이터의 출력을 Pop이라고 하며, 스택을 크게 두 가지로 나누면 **Ascending Stack** VS **Descending Stack**으로 나눌 수 있다." id="desc"><meta name="generator" content="Hugo 0.56.3" /><meta name="keywords" itemprop="keywords" content="Data Structure" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/study/datastructure/stack/">
+        <title>Stack</title><meta name="description" itemprop="description" content="후입선출(後入先出, Last In First Out; LIFO) 의 자료구조로, 상자의 형태를 한 자료구조이다. 데이터의 삽입을 Push, 데이터의 출력을 Pop이라고 하며, 스택을 크게 두 가지로 나누면 **Ascending Stack** VS **Descending Stack**으로 나눌 수 있다." id="desc"><meta name="generator" content="Hugo 0.67.0" /><meta name="keywords" itemprop="keywords" content="Data Structure" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/study/datastructure/stack/">
         
 
 <meta name="thumbnail" content="https://ralpioxxcs.github.io/images/moon.png" /><link rel="dns-prefetch" href="https://use.fontawesome.com/" />
@@ -13,9 +13,9 @@
 
 
 
-<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/foundation.min.css" integrity="sha512-Rd0Ui3eNZsRTe4UNVA+6WeU5VwpGAqqd/+xTbWI/T/OmcYqnrNWfJC02AjPbt5TuDGA3l4SFJdTH91QPP3vAFg==">
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/foundation.min.css" integrity="sha512-t0zEaFIKc0WDtsFgwBHHm+88tQl/5JmmmP2Q19WgrNe1xZdyf25/1YsFe8A1g2wfmm4ZrCULR7SxiN6J/0Dl0A==">
   <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/dark.min.css" integrity="sha512-gQpDgduBgmlAz6RR6+MVgbcrPEu+langkA9ngZtIrAjV8Hwcno+rUvaRjfUrzceGtO+gpoCAm4fLeMuAd/5v7Q=="><link rel="stylesheet" href="/styles.css" >
-    <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/reset.min.css" integrity="sha512-xwmF/g6mhf+NqX9hnHhGV+cKVithh9ncEOreDW6jZXIqMiqsX5sxvVZXYuzz+8jLI7+wPFr/2/sg2x8Pp0a1VA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/fonts.min.css" integrity="sha512-xROhFE8XAZAs3OvW3/LUg6jCH7LgsxPMimBO/cpzYV7EgJgY5hbDX9rHqaOG5VrAv52NMXFuHiQ4xqnSgFvmqQ=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/classes.min.css" integrity="sha512-VtHTX2MGmhT+/gSeNEwz2TD+OEFpz9G9AUjHc9mAjEgneeX2RiJphzfxqHrU+7afnuHkTkwMtY4hP5XAJCZ8eA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/pagination.min.css" integrity="sha512-exBmcmBqVqp5QRaF99l0MQPpD6X4/7RMJa9KY4pv/SP9R31qyqwuAIcPXZPm5jn7EMDVdviT45APg0RBfBA3Ow=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/page.min.css" integrity="sha512-Eqq5awgR8Hau+25mfXATwps47CVesfD4jrw/QozL3eib52HmmlFnvxsERXuGCVQH1S1FSaQD/oycWN/WyGE5Aw=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/widgets.min.css" integrity="sha512-KkbwfnV4akqRv+GVWIAa0UazaiDzkMev+Iq6AkHnzvOhQnb9tJnZwHySGGBjfwH3LOmMuaXl7an5uR36EuftaQ==">
+    <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/reset.min.css" integrity="sha512-xwmF/g6mhf+NqX9hnHhGV+cKVithh9ncEOreDW6jZXIqMiqsX5sxvVZXYuzz+8jLI7+wPFr/2/sg2x8Pp0a1VA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/fonts.min.css" integrity="sha512-cBOwDygT9RQao+0k5Ag4nLlOK2PRKCsbVSbA3dH+OTKEnZxC6D5JBr/AB2C9R+veYNdBCRU/9OudMQPWQMjCdg=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/classes.min.css" integrity="sha512-VtHTX2MGmhT+/gSeNEwz2TD+OEFpz9G9AUjHc9mAjEgneeX2RiJphzfxqHrU+7afnuHkTkwMtY4hP5XAJCZ8eA=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/pagination.min.css" integrity="sha512-exBmcmBqVqp5QRaF99l0MQPpD6X4/7RMJa9KY4pv/SP9R31qyqwuAIcPXZPm5jn7EMDVdviT45APg0RBfBA3Ow=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/page.min.css" integrity="sha512-Eqq5awgR8Hau+25mfXATwps47CVesfD4jrw/QozL3eib52HmmlFnvxsERXuGCVQH1S1FSaQD/oycWN/WyGE5Aw=="><link rel="stylesheet" href="https://ralpioxxcs.github.io/css/widgets.min.css" integrity="sha512-KkbwfnV4akqRv+GVWIAa0UazaiDzkMev+Iq6AkHnzvOhQnb9tJnZwHySGGBjfwH3LOmMuaXl7an5uR36EuftaQ==">
     <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/single.min.css" integrity="sha512-Q1Zy+J4r0j/8Mjf7DVoh6X/Q1gWZqmvMf5IX7vxV7k97/NLY5novAjHRMReD9WWrDOq54t3sHsR7i8HwXlumlg==">
 
 
@@ -78,7 +78,7 @@
                     <div id="site-header" class="cell">
                         <a href="https://ralpioxxcs.github.io/">
                             <header class="small-text-left medium-text-left grid-x">
-                                <img id="site-thumbnail" class="cell shrink" src="https://ralpioxxcs.github.io/images/moon.png" data-width="93">
+                                <img id="site-thumbnail" class="cell shrink" src="https://ralpioxxcs.github.io/images/moon.png" data-width="512">
                                 <div id="site-title-container" class="cell shrink grid-y">
                                     <div id="site-title" class="cell shrink" itemprop="name">My Dev Blog</div>
                                     <div class="cell shrink" id="site-tagline">personal development diary</div>
@@ -148,53 +148,39 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
         </header>
         
         <div id="post-content"><nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#1-개요">1. 개요</a></li>
-<li><a href="#2-코드-구현">2. 코드 구현</a>
-<ul>
-<li><a href="#2-1-define-structure">2-1. define structure</a></li>
-<li><a href="#2-2-init-stack">2-2. Init Stack</a></li>
-<li><a href="#2-3-push">2-3. Push</a></li>
-<li><a href="#2-4-pop">2-4. Pop</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav><span itemprop="articleBody">
-
-<h2 id="1-개요">1. 개요</h2>
-
+  <ul>
+    <li><a href="#1-개요">1. 개요</a></li>
+    <li><a href="#2-코드-구현">2. 코드 구현</a>
+      <ul>
+        <li><a href="#2-1-define-structure">2-1. define structure</a></li>
+        <li><a href="#2-2-init-stack">2-2. Init Stack</a></li>
+        <li><a href="#2-3-push">2-3. Push</a></li>
+        <li><a href="#2-4-pop">2-4. Pop</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav><span itemprop="articleBody"><h2 id="1-개요">1. 개요</h2>
 <p>후입선출(後入先出, Last In First Out; LIFO) 의 자료구조로, 상자의 형태를 한 자료구조이다.
-데이터의 삽입을 Push, 데이터의 출력을 Pop이라고 하며, 스택을 크게 두 가지로 나누면<br />
+데이터의 삽입을 Push, 데이터의 출력을 Pop이라고 하며, 스택을 크게 두 가지로 나누면<br>
 <strong>Ascending Stack</strong> VS <strong>Descending Stack</strong>으로 나눌 수 있다.</p>
-
-<p><img src="/images/stack_1.jpg" alt="stack_img_1" /></p>
-
+<p><img src="/images/stack_1.jpg" alt="stack_img_1"></p>
 <p>스택은 배열과 링크드 리스트로 구현할 수 있는데, 여기서는 링크드리스트를 이용한 스택을 구현해 보겠다.</p>
-
-<hr />
-
+<hr>
 <h2 id="2-코드-구현">2. 코드 구현</h2>
-
 <h3 id="2-1-define-structure">2-1. define structure</h3>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6">typedef</span> <span style="color:#ff79c6">struct</span> _stacknode Snode;
-<span style="color:#ff79c6">struct</span> _stacknode {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6">typedef</span> <span style="color:#ff79c6">struct</span> <span style="color:#50fa7b">_stacknode</span> Snode;
+<span style="color:#ff79c6">struct</span> <span style="color:#50fa7b">_stacknode</span> {
     DataType data;
     Snode <span style="color:#ff79c6">*</span>next;
 };
-<span style="color:#ff79c6">typedef</span> <span style="color:#ff79c6">struct</span> _stack {
+<span style="color:#ff79c6">typedef</span> <span style="color:#ff79c6">struct</span> <span style="color:#50fa7b">_stack</span> {
     Snode <span style="color:#ff79c6">*</span>head;
     Snode <span style="color:#ff79c6">*</span>tail;
     Snode <span style="color:#ff79c6">*</span>cur;
 }Stack;
 </code></pre></div>
-
 <p>스택관리구조체 Stack은 링크드리스트 구조체처럼 head와 tail을 고정적으로 가리키는 노드포인터와 현재 노드를 가리키는 cur 포인터로 이루어져있다.</p>
-
 <h3 id="2-2-init-stack">2-2. Init Stack</h3>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">initStack</span>(Stack <span style="color:#ff79c6">*</span>sPtr) {
     sPtr<span style="color:#ff79c6">-&gt;</span>head <span style="color:#ff79c6">=</span> (Snode <span style="color:#ff79c6">*</span>)malloc(<span style="color:#ff79c6">sizeof</span>(Snode)); <span style="color:#6272a4">//헤드 노드 생성
 </span><span style="color:#6272a4"></span>    assert(sPtr<span style="color:#ff79c6">-&gt;</span>head<span style="color:#ff79c6">!=</span><span style="color:#8be9fd;font-style:italic">NULL</span>);
@@ -207,11 +193,8 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
     <span style="color:#ff79c6">return</span> ;
 }
 </code></pre></div>
-
 <p>헤드노드와 테일노드를 메모리 할당해주고 서로 가리키게 해준다</p>
-
 <h3 id="2-3-push">2-3. Push</h3>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#6272a4">/* stack에 데이터 저장하기 */</span>
 <span style="color:#8be9fd">int</span> <span style="color:#50fa7b">push</span>(Stack <span style="color:#ff79c6">*</span>sPtr, DataType inData) {
     sPtr<span style="color:#ff79c6">-&gt;</span>cur <span style="color:#ff79c6">=</span> (Snode <span style="color:#ff79c6">*</span>)malloc(<span style="color:#ff79c6">sizeof</span>(Snode)); <span style="color:#6272a4">//새로운 노드 생성
@@ -226,12 +209,9 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
 </span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">return</span> TRUE;
 }
 </code></pre></div>
-
-<p>전달인자로 스택구조체의 주소와 삽입할 데이터를 받는다.<br />
+<p>전달인자로 스택구조체의 주소와 삽입할 데이터를 받는다.<br>
 새 노드를 할당하기위해 메모리를 할당하고 위로 쌓이는 것이므로 (처음 삽입하는경우) 헤드노드 바로 뒤에 노드를 추가해주는데, 두 번째 삽입부터는 노드가 이미 하나있기때문에 그 노드의 뒤로 삽입을 해야한다. 따라서, 새로 할당받은 노드의 다음주소에 그 이전 노드를 가리키게 하고 이전 노드는 새로 할당받은 노드를 가리키게 한다.</p>
-
 <h3 id="2-4-pop">2-4. Pop</h3>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">pop</span>(Stack <span style="color:#ff79c6">*</span>sPtr, DataType <span style="color:#ff79c6">*</span>popData) {
     <span style="color:#6272a4">// stack이 비어있으면 pop실패
 </span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">if</span>(sPtr<span style="color:#ff79c6">-&gt;</span>head<span style="color:#ff79c6">-&gt;</span>next <span style="color:#ff79c6">==</span> sPtr<span style="color:#ff79c6">-&gt;</span>tail) {
@@ -244,7 +224,6 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
     <span style="color:#ff79c6">return</span> TRUE;
 }
 </code></pre></div>
-
 <p>제일 위에있는게 먼저 나가야하므로 popData에 가장 위에있는 노드의 data를 넣어주고,
 제일 위에 있는 노드에 이어져 있는 선을 끊어주고 다음 노드와 이어주게 한다. 그리고 메모리를 해제</p>
 
@@ -290,6 +269,11 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
                 Life
             </a>
         </li>
+		<li>
+            <a href="https://ralpioxxcs.github.io/categories/linux/">
+                Linux
+            </a>
+        </li>
 		
 	</ul>
 </div>
@@ -332,6 +316,8 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
                 blog
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/linux/" title="linux">
                 linux
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/gdb/" title="gdb">
+                gdb
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/github/" title="github">
                 github
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/opencv/" title="opencv">
