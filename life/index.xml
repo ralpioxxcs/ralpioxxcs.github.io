@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lives on My Dev Blog</title>
-    <link>https://ralpioxxcs.github.io/life/</link>
+    <link>https://ralpioxxcs.github.io/post/life/</link>
     <description>Recent content in Lives on My Dev Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 28 Dec 2019 13:54:45 +0900</lastBuildDate>
     
-	<atom:link href="https://ralpioxxcs.github.io/life/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ralpioxxcs.github.io/post/life/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Keyboard_xo_v2</title>
-      <link>https://ralpioxxcs.github.io/life/keyboard_xo_v2/</link>
+      <link>https://ralpioxxcs.github.io/post/life/keyboard_xo_v2/</link>
       <pubDate>Sat, 28 Dec 2019 13:54:45 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/life/keyboard_xo_v2/</guid>
+      <guid>https://ralpioxxcs.github.io/post/life/keyboard_xo_v2/</guid>
       <description></description>
     </item>
     

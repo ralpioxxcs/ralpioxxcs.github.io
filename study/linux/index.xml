@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Study: Linux on My Dev Blog</title>
-    <link>https://ralpioxxcs.github.io/study/linux/</link>
+    <link>https://ralpioxxcs.github.io/post/study/linux/</link>
     <description>Recent content in Study: Linux on My Dev Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 26 Dec 2019 15:10:46 +0900</lastBuildDate>
     
-	<atom:link href="https://ralpioxxcs.github.io/study/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ralpioxxcs.github.io/post/study/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Basic_1</title>
-      <link>https://ralpioxxcs.github.io/study/linux/basic_1/</link>
+      <link>https://ralpioxxcs.github.io/post/study/linux/basic_1/</link>
       <pubDate>Thu, 26 Dec 2019 15:10:46 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/study/linux/basic_1/</guid>
+      <guid>https://ralpioxxcs.github.io/post/study/linux/basic_1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bash Shell 색상 지정하기</title>
-      <link>https://ralpioxxcs.github.io/study/linux/shell_color/</link>
+      <link>https://ralpioxxcs.github.io/post/study/linux/shell_color/</link>
       <pubDate>Wed, 09 Oct 2019 22:40:55 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/study/linux/shell_color/</guid>
+      <guid>https://ralpioxxcs.github.io/post/study/linux/shell_color/</guid>
       <description></description>
     </item>
     

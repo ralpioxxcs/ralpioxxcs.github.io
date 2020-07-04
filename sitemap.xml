@@ -3,256 +3,256 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/hugo/hugo_start_1_install/</loc>
+    <loc>https://ralpioxxcs.github.io/post/post/hugo/hugo_start_1_install/</loc>
     <lastmod>2019-12-28T14:48:40+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/study/datastructure/</loc>
+    <loc>https://ralpioxxcs.github.io/post/study/datastructure/</loc>
     <lastmod>2019-09-18T21:59:22+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/study/datastructure/linkedlist/</loc>
+    <loc>https://ralpioxxcs.github.io/post/study/datastructure/linkedlist/</loc>
     <lastmod>2019-09-14T13:54:02+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/about/</loc>
+    <loc>https://ralpioxxcs.github.io/post/about/</loc>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/study/opencv/</loc>
+    <loc>https://ralpioxxcs.github.io/post/study/opencv/</loc>
     <lastmod>2020-01-25T21:42:11+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/hugo/hugo_start_2_quick_start/</loc>
+    <loc>https://ralpioxxcs.github.io/post/post/hugo/hugo_start_2_quick_start/</loc>
     <lastmod>2019-12-28T15:34:07+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/study/datastructure/stack/</loc>
+    <loc>https://ralpioxxcs.github.io/post/study/datastructure/stack/</loc>
     <lastmod>2019-09-13T13:54:02+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/project/</loc>
+    <loc>https://ralpioxxcs.github.io/post/project/</loc>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/</loc>
+    <loc>https://ralpioxxcs.github.io/post/post/</loc>
     <lastmod>2020-07-04T13:53:55+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/hugo/hugo_start_3_directory/</loc>
+    <loc>https://ralpioxxcs.github.io/post/post/hugo/hugo_start_3_directory/</loc>
     <lastmod>2019-12-28T14:57:28+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/study/linux/</loc>
+    <loc>https://ralpioxxcs.github.io/post/study/linux/</loc>
     <lastmod>2019-12-26T15:10:46+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/study/datastructure/circulaqueue/</loc>
+    <loc>https://ralpioxxcs.github.io/post/study/datastructure/circulaqueue/</loc>
     <lastmod>2019-09-18T21:59:22+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/hugo/hugo_start_4_remote_repo_link/</loc>
+    <loc>https://ralpioxxcs.github.io/post/post/hugo/hugo_start_4_remote_repo_link/</loc>
     <lastmod>2019-12-28T15:02:51+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/cmake_1/</loc>
+    <loc>https://ralpioxxcs.github.io/post/post/cmake_1/</loc>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/study/qt/</loc>
+    <loc>https://ralpioxxcs.github.io/post/study/qt/</loc>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/hugo/hugo_content_management_1_contents_path/</loc>
+    <loc>https://ralpioxxcs.github.io/post/post/hugo/hugo_content_management_1_contents_path/</loc>
     <lastmod>2019-12-28T15:07:19+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/cmake_2/</loc>
+    <loc>https://ralpioxxcs.github.io/post/post/cmake_2/</loc>
     <lastmod>2019-10-27T14:23:25+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/hugo/hugo_content_management_2_page/</loc>
+    <loc>https://ralpioxxcs.github.io/post/post/hugo/hugo_content_management_2_page/</loc>
     <lastmod>2019-12-29T15:21:24+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/cmake_3/</loc>
+    <loc>https://ralpioxxcs.github.io/post/post/cmake_3/</loc>
     <lastmod>2019-11-03T14:38:36+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/hugo/hugo_content_management_3_frontmatter/</loc>
+    <loc>https://ralpioxxcs.github.io/post/post/hugo/hugo_content_management_3_frontmatter/</loc>
     <lastmod>2019-12-28T16:09:14+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/cmake_4/</loc>
+    <loc>https://ralpioxxcs.github.io/post/post/cmake_4/</loc>
     <lastmod>2019-12-26T15:32:40+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/hugo/hugo_content_management_4_shortcodes/</loc>
+    <loc>https://ralpioxxcs.github.io/post/post/hugo/hugo_content_management_4_shortcodes/</loc>
     <lastmod>2019-12-28T15:07:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/categories/</loc>
+    <loc>https://ralpioxxcs.github.io/post/categories/</loc>
     <lastmod>2020-07-04T13:53:55+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/tags/clang/</loc>
+    <loc>https://ralpioxxcs.github.io/post/tags/clang/</loc>
     <lastmod>2020-07-04T13:53:55+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/categories/linux/</loc>
+    <loc>https://ralpioxxcs.github.io/post/categories/linux/</loc>
     <lastmod>2020-07-04T13:53:55+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/tags/linux/</loc>
+    <loc>https://ralpioxxcs.github.io/post/tags/linux/</loc>
     <lastmod>2020-07-04T13:53:55+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/tags/llvm/</loc>
+    <loc>https://ralpioxxcs.github.io/post/tags/llvm/</loc>
     <lastmod>2020-07-04T13:53:55+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/tags/</loc>
+    <loc>https://ralpioxxcs.github.io/post/tags/</loc>
     <lastmod>2020-07-04T13:53:55+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/llvm_install/</loc>
+    <loc>https://ralpioxxcs.github.io/post/post/llvm_install/</loc>
     <lastmod>2020-07-04T13:53:55+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/change_compiler/</loc>
+    <loc>https://ralpioxxcs.github.io/post/post/change_compiler/</loc>
     <lastmod>2020-07-04T13:32:39+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/tags/vim/</loc>
+    <loc>https://ralpioxxcs.github.io/post/tags/vim/</loc>
     <lastmod>2020-06-20T14:26:52+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/vim_setting_2/</loc>
+    <loc>https://ralpioxxcs.github.io/post/post/vim_setting_2/</loc>
     <lastmod>2020-06-20T14:26:52+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/vim_setting_1/</loc>
+    <loc>https://ralpioxxcs.github.io/post/post/vim_setting_1/</loc>
     <lastmod>2020-06-19T21:06:39+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/tags/gdb/</loc>
+    <loc>https://ralpioxxcs.github.io/post/tags/gdb/</loc>
     <lastmod>2020-04-25T15:21:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/post/gdb_imagewatch_1/</loc>
+    <loc>https://ralpioxxcs.github.io/post/post/gdb_imagewatch_1/</loc>
     <lastmod>2020-04-25T15:21:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/study/opencv/opencv1/</loc>
+    <loc>https://ralpioxxcs.github.io/post/study/opencv/opencv1/</loc>
     <lastmod>2020-01-25T21:42:11+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/study/</loc>
+    <loc>https://ralpioxxcs.github.io/post/study/</loc>
     <lastmod>2020-01-25T21:42:11+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/</loc>
+    <loc>https://ralpioxxcs.github.io/post/</loc>
     <lastmod>2020-01-01T23:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/tags/hugo/</loc>
+    <loc>https://ralpioxxcs.github.io/post/tags/hugo/</loc>
     <lastmod>2019-12-29T15:21:24+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/tags/blog/</loc>
+    <loc>https://ralpioxxcs.github.io/post/tags/blog/</loc>
     <lastmod>2019-12-28T16:09:14+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/tags/github/</loc>
+    <loc>https://ralpioxxcs.github.io/post/tags/github/</loc>
     <lastmod>2019-12-28T15:02:51+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/life/keyboard_xo_v2/</loc>
+    <loc>https://ralpioxxcs.github.io/post/life/keyboard_xo_v2/</loc>
     <lastmod>2019-12-28T13:54:45+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/categories/life/</loc>
+    <loc>https://ralpioxxcs.github.io/post/categories/life/</loc>
     <lastmod>2019-12-28T13:54:45+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/life/</loc>
+    <loc>https://ralpioxxcs.github.io/post/life/</loc>
     <lastmod>2019-12-28T13:54:45+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/tags/cmake/</loc>
+    <loc>https://ralpioxxcs.github.io/post/tags/cmake/</loc>
     <lastmod>2019-12-26T15:32:40+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/study/linux/basic_1/</loc>
+    <loc>https://ralpioxxcs.github.io/post/study/linux/basic_1/</loc>
     <lastmod>2019-12-26T15:10:46+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/study/linux/shell_color/</loc>
+    <loc>https://ralpioxxcs.github.io/post/study/linux/shell_color/</loc>
     <lastmod>2019-10-09T22:40:55+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/tags/shell/</loc>
+    <loc>https://ralpioxxcs.github.io/post/tags/shell/</loc>
     <lastmod>2019-10-09T22:40:55+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/tags/data-structure/</loc>
+    <loc>https://ralpioxxcs.github.io/post/tags/data-structure/</loc>
     <lastmod>2019-09-18T21:59:22+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/tags/opencv/</loc>
+    <loc>https://ralpioxxcs.github.io/post/tags/opencv/</loc>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/tags/qt/</loc>
+    <loc>https://ralpioxxcs.github.io/post/tags/qt/</loc>
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/categories/study/</loc>
+    <loc>https://ralpioxxcs.github.io/post/categories/study/</loc>
   </url>
   
 </urlset>

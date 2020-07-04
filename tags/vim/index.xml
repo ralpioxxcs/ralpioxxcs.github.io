@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vim on My Dev Blog</title>
-    <link>https://ralpioxxcs.github.io/tags/vim/</link>
+    <link>https://ralpioxxcs.github.io/post/tags/vim/</link>
     <description>Recent content in vim on My Dev Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 20 Jun 2020 14:26:52 +0900</lastBuildDate>
     
-	<atom:link href="https://ralpioxxcs.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ralpioxxcs.github.io/post/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Vim 사용하기 #2 - Plugin</title>
-      <link>https://ralpioxxcs.github.io/post/vim_setting_2/</link>
+      <link>https://ralpioxxcs.github.io/post/post/vim_setting_2/</link>
       <pubDate>Sat, 20 Jun 2020 14:26:52 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/post/vim_setting_2/</guid>
+      <guid>https://ralpioxxcs.github.io/post/post/vim_setting_2/</guid>
       <description>Plugin 설치 </description>
     </item>
     
     <item>
       <title>Vim 사용하기 #1 - Install</title>
-      <link>https://ralpioxxcs.github.io/post/vim_setting_1/</link>
+      <link>https://ralpioxxcs.github.io/post/post/vim_setting_1/</link>
       <pubDate>Fri, 19 Jun 2020 21:06:39 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/post/vim_setting_1/</guid>
+      <guid>https://ralpioxxcs.github.io/post/post/vim_setting_1/</guid>
       <description>나에게 vim이란 라즈베리파이 같은 리소스나 메모리등 작업 환경이 열악하거나 불가피한 사유로 인터넷을 사용하지 못하는 상황에서 가끔 쓰던 편집기였다.
 hjkl로 움직이고, visual mode, normal mode 등등 처음에는 진입장벽이 높게 느껴져서 손이 안가다가, 마우스를 쓰는게 너무 귀찮아서 일주일만 마음먹고 연습(?)을 했더니 이제는 vim이 없으면 코딩을 할 맛이 안나게 될 정도로 익숙해져버렸다.
 vim으로 갈아타게 된 결정적인 계기는 VSCode에서 지원하는 c/cpp extension이 메모리를 너무 잡아먹어서이다.. (물론 vim도 이것저것 많이 깔면 느려지겠지만)</description>
