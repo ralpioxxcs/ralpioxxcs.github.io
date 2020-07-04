@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on My Dev Blog</title>
-    <link>https://ralpioxxcs.github.io/post/tags/blog/</link>
+    <link>https://ralpioxxcs.github.io/tags/blog/</link>
     <description>Recent content in Blog on My Dev Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 28 Dec 2019 16:09:14 +0900</lastBuildDate>
     
-	<atom:link href="https://ralpioxxcs.github.io/post/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ralpioxxcs.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Getting Started Hugo [2] - 블로그 생성</title>
-      <link>https://ralpioxxcs.github.io/post/post/hugo/hugo_start_2_quick_start/</link>
+      <link>https://ralpioxxcs.github.io/post/hugo/hugo_start_2_quick_start/</link>
       <pubDate>Sat, 28 Dec 2019 15:34:07 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/post/post/hugo/hugo_start_2_quick_start/</guid>
+      <guid>https://ralpioxxcs.github.io/post/hugo/hugo_start_2_quick_start/</guid>
       <description>Let&amp;rsquo;s create own blog 　Step 1. 블로그 폴더 생성   c://hugo 의 경로에서 $ hugo new site [폴더이름] 을 입력한다. 여기서 폴더이름은 말 그대로 터미널 상에서 접근할 폴더이름일 뿐, 생성하고자 하는 블로그의 이름이 되진 않는다. (예시는 blog로 하였다.)
   폴더를 만들었으면 $ cd blog &amp;amp;&amp;amp; ls  를 입력해 생성된 폴더의 내부를 확인한다.
 -&amp;gt; 정상적으로 생성이 되었으면 archtypes, assets, config.toml 등 여러 파일과 폴더들이 생성된 것을 확인할 수 있다.</description>
@@ -24,10 +24,10 @@
     
     <item>
       <title>Getting Started Hugo [4] - 레포지토리 연동 및 웹 호스팅</title>
-      <link>https://ralpioxxcs.github.io/post/post/hugo/hugo_start_4_remote_repo_link/</link>
+      <link>https://ralpioxxcs.github.io/post/hugo/hugo_start_4_remote_repo_link/</link>
       <pubDate>Sat, 28 Dec 2019 15:02:51 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/post/post/hugo/hugo_start_4_remote_repo_link/</guid>
+      <guid>https://ralpioxxcs.github.io/post/hugo/hugo_start_4_remote_repo_link/</guid>
       <description>나만의 블로그를 구축하는데 성공하였다. 이제 로컬에 저장돼있는 hugo 사이트를 github repository와 연동하여 실제로 주소를 갖는 블로그를 만들어보자.
  Step 1. github repository 생성 github에 로그인하여 총 2개의 repository를 생성한다.
  blog 폴더 자체를 저장할 repository hugo로 빌드된 결과파일들을 저장할 repository
@@ -36,10 +36,10 @@
     
     <item>
       <title>Hugo Content Management [3] - Front Matter</title>
-      <link>https://ralpioxxcs.github.io/post/post/hugo/hugo_content_management_3_frontmatter/</link>
+      <link>https://ralpioxxcs.github.io/post/hugo/hugo_content_management_3_frontmatter/</link>
       <pubDate>Sat, 28 Dec 2019 16:09:14 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/post/post/hugo/hugo_content_management_3_frontmatter/</guid>
+      <guid>https://ralpioxxcs.github.io/post/hugo/hugo_content_management_3_frontmatter/</guid>
       <description>Front Matter? front matter란 작성하고자 하는 컨텐츠(파일)의 제목, 날짜, 작성자 등의 기본적인 속성들을 나타내는 meta-data 형식이다.  Formats Hugo는 다음 3가지의 마크업 언어를 지원한다.
  TOML : +++ YAML : --- JSON : {, }
 을 이용해 front matter의 시작과 끝을 지정한다.  예를들어, a.md라는 새로운 파일을 만들었다면 --- title: &amp;#34;this is title!&amp;#34; date: 2019-12-27T13:39:03+09:00 draft: true --- this is the markdown file 이렇게 파일의 시작 부분에 front matter를 설정해주면,</description>

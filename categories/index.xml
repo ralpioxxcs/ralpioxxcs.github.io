@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on My Dev Blog</title>
-    <link>https://ralpioxxcs.github.io/post/categories/</link>
+    <link>https://ralpioxxcs.github.io/categories/</link>
     <description>Recent content in Categories on My Dev Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 04 Jul 2020 13:53:55 +0900</lastBuildDate>
     
-	<atom:link href="https://ralpioxxcs.github.io/post/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ralpioxxcs.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux</title>
-      <link>https://ralpioxxcs.github.io/post/categories/linux/</link>
+      <link>https://ralpioxxcs.github.io/categories/linux/</link>
       <pubDate>Sat, 04 Jul 2020 13:53:55 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/post/categories/linux/</guid>
+      <guid>https://ralpioxxcs.github.io/categories/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Life</title>
-      <link>https://ralpioxxcs.github.io/post/categories/life/</link>
+      <link>https://ralpioxxcs.github.io/categories/life/</link>
       <pubDate>Sat, 28 Dec 2019 13:54:45 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/post/categories/life/</guid>
+      <guid>https://ralpioxxcs.github.io/categories/life/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Study</title>
-      <link>https://ralpioxxcs.github.io/post/categories/study/</link>
+      <link>https://ralpioxxcs.github.io/categories/study/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/post/categories/study/</guid>
+      <guid>https://ralpioxxcs.github.io/categories/study/</guid>
       <description></description>
     </item>
     
