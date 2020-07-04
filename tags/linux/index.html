@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Linux</title><meta name="description" itemprop="description" content="this blog is for only" id="desc"><meta name="generator" content="Hugo 0.67.0" /><link rel="alternate" type="application/rss+xml" title="My Dev Blog Feed" href="https://ralpioxxcs.github.io/tags/linux/index.xml"><link rel="canonical" href="https://ralpioxxcs.github.io/tags/linux/">
+        <title>linux</title><meta name="description" itemprop="description" content="this blog is for only" id="desc"><meta name="generator" content="Hugo 0.67.0" /><link rel="alternate" type="application/rss+xml" title="My Dev Blog Feed" href="https://ralpioxxcs.github.io/tags/linux/index.xml"><link rel="canonical" href="https://ralpioxxcs.github.io/tags/linux/">
         
 
 <meta name="thumbnail" content="https://ralpioxxcs.github.io/images/moon.png" /><link rel="dns-prefetch" href="https://use.fontawesome.com/" />
@@ -123,7 +123,7 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
                         
                         
 <main id="post-list" class="cell medium-8"><header id="page-header">
-			<h1 id="page-title">Tag: Linux</h1>
+			<h1 id="page-title">Tag: linux</h1>
 		</header>
 <article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><div>
         <header class="post-list-title">
@@ -138,6 +138,48 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
         </header>
         <div class="post-list-summary" itemprop="description">
             <p>
+                    </p>
+        </div>
+    </div>
+</article>
+<article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><div>
+        <header class="post-list-title">
+            <a href="https://ralpioxxcs.github.io/post/llvm_install/">
+                <h2 itemprop="headline">Ubuntu LLVM Package 설치</h2>
+            </a>
+            <div class="metadata"><div>
+                <span class="far fa-clock" aria-hidden></span>
+                <span class="sr-text">Published: </span>
+                <time datetime="" itemprop="datePublished">July 04, 2020</time>
+                </div></div>
+        </header>
+        <div class="post-list-summary" itemprop="description">
+            <p>이 링크 로 들어가면 아래 사진과 같은 화면이 나오며 각 Release 버전에 맞는 llvm 패키지들을 다운로드 받을 수 있다. llvm, clang, lld, lldb등 각 패키지에 대한 설명은 여기에 잘 나와있다. 아무튼 위의 사진에 나온것처럼 설치방법으로는 크게 4가지로 나눌 수 있다. 소스코드 다운로드 후 직접 빌드 미리 빌드된 바이너리 설치 Automatic Installation Script apt install 커맨드 사용하여 설치 이 포스팅에서는 3번째인 Automatic installation script를 이용하여 설치하는 방법을 다루려고 한다.
+                    
+                        <a href="https://ralpioxxcs.github.io/post/llvm_install/">
+                            [Read more<span class="sr-text"> from Ubuntu LLVM Package 설치</span>...]
+                        </a>
+                    </p>
+        </div>
+    </div>
+</article>
+<article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><div>
+        <header class="post-list-title">
+            <a href="https://ralpioxxcs.github.io/post/change_compiler/">
+                <h2 itemprop="headline">Ubuntu Clang 컴파일러 설정</h2>
+            </a>
+            <div class="metadata"><div>
+                <span class="far fa-clock" aria-hidden></span>
+                <span class="sr-text">Published: </span>
+                <time datetime="" itemprop="datePublished">July 04, 2020</time>
+                </div></div>
+        </header>
+        <div class="post-list-summary" itemprop="description">
+            <p>ubuntu 환경에서 c,cxx 기본 컴파일러는 /usr/bin/cc , /usr/bin/c&#43;&#43;에 심볼릭 링크로 지정되어있는데 기본적으로는 gcc와 g&#43;&#43;로 설정되어있다. 빌드시에 컴파일러 경로를 직접 입력해주는 방법도 있지만, /usr/bin/c&#43;&#43;의 심볼릭 링크를 변경해줌으로써 고정을 시킬수도 있다. 이 과정전에 반드시 clang이 설치되어야 한다. clang을 설치하는 방법은 여기에 포스팅해 두었다. 환경변수 변경 export CC=/usr/bin/clang export CXX=/usr/bin/clang&#43;&#43; 위의 명령어로 환경변수를 바꿔주는 방법으로 컴파일러를 바꿔줄 수 있다. 영구적으로 지정시키고 싶다면 ~/.bashrc에 추가하는 방법으로 환경변수를 설정해주하면 된다. 지정 커맨드 이용 # c&#43;&#43; compiler sudo update-alternatives --config c&#43;&#43; # c compiler sudo update-alternatives --config cc 위의 커맨드를 입력하고 아래처럼 결과 창이 나오면 원하는 번호를 입력하여 c와 c&#43;&#43;에 지정된 컴파일러 경로를 바꿔준다.
+                    
+                        <a href="https://ralpioxxcs.github.io/post/change_compiler/">
+                            [Read more<span class="sr-text"> from Ubuntu Clang 컴파일러 설정</span>...]
+                        </a>
                     </p>
         </div>
     </div>
@@ -175,13 +217,13 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
             </a>
         </li>
 		<li>
-            <a href="https://ralpioxxcs.github.io/categories/life/">
-                Life
+            <a href="https://ralpioxxcs.github.io/categories/linux/">
+                Linux
             </a>
         </li>
 		<li>
-            <a href="https://ralpioxxcs.github.io/categories/linux/">
-                Linux
+            <a href="https://ralpioxxcs.github.io/categories/life/">
+                Life
             </a>
         </li>
 		
@@ -222,14 +264,20 @@ guide and the <a href="https://bluestnight.com/docs/midnight/users/">user docume
                 cmake
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/data-structure/" title="data structure">
                 data structure
-			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/blog/" title="blog">
-                blog
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/linux/" title="linux">
                 linux
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/blog/" title="blog">
+                blog
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/clang/" title="clang">
+                clang
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/vim/" title="vim">
+                vim
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/gdb/" title="gdb">
                 gdb
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/github/" title="github">
                 github
+			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/llvm/" title="llvm">
+                llvm
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/opencv/" title="opencv">
                 opencv
 			</a><a class="cell shrink" href="https://ralpioxxcs.github.io/tags/qt/" title="qt">

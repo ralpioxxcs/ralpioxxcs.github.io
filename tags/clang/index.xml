@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clang on My Dev Blog</title>
+    <link>https://ralpioxxcs.github.io/tags/clang/</link>
+    <description>Recent content in Clang on My Dev Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 04 Jul 2020 13:53:55 +0900</lastBuildDate>
+    
+	<atom:link href="https://ralpioxxcs.github.io/tags/clang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ubuntu LLVM Package 설치</title>
+      <link>https://ralpioxxcs.github.io/post/llvm_install/</link>
+      <pubDate>Sat, 04 Jul 2020 13:53:55 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/llvm_install/</guid>
+      <description>이 링크 로 들어가면 아래 사진과 같은 화면이 나오며 각 Release 버전에 맞는 llvm 패키지들을 다운로드 받을 수 있다.   llvm, clang, lld, lldb등 각 패키지에 대한 설명은 여기에 잘 나와있다.
+아무튼 위의 사진에 나온것처럼 설치방법으로는 크게 4가지로 나눌 수 있다.
+ 소스코드 다운로드 후 직접 빌드 미리 빌드된 바이너리 설치 Automatic Installation Script apt install 커맨드 사용하여 설치  이 포스팅에서는 3번째인 Automatic installation script를 이용하여 설치하는 방법을 다루려고 한다.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu Clang 컴파일러 설정</title>
+      <link>https://ralpioxxcs.github.io/post/change_compiler/</link>
+      <pubDate>Sat, 04 Jul 2020 13:32:39 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/change_compiler/</guid>
+      <description>ubuntu 환경에서 c,cxx 기본 컴파일러는 /usr/bin/cc , /usr/bin/c++에 심볼릭 링크로 지정되어있는데 기본적으로는 gcc와 g++로 설정되어있다.
+빌드시에 컴파일러 경로를 직접 입력해주는 방법도 있지만, /usr/bin/c++의 심볼릭 링크를 변경해줌으로써 고정을 시킬수도 있다.
+이 과정전에 반드시 clang이 설치되어야 한다. clang을 설치하는 방법은 여기에 포스팅해 두었다.
+환경변수 변경 export CC=/usr/bin/clang export CXX=/usr/bin/clang++ 위의 명령어로 환경변수를 바꿔주는 방법으로 컴파일러를 바꿔줄 수 있다. 영구적으로 지정시키고 싶다면 ~/.bashrc에 추가하는 방법으로 환경변수를 설정해주하면 된다.
+지정 커맨드 이용 # c++ compiler sudo update-alternatives --config c++ # c compiler sudo update-alternatives --config cc 위의 커맨드를 입력하고 아래처럼 결과 창이 나오면 원하는 번호를 입력하여 c와 c++에 지정된 컴파일러 경로를 바꿔준다.</description>
+    </item>
+    
+  </channel>
+</rss>

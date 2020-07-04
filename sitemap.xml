@@ -42,7 +42,7 @@
   
   <url>
     <loc>https://ralpioxxcs.github.io/post/</loc>
-    <lastmod>2020-04-25T15:21:05+09:00</lastmod>
+    <lastmod>2020-07-04T13:53:55+09:00</lastmod>
   </url>
   
   <url>
@@ -110,7 +110,57 @@
   
   <url>
     <loc>https://ralpioxxcs.github.io/categories/</loc>
-    <lastmod>2020-04-25T15:21:05+09:00</lastmod>
+    <lastmod>2020-07-04T13:53:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/tags/clang/</loc>
+    <lastmod>2020-07-04T13:53:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/categories/linux/</loc>
+    <lastmod>2020-07-04T13:53:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/tags/linux/</loc>
+    <lastmod>2020-07-04T13:53:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/tags/llvm/</loc>
+    <lastmod>2020-07-04T13:53:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/tags/</loc>
+    <lastmod>2020-07-04T13:53:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/post/llvm_install/</loc>
+    <lastmod>2020-07-04T13:53:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/post/change_compiler/</loc>
+    <lastmod>2020-07-04T13:32:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/tags/vim/</loc>
+    <lastmod>2020-06-20T14:26:52+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/post/vim_setting_2/</loc>
+    <lastmod>2020-06-20T14:26:52+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/post/vim_setting_1/</loc>
+    <lastmod>2020-06-19T21:06:39+09:00</lastmod>
   </url>
   
   <url>
@@ -124,21 +174,6 @@
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/categories/linux/</loc>
-    <lastmod>2020-04-25T15:21:05+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ralpioxxcs.github.io/</loc>
-    <lastmod>2020-04-25T15:21:05+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ralpioxxcs.github.io/tags/</loc>
-    <lastmod>2020-04-25T15:21:05+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ralpioxxcs.github.io/study/opencv/opencv1/</loc>
     <lastmod>2020-01-25T21:42:11+09:00</lastmod>
   </url>
@@ -146,6 +181,11 @@
   <url>
     <loc>https://ralpioxxcs.github.io/study/</loc>
     <lastmod>2020-01-25T21:42:11+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/</loc>
+    <lastmod>2020-01-01T23:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -190,11 +230,6 @@
   
   <url>
     <loc>https://ralpioxxcs.github.io/study/linux/shell_color/</loc>
-    <lastmod>2019-10-09T22:40:55+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ralpioxxcs.github.io/tags/linux/</loc>
     <lastmod>2019-10-09T22:40:55+09:00</lastmod>
   </url>
   
