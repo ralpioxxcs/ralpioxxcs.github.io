@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vim 사용하기 #1 - Install</title><meta name="description" itemprop="description" content="나에게 vim이란 라즈베리파이 같은 리소스나 메모리등 작업 환경이 열악하거나 불가피한 사유로 인터넷을 사용하지 못하는 상황에서 가끔 쓰던 편집기였다. hjkl로 움직이고, visual mode, normal mode 등등 처음에는 진입장벽이 높게 느껴져서 손이 안가다가, 마우스를 쓰는게 너무 귀찮아서 일주일만 마음먹고 연습(?)을 했더니 이제는 vim이 없으면 코딩을 할 맛이 안나게 될 정도로 익숙해져버렸다. vim으로 갈아타게 된 결정적인 계기는 VSCode에서 지원하는 c/cpp extension이 메모리를 너무 잡아먹어서이다.. (물론 vim도 이것저것 많이 깔면 느려지겠지만)" id="desc"><meta name="generator" content="Hugo 0.74.3" /><meta name="keywords" itemprop="keywords" content="vim" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/vim_setting_1/">
+        <title>Vim 사용하기 #1 - Install</title><meta name="description" itemprop="description" content="나에게 vim이란 라즈베리파이 같은 리소스나 메모리등 작업 환경이 열악하거나 불가피한 사유로 인터넷을 사용하지 못하는 상황에서 가끔 쓰던 편집기였다. hjkl로 움직이고, visual mode, normal mode 등등 처음에는 진입장벽이 높게 느껴져서 손이 안가다가, 마우스를 쓰는게 너무 귀찮아서 일주일만 마음먹고 연습(?)을 했더니 이제는 vim이 없으면 코딩을 할 맛이 안나게 될 정도로 익숙해져버렸다. vim으로 갈아타게 된 결정적인 계기는 VSCode에서 지원하는 c/cpp extension이 메모리를 너무 잡아먹어서이다.. (물론 vim도 이것저것 많이 깔면 느려지겠지만)" id="desc"><meta name="generator" content="Hugo 0.67.0" /><meta name="keywords" itemprop="keywords" content="vim" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/vim_setting_1/">
         
 
 <meta name="thumbnail" content="https://ralpioxxcs.github.io/images/moon.png" /><link rel="dns-prefetch" href="https://use.fontawesome.com/" />
@@ -28,6 +28,8 @@
     
     
     
+        <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/table.min.css" integrity="sha512-XN1clNznguqWqFFFahx4K/ImgqDmT87njjii0uEEVAEPF+bWHci6D03pU/R31v/isQkOydZvMa607i37/x3vbg==">
+    
 <link rel="preload" media="print" type="text/css" href="https://ralpioxxcs.github.io/css/print.min.2e0961e511885e38a09cc9a9ff3de5ce7d7d2186bb9ed98a61f176688d4ef61a.css" integrity="sha256-Lglh5RGIXjignMmp/z3lzn19IYa7ntmKYfF2aI1O9ho=" as="style"><link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/" />
 <link rel="preconnect" href="https://cdnjs.cloudflare.com/" />
 
@@ -49,11 +51,8 @@
             <div class="off-canvas position-left" id="main-nav-off-canvas" data-off-canvas>
                 <nav>
                     <ul class="vertical menu drilldown" data-drilldown><li itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/about/" >
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io" >
             ABOUT ME
-        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/project/" >
-            PROJECT
         </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
         <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/post/" >
             POST
@@ -91,11 +90,8 @@
                         </a>
                         <nav id="main-nav" class="small-hide">
                           <ul class="dropdown menu" data-dropdown-menu><li itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/about/" >
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io" >
             ABOUT ME
-        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/project/" >
-            PROJECT
         </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
         <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/post/" >
             POST
@@ -140,7 +136,7 @@
                     </span><span class="cell shrink">
                         <span class="fas fa-book fa-sm fa-fw" aria-hidden></span>
                         <strong>Estimated Reading Time:</strong>
-                        ~<span itemprop="timeRequired">2 minutes</span>
+                        ~<span itemprop="timeRequired">3 minutes</span>
                     </span><span class="cell shrink">
                         <span class="fas fa-tag fa-sm fa-fw" aria-hidden></span>
                             
@@ -169,69 +165,142 @@
 <h2 id="neovim-설치하기"><strong>neovim 설치하기</strong></h2>
 <p>neovim은 <strong>terminal buffer</strong>를 지원하는 좀 더 기능이 확장된 형태의 vim이다. terminal buffer말고도, <strong>24bit true color</strong> 지원 등 더 다양하고 좋은 기능들을 탑재한 vim이라, neovim을 설치하였다.<br>
 내가 사용하는 os는 ubuntu이므로 Debian install 가이드를 따라 설치를 진행하였다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo add-apt-repository ppa:neovim-ppa/unstable
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo add-apt-repository ppa:neovim-ppa/unstable
 $ sudo apt-get update
 $ sudo apt-get install neovim
 $ sudo apt-get install python-dev python-pip
-$ sudo apt-get install python3-dev python3-pip
-</code></pre></div><p>설치가 완료되면 터미널에 <code>nvim</code>을 치면아래의 그림처럼 neovim이 실행된다.
+$ sudo apt-get install python3-dev python3-pip</code></pre></td></tr></table>
+</div>
+</div>
+<p>설치가 완료되면 터미널에 <code>nvim</code>을 치면아래의 그림처럼 neovim이 실행된다.
 <figure>
     <img src="/images/neovim.png"/> 
 </figure>
 </p>
 <h2 id="기본-설정"><strong>기본 설정</strong></h2>
 <p>neovim도vim과 똑같이 vimrc같은 설정파일을 수정하여 기본적인 설정을 할 수 있다.<br>
-설정 파일의 경로는 <code>~/.config/nvim</code>이며 이 경로에 파일을 직접 생성해야 한다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir ~/.config/nvim
-$ cd ~/.config/nvim
-$ touch init.vim
-</code></pre></div><p>아래는 현재 사용중인 <code>init.vim</code>의 설정이다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">iskeyword</span>+=-<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">formatoptions</span>-=<span style="color:#a6e22e">cro</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">syntax</span> <span style="color:#a6e22e">on</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">hidden</span>                  <span style="color:#75715e">&#34; 버퍼를 수정한 직후 버퍼를 감춰지도록 함</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">wrap</span>                    <span style="color:#75715e">&#34; 자동 줄 바꿈</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">encoding</span>=<span style="color:#a6e22e">UTF</span><span style="color:#ae81ff">-8</span>          <span style="color:#75715e">&#34; UTF-8 인코딩</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">t_Co</span>=<span style="color:#ae81ff">256</span>                <span style="color:#75715e">&#34; 256 칼라 지원</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">number</span>                  <span style="color:#75715e">&#34; 라인 수 표시</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">ruler</span>                   <span style="color:#75715e">&#34; 커서 표시</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">cursorline</span>              <span style="color:#75715e">&#34; 현재 커서 하이라이팅</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">pumheight</span>=<span style="color:#ae81ff">10</span>            <span style="color:#75715e">&#34; 팝업 메뉴 크기 조정</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">showcmd</span>                 <span style="color:#75715e">&#34; 명령어를 상태라인에 보여준다</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">mouse</span>=<span style="color:#a6e22e">a</span>                 <span style="color:#75715e">&#34; 마우스 사용 가능</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">tabstop</span>=<span style="color:#ae81ff">2</span>               <span style="color:#e6db74">&#34;&#34;</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">shiftwidth</span>=<span style="color:#ae81ff">2</span>            <span style="color:#e6db74">&#34;&#34;</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">smarttab</span>                <span style="color:#e6db74">&#34;&#34;</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">smartindent</span>             <span style="color:#75715e">&#34; 새로운 라인 시작 시, auto indentation 수행</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">autoindent</span>              <span style="color:#75715e">&#34; 자동 들여쓰기</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">expandtab</span>               <span style="color:#75715e">&#34; tab을 space로 확장</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">showmatch</span>               <span style="color:#75715e">&#34; 매칭되는 괄호 표시</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">background</span>=light<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">showtabline</span>=<span style="color:#ae81ff">2</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">noshowmode</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">nobackup</span>                <span style="color:#75715e">&#34; 백업파일을 생성하지 않는다</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">signcolumn</span>=<span style="color:#a6e22e">yes</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">updatetime</span>=<span style="color:#ae81ff">300</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">timeoutlen</span>=<span style="color:#ae81ff">100</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">clipboard</span>=<span style="color:#a6e22e">unnamedplus</span>   <span style="color:#75715e">&#34; 클립보드 복사&amp;붙여넣기 허용</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">incsearch</span>               <span style="color:#75715e">&#34; 점진적으로 찾기</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">hlsearch</span>                <span style="color:#75715e">&#34; 검색어 하이라이팅</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">nowrapscan</span>              <span style="color:#75715e">&#34; 찾기 파일 맨 끝 도달시, 계속하여 찾지 않음</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">guifont</span>=<span style="color:#a6e22e">Hack</span>\ <span style="color:#a6e22e">Nerd</span>\ <span style="color:#a6e22e">Font</span> <span style="color:#75715e">&#34; 폰트 설정</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">ignorecase</span>              <span style="color:#75715e">&#34; 검색시 대소문자 구별 X</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">let</span> $<span style="color:#a6e22e">TERM</span>=<span style="color:#e6db74">&#34;xterm-256color&#34;</span>  <span style="color:#75715e">&#34; true color</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
-</span><span style="color:#75715e">&#34; 파일 열기 마지막 부분 저장</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">has</span>(<span style="color:#e6db74">&#34;autocmd&#34;</span>)<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">    &#34; When editing a file, always jump to the last cursor position</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">BufReadPost</span> *<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>    \ <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">line</span>(<span style="color:#e6db74">&#34;&#39;\&#34;&#34;</span>) &gt; <span style="color:#ae81ff">0</span> &amp;&amp; <span style="color:#a6e22e">line</span> (<span style="color:#e6db74">&#34;&#39;\&#34;&#34;</span>) &lt;= <span style="color:#a6e22e">line</span>(<span style="color:#e6db74">&#34;$&#34;</span>) |<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>    \   <span style="color:#a6e22e">exe</span> <span style="color:#e6db74">&#34;normal g&#39;\&#34;&#34;</span> |<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>    \ <span style="color:#66d9ef">endif</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">endif</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div>
+설정 파일의 경로는 <code>~/.config/nvim</code>이며 이 경로에 파일을 직접 생성해야 한다.<br>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir ~/.config/nvim
+$ <span style="color:#8be9fd;font-style:italic">cd</span> ~/.config/nvim
+$ touch init.vim</code></pre></td></tr></table>
+</div>
+</div></p>
+<p>아래는 현재 사용중인 <code>init.vim</code>의 설정이다.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">set iskeyword+=-
+set formatoptions-=cro
+
+syntax on
+set hidden                  <span style="color:#6272a4">&#34; 버퍼를 수정한 직후 버퍼를 감춰지도록 함</span>
+set wrap                    <span style="color:#6272a4">&#34; 자동 줄 바꿈</span>
+set encoding=UTF<span style="color:#bd93f9">-8</span>          <span style="color:#6272a4">&#34; UTF-8 인코딩</span>
+set t_Co=<span style="color:#bd93f9">256</span>                <span style="color:#6272a4">&#34; 256 칼라 지원</span>
+set number                  <span style="color:#6272a4">&#34; 라인 수 표시</span>
+set ruler                   <span style="color:#6272a4">&#34; 커서 표시</span>
+set cursorline              <span style="color:#6272a4">&#34; 현재 커서 하이라이팅</span>
+set pumheight=<span style="color:#bd93f9">10</span>            <span style="color:#6272a4">&#34; 팝업 메뉴 크기 조정</span>
+set showcmd                 <span style="color:#6272a4">&#34; 명령어를 상태라인에 보여준다</span>
+set mouse=a                 <span style="color:#6272a4">&#34; 마우스 사용 가능</span>
+set tabstop=<span style="color:#bd93f9">2</span>               <span style="color:#f1fa8c">&#34;&#34;</span>
+set shiftwidth=<span style="color:#bd93f9">2</span>            <span style="color:#f1fa8c">&#34;&#34;</span>
+set smarttab                <span style="color:#f1fa8c">&#34;&#34;</span>
+set smartindent             <span style="color:#6272a4">&#34; 새로운 라인 시작 시, auto indentation 수행</span>
+set autoindent              <span style="color:#6272a4">&#34; 자동 들여쓰기</span>
+set expandtab               <span style="color:#6272a4">&#34; tab을 space로 확장</span>
+set showmatch               <span style="color:#6272a4">&#34; 매칭되는 괄호 표시</span>
+set background=<span style="color:#8be9fd;font-style:italic">light</span>
+set showtabline=<span style="color:#bd93f9">2</span>
+set noshowmode
+set nobackup                <span style="color:#6272a4">&#34; 백업파일을 생성하지 않는다</span>
+set signcolumn=yes
+set updatetime=<span style="color:#bd93f9">300</span>
+set timeoutlen=<span style="color:#bd93f9">100</span>
+set clipboard=unnamedplus   <span style="color:#6272a4">&#34; 클립보드 복사&amp;붙여넣기 허용</span>
+set incsearch               <span style="color:#6272a4">&#34; 점진적으로 찾기</span>
+set hlsearch                <span style="color:#6272a4">&#34; 검색어 하이라이팅</span>
+set nowrapscan              <span style="color:#6272a4">&#34; 찾기 파일 맨 끝 도달시, 계속하여 찾지 않음</span>
+set guifont=Hack\ Nerd\ Font <span style="color:#6272a4">&#34; 폰트 설정</span>
+set ignorecase              <span style="color:#6272a4">&#34; 검색시 대소문자 구별 X</span>
+
+<span style="color:#ff79c6">let</span> $TERM=<span style="color:#f1fa8c">&#34;xterm-256color&#34;</span>  <span style="color:#6272a4">&#34; true color</span>
+<span style="color:#6272a4">
+</span><span style="color:#6272a4">&#34; 파일 열기 마지막 부분 저장</span>
+<span style="color:#ff79c6">if</span> has(<span style="color:#f1fa8c">&#34;autocmd&#34;</span>)
+<span style="color:#6272a4">    &#34; When editing a file, always jump to the last cursor position</span>
+    autocmd BufReadPost *
+    \ <span style="color:#ff79c6">if</span> line(<span style="color:#f1fa8c">&#34;&#39;\&#34;&#34;</span>) &gt; <span style="color:#bd93f9">0</span> &amp;&amp; line (<span style="color:#f1fa8c">&#34;&#39;\&#34;&#34;</span>) &lt;= line(<span style="color:#f1fa8c">&#34;$&#34;</span>) |
+    \   exe <span style="color:#f1fa8c">&#34;normal g&#39;\&#34;&#34;</span> |
+    \ <span style="color:#ff79c6">endif</span>
+<span style="color:#ff79c6">endif</span>
+```</code></pre></td></tr></table>
+</div>
+</div>
+
 </span>
         </div></article>
 
@@ -246,8 +315,8 @@ $ touch init.vim
                 
                 
                 <li class="pagination-next cell small-order-1 medium-5 medium-order-2 medium-offset-2">
-                    <a class="button" href="https://ralpioxxcs.github.io/post/vim_setting_2/" rel="next">
-                        <span class="sr-text">Next:</span>Vim 사용하기 #2 - Plugin
+                    <a class="button" href="https://ralpioxxcs.github.io/post/change_compiler/" rel="next">
+                        <span class="sr-text">Next:</span>Ubuntu Clang 컴파일러 설정
                     </a>
                 </li>
                 

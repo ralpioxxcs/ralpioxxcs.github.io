@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>CMake 정리 Part3 - Project configure #1</title><meta name="description" itemprop="description" content="어떤 프로젝트를 cmake를 이용하여 관리 및 빌드하고자 할때, CMakeLists.txt를작성 시 자주 사용되는 cmake 기본 명령어들이 있다. (Root) |- CMakeLists.txt |- README.md |- [src] | |- CMakeListst.txt | |- foo.cpp | |- poo.cpp | |- main.cpp |- [include] | |- foo.h | |- poo.h |- [cmake] | |- options.cmake 이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다. 1# [/CMakeListst.txt] 2cmake_minimum_required( VERSION 3.3 ) 3project( foo CXX ) 4# -&amp;gt; &amp;#39;foo&amp;#39;라는 project를 정의한다." id="desc"><meta name="generator" content="Hugo 0.74.3" /><meta name="keywords" itemprop="keywords" content="cmake" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/cmake_3/">
+        <title>CMake 정리 Part3 - Project configure #1</title><meta name="description" itemprop="description" content="어떤 프로젝트를 cmake를 이용하여 관리 및 빌드하고자 할때, CMakeLists.txt를작성 시 자주 사용되는 cmake 기본 명령어들이 있다. (Root) |- CMakeLists.txt |- README.md |- [src] | |- CMakeListst.txt | |- foo.cpp | |- poo.cpp | |- main.cpp |- [include] | |- foo.h | |- poo.h |- [cmake] | |- options.cmake 이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다. 1# [/CMakeListst.txt] 2cmake_minimum_required( VERSION 3.3 ) 3project( foo CXX ) 4# -&amp;gt; &amp;#39;foo&amp;#39;라는 project를 정의한다." id="desc"><meta name="generator" content="Hugo 0.67.0" /><meta name="keywords" itemprop="keywords" content="cmake" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/cmake_3/">
         
 
 <meta name="thumbnail" content="https://ralpioxxcs.github.io/images/moon.png" /><link rel="dns-prefetch" href="https://use.fontawesome.com/" />
@@ -47,11 +47,8 @@
             <div class="off-canvas position-left" id="main-nav-off-canvas" data-off-canvas>
                 <nav>
                     <ul class="vertical menu drilldown" data-drilldown><li itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/about/" >
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io" >
             ABOUT ME
-        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/project/" >
-            PROJECT
         </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
         <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/post/" >
             POST
@@ -89,11 +86,8 @@
                         </a>
                         <nav id="main-nav" class="small-hide">
                           <ul class="dropdown menu" data-dropdown-menu><li itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/about/" >
+        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io" >
             ABOUT ME
-        </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/project/" >
-            PROJECT
         </a></li><li itemscope itemtype="http://schema.org/SiteNavigationElement">
         <a class="main-nav button" tabindex="0" href="https://ralpioxxcs.github.io/post/" >
             POST

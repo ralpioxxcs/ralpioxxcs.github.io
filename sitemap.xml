@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ralpioxxcs.github.io/</loc>
+    <lastmod>2020-08-07T14:26:52+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ralpioxxcs.github.io/post/hugo/hugo_start_1_install/</loc>
     <lastmod>2019-12-28T14:48:40+09:00</lastmod>
   </url>
@@ -15,10 +20,6 @@
   <url>
     <loc>https://ralpioxxcs.github.io/study/datastructure/linkedlist/</loc>
     <lastmod>2019-09-14T13:54:02+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ralpioxxcs.github.io/about/</loc>
   </url>
   
   <url>
@@ -37,12 +38,8 @@
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/project/</loc>
-  </url>
-  
-  <url>
     <loc>https://ralpioxxcs.github.io/post/</loc>
-    <lastmod>2020-07-04T13:53:55+09:00</lastmod>
+    <lastmod>2020-08-07T14:26:52+09:00</lastmod>
   </url>
   
   <url>
@@ -109,6 +106,21 @@
   </url>
   
   <url>
+    <loc>https://ralpioxxcs.github.io/tags/</loc>
+    <lastmod>2020-08-07T14:26:52+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/tags/vim/</loc>
+    <lastmod>2020-08-07T14:26:52+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ralpioxxcs.github.io/post/vim_setting_2/</loc>
+    <lastmod>2020-08-07T14:26:52+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ralpioxxcs.github.io/categories/</loc>
     <lastmod>2020-07-04T13:53:55+09:00</lastmod>
   </url>
@@ -134,11 +146,6 @@
   </url>
   
   <url>
-    <loc>https://ralpioxxcs.github.io/tags/</loc>
-    <lastmod>2020-07-04T13:53:55+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ralpioxxcs.github.io/post/llvm_install/</loc>
     <lastmod>2020-07-04T13:53:55+09:00</lastmod>
   </url>
@@ -146,16 +153,6 @@
   <url>
     <loc>https://ralpioxxcs.github.io/post/change_compiler/</loc>
     <lastmod>2020-07-04T13:32:39+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ralpioxxcs.github.io/tags/vim/</loc>
-    <lastmod>2020-06-20T14:26:52+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ralpioxxcs.github.io/post/vim_setting_2/</loc>
-    <lastmod>2020-06-20T14:26:52+09:00</lastmod>
   </url>
   
   <url>
@@ -181,11 +178,6 @@
   <url>
     <loc>https://ralpioxxcs.github.io/study/</loc>
     <lastmod>2020-01-25T21:42:11+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ralpioxxcs.github.io/</loc>
-    <lastmod>2020-01-01T23:00:00+00:00</lastmod>
   </url>
   
   <url>
