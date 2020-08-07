@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vim 사용하기 #2 - Plugin</title><meta name="description" itemprop="description" content="Plugin 설치 " id="desc"><meta name="generator" content="Hugo 0.67.0" /><meta name="keywords" itemprop="keywords" content="vim" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/vim_setting_2/">
+        <title>Vim 사용하기 #2 - Plugin</title><meta name="description" itemprop="description" content="Plugins vim을 쓰는 가장 큰 이유중 하나는 바로 이 Plugin에 있지않나 싶다. 설치도 비교적 간편하며, 확장성이 뛰어나서 플러그인을 사용하면서 불편한 부분들을 설정파일을 통해 입맛에 맞게 바꿀 수 있다는 점이 매력적이다. 지금도 유용하게 사용하는 vim 플러그인들에 대한 소개와 설치방법 및 사용법에 대해 간단히 알아보겠다.  플러그인 매니저 설치 vim에서 Plugin들을 설치, 관리해주는 도구들이 여러개 있는데 (Vundle, Pathogen) 그 중에서 나는 junegunn님이 만드신 vim-plug를 사용중이다. 현재 neovim을 사용중이므로 설치 방법은 아래와 같다." id="desc"><meta name="generator" content="Hugo 0.74.3" /><meta name="keywords" itemprop="keywords" content="vim" id="keywords"><link rel="canonical" href="https://ralpioxxcs.github.io/post/vim_setting_2/">
         
 
 <meta name="thumbnail" content="https://ralpioxxcs.github.io/images/moon.png" /><link rel="dns-prefetch" href="https://use.fontawesome.com/" />
@@ -138,7 +138,7 @@
                     </span><span class="cell shrink">
                         <span class="fas fa-book fa-sm fa-fw" aria-hidden></span>
                         <strong>Estimated Reading Time:</strong>
-                        ~<span itemprop="timeRequired">1 minute</span>
+                        ~<span itemprop="timeRequired">3 minutes</span>
                     </span><span class="cell shrink">
                         <span class="fas fa-tag fa-sm fa-fw" aria-hidden></span>
                             
@@ -148,12 +148,134 @@
             
         </header>
         
-        <div id="post-content"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#plugin-설치">Plugin 설치</a></li>
-  </ul>
-</nav><span itemprop="articleBody"><h2 id="plugin-설치">Plugin 설치</h2>
-
+        <div id="post-content"><span itemprop="articleBody"><h1 id="plugins"><strong>Plugins</strong></h1>
+<p>vim을 쓰는 가장 큰 이유중 하나는 바로 이 <em>Plugin</em>에 있지않나 싶다. 설치도 비교적 간편하며,
+확장성이 뛰어나서 플러그인을 사용하면서 불편한 부분들을 설정파일을 통해 입맛에 맞게 바꿀 수 있다는 점이 매력적이다.</p>
+<p>지금도 유용하게 사용하는 vim 플러그인들에 대한 소개와 설치방법 및 사용법에 대해 간단히 알아보겠다.</p>
+<p> </p>
+<h2 id="플러그인-매니저-설치"><strong>플러그인 매니저 설치</strong></h2>
+<p>vim에서 Plugin들을 설치, 관리해주는 도구들이 여러개 있는데 (<a href="https://github.com/VundleVim/Vundle.vim">Vundle</a>, <a href="https://github.com/tpope/vim-pathogen">Pathogen</a>) 그 중에서 나는 junegunn님이 만드신 <a href="https://github.com/junegunn/vim-plug">vim-plug</a>를 사용중이다.<br>
+현재 neovim을 사용중이므로 설치 방법은 아래와 같다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">sh -c <span style="color:#e6db74">&#39;curl -fLo &#34;${XDG_DATA_HOME:-$HOME/.local/share}&#34;/nvim/site/autoload/plug.vim --create-dirs \
+</span><span style="color:#e6db74">       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&#39;</span>
+</code></pre></div><p>그 외의 설치방법은 <a href="https://github.com/junegunn/vim-plug#installation">여기</a>를 참고하면 된다.</p>
+<p> </p>
+<h3 id="nerdtree"><strong>NerdTree</strong></h3>
+<p><a href="https://github.com/preservim/nerdtree">nerdtree</a>는 vim에서 파일트리를 보여주는 도구로, 여러 파일을 왔다갔다 할때 유용하게 사용된다.</p>
+<p><img src="../../static/images/nerdtree.png" alt=""><br>
+선택된 파일에서 단축키 <code>m</code>을 입력하면 위 사진처럼 현재 경로의 파일들을 트리형식으로 나타내준다.</p>
+<p><img src="../../static/images/nerdtree_2.png" alt=""></p>
+<ul>
+<li>a : 파일 및 디렉터리를 추가생성한다.</li>
+<li>m : mv와 같은명령으로 파일 및 디렉터리를 옮긴다.</li>
+<li>r : 탐색기로 선택된 파일을 연다 ( nautilus, finder ..)</li>
+<li>o : 메모장이나 gedit 같은 시스템 편집기로 선택된 파일 연다.</li>
+</ul>
+<p>vim 설정은 아래와 같이 설정해두었다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#75715e">&#34; vim을 열때마다 자동으로 nerdtree를 실행한다.</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34; https://github.com/preservim/nerdtree#how-can-i-open-nerdtree-automatically-when-vim-starts-up-on-opening-a-directory </span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">StdinReadPre</span> * <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">s</span>:<span style="color:#a6e22e">std_in</span>=<span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">VimEnter</span> * <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">argc</span>() == <span style="color:#ae81ff">1</span> &amp;&amp; <span style="color:#a6e22e">isdirectory</span>(<span style="color:#a6e22e">argv</span>()[<span style="color:#ae81ff">0</span>]) &amp;&amp; !<span style="color:#a6e22e">exists</span>(<span style="color:#e6db74">&#34;s:std_in&#34;</span>) | <span style="color:#a6e22e">exe</span> <span style="color:#e6db74">&#39;NERDTree&#39;</span> <span style="color:#a6e22e">argv</span>()[<span style="color:#ae81ff">0</span>] | <span style="color:#a6e22e">wincmd</span> <span style="color:#a6e22e">p</span> | <span style="color:#a6e22e">ene</span> | <span style="color:#a6e22e">exe</span> <span style="color:#e6db74">&#39;cd &#39;</span>.<span style="color:#a6e22e">argv</span>()[<span style="color:#ae81ff">0</span>] | <span style="color:#66d9ef">endif</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34; &lt;F9&gt; NerdTree 열고 닫기 매크로 설정</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">noremap</span> &lt;<span style="color:#a6e22e">F9</span>&gt; :<span style="color:#a6e22e">NERDTreeToggle</span>&lt;<span style="color:#a6e22e">CR</span>&gt;<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p> </p>
+<h3 id="tagbar"><strong>Tagbar</strong></h3>
+<p><a href="https://github.com/majutsushi/tagbar">Tagbar</a>는 현재 파일의 Class ,Structure 정보 및 <code>ctags</code>가 생성한 tags를 트리 형식으로 보여주는 플러그인이다.
+이 플러그인을 사용하려면 우선적으로 <code>ctags</code>가 설치돼있어야 한다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash"><span style="color:#e6db74">&#34;Ubuntu&#34;</span>
+sudo apt-get install ctags
+<span style="color:#e6db74">&#34;OS X&#34;</span>
+brew install ctags
+</code></pre></div><p>아래의 vim 설정을 통해 <code>F8</code>을 Tagbar단축키로 설정해두었다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#75715e">&#34; ctags 경로 설정</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">tagbar_ctags_bin</span>=<span style="color:#e6db74">&#39;/usr/local/bin/ctags&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">tagbar_autoclose</span>=<span style="color:#ae81ff">0</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">tabar_autofocus</span>=<span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34; &lt;F8&gt; Tagbar 열고 닫기 매크로 설정</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">noremap</span> &lt;<span style="color:#a6e22e">F8</span>&gt; :<span style="color:#a6e22e">TagbarToggle</span>&lt;<span style="color:#a6e22e">CR</span>&gt;<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p> </p>
+<h3 id="fzf"><strong>FZF</strong></h3>
+<p>강력한 터미널 파일탐색 도구인 fzf를 vim 플러그인으로 사용할 수 있다.<br>
+기존에는 <a href="https://github.com/kien/ctrlp.vim">ctrlp</a>를 사용하다가 fzf를 알고나서부터는 이것만 주욱 써오고 있다. 아직은 fzf를 완벽하게 사용하지는 못하고 있지만, 파일 탐색, 버퍼, 문자열 찾기 기능등으로 쓰고 있다.</p>
+<p>vim-plug를 이용해 설치한다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">Plug</span> <span style="color:#e6db74">&#39;junegunn/fzf&#39;</span>, { <span style="color:#e6db74">&#39;do&#39;</span>: { -&gt; <span style="color:#a6e22e">fzf</span>#<span style="color:#a6e22e">install</span>() } }<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">Plug</span> <span style="color:#e6db74">&#39;junegunn/fzf.vim&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>fzf를</p>
+<h4 id="files">Files</h4>
+<p><code>:Files [PATH]</code> 의 명령어를 통해</p>
+<h4 id="rg">Rg</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#75715e">&#34;This is the default extra key bindings</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">fzf_action</span> = {<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \ <span style="color:#e6db74">&#39;ctrl-t&#39;</span>: <span style="color:#e6db74">&#39;tab split&#39;</span>,<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \ <span style="color:#e6db74">&#39;ctrl-x&#39;</span>: <span style="color:#e6db74">&#39;split&#39;</span>,<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \ <span style="color:#e6db74">&#39;ctrl-v&#39;</span>: <span style="color:#e6db74">&#39;vsplit&#39;</span> }<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
+</span><span style="color:#75715e">&#34; Enable per-command history</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34; - History files will be stored in the specified directory</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34; - When set, CTRL-N and CTRL-P will be bound to &#39;next-history&#39; and</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34;   &#39;previous-history&#39; instead of &#39;down&#39; and &#39;up&#39;.</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">fzf_history_dir</span> = <span style="color:#e6db74">&#39;~/.local/share/fzf-history&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">fzf_buffers_jump</span> = <span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">fzf_tags_command</span> = <span style="color:#e6db74">&#39;ctags -R&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
+</span><span style="color:#75715e">&#34; fzf layout</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">fzf_layout</span> = {<span style="color:#e6db74">&#39;up&#39;</span>:<span style="color:#e6db74">&#39;~90%&#39;</span>, <span style="color:#e6db74">&#39;window&#39;</span>: { <span style="color:#e6db74">&#39;width&#39;</span>: <span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">8</span>, <span style="color:#e6db74">&#39;height&#39;</span>: <span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">8</span>,<span style="color:#e6db74">&#39;yoffset&#39;</span>:<span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">5</span>,<span style="color:#e6db74">&#39;xoffset&#39;</span>: <span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">5</span>, <span style="color:#e6db74">&#39;highlight&#39;</span>: <span style="color:#e6db74">&#39;Todo&#39;</span>, <span style="color:#e6db74">&#39;border&#39;</span>: <span style="color:#e6db74">&#39;sharp&#39;</span> } }<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">let</span> $<span style="color:#a6e22e">FZF_DEFAULT_OPTS</span> = <span style="color:#e6db74">&#39;--layout=reverse --inline-info&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">let</span> $<span style="color:#a6e22e">FZF_DEFAULT_COMMAND</span>=<span style="color:#e6db74">&#34;rg --files --hidden --glob &#39;!.git/**&#39;&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
+</span><span style="color:#75715e">&#34; Customize fzf colors to match your color scheme</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34; - fzf#wrap translates this to a set of `--color` options</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">fzf_colors</span> =<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>\ { <span style="color:#e6db74">&#39;fg&#39;</span>:      [<span style="color:#e6db74">&#39;fg&#39;</span>, <span style="color:#e6db74">&#39;Normal&#39;</span>],<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \ <span style="color:#e6db74">&#39;bg&#39;</span>:      [<span style="color:#e6db74">&#39;bg&#39;</span>, <span style="color:#e6db74">&#39;Normal&#39;</span>],<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \ <span style="color:#e6db74">&#39;hl&#39;</span>:      [<span style="color:#e6db74">&#39;fg&#39;</span>, <span style="color:#e6db74">&#39;Comment&#39;</span>],<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \ <span style="color:#e6db74">&#39;fg+&#39;</span>:     [<span style="color:#e6db74">&#39;fg&#39;</span>, <span style="color:#e6db74">&#39;CursorLine&#39;</span>, <span style="color:#e6db74">&#39;CursorColumn&#39;</span>, <span style="color:#e6db74">&#39;Normal&#39;</span>],<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \ <span style="color:#e6db74">&#39;bg+&#39;</span>:     [<span style="color:#e6db74">&#39;bg&#39;</span>, <span style="color:#e6db74">&#39;CursorLine&#39;</span>, <span style="color:#e6db74">&#39;CursorColumn&#39;</span>],<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \ <span style="color:#e6db74">&#39;hl+&#39;</span>:     [<span style="color:#e6db74">&#39;fg&#39;</span>, <span style="color:#e6db74">&#39;Statement&#39;</span>],<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \ <span style="color:#e6db74">&#39;info&#39;</span>:    [<span style="color:#e6db74">&#39;fg&#39;</span>, <span style="color:#e6db74">&#39;PreProc&#39;</span>],<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \ <span style="color:#e6db74">&#39;border&#39;</span>:  [<span style="color:#e6db74">&#39;fg&#39;</span>, <span style="color:#e6db74">&#39;Ignore&#39;</span>],<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \ <span style="color:#e6db74">&#39;prompt&#39;</span>:  [<span style="color:#e6db74">&#39;fg&#39;</span>, <span style="color:#e6db74">&#39;Conditional&#39;</span>],<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \ <span style="color:#e6db74">&#39;pointer&#39;</span>: [<span style="color:#e6db74">&#39;fg&#39;</span>, <span style="color:#e6db74">&#39;Exception&#39;</span>],<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \ <span style="color:#e6db74">&#39;marker&#39;</span>:  [<span style="color:#e6db74">&#39;fg&#39;</span>, <span style="color:#e6db74">&#39;Keyword&#39;</span>],<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \ <span style="color:#e6db74">&#39;spinner&#39;</span>: [<span style="color:#e6db74">&#39;fg&#39;</span>, <span style="color:#e6db74">&#39;Label&#39;</span>],<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \ <span style="color:#e6db74">&#39;header&#39;</span>:  [<span style="color:#e6db74">&#39;fg&#39;</span>, <span style="color:#e6db74">&#39;Comment&#39;</span>] }<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
+</span><span style="color:#75715e">&#34;Get Files</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">command</span>! -<span style="color:#a6e22e">bang</span> -<span style="color:#a6e22e">nargs</span>=? -<span style="color:#a6e22e">complete</span>=<span style="color:#a6e22e">dir</span> <span style="color:#a6e22e">Files</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    \ <span style="color:#a6e22e">call</span> <span style="color:#a6e22e">fzf</span>#<span style="color:#a6e22e">vim</span>#<span style="color:#a6e22e">files</span>(&lt;<span style="color:#a6e22e">q</span>-<span style="color:#a6e22e">args</span>&gt;, <span style="color:#a6e22e">fzf</span>#<span style="color:#a6e22e">vim</span>#<span style="color:#a6e22e">with_preview</span>({<span style="color:#e6db74">&#39;options&#39;</span>: [<span style="color:#e6db74">&#39;--layout=reverse&#39;</span>, <span style="color:#e6db74">&#39;--inline-info&#39;</span>]}), &lt;<span style="color:#a6e22e">bang</span>&gt;<span style="color:#ae81ff">0</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
+</span><span style="color:#75715e">&#34; Get text in files with Rg</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34; command! -bang -nargs=* Rg</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34;   \ call fzf#vim#grep(</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34;   \   &#34;rg --column --line-number --no-heading --color=always --smart-case --glob &#39;!.git/**&#39; &#34;.shellescape(&lt;q-args&gt;), 1,</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
+</span><span style="color:#75715e"> &#34; Make Ripgrep ONLY search file contents and not filenames</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">command</span>! -<span style="color:#a6e22e">bang</span> -<span style="color:#a6e22e">nargs</span>=* <span style="color:#a6e22e">Rg</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \ <span style="color:#a6e22e">call</span> <span style="color:#a6e22e">fzf</span>#<span style="color:#a6e22e">vim</span>#<span style="color:#a6e22e">grep</span>(<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \   <span style="color:#e6db74">&#39;rg --column --line-number --hidden --smart-case --no-heading --color=always &#39;</span>.<span style="color:#a6e22e">shellescape</span>(&lt;<span style="color:#a6e22e">q</span>-<span style="color:#a6e22e">args</span>&gt;), <span style="color:#ae81ff">1</span>,<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \   &lt;<span style="color:#a6e22e">bang</span>&gt;<span style="color:#ae81ff">0</span> ? <span style="color:#a6e22e">fzf</span>#<span style="color:#a6e22e">vim</span>#<span style="color:#a6e22e">with_preview</span>({<span style="color:#e6db74">&#39;options&#39;</span>: <span style="color:#e6db74">&#39;--delimiter : --nth 4..&#39;</span>}, <span style="color:#e6db74">&#39;up:60%&#39;</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \           : <span style="color:#a6e22e">fzf</span>#<span style="color:#a6e22e">vim</span>#<span style="color:#a6e22e">with_preview</span>({<span style="color:#e6db74">&#39;options&#39;</span>: <span style="color:#e6db74">&#39;--delimiter : --nth 4.. -e&#39;</span>}, <span style="color:#e6db74">&#39;right:50%&#39;</span>, <span style="color:#e6db74">&#39;?&#39;</span>),<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \   &lt;<span style="color:#a6e22e">bang</span>&gt;<span style="color:#ae81ff">0</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
+</span><span style="color:#75715e">&#34; Ripgrep advanced</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">function</span>! <span style="color:#a6e22e">RipgrepFzf</span>(<span style="color:#a6e22e">query</span>, <span style="color:#a6e22e">fullscreen</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">command_fmt</span> = <span style="color:#e6db74">&#39;rg --column --line-number --no-heading --color=always --smart-case %s || true&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">initial_command</span> = <span style="color:#a6e22e">printf</span>(<span style="color:#a6e22e">command_fmt</span>, <span style="color:#a6e22e">shellescape</span>(<span style="color:#a6e22e">a</span>:<span style="color:#a6e22e">query</span>))<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">reload_command</span> = <span style="color:#a6e22e">printf</span>(<span style="color:#a6e22e">command_fmt</span>, <span style="color:#e6db74">&#39;{q}&#39;</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">spec</span> = {<span style="color:#e6db74">&#39;options&#39;</span>: [<span style="color:#e6db74">&#39;--phony&#39;</span>, <span style="color:#e6db74">&#39;--query&#39;</span>, <span style="color:#a6e22e">a</span>:<span style="color:#a6e22e">query</span>, <span style="color:#e6db74">&#39;--bind&#39;</span>, <span style="color:#e6db74">&#39;change:reload:&#39;</span>.<span style="color:#a6e22e">reload_command</span>]}<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#a6e22e">call</span> <span style="color:#a6e22e">fzf</span>#<span style="color:#a6e22e">vim</span>#<span style="color:#a6e22e">grep</span>(<span style="color:#a6e22e">initial_command</span>, <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">fzf</span>#<span style="color:#a6e22e">vim</span>#<span style="color:#a6e22e">with_preview</span>(<span style="color:#a6e22e">spec</span>), <span style="color:#a6e22e">a</span>:<span style="color:#a6e22e">fullscreen</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">endfunction</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">command</span>! -<span style="color:#a6e22e">nargs</span>=* -<span style="color:#a6e22e">bang</span> <span style="color:#a6e22e">RG</span> <span style="color:#a6e22e">call</span> <span style="color:#a6e22e">RipgrepFzf</span>(&lt;<span style="color:#a6e22e">q</span>-<span style="color:#a6e22e">args</span>&gt;, &lt;<span style="color:#a6e22e">bang</span>&gt;<span style="color:#ae81ff">0</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">
+</span><span style="color:#75715e">&#34; Git grep</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">command</span>! -<span style="color:#a6e22e">bang</span> -<span style="color:#a6e22e">nargs</span>=* <span style="color:#a6e22e">GGrep</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \ <span style="color:#a6e22e">call</span> <span style="color:#a6e22e">fzf</span>#<span style="color:#a6e22e">vim</span>#<span style="color:#a6e22e">grep</span>(<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \   <span style="color:#e6db74">&#39;git grep --line-number &#39;</span>.<span style="color:#a6e22e">shellescape</span>(&lt;<span style="color:#a6e22e">q</span>-<span style="color:#a6e22e">args</span>&gt;), <span style="color:#ae81ff">0</span>,<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  \   <span style="color:#a6e22e">fzf</span>#<span style="color:#a6e22e">vim</span>#<span style="color:#a6e22e">with_preview</span>({<span style="color:#e6db74">&#39;dir&#39;</span>: <span style="color:#a6e22e">systemlist</span>(<span style="color:#e6db74">&#39;git rev-parse --show-toplevel&#39;</span>)[<span style="color:#ae81ff">0</span>]}), &lt;<span style="color:#a6e22e">bang</span>&gt;<span style="color:#ae81ff">0</span>)<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div>
 </span>
         </div></article>
 

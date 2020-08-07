@@ -31,8 +31,7 @@
       <description>ubuntu 환경에서 c,cxx 기본 컴파일러는 /usr/bin/cc , /usr/bin/c++에 심볼릭 링크로 지정되어있는데 기본적으로는 gcc와 g++로 설정되어있다.
 빌드시에 컴파일러 경로를 직접 입력해주는 방법도 있지만, /usr/bin/c++의 심볼릭 링크를 변경해줌으로써 고정을 시킬수도 있다.
 이 과정전에 반드시 clang이 설치되어야 한다. clang을 설치하는 방법은 여기에 포스팅해 두었다.
-환경변수 변경 export CC=/usr/bin/clang export CXX=/usr/bin/clang++ 위의 명령어로 환경변수를 바꿔주는 방법으로 컴파일러를 바꿔줄 수 있다. 영구적으로 지정시키고 싶다면 ~/.bashrc에 추가하는 방법으로 환경변수를 설정해주하면 된다.
-지정 커맨드 이용 # c++ compiler sudo update-alternatives --config c++ # c compiler sudo update-alternatives --config cc 위의 커맨드를 입력하고 아래처럼 결과 창이 나오면 원하는 번호를 입력하여 c와 c++에 지정된 컴파일러 경로를 바꿔준다.</description>
+환경변수 변경 export CC=/usr/bin/clang export CXX=/usr/bin/clang++ 위의 명령어로 환경변수를 바꿔주는 방법으로 컴파일러를 바꿔줄 수 있다. 영구적으로 지정시키고 싶다면 ~/.bashrc에 추가하는 방법으로 환경변수를 설정해주하면 된다. 지정 커맨드 이용 # c++ compiler sudo update-alternatives --config c++ # c compiler sudo update-alternatives --config cc 위의 커맨드를 입력하고 아래처럼 결과 창이 나오면 원하는 번호를 입력하여 c와 c++에 지정된 컴파일러 경로를 바꿔준다.</description>
     </item>
     
     <item>
