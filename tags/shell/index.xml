@@ -1,23 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Shell on My Dev Blog</title>
-    <link>https://ralpioxxcs.github.io/tags/shell/</link>
-    <description>Recent content in Shell on My Dev Blog</description>
+    <title>Shell on My Devlog</title>
+    
+    
+    
+    <link>/tags/shell/</link>
+    <description>Recent content in Shell on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 09 Oct 2019 22:40:55 +0900</lastBuildDate>
     
-	<atom:link href="https://ralpioxxcs.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/shell/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Bash Shell 색상 지정하기</title>
-      <link>https://ralpioxxcs.github.io/study/linux/shell_color/</link>
+      <link>/study/linux/shell_color/</link>
       <pubDate>Wed, 09 Oct 2019 22:40:55 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/study/linux/shell_color/</guid>
-      <description></description>
+      <guid>/study/linux/shell_color/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+           
+          
+        
+        </description>
     </item>
     
   </channel>

@@ -1,27 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>gdb on My Dev Blog</title>
-    <link>https://ralpioxxcs.github.io/tags/gdb/</link>
-    <description>Recent content in gdb on My Dev Blog</description>
+    <title>gdb on My Devlog</title>
+    
+    
+    
+    <link>/tags/gdb/</link>
+    <description>Recent content in gdb on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 25 Apr 2020 15:21:05 +0900</lastBuildDate>
     
-	<atom:link href="https://ralpioxxcs.github.io/tags/gdb/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/gdb/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>gdb에서 imagewatch 사용하기</title>
-      <link>https://ralpioxxcs.github.io/post/gdb_imagewatch_1/</link>
+      <link>/post/gdb_imagewatch_1/</link>
       <pubDate>Sat, 25 Apr 2020 15:21:05 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/post/gdb_imagewatch_1/</guid>
-      <description>OpenCV 라이브러리를 사용해본 사람이라면 한번쯤 ImageWatch 플러그인을 사용해봤을 것이다.
+      <guid>/post/gdb_imagewatch_1/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          OpenCV 라이브러리를 사용해본 사람이라면 한번쯤 ImageWatch 플러그인을 사용해봤을 것이다.
 디버거에서 확인하기 힘든 Mat 데이터내 index value등 간편한 인터페이스를 통해 직관적으로 확인이 가능한 유용한 툴이다. 하지만, Visual Studio에서만 사용이 가능한 플러그인이라, 리눅스 환경에서 개발을 하는 나에게는 아쉬움이 많았다.
 그러다가 github에서 imagewatch와 비슷하게 간편한 인터페이스로 index값을 확인할 수 있는 프로그램을 발견하게 되었고, 지금까지 아주 유용하게 사용하고 있다.
    설치조건 gdb imagewatch는 아래의 프로그램들의 설치를 필요로 한다.
- OpenGL 2.</description>
+ OpenGL 2.
+          
+        
+        </description>
     </item>
     
   </channel>

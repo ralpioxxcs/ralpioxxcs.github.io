@@ -1,23 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Life on My Dev Blog</title>
-    <link>https://ralpioxxcs.github.io/categories/life/</link>
-    <description>Recent content in Life on My Dev Blog</description>
+    <title>Life on My Devlog</title>
+    
+    
+    
+    <link>/categories/life/</link>
+    <description>Recent content in Life on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 28 Dec 2019 13:54:45 +0900</lastBuildDate>
     
-	<atom:link href="https://ralpioxxcs.github.io/categories/life/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/life/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Keyboard_xo_v2</title>
-      <link>https://ralpioxxcs.github.io/life/keyboard_xo_v2/</link>
+      <link>/life/keyboard_xo_v2/</link>
       <pubDate>Sat, 28 Dec 2019 13:54:45 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/life/keyboard_xo_v2/</guid>
-      <description></description>
+      <guid>/life/keyboard_xo_v2/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
     </item>
     
   </channel>

@@ -1,131 +1,297 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on My Dev Blog</title>
-    <link>https://ralpioxxcs.github.io/tags/</link>
-    <description>Recent content in Tags on My Dev Blog</description>
+    <title>Tags on My Devlog</title>
+    
+    
+    
+    <link>/tags/</link>
+    <description>Recent content in Tags on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 07 Aug 2020 14:26:52 +0900</lastBuildDate>
     
-	<atom:link href="https://ralpioxxcs.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>vim</title>
-      <link>https://ralpioxxcs.github.io/tags/vim/</link>
+      <link>/tags/vim/</link>
       <pubDate>Fri, 07 Aug 2020 14:26:52 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/tags/vim/</guid>
-      <description></description>
+      <guid>/tags/vim/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
     </item>
     
     <item>
       <title>Clang</title>
-      <link>https://ralpioxxcs.github.io/tags/clang/</link>
+      <link>/tags/clang/</link>
       <pubDate>Sat, 04 Jul 2020 13:53:55 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/tags/clang/</guid>
-      <description></description>
+      <guid>/tags/clang/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
     </item>
     
     <item>
       <title>linux</title>
-      <link>https://ralpioxxcs.github.io/tags/linux/</link>
+      <link>/tags/linux/</link>
       <pubDate>Sat, 04 Jul 2020 13:53:55 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/tags/linux/</guid>
-      <description></description>
+      <guid>/tags/linux/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
     </item>
     
     <item>
       <title>llvm</title>
-      <link>https://ralpioxxcs.github.io/tags/llvm/</link>
+      <link>/tags/llvm/</link>
       <pubDate>Sat, 04 Jul 2020 13:53:55 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/tags/llvm/</guid>
-      <description></description>
+      <guid>/tags/llvm/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
     </item>
     
     <item>
       <title>gdb</title>
-      <link>https://ralpioxxcs.github.io/tags/gdb/</link>
+      <link>/tags/gdb/</link>
       <pubDate>Sat, 25 Apr 2020 15:21:05 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/tags/gdb/</guid>
-      <description></description>
+      <guid>/tags/gdb/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>https://ralpioxxcs.github.io/tags/hugo/</link>
+      <link>/tags/hugo/</link>
       <pubDate>Sun, 29 Dec 2019 15:21:24 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/tags/hugo/</guid>
-      <description></description>
+      <guid>/tags/hugo/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
     </item>
     
     <item>
       <title>Blog</title>
-      <link>https://ralpioxxcs.github.io/tags/blog/</link>
+      <link>/tags/blog/</link>
       <pubDate>Sat, 28 Dec 2019 16:09:14 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/tags/blog/</guid>
-      <description></description>
+      <guid>/tags/blog/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
     </item>
     
     <item>
       <title>Github</title>
-      <link>https://ralpioxxcs.github.io/tags/github/</link>
+      <link>/tags/github/</link>
       <pubDate>Sat, 28 Dec 2019 15:02:51 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/tags/github/</guid>
-      <description></description>
+      <guid>/tags/github/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
     </item>
     
     <item>
       <title>cmake</title>
-      <link>https://ralpioxxcs.github.io/tags/cmake/</link>
+      <link>/tags/cmake/</link>
       <pubDate>Thu, 26 Dec 2019 15:32:40 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/tags/cmake/</guid>
-      <description></description>
+      <guid>/tags/cmake/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
     </item>
     
     <item>
       <title>Shell</title>
-      <link>https://ralpioxxcs.github.io/tags/shell/</link>
+      <link>/tags/shell/</link>
       <pubDate>Wed, 09 Oct 2019 22:40:55 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/tags/shell/</guid>
-      <description></description>
+      <guid>/tags/shell/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
     </item>
     
     <item>
       <title>Data Structure</title>
-      <link>https://ralpioxxcs.github.io/tags/data-structure/</link>
+      <link>/tags/data-structure/</link>
       <pubDate>Wed, 18 Sep 2019 21:59:22 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/tags/data-structure/</guid>
-      <description></description>
+      <guid>/tags/data-structure/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>make</title>
+      <link>/tags/make/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/make/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
     </item>
     
     <item>
       <title>OpenCV</title>
-      <link>https://ralpioxxcs.github.io/tags/opencv/</link>
+      <link>/tags/opencv/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/tags/opencv/</guid>
-      <description></description>
+      <guid>/tags/opencv/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
     </item>
     
     <item>
       <title>Qt</title>
-      <link>https://ralpioxxcs.github.io/tags/qt/</link>
+      <link>/tags/qt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/tags/qt/</guid>
-      <description></description>
+      <guid>/tags/qt/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
     </item>
     
   </channel>
