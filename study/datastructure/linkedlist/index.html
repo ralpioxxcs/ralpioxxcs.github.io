@@ -195,19 +195,33 @@
 <hr>
 <h2 id="2-코드-구현">2. 코드 구현</h2>
 <h3 id="2-1-define-structure">2-1. define structure</h3>
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6">typedef</span> <span style="color:#ff79c6">struct</span> <span style="color:#50fa7b">_node</span> Node;    <span style="color:#6272a4">// 구조체 노드 형명재지정
-</span><span style="color:#6272a4"></span><span style="color:#ff79c6">struct</span> <span style="color:#50fa7b">_node</span> {                 <span style="color:#6272a4">// 데이터를 보관할 노드(자기참조 구조체)
-</span><span style="color:#6272a4"></span>    Node <span style="color:#ff79c6">*</span>prev;               <span style="color:#6272a4">// 앞 노드를 가리키는 멤버
-</span><span style="color:#6272a4"></span>    DataType data;            <span style="color:#6272a4">// 데이터 저장 멤버
-</span><span style="color:#6272a4"></span>    Node <span style="color:#ff79c6">*</span>next;               <span style="color:#6272a4">// 뒷 노드를 가리키는 멤버
-</span><span style="color:#6272a4"></span>};
-<span style="color:#ff79c6">typedef</span> <span style="color:#ff79c6">struct</span> <span style="color:#50fa7b">_linkedList</span> {   <span style="color:#6272a4">// 리스트 관리 구조체
-</span><span style="color:#6272a4"></span>    Node <span style="color:#ff79c6">*</span>head;               <span style="color:#6272a4">// 헤드포인터 (헤드노드 가리킴)
-</span><span style="color:#6272a4"></span>    Node <span style="color:#ff79c6">*</span>cur;                <span style="color:#6272a4">// 특정 작업 시 노드를 가리키기 위한 포인터
-</span><span style="color:#6272a4"></span>    Node <span style="color:#ff79c6">*</span>tail;               <span style="color:#6272a4">// 테일포인터 (테일노드 가리킴)
-</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd">int</span> length;               <span style="color:#6272a4">// 실제 데이터노드의 갯수
-</span><span style="color:#6272a4"></span>} LinkedList;
-</code></pre></div>
+<p>
+
+
+  <div class="collapsable-code">
+    <input id="1" type="checkbox" checked />
+    <label for="1">
+      <span class="collapsable-code__language">cpp</span>
+      <span class="collapsable-code__title">Node구조체 정의</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-cpp" ><code>
+typedef struct _node Node;    // 구조체 노드 형명재지정
+struct _node {                 // 데이터를 보관할 노드(자기참조 구조체)
+    Node *prev;               // 앞 노드를 가리키는 멤버
+    DataType data;            // 데이터 저장 멤버
+    Node *next;               // 뒷 노드를 가리키는 멤버
+};
+typedef struct _linkedList {   // 리스트 관리 구조체
+    Node *head;               // 헤드포인터 (헤드노드 가리킴)
+    Node *cur;                // 특정 작업 시 노드를 가리키기 위한 포인터
+    Node *tail;               // 테일포인터 (테일노드 가리킴)
+    int length;               // 실제 데이터노드의 갯수
+} LinkedList;
+</code></pre>
+  </div>
+
+
 LinkedList 구조체는 리스트 관리 구조체로서,</p>
 <ol>
 <li>순회를 하기 위한 Head, Tail 노드만을 가리키는 노드 포인터와</li>

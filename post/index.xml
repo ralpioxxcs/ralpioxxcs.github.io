@@ -153,7 +153,7 @@ Cmake의 장점 (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드�
 cmake_minimum_required(VERSION major.minor[.patch[.tweak]][FATAL_ERROR])만약 어떤 오픈소스 라이브러리가 cmake 3.0 버전 이상으로 작성 되었고, 현재 나의 빌드환경은 cmake 2.8버전 미만이라면 빌드 시, 다음의 에러가 출력된다 -&amp;gt;
 CMake 3.0 or higher is required. You are running version 2.8.12.2
 이 커맨드는 반드시 CMakeListst.txt 작성시 맨 처음에 선언 해 놓아야 정상적인 버전 호환 에러를 출력할 수 있다.
-cmake Really cool snippet    # Bad example project(foo) cmake_minimum_required(VERSION 3.
+# Bad example project(foo)cmake_minimum_required(VERSION 3.0)message(&amp;#34;Using CMake version ${CMAKE_VERSION}&amp;#34;)PROJECT [용법]
           
         
         </description>
