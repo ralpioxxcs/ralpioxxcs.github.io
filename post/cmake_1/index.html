@@ -7,7 +7,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="CMake? cmake란 cross platform 기반의 프로젝트 전체 빌드 프로세스를 관리해주는 유용한 툴이다. 직접 빌드를 수행하지는 않지만 지정된 OS에 맞는 Make파일 혹은 **솔루션(sln)**파일의 생성을 도와주어 소스코드 빌드를 편리하게 해준다.
-Cmake의 장점 (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드가 하나 있다고 가정하자. 이 소스코드를 각각의 다른 OS에서 빌드할 때, 윈도우즈라면 Visual Studio를, OSX라면 Xcode, Linux라면 Makefile을 이용할것이다. Cmake는 이런 귀찮은 과정을 CMakeLists.txt라는 프로젝트를 정의하는 파일을 하나 만듦으로써, 각 OS에 맞는 Build tool을 파악해 build command만 입력하면 될수 있도록 해준다."/>
+Cmake의 장점  (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드가 하나 있다고 가정하자. 이 소스코드를 각각의 다른 OS에서 빌드할 때, 윈도우즈라면 Visual Studio를, OSX라면 Xcode, Linux라면 Makefile을 이용할것이다. Cmake는 이런 귀찮은 과정을 CMakeLists.txt라는 프로젝트를 정의하는 파일을 하나 만듦으로써, 각 OS에 맞는 Build tool을 파악해 build command만 입력하면 될수 있도록 해준다."/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="/post/cmake_1/" />
@@ -32,13 +32,13 @@ Cmake의 장점 (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드�
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CMake 정리 Part1 - Overview"/>
 <meta name="twitter:description" content="CMake? cmake란 cross platform 기반의 프로젝트 전체 빌드 프로세스를 관리해주는 유용한 툴이다. 직접 빌드를 수행하지는 않지만 지정된 OS에 맞는 Make파일 혹은 **솔루션(sln)**파일의 생성을 도와주어 소스코드 빌드를 편리하게 해준다.
-Cmake의 장점 (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드가 하나 있다고 가정하자. 이 소스코드를 각각의 다른 OS에서 빌드할 때, 윈도우즈라면 Visual Studio를, OSX라면 Xcode, Linux라면 Makefile을 이용할것이다. Cmake는 이런 귀찮은 과정을 CMakeLists.txt라는 프로젝트를 정의하는 파일을 하나 만듦으로써, 각 OS에 맞는 Build tool을 파악해 build command만 입력하면 될수 있도록 해준다."/>
+Cmake의 장점  (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드가 하나 있다고 가정하자. 이 소스코드를 각각의 다른 OS에서 빌드할 때, 윈도우즈라면 Visual Studio를, OSX라면 Xcode, Linux라면 Makefile을 이용할것이다. Cmake는 이런 귀찮은 과정을 CMakeLists.txt라는 프로젝트를 정의하는 파일을 하나 만듦으로써, 각 OS에 맞는 Build tool을 파악해 build command만 입력하면 될수 있도록 해준다."/>
 
 
 
 <meta property="og:title" content="CMake 정리 Part1 - Overview" />
 <meta property="og:description" content="CMake? cmake란 cross platform 기반의 프로젝트 전체 빌드 프로세스를 관리해주는 유용한 툴이다. 직접 빌드를 수행하지는 않지만 지정된 OS에 맞는 Make파일 혹은 **솔루션(sln)**파일의 생성을 도와주어 소스코드 빌드를 편리하게 해준다.
-Cmake의 장점 (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드가 하나 있다고 가정하자. 이 소스코드를 각각의 다른 OS에서 빌드할 때, 윈도우즈라면 Visual Studio를, OSX라면 Xcode, Linux라면 Makefile을 이용할것이다. Cmake는 이런 귀찮은 과정을 CMakeLists.txt라는 프로젝트를 정의하는 파일을 하나 만듦으로써, 각 OS에 맞는 Build tool을 파악해 build command만 입력하면 될수 있도록 해준다." />
+Cmake의 장점  (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드가 하나 있다고 가정하자. 이 소스코드를 각각의 다른 OS에서 빌드할 때, 윈도우즈라면 Visual Studio를, OSX라면 Xcode, Linux라면 Makefile을 이용할것이다. Cmake는 이런 귀찮은 과정을 CMakeLists.txt라는 프로젝트를 정의하는 파일을 하나 만듦으로써, 각 OS에 맞는 Build tool을 파악해 build command만 입력하면 될수 있도록 해준다." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/cmake_1/" />
 <meta property="og:site_name" content="My Devlog" />
@@ -192,7 +192,7 @@ Cmake의 장점 (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드�
       <h2 id="cmake">CMake?</h2>
 <p>cmake란 cross platform 기반의 프로젝트 전체 빌드 프로세스를 관리해주는 유용한 툴이다. 직접 빌드를 수행하지는 않지만 지정된 OS에 맞는 <strong>Make</strong>파일 혹은 **솔루션(sln)**파일의 생성을 도와주어 소스코드 빌드를 편리하게 해준다.</p>
 <h3 id="cmake의-장점">Cmake의 장점</h3>
-<pre><code>(root)
+<pre><code>  (root)
 |- foo.cpp
 |- CMakeLists.txt
 </code></pre><p><strong>foo.cpp</strong> 라는 소스코드가 하나 있다고 가정하자. 이 소스코드를 각각의 다른 OS에서 빌드할 때, 윈도우즈라면 Visual Studio를, OSX라면 Xcode, Linux라면 Makefile을 이용할것이다. Cmake는 이런 귀찮은 과정을 <strong>CMakeLists.txt</strong>라는 프로젝트를 정의하는 파일을 하나 만듦으로써, 각 OS에 맞는 Build tool을 파악해 build command만 입력하면 될수 있도록 해준다.</p>
@@ -202,15 +202,12 @@ Cmake의 장점 (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드�
 <hr>
 <h3 id="example">Example</h3>
 <h4 id="1-configure">1. Configure</h4>
-<p><strong>main.cpp</strong> 라는 파일이 있다고 하면, 같은 폴더 내 <strong>&lsquo;CMakeLists.txt&rsquo;</strong> 라는 파일을 새로 생성 후 아래와 같이 작성한다.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6"># CMakeListst.txt
-</span><span style="color:#ff79c6"></span>
-cmake minimum required( VERSION <span style="color:#bd93f9">3.3</span> )
-project ( test )
-
-add_executable( test main.cpp )
-</code></pre></div></p>
-<h4 id="2-generate">2. Generate</h4>
+<p><strong>main.cpp</strong> 라는 파일이 있다고 하면, 같은 폴더 내 <strong>&lsquo;CMakeLists.txt&rsquo;</strong> 라는 파일을 새로 생성 후 아래와 같이 작성한다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#75715e"># CMakeListst.txt
+</span><span style="color:#75715e"></span>cmake_minimum_required(<span style="color:#e6db74">VERSION</span> <span style="color:#e6db74">3.3</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>project (<span style="color:#e6db74">test</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>add_executable(<span style="color:#e6db74">test</span> <span style="color:#e6db74">main.cpp</span>)<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><h4 id="2-generate">2. Generate</h4>
 <p>이제 작성된 CMakeLists.txt를 기반으로 CMake가 native build tool을 생성할 것이다.<br>
 커맨드창에 <code>$ cmake .</code>를 입력하면 마지막 줄에 아래처럼 나오며 <strong>Makefile</strong>이 생성된다.</p>
 <pre><code>-- Configure done
@@ -260,8 +257,8 @@ add_executable( test main.cpp )
 
 
 <script src="/js/menu.js"></script>
-<script src="/js/theme.js"></script>
-<script src="/js/prism.js"></script>
+  <script src="/js/theme.js"></script>
+<script src="/js/prism_test.js"></script>
 
 
       
