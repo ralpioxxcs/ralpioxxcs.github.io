@@ -192,6 +192,20 @@
 
     <div class="post-content">
       
+        <h2>Table of Contents</h2>
+        <aside class="table-of-contents"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#플러그인-매니저-설치"><strong>플러그인 매니저 설치</strong></a></li>
+    <li><a href="#nerdtree"><strong>NerdTree</strong></a></li>
+    <li><a href="#tagbar"><strong>Tagbar</strong></a></li>
+    <li><a href="#fzf"><strong>FZF</strong></a>
+      <ul>
+        <li><a href="#customization"><strong>Customization</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></aside>
+      
       <h1 id="plugins"><strong>Plugins</strong></h1>
 <p>vim을 쓰는 가장 큰 이유중 하나는 바로 이 <em>Plugin</em>에 있지않나 싶다. 설치도 비교적 간편하며,
 확장성이 뛰어나서 플러그인을 사용하면서 불편한 부분들을 설정파일을 통해 입맛에 맞게 바꿀 수 있다는 점이 매력적이다.</p>
@@ -204,7 +218,7 @@
 </span><span style="color:#e6db74">       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&#39;</span>
 </code></pre></div><p>그 외의 설치방법은 <a href="https://github.com/junegunn/vim-plug#installation">여기</a>를 참고하면 된다.</p>
 <p> </p>
-<h3 id="nerdtree"><strong>NerdTree</strong></h3>
+<h2 id="nerdtree"><strong>NerdTree</strong></h2>
 <p><a href="https://github.com/preservim/nerdtree">nerdtree</a>는 vim에서 파일트리를 보여주는 도구로, 여러 파일을 왔다갔다 할때 유용하게 사용된다.</p>
 <p>
   <figure class="left" >
@@ -235,7 +249,7 @@
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34; &lt;F9&gt; NerdTree 열고 닫기 매크로 설정</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">noremap</span> &lt;<span style="color:#a6e22e">F9</span>&gt; :<span style="color:#a6e22e">NERDTreeToggle</span>&lt;<span style="color:#a6e22e">CR</span>&gt;<span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p> </p>
-<h3 id="tagbar"><strong>Tagbar</strong></h3>
+<h2 id="tagbar"><strong>Tagbar</strong></h2>
 <p><a href="https://github.com/majutsushi/tagbar">Tagbar</a>는 현재 파일의 Class ,Structure 정보 및 <code>ctags</code>가 생성한 tags를 트리 형식으로 보여주는 플러그인이다.
 이 플러그인을 사용하려면 우선적으로 <code>ctags</code>가 설치돼있어야 한다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash"><span style="color:#e6db74">&#34;Ubuntu&#34;</span>
@@ -250,7 +264,7 @@ brew install ctags
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34; &lt;F8&gt; Tagbar 열고 닫기 매크로 설정</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">noremap</span> &lt;<span style="color:#a6e22e">F8</span>&gt; :<span style="color:#a6e22e">TagbarToggle</span>&lt;<span style="color:#a6e22e">CR</span>&gt;<span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p> </p>
-<h3 id="fzf"><strong>FZF</strong></h3>
+<h2 id="fzf"><strong>FZF</strong></h2>
 <p>강력한 터미널 파일탐색 도구인 fzf를 vim 플러그인으로 사용할 수 있다.<br>
 기존에는 <a href="https://github.com/kien/ctrlp.vim">ctrlp</a>를 사용하다가 fzf를 알고나서부터는 이것만 주욱 써오고 있다. 아직은 fzf를 완벽하게 사용하지는 못하고 있지만, 파일 탐색, 버퍼, 문자열 찾기 기능등으로 쓰고 있다.</p>
 <p>vim-plug를 이용해 설치한다.</p>
@@ -270,9 +284,9 @@ brew install ctags
 </ul>
 <p>만약 검색결과에 대해 Syntax Highlighting을 원한다면 <a href="https://github.com/sharkdp/bat">bat</a>을 설치해주자.<br>
  </p>
-<h4 id="customization"><strong>Customization</strong></h4>
+<h3 id="customization"><strong>Customization</strong></h3>
 <p>fzf-vim은 기본적으로 편집창 아래에 검색결과를 나타내주는데, 이것또한 변경이 가능하다.</p>
-<h5 id="1-fzf-layout">1. fzf layout</h5>
+<h4 id="1-fzf-layout">1. fzf layout</h4>
 <p><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#6272a4">&#34; fzf layout</span>
 <span style="color:#ff79c6">let</span> g:fzf_layout = {<span style="color:#f1fa8c">&#39;up&#39;</span>:<span style="color:#f1fa8c">&#39;~90%&#39;</span>, <span style="color:#f1fa8c">&#39;window&#39;</span>: { <span style="color:#f1fa8c">&#39;width&#39;</span>: <span style="color:#bd93f9">0</span>.<span style="color:#bd93f9">8</span>, <span style="color:#f1fa8c">&#39;height&#39;</span>: <span style="color:#bd93f9">0</span>.<span style="color:#bd93f9">8</span>,<span style="color:#f1fa8c">&#39;yoffset&#39;</span>:<span style="color:#bd93f9">0</span>.<span style="color:#bd93f9">5</span>,<span style="color:#f1fa8c">&#39;xoffset&#39;</span>: <span style="color:#bd93f9">0</span>.<span style="color:#bd93f9">5</span>, <span style="color:#f1fa8c">&#39;highlight&#39;</span>: <span style="color:#f1fa8c">&#39;Todo&#39;</span>, <span style="color:#f1fa8c">&#39;border&#39;</span>: <span style="color:#f1fa8c">&#39;sharp&#39;</span> } }
 
@@ -296,12 +310,12 @@ brew install ctags
   \ <span style="color:#f1fa8c">&#39;spinner&#39;</span>: [<span style="color:#f1fa8c">&#39;fg&#39;</span>, <span style="color:#f1fa8c">&#39;Label&#39;</span>],
   \ <span style="color:#f1fa8c">&#39;header&#39;</span>:  [<span style="color:#f1fa8c">&#39;fg&#39;</span>, <span style="color:#f1fa8c">&#39;Comment&#39;</span>] }</code></pre></div>
  </p>
-<h5 id="2-files">2. Files</h5>
+<h4 id="2-files">2. Files</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#6272a4">&#34;Get Files</span>
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(&lt;q-args&gt;, fzf#vim#with_preview({<span style="color:#f1fa8c">&#39;options&#39;</span>: [<span style="color:#f1fa8c">&#39;--layout=reverse&#39;</span>, <span style="color:#f1fa8c">&#39;--inline-info&#39;</span>]}), &lt;bang&gt;<span style="color:#bd93f9">0</span>)</code></pre></div>
 <p> </p>
-<h5 id="3-rg">3. Rg</h5>
+<h4 id="3-rg">3. Rg</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#6272a4">&#34; Get text in files with Rg</span>
 <span style="color:#6272a4">&#34; command! -bang -nargs=* Rg</span>
 <span style="color:#6272a4">&#34;   \ call fzf#vim#grep(</span>

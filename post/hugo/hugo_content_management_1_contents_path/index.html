@@ -219,10 +219,10 @@ content/posts/firstpost.md
 <p><strong>slug</strong><br>
 slug를 재정의 하는 방법은 <code>frontmatter</code>에 <code>slug</code>를 추가한다.<br>
 (e.g., content/posts/old-post.md)
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>+++
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>title =<span style="color:#f1fa8c">&#34;New Post&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>slug =<span style="color:#f1fa8c">&#34;new-post&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>+++</code></pre></div></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#960050;background-color:#1e0010">+++</span>
+<span style="color:#a6e22e">title</span> =<span style="color:#e6db74">&#34;New Post&#34;</span>
+<span style="color:#a6e22e">slug</span> =<span style="color:#e6db74">&#34;new-post&#34;</span>
+<span style="color:#960050;background-color:#1e0010">+++</span></code></pre></div></p>
 </li>
 <li>
 <p>결과 : <code>example.com/posts/new-post/</code></p>
@@ -232,10 +232,10 @@ slug를 재정의 하는 방법은 <code>frontmatter</code>에 <code>slug</code>
 URL또한 재정의(override)될 수 있다. url은 baseURL 다음으로 올 경로를 넣으면 된다.
 (참고로 <code>--uglyURLs</code> 옵션을 무시한다)
 (e.g., content/posts/old-url.md)
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>+++
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>title =<span style="color:#f1fa8c">&#34;old url&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>slug =<span style="color:#f1fa8c">&#34;/blog/new-url&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>+++</code></pre></div></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#960050;background-color:#1e0010">+++</span>
+<span style="color:#a6e22e">title</span> =<span style="color:#e6db74">&#34;old url&#34;</span>
+<span style="color:#a6e22e">slug</span> =<span style="color:#e6db74">&#34;/blog/new-url&#34;</span>
+<span style="color:#960050;background-color:#1e0010">+++</span></code></pre></div></p>
 </li>
 </ul>
 <p>baseURL이 <code>ttps://example.com</code>로 설정된 경우, 기존 url인 <code>posts/old-url.md</code>를 다음처럼 바꾼다.</p>

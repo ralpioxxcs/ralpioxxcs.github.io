@@ -173,7 +173,7 @@ vim으로 갈아타게 된 결정적인 계기는 VSCode에서 지원하는 c/cp
 
       
       
-        <span class="post-read-time">— 3 min read</span>
+        <span class="post-read-time">— 2 min read</span>
       
     </div>
 
@@ -215,11 +215,11 @@ vim으로 갈아타게 된 결정적인 계기는 VSCode에서 지원하는 c/cp
 
 
   <div class="collapsable-code">
-    <input id="1" type="checkbox"  />
-    <label for="1">
+    <input id="321658497" type="checkbox"  />
+    <label for="321658497">
       <span class="collapsable-code__language">bash</span>
       <span class="collapsable-code__title">neovim 설치</span>
-      <span class="collapsable-code__toggle" data-label-expand="펼치기" data-label-collapse="접기"></span>
+      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
     </label>
     <pre class="language-bash" ><code>
 $ sudo add-apt-repository ppa:neovim-ppa/unstable
@@ -246,11 +246,11 @@ $ sudo apt-get install python3-dev python3-pip
 
 
   <div class="collapsable-code">
-    <input id="1" type="checkbox"  />
-    <label for="1">
+    <input id="327148695" type="checkbox"  />
+    <label for="327148695">
       <span class="collapsable-code__language">bash</span>
-      <span class="collapsable-code__title">neovim 설치</span>
-      <span class="collapsable-code__toggle" data-label-expand="펼치기" data-label-collapse="접기"></span>
+      
+      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
     </label>
     <pre class="language-bash" ><code>
 $ mkdir ~/.config/nvim
@@ -261,104 +261,66 @@ $ touch init.vim
 
 </p>
 <p>아래는 현재 사용중인 <code>init.vim</code>의 설정이다.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">set iskeyword+=-
+
+
+
+  <div class="collapsable-code">
+    <input id="493675128" type="checkbox"  />
+    <label for="493675128">
+      <span class="collapsable-code__language">vim</span>
+      
+      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
+    </label>
+    <pre class="language-vim" ><code>
+set iskeyword&#43;=-
 set formatoptions-=cro
 
 syntax on
-set hidden                  <span style="color:#6272a4">&#34; 버퍼를 수정한 직후 버퍼를 감춰지도록 함</span>
-set wrap                    <span style="color:#6272a4">&#34; 자동 줄 바꿈</span>
-set encoding=UTF<span style="color:#bd93f9">-8</span>          <span style="color:#6272a4">&#34; UTF-8 인코딩</span>
-set t_Co=<span style="color:#bd93f9">256</span>                <span style="color:#6272a4">&#34; 256 칼라 지원</span>
-set number                  <span style="color:#6272a4">&#34; 라인 수 표시</span>
-set ruler                   <span style="color:#6272a4">&#34; 커서 표시</span>
-set cursorline              <span style="color:#6272a4">&#34; 현재 커서 하이라이팅</span>
-set pumheight=<span style="color:#bd93f9">10</span>            <span style="color:#6272a4">&#34; 팝업 메뉴 크기 조정</span>
-set showcmd                 <span style="color:#6272a4">&#34; 명령어를 상태라인에 보여준다</span>
-set mouse=a                 <span style="color:#6272a4">&#34; 마우스 사용 가능</span>
-set tabstop=<span style="color:#bd93f9">2</span>               <span style="color:#f1fa8c">&#34;&#34;</span>
-set shiftwidth=<span style="color:#bd93f9">2</span>            <span style="color:#f1fa8c">&#34;&#34;</span>
-set smarttab                <span style="color:#f1fa8c">&#34;&#34;</span>
-set smartindent             <span style="color:#6272a4">&#34; 새로운 라인 시작 시, auto indentation 수행</span>
-set autoindent              <span style="color:#6272a4">&#34; 자동 들여쓰기</span>
-set expandtab               <span style="color:#6272a4">&#34; tab을 space로 확장</span>
-set showmatch               <span style="color:#6272a4">&#34; 매칭되는 괄호 표시</span>
-set background=<span style="color:#8be9fd;font-style:italic">light</span>
-set showtabline=<span style="color:#bd93f9">2</span>
+set hidden                  &#34; 버퍼를 수정한 직후 버퍼를 감춰지도록 함
+set wrap                    &#34; 자동 줄 바꿈
+set encoding=UTF-8          &#34; UTF-8 인코딩
+set t_Co=256                &#34; 256 칼라 지원
+set number                  &#34; 라인 수 표시
+set ruler                   &#34; 커서 표시
+set cursorline              &#34; 현재 커서 하이라이팅
+set pumheight=10            &#34; 팝업 메뉴 크기 조정
+set showcmd                 &#34; 명령어를 상태라인에 보여준다
+set mouse=a                 &#34; 마우스 사용 가능
+set tabstop=2               &#34;&#34;
+set shiftwidth=2            &#34;&#34;
+set smarttab                &#34;&#34;
+set smartindent             &#34; 새로운 라인 시작 시, auto indentation 수행
+set autoindent              &#34; 자동 들여쓰기
+set expandtab               &#34; tab을 space로 확장
+set showmatch               &#34; 매칭되는 괄호 표시
+set background=light
+set showtabline=2
 set noshowmode
-set nobackup                <span style="color:#6272a4">&#34; 백업파일을 생성하지 않는다</span>
+set nobackup                &#34; 백업파일을 생성하지 않는다
 set signcolumn=yes
-set updatetime=<span style="color:#bd93f9">300</span>
-set timeoutlen=<span style="color:#bd93f9">100</span>
-set clipboard=unnamedplus   <span style="color:#6272a4">&#34; 클립보드 복사&amp;붙여넣기 허용</span>
-set incsearch               <span style="color:#6272a4">&#34; 점진적으로 찾기</span>
-set hlsearch                <span style="color:#6272a4">&#34; 검색어 하이라이팅</span>
-set nowrapscan              <span style="color:#6272a4">&#34; 찾기 파일 맨 끝 도달시, 계속하여 찾지 않음</span>
-set guifont=Hack\ Nerd\ Font <span style="color:#6272a4">&#34; 폰트 설정</span>
-set ignorecase              <span style="color:#6272a4">&#34; 검색시 대소문자 구별 X</span>
+set updatetime=300
+set timeoutlen=100
+set clipboard=unnamedplus   &#34; 클립보드 복사&amp;붙여넣기 허용
+set incsearch               &#34; 점진적으로 찾기
+set hlsearch                &#34; 검색어 하이라이팅
+set nowrapscan              &#34; 찾기 파일 맨 끝 도달시, 계속하여 찾지 않음
+set guifont=Hack\ Nerd\ Font &#34; 폰트 설정
+set ignorecase              &#34; 검색시 대소문자 구별 X
 
-<span style="color:#ff79c6">let</span> $TERM=<span style="color:#f1fa8c">&#34;xterm-256color&#34;</span>  <span style="color:#6272a4">&#34; true color</span>
-<span style="color:#6272a4">
-</span><span style="color:#6272a4">&#34; 파일 열기 마지막 부분 저장</span>
-<span style="color:#ff79c6">if</span> has(<span style="color:#f1fa8c">&#34;autocmd&#34;</span>)
-<span style="color:#6272a4">    &#34; When editing a file, always jump to the last cursor position</span>
+let $TERM=&#34;xterm-256color&#34;  &#34; true color
+
+&#34; 파일 열기 마지막 부분 저장
+if has(&#34;autocmd&#34;)
+    &#34; When editing a file, always jump to the last cursor position
     autocmd BufReadPost *
-    \ <span style="color:#ff79c6">if</span> line(<span style="color:#f1fa8c">&#34;&#39;\&#34;&#34;</span>) &gt; <span style="color:#bd93f9">0</span> &amp;&amp; line (<span style="color:#f1fa8c">&#34;&#39;\&#34;&#34;</span>) &lt;= line(<span style="color:#f1fa8c">&#34;$&#34;</span>) |
-    \   exe <span style="color:#f1fa8c">&#34;normal g&#39;\&#34;&#34;</span> |
-    \ <span style="color:#ff79c6">endif</span>
-<span style="color:#ff79c6">endif</span>
-```</code></pre></td></tr></table>
-</div>
-</div>
+    \ if line(&#34;&#39;\&#34;&#34;) &gt; 0 &amp;&amp; line (&#34;&#39;\&#34;&#34;) &lt;= line(&#34;$&#34;) |
+    \   exe &#34;normal g&#39;\&#34;&#34; |
+    \ endif
+endif
+</code></pre>
+  </div>
+
+
 
     </div>
     
