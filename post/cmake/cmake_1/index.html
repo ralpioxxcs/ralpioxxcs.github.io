@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>CMake Part1 - Overview :: My Devlog — 기록 &amp; 공부용 개발 블로그</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CMake? cmake란 cross platform 기반의 프로젝트 전체 빌드 프로세스를 관리해주는 유용한 툴이다. 직접 빌드를 수행하지는 않지만 지정된 OS에 맞는 Make파일 혹은 **솔루션(sln)**파일의 생성을 도와주어 소스코드 빌드를 편리하게 해준다.
+Cmake의 장점  (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드가 하나 있다고 가정하자. 이 소스코드를 각각의 다른 OS에서 빌드할 때, 윈도우즈라면 Visual Studio를, OSX라면 Xcode, Linux라면 Makefile을 이용할것이다. Cmake는 이런 귀찮은 과정을 CMakeLists.txt라는 프로젝트를 정의하는 파일을 하나 만듦으로써, 각 OS에 맞는 Build tool을 파악해 build command만 입력하면 될수 있도록 해준다."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/post/cmake/cmake_1/" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.min.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CMake Part1 - Overview"/>
+<meta name="twitter:description" content="CMake? cmake란 cross platform 기반의 프로젝트 전체 빌드 프로세스를 관리해주는 유용한 툴이다. 직접 빌드를 수행하지는 않지만 지정된 OS에 맞는 Make파일 혹은 **솔루션(sln)**파일의 생성을 도와주어 소스코드 빌드를 편리하게 해준다.
+Cmake의 장점  (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드가 하나 있다고 가정하자. 이 소스코드를 각각의 다른 OS에서 빌드할 때, 윈도우즈라면 Visual Studio를, OSX라면 Xcode, Linux라면 Makefile을 이용할것이다. Cmake는 이런 귀찮은 과정을 CMakeLists.txt라는 프로젝트를 정의하는 파일을 하나 만듦으로써, 각 OS에 맞는 Build tool을 파악해 build command만 입력하면 될수 있도록 해준다."/>
+
+
+
+<meta property="og:title" content="CMake Part1 - Overview" />
+<meta property="og:description" content="CMake? cmake란 cross platform 기반의 프로젝트 전체 빌드 프로세스를 관리해주는 유용한 툴이다. 직접 빌드를 수행하지는 않지만 지정된 OS에 맞는 Make파일 혹은 **솔루션(sln)**파일의 생성을 도와주어 소스코드 빌드를 편리하게 해준다.
+Cmake의 장점  (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드가 하나 있다고 가정하자. 이 소스코드를 각각의 다른 OS에서 빌드할 때, 윈도우즈라면 Visual Studio를, OSX라면 Xcode, Linux라면 Makefile을 이용할것이다. Cmake는 이런 귀찮은 과정을 CMakeLists.txt라는 프로젝트를 정의하는 파일을 하나 만듦으로써, 각 OS에 맞는 Build tool을 파악해 build command만 입력하면 될수 있도록 해준다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/cmake/cmake_1/" />
+<meta property="article:published_time" content="2020-01-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-19T00:00:00+00:00" /><meta property="og:site_name" content="My Devlog" />
+
+
+
+
+
+
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+    <span class="logo__text">My Devlog</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/post">Post</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">
+            Show more
+            <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+          </li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/study">Study</a></li>
+              
+            
+              
+            
+              
+                <li><a href="/til">Today I Learned</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/post">Post</a></li>
+      
+    
+      
+        <li><a href="/study">Study</a></li>
+      
+    
+      
+    
+      
+        <li><a href="/til">Today I Learned</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title"><a href="/post/cmake/cmake_1/">CMake Part1 - Overview</a></h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-01-19
+        </span>
+
+        
+          
+            
+
+
+
+          
+        
+      
+
+      
+      
+        <span class="post-read-time">— 1 min read</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/cmake/">cmake</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      <h2 id="cmake">CMake?</h2>
+<p>cmake란 cross platform 기반의 프로젝트 전체 빌드 프로세스를 관리해주는 유용한 툴이다. 직접 빌드를 수행하지는 않지만 지정된 OS에 맞는 <strong>Make</strong>파일 혹은 **솔루션(sln)**파일의 생성을 도와주어 소스코드 빌드를 편리하게 해준다.</p>
+<h3 id="cmake의-장점">Cmake의 장점</h3>
+<pre><code>  (root)
+|- foo.cpp
+|- CMakeLists.txt
+</code></pre><p><strong>foo.cpp</strong> 라는 소스코드가 하나 있다고 가정하자. 이 소스코드를 각각의 다른 OS에서 빌드할 때, 윈도우즈라면 Visual Studio를, OSX라면 Xcode, Linux라면 Makefile을 이용할것이다. Cmake는 이런 귀찮은 과정을 <strong>CMakeLists.txt</strong>라는 프로젝트를 정의하는 파일을 하나 만듦으로써, 각 OS에 맞는 Build tool을 파악해 build command만 입력하면 될수 있도록 해준다.</p>
+<h3 id="install">Install</h3>
+<p><code>$ sudo apt install cmake</code> 의 명령어를 입력해 간단하게 설치할 수 있다.<br>
+<code>$ cmake --version</code> 명령어를 입력해 cmake가 제대로 install 되었는지 확인한다.</p>
+<hr>
+<h3 id="example">Example</h3>
+<h4 id="1-configure">1. Configure</h4>
+<p><strong>main.cpp</strong> 라는 파일이 있다고 하면, 같은 폴더 내 <strong>&lsquo;CMakeLists.txt&rsquo;</strong> 라는 파일을 새로 생성 후 아래와 같이 작성한다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#75715e"># CMakeListst.txt
+</span><span style="color:#75715e"></span>cmake_minimum_required(<span style="color:#e6db74">VERSION</span> <span style="color:#e6db74">3.3</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>project (<span style="color:#e6db74">test</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>add_executable(<span style="color:#e6db74">test</span> <span style="color:#e6db74">main.cpp</span>)<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><h4 id="2-generate">2. Generate</h4>
+<p>이제 작성된 CMakeLists.txt를 기반으로 CMake가 native build tool을 생성할 것이다.<br>
+커맨드창에 <code>$ cmake .</code>를 입력하면 마지막 줄에 아래처럼 나오며 <strong>Makefile</strong>이 생성된다.</p>
+<pre><code>-- Configure done
+-- Generating done
+-- Build files have been written to: ...
+</code></pre><h3 id="3-build">3. Build</h3>
+<p><code>$ make</code> 커맨드를 입력하면 작성된 Makefile에 의하여 <strong>foo.cpp -&gt; foo.cpp.o -&gt; foo</strong> 의 과정을 통해 executable 파일이 생성된다.</p>
+
+    </div>
+    
+    <div class="pagination">
+        <div class="pagination__title">
+            <span class="pagination__title-h">
+                Read other posts
+            </span>
+            <hr />
+        </div>
+        <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/post/cmake/cmake_2/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Hugo Content Management [4] - Shortcodes</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/post/hugo/hugo_content_management_4_shortcodes/">
+                  <span class="button__text">CMake Part2 - Commands &amp; Vars</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+
+                
+        </div>
+    </div>
+      
+
+    
+
+    
+      
+        
+
+      
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+    <span class="logo__text">My Devlog</span>
+    <span class="logo__cursor_foot"></span>
+  
+</a>
+
+      <div class="copyright">
+        
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a> & customized by ralpioxxcs</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+
+
+
+
+<script src="/js/menu.js"></script>
+  <script src="/js/theme.js"></script>
+<script src="/js/prism_test.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

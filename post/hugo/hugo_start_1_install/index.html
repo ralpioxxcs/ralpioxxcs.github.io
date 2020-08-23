@@ -6,8 +6,9 @@
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Hugo? Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 Jekyll (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다.  　Install (Windows OS) Hugo를 설치하는 방법은 간단하다. 아래의 URL을 클릭하여 다운로드 사이트로 이동한 뒤, 컴퓨터의 운영체제 버전(32bit, 64bit)를 확인하여 다운로드 한다.
-Hugo download link Configuration  C드라이브에 hugo폴더, bin 폴더 생성 (C:\hugo\bin) hugo."/>
+<meta name="description" content="Hugo? Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 Jekyll (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다.
+Install 설치방법은 install hugo에 각 OS별로 설치를 하는 방법이 잘 안내되어 있다.
+OSX brew install hugo Debian, Ubuntu sudo apt-get install hugo package installer를 이용하는 방법외에는 Release 다운로드 사이트에서 직접 다운로드하여 설치하는 방법도 있다."/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="/post/hugo/hugo_start_1_install/" />
@@ -31,12 +32,16 @@ Hugo download link Configuration  C드라이브에 hugo폴더, bin 폴더 생성
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Getting Started Hugo [1] - 설치 및 환경설정"/>
-<meta name="twitter:description" content="Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 **Jekyll** (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다."/>
+<meta name="twitter:description" content="Hugo? Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 Jekyll (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다.
+Install 설치방법은 install hugo에 각 OS별로 설치를 하는 방법이 잘 안내되어 있다.
+OSX brew install hugo Debian, Ubuntu sudo apt-get install hugo package installer를 이용하는 방법외에는 Release 다운로드 사이트에서 직접 다운로드하여 설치하는 방법도 있다."/>
 
 
 
 <meta property="og:title" content="Getting Started Hugo [1] - 설치 및 환경설정" />
-<meta property="og:description" content="Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 **Jekyll** (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다." />
+<meta property="og:description" content="Hugo? Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 Jekyll (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다.
+Install 설치방법은 install hugo에 각 OS별로 설치를 하는 방법이 잘 안내되어 있다.
+OSX brew install hugo Debian, Ubuntu sudo apt-get install hugo package installer를 이용하는 방법외에는 Release 다운로드 사이트에서 직접 다운로드하여 설치하는 방법도 있다." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/hugo/hugo_start_1_install/" />
 <meta property="article:published_time" content="2019-12-28T14:48:40+09:00" />
@@ -71,11 +76,11 @@ Hugo download link Configuration  C드라이브에 hugo폴더, bin 폴더 생성
     
       
         
-          <li><a href="/">About</a></li>
+          <li><a href="/about">About</a></li>
         
       
         
-          <li><a href="/post/">Post</a></li>
+          <li><a href="/post">Post</a></li>
         
       
       
@@ -92,13 +97,13 @@ Hugo download link Configuration  C드라이브에 hugo폴더, bin 폴더 생성
           <ul class="menu__sub-inner-more hidden">
             
               
-                <li><a href="/life">Life</a></li>
+                <li><a href="/study">Study</a></li>
               
             
               
             
               
-                <li><a href="/study">T.I.L</a></li>
+                <li><a href="/til">Today I Learned</a></li>
               
             
           </ul>
@@ -110,21 +115,21 @@ Hugo download link Configuration  C드라이브에 hugo폴더, bin 폴더 생성
   <ul class="menu__inner menu__inner--mobile">
     
       
-        <li><a href="/">About</a></li>
+        <li><a href="/about">About</a></li>
       
     
       
-        <li><a href="/post/">Post</a></li>
+        <li><a href="/post">Post</a></li>
       
     
       
-        <li><a href="/life">Life</a></li>
+        <li><a href="/study">Study</a></li>
       
     
       
     
       
-        <li><a href="/study">T.I.L</a></li>
+        <li><a href="/til">Today I Learned</a></li>
       
     
   </ul>
@@ -164,6 +169,13 @@ Hugo download link Configuration  C드라이브에 hugo폴더, bin 폴더 생성
         </span>
 
         
+          
+            
+
+
+
+          
+        
       
 
       
@@ -185,25 +197,17 @@ Hugo download link Configuration  C드라이브에 hugo폴더, bin 폴더 생성
     <div class="post-content">
       
       <h2 id="hugo"><strong>Hugo?</strong></h2>
-<p>Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 <strong>Jekyll</strong> (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다.
-　<br>
-　</p>
-<hr>
-<p>　</p>
-<h3 id="install-windows-os">Install (Windows OS)</h3>
-<p>Hugo를 설치하는 방법은 간단하다. 아래의 URL을 클릭하여 다운로드 사이트로 이동한 뒤, 컴퓨터의 운영체제 버전(32bit, 64bit)를 확인하여 다운로드 한다.<br>
-<a href="https://github.com/gohugoio/hugo/releases">Hugo download link</a>
-　<br>
-　</p>
-<h3 id="configuration">Configuration</h3>
-<ul>
-<li>C드라이브에 hugo폴더, bin 폴더 생성 <code>(C:\hugo\bin)</code></li>
-<li><code>hugo.exe</code> 파일을 복사하여 bin폴더에 붙여넣기</li>
-<li>시스템 속성 - 환경변수의 PATH에 <code>c:\hugo\bin</code> 경로 추가.</li>
-<li>powershell 혹은 git-bash등 terminal 프로그램을 실행시키고 <code>$ hugo -help</code> 커맨드를 입력하여 아래의 메세지가 정삭적으로 나오는지 확인한다.<br>
-　<br>
-　</li>
-</ul>
+<p>Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 <strong>Jekyll</strong> (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다.<br>
+ 
+ </p>
+<h3 id="install">Install</h3>
+<p>설치방법은 <a href="https://gohugo.io/getting-started/installing/#quick-install">install hugo</a>에 각 OS별로 설치를 하는 방법이 잘 안내되어 있다.</p>
+<h4 id="osx">OSX</h4>
+<pre><code>brew install hugo
+</code></pre><h4 id="debian-ubuntu">Debian, Ubuntu</h4>
+<pre><code>sudo apt-get install hugo
+</code></pre><p>package installer를 이용하는 방법외에는 <a href="https://gohugo.io/getting-started/installing/#quick-install">Release 다운로드 사이트</a>에서 직접 다운로드하여 설치하는 방법도 있다.</p>
+<p>설치가 끝났다면 <code>hugo -help</code> 를 터미널에 입력하여 아래의 메세지가 정상적으로 나오는지 확인한다.</p>
 <pre><code>hugo is the main command, used to build your Hugo site.
 
 Hugo is a Fast and Flexible Static Site Generator
@@ -271,9 +275,35 @@ Use &quot;hugo [command] --help&quot; for more information about a command.
 </code></pre>
     </div>
     
+    <div class="pagination">
+        <div class="pagination__title">
+            <span class="pagination__title-h">
+                Read other posts
+            </span>
+            <hr />
+        </div>
+        <div class="pagination__buttons">
+            
+            
+              <span class="button next">
+                <a href="">
+                  <span class="button__text">Getting Started Hugo [2] - 블로그 생성</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
 
+                
+        </div>
+    </div>
+      
 
     
+
+    
+      
+        
+
       
     
 
@@ -298,8 +328,8 @@ Use &quot;hugo [command] --help&quot; for more information about a command.
 </a>
 
       <div class="copyright">
-        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
-        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+        
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a> & customized by ralpioxxcs</a></span>
       </div>
     
   </div>

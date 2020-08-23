@@ -17,7 +17,7 @@
     <item>
       <title>Study: Linux</title>
       <link>/study/linux/</link>
-      <pubDate>Thu, 26 Dec 2019 15:10:46 +0900</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/study/linux/</guid>
       <description>
@@ -36,10 +36,10 @@
     
     <item>
       <title>Ubuntu LLVM Package 설치</title>
-      <link>/post/llvm_install/</link>
+      <link>/post/etc/llvm_install/</link>
       <pubDate>Sat, 04 Jul 2020 13:53:55 +0900</pubDate>
       
-      <guid>/post/llvm_install/</guid>
+      <guid>/post/etc/llvm_install/</guid>
       <description>
         
           
@@ -58,10 +58,10 @@
     
     <item>
       <title>Ubuntu Clang 컴파일러 설정</title>
-      <link>/post/change_compiler/</link>
+      <link>/post/etc/change_compiler/</link>
       <pubDate>Sat, 04 Jul 2020 13:32:39 +0900</pubDate>
       
-      <guid>/post/change_compiler/</guid>
+      <guid>/post/etc/change_compiler/</guid>
       <description>
         
           
@@ -74,26 +74,6 @@
 빌드시에 컴파일러 경로를 직접 입력해주는 방법도 있지만, /usr/bin/c++의 심볼릭 링크를 변경해줌으로써 고정을 시킬수도 있다.
 이 과정전에 반드시 clang이 설치되어야 한다. clang을 설치하는 방법은 여기에 포스팅해 두었다.
 환경변수 변경 export CC=/usr/bin/clang export CXX=/usr/bin/clang++ 위의 명령어로 환경변수를 바꿔주는 방법으로 컴파일러를 바꿔줄 수 있다. 영구적으로 지정시키고 싶다면 ~/.bashrc에 추가하는 방법으로 환경변수를 설정해주하면 된다. 지정 커맨드 이용 # c++ compiler sudo update-alternatives --config c++ # c compiler sudo update-alternatives --config cc 위의 커맨드를 입력하고 아래처럼 결과 창이 나오면 원하는 번호를 입력하여 c와 c++에 지정된 컴파일러 경로를 바꿔준다.
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Bash Shell 색상 지정하기</title>
-      <link>/study/linux/shell_color/</link>
-      <pubDate>Wed, 09 Oct 2019 22:40:55 +0900</pubDate>
-      
-      <guid>/study/linux/shell_color/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-           
           
         
         </description>

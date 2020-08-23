@@ -16,10 +16,10 @@
     
     <item>
       <title>Ubuntu LLVM Package 설치</title>
-      <link>/post/llvm_install/</link>
+      <link>/post/etc/llvm_install/</link>
       <pubDate>Sat, 04 Jul 2020 13:53:55 +0900</pubDate>
       
-      <guid>/post/llvm_install/</guid>
+      <guid>/post/etc/llvm_install/</guid>
       <description>
         
           
@@ -38,10 +38,10 @@
     
     <item>
       <title>Ubuntu Clang 컴파일러 설정</title>
-      <link>/post/change_compiler/</link>
+      <link>/post/etc/change_compiler/</link>
       <pubDate>Sat, 04 Jul 2020 13:32:39 +0900</pubDate>
       
-      <guid>/post/change_compiler/</guid>
+      <guid>/post/etc/change_compiler/</guid>
       <description>
         
           

@@ -3,67 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/</loc>
-    <lastmod>2020-08-07T14:26:52+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/hugo/hugo_start_1_install/</loc>
-    <lastmod>2019-12-28T14:48:40+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/study/datastructure/</loc>
-    <lastmod>2019-09-18T21:59:22+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/study/datastructure/linkedlist/</loc>
-    <lastmod>2019-09-14T13:54:02+09:00</lastmod>
   </url>
   
   <url>
     <loc>/study/opencv/</loc>
-    <lastmod>2020-01-25T21:42:11+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/hugo/hugo_start_2_quick_start/</loc>
-    <lastmod>2019-12-28T15:34:07+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/study/datastructure/stack/</loc>
-    <lastmod>2019-09-13T13:54:02+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2020-08-07T14:26:52+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/hugo/hugo_start_3_directory/</loc>
-    <lastmod>2019-12-28T14:57:28+09:00</lastmod>
   </url>
   
   <url>
     <loc>/study/linux/</loc>
-    <lastmod>2019-12-26T15:10:46+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/study/datastructure/circulaqueue/</loc>
-    <lastmod>2019-09-18T21:59:22+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/hugo/hugo_start_4_remote_repo_link/</loc>
-    <lastmod>2019-12-28T15:02:51+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/cmake_1/</loc>
   </url>
   
   <url>
@@ -71,38 +19,13 @@
   </url>
   
   <url>
-    <loc>/post/hugo/hugo_content_management_1_contents_path/</loc>
-    <lastmod>2019-12-28T15:07:19+09:00</lastmod>
+    <loc>/</loc>
+    <lastmod>2020-08-07T14:26:52+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/cmake_2/</loc>
-    <lastmod>2019-10-27T14:23:25+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/hugo/hugo_content_management_2_page/</loc>
-    <lastmod>2019-12-29T15:21:24+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/cmake_3/</loc>
-    <lastmod>2019-11-03T14:38:36+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/hugo/hugo_content_management_3_frontmatter/</loc>
-    <lastmod>2019-12-28T16:09:14+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/cmake_4/</loc>
-    <lastmod>2019-12-26T15:32:40+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/hugo/hugo_content_management_4_shortcodes/</loc>
-    <lastmod>2019-12-28T15:07:57+09:00</lastmod>
+    <loc>/post/</loc>
+    <lastmod>2020-08-07T14:26:52+09:00</lastmod>
   </url>
   
   <url>
@@ -116,7 +39,7 @@
   </url>
   
   <url>
-    <loc>/post/vim_setting_2/</loc>
+    <loc>/post/vim/vim_setting_2/</loc>
     <lastmod>2020-08-07T14:26:52+09:00</lastmod>
   </url>
   
@@ -146,17 +69,17 @@
   </url>
   
   <url>
-    <loc>/post/llvm_install/</loc>
+    <loc>/post/etc/llvm_install/</loc>
     <lastmod>2020-07-04T13:53:55+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/change_compiler/</loc>
+    <loc>/post/etc/change_compiler/</loc>
     <lastmod>2020-07-04T13:32:39+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/vim_setting_1/</loc>
+    <loc>/post/vim/vim_setting_1/</loc>
     <lastmod>2020-06-19T21:06:39+09:00</lastmod>
   </url>
   
@@ -166,77 +89,102 @@
   </url>
   
   <url>
-    <loc>/post/gdb_imagewatch_1/</loc>
+    <loc>/post/etc/gdb_imagewatch_1/</loc>
     <lastmod>2020-04-25T15:21:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/study/opencv/opencv1/</loc>
-    <lastmod>2020-01-25T21:42:11+09:00</lastmod>
+    <loc>/tags/cmake/</loc>
+    <lastmod>2020-02-01T15:32:40+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/study/</loc>
-    <lastmod>2020-01-25T21:42:11+09:00</lastmod>
+    <loc>/post/cmake/cmake_4/</loc>
+    <lastmod>2020-02-01T15:32:40+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/cmake/cmake_3/</loc>
+    <lastmod>2020-01-30T14:38:36+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
+    <lastmod>2020-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/cmake/cmake_2/</loc>
+    <lastmod>2020-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/cmake/cmake_1/</loc>
+    <lastmod>2020-01-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/hugo/</loc>
-    <lastmod>2019-12-29T15:21:24+09:00</lastmod>
+    <lastmod>2019-12-30T18:07:57+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/hugo/hugo_content_management_4_shortcodes/</loc>
+    <lastmod>2019-12-30T18:07:57+09:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/blog/</loc>
-    <lastmod>2019-12-28T16:09:14+09:00</lastmod>
+    <lastmod>2019-12-30T16:09:14+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/github/</loc>
-    <lastmod>2019-12-28T15:02:51+09:00</lastmod>
+    <loc>/post/hugo/hugo_content_management_3_frontmatter/</loc>
+    <lastmod>2019-12-30T16:09:14+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/life/keyboard_xo_v2/</loc>
+    <loc>/post/hugo/hugo_content_management_2_page/</loc>
+    <lastmod>2019-12-30T15:21:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/hugo/hugo_content_management_1_contents_path/</loc>
+    <lastmod>2019-12-30T15:07:19+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/hugo/hugo_start_4_remote_repo_link/</loc>
+    <lastmod>2019-12-29T15:02:51+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/hugo/hugo_start_3_directory/</loc>
+    <lastmod>2019-12-29T14:57:28+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/hugo/hugo_start_2_quick_start/</loc>
+    <lastmod>2019-12-28T15:34:07+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/hugo/hugo_start_1_install/</loc>
+    <lastmod>2019-12-28T14:48:40+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/zife/keyboard_xo_v2/</loc>
     <lastmod>2019-12-28T13:54:45+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/life/</loc>
+    <loc>/zife/</loc>
     <lastmod>2019-12-28T13:54:45+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/life/</loc>
-    <lastmod>2019-12-28T13:54:45+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/cmake/</loc>
-    <lastmod>2019-12-26T15:32:40+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/study/linux/basic_1/</loc>
-    <lastmod>2019-12-26T15:10:46+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/study/linux/shell_color/</loc>
-    <lastmod>2019-10-09T22:40:55+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/shell/</loc>
-    <lastmod>2019-10-09T22:40:55+09:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/data-structure/</loc>
-    <lastmod>2019-09-18T21:59:22+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/make/</loc>
   </url>
   
   <url>
@@ -249,6 +197,10 @@
   
   <url>
     <loc>/categories/study/</loc>
+  </url>
+  
+  <url>
+    <loc>/study/</loc>
   </url>
   
 </urlset>

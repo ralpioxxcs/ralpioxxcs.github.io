@@ -1,178 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>About on My Devlog</title>
+    <title>base on My Devlog</title>
     
     
     
     <link>/</link>
-    <description>Recent content in About on My Devlog</description>
+    <description>Recent content in base on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 07 Aug 2020 14:26:52 +0900</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Getting Started Hugo [1] - 설치 및 환경설정</title>
-      <link>/post/hugo/hugo_start_1_install/</link>
-      <pubDate>Sat, 28 Dec 2019 14:48:40 +0900</pubDate>
-      
-      <guid>/post/hugo/hugo_start_1_install/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 **Jekyll** (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다.
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>LinkedList</title>
-      <link>/study/datastructure/linkedlist/</link>
-      <pubDate>Sat, 14 Sep 2019 13:54:02 +0900</pubDate>
-      
-      <guid>/study/datastructure/linkedlist/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          비슷한 방식으로 배열이 있지만 배열은 처음부터 메모리를 할당하고 시작하기 때문에, 링크드리스트에 비해 데이터의 삽입이나 삭제가 어렵다. 반면, 링크드리스트는 노드를 데이터를 삽입할 때마다 메모리를 할당하고 데이터를 이어주는 형식이라 배열에 비해 메모리 낭비가 덜 하다는 장점이 있다.
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Getting Started Hugo [2] - 블로그 생성</title>
-      <link>/post/hugo/hugo_start_2_quick_start/</link>
-      <pubDate>Sat, 28 Dec 2019 15:34:07 +0900</pubDate>
-      
-      <guid>/post/hugo/hugo_start_2_quick_start/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          이제 hugo를 이용해 사이트를 생성해볼 차례다.`c://hugo` 의 경로에서 `$ hugo new site [폴더이름]` 을 입력한다. 여기서 폴더이름은 말 그대로 터미널 상에서 접근할 폴더이름일 뿐, 생성하고자 하는 블로그의 이름이 되진 않는다. (예시는 **blog**로 하였다.) 폴더를 만들었으면 `$ cd blog &amp;&amp; ls ` 를 입력해 생성된 폴더의 내부를 확인한다. 정상적으로 생성이 되었으면 archtypes, assets, config.toml 등 여러 파일과 폴더들이 생성된 것을 확인할 수 있다. 
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Stack</title>
-      <link>/study/datastructure/stack/</link>
-      <pubDate>Fri, 13 Sep 2019 13:54:02 +0900</pubDate>
-      
-      <guid>/study/datastructure/stack/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          후입선출(後入先出, Last In First Out; LIFO) 의 자료구조로, 상자의 형태를 한 자료구조이다. 데이터의 삽입을 Push, 데이터의 출력을 Pop이라고 하며, 스택을 크게 두 가지로 나누면 **Ascending Stack** VS **Descending Stack**으로 나눌 수 있다.
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Getting Started Hugo [3] - 디렉터리 구조</title>
-      <link>/post/hugo/hugo_start_3_directory/</link>
-      <pubDate>Sat, 28 Dec 2019 14:57:28 +0900</pubDate>
-      
-      <guid>/post/hugo/hugo_start_3_directory/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          명령창에 `$ hugo new site`를 입력하면 아래의 구조를 가진 폴더가 하나 생성되는것을 보았을것이다.각각의 폴더의 역할은 다음과 같다.
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>CirculaQueue</title>
-      <link>/study/datastructure/circulaqueue/</link>
-      <pubDate>Wed, 18 Sep 2019 21:59:22 +0900</pubDate>
-      
-      <guid>/study/datastructure/circulaqueue/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          선입선출(先入先出, First In First Out; FIFO)의 자료구조로써, 데이터가 나가는 위치, 큐의 첫번째 위치를 Front 라고 하고 데이터가 삽입되는 지점, 큐의 마지막 데이터의 한 칸 다음 위치를 Rear 혹은 Back이라고 한다.
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Getting Started Hugo [4] - 레포지토리 연동 및 웹 호스팅</title>
-      <link>/post/hugo/hugo_start_4_remote_repo_link/</link>
-      <pubDate>Sat, 28 Dec 2019 15:02:51 +0900</pubDate>
-      
-      <guid>/post/hugo/hugo_start_4_remote_repo_link/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          나만의 블로그를 구축하는데 성공하였다. 이제 로컬에 저장돼있는 hugo 사이트를 github repository와 연동하여 실제로 주소를 갖는 블로그를 만들어보자. 
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>CMake 정리 Part1 - Overview</title>
-      <link>/post/cmake_1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/post/cmake_1/</guid>
-      <description>
-        
-          &lt;img src=&#34;/cover/cmake_cover.png&#34;/&gt;
-          
-        
-        
-        
-          CMake? cmake란 cross platform 기반의 프로젝트 전체 빌드 프로세스를 관리해주는 유용한 툴이다. 직접 빌드를 수행하지는 않지만 지정된 OS에 맞는 Make파일 혹은 **솔루션(sln)**파일의 생성을 도와주어 소스코드 빌드를 편리하게 해준다.
-Cmake의 장점  (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드가 하나 있다고 가정하자. 이 소스코드를 각각의 다른 OS에서 빌드할 때, 윈도우즈라면 Visual Studio를, OSX라면 Xcode, Linux라면 Makefile을 이용할것이다. Cmake는 이런 귀찮은 과정을 CMakeLists.txt라는 프로젝트를 정의하는 파일을 하나 만듦으로써, 각 OS에 맞는 Build tool을 파악해 build command만 입력하면 될수 있도록 해준다.
-          
-        
-        </description>
-    </item>
     
     <item>
       <title>Study: Qt</title>
@@ -195,163 +35,11 @@ Cmake의 장점  (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드
     </item>
     
     <item>
-      <title>Hugo Content Management [1] - Contents Path</title>
-      <link>/post/hugo/hugo_content_management_1_contents_path/</link>
-      <pubDate>Sat, 28 Dec 2019 15:07:19 +0900</pubDate>
-      
-      <guid>/post/hugo/hugo_content_management_1_contents_path/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          Hugo가 어떻게 각각에 컨텐츠에 접근하고, 폴더를 조직화하여 블로그를 구성하는지 알아보자.  
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>CMake 정리 Part2 - Commands &amp; Vars</title>
-      <link>/post/cmake_2/</link>
-      <pubDate>Sun, 27 Oct 2019 14:23:25 +0900</pubDate>
-      
-      <guid>/post/cmake_2/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          Overview cmake를 사용하는데 자주 사용되는 cmake명령어 및 변수들을 정리
- 1. project 초기 설정 CMAKE_MINIMUM_REQUIRED [용법]
-cmake_minimum_required(VERSION major.minor[.patch[.tweak]][FATAL_ERROR])만약 어떤 오픈소스 라이브러리가 cmake 3.0 버전 이상으로 작성 되었고, 현재 나의 빌드환경은 cmake 2.8버전 미만이라면 빌드 시, 다음의 에러가 출력된다 -&amp;gt;
-CMake 3.0 or higher is required. You are running version 2.8.12.2
-이 커맨드는 반드시 CMakeListst.txt 작성시 맨 처음에 선언 해 놓아야 정상적인 버전 호환 에러를 출력할 수 있다.
-# Bad example project(foo)cmake_minimum_required(VERSION 3.
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Hugo Content Management [2] - Page Bundle</title>
-      <link>/post/hugo/hugo_content_management_2_page/</link>
-      <pubDate>Sun, 29 Dec 2019 15:21:24 +0900</pubDate>
-      
-      <guid>/post/hugo/hugo_content_management_2_page/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          Hugo에서는 [Page Bundles](https://gohugo.io/content-management/page-bundles/)이라는 개념을 사용해 컨텐츠를 관리한다.Page Bundles에는 2가지 종류가 있다.
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>CMake 정리 Part3 - Project configure #1</title>
-      <link>/post/cmake_3/</link>
-      <pubDate>Sun, 03 Nov 2019 14:38:36 +0900</pubDate>
-      
-      <guid>/post/cmake_3/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          어떤 프로젝트를 cmake를 이용하여 관리 및 빌드하고자 할때, CMakeLists.txt를작성 시 자주 사용되는 cmake 기본 명령어들이 있다.
-(Root) |- CMakeLists.txt |- README.md |- [src] | |- CMakeListst.txt | |- foo.cpp | |- poo.cpp | |- main.cpp |- [include] | |- foo.h | |- poo.h |- [cmake] | |- options.cmake 이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다. cmake    # [/CMakeListst.txt] cmake_minimum_required(VERSION 3.3) project(foo CXX) # -&amp;gt; &amp;#39;foo&amp;#39;라는 project를 정의한다.
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Hugo Content Management [3] - Front Matter</title>
-      <link>/post/hugo/hugo_content_management_3_frontmatter/</link>
-      <pubDate>Sat, 28 Dec 2019 16:09:14 +0900</pubDate>
-      
-      <guid>/post/hugo/hugo_content_management_3_frontmatter/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          Front Matter? front matter란 작성하고자 하는 컨텐츠(파일)의 제목, 날짜, 작성자 등의 기본적인 속성들을 나타내는 meta-data 형식이다.  Formats Hugo는 다음 3가지의 마크업 언어를 지원한다.
- TOML : +++ YAML : --- JSON : {, }
-을 이용해 front matter의 시작과 끝을 지정한다.  예를들어, a.md라는 새로운 파일을 만들었다면 --- title: &amp;#34;this is title!&amp;#34; date: 2019-12-27T13:39:03+09:00 draft: true --- this is the markdown file 이렇게 파일의 시작 부분에 front matter를 설정해주면,
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>CMake 정리 Part4 - 색상 지정하기</title>
-      <link>/post/cmake_4/</link>
-      <pubDate>Thu, 26 Dec 2019 15:32:40 +0900</pubDate>
-      
-      <guid>/post/cmake_4/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          set 변수를 사용해 Shell에 출력되는 문자들의 색상을 지정할 수 있다.
-if(NOT WIN32) string(ASCII 27 Esc) set(ColourReset &amp;#34;${Esc}[m&amp;#34;) set(ColourBold &amp;#34;${Esc}[1m&amp;#34;) set(Red &amp;#34;${Esc}[31m&amp;#34;) set(Green &amp;#34;${Esc}[32m&amp;#34;) set(Yellow &amp;#34;${Esc}]33m&amp;#34;) set(Blue &amp;#34;${Esc}]34&amp;#34;) set(Magenta &amp;#34;${Esc}]35m&amp;#34;) set(Cyan &amp;#34;${Esc}]36m&amp;#34;) set(White &amp;#34;${Esc}[37m&amp;#34;) set(BoldRed &amp;#34;${Esc}[1;31m&amp;#34;) set(BoldGreen &amp;#34;${Esc}[1;32m&amp;#34;) set(BoldYellow &amp;#34;${Esc}[1;33m&amp;#34;) set(BoldBlue &amp;#34;${Esc}[1;34m&amp;#34;) set(BoldMagenta &amp;#34;${Esc}[1;35m&amp;#34;) set(BoldCyan &amp;#34;${Esc}[1;36m&amp;#34;) set(BoldWhite &amp;#34;${Esc}[1;37m&amp;#34;)endif()위의 내용을 .cmkae파일로 만들어 include하거나 CmakeLists.txt 의 상단에 삽입한다.
-Example message(&amp;#34; &amp;#34;)message( &amp;#34;${BoldGreen}\t\t\t[ BUILD SUMMARY ] ${White}&amp;#34; )message( &amp;#34;${BoldWhite}------------------------------------------------------------------------${ColourReset}&amp;#34; 
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Hugo Content Management [4] - Shortcodes</title>
-      <link>/post/hugo/hugo_content_management_4_shortcodes/</link>
-      <pubDate>Sat, 28 Dec 2019 15:07:57 +0900</pubDate>
-      
-      <guid>/post/hugo/hugo_content_management_4_shortcodes/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          Shortcode Hugo는 다양한 shortcode 플러그인들을 제공하고 있다. markdown이 제공하는 편리한 문법들로도 충분하지만, code snippet이나 유튜브 영상등을 추가할 때 유용하게 사용할 수 있다.
- 　Shotcode 사용하기 shortcode는 { {&amp;lt; shortcodename parameters &amp;gt;} } 의 용법으로 간단하게 사용할 수 있다.
- shortcodename : 사용할 shortcode의 이름 (ex. highlight, figure..) parameter : 사용할 shortcode가 어떻게 정의되었느냐에 따라 달라짐   Built-in Shortcodes figure figure는 마크다운이 제공하는 이미지관련 문법보다 더 다양한 기능을 제공한다. parameter를 통해 첨부할 이미지의 title, caption, link등을 지정할 수 있다.
-          
-        
-        </description>
-    </item>
-    
-    <item>
       <title>Vim 사용하기 #2 - Plugin</title>
-      <link>/post/vim_setting_2/</link>
+      <link>/post/vim/vim_setting_2/</link>
       <pubDate>Fri, 07 Aug 2020 14:26:52 +0900</pubDate>
       
-      <guid>/post/vim_setting_2/</guid>
+      <guid>/post/vim/vim_setting_2/</guid>
       <description>
         
           
@@ -371,10 +59,10 @@ Example message(&amp;#34; &amp;#34;)message( &amp;#34;${BoldGreen}\t\t\t[ BUILD 
     
     <item>
       <title>Ubuntu LLVM Package 설치</title>
-      <link>/post/llvm_install/</link>
+      <link>/post/etc/llvm_install/</link>
       <pubDate>Sat, 04 Jul 2020 13:53:55 +0900</pubDate>
       
-      <guid>/post/llvm_install/</guid>
+      <guid>/post/etc/llvm_install/</guid>
       <description>
         
           
@@ -393,10 +81,10 @@ Example message(&amp;#34; &amp;#34;)message( &amp;#34;${BoldGreen}\t\t\t[ BUILD 
     
     <item>
       <title>Ubuntu Clang 컴파일러 설정</title>
-      <link>/post/change_compiler/</link>
+      <link>/post/etc/change_compiler/</link>
       <pubDate>Sat, 04 Jul 2020 13:32:39 +0900</pubDate>
       
-      <guid>/post/change_compiler/</guid>
+      <guid>/post/etc/change_compiler/</guid>
       <description>
         
           
@@ -416,10 +104,10 @@ Example message(&amp;#34; &amp;#34;)message( &amp;#34;${BoldGreen}\t\t\t[ BUILD 
     
     <item>
       <title>Vim 사용하기 #1 - Install</title>
-      <link>/post/vim_setting_1/</link>
+      <link>/post/vim/vim_setting_1/</link>
       <pubDate>Fri, 19 Jun 2020 21:06:39 +0900</pubDate>
       
-      <guid>/post/vim_setting_1/</guid>
+      <guid>/post/vim/vim_setting_1/</guid>
       <description>
         
           
@@ -438,10 +126,10 @@ vim으로 갈아타게 된 결정적인 계기는 VSCode에서 지원하는 c/cp
     
     <item>
       <title>gdb에서 imagewatch 사용하기</title>
-      <link>/post/gdb_imagewatch_1/</link>
+      <link>/post/etc/gdb_imagewatch_1/</link>
       <pubDate>Sat, 25 Apr 2020 15:21:05 +0900</pubDate>
       
-      <guid>/post/gdb_imagewatch_1/</guid>
+      <guid>/post/etc/gdb_imagewatch_1/</guid>
       <description>
         
           
@@ -461,11 +149,11 @@ vim으로 갈아타게 된 결정적인 계기는 VSCode에서 지원하는 c/cp
     </item>
     
     <item>
-      <title>OpenCV 자료형</title>
-      <link>/study/opencv/opencv1/</link>
-      <pubDate>Sat, 25 Jan 2020 21:42:11 +0900</pubDate>
+      <title>CMake Part4 - 색상 지정</title>
+      <link>/post/cmake/cmake_4/</link>
+      <pubDate>Sat, 01 Feb 2020 15:32:40 +0900</pubDate>
       
-      <guid>/study/opencv/opencv1/</guid>
+      <guid>/post/cmake/cmake_4/</guid>
       <description>
         
           
@@ -474,7 +162,275 @@ vim으로 갈아타게 된 결정적인 계기는 VSCode에서 지원하는 c/cp
         
         
         
-          OpenCV를 사용할 때 자주 사용되는 자료형들을 정리해보았다. 주로 `Point`, `Mat` 등이 있다.
+          set 변수를 사용해 Shell에 출력되는 문자들의 색상을 지정할 수 있다.
+if(NOT WIN32) string(ASCII 27 Esc) set(ColourReset &amp;#34;${Esc}[m&amp;#34;) set(ColourBold &amp;#34;${Esc}[1m&amp;#34;) set(Red &amp;#34;${Esc}[31m&amp;#34;) set(Green &amp;#34;${Esc}[32m&amp;#34;) set(Yellow &amp;#34;${Esc}]33m&amp;#34;) set(Blue &amp;#34;${Esc}]34&amp;#34;) set(Magenta &amp;#34;${Esc}]35m&amp;#34;) set(Cyan &amp;#34;${Esc}]36m&amp;#34;) set(White &amp;#34;${Esc}[37m&amp;#34;) set(BoldRed &amp;#34;${Esc}[1;31m&amp;#34;) set(BoldGreen &amp;#34;${Esc}[1;32m&amp;#34;) set(BoldYellow &amp;#34;${Esc}[1;33m&amp;#34;) set(BoldBlue &amp;#34;${Esc}[1;34m&amp;#34;) set(BoldMagenta &amp;#34;${Esc}[1;35m&amp;#34;) set(BoldCyan &amp;#34;${Esc}[1;36m&amp;#34;) set(BoldWhite &amp;#34;${Esc}[1;37m&amp;#34;)endif()위의 내용을 .cmkae파일로 만들어 include하거나 CmakeLists.txt 의 상단에 삽입한다.
+Example message(&amp;#34; &amp;#34;)message( &amp;#34;${BoldGreen}\t\t\t[ BUILD SUMMARY ] ${White}&amp;#34; )message( &amp;#34;${BoldWhite}------------------------------------------------------------------------${ColourReset}&amp;#34; 
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>CMake Part3 - 프로젝트 구성</title>
+      <link>/post/cmake/cmake_3/</link>
+      <pubDate>Thu, 30 Jan 2020 14:38:36 +0900</pubDate>
+      
+      <guid>/post/cmake/cmake_3/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          어떤 프로젝트를 cmake를 이용하여 관리 및 빌드하고자 할때, CMakeLists.txt를작성 시 자주 사용되는 cmake 기본 명령어들이 있다.
+(Root) |- CMakeLists.txt |- README.md |- [src] | |- CMakeListst.txt | |- foo.cpp | |- poo.cpp | |- main.cpp |- [include] | |- foo.h | |- poo.h |- [cmake] | |- options.cmake 이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다. cmake    # [/CMakeListst.txt] cmake_minimum_required(VERSION 3.3) project(foo CXX) # -&amp;gt; &amp;#39;foo&amp;#39;라는 project를 정의한다.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Hi! 😀 My name is JaeHong Kim.
+I work as a Software Engineer on an IT Compnay from Korea. I focus on Image processing Development.
+Programming as a craftsmanship is my main hobby, learning something new keeps me motivated.
+also, I love to build keyboards.
+I made this blog to improve my development skills and career.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>CMake Part2 - Commands &amp; Vars</title>
+      <link>/post/cmake/cmake_2/</link>
+      <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/cmake/cmake_2/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          1. project 초기 설정 CMAKE_MINIMUM_REQUIRED [용법]
+cmake_minimum_required(VERSION major.minor[.patch[.tweak]][FATAL_ERROR])만약 어떤 오픈소스 라이브러리가 cmake 3.0 버전 이상으로 작성 되었고, 현재 나의 빌드환경은 cmake 2.8버전 미만이라면 빌드 시, 다음의 에러가 출력된다 -&amp;gt;
+CMake 3.0 or higher is required. You are running version 2.8.12.2
+이 커맨드는 반드시 CMakeListst.txt 작성시 맨 처음에 선언 해 놓아야 정상적인 버전 호환 에러를 출력할 수 있다.
+# Bad example project(foo)cmake_minimum_required(VERSION 3.0)message(&amp;#34;Using CMake version ${CMAKE_VERSION}&amp;#34;) PROJECT [용법]
+project(&amp;lt;PROJECT-NAME&amp;gt; [LANGUAGES] [&amp;lt;language-name&amp;gt;...]) project(&amp;lt;PROJECT-NAME&amp;gt; [VERSION &amp;lt;major&amp;gt;[.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>CMake Part1 - Overview</title>
+      <link>/post/cmake/cmake_1/</link>
+      <pubDate>Sun, 19 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/cmake/cmake_1/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          CMake? cmake란 cross platform 기반의 프로젝트 전체 빌드 프로세스를 관리해주는 유용한 툴이다. 직접 빌드를 수행하지는 않지만 지정된 OS에 맞는 Make파일 혹은 **솔루션(sln)**파일의 생성을 도와주어 소스코드 빌드를 편리하게 해준다.
+Cmake의 장점  (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드가 하나 있다고 가정하자. 이 소스코드를 각각의 다른 OS에서 빌드할 때, 윈도우즈라면 Visual Studio를, OSX라면 Xcode, Linux라면 Makefile을 이용할것이다. Cmake는 이런 귀찮은 과정을 CMakeLists.txt라는 프로젝트를 정의하는 파일을 하나 만듦으로써, 각 OS에 맞는 Build tool을 파악해 build command만 입력하면 될수 있도록 해준다.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Hugo Content Management [4] - Shortcodes</title>
+      <link>/post/hugo/hugo_content_management_4_shortcodes/</link>
+      <pubDate>Mon, 30 Dec 2019 18:07:57 +0900</pubDate>
+      
+      <guid>/post/hugo/hugo_content_management_4_shortcodes/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Shortcode Hugo는 다양한 shortcode 플러그인들을 제공하고 있다. markdown이 제공하는 편리한 문법들로도 충분하지만, code snippet이나 유튜브 영상등을 추가할 때 유용하게 사용할 수 있다.
+ 　Shotcode 사용하기 shortcode는 { {&amp;lt; shortcodename parameters &amp;gt;} } 의 용법으로 간단하게 사용할 수 있다.
+ shortcodename : 사용할 shortcode의 이름 (ex. highlight, figure..) parameter : 사용할 shortcode가 어떻게 정의되었느냐에 따라 달라짐   Built-in Shortcodes figure figure는 마크다운이 제공하는 이미지관련 문법보다 더 다양한 기능을 제공한다. parameter를 통해 첨부할 이미지의 title, caption, link등을 지정할 수 있다.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Hugo Content Management [3] - Front Matter</title>
+      <link>/post/hugo/hugo_content_management_3_frontmatter/</link>
+      <pubDate>Mon, 30 Dec 2019 16:09:14 +0900</pubDate>
+      
+      <guid>/post/hugo/hugo_content_management_3_frontmatter/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Front Matter? front matter란 작성하고자 하는 컨텐츠(파일)의 제목, 날짜, 작성자 등의 기본적인 속성들을 나타내는 meta-data 형식이다.  Formats Hugo는 다음 3가지의 마크업 언어를 지원한다.
+ TOML : +++ YAML : --- JSON : {, }
+을 이용해 front matter의 시작과 끝을 지정한다.  예를들어, a.md라는 새로운 파일을 만들었다면 --- title: &amp;#34;this is title!&amp;#34; date: 2019-12-27T13:39:03+09:00 draft: true --- this is the markdown file 이렇게 파일의 시작 부분에 front matter를 설정해주면,
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Hugo Content Management [2] - Page Bundle</title>
+      <link>/post/hugo/hugo_content_management_2_page/</link>
+      <pubDate>Mon, 30 Dec 2019 15:21:24 +0900</pubDate>
+      
+      <guid>/post/hugo/hugo_content_management_2_page/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Hugo에서는 Page Bundles이라는 개념을 사용해 컨텐츠를 관리한다. Page Bundles에는 2가지 종류가 있다.
+ Leaf Bundle Branch Bundle   Left Bundle left bundle은 단독 페이지를 구성하는데 사용되고, index.md 파일을 포함하는 폴더로 구성된다.
+3 of Leaf Bundle Example content/ ├── project │ ├── index.md ├── posts │ ├── my-post │ │ ├── content1.md │ │ ├── content2.md │ | ├── image1.png │ | └── index.md │ └── study │ ├── first.md │ └── second.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Hugo Content Management [1] - Contents Path</title>
+      <link>/post/hugo/hugo_content_management_1_contents_path/</link>
+      <pubDate>Mon, 30 Dec 2019 15:07:19 +0900</pubDate>
+      
+      <guid>/post/hugo/hugo_content_management_1_contents_path/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Hugo가 어떻게 각각에 컨텐츠에 접근하고, 폴더를 조직화하여 블로그를 구성하는지 알아보자.
+컨텐츠 구성 (root) └── content └── project | └── index.md // &amp;lt;- https://example.com/project/ ├── posts | ├── firstpost.md // &amp;lt;- https://example.com/posts/firstpost/ | └── secondpost.md // &amp;lt;- https://example.com/posts/secondpost/ └── study ├── first.md // &amp;lt;- https://example.com/study/first/ └── second.md // &amp;lt;- https://example.com/study/second/ 위 처럼 각각 project, posts, study 총 3개의 카테고리가 있다고 가정할 때, Hugo는 section, slug, path, url의 변수들을 이용해 컨텐츠를 관리한다.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Getting Started Hugo [4] - 레포지토리 연동 및 웹 호스팅</title>
+      <link>/post/hugo/hugo_start_4_remote_repo_link/</link>
+      <pubDate>Sun, 29 Dec 2019 15:02:51 +0900</pubDate>
+      
+      <guid>/post/hugo/hugo_start_4_remote_repo_link/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          나만의 블로그를 구축하는데 성공하였다. 이제 로컬에 저장돼있는 hugo 사이트를 github repository와 연동하여 실제로 주소를 갖는 블로그를 만들어보자.
+ Step 1. github repository 생성 github에 로그인하여 총 2개의 repository를 생성한다.
+ blog 폴더 자체를 저장할 repository hugo로 빌드된 결과파일들을 저장할 repository
+두번째 repository의 이름은 [github계정명].github.io의 형식으로 만들어야 한다.   remote repository 연동  c://hugo/blog 경로에서 $ git init .으로 로컬 repository를 생성한다. $ git remote add origin [첫번째 repository url]를 입력한다.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Getting Started Hugo [3] - 디렉터리 구조</title>
+      <link>/post/hugo/hugo_start_3_directory/</link>
+      <pubDate>Sun, 29 Dec 2019 14:57:28 +0900</pubDate>
+      
+      <guid>/post/hugo/hugo_start_3_directory/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          명령창에 $ hugo new site를 입력하면 아래의 구조를 가진 폴더가 하나 생성되는것을 보았을것이다. 각각의 폴더의 역할은 다음과 같다.
+( root ) ├─ archetypes ├─ content ├─ data ├─ layouts ├─ static ├─ themes ├─ config.toml  archetypes $ hugo new 커맨드를 이용해 새로운 contents 파일을 만들때, 이 폴더내의 default.md 의 front matter 형태를 갖는 content를 자동으로 초기화 하여 만들어준다. 많은양의 content를 만들 때 유용하게 사용될수 있고, front matter field를 직접 수정하여 하나의 archtypes로 만들 수 있다.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Getting Started Hugo [2] - 블로그 생성</title>
+      <link>/post/hugo/hugo_start_2_quick_start/</link>
+      <pubDate>Sat, 28 Dec 2019 15:34:07 +0900</pubDate>
+      
+      <guid>/post/hugo/hugo_start_2_quick_start/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Let&amp;rsquo;s create own blog 　Step 1. 블로그 폴더 생성   c://hugo 의 경로에서 $ hugo new site [폴더이름] 을 입력한다. 여기서 폴더이름은 말 그대로 터미널 상에서 접근할 폴더이름일 뿐, 생성하고자 하는 블로그의 이름이 되진 않는다. (예시는 blog로 하였다.)
+  폴더를 만들었으면 $ cd blog &amp;amp;&amp;amp; ls  를 입력해 생성된 폴더의 내부를 확인한다.
+-&amp;gt; 정상적으로 생성이 되었으면 archtypes, assets, config.toml 등 여러 파일과 폴더들이 생성된 것을 확인할 수 있다.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Getting Started Hugo [1] - 설치 및 환경설정</title>
+      <link>/post/hugo/hugo_start_1_install/</link>
+      <pubDate>Sat, 28 Dec 2019 14:48:40 +0900</pubDate>
+      
+      <guid>/post/hugo/hugo_start_1_install/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Hugo? Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 Jekyll (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다.
+Install 설치방법은 install hugo에 각 OS별로 설치를 하는 방법이 잘 안내되어 있다.
+OSX brew install hugo Debian, Ubuntu sudo apt-get install hugo package installer를 이용하는 방법외에는 Release 다운로드 사이트에서 직접 다운로드하여 설치하는 방법도 있다.
           
         
         </description>
@@ -482,10 +438,10 @@ vim으로 갈아타게 된 결정적인 계기는 VSCode에서 지원하는 c/cp
     
     <item>
       <title>Keyboard_xo_v2</title>
-      <link>/life/keyboard_xo_v2/</link>
+      <link>/zife/keyboard_xo_v2/</link>
       <pubDate>Sat, 28 Dec 2019 13:54:45 +0900</pubDate>
       
-      <guid>/life/keyboard_xo_v2/</guid>
+      <guid>/zife/keyboard_xo_v2/</guid>
       <description>
         
           
@@ -495,46 +451,6 @@ vim으로 갈아타게 된 결정적인 계기는 VSCode에서 지원하는 c/cp
         
         
           
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Basic_1</title>
-      <link>/study/linux/basic_1/</link>
-      <pubDate>Thu, 26 Dec 2019 15:10:46 +0900</pubDate>
-      
-      <guid>/study/linux/basic_1/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Bash Shell 색상 지정하기</title>
-      <link>/study/linux/shell_color/</link>
-      <pubDate>Wed, 09 Oct 2019 22:40:55 +0900</pubDate>
-      
-      <guid>/study/linux/shell_color/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-           
           
         
         </description>

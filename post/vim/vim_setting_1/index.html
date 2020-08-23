@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>Vim 사용하기 #1 - Install :: My Devlog — 기록 &amp; 공부용 개발 블로그</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="나에게 vim이란 라즈베리파이 같은 리소스나 메모리등 작업 환경이 열악하거나 불가피한 사유로 인터넷을 사용하지 못하는 상황에서 가끔 쓰던 편집기였다.
+hjkl로 움직이고, visual mode, normal mode 등등 처음에는 진입장벽이 높게 느껴져서 손이 안가다가, 마우스를 쓰는게 너무 귀찮아서 일주일만 마음먹고 연습(?)을 했더니 이제는 vim이 없으면 코딩을 할 맛이 안나게 될 정도로 익숙해져버렸다.
+vim으로 갈아타게 된 결정적인 계기는 VSCode에서 지원하는 c/cpp extension이 메모리를 너무 잡아먹어서이다.. (물론 vim도 이것저것 많이 깔면 느려지겠지만)"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/post/vim/vim_setting_1/" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.min.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Vim 사용하기 #1 - Install"/>
+<meta name="twitter:description" content="나에게 vim이란 라즈베리파이 같은 리소스나 메모리등 작업 환경이 열악하거나 불가피한 사유로 인터넷을 사용하지 못하는 상황에서 가끔 쓰던 편집기였다.
+hjkl로 움직이고, visual mode, normal mode 등등 처음에는 진입장벽이 높게 느껴져서 손이 안가다가, 마우스를 쓰는게 너무 귀찮아서 일주일만 마음먹고 연습(?)을 했더니 이제는 vim이 없으면 코딩을 할 맛이 안나게 될 정도로 익숙해져버렸다.
+vim으로 갈아타게 된 결정적인 계기는 VSCode에서 지원하는 c/cpp extension이 메모리를 너무 잡아먹어서이다.. (물론 vim도 이것저것 많이 깔면 느려지겠지만)"/>
+
+
+
+<meta property="og:title" content="Vim 사용하기 #1 - Install" />
+<meta property="og:description" content="나에게 vim이란 라즈베리파이 같은 리소스나 메모리등 작업 환경이 열악하거나 불가피한 사유로 인터넷을 사용하지 못하는 상황에서 가끔 쓰던 편집기였다.
+hjkl로 움직이고, visual mode, normal mode 등등 처음에는 진입장벽이 높게 느껴져서 손이 안가다가, 마우스를 쓰는게 너무 귀찮아서 일주일만 마음먹고 연습(?)을 했더니 이제는 vim이 없으면 코딩을 할 맛이 안나게 될 정도로 익숙해져버렸다.
+vim으로 갈아타게 된 결정적인 계기는 VSCode에서 지원하는 c/cpp extension이 메모리를 너무 잡아먹어서이다.. (물론 vim도 이것저것 많이 깔면 느려지겠지만)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/vim/vim_setting_1/" />
+<meta property="article:published_time" content="2020-06-19T21:06:39+09:00" />
+<meta property="article:modified_time" content="2020-06-19T21:06:39+09:00" /><meta property="og:site_name" content="My Devlog" />
+
+
+
+
+
+
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+    <span class="logo__text">My Devlog</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/post">Post</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">
+            Show more
+            <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+          </li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/study">Study</a></li>
+              
+            
+              
+            
+              
+                <li><a href="/til">Today I Learned</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/post">Post</a></li>
+      
+    
+      
+        <li><a href="/study">Study</a></li>
+      
+    
+      
+    
+      
+        <li><a href="/til">Today I Learned</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title"><a href="/post/vim/vim_setting_1/">Vim 사용하기 #1 - Install</a></h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-06-19
+        </span>
+
+        
+          
+            
+
+
+
+          
+        
+      
+
+      
+      
+        <span class="post-read-time">— 2 min read</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/vim/">vim</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      <p> 
+ </p>
+<p>
+  <figure class="left" >
+    <img src="/images/vim_logo.png"   />
+    
+  </figure>
+
+<br>
+나에게 vim이란 라즈베리파이 같은 리소스나 메모리등 작업 환경이 열악하거나 불가피한 사유로 인터넷을 사용하지 못하는 상황에서 가끔 쓰던 편집기였다.</p>
+<p>hjkl로 움직이고, visual mode, normal mode 등등 처음에는 진입장벽이 높게 느껴져서 손이 안가다가, 마우스를 쓰는게 너무 귀찮아서 일주일만 마음먹고 연습(?)을 했더니 이제는 vim이 없으면 코딩을 할 맛이 안나게 될 정도로 익숙해져버렸다.</p>
+<p>vim으로 갈아타게 된 결정적인 계기는 <strong>VSCode</strong>에서 지원하는 c/cpp extension이 메모리를 너무 잡아먹어서이다.. (물론 vim도 이것저것 많이 깔면 느려지겠지만)<br>
+아무튼 내가 생각하는 <strong>vim</strong>의 장점은 이렇다</p>
+<ul>
+<li>프로그램이 light하고 seamless 하다</li>
+<li>vim script 작성으로 기능 커스터마이징이 자유롭다</li>
+<li>처음 learning curve만 극복하면 작업효율이 엄청 상승한다</li>
+<li><del>간지난다</del></li>
+</ul>
+<h2 id="neovim-설치하기"><strong>neovim 설치하기</strong></h2>
+<p>neovim은 <strong>terminal buffer</strong>를 지원하는 좀 더 기능이 확장된 형태의 vim이다. terminal buffer말고도, <strong>24bit true color</strong> 지원 등 더 다양하고 좋은 기능들을 탑재한 vim이라, neovim을 설치하였다.<br>
+내가 사용하는 os는 ubuntu이므로 Debian install 가이드를 따라 설치를 진행하였다.</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="574816293" type="checkbox"  />
+    <label for="574816293">
+      <span class="collapsable-code__language">bash</span>
+      <span class="collapsable-code__title">neovim 설치</span>
+      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
+    </label>
+    <pre class="language-bash" ><code>
+$ sudo add-apt-repository ppa:neovim-ppa/unstable
+$ sudo apt-get update
+$ sudo apt-get install neovim
+$ sudo apt-get install python-dev python-pip
+$ sudo apt-get install python3-dev python3-pip
+</code></pre>
+  </div>
+
+
+<p>설치가 완료되면 터미널에 <code>nvim</code>을 치면아래의 그림처럼 neovim이 실행된다.
+
+  <figure class="left" >
+    <img src="/images/neovim.png"   />
+    
+  </figure>
+
+</p>
+<h2 id="기본-설정"><strong>기본 설정</strong></h2>
+<p>neovim도vim과 똑같이 vimrc같은 설정파일을 수정하여 기본적인 설정을 할 수 있다.<br>
+설정 파일의 경로는 <code>~/.config/nvim</code>이며 이 경로에 파일을 직접 생성해야 한다.<br>
+
+
+
+  <div class="collapsable-code">
+    <input id="316857249" type="checkbox"  />
+    <label for="316857249">
+      <span class="collapsable-code__language">bash</span>
+      
+      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
+    </label>
+    <pre class="language-bash" ><code>
+$ mkdir ~/.config/nvim
+$ cd ~/.config/nvim
+$ touch init.vim
+</code></pre>
+  </div>
+
+</p>
+<p>아래는 현재 사용중인 <code>init.vim</code>의 설정이다.</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="371895246" type="checkbox"  />
+    <label for="371895246">
+      <span class="collapsable-code__language">vim</span>
+      
+      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
+    </label>
+    <pre class="language-vim" ><code>
+set iskeyword&#43;=-
+set formatoptions-=cro
+
+syntax on
+set hidden                  &#34; 버퍼를 수정한 직후 버퍼를 감춰지도록 함
+set wrap                    &#34; 자동 줄 바꿈
+set encoding=UTF-8          &#34; UTF-8 인코딩
+set t_Co=256                &#34; 256 칼라 지원
+set number                  &#34; 라인 수 표시
+set ruler                   &#34; 커서 표시
+set cursorline              &#34; 현재 커서 하이라이팅
+set pumheight=10            &#34; 팝업 메뉴 크기 조정
+set showcmd                 &#34; 명령어를 상태라인에 보여준다
+set mouse=a                 &#34; 마우스 사용 가능
+set tabstop=2               &#34;&#34;
+set shiftwidth=2            &#34;&#34;
+set smarttab                &#34;&#34;
+set smartindent             &#34; 새로운 라인 시작 시, auto indentation 수행
+set autoindent              &#34; 자동 들여쓰기
+set expandtab               &#34; tab을 space로 확장
+set showmatch               &#34; 매칭되는 괄호 표시
+set background=light
+set showtabline=2
+set noshowmode
+set nobackup                &#34; 백업파일을 생성하지 않는다
+set signcolumn=yes
+set updatetime=300
+set timeoutlen=100
+set clipboard=unnamedplus   &#34; 클립보드 복사&amp;붙여넣기 허용
+set incsearch               &#34; 점진적으로 찾기
+set hlsearch                &#34; 검색어 하이라이팅
+set nowrapscan              &#34; 찾기 파일 맨 끝 도달시, 계속하여 찾지 않음
+set guifont=Hack\ Nerd\ Font &#34; 폰트 설정
+set ignorecase              &#34; 검색시 대소문자 구별 X
+
+let $TERM=&#34;xterm-256color&#34;  &#34; true color
+
+&#34; 파일 열기 마지막 부분 저장
+if has(&#34;autocmd&#34;)
+    &#34; When editing a file, always jump to the last cursor position
+    autocmd BufReadPost *
+    \ if line(&#34;&#39;\&#34;&#34;) &gt; 0 &amp;&amp; line (&#34;&#39;\&#34;&#34;) &lt;= line(&#34;$&#34;) |
+    \   exe &#34;normal g&#39;\&#34;&#34; |
+    \ endif
+endif
+</code></pre>
+  </div>
+
+
+
+    </div>
+    
+    <div class="pagination">
+        <div class="pagination__title">
+            <span class="pagination__title-h">
+                Read other posts
+            </span>
+            <hr />
+        </div>
+        <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/post/vim/vim_setting_2/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">gdb에서 imagewatch 사용하기</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/post/etc/gdb_imagewatch_1/">
+                  <span class="button__text">Vim 사용하기 #2 - Plugin</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+
+                
+        </div>
+    </div>
+      
+
+    
+
+    
+      
+        
+
+      
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+    <span class="logo__text">My Devlog</span>
+    <span class="logo__cursor_foot"></span>
+  
+</a>
+
+      <div class="copyright">
+        
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a> & customized by ralpioxxcs</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+
+
+
+
+<script src="/js/menu.js"></script>
+  <script src="/js/theme.js"></script>
+<script src="/js/prism_test.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

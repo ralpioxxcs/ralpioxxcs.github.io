@@ -70,11 +70,11 @@
     
       
         
-          <li><a href="/">About</a></li>
+          <li><a href="/about">About</a></li>
         
       
         
-          <li><a href="/post/">Post</a></li>
+          <li><a href="/post">Post</a></li>
         
       
       
@@ -91,13 +91,13 @@
           <ul class="menu__sub-inner-more hidden">
             
               
-                <li><a href="/life">Life</a></li>
+                <li><a href="/study">Study</a></li>
               
             
               
             
               
-                <li><a href="/study">T.I.L</a></li>
+                <li><a href="/til">Today I Learned</a></li>
               
             
           </ul>
@@ -109,21 +109,21 @@
   <ul class="menu__inner menu__inner--mobile">
     
       
-        <li><a href="/">About</a></li>
+        <li><a href="/about">About</a></li>
       
     
       
-        <li><a href="/post/">Post</a></li>
+        <li><a href="/post">Post</a></li>
       
     
       
-        <li><a href="/life">Life</a></li>
+        <li><a href="/study">Study</a></li>
       
     
       
     
       
-        <li><a href="/study">T.I.L</a></li>
+        <li><a href="/til">Today I Learned</a></li>
       
     
   </ul>
@@ -154,7 +154,7 @@
   <div class="posts">
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/post/llvm_install/">Ubuntu LLVM Package 설치</a></h1>
+      <h1 class="post-title"><a href="/post/etc/llvm_install/">Ubuntu LLVM Package 설치</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
@@ -193,107 +193,13 @@
           
             이 링크 로 들어가면 아래 사진과 같은 화면이 나오며 각 Release 버전에 맞는 llvm 패키지들을 다운로드 받을 수 있다.  llvm, clang, lld, lldb등 각 패키지에 대한 설명은 여기에 잘 나와있다.
 아무튼 위의 사진에 나온것처럼 설치방법으로는 크게 4가지로 나눌 수 있다.
-소스코드 다운로드 후 직접 빌드 미리 빌드된 바이너리 설치 Automatic Installation Script apt install 커맨드 사용하여 설치  이 포스팅에서는 3번째인 Automatic installation script를 이용하여 설치하는 방법을 다루려고 한다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/llvm_install/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/change_compiler/">Ubuntu Clang 컴파일러 설정</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-07-04
-          </span>
-
-          
+ 소스코드 다운로드 후 직접 빌드 미리 빌드된 바이너리 설치 Automatic Installation Script apt install 커맨드 사용하여 설치  이 포스팅에서는 3번째인 Automatic installation script를 이용하여 설치하는 방법을 다루려고 한다.
             
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 1 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/clang/">Clang</a>&nbsp;
-          
-            #<a href="/tags/linux/">linux</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            ubuntu 환경에서 c,cxx 기본 컴파일러는 /usr/bin/cc , /usr/bin/c++에 심볼릭 링크로 지정되어있는데 기본적으로는 gcc와 g++로 설정되어있다.
-빌드시에 컴파일러 경로를 직접 입력해주는 방법도 있지만, /usr/bin/c++의 심볼릭 링크를 변경해줌으로써 고정을 시킬수도 있다.
-이 과정전에 반드시 clang이 설치되어야 한다. clang을 설치하는 방법은 여기에 포스팅해 두었다.
-환경변수 변경 export CC=/usr/bin/clang export CXX=/usr/bin/clang++ 위의 명령어로 환경변수를 바꿔주는 방법으로 컴파일러를 바꿔줄 수 있다. 영구적으로 지정시키고 싶다면 ~/.bashrc에 추가하는 방법으로 환경변수를 설정해주하면 된다. 지정 커맨드 이용 # c++ compiler sudo update-alternatives &ndash;config c++ # c compiler sudo update-alternatives &ndash;config cc 위의 커맨드를 입력하고 아래처럼 결과 창이 나오면 원하는 번호를 입력하여 c와 c++에 지정된 컴파일러 경로를 바꿔준다.
           
         
       </div>
       
-        <div><a class="read-more button" href="/post/change_compiler/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/gdb_imagewatch_1/">gdb에서 imagewatch 사용하기</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-04-25
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 1 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/gdb/">gdb</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            OpenCV 라이브러리를 사용해본 사람이라면 한번쯤 ImageWatch 플러그인을 사용해봤을 것이다.
-디버거에서 확인하기 힘든 Mat 데이터내 index value등 간편한 인터페이스를 통해 직관적으로 확인이 가능한 유용한 툴이다. 하지만, Visual Studio에서만 사용이 가능한 플러그인이라, 리눅스 환경에서 개발을 하는 나에게는 아쉬움이 많았다.
-그러다가 github에서 imagewatch와 비슷하게 간편한 인터페이스로 index값을 확인할 수 있는 프로그램을 발견하게 되었고, 지금까지 아주 유용하게 사용하고 있다.
-   설치조건 gdb imagewatch는 아래의 프로그램들의 설치를 필요로 한다.
-OpenGL 2.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/gdb_imagewatch_1/">Read more →</a></div>
+        <div><a class="read-more button" href="/post/etc/llvm_install/">Read more →</a></div>
       
     </div>
     
@@ -325,8 +231,8 @@ OpenGL 2.
 </a>
 
       <div class="copyright">
-        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
-        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+        
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a> & customized by ralpioxxcs</a></span>
       </div>
     
   </div>

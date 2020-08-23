@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>CMake Part2 - Commands &amp; Vars :: My Devlog — 기록 &amp; 공부용 개발 블로그</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="1. project 초기 설정 CMAKE_MINIMUM_REQUIRED [용법]
+cmake_minimum_required(VERSION major.minor[.patch[.tweak]][FATAL_ERROR])만약 어떤 오픈소스 라이브러리가 cmake 3.0 버전 이상으로 작성 되었고, 현재 나의 빌드환경은 cmake 2.8버전 미만이라면 빌드 시, 다음의 에러가 출력된다 -&amp;gt;
+CMake 3.0 or higher is required. You are running version 2.8.12.2
+이 커맨드는 반드시 CMakeListst.txt 작성시 맨 처음에 선언 해 놓아야 정상적인 버전 호환 에러를 출력할 수 있다.
+# Bad example project(foo)cmake_minimum_required(VERSION 3.0)message(&amp;#34;Using CMake version ${CMAKE_VERSION}&amp;#34;) PROJECT [용법]
+project(&amp;lt;PROJECT-NAME&amp;gt; [LANGUAGES] [&amp;lt;language-name&amp;gt;...]) project(&amp;lt;PROJECT-NAME&amp;gt; [VERSION &amp;lt;major&amp;gt;[."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/post/cmake/cmake_2/" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.min.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CMake Part2 - Commands &amp; Vars"/>
+<meta name="twitter:description" content="1. project 초기 설정 CMAKE_MINIMUM_REQUIRED [용법]
+cmake_minimum_required(VERSION major.minor[.patch[.tweak]][FATAL_ERROR])만약 어떤 오픈소스 라이브러리가 cmake 3.0 버전 이상으로 작성 되었고, 현재 나의 빌드환경은 cmake 2.8버전 미만이라면 빌드 시, 다음의 에러가 출력된다 -&gt;
+CMake 3.0 or higher is required. You are running version 2.8.12.2
+이 커맨드는 반드시 CMakeListst.txt 작성시 맨 처음에 선언 해 놓아야 정상적인 버전 호환 에러를 출력할 수 있다.
+# Bad example project(foo)cmake_minimum_required(VERSION 3.0)message(&#34;Using CMake version ${CMAKE_VERSION}&#34;) PROJECT [용법]
+project(&lt;PROJECT-NAME&gt; [LANGUAGES] [&lt;language-name&gt;...]) project(&lt;PROJECT-NAME&gt; [VERSION &lt;major&gt;[."/>
+
+
+
+<meta property="og:title" content="CMake Part2 - Commands &amp; Vars" />
+<meta property="og:description" content="1. project 초기 설정 CMAKE_MINIMUM_REQUIRED [용법]
+cmake_minimum_required(VERSION major.minor[.patch[.tweak]][FATAL_ERROR])만약 어떤 오픈소스 라이브러리가 cmake 3.0 버전 이상으로 작성 되었고, 현재 나의 빌드환경은 cmake 2.8버전 미만이라면 빌드 시, 다음의 에러가 출력된다 -&gt;
+CMake 3.0 or higher is required. You are running version 2.8.12.2
+이 커맨드는 반드시 CMakeListst.txt 작성시 맨 처음에 선언 해 놓아야 정상적인 버전 호환 에러를 출력할 수 있다.
+# Bad example project(foo)cmake_minimum_required(VERSION 3.0)message(&#34;Using CMake version ${CMAKE_VERSION}&#34;) PROJECT [용법]
+project(&lt;PROJECT-NAME&gt; [LANGUAGES] [&lt;language-name&gt;...]) project(&lt;PROJECT-NAME&gt; [VERSION &lt;major&gt;[." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/cmake/cmake_2/" />
+<meta property="article:published_time" content="2020-01-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-20T00:00:00+00:00" /><meta property="og:site_name" content="My Devlog" />
+
+
+
+
+
+
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+    <span class="logo__text">My Devlog</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/post">Post</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">
+            Show more
+            <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+          </li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/study">Study</a></li>
+              
+            
+              
+            
+              
+                <li><a href="/til">Today I Learned</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/post">Post</a></li>
+      
+    
+      
+        <li><a href="/study">Study</a></li>
+      
+    
+      
+    
+      
+        <li><a href="/til">Today I Learned</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title"><a href="/post/cmake/cmake_2/">CMake Part2 - Commands &amp; Vars</a></h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-01-20
+        </span>
+
+        
+          
+            
+
+
+
+          
+        
+      
+
+      
+      
+        <span class="post-read-time">— 4 min read</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/cmake/">cmake</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      
+        <h2>Table of Contents</h2>
+        <aside class="table-of-contents"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-project-초기-설정"><strong>1. project 초기 설정</strong></a>
+      <ul>
+        <li><a href="#cmake_minimum_required">CMAKE_MINIMUM_REQUIRED</a></li>
+        <li><a href="#project">PROJECT</a></li>
+        <li><a href="#set">SET</a></li>
+        <li><a href="#include">INCLUDE</a></li>
+        <li><a href="#include_directories">INCLUDE_DIRECTORIES</a></li>
+        <li><a href="#span-stylecolorlightbluestrongadd_subdirectorystrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->ADD_SUBDIRECTORY<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
+      </ul>
+    </li>
+    <li><a href="#strong2-compile-설정-관련strong"><!-- raw HTML omitted -->2. compile 설정 관련<!-- raw HTML omitted --></a>
+      <ul>
+        <li><a href="#span-stylecolorlightbluestrongadd_compile_optionsstrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->ADD_COMPILE_OPTIONS<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
+        <li><a href="#span-stylecolorlightbluestrongadd_definitionsstrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->ADD_DEFINITIONS<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
+        <li><a href="#span-stylecolorlightgreenstrongcmake_build_typestrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->CMAKE_BUILD_TYPE<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
+        <li><a href="#span-stylecolorlightgreenstrongcmake_verbose_makefilestrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->CMAKE_VERBOSE_MAKEFILE<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
+        <li><a href="#span-stylecolorlightgreenstrongcmake_verbose_makefilestrongspan-1"><!-- raw HTML omitted --><!-- raw HTML omitted -->CMAKE_VERBOSE_MAKEFILE<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
+      </ul>
+    </li>
+    <li><a href="#strong3-build-설정-관련strong"><!-- raw HTML omitted -->3. build 설정 관련<!-- raw HTML omitted --></a>
+      <ul>
+        <li><a href="#span-stylecolorlightbluestrongadd_executablestrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->ADD_EXECUTABLE<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
+        <li><a href="#span-stylecolorlightbluestronglink_librariesstrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->LINK_LIBRARIES<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
+        <li><a href="#span-stylecolorlightbluestronginstallstrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->INSTALL<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
+      </ul>
+    </li>
+    <li><a href="#strong4-기타strong"><!-- raw HTML omitted -->4. 기타<!-- raw HTML omitted --></a>
+      <ul>
+        <li><a href="#span-stylecolorlightbluestrongfind_filestrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->FIND_FILE<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
+        <li><a href="#span-stylecolorlightbluestrongfind_packagestrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->FIND_PACKAGE<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
+        <li><a href="#span-stylecolorlightbluestrongfind_librarystrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->FIND_LIBRARY<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></aside>
+      
+      <h2 id="1-project-초기-설정"><strong>1. project 초기 설정</strong></h2>
+<h3 id="cmake_minimum_required">CMAKE_MINIMUM_REQUIRED</h3>
+<p><strong>[용법]</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake">cmake_minimum_required(<span style="color:#e6db74">VERSION</span> <span style="color:#e6db74">major.minor[.patch[.tweak]][FATAL_ERROR]</span>)<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>만약 어떤 오픈소스 라이브러리가 cmake 3.0 버전 이상으로 작성 되었고, 현재 나의 빌드환경은 cmake 2.8버전 미만이라면 빌드 시, 다음의 에러가 출력된다 -&gt;<br>
+<code>CMake 3.0 or higher is required. You are running version 2.8.12.2</code><br>
+이 커맨드는 반드시 CMakeListst.txt 작성시 맨 처음에 선언 해 놓아야 정상적인 버전 호환 에러를 출력할 수 있다.</p>
+<pre><code><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#75715e"># Bad example
+</span><span style="color:#75715e"></span>project(<span style="color:#e6db74">foo</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>cmake_minimum_required(<span style="color:#e6db74">VERSION</span> <span style="color:#e6db74">3.0</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>message(<span style="color:#e6db74">&#34;Using CMake version ${CMAKE_VERSION}&#34;</span>)</code></pre></div>
+</code></pre><!-- raw HTML omitted -->
+<h3 id="project">PROJECT</h3>
+<p><strong>[용법]</strong></p>
+<pre><code>project(&lt;PROJECT-NAME&gt; [LANGUAGES] [&lt;language-name&gt;...])
+project(&lt;PROJECT-NAME&gt;
+        [VERSION &lt;major&gt;[.&lt;minor&gt;[.&lt;patch&gt;[.&lt;tweak&gt;]]]]
+        [LANGUAGES &lt;language-name&gt;...])
+</code></pre><p>이름 및 버전, 언어등 전체 프로젝트에 대한 정의를 한다.<br>
+아래와 같이 1.0 버전의 c/c++로 작성된 <strong>foo</strong>라는 프로젝트를 명시할 수 있다. Visual Studio로 예를 들자면 솔루션 탐색기의 최상단에 위치하는 프로젝트의 이름이 된다.<br>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake">project(<span style="color:#e6db74">foo</span> <span style="color:#e6db74">C</span> <span style="color:#e6db74">CXX</span> <span style="color:#e6db74">VERSION</span> <span style="color:#e6db74">1.0</span>)</code></pre></div></p>
+<h3 id="set">SET</h3>
+<p><strong>[용법]</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#75715e"># Normal Variable
+</span><span style="color:#75715e"></span>set(<span style="color:#e6db74">&lt;variable&gt;</span> <span style="color:#e6db74">&lt;value&gt;...</span> <span style="color:#e6db74">[PARENT_SCOPE]</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Cache Entry
+</span><span style="color:#75715e"></span>set(<span style="color:#e6db74">&lt;variable&gt;</span> <span style="color:#e6db74">&lt;value&gt;...</span> <span style="color:#e6db74">CACHE</span> <span style="color:#e6db74">&lt;type&gt;</span> <span style="color:#e6db74">&lt;docstring&gt;</span> <span style="color:#e6db74">[FORCE]</span>)<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>각종 변수를 정의하는데 사용되는 명령어이다.<br>
+<code>set( var1 10 )</code>일때 var1은 10의 값을 가지고 현재 디렉토리내에서만 유효하다. 하지만 만약 마지막에 <code>PARENT_SCOPE</code> 옵션을 사용한다면 var1의 scope는 부모 디렉터리까지 유효하게 된다. 또한, <strong>ENV</strong>옵션을 사용해 다음처럼 환경변수를 정의할 수도 있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake">set(<span style="color:#e6db74">ENV{LOG_LEVEL}</span> <span style="color:#e6db74">TRACE</span>)<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><!-- raw HTML omitted -->
+<h3 id="include">INCLUDE</h3>
+<p><strong>[용법]</strong></p>
+<pre><code>include(&lt;file|module&gt; [OPTIONAL] [RESULT_VARIABLE &lt;VAR&gt;]
+                      [NO_POLICY_SCOPE])
+</code></pre><p>.cmake 로 작성된 파일들을 사용할수 있도록 프로젝트에 포함시킨다. <code>CMAKE_MODULE_PATH</code>라는 예약변수에 의해 경로가 설정되며, 해당 경로를 통해 .cmake 파일을 탐색한다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake">list(<span style="color:#e6db74">APPEND</span> <span style="color:#e6db74">CMAKE_MODULE_PATH</span> <span style="color:#f92672">${</span>CMAKE_CURRENT_SOURCE_DIR<span style="color:#f92672">}</span><span style="color:#e6db74">/cmake</span>) <span style="color:#75715e"># cmake폴더 path 추가
+</span><span style="color:#75715e"></span>include(<span style="color:#e6db74">options</span>) <span style="color:#75715e"># options.cmake 파일 Load
+</span></code></pre></div><!-- raw HTML omitted -->
+<h3 id="include_directories">INCLUDE_DIRECTORIES</h3>
+<p><strong>[용법]</strong></p>
+<pre><code>include_directories([AFTER|BEFORE] [SYSTEM] dir1 [dir2 ...])
+</code></pre><p>컴파일러에게 각 소스파일에 있는 <code>#include</code>로 포함된 헤더파일들을 포함시킬 수 있도록 하는 명령이다. 아래 예시를 들면 <strong>include</strong>폴더에 있는 모든 헤더파일을 찾을 수 있도록 한다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#75715e"># EXAMPLE
+</span><span style="color:#75715e"># 현재 CMakeLists.txt가 실행되는 파일 위치의 경로에서 include라는 폴더를 포함함
+</span><span style="color:#75715e"></span>include_directories( <span style="color:#f92672">${</span>CMAKE_CURRENT_LIST_DIR<span style="color:#f92672">}</span><span style="color:#e6db74">/include</span> )<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><!-- raw HTML omitted -->
+<h3 id="span-stylecolorlightbluestrongadd_subdirectorystrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->ADD_SUBDIRECTORY<!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
+<p><strong>[용법]</strong></p>
+<pre><code>add_subdirectory(source_dir [binary_dir]
+                 [EXCLUDE_FROM_ALL])
+</code></pre><p>cmake 빌드에 필요한 디렉토리를 추가하는 명령이다. 만약 모듈별, 폴더별로 <code>CMakeLists.txt</code>가 나누어져 있다고 하면, 이 명령어를 통해서 <code>CMakeListst.txt</code>가 있는 폴더의 위치를 명시해줌으로써, 하위 모듈의 <code>CMakeLists.txt</code>파일들을 <code>source_dir</code>에 추가시킬 수 있도록 한다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#75715e"># EXAMPLE
+</span><span style="color:#75715e"># src 폴더내의 CMakeLists.txt를 포함해 실행될수 있도록 함
+</span><span style="color:#75715e"></span>add_subdirectory( <span style="color:#f92672">${</span>CMAKE_CURRENT_LIST_DIR<span style="color:#f92672">}</span><span style="color:#e6db74">/src</span> )<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><!-- raw HTML omitted -->
+<hr>
+<!-- raw HTML omitted -->
+<h2 id="strong2-compile-설정-관련strong"><!-- raw HTML omitted -->2. compile 설정 관련<!-- raw HTML omitted --></h2>
+<h3 id="span-stylecolorlightbluestrongadd_compile_optionsstrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->ADD_COMPILE_OPTIONS<!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
+<p><strong>[용법]</strong></p>
+<pre><code>add_compile_options(&lt;option&gt; ...)
+</code></pre><p>소스를 컴파일해 오브젝트 파일(.obj)을 만들때, 컴파일러에게 옵션(flag)를 지정해주는 명령어.<br>
+<code>add_compile_options(-Wall)</code> 은 <code>gcc -Wall</code>과 대치된다.</p>
+<!-- raw HTML omitted -->
+<h3 id="span-stylecolorlightbluestrongadd_definitionsstrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->ADD_DEFINITIONS<!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
+<p><strong>[용법]</strong></p>
+<pre><code>add_definitions(-DFOO -DBAR ...)
+</code></pre><p>preprocesor에서 처리할 변수를 선언한다. gcc flag중 <code>-D</code> option에 대치된다.<br>
+<code>add_definitions( -D__linux__ )</code>는 <code>#define __linux</code>와 같다.</p>
+<!-- raw HTML omitted -->
+<h3 id="span-stylecolorlightgreenstrongcmake_build_typestrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->CMAKE_BUILD_TYPE<!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
+<p>project의 build type을 결정한다.</p>
+<ul>
+<li><code>Debug</code> : 디버깅 정보를 포함하는 빌드</li>
+<li><code>Relase</code> : 릴리즈 전용 빌드</li>
+<li><code>RelWithDebInfo</code> : 디버깅 정보를 포함하는 릴리즈 빌드</li>
+<li><code>MinSizeRel</code> : 최소크기를 가지는 릴리즈 빌드</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#75715e"># EXAMPLE
+</span><span style="color:#75715e"># 릴리즈로 빌드
+</span><span style="color:#75715e"></span>set(<span style="color:#e6db74">CMAKE_BUILD_TYPE</span> <span style="color:#e6db74">Release</span>)<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><!-- raw HTML omitted -->
+<h3 id="span-stylecolorlightgreenstrongcmake_verbose_makefilestrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->CMAKE_VERBOSE_MAKEFILE<!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
+<p>Makefile output의 verbose정보를 포함여부를 설정하는 변수이다. 초기설정값은 FALSE로 설정돼있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#75715e"># EXAMPLE
+</span><span style="color:#75715e"></span>set(<span style="color:#e6db74">CMAKE_VERBOSE_MAKEFILE</span> <span style="color:#e6db74">true</span>)<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>true로 설정시, 빌드 중 Makefile의 빌드 과정을 출력한다.</p>
+<!-- raw HTML omitted -->
+<h3 id="span-stylecolorlightgreenstrongcmake_verbose_makefilestrongspan-1"><!-- raw HTML omitted --><!-- raw HTML omitted -->CMAKE_VERBOSE_MAKEFILE<!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
+<p>Makefile output의 verbose정보를 포함여부를 설정하는 변수이다. 초기설정값은 <!-- raw HTML omitted -->FALSE<!-- raw HTML omitted -->로 설정돼있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake">set(<span style="color:#e6db74">CMAKE_VERBOSE_MAKEFILE</span> <span style="color:#e6db74">true</span>)<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>true로 설정시, 빌드 중 Makefile의 빌드 과정을 출력한다.</p>
+<!-- raw HTML omitted -->
+<hr>
+<!-- raw HTML omitted -->
+<h2 id="strong3-build-설정-관련strong"><!-- raw HTML omitted -->3. build 설정 관련<!-- raw HTML omitted --></h2>
+<h3 id="span-stylecolorlightbluestrongadd_executablestrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->ADD_EXECUTABLE<!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
+<p><strong>[용법]</strong></p>
+<pre><code>add_executable(&lt;name&gt; [WIN32] [MACOSX_BUNDLE]
+               [EXCLUDE_FROM_ALL]
+               source1 [source2 ...])
+</code></pre><p><code>&lt;name&gt;</code>으로 설정된 project 타겟에 대하여 source list로부터 실행가능한 <strong>executable 파일</strong>을 생성한다. 기본적으로 생성된 파일의 위치는 명령어가 발생한 곳의 위치에 생성되며, <code>RUNTIME_OUTPUT_DIRECTORY</code> 변수를 통해 위치를 변경할 수 있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#75715e"># EXAMPLE
+</span><span style="color:#75715e"></span>set(<span style="color:#e6db74">src</span> <span style="color:#e6db74">main.cpp</span> <span style="color:#e6db74">foo.cpp</span> <span style="color:#e6db74">boo.cpp</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># test.out의 실행파일을 생성
+</span><span style="color:#75715e"></span>add_executable(<span style="color:#e6db74">test.out</span> <span style="color:#f92672">${</span>src<span style="color:#f92672">}</span>)<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><!-- raw HTML omitted -->
+<h3 id="span-stylecolorlightbluestronglink_librariesstrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->LINK_LIBRARIES<!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
+<p><strong>[용법]</strong></p>
+<pre><code>link_libraries([item1 [item2 [...]]]
+               [[debug|optimized|general] &lt;item&gt;] ...)
+</code></pre><p>모든 타겟에 대해 사용될 라이브러리를 링크하는 명령. gcc 옵션중 <code>-l</code>에 대치되는 명령이며 링크옵션 또한 사용가능하다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#75715e"># EXAMPLE
+</span><span style="color:#75715e"></span> <span style="color:#75715e"># libbluetooth 라이브러리를 링크
+</span><span style="color:#75715e"></span>link_libraries(<span style="color:#e6db74">bluetooth</span>)<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><!-- raw HTML omitted -->
+<h3 id="span-stylecolorlightbluestronginstallstrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->INSTALL<!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
+<p><strong>[용법]</strong></p>
+<pre><code>install(TARGETS targets... [EXPORT &lt;export-name&gt;]
+        [[ARCHIVE|LIBRARY|RUNTIME|FRAMEWORK|BUNDLE|
+          PRIVATE_HEADER|PUBLIC_HEADER|RESOURCE]
+         [DESTINATION &lt;dir&gt;]
+         [PERMISSIONS permissions...]
+         [CONFIGURATIONS [Debug|Release|...]]
+         [COMPONENT &lt;component&gt;]
+         [OPTIONAL] [EXCLUDE_FROM_ALL]
+         [NAMELINK_ONLY|NAMELINK_SKIP]
+        ] [...]
+        [INCLUDES DESTINATION [&lt;dir&gt; ...]]
+        )
+</code></pre><p><code>make install</code> 명령어 입력시 진행되는 과정을 정의하는 명령. 주로 cmake 빌드 과정을 통해 나오는 결과물 ( 실행파일, 라이브러리, 리소스) 등을 특정한 위치로 복사하는 동작을 한다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#75715e"># EXAMPLE
+</span><span style="color:#75715e"># output.out 바이너리 파일을 /usr/local/bin의 위치로 설치함
+</span><span style="color:#75715e"></span>install(<span style="color:#e6db74">TARGETS</span> <span style="color:#e6db74">output.out</span> <span style="color:#e6db74">DESTINATION</span> <span style="color:#e6db74">usr/local/bin</span>)<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><!-- raw HTML omitted -->
+<hr>
+<!-- raw HTML omitted -->
+<h2 id="strong4-기타strong"><!-- raw HTML omitted -->4. 기타<!-- raw HTML omitted --></h2>
+<h3 id="span-stylecolorlightbluestrongfind_filestrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->FIND_FILE<!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
+<p><strong>[용법]</strong></p>
+<pre><code>find_file (
+          &lt;VAR&gt;
+          name | NAMES name1 [name2 ...]
+          [HINTS path1 [path2 ... ENV var]]
+          [PATHS path1 [path2 ... ENV var]]
+          [PATH_SUFFIXES suffix1 [suffix2 ...]]
+          [DOC &quot;cache documentation string&quot;]
+          [NO_DEFAULT_PATH]
+          [NO_CMAKE_ENVIRONMENT_PATH]
+          [NO_CMAKE_PATH]
+          [NO_SYSTEM_ENVIRONMENT_PATH]
+          [NO_CMAKE_SYSTEM_PATH]
+          [CMAKE_FIND_ROOT_PATH_BOTH |
+           ONLY_CMAKE_FIND_ROOT_PATH |
+           NO_CMAKE_FIND_ROOT_PATH]
+         )
+</code></pre><p>찾을 파일의 이름의 전체경로를 찾아주는 명령. <code>&lt;VAR&gt;</code>변수에 결과가 저장되도록 한다. 만약 경로를 찾지 못하였을경우 <code>&lt;VAR&gt;-NOTFOUND</code>로 최종적으로 저장이된다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#75715e"># EXAMPLE
+</span><span style="color:#75715e"># test.cpp 파일의 전체 경로를 ${CPP_FILE_PATH}변수에 저장
+</span><span style="color:#75715e"></span>find_file(<span style="color:#e6db74">CPP_FILE_PATH</span> <span style="color:#e6db74">test.cpp</span> <span style="color:#e6db74">PATHS</span> <span style="color:#e6db74">/home/test</span>)<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><!-- raw HTML omitted -->
+<h3 id="span-stylecolorlightbluestrongfind_packagestrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->FIND_PACKAGE<!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
+<p><strong>[용법]</strong></p>
+<pre><code>find_package(&lt;package&gt; [version] [EXACT] [QUIET] [MODULE]
+             [REQUIRED] [[COMPONENTS] [components...]]
+             [OPTIONAL_COMPONENTS components...]
+             [NO_POLICY_SCOPE])
+</code></pre><p>시스템에 설치된 Package들을 찾는 명령. Package를 찾았을 경우 <code>&lt;package&gt;_FOUND</code> 변수에 결과가 저장된다.</p>
+<ul>
+<li><strong>version</strong> : package의 버전을 요청</li>
+<li><strong>EXACT</strong> : 버전이 정확히 일치하도록 요청</li>
+<li><strong>QUIET</strong> : package를 찾을 수 없는경우 메시지 비활성화</li>
+<li><strong>MODULE</strong> : 모듈모드로 package 찾음<br>
+<!-- raw HTML omitted -->
+결론적으로, <code>target link libraries</code> 명령을 사용할 때 사용되는 정보들을 받아 <strong>linking</strong>하는데 관련된 정보를 사용할 수 있도록 하는 명령어이다. 기타 세부설명은 다음 링크에서 확인한다. [click] (<a href="https://cmake.org/cmake/help/v3.10/command/find_package.html">https://cmake.org/cmake/help/v3.10/command/find_package.html</a>)</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#75715e"># EXAMPLE
+</span><span style="color:#75715e"></span>find_package(<span style="color:#e6db74">pak</span> <span style="color:#e6db74">1.0</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>if(<span style="color:#e6db74">pak_FOUND</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>        <span style="color:#75715e"># ...
+</span><span style="color:#75715e"></span>endif()<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># pak 이라는 패키지를 찾았으면 if실행
+</span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">------------------------------------------
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>find_package(<span style="color:#e6db74">pak</span> <span style="color:#e6db74">1.0</span> <span style="color:#e6db74">REQUIRED</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># pak 이라는 패키지를 찾지 못할경우 오류 메시지 출력 (&#39;REQUIRED&#39;에 의해)
+</span><span style="color:#75715e"></span> <span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><!-- raw HTML omitted -->
+<h3 id="span-stylecolorlightbluestrongfind_librarystrongspan"><!-- raw HTML omitted --><!-- raw HTML omitted -->FIND_LIBRARY<!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
+<p><strong>[용법]</strong></p>
+<pre><code>find_library (
+          &lt;VAR&gt;
+          name | NAMES name1 [name2 ...] [NAMES_PER_DIR]
+          [HINTS path1 [path2 ... ENV var]]
+          [PATHS path1 [path2 ... ENV var]]
+          [PATH_SUFFIXES suffix1 [suffix2 ...]]
+          [DOC &quot;cache documentation string&quot;]
+          [NO_DEFAULT_PATH]
+          [NO_PACKAGE_ROOT_PATH]
+          [NO_CMAKE_PATH]
+          [NO_CMAKE_ENVIRONMENT_PATH]
+          [NO_SYSTEM_ENVIRONMENT_PATH]
+          [NO_CMAKE_SYSTEM_PATH]
+          [CMAKE_FIND_ROOT_PATH_BOTH |
+           ONLY_CMAKE_FIND_ROOT_PATH |
+           NO_CMAKE_FIND_ROOT_PATH]
+         )
+</code></pre><p>shared library(.so) , static library(.a) 파일등을 찾는 cmake 명령어이다. 찾고자하는 파일을 발견하면, <code>&lt;VAR&gt;</code>변수에 결과가 저장되며, 라이브러리 파일을 찾지 못하였을 경우 <code>&lt;VAR&gt;-NOTFOUND</code>를 저장한다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"><span style="color:#75715e"># EXAMPLE
+</span><span style="color:#75715e"></span>find_library (
+  <span style="color:#e6db74">FOO_LIBS</span>
+  <span style="color:#e6db74">NAMES</span> <span style="color:#e6db74">foo</span>
+  <span style="color:#e6db74">PATHS</span> <span style="color:#e6db74">/usr/lib</span>
+  )<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># /usr/lib의 경로에서 libfoo.so 라이브러리를 찾았으면 if실행
+</span><span style="color:#75715e"></span>if( <span style="color:#e6db74">FOO_LIBS</span> )<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  set(<span style="color:#e6db74">FOO_LIBS_FOUND</span> <span style="color:#e6db74">true</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  include_directories(<span style="color:#e6db74">...</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  message(<span style="color:#e6db74">STATUS</span> <span style="color:#e6db74">&#34;success to find library&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>else()<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  message(<span style="color:#e6db74">STATUS</span> <span style="color:#e6db74">&#34;failed to find libarary&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>endif()<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div>
+    </div>
+    
+    <div class="pagination">
+        <div class="pagination__title">
+            <span class="pagination__title-h">
+                Read other posts
+            </span>
+            <hr />
+        </div>
+        <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/post/cmake/cmake_3/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">CMake Part1 - Overview</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/post/cmake/cmake_1/">
+                  <span class="button__text">CMake Part3 - 프로젝트 구성</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+
+                
+        </div>
+    </div>
+      
+
+    
+
+    
+      
+        
+
+      
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+    <span class="logo__text">My Devlog</span>
+    <span class="logo__cursor_foot"></span>
+  
+</a>
+
+      <div class="copyright">
+        
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a> & customized by ralpioxxcs</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+
+
+
+
+<script src="/js/menu.js"></script>
+  <script src="/js/theme.js"></script>
+<script src="/js/prism_test.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

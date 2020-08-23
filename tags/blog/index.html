@@ -38,7 +38,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/tags/blog/" />
-<meta property="og:updated_time" content="2019-12-28T16:09:14+09:00" /><meta property="og:site_name" content="My Devlog" />
+<meta property="og:updated_time" content="2019-12-30T16:09:14+09:00" /><meta property="og:site_name" content="My Devlog" />
 
 
 
@@ -70,11 +70,11 @@
     
       
         
-          <li><a href="/">About</a></li>
+          <li><a href="/about">About</a></li>
         
       
         
-          <li><a href="/post/">Post</a></li>
+          <li><a href="/post">Post</a></li>
         
       
       
@@ -91,13 +91,13 @@
           <ul class="menu__sub-inner-more hidden">
             
               
-                <li><a href="/life">Life</a></li>
+                <li><a href="/study">Study</a></li>
               
             
               
             
               
-                <li><a href="/study">T.I.L</a></li>
+                <li><a href="/til">Today I Learned</a></li>
               
             
           </ul>
@@ -109,21 +109,21 @@
   <ul class="menu__inner menu__inner--mobile">
     
       
-        <li><a href="/">About</a></li>
+        <li><a href="/about">About</a></li>
       
     
       
-        <li><a href="/post/">Post</a></li>
+        <li><a href="/post">Post</a></li>
       
     
       
-        <li><a href="/life">Life</a></li>
+        <li><a href="/study">Study</a></li>
       
     
       
     
       
-        <li><a href="/study">T.I.L</a></li>
+        <li><a href="/til">Today I Learned</a></li>
       
     
   </ul>
@@ -152,6 +152,54 @@
       <div class="content">
         
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/hugo/hugo_content_management_3_frontmatter/">Hugo Content Management [3] - Front Matter</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2019-12-30
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 1 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/hugo/">Hugo</a>&nbsp;
+          
+            #<a href="/tags/blog/">Blog</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Front Matter? front matter란 작성하고자 하는 컨텐츠(파일)의 제목, 날짜, 작성자 등의 기본적인 속성들을 나타내는 meta-data 형식이다.  Formats Hugo는 다음 3가지의 마크업 언어를 지원한다.
+ TOML : +++ YAML : --- JSON : {, }
+을 이용해 front matter의 시작과 끝을 지정한다.  예를들어, a.md라는 새로운 파일을 만들었다면 --- title: &#34;this is title!&#34; date: 2019-12-27T13:39:03+09:00 draft: true --- this is the markdown file 이렇게 파일의 시작 부분에 front matter를 설정해주면,
+            
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/hugo/hugo_content_management_3_frontmatter/">Read more →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/post/hugo/hugo_start_2_quick_start/">Getting Started Hugo [2] - 블로그 생성</a></h1>
@@ -188,103 +236,16 @@
 
       <div class="post-content">
         
-          이제 hugo를 이용해 사이트를 생성해볼 차례다.<code>c://hugo</code> 의 경로에서 <code>$ hugo new site [폴더이름]</code> 을 입력한다. 여기서 폴더이름은 말 그대로 터미널 상에서 접근할 폴더이름일 뿐, 생성하고자 하는 블로그의 이름이 되진 않는다. (예시는 <strong>blog</strong>로 하였다.) 폴더를 만들었으면 <code>$ cd blog &amp;&amp; ls </code> 를 입력해 생성된 폴더의 내부를 확인한다. 정상적으로 생성이 되었으면 archtypes, assets, config.toml 등 여러 파일과 폴더들이 생성된 것을 확인할 수 있다.
+          
+            Let&rsquo;s create own blog 　Step 1. 블로그 폴더 생성   c://hugo 의 경로에서 $ hugo new site [폴더이름] 을 입력한다. 여기서 폴더이름은 말 그대로 터미널 상에서 접근할 폴더이름일 뿐, 생성하고자 하는 블로그의 이름이 되진 않는다. (예시는 blog로 하였다.)
+  폴더를 만들었으면 $ cd blog &amp;&amp; ls  를 입력해 생성된 폴더의 내부를 확인한다.
+-&gt; 정상적으로 생성이 되었으면 archtypes, assets, config.toml 등 여러 파일과 폴더들이 생성된 것을 확인할 수 있다.
+            
+          
         
       </div>
       
         <div><a class="read-more button" href="/post/hugo/hugo_start_2_quick_start/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/hugo/hugo_start_4_remote_repo_link/">Getting Started Hugo [4] - 레포지토리 연동 및 웹 호스팅</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2019-12-28
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 1 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/hugo/">Hugo</a>&nbsp;
-          
-            #<a href="/tags/blog/">blog</a>&nbsp;
-          
-            #<a href="/tags/github/">Github</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          나만의 블로그를 구축하는데 성공하였다. 이제 로컬에 저장돼있는 hugo 사이트를 github repository와 연동하여 실제로 주소를 갖는 블로그를 만들어보자.
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/hugo/hugo_start_4_remote_repo_link/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/hugo/hugo_content_management_3_frontmatter/">Hugo Content Management [3] - Front Matter</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2019-12-28
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 1 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/hugo/">Hugo</a>&nbsp;
-          
-            #<a href="/tags/blog/">Blog</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Front Matter? front matter란 작성하고자 하는 컨텐츠(파일)의 제목, 날짜, 작성자 등의 기본적인 속성들을 나타내는 meta-data 형식이다.  Formats Hugo는 다음 3가지의 마크업 언어를 지원한다.
-TOML : +++ YAML : &mdash; JSON : {, }
-을 이용해 front matter의 시작과 끝을 지정한다.  예를들어, a.md라는 새로운 파일을 만들었다면 &mdash; title: &quot;this is title!&quot; date: 2019-12-27T13:39:03+09:00 draft: true &mdash; this is the markdown file 이렇게 파일의 시작 부분에 front matter를 설정해주면,
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/hugo/hugo_content_management_3_frontmatter/">Read more →</a></div>
       
     </div>
     
@@ -316,8 +277,8 @@ TOML : +++ YAML : &mdash; JSON : {, }
 </a>
 
       <div class="copyright">
-        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
-        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+        
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a> & customized by ralpioxxcs</a></span>
       </div>
     
   </div>
