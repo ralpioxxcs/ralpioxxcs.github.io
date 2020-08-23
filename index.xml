@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>base on My Devlog</title>
+    <title>My Devlog</title>
     
     
     
     <link>/</link>
-    <description>Recent content in base on My Devlog</description>
+    <description>Recent content on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 07 Aug 2020 14:26:52 +0900</lastBuildDate>
@@ -206,9 +206,10 @@ Example message(&amp;#34; &amp;#34;)message( &amp;#34;${BoldGreen}\t\t\t[ BUILD 
         
         
           Hi! 😀 My name is JaeHong Kim.
-I work as a Software Engineer on an IT Compnay from Korea. I focus on Image processing Development.
+I work as a Software Engineer on an IT Compnay from Korea.
+I focus on Image processing Development.
 Programming as a craftsmanship is my main hobby, learning something new keeps me motivated.
-also, I love to build keyboards.
+Also, I love to build keyboards.
 I made this blog to improve my development skills and career.
           
         
