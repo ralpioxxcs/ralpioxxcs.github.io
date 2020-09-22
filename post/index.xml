@@ -9,10 +9,31 @@
     <description>Recent content in Post on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 07 Aug 2020 14:26:52 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2020 23:15:14 +0900</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Apt_command</title>
+      <link>/post/etc/apt_command/</link>
+      <pubDate>Tue, 22 Sep 2020 23:15:14 +0900</pubDate>
+      
+      <guid>/post/etc/apt_command/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          APT ? Advanced Package Tool의 약자로 Debian 계열의 리눅스에서 쓰이는 소프트웨어 패키지 관리 명령어 도구이다. sudo apt-get update, sudo apt-get install 등 우분투 환경을 사용해본 사람이라면 한번쯤 써봤을 법한 커맨드이다.
+apt install vs apt-get install apt-get과 apt 커맨드의 차이점은 크게 없다. apt-get 커맨드가 먼저 나오고 다음으로 apt 명령어가 나왔는데, apt-get과 apt-cache 를 하나의 커맨드로 사용하기위해 apt 가 나왔다고 함.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Vim 사용하기 #2 - Plugin</title>

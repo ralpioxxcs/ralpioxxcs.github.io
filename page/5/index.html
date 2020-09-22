@@ -39,7 +39,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-08-07T14:26:52+09:00" /><meta property="og:site_name" content="My Devlog" />
+<meta property="og:updated_time" content="2020-09-22T23:15:14+09:00" /><meta property="og:site_name" content="My Devlog" />
 
 
 
@@ -166,6 +166,51 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="/post/hugo/hugo_content_management_2_page/">Hugo Content Management [2] - Page Bundle</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2019-12-30
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 2 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/hugo/">Hugo</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Hugo에서는 Page Bundles이라는 개념을 사용해 컨텐츠를 관리한다. Page Bundles에는 2가지 종류가 있다.
+Leaf Bundle Branch Bundle   Left Bundle left bundle은 단독 페이지를 구성하는데 사용되고, index.md 파일을 포함하는 폴더로 구성된다.
+3 of Leaf Bundle Example content/ ├── project │ ├── index.md ├── posts │ ├── my-post │ │ ├── content1.md │ │ ├── content2.md │ | ├── image1.png │ | └── index.md │ └── study │ ├── first.md │ └── second.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/hugo/hugo_content_management_2_page/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="/post/hugo/hugo_content_management_1_contents_path/">Hugo Content Management [1] - Contents Path</a></h1>
       <div class="post-meta">
         
@@ -252,50 +297,6 @@ blog 폴더 자체를 저장할 repository hugo로 빌드된 결과파일들을 
       </div>
       
         <div><a class="read-more button" href="/post/hugo/hugo_start_4_remote_repo_link/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/hugo/hugo_start_3_directory/">Getting Started Hugo [3] - 디렉터리 구조</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2019-12-29
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 2 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/hugo/">Hugo</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            명령창에 $ hugo new site를 입력하면 아래의 구조를 가진 폴더가 하나 생성되는것을 보았을것이다. 각각의 폴더의 역할은 다음과 같다.
-( root ) ├─ archetypes ├─ content ├─ data ├─ layouts ├─ static ├─ themes ├─ config.toml  archetypes $ hugo new 커맨드를 이용해 새로운 contents 파일을 만들때, 이 폴더내의 default.md 의 front matter 형태를 갖는 content를 자동으로 초기화 하여 만들어준다. 많은양의 content를 만들 때 유용하게 사용될수 있고, front matter field를 직접 수정하여 하나의 archtypes로 만들 수 있다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/hugo/hugo_start_3_directory/">Read more →</a></div>
       
     </div>
     
