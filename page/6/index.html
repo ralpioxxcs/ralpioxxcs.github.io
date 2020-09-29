@@ -39,7 +39,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-09-22T23:15:14+09:00" /><meta property="og:site_name" content="My Devlog" />
+<meta property="og:updated_time" content="2020-09-29T19:54:24+09:00" /><meta property="og:site_name" content="My Devlog" />
 
 
 
@@ -166,6 +166,96 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="/post/hugo/hugo_content_management_1_contents_path/">Hugo Content Management [1] - Contents Path</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2019-12-30
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 1 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/hugo/">Hugo</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Hugo가 어떻게 각각에 컨텐츠에 접근하고, 폴더를 조직화하여 블로그를 구성하는지 알아보자.
+컨텐츠 구성 (root) └── content └── project | └── index.md // &lt;- <a href="https://example.com/project/">https://example.com/project/</a> ├── posts | ├── firstpost.md // &lt;- <a href="https://example.com/posts/firstpost/">https://example.com/posts/firstpost/</a> | └── secondpost.md // &lt;- <a href="https://example.com/posts/secondpost/">https://example.com/posts/secondpost/</a> └── study ├── first.md // &lt;- <a href="https://example.com/study/first/">https://example.com/study/first/</a> └── second.md // &lt;- <a href="https://example.com/study/second/">https://example.com/study/second/</a> 위 처럼 각각 project, posts, study 총 3개의 카테고리가 있다고 가정할 때, Hugo는 section, slug, path, url의 변수들을 이용해 컨텐츠를 관리한다.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/hugo/hugo_content_management_1_contents_path/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/hugo/hugo_start_4_remote_repo_link/">Getting Started Hugo [4] - 레포지토리 연동 및 웹 호스팅</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2019-12-29
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 1 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/hugo/">Hugo</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            나만의 블로그를 구축하는데 성공하였다. 이제 로컬에 저장돼있는 hugo 사이트를 github repository와 연동하여 실제로 주소를 갖는 블로그를 만들어보자.
+ Step 1. github repository 생성 github에 로그인하여 총 2개의 repository를 생성한다.
+blog 폴더 자체를 저장할 repository hugo로 빌드된 결과파일들을 저장할 repository
+두번째 repository의 이름은 [github계정명].github.io의 형식으로 만들어야 한다.   remote repository 연동  c://hugo/blog 경로에서 $ git init .으로 로컬 repository를 생성한다. $ git remote add origin [첫번째 repository url]를 입력한다.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/hugo/hugo_start_4_remote_repo_link/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="/post/hugo/hugo_start_3_directory/">Getting Started Hugo [3] - 디렉터리 구조</a></h1>
       <div class="post-meta">
         
@@ -209,98 +299,6 @@
       
     </div>
     
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/hugo/hugo_start_2_quick_start/">Getting Started Hugo [2] - 블로그 생성</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2019-12-28
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 2 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/hugo/">Hugo</a>&nbsp;
-          
-            #<a href="/tags/blog/">blog</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Let’s create own blog 　Step 1. 블로그 폴더 생성   c://hugo 의 경로에서 $ hugo new site [폴더이름] 을 입력한다. 여기서 폴더이름은 말 그대로 터미널 상에서 접근할 폴더이름일 뿐, 생성하고자 하는 블로그의 이름이 되진 않는다. (예시는 blog로 하였다.)
-폴더를 만들었으면 $ cd blog &amp;&amp; ls  를 입력해 생성된 폴더의 내부를 확인한다.
--&gt; 정상적으로 생성이 되었으면 archtypes, assets, config.toml 등 여러 파일과 폴더들이 생성된 것을 확인할 수 있다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/hugo/hugo_start_2_quick_start/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/hugo/hugo_start_1_install/">Getting Started Hugo [1] - 설치 및 환경설정</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2019-12-28
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 3 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/hugo/">Hugo</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Hugo? Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 Jekyll (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다.
-Install 설치방법은 install hugo에 각 OS별로 설치를 하는 방법이 잘 안내되어 있다.
-OSX brew install hugo Debian, Ubuntu sudo apt-get install hugo package installer를 이용하는 방법외에는 Release 다운로드 사이트에서 직접 다운로드하여 설치하는 방법도 있다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/hugo/hugo_start_1_install/">Read more →</a></div>
-      
-    </div>
-    
     <div class="pagination">
   <div class="pagination__buttons">
     
@@ -311,6 +309,13 @@ OSX brew install hugo Debian, Ubuntu sudo apt-get install hugo package installer
         </a>
       </span>
     
+    
+      <span class="button next">
+        <a href="/page/7/">
+          <span class="button__text">Older posts</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
     
   </div>
 </div>

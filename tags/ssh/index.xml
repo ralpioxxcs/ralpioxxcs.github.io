@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ssh on My Devlog</title>
+    
+    
+    
+    <link>/tags/ssh/</link>
+    <description>Recent content in ssh on My Devlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 Sep 2020 19:54:24 +0900</lastBuildDate>
+    
+	<atom:link href="/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ssh 서버 설정</title>
+      <link>/post/etc/sshd_config/</link>
+      <pubDate>Tue, 29 Sep 2020 19:54:24 +0900</pubDate>
+      
+      <guid>/post/etc/sshd_config/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          SSH  시큐어 셸(Secure SHell, SSH)은 네트워크 상의 다른 컴퓨터에 로그인하거나 원격 시스템에서 명령을 실행하고 다른 시스템으로 파일을 복사할 수 있도록 해 주는 응용 프로그램 또는 그 프로토콜을 가리킨다. 기존의 rsh, rlogin, 텔넷 등을 대체하기 위해 설계되었으며, 강력한 인증 방법 및 안전하지 못한 네트워크에서 안전하게 통신을 할 수 있는 기능을 제공한다. -Wiki
+ 리눅스 개발환경을 구성하다보면 거의 필수적으로 사용하게 되는 ssh(secure shell) 을 구성하는 방법을 알아보자.
+  SSH 서버 설치 ubuntu 및 osx 에는 기본적으로 ssh client는 설치돼있다.
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -39,7 +39,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-09-22T23:15:14+09:00" /><meta property="og:site_name" content="My Devlog" />
+<meta property="og:updated_time" content="2020-09-29T19:54:24+09:00" /><meta property="og:site_name" content="My Devlog" />
 
 
 
@@ -166,6 +166,98 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="/post/hugo/hugo_content_management_4_shortcodes/">Hugo Content Management [4] - Shortcodes</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2019-12-30
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 1 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/hugo/">Hugo</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Shortcode Hugo는 다양한 shortcode 플러그인들을 제공하고 있다. markdown이 제공하는 편리한 문법들로도 충분하지만, code snippet이나 유튜브 영상등을 추가할 때 유용하게 사용할 수 있다.
+　Shotcode 사용하기 shortcode는 { {&lt; shortcodename parameters &gt;} } 의 용법으로 간단하게 사용할 수 있다.
+shortcodename : 사용할 shortcode의 이름 (ex. highlight, figure..) parameter : 사용할 shortcode가 어떻게 정의되었느냐에 따라 달라짐   Built-in Shortcodes figure figure는 마크다운이 제공하는 이미지관련 문법보다 더 다양한 기능을 제공한다. parameter를 통해 첨부할 이미지의 title, caption, link등을 지정할 수 있다.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/hugo/hugo_content_management_4_shortcodes/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/hugo/hugo_content_management_3_frontmatter/">Hugo Content Management [3] - Front Matter</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2019-12-30
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 1 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/hugo/">Hugo</a>&nbsp;
+          
+            #<a href="/tags/blog/">Blog</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Front Matter? front matter란 작성하고자 하는 컨텐츠(파일)의 제목, 날짜, 작성자 등의 기본적인 속성들을 나타내는 meta-data 형식이다.  Formats Hugo는 다음 3가지의 마크업 언어를 지원한다.
+TOML : +++ YAML : &mdash; JSON : {, }
+을 이용해 front matter의 시작과 끝을 지정한다.  예를들어, a.md라는 새로운 파일을 만들었다면 &mdash; title: &quot;this is title!&quot; date: 2019-12-27T13:39:03+09:00 draft: true &mdash; this is the markdown file 이렇게 파일의 시작 부분에 front matter를 설정해주면,
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/hugo/hugo_content_management_3_frontmatter/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="/post/hugo/hugo_content_management_2_page/">Hugo Content Management [2] - Page Bundle</a></h1>
       <div class="post-meta">
         
@@ -207,96 +299,6 @@ Leaf Bundle Branch Bundle   Left Bundle left bundle은 단독 페이지를 구�
       </div>
       
         <div><a class="read-more button" href="/post/hugo/hugo_content_management_2_page/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/hugo/hugo_content_management_1_contents_path/">Hugo Content Management [1] - Contents Path</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2019-12-30
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 1 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/hugo/">Hugo</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Hugo가 어떻게 각각에 컨텐츠에 접근하고, 폴더를 조직화하여 블로그를 구성하는지 알아보자.
-컨텐츠 구성 (root) └── content └── project | └── index.md // &lt;- <a href="https://example.com/project/">https://example.com/project/</a> ├── posts | ├── firstpost.md // &lt;- <a href="https://example.com/posts/firstpost/">https://example.com/posts/firstpost/</a> | └── secondpost.md // &lt;- <a href="https://example.com/posts/secondpost/">https://example.com/posts/secondpost/</a> └── study ├── first.md // &lt;- <a href="https://example.com/study/first/">https://example.com/study/first/</a> └── second.md // &lt;- <a href="https://example.com/study/second/">https://example.com/study/second/</a> 위 처럼 각각 project, posts, study 총 3개의 카테고리가 있다고 가정할 때, Hugo는 section, slug, path, url의 변수들을 이용해 컨텐츠를 관리한다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/hugo/hugo_content_management_1_contents_path/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/hugo/hugo_start_4_remote_repo_link/">Getting Started Hugo [4] - 레포지토리 연동 및 웹 호스팅</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2019-12-29
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 1 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/hugo/">Hugo</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            나만의 블로그를 구축하는데 성공하였다. 이제 로컬에 저장돼있는 hugo 사이트를 github repository와 연동하여 실제로 주소를 갖는 블로그를 만들어보자.
- Step 1. github repository 생성 github에 로그인하여 총 2개의 repository를 생성한다.
-blog 폴더 자체를 저장할 repository hugo로 빌드된 결과파일들을 저장할 repository
-두번째 repository의 이름은 [github계정명].github.io의 형식으로 만들어야 한다.   remote repository 연동  c://hugo/blog 경로에서 $ git init .으로 로컬 repository를 생성한다. $ git remote add origin [첫번째 repository url]를 입력한다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/hugo/hugo_start_4_remote_repo_link/">Read more →</a></div>
       
     </div>
     
