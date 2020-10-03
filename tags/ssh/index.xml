@@ -15,7 +15,7 @@
     
     
     <item>
-      <title>ssh 서버 설정</title>
+      <title>SSH 서버 설정</title>
       <link>/post/etc/sshd_config/</link>
       <pubDate>Tue, 29 Sep 2020 19:54:24 +0900</pubDate>
       

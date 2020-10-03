@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on My Devlog</title>
+    
+    
+    
+    <link>/tags/docker/</link>
+    <description>Recent content in docker on My Devlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 02 Oct 2020 18:37:49 +0900</lastBuildDate>
+    
+	<atom:link href="/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dokerfile 작성법 정리</title>
+      <link>/til/docker_run/</link>
+      <pubDate>Fri, 02 Oct 2020 18:37:49 +0900</pubDate>
+      
+      <guid>/til/docker_run/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Dockerfile  
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

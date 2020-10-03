@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>Stack :: My Devlog — 기록 &amp; 공부용 개발 블로그</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="1. 개요 후입선출(後入先出, Last In First Out; LIFO) 의 자료구조로, 상자의 형태를 한 자료구조이다. 데이터의 삽입을 Push, 데이터의 출력을 Pop이라고 하며, 스택을 크게 두 가지로 나누면
+Ascending Stack VS Descending Stack으로 나눌 수 있다.
+스택은 배열과 링크드 리스트로 구현할 수 있는데, 여기서는 링크드리스트를 이용한 스택을 구현해 보겠다.
+ 2. 코드 구현 2-1. define structure typedef struct _stacknode Snode; struct _stacknode { DataType data; Snode *next; }; typedef struct _stack { Snode *head; Snode *tail; Snode *cur; }Stack;  스택관리구조체 Stack은 링크드리스트 구조체처럼 head와 tail을 고정적으로 가리키는 노드포인터와 현재 노드를 가리키는 cur 포인터로 이루어져있다."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/cs/stack/" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.min.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Stack"/>
+<meta name="twitter:description" content="후입선출(後入先出, Last In First Out; LIFO) 의 자료구조로, 상자의 형태를 한 자료구조이다. 데이터의 삽입을 Push, 데이터의 출력을 Pop이라고 하며, 스택을 크게 두 가지로 나누면 **Ascending Stack** VS **Descending Stack**으로 나눌 수 있다."/>
+
+
+
+<meta property="og:title" content="Stack" />
+<meta property="og:description" content="후입선출(後入先出, Last In First Out; LIFO) 의 자료구조로, 상자의 형태를 한 자료구조이다. 데이터의 삽입을 Push, 데이터의 출력을 Pop이라고 하며, 스택을 크게 두 가지로 나누면 **Ascending Stack** VS **Descending Stack**으로 나눌 수 있다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/cs/stack/" />
+<meta property="article:published_time" content="2019-09-13T13:54:02+09:00" />
+<meta property="article:modified_time" content="2019-09-13T13:54:02+09:00" /><meta property="og:site_name" content="My Devlog" />
+
+
+
+
+
+
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+    <span class="logo__text">My Devlog</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/post">Post</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">
+            More
+            <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+          </li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/cs">Computer Science</a></li>
+              
+            
+              
+                <li><a href="/ps">Problem Solving</a></li>
+              
+            
+              
+                <li><a href="/study">Study</a></li>
+              
+            
+              
+            
+              
+                <li><a href="/til">Today I Learned</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/post">Post</a></li>
+      
+    
+      
+        <li><a href="/cs">Computer Science</a></li>
+      
+    
+      
+        <li><a href="/ps">Problem Solving</a></li>
+      
+    
+      
+        <li><a href="/study">Study</a></li>
+      
+    
+      
+    
+      
+        <li><a href="/til">Today I Learned</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title"><a href="/cs/stack/">Stack</a></h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2019-09-13
+        </span>
+
+        
+      
+
+      
+      
+        <span class="post-read-time">— 2 min read</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/data-structure/">Data Structure</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      
+        <h2>Table of Contents</h2>
+        <aside class="table-of-contents"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-개요">1. 개요</a></li>
+    <li><a href="#2-코드-구현">2. 코드 구현</a>
+      <ul>
+        <li><a href="#2-1-define-structure">2-1. define structure</a></li>
+        <li><a href="#2-2-init-stack">2-2. Init Stack</a></li>
+        <li><a href="#2-3-push">2-3. Push</a></li>
+        <li><a href="#2-4-pop">2-4. Pop</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></aside>
+      
+      <h2 id="1-개요">1. 개요</h2>
+<p>후입선출(後入先出, Last In First Out; LIFO) 의 자료구조로, 상자의 형태를 한 자료구조이다.
+데이터의 삽입을 Push, 데이터의 출력을 Pop이라고 하며, 스택을 크게 두 가지로 나누면<br>
+<strong>Ascending Stack</strong> VS <strong>Descending Stack</strong>으로 나눌 수 있다.</p>
+<p><img src="/images/stack_1.jpg" alt="stack_img_1"></p>
+<p>스택은 배열과 링크드 리스트로 구현할 수 있는데, 여기서는 링크드리스트를 이용한 스택을 구현해 보겠다.</p>
+<hr>
+<h2 id="2-코드-구현">2. 코드 구현</h2>
+<h3 id="2-1-define-structure">2-1. define structure</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6">typedef</span> <span style="color:#ff79c6">struct</span> <span style="color:#50fa7b">_stacknode</span> Snode;
+<span style="color:#ff79c6">struct</span> <span style="color:#50fa7b">_stacknode</span> {
+    DataType data;
+    Snode <span style="color:#ff79c6">*</span>next;
+};
+<span style="color:#ff79c6">typedef</span> <span style="color:#ff79c6">struct</span> <span style="color:#50fa7b">_stack</span> {
+    Snode <span style="color:#ff79c6">*</span>head;
+    Snode <span style="color:#ff79c6">*</span>tail;
+    Snode <span style="color:#ff79c6">*</span>cur;
+}Stack;
+</code></pre></div>
+<p>스택관리구조체 Stack은 링크드리스트 구조체처럼 head와 tail을 고정적으로 가리키는 노드포인터와 현재 노드를 가리키는 cur 포인터로 이루어져있다.</p>
+<h3 id="2-2-init-stack">2-2. Init Stack</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">initStack</span>(Stack <span style="color:#ff79c6">*</span>sPtr) {
+    sPtr<span style="color:#ff79c6">-&gt;</span>head <span style="color:#ff79c6">=</span> (Snode <span style="color:#ff79c6">*</span>)malloc(<span style="color:#ff79c6">sizeof</span>(Snode)); <span style="color:#6272a4">//헤드 노드 생성
+</span><span style="color:#6272a4"></span>    assert(sPtr<span style="color:#ff79c6">-&gt;</span>head<span style="color:#ff79c6">!=</span><span style="color:#8be9fd;font-style:italic">NULL</span>);
+    sPtr<span style="color:#ff79c6">-&gt;</span>tail <span style="color:#ff79c6">=</span> (Snode <span style="color:#ff79c6">*</span>)malloc(<span style="color:#ff79c6">sizeof</span>(Snode)); <span style="color:#6272a4">//테일 노드 생성
+</span><span style="color:#6272a4"></span>    assert(sPtr<span style="color:#ff79c6">-&gt;</span>tail<span style="color:#ff79c6">!=</span><span style="color:#8be9fd;font-style:italic">NULL</span>);
+    <span style="color:#6272a4">/*헤드노드가 테일노드를, 테일노드가 헤드노드를 가리키게 함*/</span>
+    sPtr<span style="color:#ff79c6">-&gt;</span>head<span style="color:#ff79c6">-&gt;</span>next<span style="color:#ff79c6">=</span>sPtr<span style="color:#ff79c6">-&gt;</span>tail;
+    sPtr<span style="color:#ff79c6">-&gt;</span>tail<span style="color:#ff79c6">-&gt;</span>next<span style="color:#ff79c6">=</span>sPtr<span style="color:#ff79c6">-&gt;</span>tail;
+    sPtr<span style="color:#ff79c6">-&gt;</span>cur <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">NULL</span>;
+    <span style="color:#ff79c6">return</span> ;
+}
+</code></pre></div>
+<p>헤드노드와 테일노드를 메모리 할당해주고 서로 가리키게 해준다</p>
+<h3 id="2-3-push">2-3. Push</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#6272a4">/* stack에 데이터 저장하기 */</span>
+<span style="color:#8be9fd">int</span> <span style="color:#50fa7b">push</span>(Stack <span style="color:#ff79c6">*</span>sPtr, DataType inData) {
+    sPtr<span style="color:#ff79c6">-&gt;</span>cur <span style="color:#ff79c6">=</span> (Snode <span style="color:#ff79c6">*</span>)malloc(<span style="color:#ff79c6">sizeof</span>(Snode)); <span style="color:#6272a4">//새로운 노드 생성
+</span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// 메모리 할당 실패하면 push실패
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">if</span>(sPtr<span style="color:#ff79c6">-&gt;</span>cur<span style="color:#ff79c6">==</span><span style="color:#8be9fd;font-style:italic">NULL</span>) {
+        <span style="color:#ff79c6">return</span> FALSE;
+    }
+    <span style="color:#6272a4">//노드를 헤드노드 바로 뒤에 노드 추가
+</span><span style="color:#6272a4"></span>    sPtr<span style="color:#ff79c6">-&gt;</span>cur<span style="color:#ff79c6">-&gt;</span>next<span style="color:#ff79c6">=</span>sPtr<span style="color:#ff79c6">-&gt;</span>head<span style="color:#ff79c6">-&gt;</span>next;
+    sPtr<span style="color:#ff79c6">-&gt;</span>head<span style="color:#ff79c6">-&gt;</span>next<span style="color:#ff79c6">=</span>sPtr<span style="color:#ff79c6">-&gt;</span>cur;
+    sPtr<span style="color:#ff79c6">-&gt;</span>cur<span style="color:#ff79c6">-&gt;</span>data <span style="color:#ff79c6">=</span> inData; <span style="color:#6272a4">//데이터 복사
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">return</span> TRUE;
+}
+</code></pre></div>
+<p>전달인자로 스택구조체의 주소와 삽입할 데이터를 받는다.<br>
+새 노드를 할당하기위해 메모리를 할당하고 위로 쌓이는 것이므로 (처음 삽입하는경우) 헤드노드 바로 뒤에 노드를 추가해주는데, 두 번째 삽입부터는 노드가 이미 하나있기때문에 그 노드의 뒤로 삽입을 해야한다. 따라서, 새로 할당받은 노드의 다음주소에 그 이전 노드를 가리키게 하고 이전 노드는 새로 할당받은 노드를 가리키게 한다.</p>
+<h3 id="2-4-pop">2-4. Pop</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">pop</span>(Stack <span style="color:#ff79c6">*</span>sPtr, DataType <span style="color:#ff79c6">*</span>popData) {
+    <span style="color:#6272a4">// stack이 비어있으면 pop실패
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">if</span>(sPtr<span style="color:#ff79c6">-&gt;</span>head<span style="color:#ff79c6">-&gt;</span>next <span style="color:#ff79c6">==</span> sPtr<span style="color:#ff79c6">-&gt;</span>tail) {
+        <span style="color:#ff79c6">return</span> FALSE;
+    }
+    <span style="color:#ff79c6">*</span>popData <span style="color:#ff79c6">=</span> sPtr<span style="color:#ff79c6">-&gt;</span>head<span style="color:#ff79c6">-&gt;</span>next<span style="color:#ff79c6">-&gt;</span>data;
+    sPtr<span style="color:#ff79c6">-&gt;</span>cur <span style="color:#ff79c6">=</span> sPtr<span style="color:#ff79c6">-&gt;</span>head<span style="color:#ff79c6">-&gt;</span>next;
+    sPtr<span style="color:#ff79c6">-&gt;</span>head<span style="color:#ff79c6">-&gt;</span>next <span style="color:#ff79c6">=</span> sPtr<span style="color:#ff79c6">-&gt;</span>head<span style="color:#ff79c6">-&gt;</span>next<span style="color:#ff79c6">-&gt;</span>next;
+    free(sPtr<span style="color:#ff79c6">-&gt;</span>cur);
+    <span style="color:#ff79c6">return</span> TRUE;
+}
+</code></pre></div>
+<p>제일 위에있는게 먼저 나가야하므로 popData에 가장 위에있는 노드의 data를 넣어주고,
+제일 위에 있는 노드에 이어져 있는 선을 끊어주고 다음 노드와 이어주게 한다. 그리고 메모리를 해제</p>
+
+    </div>
+    
+
+    
+      
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+    <span class="logo__text">My Devlog</span>
+    <span class="logo__cursor_foot"></span>
+  
+</a>
+
+      <div class="copyright">
+        
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a> & customized by ralpioxxcs</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+
+
+
+
+<script src="/js/menu.js"></script>
+  <script src="/js/theme.js"></script>
+<script src="/js/prism_test.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cs-basic on My Devlog</title>
+    
+    
+    
+    <link>/cs/</link>
+    <description>Recent content in cs-basic on My Devlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Sep 2019 21:59:22 +0900</lastBuildDate>
+    
+	<atom:link href="/cs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LinkedList</title>
+      <link>/cs/linkedlist/</link>
+      <pubDate>Sat, 14 Sep 2019 13:54:02 +0900</pubDate>
+      
+      <guid>/cs/linkedlist/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          비슷한 방식으로 배열이 있지만 배열은 처음부터 메모리를 할당하고 시작하기 때문에, 링크드리스트에 비해 데이터의 삽입이나 삭제가 어렵다. 반면, 링크드리스트는 노드를 데이터를 삽입할 때마다 메모리를 할당하고 데이터를 이어주는 형식이라 배열에 비해 메모리 낭비가 덜 하다는 장점이 있다.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Stack</title>
+      <link>/cs/stack/</link>
+      <pubDate>Fri, 13 Sep 2019 13:54:02 +0900</pubDate>
+      
+      <guid>/cs/stack/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          후입선출(後入先出, Last In First Out; LIFO) 의 자료구조로, 상자의 형태를 한 자료구조이다. 데이터의 삽입을 Push, 데이터의 출력을 Pop이라고 하며, 스택을 크게 두 가지로 나누면 **Ascending Stack** VS **Descending Stack**으로 나눌 수 있다.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>CirculaQueue</title>
+      <link>/cs/circulaqueue/</link>
+      <pubDate>Wed, 18 Sep 2019 21:59:22 +0900</pubDate>
+      
+      <guid>/cs/circulaqueue/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          선입선출(先入先出, First In First Out; FIFO)의 자료구조로써, 데이터가 나가는 위치, 큐의 첫번째 위치를 Front 라고 하고 데이터가 삽입되는 지점, 큐의 마지막 데이터의 한 칸 다음 위치를 Rear 혹은 Back이라고 한다.
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

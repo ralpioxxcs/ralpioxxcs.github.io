@@ -15,7 +15,7 @@
     
     
     <item>
-      <title>ssh 서버 설정</title>
+      <title>SSH 서버 설정</title>
       <link>/post/etc/sshd_config/</link>
       <pubDate>Tue, 29 Sep 2020 19:54:24 +0900</pubDate>
       
@@ -31,47 +31,6 @@
           SSH  시큐어 셸(Secure SHell, SSH)은 네트워크 상의 다른 컴퓨터에 로그인하거나 원격 시스템에서 명령을 실행하고 다른 시스템으로 파일을 복사할 수 있도록 해 주는 응용 프로그램 또는 그 프로토콜을 가리킨다. 기존의 rsh, rlogin, 텔넷 등을 대체하기 위해 설계되었으며, 강력한 인증 방법 및 안전하지 못한 네트워크에서 안전하게 통신을 할 수 있는 기능을 제공한다. -Wiki
  리눅스 개발환경을 구성하다보면 거의 필수적으로 사용하게 되는 ssh(secure shell) 을 구성하는 방법을 알아보자.
   SSH 서버 설치 ubuntu 및 osx 에는 기본적으로 ssh client는 설치돼있다.
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Git_summary</title>
-      <link>/post/etc/git_summary/</link>
-      <pubDate>Wed, 23 Sep 2020 23:30:58 +0900</pubDate>
-      
-      <guid>/post/etc/git_summary/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          git command 정리 basic  git init . : 현재 디렉토리에 로컬 깃 레포지토리 생성 git add . : 변경된 파일 Staging git commit -m : 커밋 메시지 작성과 동시에 커밋   git config  git config --local user.name : username 설정 git config --local user.email : user email 설정 git config --global http.sslVerify false : ssl 인증 비활성화  
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Apt_command</title>
-      <link>/post/etc/apt_command/</link>
-      <pubDate>Tue, 22 Sep 2020 23:15:14 +0900</pubDate>
-      
-      <guid>/post/etc/apt_command/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          APT ? Advanced Package Tool의 약자로 Debian 계열의 리눅스에서 쓰이는 소프트웨어 패키지 관리 명령어 도구이다. sudo apt-get update, sudo apt-get install 등 우분투 환경을 사용해본 사람이라면 한번쯤 써봤을 법한 커맨드이다.
-apt install vs apt-get install apt-get과 apt 커맨드의 차이점은 크게 없다. apt-get 커맨드가 먼저 나오고 다음으로 apt 명령어가 나왔는데, apt-get과 apt-cache 를 하나의 커맨드로 사용하기위해 apt 가 나왔다고 함.
           
         
         </description>

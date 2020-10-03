@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>CirculaQueue :: My Devlog — 기록 &amp; 공부용 개발 블로그</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="1. 개요 선입선출(先入先出, First In First Out; FIFO)의 자료구조로써, 데이터가 나가는 위치, 큐의 첫번째 위치를 Front 라고 하고 데이터가 삽입되는 지점, 큐의 마지막 데이터의 한 칸 다음 위치를 Rear 혹은 Back이라고 한다.
+큐에 데이터를 삽입하는 과정을 Enqueue, 빼는 과정을 Dequeue라고 한다. 선입선출 형태이므로 주로 대기열, 줄서기 같은곳에 쓰이는 구조이다.
+ 2. 선형 큐 (Linear Queue) 예를들어 사이즈가 5인 큐가 있다고 하자. 초기에는 Front와 Rear둘다 0을 가리키고 있는상태이다. 데이터를 하나 삽입하면 Front값을 그대로 Rear값은 하나 증가한다 (1번방 가리키고있는상태) 그 다음 방금 넣었던 데이터를 삭제하면 Front값이 하나 증가하여 1번방을 가리키고, 이 상태는 큐가 비었다는것을 뜻 한다."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/cs/circulaqueue/" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.min.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CirculaQueue"/>
+<meta name="twitter:description" content="선입선출(先入先出, First In First Out; FIFO)의 자료구조로써, 데이터가 나가는 위치, 큐의 첫번째 위치를 Front 라고 하고 데이터가 삽입되는 지점, 큐의 마지막 데이터의 한 칸 다음 위치를 Rear 혹은 Back이라고 한다."/>
+
+
+
+<meta property="og:title" content="CirculaQueue" />
+<meta property="og:description" content="선입선출(先入先出, First In First Out; FIFO)의 자료구조로써, 데이터가 나가는 위치, 큐의 첫번째 위치를 Front 라고 하고 데이터가 삽입되는 지점, 큐의 마지막 데이터의 한 칸 다음 위치를 Rear 혹은 Back이라고 한다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/cs/circulaqueue/" />
+<meta property="article:published_time" content="2019-09-18T21:59:22+09:00" />
+<meta property="article:modified_time" content="2019-09-18T21:59:22+09:00" /><meta property="og:site_name" content="My Devlog" />
+
+
+
+
+
+
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+    <span class="logo__text">My Devlog</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/post">Post</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">
+            More
+            <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+          </li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/cs">Computer Science</a></li>
+              
+            
+              
+                <li><a href="/ps">Problem Solving</a></li>
+              
+            
+              
+                <li><a href="/study">Study</a></li>
+              
+            
+              
+            
+              
+                <li><a href="/til">Today I Learned</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/post">Post</a></li>
+      
+    
+      
+        <li><a href="/cs">Computer Science</a></li>
+      
+    
+      
+        <li><a href="/ps">Problem Solving</a></li>
+      
+    
+      
+        <li><a href="/study">Study</a></li>
+      
+    
+      
+    
+      
+        <li><a href="/til">Today I Learned</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title"><a href="/cs/circulaqueue/">CirculaQueue</a></h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2019-09-18
+        </span>
+
+        
+      
+
+      
+      
+        <span class="post-read-time">— 3 min read</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/data-structure/">Data Structure</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      
+        <h2>Table of Contents</h2>
+        <aside class="table-of-contents"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-개요">1. 개요</a></li>
+    <li><a href="#2-선형-큐-linear-queue">2. 선형 큐 (Linear Queue)</a></li>
+    <li><a href="#3-원형-큐-circula-queue">3. 원형 큐 (Circula Queue)</a></li>
+    <li><a href="#4-코드-구현">4. 코드 구현</a>
+      <ul>
+        <li><a href="#4-1-define-structure">4-1. define structure</a></li>
+        <li><a href="#4-2-create-queue">4-2. Create Queue</a></li>
+        <li><a href="#4-3-enqueue">4-3. Enqueue</a></li>
+        <li><a href="#4-4-dequeue">4-4. Dequeue</a></li>
+        <li><a href="#4-5-check">4-5. Check</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></aside>
+      
+      <h2 id="1-개요">1. 개요</h2>
+<p><img src="/images/queue_1.jpg" alt="queue_img_1"></p>
+<p>선입선출(先入先出, First In First Out; FIFO)의 자료구조로써, 데이터가 나가는 위치, 큐의 첫번째 위치를 Front 라고 하고 데이터가 삽입되는 지점, 큐의 마지막 데이터의 한 칸 다음 위치를 Rear 혹은 Back이라고 한다.<br>
+큐에 데이터를 삽입하는 과정을 <strong>Enqueue</strong>, 빼는 과정을 <strong>Dequeue</strong>라고 한다. 선입선출 형태이므로 주로 대기열, 줄서기 같은곳에 쓰이는 구조이다.</p>
+<hr>
+<h2 id="2-선형-큐-linear-queue">2. 선형 큐 (Linear Queue)</h2>
+<p><img src="/images/queue_2.jpg" alt="queue_img_2"></p>
+<p>예를들어 사이즈가 5인 큐가 있다고 하자. 초기에는 <!-- raw HTML omitted -->Front<!-- raw HTML omitted -->와 <!-- raw HTML omitted -->Rear<!-- raw HTML omitted --> 둘다 0을 가리키고 있는상태이다.
+데이터를 하나 삽입하면 <!-- raw HTML omitted -->Front<!-- raw HTML omitted -->값을 그대로 <!-- raw HTML omitted -->Rear<!-- raw HTML omitted -->값은 하나 증가한다 (1번방 가리키고있는상태) 그 다음 방금 넣었던 데이터를 삭제하면 Front값이 하나 증가하여 1번방을 가리키고, 이 상태는 큐가 비었다는것을 뜻 한다.( Front == Rear )</p>
+<p>데이터를 5개 모두 넣었다면 Rear값은 5가 되어있을것이고 큐가 모두 찼으므로 이 상태는 큐가 포화상태라는 것을 뜻 한다. ( 큐 Size == Rear )</p>
+<p>이렇게만 보면 선형 큐가 문제가 없어보이지만 바로 여기서 선형 큐의 맹점이 드러난다. 현재 큐가 꽉 차있는 상태에서 데이터를 하나 삭제하게되면 Front값이 1로 증가할것이고 빈 방 1개가 나올것이다, 그런데 Front는 1 이고 Rear는 5이므로 큐의 공백조건을 만족하지 못하므로 빈 방이 있음에도 불구하고 큐의 데이터삽입이 불가능하게 된다. 이러한 맹점을 보완한것이 바로 **원형 큐 (Circular Queue)**이다.</p>
+<hr>
+<h2 id="3-원형-큐-circula-queue">3. 원형 큐 (Circula Queue)</h2>
+<p><img src="/images/queue_3.jpg" alt="queue_img_3"></p>
+<p>**원형 큐 (Circular Queue)**는 선입선출(先入先出, First In First Out; FIFO)를 그대로 유지하면서 큐의 입구와 출구를 연결하여 원형으로 만들어 사용하는 구조이다.이때, Front와 Rear사이에 완충지대를 두어 원형 큐의 비어있는 상태와 포화상태를 구분한다. 완충지대의 위치는 항상 Front의 하나 앞방이다. (유동성)</p>
+<p>완충지대 때문에 예를들어 7개의 데이터를 넣는 큐를 만드려면 큐의 사이즈를 8으로 지정하여야한다. 초기에는 Front와 Rear는 0으로 설정한다. 자동으로 완충지대는 [7]번방이 된다.<br>
+원형 큐 에서는 Rear값 및 Front값을 증가시킬때 선형 큐처럼 단순히 +1을 하게되면 원형 큐가 되지 않으므로 &ldquo;%&rdquo; 기능을 활용하여 Rear값을 바꿔준다.<br>
+Rear가 0번방에서 1번방으로 가야하므로 +1을 해준뒤 큐 사이즈만큼 나눠주고 나머지 값을 Rear값으로 하면 된다. ( Rear = (Rear+1) % QueueSize )</p>
+<p>계속 데이터를 삽입하여 7번방까지 데이터를 삽입하였다면 Rear가 완충지대를 가리키고 있을것이고 이 상태는 포화상태를 의미한다. 즉, Rear가 완충지대를 가리키고있다면 큐는 포화상태라는 뜻이다. 공백상태는 선형 큐와 같다. Rear와 Front가 같으면 공백상태를 뜻한다.<br>
+그러면 여기서, 아까 선형 큐가 해결하지 못했던 문제를 해결할 수 있다. 데이터가 꽉 차있는 상태에서 Dequeue를 하여 Front값을 1로 바꿔준다 ( Front = (Front +1) % QueueSize )<br>
+그러면 자동으로 완충지대는 Front가 이동하였으므로 원래위치 7번방에서 (Front의 이전 방) 0번방으로 옮겨갈 것이다.</p>
+<p>따라서, Rear는 완충지대를 가리키고 있지 않으므로 큐의 포화조건에서 탈출하게 되고 데이터의 삽입이 가능해진다. Rear가 7번방이었으므로 위와같이 ( Rear = (Rear+1) % QueueSize ) 를 이용하면 Rear는 0번방을 가리키며 0번방에 데이터를 삽입하게 된다.</p>
+<hr>
+<h2 id="4-코드-구현">4. 코드 구현</h2>
+<h3 id="4-1-define-structure">4-1. define structure</h3>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#ff79c6">typedef</span> <span style="color:#ff79c6">struct</span> <span style="color:#50fa7b">_queue</span> {
+    DataType <span style="color:#ff79c6">*</span>queue;
+    <span style="color:#8be9fd">int</span> qSize;
+    <span style="color:#8be9fd">int</span> front, rear;
+}Queue;
+</code></pre></div>
+큐를 관리하는 구조체<br>
+데이터를 저장할 데이터필드 영역과 큐의 크기를 저장하는 변수, Front와 Rear를 지정하는 변수로 이루어져있다.</p>
+<h3 id="4-2-create-queue">4-2. Create Queue</h3>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8be9fd">void</span> <span style="color:#50fa7b">initQueue</span>(Queue <span style="color:#ff79c6">*</span> qPtr, <span style="color:#8be9fd">int</span> size) {
+    qPtr<span style="color:#ff79c6">-&gt;</span>qSize <span style="color:#ff79c6">=</span> size;
+    qPtr<span style="color:#ff79c6">-&gt;</span>front <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
+    qPtr<span style="color:#ff79c6">-&gt;</span>rear <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>;
+    qPtr<span style="color:#ff79c6">-&gt;</span>queue <span style="color:#ff79c6">=</span> (DataType <span style="color:#ff79c6">*</span>)calloc(qPtr<span style="color:#ff79c6">-&gt;</span>qSize, <span style="color:#ff79c6">sizeof</span>(DataType));
+}
+</code></pre></div>
+큐를 초기화 및 생성하는 함수<br>
+전달인자로 큐의 사이즈를 받아서 큐의 사이즈를 넣어주고, Front와 Rear의 값을 모두 0으로 초기화한뒤 calloc함수를 통해 size만큼 메모리를 할당받는다.</p>
+<h3 id="4-3-enqueue">4-3. Enqueue</h3>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">enqueue</span>(Queue <span style="color:#ff79c6">*</span> qPtr, DataType inData) {
+    <span style="color:#6272a4">// rear가 완충지대에 있으면 put불가 
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">if</span>((qPtr<span style="color:#ff79c6">-&gt;</span>rear<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>)<span style="color:#ff79c6">%</span>qPtr<span style="color:#ff79c6">-&gt;</span>qSize <span style="color:#ff79c6">==</span> qPtr<span style="color:#ff79c6">-&gt;</span>front){
+        <span style="color:#ff79c6">return</span> FALSE;
+    }
+    qPtr<span style="color:#ff79c6">-&gt;</span>queue[qPtr<span style="color:#ff79c6">-&gt;</span>rear] <span style="color:#ff79c6">=</span> inData;
+    qPtr<span style="color:#ff79c6">-&gt;</span>rear<span style="color:#ff79c6">++</span>;
+    qPtr<span style="color:#ff79c6">-&gt;</span>rear <span style="color:#ff79c6">=</span> (qPtr<span style="color:#ff79c6">-&gt;</span>rear)<span style="color:#ff79c6">%</span>qPtr<span style="color:#ff79c6">-&gt;</span>qSize;
+    <span style="color:#ff79c6">return</span> TRUE;
+}
+</code></pre></div>
+큐에 데이터를 삽입하는 함수<br>
+처음 조건문을 걸어서 큐가 비어있는지 확인한다. Rear가 완충지대에 있으면 큐가 포화상태인것이므로 True시 False를 리턴한다.
+False일시, 아래 코드로 내려와서 현재 Rear값에 데이터를 넣어주고, Rear값 증가한다.<br>
+( Rear = (Rear+1) % QueueSize )</p>
+<h3 id="4-4-dequeue">4-4. Dequeue</h3>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">dequeue</span>(Queue <span style="color:#ff79c6">*</span> qPtr, DataType <span style="color:#ff79c6">*</span> getData) {
+    <span style="color:#6272a4">// 큐가 비어있으면 dequeue 불가
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">if</span>( isQueueEmpty(qPtr) ) {
+        <span style="color:#ff79c6">return</span> FALSE;
+    }
+    <span style="color:#ff79c6">*</span>getData <span style="color:#ff79c6">=</span> qPtr<span style="color:#ff79c6">-&gt;</span>queue[qPtr<span style="color:#ff79c6">-&gt;</span>front];
+    qPtr<span style="color:#ff79c6">-&gt;</span>front<span style="color:#ff79c6">++</span>;
+    qPtr<span style="color:#ff79c6">-&gt;</span>front <span style="color:#ff79c6">=</span> (qPtr<span style="color:#ff79c6">-&gt;</span>front)<span style="color:#ff79c6">%</span>qPtr<span style="color:#ff79c6">-&gt;</span>qSize;
+
+    <span style="color:#ff79c6">return</span> TRUE;
+}
+</code></pre></div>
+큐에서 데이터를 빼와 출력하는 함수<br>
+전달인자로 출력할 데이터의 주소값을 받아오고 초기 조건문으로 큐가 비어있는지 함수를 통해 확인,
+비어있지않을시, Front방의 값을 불러오고 front를 하나 증가시킨다.<br>
+( Front = (Front +1) % QueueSize )</p>
+<h3 id="4-5-check">4-5. Check</h3>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8be9fd">int</span> <span style="color:#50fa7b">isQueueEmpty</span>(<span style="color:#ff79c6">const</span> Queue <span style="color:#ff79c6">*</span>qPtr) {
+    <span style="color:#ff79c6">if</span>(qPtr<span style="color:#ff79c6">-&gt;</span> front <span style="color:#ff79c6">==</span> qPtr<span style="color:#ff79c6">-&gt;</span>rear)
+        <span style="color:#ff79c6">return</span> TRUE;
+    <span style="color:#ff79c6">else</span>
+        <span style="color:#ff79c6">return</span> FALSE;
+}
+</code></pre></div>
+큐가 비었는지 확인하는 함수로 Front와 Rear가 같을때 큐가 빈것으로 판별</p>
+
+    </div>
+    
+
+    
+      
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+    <span class="logo__text">My Devlog</span>
+    <span class="logo__cursor_foot"></span>
+  
+</a>
+
+      <div class="copyright">
+        
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a> & customized by ralpioxxcs</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+
+
+
+
+<script src="/js/menu.js"></script>
+  <script src="/js/theme.js"></script>
+<script src="/js/prism_test.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>
