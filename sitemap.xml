@@ -30,22 +30,37 @@
   </url>
   
   <url>
+    <loc>/</loc>
+    <lastmod>2020-10-04T15:49:50+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/ps/</loc>
+    <lastmod>2020-10-04T15:49:50+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ps/</loc>
+    <lastmod>2020-10-04T15:49:50+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-10-04T15:49:50+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/ps/bj_7576/</loc>
+    <lastmod>2020-10-04T15:49:50+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/docker/</loc>
     <lastmod>2020-10-02T18:37:49+09:00</lastmod>
   </url>
   
   <url>
     <loc>/til/docker_run/</loc>
-    <lastmod>2020-10-02T18:37:49+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2020-10-02T18:37:49+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2020-10-02T18:37:49+09:00</lastmod>
   </url>
   
