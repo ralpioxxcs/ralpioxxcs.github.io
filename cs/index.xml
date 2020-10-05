@@ -9,7 +9,7 @@
     <description>Recent content in cs-basic on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Sep 2019 21:59:22 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2020 15:04:49 +0900</lastBuildDate>
     
 	<atom:link href="/cs/index.xml" rel="self" type="application/rss+xml" />
     
@@ -69,6 +69,26 @@
         
         
           선입선출(先入先出, First In First Out; FIFO)의 자료구조로써, 데이터가 나가는 위치, 큐의 첫번째 위치를 Front 라고 하고 데이터가 삽입되는 지점, 큐의 마지막 데이터의 한 칸 다음 위치를 Rear 혹은 Back이라고 한다.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Graph (matrix)</title>
+      <link>/cs/graph_matrix/</link>
+      <pubDate>Sun, 04 Oct 2020 15:04:49 +0900</pubDate>
+      
+      <guid>/cs/graph_matrix/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          그래프 자료구조를 나타내는 방법으로 두 가지가 있다. 하나는 인접 행렬 (adjacent Matrix) 이고 하나는 인접 리스트 (adjacent List)법이있다. 이번 글에서는 인접행렬로 그래프를 나타내는 방법을 알아보겠다. 인접행렬법은 배열로 그래프를 나타내는 것이므로 밀집그래프 (완전그래프)를 표현하는데 적절하다. 2차원 배열 특성상 한번에 메모리를 잡아햐 하기때문에 빈 공간이 생기면 메모리 낭비가 생기므로 밀집그래프를 표현하는데 있어 좋은 방법이다.
           
         
         </description>

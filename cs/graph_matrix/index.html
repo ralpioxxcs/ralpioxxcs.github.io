@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>Graph (matrix) :: My Devlog — 기록 &amp; 공부용 개발 블로그</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Graph  그래프 자료구조를 나타내는 방법으로 두 가지가 있다. 하나는 인접 행렬 (adjacent Matrix) 이고 하나는 인접 리스트 (adjacent List)법이있다. 이번 글에서는 인접행렬로 그래프를 나타내는 방법을 알아보겠다. 인접행렬법은 배열로 그래프를 나타내는 것이므로 밀집그래프 (완전그래프)를 표현하는데 적절하다. 2차원 배열 특성상 한번에 메모리를 잡아햐 하기때문에 빈 공간이 생기면 메모리 낭비가 생기므로 밀집그래프를 표현하는데 있어 좋은 방법이다.
+(※무방향 그래프를 표현 시 대칭성을 고려해야 한다.)
+Implementaion Define extern int check[]; /*---------------------------------------------- GraphMatrix 처리 구조체 및 활용 함수 -----------------------------------------------*/ typedef struct { int graph[MAX_VERTEX][MAX_VERTEX]; /* 인접 행렬법 표기 배열 - 2차원 배열 */ int vertexCnt; /* 정점 개수 */ int edgeCnt; /* 간선 개수 */ }GraphMatrix; void initGraph(GraphMatrix *gm, char *fileName); /*데이터파일에서 그래프의 정점과 간선 정보를 입력 받아 그래프를 초기화하는 함수 */ void outputGraph(GraphMatrix *gm); /* 그래프내의 정점과 간선의 관계를 인접 행렬 형태로 출력 함 */ void DFS_Matrix(GraphMatrix *gm); /* 여러 개의 연결 요소로 구성된 그래프를 깊이 우선 탐색하기 위한 함수(재귀판) - DFS_recursive()함수를 호출하여 처리(이 함수 자체는 재귀하지 않음) */ void DFS_recursive(GraphMatrix *gm, int vNum); /* 연결되어있는 하나의 그래트내의 모든 정점을 재귀호출기법으로 방문하는 함수 */ void visit(int vNum); /* 방문한 정점의 처리 */ void nrDFS_Matrix(GraphMatrix *gm); /* 여러 개의 연결 요소로 구성된 그래프를 깊이 우선 탐색하기 위한 함수(비 재귀판) */ void BFS_Matrix(GraphMatrix *gm); /* 여러 개의 연결 요소로 구성된 그래프를 너비 우선 탐색하기 위한 함수(비 재귀판) */ int countGraphComponents(GraphMatrix *gm); /* 인접 행렬법으로 표기되 그래프 내의 연결 요소별로 정점들을 출력하고 연결 요소의 개수를 리턴하는 함수 */ extern 전역 변수로 방문처리를 확인 할 1차원 배열을 하나 선언해준다."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/cs/graph_matrix/" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.min.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Graph (matrix)"/>
+<meta name="twitter:description" content="그래프 자료구조를 나타내는 방법으로 두 가지가 있다. 하나는 인접 행렬 (adjacent Matrix) 이고 하나는 인접 리스트 (adjacent List)법이있다. 이번 글에서는 인접행렬로 그래프를 나타내는 방법을 알아보겠다. 인접행렬법은 배열로 그래프를 나타내는 것이므로 밀집그래프 (완전그래프)를 표현하는데 적절하다. 2차원 배열 특성상 한번에 메모리를 잡아햐 하기때문에 빈 공간이 생기면 메모리 낭비가 생기므로 밀집그래프를 표현하는데 있어 좋은 방법이다."/>
+
+
+
+<meta property="og:title" content="Graph (matrix)" />
+<meta property="og:description" content="그래프 자료구조를 나타내는 방법으로 두 가지가 있다. 하나는 인접 행렬 (adjacent Matrix) 이고 하나는 인접 리스트 (adjacent List)법이있다. 이번 글에서는 인접행렬로 그래프를 나타내는 방법을 알아보겠다. 인접행렬법은 배열로 그래프를 나타내는 것이므로 밀집그래프 (완전그래프)를 표현하는데 적절하다. 2차원 배열 특성상 한번에 메모리를 잡아햐 하기때문에 빈 공간이 생기면 메모리 낭비가 생기므로 밀집그래프를 표현하는데 있어 좋은 방법이다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/cs/graph_matrix/" />
+<meta property="article:published_time" content="2020-10-04T15:04:49+09:00" />
+<meta property="article:modified_time" content="2020-10-04T15:04:49+09:00" /><meta property="og:site_name" content="My Devlog" />
+
+
+
+
+
+
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+    <span class="logo__text">My Devlog</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/post">Post</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">
+            More
+            <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+          </li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/cs">Computer Science</a></li>
+              
+            
+              
+                <li><a href="/ps">Problem Solving</a></li>
+              
+            
+              
+                <li><a href="/study">Study</a></li>
+              
+            
+              
+            
+              
+                <li><a href="/til">Today I Learned</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/post">Post</a></li>
+      
+    
+      
+        <li><a href="/cs">Computer Science</a></li>
+      
+    
+      
+        <li><a href="/ps">Problem Solving</a></li>
+      
+    
+      
+        <li><a href="/study">Study</a></li>
+      
+    
+      
+    
+      
+        <li><a href="/til">Today I Learned</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title"><a href="/cs/graph_matrix/">Graph (matrix)</a></h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-10-04
+        </span>
+
+        
+      
+
+      
+      
+        <span class="post-read-time">— 7 min read</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/data-structure/">Data Structure</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      
+        <h2>Table of Contents</h2>
+        <aside class="table-of-contents"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#define">Define</a></li>
+    <li><a href="#init-graph">Init graph</a></li>
+    <li><a href="#print-graph">Print graph</a></li>
+    <li><a href="#dfs">DFS</a>
+      <ul>
+        <li><a href="#recursive-dfs">Recursive dfs</a></li>
+        <li><a href="#non-recursive-dfs">Non-Recursive dfs</a></li>
+      </ul>
+    </li>
+    <li><a href="#bfs">BFS</a>
+      <ul>
+        <li><a href="#print-graph-1">print graph</a></li>
+        <li><a href="#print-graph-2">print graph</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></aside>
+      
+      <h1 id="graph">Graph</h1>
+
+  <figure class="left" >
+    <img src="/images/cs/graph_1.jpeg"   />
+    
+  </figure>
+
+
+<p>그래프 자료구조를 나타내는 방법으로 두 가지가 있다. 하나는 인접 행렬 (adjacent Matrix) 이고 하나는 인접 리스트 (adjacent List)법이있다. 이번 글에서는 인접행렬로 그래프를 나타내는 방법을 알아보겠다.
+인접행렬법은 배열로 그래프를 나타내는 것이므로 밀집그래프 (완전그래프)를 표현하는데 적절하다. 2차원 배열 특성상 한번에 메모리를 잡아햐 하기때문에 빈 공간이 생기면 메모리 낭비가 생기므로 밀집그래프를 표현하는데 있어 좋은 방법이다.</p>
+<p>(※무방향 그래프를 표현 시 대칭성을 고려해야 한다.)</p>
+<h1 id="implementaion">Implementaion</h1>
+<h2 id="define">Define</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">extern</span> <span style="color:#66d9ef">int</span> check[];
+<span style="color:#75715e">/*----------------------------------------------
+</span><span style="color:#75715e">       GraphMatrix 처리 구조체 및 활용 함수
+</span><span style="color:#75715e">-----------------------------------------------*/</span>
+<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span>
+{
+    <span style="color:#66d9ef">int</span> graph[MAX_VERTEX][MAX_VERTEX]; <span style="color:#75715e">/* 인접 행렬법 표기 배열 - 2차원 배열 */</span>
+    <span style="color:#66d9ef">int</span> vertexCnt;    <span style="color:#75715e">/* 정점 개수 */</span>
+    <span style="color:#66d9ef">int</span> edgeCnt;      <span style="color:#75715e">/* 간선 개수 */</span>
+}GraphMatrix;
+ 
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initGraph</span>(GraphMatrix <span style="color:#f92672">*</span>gm, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>fileName); <span style="color:#75715e">/*데이터파일에서 그래프의 정점과 간선 정보를 입력 받아 그래프를 초기화하는 함수 */</span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">outputGraph</span>(GraphMatrix <span style="color:#f92672">*</span>gm); <span style="color:#75715e">/* 그래프내의 정점과 간선의 관계를 인접 행렬 형태로 출력 함 */</span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">DFS_Matrix</span>(GraphMatrix <span style="color:#f92672">*</span>gm); <span style="color:#75715e">/* 여러 개의 연결 요소로 구성된 그래프를 깊이 우선 탐색하기 위한 함수(재귀판) - DFS_recursive()함수를 호출하여 처리(이 함수 자체는 재귀하지 않음) */</span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">DFS_recursive</span>(GraphMatrix <span style="color:#f92672">*</span>gm, <span style="color:#66d9ef">int</span> vNum); <span style="color:#75715e">/* 연결되어있는 하나의 그래트내의 모든 정점을 재귀호출기법으로 방문하는 함수 */</span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">visit</span>(<span style="color:#66d9ef">int</span> vNum);   <span style="color:#75715e">/* 방문한 정점의 처리 */</span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">nrDFS_Matrix</span>(GraphMatrix <span style="color:#f92672">*</span>gm); <span style="color:#75715e">/* 여러 개의 연결 요소로 구성된 그래프를 깊이 우선 탐색하기 위한 함수(비 재귀판) */</span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">BFS_Matrix</span>(GraphMatrix <span style="color:#f92672">*</span>gm); <span style="color:#75715e">/* 여러 개의 연결 요소로 구성된 그래프를 너비 우선 탐색하기 위한 함수(비 재귀판) */</span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">countGraphComponents</span>(GraphMatrix <span style="color:#f92672">*</span>gm); <span style="color:#75715e">/* 인접 행렬법으로 표기되 그래프 내의 연결 요소별로 정점들을 출력하고 연결 요소의 개수를 리턴하는 함수 */</span>
+</code></pre></div><p>extern 전역 변수로 방문처리를 확인 할 1차원 배열을 하나 선언해준다. ( 0번방 -&gt; A ,  1번방 -&gt; B&hellip; 이런 식)
+구조체에는 인접행렬을 표기할 배열 graph 2차원 배열, 정점의 갯수와 간선의 갯수를 저장해줄 int형 변수들을 선언해준다.</p>
+<h2 id="init-graph">Init graph</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initGraph</span>(GraphMatrix <span style="color:#f92672">*</span>gm, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>fileName)
+{
+    FILE <span style="color:#f92672">*</span>pFile <span style="color:#f92672">=</span> fopen(fileName, <span style="color:#e6db74">&#34;r&#34;</span>);
+    <span style="color:#66d9ef">char</span> str[<span style="color:#ae81ff">3</span>];
+ 
+    <span style="color:#66d9ef">if</span> (pFile <span style="color:#f92672">==</span> NULL)
+        printf(<span style="color:#e6db74">&#34;불러오기 실패</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    <span style="color:#66d9ef">else</span>
+    {
+        fscanf(pFile, <span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>gm<span style="color:#f92672">-&gt;</span>vertexcnt);     <span style="color:#75715e">// 정점갯수 가져옴
+</span><span style="color:#75715e"></span>        fscanf(pFile, <span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>gm<span style="color:#f92672">-&gt;</span>edgeCnt);       <span style="color:#75715e">// 간선갯수 가져옴
+</span><span style="color:#75715e"></span> 
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> gm<span style="color:#f92672">-&gt;</span>vertexcnt; i<span style="color:#f92672">++</span>) <span style="color:#75715e">// 배열 방 &#39;0&#39; 으로 초기화
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> gm<span style="color:#f92672">-&gt;</span>vertexcnt; j<span style="color:#f92672">++</span>)
+                gm<span style="color:#f92672">-&gt;</span>graph[i][j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+ 
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; k <span style="color:#f92672">&lt;</span> gm<span style="color:#f92672">-&gt;</span>edgeCnt; k<span style="color:#f92672">++</span>)
+        {
+            fscanf(pFile, <span style="color:#e6db74">&#34;%s&#34;</span>, str);
+            str[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> str[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">-</span> <span style="color:#ae81ff">65</span>; str[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> str[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">-</span> <span style="color:#ae81ff">65</span>; <span style="color:#75715e">// ex) str[3] = { 0 , 1 }
+</span><span style="color:#75715e"></span>            gm<span style="color:#f92672">-&gt;</span>graph[str[<span style="color:#ae81ff">0</span>]][str[<span style="color:#ae81ff">1</span>]] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+            gm<span style="color:#f92672">-&gt;</span>graph[str[<span style="color:#ae81ff">1</span>]][str[<span style="color:#ae81ff">0</span>]] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        }
+    }
+}
+</code></pre></div><p>이 글에서는 행렬 텍스트 파일을 파일입출력을 통해 불러와 반복문을 통해 배열에 입력하는 방식으로 구현했다.
+FILE 함수를 통해 파일을 읽어들인 후, 간선, 정점의 갯수를 모두 읽는다.</p>
+<p>우선, 인접행렬영역을 0 (방문X)로 초기화를 해주고, 무방향 그래프에서의 대칭성을 고려하여 간선의 갯수만큼 반복문을 이용해 행렬에 입력한다.</p>
+<h2 id="print-graph">Print graph</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">outputGraph</span>(GraphMatrix <span style="color:#f92672">*</span>gm)
+{
+    printf(<span style="color:#e6db74">&#34;   &#34;</span>);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; k <span style="color:#f92672">&lt;</span> gm<span style="color:#f92672">-&gt;</span>vertexcnt; k<span style="color:#f92672">++</span>)
+        printf(<span style="color:#e6db74">&#34;  [%c]&#34;</span>, <span style="color:#ae81ff">65</span> <span style="color:#f92672">+</span> k);
+    NEWL;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> gm<span style="color:#f92672">-&gt;</span>vertexcnt; i<span style="color:#f92672">++</span>)
+    {
+        printf(<span style="color:#e6db74">&#34;[%c]&#34;</span>, <span style="color:#ae81ff">65</span> <span style="color:#f92672">+</span> i);
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> gm<span style="color:#f92672">-&gt;</span>vertexcnt; j<span style="color:#f92672">++</span>)
+            printf(<span style="color:#e6db74">&#34;%5d&#34;</span>, gm<span style="color:#f92672">-&gt;</span>graph[i][j]);
+        NEWL;
+    }
+}
+</code></pre></div><p> </p>
+<hr>
+<p> </p>
+<h2 id="dfs">DFS</h2>
+<p>
+  <figure class="left" >
+    <img src="/images/cs/graph_2.jpeg"   />
+    
+  </figure>
+
+<br>
+그래프내의 각 정점들을 간선을 타고 중복없이 한 번씩 방문하는 방법으로 깊이 우선 탐색 ( Depth First Search ) 법과 너비 우선 탐색 ( Breadth First Search)법이 있다. 무방향 그래프는 특성상 방향이 없기때문에 순회 순서가 유일하지 않다는 특징이 있다.
+2가지 중 하나인 &ldquo;깊이 우선 탐색(DFS)&rdquo; 는 탐색을 시작할 정점에 연결된 정점 중 하나를 선택하여 들어가고 그 하나와 연결된 정점들 중 또 하나를 선택해서 들어가고 깊이 들어가는 방식으로 탐색하는 기법이다.
+DFS의 과정은 스택을 사용하므로 재귀와 비재귀로 구현 할 수 있다</p>
+<h3 id="recursive-dfs">Recursive dfs</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">DFS_recursive</span>(GraphMatrix <span style="color:#f92672">*</span>gm, <span style="color:#66d9ef">int</span> vNum)
+{
+    <span style="color:#66d9ef">int</span> i;
+    check[vNum] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;  <span style="color:#75715e">/* 방문한 정점 표시를 위해 1 저장 */</span>
+    visit(vNum);   <span style="color:#75715e">/* 방문에 따른 처리 */</span>
+    <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>gm<span style="color:#f92672">-&gt;</span>vertexCnt; <span style="color:#f92672">++</span>i)
+    {
+        <span style="color:#66d9ef">if</span>(gm<span style="color:#f92672">-&gt;</span>graph[vNum][i] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)  <span style="color:#75715e">/* 연결된 정점이 있으면 */</span>
+            <span style="color:#66d9ef">if</span>(check[i] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)   <span style="color:#75715e">/* 또한 방문한 적이 없는 정점이면 */</span>
+                DFS_recursive(gm, i); <span style="color:#75715e">/* 재귀 호출을 통해 정점 방문을 한다 */</span>
+    }
+}
+</code></pre></div><p>전달인자로 받은 정점번호를 방문처리 해준 뒤, ( 1로 바꿈 ) 그 정점을 visit함수 ( 출력 ) 한다.
+다음으로, 정점갯수만큼 반복문을 설정.. 해당 정점에 연결된 정점이 있고 그 정점이 방문배열에서 방문한 적이 없는 정점 이라면 재귀호출을 통해 정점 방문 처리를 해준다.</p>
+<h3 id="non-recursive-dfs">Non-Recursive dfs</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">nrDFS_Matrix</span>(GraphMatrix <span style="color:#f92672">*</span>gm)
+{
+    <span style="color:#66d9ef">int</span> i, j;
+    <span style="color:#66d9ef">int</span> popData;  <span style="color:#75715e">/* pop한 데이터 저장 */</span>
+    Stack stack;
+    initStack(<span style="color:#f92672">&amp;</span>stack);  <span style="color:#75715e">/* 비재귀 처리를 위해 사용될 스택 초기화 */</span>
+ 
+    <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>gm<span style="color:#f92672">-&gt;</span>vertexCnt; <span style="color:#f92672">++</span>i)  <span style="color:#75715e">/* 정점의 방문상태 정보를 저장할 check배열 초기화 */</span>
+        check[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+ 
+    <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>gm<span style="color:#f92672">-&gt;</span>vertexCnt; <span style="color:#f92672">++</span>i)  <span style="color:#75715e">/* 순차적으로 정점을 방문함 */</span>
+    {
+        <span style="color:#66d9ef">if</span>(check[i] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)           <span style="color:#75715e">/* 방문하지 않은 정점을 발견 하면 */</span>
+        {  
+            push(<span style="color:#f92672">&amp;</span>stack, i);
+            check[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;     <span style="color:#75715e">/* 방문상태를 1로 변경 */</span>
+            <span style="color:#66d9ef">while</span>( <span style="color:#f92672">!</span>isStackEmpty(<span style="color:#f92672">&amp;</span>stack) )  <span style="color:#75715e">/* 스택이 비면 한 연결 요소에 대한 순회가 끝난것을 의미함 */</span>
+            {
+                pop(<span style="color:#f92672">&amp;</span>stack, <span style="color:#f92672">&amp;</span>popData);
+                visit(popData);   <span style="color:#75715e">/* 정점 방문 */</span>
+                 
+                <span style="color:#66d9ef">for</span>(j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; j<span style="color:#f92672">&lt;</span>gm<span style="color:#f92672">-&gt;</span>vertexCnt; <span style="color:#f92672">++</span>j)
+                    <span style="color:#66d9ef">if</span>(gm<span style="color:#f92672">-&gt;</span>graph[popData][j] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)  <span style="color:#75715e">/* (!!)pop한 정점과 연결된 j정점이 있고 */</span>
+                        <span style="color:#66d9ef">if</span>(check[j] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)  <span style="color:#75715e">/* j정점이 스택에 들어있지 않으면 */</span>
+                        {
+                            push(<span style="color:#f92672">&amp;</span>stack, j);  <span style="color:#75715e">/* j정점을 스택에 저장하고 */</span>
+                            check[j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;     <span style="color:#75715e">/* 방문상태를 1로 변경 */</span>
+                        }
+            }
+        }
+    }
+    destroyStack(<span style="color:#f92672">&amp;</span>stack);
+    <span style="color:#66d9ef">return</span>;
+}
+</code></pre></div><p>재귀기법을 사용하지 않으면 스택자료구조를 이용해야한다. 스택 초기화 및 생성을 하고 재귀방법과 똑같이 체크배열은 0으로 시켜준다.
+순차적으로 정점을 방문한다. 그 정점이 방문한경우가 아니라면 스택에 그 정점을 푸쉬하고 방문상태를 바꿔준다 ( 1로 ) 그리고 스택이 모두 비면 한 연결 요소에 대해 순회가 끝난것을 의미하므로 스택이 빌 때까지 반복문을 걸어준다.
+pop을 하여 정점을 꺼내고 해당 정점에 연결된 정점이 있고 방문처리 되지 않은 경우 그 인접정점을 스택에 넣고 방문처리를 해준다.
+이런 과정을 모두 하고나면 모든 정점에 대해 순회가 완료된다.</p>
+<h2 id="bfs">BFS</h2>
+<p>
+  <figure class="left" >
+    <img src="/images/cs/graph_3.jpeg"   />
+    
+  </figure>
+
+<br>
+너비우선탐색 (BFS) 는 시작한 정점과 연결된 모든 정점을 탐색하고 다시 시작 정점의 다른 연결된 정점을 찾는 순으로, 깊이 들어가기전에 옆으로 넓게 퍼지며 탐색하는 기법이다. DFS와 달리 너비우선탐색 (BFS) 는 스택을 사용하지않고 큐 자료구조를 이용해야 한다. 따라서 재귀호출기법으로는 구현할 수 없다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">BFS_Matrix</span>(GraphMatrix <span style="color:#f92672">*</span>gm)
+{
+    <span style="color:#66d9ef">int</span> i, j;
+    <span style="color:#66d9ef">int</span> getData;  <span style="color:#75715e">/* dequeue(get)한 데이터 저장 */</span>
+    Queue queue;
+    initQueue(<span style="color:#f92672">&amp;</span>queue, MAX_VERTEX);  <span style="color:#75715e">/* 큐 초기화 */</span>
+ 
+    <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>gm<span style="color:#f92672">-&gt;</span>vertexCnt; <span style="color:#f92672">++</span>i)  <span style="color:#75715e">/* 정점의 방문상태 정보를 저장할 check배열 초기화 */</span>
+        check[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+ 
+    <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>gm<span style="color:#f92672">-&gt;</span>vertexCnt; <span style="color:#f92672">++</span>i)  <span style="color:#75715e">/* 순차적으로 정점을 방문함 */</span>
+    {
+        <span style="color:#66d9ef">if</span>(check[i] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)           <span style="color:#75715e">/* 방문하지 않은 정점을 발견 하면 */</span>
+        {  
+            enqueue(<span style="color:#f92672">&amp;</span>queue, i);
+            check[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;     <span style="color:#75715e">/* 방문상태를 1로 변경 */</span>
+            <span style="color:#66d9ef">while</span>( <span style="color:#f92672">!</span>isQueueEmpty(<span style="color:#f92672">&amp;</span>queue) )  <span style="color:#75715e">/* 스택이 비면 한 연결 요소에 대한 순회가 끝난것을 의미함 */</span>
+            {
+                dequeue(<span style="color:#f92672">&amp;</span>queue, <span style="color:#f92672">&amp;</span>getData);
+                visit(getData);   <span style="color:#75715e">/* 정점 방문 */</span>
+                 
+                <span style="color:#66d9ef">for</span>(j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; j<span style="color:#f92672">&lt;</span>gm<span style="color:#f92672">-&gt;</span>vertexCnt; <span style="color:#f92672">++</span>j)
+                    <span style="color:#66d9ef">if</span>(gm<span style="color:#f92672">-&gt;</span>graph[getData]j] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)  <span style="color:#75715e">/* (!!)pop한 정점과 연결된 j정점이 있고 */</span>
+                        <span style="color:#66d9ef">if</span>(check[j] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)  <span style="color:#75715e">/* j정점이 스택에 들어있지 않으면 */</span>
+                        {
+                            enqueue(<span style="color:#f92672">&amp;</span>queue, j);  <span style="color:#75715e">/* j정점을 스택에 저장하고 */</span>
+                            check[j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;     <span style="color:#75715e">/* 방문상태를 1로 변경 */</span>
+                        }
+            }
+        }
+    }
+    destroyQueue(<span style="color:#f92672">&amp;</span>queue);
+    <span style="color:#66d9ef">return</span>;
+}
+</code></pre></div><p>과정은 DFS랑 매우 비슷하다. 자료구조만 스택에서 큐로 바꾸면 바로 너비우선탐색법이 된다.</p>
+<p>큐를 선언 및 초기화 후 체크배열을 초기화한다. 그리고 시작 정점을 기준으로 하여 큐에 넣고 큐가 빌때까지 반복문, 인접정점, 방문 유무를 판단한다.
+[그림 3] 을 예로들어서 설명하면 &ldquo;1&quot;을 시작으로 Enqueue한뒤, &ldquo;1&quot;의 인접정점 8 , 5, 2 를 순서대로 모두 Enqueue한다. 그리고 Dequeue를 하면 큐 특성상 첫번째로 넣은 값이 나오게 되므로 8을 방문처리하고 8의 인접정점 6 ,4 ,3 을 모두 Enqueue 그 다음 5를 Dequeue&hellip; 5는 인접정점이 없으므로 다음 Dequeue 2를 방문&hellip;이런 식으로 옆으로 넓게 퍼지며 탐색을 한다.</p>
+<h3 id="print-graph-1">print graph</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">countGraphComponents</span>(GraphMatrix <span style="color:#f92672">*</span>gm)
+{
+    <span style="color:#66d9ef">int</span> componetsCount<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;  <span style="color:#75715e">/* 그래프 내의 연결 요소 카운트 변수 */</span>
+    <span style="color:#66d9ef">int</span> i, j;
+    <span style="color:#66d9ef">int</span> popData;  <span style="color:#75715e">/* pop한 데이터 저장 */</span>
+    Stack stack;
+    initStack(<span style="color:#f92672">&amp;</span>stack);  <span style="color:#75715e">/* 비재귀 처리를 위해 사용될 스택 초기화 */</span>
+ 
+    <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>gm<span style="color:#f92672">-&gt;</span>vertexCnt; <span style="color:#f92672">++</span>i)  <span style="color:#75715e">/* 정점의 방문상태 정보를 저장할 check배열 초기화 */</span>
+        check[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+ 
+    <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>gm<span style="color:#f92672">-&gt;</span>vertexCnt; <span style="color:#f92672">++</span>i)  <span style="color:#75715e">/* 순차적으로 정점을 방문함 */</span>
+    {
+        <span style="color:#66d9ef">if</span>(check[i] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)           <span style="color:#75715e">/* 방문하지 않은 정점을 발견 하면 */</span>
+        {  
+            <span style="color:#f92672">++</span>componetsCount;  <span style="color:#75715e">/* 방문하지 않은 정점을 발견되면 연결 요소 카운트를 증가 시킴 */</span>
+            printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">연결 요소 %d : &#34;</span>, componetsCount);
+            push(<span style="color:#f92672">&amp;</span>stack, i);
+            check[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;     <span style="color:#75715e">/* 방문상태를 1로 변경 */</span>
+            <span style="color:#66d9ef">while</span>( <span style="color:#f92672">!</span>isStackEmpty(<span style="color:#f92672">&amp;</span>stack) )  <span style="color:#75715e">/* 스택이 비면 한 연결 요소에 대한 순회가 끝난것을 의미함 */</span>
+            {
+                pop(<span style="color:#f92672">&amp;</span>stack, <span style="color:#f92672">&amp;</span>popData);
+                visit(popData);   <span style="color:#75715e">/* 정점 방문 */</span>
+                 
+                <span style="color:#66d9ef">for</span>(j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; j<span style="color:#f92672">&lt;</span>gm<span style="color:#f92672">-&gt;</span>vertexCnt; <span style="color:#f92672">++</span>j)
+                    <span style="color:#66d9ef">if</span>(gm<span style="color:#f92672">-&gt;</span>graph[popData][j] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)  <span style="color:#75715e">/* (!!)pop한 정점과 연결된 j정점이 있고 */</span>
+                        <span style="color:#66d9ef">if</span>(check[j] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)  <span style="color:#75715e">/* j정점이 스택에 들어있지 않으면 */</span>
+                        {
+                            push(<span style="color:#f92672">&amp;</span>stack, j);  <span style="color:#75715e">/* j정점을 스택에 저장하고 */</span>
+                            check[j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;     <span style="color:#75715e">/* 방문상태를 1로 변경 */</span>
+                        }
+            }
+        }
+    }
+    destroyStack(<span style="color:#f92672">&amp;</span>stack);
+    <span style="color:#66d9ef">return</span> componetsCount;
+}
+</code></pre></div><h3 id="print-graph-2">print graph</h3>
+
+    </div>
+    
+
+    
+      
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+    <span class="logo__text">My Devlog</span>
+    <span class="logo__cursor_foot"></span>
+  
+</a>
+
+      <div class="copyright">
+        
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a> & customized by ralpioxxcs</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+
+
+
+
+<script src="/js/menu.js"></script>
+  <script src="/js/theme.js"></script>
+<script src="/js/prism_test.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

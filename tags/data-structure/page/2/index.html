@@ -38,7 +38,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/tags/data-structure/" />
-<meta property="og:updated_time" content="2019-09-18T21:59:22+09:00" /><meta property="og:site_name" content="My Devlog" />
+<meta property="og:updated_time" content="2020-10-04T15:04:49+09:00" /><meta property="og:site_name" content="My Devlog" />
 
 
 
@@ -70,17 +70,17 @@
     
       
         
-          <li><a href="/">About</a></li>
+          <li><a href="/about">About</a></li>
         
       
         
-          <li><a href="/post/">Post</a></li>
+          <li><a href="/post">Post</a></li>
         
       
       
         <ul class="menu__sub-inner">
           <li class="menu__sub-inner-more-trigger">
-            Show more
+            More
             <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
   <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
@@ -91,13 +91,21 @@
           <ul class="menu__sub-inner-more hidden">
             
               
-                <li><a href="/life">Life</a></li>
+                <li><a href="/cs">Computer Science</a></li>
+              
+            
+              
+                <li><a href="/ps">Problem Solving</a></li>
+              
+            
+              
+                <li><a href="/study">Study</a></li>
               
             
               
             
               
-                <li><a href="/study">T.I.L</a></li>
+                <li><a href="/til">Today I Learned</a></li>
               
             
           </ul>
@@ -109,21 +117,29 @@
   <ul class="menu__inner menu__inner--mobile">
     
       
-        <li><a href="/">About</a></li>
+        <li><a href="/about">About</a></li>
       
     
       
-        <li><a href="/post/">Post</a></li>
+        <li><a href="/post">Post</a></li>
       
     
       
-        <li><a href="/life">Life</a></li>
+        <li><a href="/cs">Computer Science</a></li>
+      
+    
+      
+        <li><a href="/ps">Problem Solving</a></li>
+      
+    
+      
+        <li><a href="/study">Study</a></li>
       
     
       
     
       
-        <li><a href="/study">T.I.L</a></li>
+        <li><a href="/til">Today I Learned</a></li>
       
     
   </ul>
@@ -154,48 +170,7 @@
   <div class="posts">
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/study/datastructure/">Study: Data Structure</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2019-09-18
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 0 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/data-structure/">Data Structure</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/study/datastructure/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/study/datastructure/linkedlist/">LinkedList</a></h1>
+      <h1 class="post-title"><a href="/cs/linkedlist/">LinkedList</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
@@ -231,12 +206,12 @@
         
       </div>
       
-        <div><a class="read-more button" href="/study/datastructure/linkedlist/">Read more →</a></div>
+        <div><a class="read-more button" href="/cs/linkedlist/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/study/datastructure/stack/">Stack</a></h1>
+      <h1 class="post-title"><a href="/cs/stack/">Stack</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
@@ -272,12 +247,12 @@
         
       </div>
       
-        <div><a class="read-more button" href="/study/datastructure/stack/">Read more →</a></div>
+        <div><a class="read-more button" href="/cs/stack/">Read more →</a></div>
       
     </div>
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/study/datastructure/circulaqueue/">CirculaQueue</a></h1>
+      <h1 class="post-title"><a href="/cs/circulaqueue/">CirculaQueue</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
@@ -313,7 +288,48 @@
         
       </div>
       
-        <div><a class="read-more button" href="/study/datastructure/circulaqueue/">Read more →</a></div>
+        <div><a class="read-more button" href="/cs/circulaqueue/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/cs/graph_matrix/">Graph (matrix)</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-04
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 7 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/data-structure/">Data Structure</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          그래프 자료구조를 나타내는 방법으로 두 가지가 있다. 하나는 인접 행렬 (adjacent Matrix) 이고 하나는 인접 리스트 (adjacent List)법이있다. 이번 글에서는 인접행렬로 그래프를 나타내는 방법을 알아보겠다. 인접행렬법은 배열로 그래프를 나타내는 것이므로 밀집그래프 (완전그래프)를 표현하는데 적절하다. 2차원 배열 특성상 한번에 메모리를 잡아햐 하기때문에 빈 공간이 생기면 메모리 낭비가 생기므로 밀집그래프를 표현하는데 있어 좋은 방법이다.
+        
+      </div>
+      
+        <div><a class="read-more button" href="/cs/graph_matrix/">Read more →</a></div>
       
     </div>
     
@@ -352,8 +368,8 @@
 </a>
 
       <div class="copyright">
-        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
-        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+        
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a> & customized by ralpioxxcs</a></span>
       </div>
     
   </div>

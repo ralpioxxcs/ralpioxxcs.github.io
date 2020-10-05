@@ -55,6 +55,21 @@
   </url>
   
   <url>
+    <loc>/cs/</loc>
+    <lastmod>2020-10-04T15:04:49+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/data-structure/</loc>
+    <lastmod>2020-10-04T15:04:49+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/cs/graph_matrix/</loc>
+    <lastmod>2020-10-04T15:04:49+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/docker/</loc>
     <lastmod>2020-10-02T18:37:49+09:00</lastmod>
   </url>
@@ -222,16 +237,6 @@
   <url>
     <loc>/post/hugo/hugo_start_1_install/</loc>
     <lastmod>2019-12-28T14:48:40+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/cs/</loc>
-    <lastmod>2019-09-18T21:59:22+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/data-structure/</loc>
-    <lastmod>2019-09-18T21:59:22+09:00</lastmod>
   </url>
   
   <url>
