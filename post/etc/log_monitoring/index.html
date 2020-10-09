@@ -264,7 +264,7 @@ multitail -s 2 [filename] [filename]    colorscheme 설정 multitail은 자체 c
 <p><code>/usr/local/etc/</code> 경로에 기본 파일이 있고, 기본적으로 <em>syslog, apache</em>등의 여러가지 colorscheme들이 있다.</p>
 <p>기본 명령어에 <code>-cS</code> 옵션을 추가하여 사용하면 된다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">multitail -cS <span style="color:#f92672">[</span>colorscheme<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>logfile<span style="color:#f92672">]</span>
-</code></pre></div><p>공식문서에 따르면 <code>/etc/multitail.conf</code>에 파일이 있다면 적용이 된다고 하는데, 계속해봐도 <code>-cS</code> 옵션을 줘도 colorscheme을 찾을수 없다고 하면서 오류가 났다</p>
+</code></pre></div><p>공식문서에 따르면 <code>/etc/multitail.conf</code>에 파일이 있다면 적용이 된다고 하는데, 계속 <code>-cS</code> 옵션을 줘도 colorscheme을 찾을수 없다고 하면서 오류가 났다</p>
 <p>구글링을 해보니까 <code>.multitailrc</code> 라는 파일을 홈 경로에 만들어주면 된다고 해서 해봤더니 바로 적용이 되었다. 대신 <code>multitail.conf</code>을 참고하여 사용할 colorscheme만 복사해서 사용해야 한다.<br>
  </p>
 <ul>
@@ -284,26 +284,28 @@ cs_re:blue|blue,,bold:^... .. ..:..:..
 cs_re_s:,,bold:^... .. ..:..:.. [^ ]* ([A-z0-9]*)
 cs_re:red:scanlogd.*
 cs_re:yellow:Did.not
+</code></pre></div><p>또한 정규표현식을 지원하므로 자신만의 custom colorscheme을 만들수도 있다.</p>
+<p>예를들어 <code>info</code>, <code>debug</code>, <code>warning</code>등 로그에 사용되는 특정필터들에 색깔을 입혀보고 싶다면, 다음과 같이 설명하면 된다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Text" data-lang="Text"># test
+colorscheme:test
+# date
+cs_re:magenta,,bold: *[a-z]*[0-9]+[a-z]*
+# filter
+cs_re:cyan,,bold:&lt;trace&gt;
+cs_re:green,,bold:&lt;info&gt;
+cs_re:magenta,,bold:&lt;debug&gt;
+cs_re:yellow,,bold:&lt;warning&gt;
+cs_re:red:\[
+cs_re:red:\]
+</code></pre></div><p><code>multitial -cS test file.log -l &quot;ping 8.8.8.8&quot;</code>를 입력한 결과
 
-# apache
-colorscheme:apache:default Apache logging (webserver)
-cs_re:yellow:&#34;[ ]1[0-9][0-9][ ]
-cs_re:green:&#34;[ ][2-3][0-9][0-9][ ]
-cs_re:red:&#34;[ ][4-5][0-9][0-9][ ]
-cs_re:cyan::
-cs_re:green:\[
-cs_re:green:\]
-# ip-adresses in the format x.x.x.x
-cs_re:yellow:^[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}
-# hostnames
-cs_re:yellow:^[^ ]*
-### Apache errorlog
-colorscheme:apache_error:default Apache error logging
-cs_re:yellow:\[client .*\]
-cs_re:red: [^ ]*$
-cs_re:blue:^\[... ... .. ..:..:.. ....\]
+  <figure class="left" >
+    <img src="/images/multitail_.gif"   />
+    
+  </figure>
 
-</code></pre></div>
+</p>
+
     </div>
     
     <div class="pagination">
