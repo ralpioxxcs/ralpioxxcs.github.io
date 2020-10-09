@@ -39,7 +39,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-10-04T15:49:50+09:00" /><meta property="og:site_name" content="My Devlog" />
+<meta property="og:updated_time" content="2020-10-09T20:56:41+09:00" /><meta property="og:site_name" content="My Devlog" />
 
 
 
@@ -182,6 +182,57 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="/post/etc/log_monitoring/">multitail을 이용한 로그 모니터링</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-09
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 2 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/multitail/">multitail</a>&nbsp;
+          
+            #<a href="/tags/log/">log</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            보통 로그파일 실시간으로 보고싶을때 tail 명령어를 사용한다. 하지만 여러 로그를 보고싶을때는 tmux등 화면 분할을 해서 봐야하는데 이 방법은 귀찮다. 이럴때 multitail을 사용하면 간단하게 여러 로그를 모니터링할수 있다.
+설치 apt install multitail을 입력하여 간단하게 설치한다. 맥 유저라면 brew install multitai을 쓴다.
+사용법   1개의 파일 모니터링
+multitail [filename]
+2개의 파일 모니터링 (가로로 분할)
+multitail [filename] [filename]    2개의 파일 모니터링 (세로로 분할)
+multitail -s 2 [filename] [filename]    colorscheme 설정 multitail은 자체 config파일을 통해 로그파일 highlighting을 지원한다.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/etc/log_monitoring/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="/post/etc/sshd_config/">SSH 서버 설정</a></h1>
       <div class="post-meta">
         
@@ -269,55 +320,6 @@
       </div>
       
         <div><a class="read-more button" href="/post/vim/vim_setting_2/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/etc/llvm_install/">Ubuntu LLVM Package 설치</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-07-04
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 1 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/llvm/">llvm</a>&nbsp;
-          
-            #<a href="/tags/clang/">clang</a>&nbsp;
-          
-            #<a href="/tags/linux/">linux</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            이 링크 로 들어가면 아래 사진과 같은 화면이 나오며 각 Release 버전에 맞는 llvm 패키지들을 다운로드 받을 수 있다.  llvm, clang, lld, lldb등 각 패키지에 대한 설명은 여기에 잘 나와있다.
-아무튼 위의 사진에 나온것처럼 설치방법으로는 크게 4가지로 나눌 수 있다.
-소스코드 다운로드 후 직접 빌드 미리 빌드된 바이너리 설치 Automatic Installation Script apt install 커맨드 사용하여 설치  이 포스팅에서는 3번째인 Automatic installation script를 이용하여 설치하는 방법을 다루려고 한다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/etc/llvm_install/">Read more →</a></div>
       
     </div>
     

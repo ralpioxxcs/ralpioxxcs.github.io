@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.74.3" />
     
-      <title>My Devlog — 기록 &amp; 공부용 개발 블로그</title>
+      <title>log :: My Devlog — 기록 &amp; 공부용 개발 블로그</title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="기록 &amp; 공부용 개발 블로그"/>
+<meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
-<link rel="canonical" href="/" />
+<link rel="canonical" href="/tags/log/" />
 
 
 
@@ -30,20 +29,20 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="My Devlog"/>
+<meta name="twitter:title" content="log"/>
 <meta name="twitter:description" content=""/>
 
 
 
-<meta property="og:title" content="My Devlog" />
+<meta property="og:title" content="log" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="/" />
+<meta property="og:url" content="/tags/log/" />
 <meta property="og:updated_time" content="2020-10-09T20:56:41+09:00" /><meta property="og:site_name" content="My Devlog" />
 
 
 
-<link rel="alternate" type="application/rss+xml" href="/index.xml" title="My Devlog" />
+<link rel="alternate" type="application/rss+xml" href="/tags/log/index.xml" title="My Devlog" />
 
 
 
@@ -168,72 +167,14 @@
 
       <div class="content">
         
-  
-  
-
-  
-  
-    
-  
-  
-
-  
-
   <div class="posts">
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/post/hugo/hugo_content_management_3_frontmatter/">Hugo Content Management [3] - Front Matter</a></h1>
+      <h1 class="post-title"><a href="/post/etc/log_monitoring/">multitail을 이용한 로그 모니터링</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2019-12-30
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 1 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/hugo/">Hugo</a>&nbsp;
-          
-            #<a href="/tags/blog/">Blog</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Front Matter? front matter란 작성하고자 하는 컨텐츠(파일)의 제목, 날짜, 작성자 등의 기본적인 속성들을 나타내는 meta-data 형식이다.  Formats Hugo는 다음 3가지의 마크업 언어를 지원한다.
-TOML : +++ YAML : &mdash; JSON : {, }
-을 이용해 front matter의 시작과 끝을 지정한다.  예를들어, a.md라는 새로운 파일을 만들었다면 &mdash; title: &quot;this is title!&quot; date: 2019-12-27T13:39:03+09:00 draft: true &mdash; this is the markdown file 이렇게 파일의 시작 부분에 front matter를 설정해주면,
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/hugo/hugo_content_management_3_frontmatter/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/hugo/hugo_content_management_2_page/">Hugo Content Management [2] - Page Bundle</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2019-12-30
+            2020-10-09
           </span>
 
           
@@ -252,7 +193,9 @@ TOML : +++ YAML : &mdash; JSON : {, }
       
         <span class="post-tags">
           
-            #<a href="/tags/hugo/">Hugo</a>&nbsp;
+            #<a href="/tags/multitail/">multitail</a>&nbsp;
+          
+            #<a href="/tags/log/">log</a>&nbsp;
           
         </span>
       
@@ -262,78 +205,25 @@ TOML : +++ YAML : &mdash; JSON : {, }
       <div class="post-content">
         
           
-            Hugo에서는 Page Bundles이라는 개념을 사용해 컨텐츠를 관리한다. Page Bundles에는 2가지 종류가 있다.
-Leaf Bundle Branch Bundle   Left Bundle left bundle은 단독 페이지를 구성하는데 사용되고, index.md 파일을 포함하는 폴더로 구성된다.
-3 of Leaf Bundle Example content/ ├── project │ ├── index.md ├── posts │ ├── my-post │ │ ├── content1.md │ │ ├── content2.md │ | ├── image1.png │ | └── index.md │ └── study │ ├── first.md │ └── second.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/hugo/hugo_content_management_2_page/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/hugo/hugo_content_management_1_contents_path/">Hugo Content Management [1] - Contents Path</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2019-12-30
-          </span>
-
-          
+            보통 로그파일 실시간으로 보고싶을때 tail 명령어를 사용한다. 하지만 여러 로그를 보고싶을때는 tmux등 화면 분할을 해서 봐야하는데 이 방법은 귀찮다. 이럴때 multitail을 사용하면 간단하게 여러 로그를 모니터링할수 있다.
+설치 apt install multitail을 입력하여 간단하게 설치한다. 맥 유저라면 brew install multitai을 쓴다.
+사용법   1개의 파일 모니터링
+multitail [filename]
+  2개의 파일 모니터링 (가로로 분할)
+multitail [filename] [filename]    2개의 파일 모니터링 (세로로 분할)
+multitail -s 2 [filename] [filename]    colorscheme 설정 multitail은 자체 config파일을 통해 로그파일 highlighting을 지원한다.
             
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 1 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/hugo/">Hugo</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Hugo가 어떻게 각각에 컨텐츠에 접근하고, 폴더를 조직화하여 블로그를 구성하는지 알아보자.
-컨텐츠 구성 (root) └── content └── project | └── index.md // &lt;- <a href="https://example.com/project/">https://example.com/project/</a> ├── posts | ├── firstpost.md // &lt;- <a href="https://example.com/posts/firstpost/">https://example.com/posts/firstpost/</a> | └── secondpost.md // &lt;- <a href="https://example.com/posts/secondpost/">https://example.com/posts/secondpost/</a> └── study ├── first.md // &lt;- <a href="https://example.com/study/first/">https://example.com/study/first/</a> └── second.md // &lt;- <a href="https://example.com/study/second/">https://example.com/study/second/</a> 위 처럼 각각 project, posts, study 총 3개의 카테고리가 있다고 가정할 때, Hugo는 section, slug, path, url의 변수들을 이용해 컨텐츠를 관리한다.
           
         
       </div>
       
-        <div><a class="read-more button" href="/post/hugo/hugo_content_management_1_contents_path/">Read more →</a></div>
+        <div><a class="read-more button" href="/post/etc/log_monitoring/">Read more →</a></div>
       
     </div>
     
     <div class="pagination">
   <div class="pagination__buttons">
     
-      <span class="button previous">
-        <a href="/page/4/">
-          <span class="button__icon">←</span>
-          <span class="button__text">Newer posts</span>
-        </a>
-      </span>
-    
-    
-      <span class="button next">
-        <a href="/page/6/">
-          <span class="button__text">Older posts</span>
-          <span class="button__icon">→</span>
-        </a>
-      </span>
     
   </div>
 </div>
