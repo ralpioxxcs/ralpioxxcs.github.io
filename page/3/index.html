@@ -39,7 +39,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-12-11T20:13:41+09:00" /><meta property="og:site_name" content="My Devlog" />
+<meta property="og:updated_time" content="2020-12-20T19:34:14+09:00" /><meta property="og:site_name" content="My Devlog" />
 
 
 
@@ -182,6 +182,54 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="/post/etc/change_compiler/">Ubuntu Clang 컴파일러 설정</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-07-04
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 1 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/clang/">Clang</a>&nbsp;
+          
+            #<a href="/tags/linux/">linux</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            ubuntu 환경에서 c,cxx 기본 컴파일러는 /usr/bin/cc , /usr/bin/c++에 심볼릭 링크로 지정되어있는데 기본적으로는 gcc와 g++로 설정되어있다.
+빌드시에 컴파일러 경로를 직접 입력해주는 방법도 있지만, /usr/bin/c++의 심볼릭 링크를 변경해줌으로써 고정을 시킬수도 있다.
+이 과정전에 반드시 clang이 설치되어야 한다. clang을 설치하는 방법은 여기에 포스팅해 두었다.
+환경변수 변경 export CC=/usr/bin/clang export CXX=/usr/bin/clang++ 위의 명령어로 환경변수를 바꿔주는 방법으로 컴파일러를 바꿔줄 수 있다. 영구적으로 지정시키고 싶다면 ~/.bashrc에 추가하는 방법으로 환경변수를 설정해주하면 된다. 지정 커맨드 이용 # c++ compiler sudo update-alternatives &ndash;config c++ # c compiler sudo update-alternatives &ndash;config cc 위의 커맨드를 입력하고 아래처럼 결과 창이 나오면 원하는 번호를 입력하여 c와 c++에 지정된 컴파일러 경로를 바꿔준다.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/etc/change_compiler/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="/post/vim/vim_setting_1/">Vim 사용하기 #1 - Install</a></h1>
       <div class="post-meta">
         
@@ -270,47 +318,6 @@ OpenGL 2.
       </div>
       
         <div><a class="read-more button" href="/post/etc/gdb_imagewatch_1/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/cmake/cmake_4/">CMake Part4 - 색상 지정</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-02-01
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 1 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/cmake/">cmake</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/cmake/cmake_4/">Read more →</a></div>
       
     </div>
     

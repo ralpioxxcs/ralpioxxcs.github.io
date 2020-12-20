@@ -38,7 +38,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/post/" />
-<meta property="og:updated_time" content="2020-12-11T20:13:41+09:00" /><meta property="og:site_name" content="My Devlog" />
+<meta property="og:updated_time" content="2020-12-20T19:34:14+09:00" /><meta property="og:site_name" content="My Devlog" />
 
 
 
@@ -168,6 +168,54 @@
       <div class="content">
         
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/cpp/stdvector/">push_back vs. emplace_back</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-12-20
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 3 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/cpp/">cpp</a>&nbsp;
+          
+            #<a href="/tags/std/">std</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            push_back 과 emplace_back 둘 다 실질적으로 수행하는 일은 &ldquo;컨테이너의 끝에 요소를 추가하는것&rdquo; 로 동일하다. 하지만 두 함수를 memory allocation 관점에서 보면 emplace_back 이 훨씬 효율적으로 작동한다.
+push_back 이 호출될 때 객체 관점에서 순서는 다음과 같다.
+ Stack 영역에 생성자를 호출 하면서 임시객체(temporary object)가 할당 된다. 복사 생성자(copy constructor) 혹은 이동 생성자 통해 함수 안에서 또 하나의 temporay object를 생성한다. 생성된 temporary object를 벡터 컨테이너의 끝에 추가한다. 1번의 임시객체가 소멸된다.  이렇게, push_back 함수는 &ldquo;객체&rdquo; 자체를 집어넣는 방식으로, R-value의 임시객체가 필요하다.
+            
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/cpp/stdvector/">Read more →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/post/vim/vim_setting_3/">Vim 사용하기 #3 - C/C++ 개발환경 세팅</a></h1>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>push_back vs. emplace_back :: My Devlog — 기록 &amp; 공부용 개발 블로그</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="push_back 과 emplace_back 둘 다 실질적으로 수행하는 일은 &amp;ldquo;컨테이너의 끝에 요소를 추가하는것&amp;rdquo; 로 동일하다. 하지만 두 함수를 memory allocation 관점에서 보면 emplace_back 이 훨씬 효율적으로 작동한다.
+push_back 이 호출될 때 객체 관점에서 순서는 다음과 같다.
+ Stack 영역에 생성자를 호출 하면서 임시객체(temporary object)가 할당 된다. 복사 생성자(copy constructor) 혹은 이동 생성자 통해 함수 안에서 또 하나의 temporay object를 생성한다. 생성된 temporary object를 벡터 컨테이너의 끝에 추가한다. 1번의 임시객체가 소멸된다.  이렇게, push_back 함수는 &amp;ldquo;객체&amp;rdquo; 자체를 집어넣는 방식으로, R-value의 임시객체가 필요하다."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/post/cpp/stdvector/" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.min.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="push_back vs. emplace_back"/>
+<meta name="twitter:description" content="push_back 과 emplace_back 둘 다 실질적으로 수행하는 일은 &ldquo;컨테이너의 끝에 요소를 추가하는것&rdquo; 로 동일하다. 하지만 두 함수를 memory allocation 관점에서 보면 emplace_back 이 훨씬 효율적으로 작동한다.
+push_back 이 호출될 때 객체 관점에서 순서는 다음과 같다.
+ Stack 영역에 생성자를 호출 하면서 임시객체(temporary object)가 할당 된다. 복사 생성자(copy constructor) 혹은 이동 생성자 통해 함수 안에서 또 하나의 temporay object를 생성한다. 생성된 temporary object를 벡터 컨테이너의 끝에 추가한다. 1번의 임시객체가 소멸된다.  이렇게, push_back 함수는 &ldquo;객체&rdquo; 자체를 집어넣는 방식으로, R-value의 임시객체가 필요하다."/>
+
+
+
+<meta property="og:title" content="push_back vs. emplace_back" />
+<meta property="og:description" content="push_back 과 emplace_back 둘 다 실질적으로 수행하는 일은 &ldquo;컨테이너의 끝에 요소를 추가하는것&rdquo; 로 동일하다. 하지만 두 함수를 memory allocation 관점에서 보면 emplace_back 이 훨씬 효율적으로 작동한다.
+push_back 이 호출될 때 객체 관점에서 순서는 다음과 같다.
+ Stack 영역에 생성자를 호출 하면서 임시객체(temporary object)가 할당 된다. 복사 생성자(copy constructor) 혹은 이동 생성자 통해 함수 안에서 또 하나의 temporay object를 생성한다. 생성된 temporary object를 벡터 컨테이너의 끝에 추가한다. 1번의 임시객체가 소멸된다.  이렇게, push_back 함수는 &ldquo;객체&rdquo; 자체를 집어넣는 방식으로, R-value의 임시객체가 필요하다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/cpp/stdvector/" />
+<meta property="article:published_time" content="2020-12-20T19:34:14+09:00" />
+<meta property="article:modified_time" content="2020-12-20T19:34:14+09:00" /><meta property="og:site_name" content="My Devlog" />
+
+
+
+
+
+
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+    <span class="logo__text">My Devlog</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/post">Post</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">
+            More
+            <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+          </li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/cs">Computer Science</a></li>
+              
+            
+              
+                <li><a href="/ps">Problem Solving</a></li>
+              
+            
+              
+                <li><a href="/study">Study</a></li>
+              
+            
+              
+            
+              
+                <li><a href="/til">Today I Learned</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/post">Post</a></li>
+      
+    
+      
+        <li><a href="/cs">Computer Science</a></li>
+      
+    
+      
+        <li><a href="/ps">Problem Solving</a></li>
+      
+    
+      
+        <li><a href="/study">Study</a></li>
+      
+    
+      
+    
+      
+        <li><a href="/til">Today I Learned</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title"><a href="/post/cpp/stdvector/">push_back vs. emplace_back</a></h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-12-20
+        </span>
+
+        
+          
+            
+
+
+
+          
+        
+      
+
+      
+      
+        <span class="post-read-time">— 3 min read</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/cpp/">cpp</a>&nbsp;
+        
+          #<a href="/tags/std/">std</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      <p><strong>push_back</strong> 과 <strong>emplace_back</strong> 둘 다 실질적으로 수행하는 일은 &ldquo;컨테이너의 끝에 요소를 추가하는것&rdquo; 로 동일하다. 하지만 두 함수를 memory allocation 관점에서 보면 <strong>emplace_back</strong> 이 훨씬 효율적으로 작동한다.</p>
+<p><code>push_back</code> 이 호출될 때 객체 관점에서 순서는 다음과 같다.</p>
+<ol>
+<li>Stack 영역에 생성자를 호출 하면서 임시객체(temporary object)가 할당 된다.</li>
+<li>복사 생성자(copy constructor) 혹은 이동 생성자 통해 함수 안에서 또 하나의 temporay object를  생성한다.</li>
+<li>생성된 temporary object를 벡터 컨테이너의 끝에 추가한다.</li>
+<li>1번의 임시객체가 소멸된다.</li>
+</ol>
+<p>이렇게, <strong>push_back</strong> 함수는 <strong>&ldquo;객체&rdquo;</strong> 자체를 집어넣는 방식으로, <em>R-value</em>의 임시객체가 필요하다. 단순히 하나의 객체를 추가하는 단순한 연산임에도 불구하고, 객체의 생성과 파괴가 한번 이루어진다.</p>
+<p>그에 반해서, <code>emplace_back</code> 는 direct하게 함수 내에서 임시객체를 생성과 이동을 통해 element를 생성한다. 다시말해, 불필요한 임시객체의 생성과 파괴 과정없이 <strong>효율적</strong>으로 벡터 element를 추가한다.</p>
+<h3 id="example">Example</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;chrono&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Foo</span> {
+ <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+  Foo() <span style="color:#f92672">=</span> <span style="color:#66d9ef">default</span>;
+  Foo(<span style="color:#66d9ef">const</span> std<span style="color:#f92672">::</span>string name, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> age) <span style="color:#f92672">:</span> m_name(name), m_age(age) {
+    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Foo()&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+  }
+  <span style="color:#75715e">// declare copy constructor explicitly
+</span><span style="color:#75715e"></span>  Foo(<span style="color:#66d9ef">const</span> Foo<span style="color:#f92672">&amp;</span> rhs) <span style="color:#f92672">:</span> m_name(rhs.m_name), m_age(rhs.m_age) {
+    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Foo() copy&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+  }
+  <span style="color:#75715e">// declare move constructor explicitly
+</span><span style="color:#75715e"></span>  Foo(<span style="color:#66d9ef">const</span> Foo<span style="color:#f92672">&amp;&amp;</span> rhs) <span style="color:#f92672">:</span> m_name(rhs.m_name), m_age(rhs.m_age) {
+    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Foo() move&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+  }
+  <span style="color:#f92672">~</span>Foo() { 
+    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;~Foo()&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl; 
+  }
+
+ <span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+  std<span style="color:#f92672">::</span>string m_name;
+  <span style="color:#66d9ef">int</span> m_age;
+};
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> argv[]) {
+  std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span>Foo<span style="color:#f92672">&gt;</span> foovec;
+  foovec.reserve(<span style="color:#ae81ff">2</span>);
+
+  std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;emplace back&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+  foovec.emplace_back(<span style="color:#e6db74">&#34;tom&#34;</span>, <span style="color:#ae81ff">63</span>);
+  std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;------------------------&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+
+  std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;push back&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+  foovec.push_back(Foo(<span style="color:#e6db74">&#34;chris&#34;</span>, <span style="color:#ae81ff">44</span>));
+  std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;------------------------&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+
+  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="result">Result</h3>
+
+  <figure class="left" >
+    <img src="/images/cpp/result.png"   />
+    
+  </figure>
+
+
+<p>예상했던것처럼, <code>push_back</code> 함수는 객체의 생성, 이동, 소멸이 되었지만, <code>emplace_back</code> 의 경우 객체가 생성만 된것을 확인할 수 있다.</p>
+<h3 id="benchmark">Benchmark</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;chrono&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> argv[]) {
+  std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span>Foo<span style="color:#f92672">&gt;</span> foovec;
+  std<span style="color:#f92672">::</span>size_t count <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>atoi(argv[<span style="color:#ae81ff">2</span>]);
+  foovec.reserve(count);
+
+  <span style="color:#66d9ef">if</span> (argv[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> std<span style="color:#f92672">::</span>string(<span style="color:#e6db74">&#34;push_back&#34;</span>)) {
+    <span style="color:#66d9ef">auto</span> t1 <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>chrono<span style="color:#f92672">::</span>high_resolution_clock<span style="color:#f92672">::</span>now();
+    <span style="color:#66d9ef">for</span> (std<span style="color:#f92672">::</span>size_t idx <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; idx <span style="color:#f92672">&lt;</span> count; idx<span style="color:#f92672">++</span>) {
+      foovec.push_back(Foo(<span style="color:#e6db74">&#34;blank&#34;</span>, <span style="color:#ae81ff">1</span>));
+    }
+    <span style="color:#66d9ef">auto</span> t2 <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>chrono<span style="color:#f92672">::</span>high_resolution_clock<span style="color:#f92672">::</span>now();
+    std<span style="color:#f92672">::</span>chrono<span style="color:#f92672">::</span>duration<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span>, std<span style="color:#f92672">::</span>milli<span style="color:#f92672">&gt;</span> fp_ms <span style="color:#f92672">=</span> t2 <span style="color:#f92672">-</span> t1;
+    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;duration : &#34;</span> <span style="color:#f92672">&lt;&lt;</span> fp_ms.count() <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+
+  } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (argv[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> std<span style="color:#f92672">::</span>string(<span style="color:#e6db74">&#34;emplace_back&#34;</span>)) {
+    <span style="color:#66d9ef">auto</span> t1 <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>chrono<span style="color:#f92672">::</span>high_resolution_clock<span style="color:#f92672">::</span>now();
+    <span style="color:#66d9ef">for</span> (std<span style="color:#f92672">::</span>size_t idx <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; idx <span style="color:#f92672">&lt;</span> count; idx<span style="color:#f92672">++</span>) {
+      foovec.emplace_back(<span style="color:#e6db74">&#34;blank&#34;</span>, <span style="color:#ae81ff">1</span>);
+    }
+    <span style="color:#66d9ef">auto</span> t2 <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>chrono<span style="color:#f92672">::</span>high_resolution_clock<span style="color:#f92672">::</span>now();
+    std<span style="color:#f92672">::</span>chrono<span style="color:#f92672">::</span>duration<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span>, std<span style="color:#f92672">::</span>milli<span style="color:#f92672">&gt;</span> fp_ms <span style="color:#f92672">=</span> t2 <span style="color:#f92672">-</span> t1;
+    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;duration : &#34;</span> <span style="color:#f92672">&lt;&lt;</span> fp_ms.count() <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div>
+  <figure class="left" >
+    <img src="/images/cpp/benchmark.png"   />
+    
+  </figure>
+
+
+<p>1000만개의 elements를 추가하는 간단한 벤치마킹 코드를 돌려봤을때, <code>emplace_back</code>이 <code>push_back</code>보다 약 7ms정도 미세하게 빠르다는것을 확인할 수 있었다.</p>
+<p> </p>
+<hr>
+<p> </p>
+<h2 id="push_back-을-언제-사용해야하는가">push_back 을 언제 사용해야하는가</h2>
+<p>그렇다면, 모든 <code>push_back</code> 을 <code>emplace_back</code>으로 바꾸면 되는것일까? 라고 생각이 들 수 있다. 하지만 아래의 또 다른 예제를 보면 그렇지 않다는것을 알 수 있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">v.push_back(<span style="color:#ae81ff">10000</span>);
+v.emplace_back(<span style="color:#ae81ff">10000</span>);
+</code></pre></div><p>위의 코드만 봤을때, <code>push_back</code>의 경우 명확하다. 숫자 10000을 vector에 추가한다는것을 나타내지만, <code>emplace_back</code>의 경우 확실히 알 수 없다.<br>
+만약 vector가 <code>std::vector&lt;std::vector&lt;int&gt;&gt;</code> 의 형태인 경우, 10000개의 요소를 메모리에 할당하게 된다. <code>push_back</code>을 사용했을 경우 <strong>compile error</strong>를 통해 compile 시점에 개발자가 인지하고 고칠 수 있지만, <code>emplace_back</code>의 경우 개발자가 의도하지 않은 결과를 초래하게 될 수도 있다.</p>
+<p> </p>
+<h2 id="결론">결론</h2>
+<p>위의 벤치마크 코드에서도 확인하였듯이 추가해야 할 element 객체의 크기가 엄청 큰 경우 혹은 performance critical한 경우가 아니라면, 명시적인 타입의 <code>push_back</code>을 사용하여 explicit하고, safety한 코드를 작성하는것도 하나의 방법이라고 생각한다.</p>
+<p> </p>
+<hr>
+<p> </p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://abseil.io/tips/112">https://abseil.io/tips/112</a></li>
+<li><a href="https://en.cppreference.com/w/cpp/container/vector">https://en.cppreference.com/w/cpp/container/vector</a></li>
+</ul>
+
+    </div>
+    
+    <div class="pagination">
+        <div class="pagination__title">
+            <span class="pagination__title-h">
+                Read other posts
+            </span>
+            <hr />
+        </div>
+        <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/post/vim/vim_setting_3/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Vim 사용하기 #3 - C/C&#43;&#43; 개발환경 세팅</span>
+                </a>
+              </span>
+            
+            
+
+                
+        </div>
+    </div>
+      
+
+    
+
+    
+      
+        
+
+      
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+    <span class="logo__text">My Devlog</span>
+    <span class="logo__cursor_foot"></span>
+  
+</a>
+
+      <div class="copyright">
+         
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a> & customized by <a href="https://github.com/ralpioxxcs">ralpioxxcs</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+
+
+
+
+<script src="/js/menu.js"></script>
+  <script src="/js/theme.js"></script>
+<script src="/js/prism_test.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>
