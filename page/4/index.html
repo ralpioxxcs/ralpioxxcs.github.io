@@ -39,7 +39,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-10-09T20:56:41+09:00" /><meta property="og:site_name" content="My Devlog" />
+<meta property="og:updated_time" content="2020-12-11T20:13:41+09:00" /><meta property="og:site_name" content="My Devlog" />
 
 
 
@@ -182,6 +182,50 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="/post/cmake/cmake_3/">CMake Part3 - 프로젝트 구성</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-01-30
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 1 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/cmake/">cmake</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            어떤 프로젝트를 cmake를 이용하여 관리 및 빌드하고자 할때, CMakeLists.txt를작성 시 자주 사용되는 cmake 기본 명령어들이 있다.
+(Root) |- CMakeLists.txt |- README.md |- [src] | |- CMakeListst.txt | |- foo.cpp | |- poo.cpp | |- main.cpp |- [include] | |- foo.h | |- poo.h |- [cmake] | |- options.cmake 이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다. cmake    # [/CMakeListst.txt] cmake_minimum_required(VERSION 3.3) project(foo CXX) # -&gt; 'foo'라는 project를 정의한다.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/cmake/cmake_3/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="/post/cmake/cmake_2/">CMake Part2 - Commands &amp; Vars</a></h1>
       <div class="post-meta">
         
@@ -272,51 +316,6 @@ Cmake의 장점  (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드
       </div>
       
         <div><a class="read-more button" href="/post/cmake/cmake_1/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/hugo/hugo_content_management_4_shortcodes/">Hugo Content Management [4] - Shortcodes</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2019-12-30
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 1 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/hugo/">Hugo</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Shortcode Hugo는 다양한 shortcode 플러그인들을 제공하고 있다. markdown이 제공하는 편리한 문법들로도 충분하지만, code snippet이나 유튜브 영상등을 추가할 때 유용하게 사용할 수 있다.
-　Shotcode 사용하기 shortcode는 { {&lt; shortcodename parameters &gt;} } 의 용법으로 간단하게 사용할 수 있다.
-shortcodename : 사용할 shortcode의 이름 (ex. highlight, figure..) parameter : 사용할 shortcode가 어떻게 정의되었느냐에 따라 달라짐   Built-in Shortcodes figure figure는 마크다운이 제공하는 이미지관련 문법보다 더 다양한 기능을 제공한다. parameter를 통해 첨부할 이미지의 title, caption, link등을 지정할 수 있다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/hugo/hugo_content_management_4_shortcodes/">Read more →</a></div>
       
     </div>
     

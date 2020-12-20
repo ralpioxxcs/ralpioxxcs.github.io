@@ -9,10 +9,50 @@
     <description>Recent content in Tags on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Oct 2020 20:56:41 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 11 Dec 2020 20:13:41 +0900</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>environment</title>
+      <link>/tags/environment/</link>
+      <pubDate>Fri, 11 Dec 2020 20:13:41 +0900</pubDate>
+      
+      <guid>/tags/environment/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>/tags/vim/</link>
+      <pubDate>Fri, 11 Dec 2020 20:13:41 +0900</pubDate>
+      
+      <guid>/tags/vim/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>log</title>
@@ -120,26 +160,6 @@
       <pubDate>Tue, 29 Sep 2020 19:54:24 +0900</pubDate>
       
       <guid>/tags/ssh/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>vim</title>
-      <link>/tags/vim/</link>
-      <pubDate>Fri, 07 Aug 2020 14:26:52 +0900</pubDate>
-      
-      <guid>/tags/vim/</guid>
       <description>
         
           

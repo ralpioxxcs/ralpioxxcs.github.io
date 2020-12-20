@@ -39,7 +39,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-10-09T20:56:41+09:00" /><meta property="og:site_name" content="My Devlog" />
+<meta property="og:updated_time" content="2020-12-11T20:13:41+09:00" /><meta property="og:site_name" content="My Devlog" />
 
 
 
@@ -182,6 +182,55 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="/post/vim/vim_setting_3/">Vim 사용하기 #3 - C/C++ 개발환경 세팅</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-12-11
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 2 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/vim/">vim</a>&nbsp;
+          
+            #<a href="/tags/environment/">environment</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            이번에는 neovim에서 coc.nvim를 이용하여 C/C++ 개발환경을 세팅하는 방법에 대해서 알아보겠다.
+coc.nvim은 Language Server Protocol인 LSP를 지원하는 코드 auto-completion 패키지인데 이전에는 ycm을 사용하다가 너무 무겁기도 하고 개인적으로 환경설정 부분에 불편함 점이 있어 coc.nvim을 사용하게 되었다.
+coc.nvim 설치 vim-plug 설정부분에 아래를 추가해준뒤, :PlugInstall을 해준다.
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'} 참고로, node.js 10.12 버전 이상이 설치되어있어야 한다. node.js가 설치되어있지 않다면 여기를 참고하여 다운로드 및 설치를 진행해주자.
+ cpp language server 설치 이곳을 보면 C/C++ language server에 맞는 configuration example을 제공한다.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/vim/vim_setting_3/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="/post/etc/log_monitoring/">multitail을 이용한 로그 모니터링</a></h1>
       <div class="post-meta">
         
@@ -274,52 +323,6 @@ multitail -s 2 [filename] [filename]    colorscheme 설정 multitail은 자체 c
       </div>
       
         <div><a class="read-more button" href="/post/etc/sshd_config/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/vim/vim_setting_2/">Vim 사용하기 #2 - Plugin</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-08-07
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 3 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/vim/">vim</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Plugins vim을 쓰는 가장 큰 이유중 하나는 바로 이 Plugin에 있지않나 싶다. 설치도 비교적 간편하며, 확장성이 뛰어나서 플러그인을 사용하면서 불편한 부분들을 설정파일을 통해 입맛에 맞게 바꿀 수 있다는 점이 매력적이다.
-지금도 유용하게 사용하는 vim 플러그인들에 대한 소개와 설치방법 및 사용법에 대해 간단히 알아보겠다.
- 플러그인 매니저 설치 vim에서 Plugin들을 설치, 관리해주는 도구들이 여러개 있는데 (Vundle, Pathogen) 그 중에서 나는 junegunn님이 만드신 vim-plug를 사용중이다.
-현재 neovim을 사용중이므로 설치 방법은 아래와 같다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/vim/vim_setting_2/">Read more →</a></div>
       
     </div>
     
