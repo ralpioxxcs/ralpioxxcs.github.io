@@ -5,21 +5,21 @@
     
     
     
-    <link>/tags/cpp/</link>
+    <link>https://ralpioxxcs.github.io/tags/cpp/</link>
     <description>Recent content in cpp on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 20 Dec 2020 19:34:14 +0900</lastBuildDate>
     
-	<atom:link href="/tags/cpp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ralpioxxcs.github.io/tags/cpp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>push_back vs. emplace_back</title>
-      <link>/post/cpp/stdvector/</link>
+      <link>https://ralpioxxcs.github.io/post/cpp/stdvector/</link>
       <pubDate>Sun, 20 Dec 2020 19:34:14 +0900</pubDate>
       
-      <guid>/post/cpp/stdvector/</guid>
+      <guid>https://ralpioxxcs.github.io/post/cpp/stdvector/</guid>
       <description>
         
           

@@ -5,20 +5,20 @@
     
     
     
-    <link>/categories/study/</link>
+    <link>https://ralpioxxcs.github.io/categories/study/</link>
     <description>Recent content in Study on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/categories/study/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ralpioxxcs.github.io/categories/study/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>OpenCV</title>
-      <link>/study/opencv/</link>
+      <link>https://ralpioxxcs.github.io/study/opencv/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/study/opencv/</guid>
+      <guid>https://ralpioxxcs.github.io/study/opencv/</guid>
       <description>
         
           
@@ -35,10 +35,10 @@
     
     <item>
       <title>Linux</title>
-      <link>/study/linux/</link>
+      <link>https://ralpioxxcs.github.io/study/linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/study/linux/</guid>
+      <guid>https://ralpioxxcs.github.io/study/linux/</guid>
       <description>
         
           
@@ -55,10 +55,10 @@
     
     <item>
       <title>Qt</title>
-      <link>/study/qt/</link>
+      <link>https://ralpioxxcs.github.io/study/qt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/study/qt/</guid>
+      <guid>https://ralpioxxcs.github.io/study/qt/</guid>
       <description>
         
           

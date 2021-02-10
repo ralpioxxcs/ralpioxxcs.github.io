@@ -5,21 +5,21 @@
     
     
     
-    <link>/tags/blog/</link>
+    <link>https://ralpioxxcs.github.io/tags/blog/</link>
     <description>Recent content in Blog on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 30 Dec 2019 16:09:14 +0900</lastBuildDate>
     
-	<atom:link href="/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ralpioxxcs.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugo Content Management [3] - Front Matter</title>
-      <link>/post/hugo/hugo_content_management_3_frontmatter/</link>
+      <link>https://ralpioxxcs.github.io/post/hugo/hugo_content_management_3_frontmatter/</link>
       <pubDate>Mon, 30 Dec 2019 16:09:14 +0900</pubDate>
       
-      <guid>/post/hugo/hugo_content_management_3_frontmatter/</guid>
+      <guid>https://ralpioxxcs.github.io/post/hugo/hugo_content_management_3_frontmatter/</guid>
       <description>
         
           
@@ -38,10 +38,10 @@
     
     <item>
       <title>Getting Started Hugo [2] - 블로그 생성</title>
-      <link>/post/hugo/hugo_start_2_quick_start/</link>
+      <link>https://ralpioxxcs.github.io/post/hugo/hugo_start_2_quick_start/</link>
       <pubDate>Sat, 28 Dec 2019 15:34:07 +0900</pubDate>
       
-      <guid>/post/hugo/hugo_start_2_quick_start/</guid>
+      <guid>https://ralpioxxcs.github.io/post/hugo/hugo_start_2_quick_start/</guid>
       <description>
         
           

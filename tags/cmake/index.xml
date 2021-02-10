@@ -5,21 +5,21 @@
     
     
     
-    <link>/tags/cmake/</link>
+    <link>https://ralpioxxcs.github.io/tags/cmake/</link>
     <description>Recent content in cmake on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 01 Feb 2020 15:32:40 +0900</lastBuildDate>
     
-	<atom:link href="/tags/cmake/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ralpioxxcs.github.io/tags/cmake/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CMake Part4 - 색상 지정</title>
-      <link>/post/cmake/cmake_4/</link>
+      <link>https://ralpioxxcs.github.io/post/cmake/cmake_4/</link>
       <pubDate>Sat, 01 Feb 2020 15:32:40 +0900</pubDate>
       
-      <guid>/post/cmake/cmake_4/</guid>
+      <guid>https://ralpioxxcs.github.io/post/cmake/cmake_4/</guid>
       <description>
         
           
@@ -38,10 +38,10 @@ Example message(&amp;#34; &amp;#34;)message( &amp;#34;${BoldGreen}\t\t\t[ BUILD 
     
     <item>
       <title>CMake Part3 - 프로젝트 구성</title>
-      <link>/post/cmake/cmake_3/</link>
+      <link>https://ralpioxxcs.github.io/post/cmake/cmake_3/</link>
       <pubDate>Thu, 30 Jan 2020 14:38:36 +0900</pubDate>
       
-      <guid>/post/cmake/cmake_3/</guid>
+      <guid>https://ralpioxxcs.github.io/post/cmake/cmake_3/</guid>
       <description>
         
           
@@ -59,10 +59,10 @@ Example message(&amp;#34; &amp;#34;)message( &amp;#34;${BoldGreen}\t\t\t[ BUILD 
     
     <item>
       <title>CMake Part2 - Commands &amp; Vars</title>
-      <link>/post/cmake/cmake_2/</link>
+      <link>https://ralpioxxcs.github.io/post/cmake/cmake_2/</link>
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/cmake/cmake_2/</guid>
+      <guid>https://ralpioxxcs.github.io/post/cmake/cmake_2/</guid>
       <description>
         
           
@@ -84,10 +84,10 @@ project(&amp;lt;PROJECT-NAME&amp;gt; [LANGUAGES] [&amp;lt;language-name&amp;gt;.
     
     <item>
       <title>CMake Part1 - Overview</title>
-      <link>/post/cmake/cmake_1/</link>
+      <link>https://ralpioxxcs.github.io/post/cmake/cmake_1/</link>
       <pubDate>Sun, 19 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/cmake/cmake_1/</guid>
+      <guid>https://ralpioxxcs.github.io/post/cmake/cmake_1/</guid>
       <description>
         
           

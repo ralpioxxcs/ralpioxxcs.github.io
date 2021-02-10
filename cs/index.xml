@@ -5,21 +5,21 @@
     
     
     
-    <link>/cs/</link>
+    <link>https://ralpioxxcs.github.io/cs/</link>
     <description>Recent content in cs-basic on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 04 Oct 2020 15:04:49 +0900</lastBuildDate>
     
-	<atom:link href="/cs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ralpioxxcs.github.io/cs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>LinkedList</title>
-      <link>/cs/linkedlist/</link>
+      <link>https://ralpioxxcs.github.io/cs/linkedlist/</link>
       <pubDate>Sat, 14 Sep 2019 13:54:02 +0900</pubDate>
       
-      <guid>/cs/linkedlist/</guid>
+      <guid>https://ralpioxxcs.github.io/cs/linkedlist/</guid>
       <description>
         
           
@@ -36,10 +36,10 @@
     
     <item>
       <title>Stack</title>
-      <link>/cs/stack/</link>
+      <link>https://ralpioxxcs.github.io/cs/stack/</link>
       <pubDate>Fri, 13 Sep 2019 13:54:02 +0900</pubDate>
       
-      <guid>/cs/stack/</guid>
+      <guid>https://ralpioxxcs.github.io/cs/stack/</guid>
       <description>
         
           
@@ -56,10 +56,10 @@
     
     <item>
       <title>CirculaQueue</title>
-      <link>/cs/circulaqueue/</link>
+      <link>https://ralpioxxcs.github.io/cs/circulaqueue/</link>
       <pubDate>Wed, 18 Sep 2019 21:59:22 +0900</pubDate>
       
-      <guid>/cs/circulaqueue/</guid>
+      <guid>https://ralpioxxcs.github.io/cs/circulaqueue/</guid>
       <description>
         
           
@@ -76,10 +76,10 @@
     
     <item>
       <title>Graph (matrix)</title>
-      <link>/cs/graph_matrix/</link>
+      <link>https://ralpioxxcs.github.io/cs/graph_matrix/</link>
       <pubDate>Sun, 04 Oct 2020 15:04:49 +0900</pubDate>
       
-      <guid>/cs/graph_matrix/</guid>
+      <guid>https://ralpioxxcs.github.io/cs/graph_matrix/</guid>
       <description>
         
           

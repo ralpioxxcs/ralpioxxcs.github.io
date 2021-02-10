@@ -5,12 +5,12 @@
     
     
     
-    <link>/study/linux/</link>
+    <link>https://ralpioxxcs.github.io/study/linux/</link>
     <description>Recent content in Linux on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/study/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ralpioxxcs.github.io/study/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

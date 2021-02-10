@@ -5,21 +5,21 @@
     
     
     
-    <link>/</link>
+    <link>https://ralpioxxcs.github.io/</link>
     <description>Recent content on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 20 Dec 2020 19:34:14 +0900</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ralpioxxcs.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>LinkedList</title>
-      <link>/cs/linkedlist/</link>
+      <link>https://ralpioxxcs.github.io/cs/linkedlist/</link>
       <pubDate>Sat, 14 Sep 2019 13:54:02 +0900</pubDate>
       
-      <guid>/cs/linkedlist/</guid>
+      <guid>https://ralpioxxcs.github.io/cs/linkedlist/</guid>
       <description>
         
           
@@ -36,10 +36,10 @@
     
     <item>
       <title>Stack</title>
-      <link>/cs/stack/</link>
+      <link>https://ralpioxxcs.github.io/cs/stack/</link>
       <pubDate>Fri, 13 Sep 2019 13:54:02 +0900</pubDate>
       
-      <guid>/cs/stack/</guid>
+      <guid>https://ralpioxxcs.github.io/cs/stack/</guid>
       <description>
         
           
@@ -56,10 +56,10 @@
     
     <item>
       <title>CirculaQueue</title>
-      <link>/cs/circulaqueue/</link>
+      <link>https://ralpioxxcs.github.io/cs/circulaqueue/</link>
       <pubDate>Wed, 18 Sep 2019 21:59:22 +0900</pubDate>
       
-      <guid>/cs/circulaqueue/</guid>
+      <guid>https://ralpioxxcs.github.io/cs/circulaqueue/</guid>
       <description>
         
           
@@ -76,10 +76,10 @@
     
     <item>
       <title>Qt</title>
-      <link>/study/qt/</link>
+      <link>https://ralpioxxcs.github.io/study/qt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/study/qt/</guid>
+      <guid>https://ralpioxxcs.github.io/study/qt/</guid>
       <description>
         
           
@@ -96,10 +96,10 @@
     
     <item>
       <title>push_back vs. emplace_back</title>
-      <link>/post/cpp/stdvector/</link>
+      <link>https://ralpioxxcs.github.io/post/cpp/stdvector/</link>
       <pubDate>Sun, 20 Dec 2020 19:34:14 +0900</pubDate>
       
-      <guid>/post/cpp/stdvector/</guid>
+      <guid>https://ralpioxxcs.github.io/post/cpp/stdvector/</guid>
       <description>
         
           
@@ -118,10 +118,10 @@ push_back 이 호출될 때 객체 관점에서 순서는 다음과 같다.
     
     <item>
       <title>Vim 사용하기 #3 - C/C&#43;&#43; 개발환경 세팅</title>
-      <link>/post/vim/vim_setting_3/</link>
+      <link>https://ralpioxxcs.github.io/post/vim/vim_setting_3/</link>
       <pubDate>Fri, 11 Dec 2020 20:13:41 +0900</pubDate>
       
-      <guid>/post/vim/vim_setting_3/</guid>
+      <guid>https://ralpioxxcs.github.io/post/vim/vim_setting_3/</guid>
       <description>
         
           
@@ -142,10 +142,10 @@ Plug &amp;#39;neoclide/coc.nvim&amp;#39;, {&amp;#39;tag&amp;#39;: &amp;#39;*&amp
     
     <item>
       <title>multitail을 이용한 로그 모니터링</title>
-      <link>/post/etc/log_monitoring/</link>
+      <link>https://ralpioxxcs.github.io/post/etc/log_monitoring/</link>
       <pubDate>Fri, 09 Oct 2020 20:56:41 +0900</pubDate>
       
-      <guid>/post/etc/log_monitoring/</guid>
+      <guid>https://ralpioxxcs.github.io/post/etc/log_monitoring/</guid>
       <description>
         
           
@@ -168,10 +168,10 @@ multitail -s 2 [filename] [filename]    colorscheme 설정 multitail은 자체 c
     
     <item>
       <title>백준 7576 토마토</title>
-      <link>/ps/bj_7576/</link>
+      <link>https://ralpioxxcs.github.io/ps/bj_7576/</link>
       <pubDate>Sun, 04 Oct 2020 15:49:50 +0900</pubDate>
       
-      <guid>/ps/bj_7576/</guid>
+      <guid>https://ralpioxxcs.github.io/ps/bj_7576/</guid>
       <description>
         
           
@@ -190,10 +190,10 @@ multitail -s 2 [filename] [filename]    colorscheme 설정 multitail은 자체 c
     
     <item>
       <title>Graph (matrix)</title>
-      <link>/cs/graph_matrix/</link>
+      <link>https://ralpioxxcs.github.io/cs/graph_matrix/</link>
       <pubDate>Sun, 04 Oct 2020 15:04:49 +0900</pubDate>
       
-      <guid>/cs/graph_matrix/</guid>
+      <guid>https://ralpioxxcs.github.io/cs/graph_matrix/</guid>
       <description>
         
           
@@ -210,10 +210,10 @@ multitail -s 2 [filename] [filename]    colorscheme 설정 multitail은 자체 c
     
     <item>
       <title>Dokerfile 작성법 정리</title>
-      <link>/til/docker_run/</link>
+      <link>https://ralpioxxcs.github.io/til/docker_run/</link>
       <pubDate>Fri, 02 Oct 2020 18:37:49 +0900</pubDate>
       
-      <guid>/til/docker_run/</guid>
+      <guid>https://ralpioxxcs.github.io/til/docker_run/</guid>
       <description>
         
           
@@ -230,10 +230,10 @@ multitail -s 2 [filename] [filename]    colorscheme 설정 multitail은 자체 c
     
     <item>
       <title>SSH 서버 설정</title>
-      <link>/post/etc/sshd_config/</link>
+      <link>https://ralpioxxcs.github.io/post/etc/sshd_config/</link>
       <pubDate>Tue, 29 Sep 2020 19:54:24 +0900</pubDate>
       
-      <guid>/post/etc/sshd_config/</guid>
+      <guid>https://ralpioxxcs.github.io/post/etc/sshd_config/</guid>
       <description>
         
           
@@ -252,10 +252,10 @@ multitail -s 2 [filename] [filename]    colorscheme 설정 multitail은 자체 c
     
     <item>
       <title>Vim 사용하기 #2 - Plugin</title>
-      <link>/post/vim/vim_setting_2/</link>
+      <link>https://ralpioxxcs.github.io/post/vim/vim_setting_2/</link>
       <pubDate>Fri, 07 Aug 2020 14:26:52 +0900</pubDate>
       
-      <guid>/post/vim/vim_setting_2/</guid>
+      <guid>https://ralpioxxcs.github.io/post/vim/vim_setting_2/</guid>
       <description>
         
           
@@ -275,10 +275,10 @@ multitail -s 2 [filename] [filename]    colorscheme 설정 multitail은 자체 c
     
     <item>
       <title>Ubuntu LLVM Package 설치</title>
-      <link>/post/etc/llvm_install/</link>
+      <link>https://ralpioxxcs.github.io/post/etc/llvm_install/</link>
       <pubDate>Sat, 04 Jul 2020 13:53:55 +0900</pubDate>
       
-      <guid>/post/etc/llvm_install/</guid>
+      <guid>https://ralpioxxcs.github.io/post/etc/llvm_install/</guid>
       <description>
         
           
@@ -297,10 +297,10 @@ multitail -s 2 [filename] [filename]    colorscheme 설정 multitail은 자체 c
     
     <item>
       <title>Ubuntu Clang 컴파일러 설정</title>
-      <link>/post/etc/change_compiler/</link>
+      <link>https://ralpioxxcs.github.io/post/etc/change_compiler/</link>
       <pubDate>Sat, 04 Jul 2020 13:32:39 +0900</pubDate>
       
-      <guid>/post/etc/change_compiler/</guid>
+      <guid>https://ralpioxxcs.github.io/post/etc/change_compiler/</guid>
       <description>
         
           
@@ -320,10 +320,10 @@ multitail -s 2 [filename] [filename]    colorscheme 설정 multitail은 자체 c
     
     <item>
       <title>Vim 사용하기 #1 - Install</title>
-      <link>/post/vim/vim_setting_1/</link>
+      <link>https://ralpioxxcs.github.io/post/vim/vim_setting_1/</link>
       <pubDate>Fri, 19 Jun 2020 21:06:39 +0900</pubDate>
       
-      <guid>/post/vim/vim_setting_1/</guid>
+      <guid>https://ralpioxxcs.github.io/post/vim/vim_setting_1/</guid>
       <description>
         
           
@@ -342,10 +342,10 @@ vim으로 갈아타게 된 결정적인 계기는 VSCode에서 지원하는 c/cp
     
     <item>
       <title>gdb에서 imagewatch 사용하기</title>
-      <link>/post/etc/gdb_imagewatch_1/</link>
+      <link>https://ralpioxxcs.github.io/post/etc/gdb_imagewatch_1/</link>
       <pubDate>Sat, 25 Apr 2020 15:21:05 +0900</pubDate>
       
-      <guid>/post/etc/gdb_imagewatch_1/</guid>
+      <guid>https://ralpioxxcs.github.io/post/etc/gdb_imagewatch_1/</guid>
       <description>
         
           
@@ -366,10 +366,10 @@ vim으로 갈아타게 된 결정적인 계기는 VSCode에서 지원하는 c/cp
     
     <item>
       <title>CMake Part4 - 색상 지정</title>
-      <link>/post/cmake/cmake_4/</link>
+      <link>https://ralpioxxcs.github.io/post/cmake/cmake_4/</link>
       <pubDate>Sat, 01 Feb 2020 15:32:40 +0900</pubDate>
       
-      <guid>/post/cmake/cmake_4/</guid>
+      <guid>https://ralpioxxcs.github.io/post/cmake/cmake_4/</guid>
       <description>
         
           
@@ -388,10 +388,10 @@ Example message(&amp;#34; &amp;#34;)message( &amp;#34;${BoldGreen}\t\t\t[ BUILD 
     
     <item>
       <title>CMake Part3 - 프로젝트 구성</title>
-      <link>/post/cmake/cmake_3/</link>
+      <link>https://ralpioxxcs.github.io/post/cmake/cmake_3/</link>
       <pubDate>Thu, 30 Jan 2020 14:38:36 +0900</pubDate>
       
-      <guid>/post/cmake/cmake_3/</guid>
+      <guid>https://ralpioxxcs.github.io/post/cmake/cmake_3/</guid>
       <description>
         
           
@@ -409,10 +409,10 @@ Example message(&amp;#34; &amp;#34;)message( &amp;#34;${BoldGreen}\t\t\t[ BUILD 
     
     <item>
       <title>About</title>
-      <link>/about/</link>
+      <link>https://ralpioxxcs.github.io/about/</link>
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/about/</guid>
+      <guid>https://ralpioxxcs.github.io/about/</guid>
       <description>
         
           
@@ -434,10 +434,10 @@ I made this blog to improve my development skills and career.
     
     <item>
       <title>CMake Part2 - Commands &amp; Vars</title>
-      <link>/post/cmake/cmake_2/</link>
+      <link>https://ralpioxxcs.github.io/post/cmake/cmake_2/</link>
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/cmake/cmake_2/</guid>
+      <guid>https://ralpioxxcs.github.io/post/cmake/cmake_2/</guid>
       <description>
         
           
@@ -459,10 +459,10 @@ project(&amp;lt;PROJECT-NAME&amp;gt; [LANGUAGES] [&amp;lt;language-name&amp;gt;.
     
     <item>
       <title>CMake Part1 - Overview</title>
-      <link>/post/cmake/cmake_1/</link>
+      <link>https://ralpioxxcs.github.io/post/cmake/cmake_1/</link>
       <pubDate>Sun, 19 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/cmake/cmake_1/</guid>
+      <guid>https://ralpioxxcs.github.io/post/cmake/cmake_1/</guid>
       <description>
         
           
@@ -480,10 +480,10 @@ Cmake의 장점  (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드
     
     <item>
       <title>Hugo Content Management [4] - Shortcodes</title>
-      <link>/post/hugo/hugo_content_management_4_shortcodes/</link>
+      <link>https://ralpioxxcs.github.io/post/hugo/hugo_content_management_4_shortcodes/</link>
       <pubDate>Mon, 30 Dec 2019 18:07:57 +0900</pubDate>
       
-      <guid>/post/hugo/hugo_content_management_4_shortcodes/</guid>
+      <guid>https://ralpioxxcs.github.io/post/hugo/hugo_content_management_4_shortcodes/</guid>
       <description>
         
           
@@ -502,10 +502,10 @@ Cmake의 장점  (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드
     
     <item>
       <title>Hugo Content Management [3] - Front Matter</title>
-      <link>/post/hugo/hugo_content_management_3_frontmatter/</link>
+      <link>https://ralpioxxcs.github.io/post/hugo/hugo_content_management_3_frontmatter/</link>
       <pubDate>Mon, 30 Dec 2019 16:09:14 +0900</pubDate>
       
-      <guid>/post/hugo/hugo_content_management_3_frontmatter/</guid>
+      <guid>https://ralpioxxcs.github.io/post/hugo/hugo_content_management_3_frontmatter/</guid>
       <description>
         
           
@@ -524,10 +524,10 @@ Cmake의 장점  (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드
     
     <item>
       <title>Hugo Content Management [2] - Page Bundle</title>
-      <link>/post/hugo/hugo_content_management_2_page/</link>
+      <link>https://ralpioxxcs.github.io/post/hugo/hugo_content_management_2_page/</link>
       <pubDate>Mon, 30 Dec 2019 15:21:24 +0900</pubDate>
       
-      <guid>/post/hugo/hugo_content_management_2_page/</guid>
+      <guid>https://ralpioxxcs.github.io/post/hugo/hugo_content_management_2_page/</guid>
       <description>
         
           
@@ -546,10 +546,10 @@ Cmake의 장점  (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드
     
     <item>
       <title>Hugo Content Management [1] - Contents Path</title>
-      <link>/post/hugo/hugo_content_management_1_contents_path/</link>
+      <link>https://ralpioxxcs.github.io/post/hugo/hugo_content_management_1_contents_path/</link>
       <pubDate>Mon, 30 Dec 2019 15:07:19 +0900</pubDate>
       
-      <guid>/post/hugo/hugo_content_management_1_contents_path/</guid>
+      <guid>https://ralpioxxcs.github.io/post/hugo/hugo_content_management_1_contents_path/</guid>
       <description>
         
           
@@ -567,10 +567,10 @@ Cmake의 장점  (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드
     
     <item>
       <title>Getting Started Hugo [4] - 레포지토리 연동 및 웹 호스팅</title>
-      <link>/post/hugo/hugo_start_4_remote_repo_link/</link>
+      <link>https://ralpioxxcs.github.io/post/hugo/hugo_start_4_remote_repo_link/</link>
       <pubDate>Sun, 29 Dec 2019 15:02:51 +0900</pubDate>
       
-      <guid>/post/hugo/hugo_start_4_remote_repo_link/</guid>
+      <guid>https://ralpioxxcs.github.io/post/hugo/hugo_start_4_remote_repo_link/</guid>
       <description>
         
           
@@ -590,10 +590,10 @@ Cmake의 장점  (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드
     
     <item>
       <title>Getting Started Hugo [3] - 디렉터리 구조</title>
-      <link>/post/hugo/hugo_start_3_directory/</link>
+      <link>https://ralpioxxcs.github.io/post/hugo/hugo_start_3_directory/</link>
       <pubDate>Sun, 29 Dec 2019 14:57:28 +0900</pubDate>
       
-      <guid>/post/hugo/hugo_start_3_directory/</guid>
+      <guid>https://ralpioxxcs.github.io/post/hugo/hugo_start_3_directory/</guid>
       <description>
         
           
@@ -611,10 +611,10 @@ Cmake의 장점  (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드
     
     <item>
       <title>Getting Started Hugo [2] - 블로그 생성</title>
-      <link>/post/hugo/hugo_start_2_quick_start/</link>
+      <link>https://ralpioxxcs.github.io/post/hugo/hugo_start_2_quick_start/</link>
       <pubDate>Sat, 28 Dec 2019 15:34:07 +0900</pubDate>
       
-      <guid>/post/hugo/hugo_start_2_quick_start/</guid>
+      <guid>https://ralpioxxcs.github.io/post/hugo/hugo_start_2_quick_start/</guid>
       <description>
         
           
@@ -633,10 +633,10 @@ Cmake의 장점  (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드
     
     <item>
       <title>Getting Started Hugo [1] - 설치 및 환경설정</title>
-      <link>/post/hugo/hugo_start_1_install/</link>
+      <link>https://ralpioxxcs.github.io/post/hugo/hugo_start_1_install/</link>
       <pubDate>Sat, 28 Dec 2019 14:48:40 +0900</pubDate>
       
-      <guid>/post/hugo/hugo_start_1_install/</guid>
+      <guid>https://ralpioxxcs.github.io/post/hugo/hugo_start_1_install/</guid>
       <description>
         
           

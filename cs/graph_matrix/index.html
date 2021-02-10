@@ -11,7 +11,7 @@
 Implementaion Define extern int check[]; /*---------------------------------------------- GraphMatrix 처리 구조체 및 활용 함수 -----------------------------------------------*/ typedef struct { int graph[MAX_VERTEX][MAX_VERTEX]; /* 인접 행렬법 표기 배열 - 2차원 배열 */ int vertexCnt; /* 정점 개수 */ int edgeCnt; /* 간선 개수 */ }GraphMatrix; void initGraph(GraphMatrix *gm, char *fileName); /*데이터파일에서 그래프의 정점과 간선 정보를 입력 받아 그래프를 초기화하는 함수 */ void outputGraph(GraphMatrix *gm); /* 그래프내의 정점과 간선의 관계를 인접 행렬 형태로 출력 함 */ void DFS_Matrix(GraphMatrix *gm); /* 여러 개의 연결 요소로 구성된 그래프를 깊이 우선 탐색하기 위한 함수(재귀판) - DFS_recursive()함수를 호출하여 처리(이 함수 자체는 재귀하지 않음) */ void DFS_recursive(GraphMatrix *gm, int vNum); /* 연결되어있는 하나의 그래트내의 모든 정점을 재귀호출기법으로 방문하는 함수 */ void visit(int vNum); /* 방문한 정점의 처리 */ void nrDFS_Matrix(GraphMatrix *gm); /* 여러 개의 연결 요소로 구성된 그래프를 깊이 우선 탐색하기 위한 함수(비 재귀판) */ void BFS_Matrix(GraphMatrix *gm); /* 여러 개의 연결 요소로 구성된 그래프를 너비 우선 탐색하기 위한 함수(비 재귀판) */ int countGraphComponents(GraphMatrix *gm); /* 인접 행렬법으로 표기되 그래프 내의 연결 요소별로 정점들을 출력하고 연결 요소의 개수를 리턴하는 함수 */ extern 전역 변수로 방문처리를 확인 할 1차원 배열을 하나 선언해준다."/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
-<link rel="canonical" href="/cs/graph_matrix/" />
+<link rel="canonical" href="https://ralpioxxcs.github.io/cs/graph_matrix/" />
 
 
 
@@ -20,14 +20,14 @@ Implementaion Define extern int check[]; /*-------------------------------------
 
 
 
-<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/style.min.css">
 
 
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/style.css">
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="/img/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://ralpioxxcs.github.io/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://ralpioxxcs.github.io/img/favicon.png">
 
 
 <meta name="twitter:card" content="summary"/>
@@ -39,7 +39,7 @@ Implementaion Define extern int check[]; /*-------------------------------------
 <meta property="og:title" content="Graph (matrix)" />
 <meta property="og:description" content="그래프 자료구조를 나타내는 방법으로 두 가지가 있다. 하나는 인접 행렬 (adjacent Matrix) 이고 하나는 인접 리스트 (adjacent List)법이있다. 이번 글에서는 인접행렬로 그래프를 나타내는 방법을 알아보겠다. 인접행렬법은 배열로 그래프를 나타내는 것이므로 밀집그래프 (완전그래프)를 표현하는데 적절하다. 2차원 배열 특성상 한번에 메모리를 잡아햐 하기때문에 빈 공간이 생기면 메모리 낭비가 생기므로 밀집그래프를 표현하는데 있어 좋은 방법이다." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/cs/graph_matrix/" />
+<meta property="og:url" content="https://ralpioxxcs.github.io/cs/graph_matrix/" />
 <meta property="article:published_time" content="2020-10-04T15:04:49+09:00" />
 <meta property="article:modified_time" content="2020-10-04T15:04:49+09:00" /><meta property="og:site_name" content="My Devlog" />
 
@@ -173,7 +173,7 @@ Implementaion Define extern int check[]; /*-------------------------------------
   
 
   <div class="post">
-    <h1 class="post-title"><a href="/cs/graph_matrix/">Graph (matrix)</a></h1>
+    <h1 class="post-title"><a href="https://ralpioxxcs.github.io/cs/graph_matrix/">Graph (matrix)</a></h1>
     <div class="post-meta">
       
         <span class="post-date">
@@ -192,7 +192,7 @@ Implementaion Define extern int check[]; /*-------------------------------------
     
       <span class="post-tags">
         
-          #<a href="/tags/data-structure/">Data Structure</a>&nbsp;
+          #<a href="https://ralpioxxcs.github.io/tags/data-structure/">Data Structure</a>&nbsp;
         
       </span>
     
@@ -493,9 +493,9 @@ pop을 하여 정점을 꺼내고 해당 정점에 연결된 정점이 있고 �
 
 
 
-<script src="/js/menu.js"></script>
-<script src="/js/theme.js"></script>
-<script src="/js/prism.js"></script>
+<script src="https://ralpioxxcs.github.io/js/menu.js"></script>
+<script src="https://ralpioxxcs.github.io/js/theme.js"></script>
+<script src="https://ralpioxxcs.github.io/js/prism.js"></script>
 
 
       

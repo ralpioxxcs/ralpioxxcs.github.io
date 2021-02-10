@@ -5,21 +5,21 @@
     
     
     
-    <link>/tags/gdb/</link>
+    <link>https://ralpioxxcs.github.io/tags/gdb/</link>
     <description>Recent content in gdb on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 25 Apr 2020 15:21:05 +0900</lastBuildDate>
     
-	<atom:link href="/tags/gdb/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ralpioxxcs.github.io/tags/gdb/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>gdb에서 imagewatch 사용하기</title>
-      <link>/post/etc/gdb_imagewatch_1/</link>
+      <link>https://ralpioxxcs.github.io/post/etc/gdb_imagewatch_1/</link>
       <pubDate>Sat, 25 Apr 2020 15:21:05 +0900</pubDate>
       
-      <guid>/post/etc/gdb_imagewatch_1/</guid>
+      <guid>https://ralpioxxcs.github.io/post/etc/gdb_imagewatch_1/</guid>
       <description>
         
           
