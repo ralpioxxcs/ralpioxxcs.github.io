@@ -59,7 +59,7 @@ Plug &#39;neoclide/coc.nvim&#39;, {&#39;tag&#39;: &#39;*&#39;, &#39;do&#39;: &#3
 
 
   </head>
-  <body class="">
+  <body class="dark-theme">
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -92,7 +92,7 @@ Plug &#39;neoclide/coc.nvim&#39;, {&#39;tag&#39;: &#39;*&#39;, &#39;do&#39;: &#3
       
         <ul class="menu__sub-inner">
           <li class="menu__sub-inner-more-trigger">
-            More
+            Show more
             <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
   <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
@@ -220,6 +220,19 @@ Plug &#39;neoclide/coc.nvim&#39;, {&#39;tag&#39;: &#39;*&#39;, &#39;do&#39;: &#3
 
     <div class="post-content">
       
+        <h2>Table of Contents</h2>
+        <aside class="table-of-contents"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#cocnvim-설치">coc.nvim 설치</a></li>
+    <li><a href="#cpp-language-server-설치">cpp language server 설치</a></li>
+    <li><a href="#coc-config">coc config</a>
+      <ul>
+        <li><a href="#example">Example</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></aside>
+      
       <p>이번에는 neovim에서 <a href="https://github.com/neoclide/coc.nvim">coc.nvim</a>를 이용하여 C/C++ 개발환경을 세팅하는 방법에 대해서 알아보겠다.<br>
 <strong>coc.nvim</strong>은 Language Server Protocol인 LSP를 지원하는 코드 auto-completion 패키지인데 이전에는 ycm을 사용하다가 너무 무겁기도 하고 개인적으로 환경설정 부분에 불편함 점이 있어 coc.nvim을 사용하게 되었다.</p>
 <h2 id="cocnvim-설치">coc.nvim 설치</h2>
@@ -336,7 +349,26 @@ ln -s build/compile_commands.json .
 
     
       
-        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yourdiscussshortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
       
     

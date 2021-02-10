@@ -48,7 +48,7 @@
 
 
   </head>
-  <body class="">
+  <body class="dark-theme">
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -81,7 +81,7 @@
       
         <ul class="menu__sub-inner">
           <li class="menu__sub-inner-more-trigger">
-            More
+            Show more
             <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
   <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
@@ -182,97 +182,6 @@
   <div class="posts">
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/post/etc/sshd_config/">SSH 서버 설정</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-29
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 1 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/ssh/">ssh</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            SSH  시큐어 셸(Secure SHell, SSH)은 네트워크 상의 다른 컴퓨터에 로그인하거나 원격 시스템에서 명령을 실행하고 다른 시스템으로 파일을 복사할 수 있도록 해 주는 응용 프로그램 또는 그 프로토콜을 가리킨다. 기존의 rsh, rlogin, 텔넷 등을 대체하기 위해 설계되었으며, 강력한 인증 방법 및 안전하지 못한 네트워크에서 안전하게 통신을 할 수 있는 기능을 제공한다. -Wiki
-리눅스 개발환경을 구성하다보면 거의 필수적으로 사용하게 되는 ssh(secure shell) 을 구성하는 방법을 알아보자.
- SSH 서버 설치 ubuntu 및 osx 에는 기본적으로 ssh client는 설치돼있다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/etc/sshd_config/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/vim/vim_setting_2/">Vim 사용하기 #2 - Plugin</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-08-07
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 3 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/vim/">vim</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Plugins vim을 쓰는 가장 큰 이유중 하나는 바로 이 Plugin에 있지않나 싶다. 설치도 비교적 간편하며, 확장성이 뛰어나서 플러그인을 사용하면서 불편한 부분들을 설정파일을 통해 입맛에 맞게 바꿀 수 있다는 점이 매력적이다.
-지금도 유용하게 사용하는 vim 플러그인들에 대한 소개와 설치방법 및 사용법에 대해 간단히 알아보겠다.
- 플러그인 매니저 설치 vim에서 Plugin들을 설치, 관리해주는 도구들이 여러개 있는데 (Vundle, Pathogen) 그 중에서 나는 junegunn님이 만드신 vim-plug를 사용중이다.
-현재 neovim을 사용중이므로 설치 방법은 아래와 같다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/vim/vim_setting_2/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
       <h1 class="post-title"><a href="/post/etc/llvm_install/">Ubuntu LLVM Package 설치</a></h1>
       <div class="post-meta">
         
@@ -318,6 +227,187 @@
       </div>
       
         <div><a class="read-more button" href="/post/etc/llvm_install/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/etc/change_compiler/">Ubuntu Clang 컴파일러 설정</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-07-04
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 1 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/clang/">Clang</a>&nbsp;
+          
+            #<a href="/tags/linux/">linux</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            ubuntu 환경에서 c,cxx 기본 컴파일러는 /usr/bin/cc , /usr/bin/c++에 심볼릭 링크로 지정되어있는데 기본적으로는 gcc와 **g++**로 설정되어있다.
+빌드시에 컴파일러 경로를 직접 입력해주는 방법도 있지만, /usr/bin/c++의 심볼릭 링크를 변경해줌으로써 고정을 시킬수도 있다.
+이 과정전에 반드시 clang이 설치되어야 한다. clang을 설치하는 방법은 여기에 포스팅해 두었다.
+환경변수 변경 export CC=/usr/bin/clang export CXX=/usr/bin/clang++ 위의 명령어로 환경변수를 바꿔주는 방법으로 컴파일러를 바꿔줄 수 있다. 영구적으로 지정시키고 싶다면 ~/.bashrc에 추가하는 방법으로 환경변수를 설정해주하면 된다. 지정 커맨드 이용 # c++ compiler sudo update-alternatives &ndash;config c++ # c compiler sudo update-alternatives &ndash;config cc 위의 커맨드를 입력하고 아래처럼 결과 창이 나오면 원하는 번호를 입력하여 c와 c++에 지정된 컴파일러 경로를 바꿔준다.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/etc/change_compiler/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/vim/vim_setting_1/">Vim 사용하기 #1 - Install</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-06-19
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 2 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/vim/">vim</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            나에게 vim이란 라즈베리파이 같은 리소스나 메모리등 작업 환경이 열악하거나 불가피한 사유로 인터넷을 사용하지 못하는 상황에서 가끔 쓰던 편집기였다.
+hjkl로 움직이고, visual mode, normal mode 등등 처음에는 진입장벽이 높게 느껴져서 손이 안가다가, 마우스를 쓰는게 너무 귀찮아서 일주일만 마음먹고 연습(?)을 했더니 이제는 vim이 없으면 코딩을 할 맛이 안나게 될 정도로 익숙해져버렸다.
+vim으로 갈아타게 된 결정적인 계기는 VSCode에서 지원하는 c/cpp extension이 메모리를 너무 잡아먹어서이다.. (물론 vim도 이것저것 많이 깔면 느려지겠지만)
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/vim/vim_setting_1/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/etc/gdb_imagewatch_1/">gdb에서 imagewatch 사용하기</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-04-25
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 1 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/gdb/">gdb</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            OpenCV 라이브러리를 사용해본 사람이라면 한번쯤 ImageWatch 플러그인을 사용해봤을 것이다.
+디버거에서 확인하기 힘든 Mat 데이터내 index value등 간편한 인터페이스를 통해 직관적으로 확인이 가능한 유용한 툴이다. 하지만, Visual Studio에서만 사용이 가능한 플러그인이라, 리눅스 환경에서 개발을 하는 나에게는 아쉬움이 많았다.
+그러다가 github에서 imagewatch와 비슷하게 간편한 인터페이스로 index값을 확인할 수 있는 프로그램을 발견하게 되었고, 지금까지 아주 유용하게 사용하고 있다.
+   설치조건 gdb imagewatch는 아래의 프로그램들의 설치를 필요로 한다.
+OpenGL 2.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/etc/gdb_imagewatch_1/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/cmake/cmake_4/">CMake Part4 - 색상 지정</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-02-01
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 1 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/cmake/">cmake</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/cmake/cmake_4/">Read more →</a></div>
       
     </div>
     

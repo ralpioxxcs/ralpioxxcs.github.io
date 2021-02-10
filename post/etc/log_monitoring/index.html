@@ -65,7 +65,7 @@ multitail -s 2 [filename] [filename]    colorscheme 설정 multitail은 자체 c
 
 
   </head>
-  <body class="">
+  <body class="dark-theme">
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -98,7 +98,7 @@ multitail -s 2 [filename] [filename]    colorscheme 설정 multitail은 자체 c
       
         <ul class="menu__sub-inner">
           <li class="menu__sub-inner-more-trigger">
-            More
+            Show more
             <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
   <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
@@ -226,6 +226,15 @@ multitail -s 2 [filename] [filename]    colorscheme 설정 multitail은 자체 c
 
     <div class="post-content">
       
+        <h2>Table of Contents</h2>
+        <aside class="table-of-contents"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#설치">설치</a></li>
+    <li><a href="#사용법">사용법</a></li>
+    <li><a href="#colorscheme-설정">colorscheme 설정</a></li>
+  </ul>
+</nav></aside>
+      
       <p>보통 로그파일 실시간으로 보고싶을때 <code>tail</code> 명령어를 사용한다. 하지만 여러 로그를 보고싶을때는 <code>tmux</code>등 화면 분할을 해서 봐야하는데 이 방법은 귀찮다.
 이럴때 <code>multitail</code>을 사용하면 간단하게 여러 로그를 모니터링할수 있다.</p>
 <h2 id="설치">설치</h2>
@@ -342,7 +351,26 @@ cs_re:red:\]
 
     
       
-        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yourdiscussshortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
       
     

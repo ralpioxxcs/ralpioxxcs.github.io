@@ -56,7 +56,7 @@
 
 
   </head>
-  <body class="">
+  <body class="dark-theme">
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -89,7 +89,7 @@
       
         <ul class="menu__sub-inner">
           <li class="menu__sub-inner-more-trigger">
-            More
+            Show more
             <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
   <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
@@ -217,6 +217,18 @@
 
     <div class="post-content">
       
+        <h2>Table of Contents</h2>
+        <aside class="table-of-contents"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#환경변수-변경">환경변수 변경</a></li>
+        <li><a href="#지정-커맨드-이용">지정 커맨드 이용</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></aside>
+      
       <p>ubuntu 환경에서 c,cxx 기본 컴파일러는 <code>/usr/bin/cc</code> , <code>/usr/bin/c++</code>에 심볼릭 링크로 지정되어있는데 기본적으로는 <strong>gcc</strong>와 **g++**로 설정되어있다.</p>
 <p>빌드시에 컴파일러 경로를 직접 입력해주는 방법도 있지만, <code>/usr/bin/c++</code>의 심볼릭 링크를 변경해줌으로써 고정을 시킬수도 있다.</p>
 <p>이 과정전에 반드시 <strong>clang</strong>이 설치되어야 한다.
@@ -280,7 +292,26 @@ sudo update-alternatives --config cc
 
     
       
-        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yourdiscussshortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
       
     

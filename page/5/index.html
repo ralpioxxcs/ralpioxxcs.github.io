@@ -48,7 +48,7 @@
 
 
   </head>
-  <body class="">
+  <body class="dark-theme">
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -81,7 +81,7 @@
       
         <ul class="menu__sub-inner">
           <li class="menu__sub-inner-more-trigger">
-            More
+            Show more
             <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
   <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
@@ -182,11 +182,11 @@
   <div class="posts">
     
     <div class="post on-list">
-      <h1 class="post-title"><a href="/post/cmake/cmake_1/">CMake Part1 - Overview</a></h1>
+      <h1 class="post-title"><a href="/post/hugo/hugo_start_1_install/">Getting Started Hugo [1] - 설치 및 환경설정</a></h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-01-19
+            2019-12-28
           </span>
 
           
@@ -198,51 +198,7 @@
         
         
         
-          <span class="post-read-time">— 1 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/cmake/">cmake</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            CMake? cmake란 cross platform 기반의 프로젝트 전체 빌드 프로세스를 관리해주는 유용한 툴이다. 직접 빌드를 수행하지는 않지만 지정된 OS에 맞는 Make파일 혹은 **솔루션(sln)**파일의 생성을 도와주어 소스코드 빌드를 편리하게 해준다.
-Cmake의 장점  (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드가 하나 있다고 가정하자. 이 소스코드를 각각의 다른 OS에서 빌드할 때, 윈도우즈라면 Visual Studio를, OSX라면 Xcode, Linux라면 Makefile을 이용할것이다. Cmake는 이런 귀찮은 과정을 CMakeLists.txt라는 프로젝트를 정의하는 파일을 하나 만듦으로써, 각 OS에 맞는 Build tool을 파악해 build command만 입력하면 될수 있도록 해준다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/cmake/cmake_1/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/hugo/hugo_content_management_4_shortcodes/">Hugo Content Management [4] - Shortcodes</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2019-12-30
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 1 min read</span>
+          <span class="post-read-time">— 3 min read</span>
         
       </div>
 
@@ -259,61 +215,14 @@ Cmake의 장점  (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드
       <div class="post-content">
         
           
-            Shortcode Hugo는 다양한 shortcode 플러그인들을 제공하고 있다. markdown이 제공하는 편리한 문법들로도 충분하지만, code snippet이나 유튜브 영상등을 추가할 때 유용하게 사용할 수 있다.
-　Shotcode 사용하기 shortcode는 { {&lt; shortcodename parameters &gt;} } 의 용법으로 간단하게 사용할 수 있다.
-shortcodename : 사용할 shortcode의 이름 (ex. highlight, figure..) parameter : 사용할 shortcode가 어떻게 정의되었느냐에 따라 달라짐   Built-in Shortcodes figure figure는 마크다운이 제공하는 이미지관련 문법보다 더 다양한 기능을 제공한다. parameter를 통해 첨부할 이미지의 title, caption, link등을 지정할 수 있다.
+            Hugo? Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 Jekyll (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다.
+Install 설치방법은 install hugo에 각 OS별로 설치를 하는 방법이 잘 안내되어 있다.
+OSX brew install hugo Debian, Ubuntu sudo apt-get install hugo package installer를 이용하는 방법외에는 Release 다운로드 사이트에서 직접 다운로드하여 설치하는 방법도 있다.
           
         
       </div>
       
-        <div><a class="read-more button" href="/post/hugo/hugo_content_management_4_shortcodes/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/hugo/hugo_content_management_3_frontmatter/">Hugo Content Management [3] - Front Matter</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2019-12-30
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 1 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/hugo/">Hugo</a>&nbsp;
-          
-            #<a href="/tags/blog/">Blog</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Front Matter? front matter란 작성하고자 하는 컨텐츠(파일)의 제목, 날짜, 작성자 등의 기본적인 속성들을 나타내는 meta-data 형식이다.  Formats Hugo는 다음 3가지의 마크업 언어를 지원한다.
-TOML : +++ YAML : &mdash; JSON : {, }
-을 이용해 front matter의 시작과 끝을 지정한다.  예를들어, a.md라는 새로운 파일을 만들었다면 &mdash; title: &quot;this is title!&quot; date: 2019-12-27T13:39:03+09:00 draft: true &mdash; this is the markdown file 이렇게 파일의 시작 부분에 front matter를 설정해주면,
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/hugo/hugo_content_management_3_frontmatter/">Read more →</a></div>
+        <div><a class="read-more button" href="/post/hugo/hugo_start_1_install/">Read more →</a></div>
       
     </div>
     
@@ -327,13 +236,6 @@ TOML : +++ YAML : &mdash; JSON : {, }
         </a>
       </span>
     
-    
-      <span class="button next">
-        <a href="/page/6/">
-          <span class="button__text">Older posts</span>
-          <span class="button__icon">→</span>
-        </a>
-      </span>
     
   </div>
 </div>

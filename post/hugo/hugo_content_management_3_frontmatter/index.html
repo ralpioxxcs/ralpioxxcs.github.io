@@ -53,7 +53,7 @@
 
 
   </head>
-  <body class="">
+  <body class="dark-theme">
     <div class="container">
       <header class="header">
   <span class="header__inner">
@@ -86,7 +86,7 @@
       
         <ul class="menu__sub-inner">
           <li class="menu__sub-inner-more-trigger">
-            More
+            Show more
             <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
   <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
 </svg>
@@ -214,6 +214,23 @@
 
     <div class="post-content">
       
+        <h2>Table of Contents</h2>
+        <aside class="table-of-contents"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#front-matter"><strong>Front Matter?</strong></a></li>
+    <li><a href="#formats"><strong>Formats</strong></a></li>
+    <li><a href="#variables"><strong>Variables</strong></a>
+      <ul>
+        <li><a href="#title">title</a></li>
+        <li><a href="#description">description</a></li>
+        <li><a href="#draft">draft</a></li>
+        <li><a href="#weight">weight</a></li>
+      </ul>
+    </li>
+    <li><a href="#accss-to-front-matter"><strong>Accss to front matter</strong></a></li>
+  </ul>
+</nav></aside>
+      
       <h2 id="front-matter"><strong>Front Matter?</strong></h2>
 <p>front matter란 작성하고자 하는 컨텐츠(파일)의 제목, 날짜, 작성자 등의 기본적인 속성들을 나타내는 meta-data 형식이다.
 <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
@@ -286,7 +303,26 @@ this is the markdown file</code></pre></div>
 
     
       
-        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yourdiscussshortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
       
     
