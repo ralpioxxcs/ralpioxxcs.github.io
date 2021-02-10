@@ -354,45 +354,5 @@
         </description>
     </item>
     
-    <item>
-      <title>OpenCV</title>
-      <link>https://ralpioxxcs.github.io/tags/opencv/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ralpioxxcs.github.io/tags/opencv/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Qt</title>
-      <link>https://ralpioxxcs.github.io/tags/qt/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ralpioxxcs.github.io/tags/qt/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          
-          
-        
-        </description>
-    </item>
-    
   </channel>
 </rss>
