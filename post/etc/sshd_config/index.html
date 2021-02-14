@@ -24,6 +24,8 @@
 
 
 <link rel="stylesheet" href="https://ralpioxxcs.github.io/style.css">
+<link rel="stylesheet" href="https://unpkg.com/dracula-prism/css/dracula-prism.css">
+
 
 
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://ralpioxxcs.github.io/img/apple-touch-icon-144-precomposed.png">
@@ -239,7 +241,7 @@ Port <span style="color:#ae81ff">8282</span>
 <h3 id="인증방식">인증방식</h3>
 <p>원격지에서 ssh 서버로 접근할 때의 인증방식은 기본적으로 패스워드 인증방식을 사용한다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Shell" data-lang="Shell"><span style="color:#75715e">#PubkeyAuthentication yes # 공개키 인증방식 사용</span>
-PasswordAuthentication yes <span style="color:#75715e"># id, passwd 인증방식 사용 (default) </span>
+PasswordAuthentication yes <span style="color:#75715e"># id, passwd 인증방식 사용 (default)</span> 
 HostbasedAuthentication no <span style="color:#75715e"># 호스트 기반 인증 방식 사용 여부</span>
 </code></pre></div><h3 id="기타-설정">기타 설정</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Shell" data-lang="Shell">X11Forwarding no <span style="color:#75715e"># 원격지에서 X11 포워딩 허용 여부</span>
