@@ -259,7 +259,7 @@ Example message(&amp;#34; &amp;#34;)message( &amp;#34;${BoldGreen}\t\t\t[ BUILD 
         
         
           어떤 프로젝트를 cmake를 이용하여 관리 및 빌드하고자 할때, CMakeLists.txt를작성 시 자주 사용되는 cmake 기본 명령어들이 있다.
-(Root) |- CMakeLists.txt |- README.md |- [src] | |- CMakeListst.txt | |- foo.cpp | |- poo.cpp | |- main.cpp |- [include] | |- foo.h | |- poo.h |- [cmake] | |- options.cmake 이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다. cmake    # [/CMakeListst.txt] cmake_minimum_required(VERSION 3.3) project(foo CXX) # -&amp;gt; &amp;#39;foo&amp;#39;라는 project를 정의한다.
+(Root) |- CMakeLists.txt |- README.md |- [src] | |- CMakeListst.txt | |- foo.cpp | |- poo.cpp | |- main.cpp |- [include] | |- foo.h | |- poo.h |- [cmake] | |- options.cmake 이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다.    # [/CMakeListst.txt] cmake_minimum_required(VERSION 3.3) project(foo CXX) # -&amp;gt; &amp;#39;foo&amp;#39;라는 project를 정의한다.
           
         
         </description>

@@ -25,7 +25,10 @@ vim으로 갈아타게 된 결정적인 계기는 VSCode에서 지원하는 c/cp
 
 
 
-<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/dracula-prism-old.css">    
+
+
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/prism_coy.css" id="light">    
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/dracula-prism-old.css" id="dark">    
 
 
 
@@ -239,19 +242,20 @@ vim으로 갈아타게 된 결정적인 계기는 VSCode에서 지원하는 c/cp
 
 
   <div class="collapsable-code">
-    <input id="368751429" type="checkbox"  />
-    <label for="368751429">
-      <span class="collapsable-code__language">bash</span>
+    
+    
+      
       <span class="collapsable-code__title">neovim 설치</span>
       <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
     </label>
-    <pre class="language-bash" ><code>
+    <pre class="language-bash match-braces" ><code>
 $ sudo add-apt-repository ppa:neovim-ppa/unstable
 $ sudo apt-get update
 $ sudo apt-get install neovim
 $ sudo apt-get install python-dev python-pip
 $ sudo apt-get install python3-dev python3-pip
 </code></pre>
+    
   </div>
 
 
@@ -270,17 +274,18 @@ $ sudo apt-get install python3-dev python3-pip
 
 
   <div class="collapsable-code">
-    <input id="968721345" type="checkbox"  />
-    <label for="968721345">
-      <span class="collapsable-code__language">bash</span>
+    
+    
+      
       
       <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
     </label>
-    <pre class="language-bash" ><code>
+    <pre class="language-bash match-braces" ><code>
 $ mkdir ~/.config/nvim
 $ cd ~/.config/nvim
 $ touch init.vim
 </code></pre>
+    
   </div>
 
 </p>
@@ -289,13 +294,13 @@ $ touch init.vim
 
 
   <div class="collapsable-code">
-    <input id="463927815" type="checkbox"  />
-    <label for="463927815">
-      <span class="collapsable-code__language">vim</span>
+    
+    
+      
       
       <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
     </label>
-    <pre class="language-vim" ><code>
+    <pre class="language-vim match-braces" ><code>
 set iskeyword&#43;=-
 set formatoptions-=cro
 
@@ -342,6 +347,7 @@ if has(&#34;autocmd&#34;)
     \ endif
 endif
 </code></pre>
+    
   </div>
 
 
@@ -440,7 +446,7 @@ endif
 
 <script src="https://ralpioxxcs.github.io/js/menu.js"></script>
 <script src="https://ralpioxxcs.github.io/js/theme.js"></script>
-<script src="https://ralpioxxcs.github.io/js/prism.js"></script>
+<script src="https://ralpioxxcs.github.io/js/prism_coy.js"></script>
 
 
       

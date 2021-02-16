@@ -25,7 +25,10 @@ push_back 이 호출될 때 객체 관점에서 순서는 다음과 같다.
 
 
 
-<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/dracula-prism-old.css">    
+
+
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/prism_coy.css" id="light">    
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/dracula-prism-old.css" id="dark">    
 
 
 
@@ -233,48 +236,80 @@ push_back 이 호출될 때 객체 관점에서 순서는 다음과 같다.
 <p>이렇게, <strong>push_back</strong> 함수는 <strong>&ldquo;객체&rdquo;</strong> 자체를 집어넣는 방식으로, <em>R-value</em>의 임시객체가 필요하다. 단순히 하나의 객체를 추가하는 단순한 연산임에도 불구하고, 객체의 생성과 파괴가 한번 이루어진다.</p>
 <p>그에 반해서, <code>emplace_back</code> 는 direct하게 함수 내에서 임시객체를 생성과 이동을 통해 element를 생성한다. 다시말해, 불필요한 임시객체의 생성과 파괴 과정없이 <strong>효율적</strong>으로 벡터 element를 추가한다.</p>
 <h3 id="example">Example</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;chrono&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Foo</span> {
- <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-  Foo() <span style="color:#f92672">=</span> <span style="color:#66d9ef">default</span>;
-  Foo(<span style="color:#66d9ef">const</span> std<span style="color:#f92672">::</span>string name, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> age) <span style="color:#f92672">:</span> m_name(name), m_age(age) {
-    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Foo()&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+
+
+
+  <div class="collapsable-code">
+    
+    
+      
+      
+      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
+    </label>
+    <pre class="language-cpp match-braces" ><code>
+#include &lt;chrono&gt;
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+
+class Foo {
+ public:
+  Foo() = default;
+  Foo(const std::string name, const int age) : m_name(name), m_age(age) {
+    std::cout &lt;&lt; &#34;Foo()&#34; &lt;&lt; std::endl;
   }
-  <span style="color:#75715e">// declare copy constructor explicitly
-</span><span style="color:#75715e"></span>  Foo(<span style="color:#66d9ef">const</span> Foo<span style="color:#f92672">&amp;</span> rhs) <span style="color:#f92672">:</span> m_name(rhs.m_name), m_age(rhs.m_age) {
-    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Foo() copy&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+  // declare copy constructor explicitly
+  Foo(const Foo&amp; rhs) : m_name(rhs.m_name), m_age(rhs.m_age) {
+    std::cout &lt;&lt; &#34;Foo() copy&#34; &lt;&lt; std::endl;
   }
-  <span style="color:#75715e">// declare move constructor explicitly
-</span><span style="color:#75715e"></span>  Foo(<span style="color:#66d9ef">const</span> Foo<span style="color:#f92672">&amp;&amp;</span> rhs) <span style="color:#f92672">:</span> m_name(rhs.m_name), m_age(rhs.m_age) {
-    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Foo() move&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+  // declare move constructor explicitly
+  Foo(const Foo&amp;&amp; rhs) : m_name(rhs.m_name), m_age(rhs.m_age) {
+    std::cout &lt;&lt; &#34;Foo() move&#34; &lt;&lt; std::endl;
   }
-  <span style="color:#f92672">~</span>Foo() { 
-    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;~Foo()&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl; 
+  ~Foo() { 
+    std::cout &lt;&lt; &#34;~Foo()&#34; &lt;&lt; std::endl; 
   }
 
- <span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
-  std<span style="color:#f92672">::</span>string m_name;
-  <span style="color:#66d9ef">int</span> m_age;
+ private:
+  std::string m_name;
+  int m_age;
 };
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> argv[]) {
-  std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span>Foo<span style="color:#f92672">&gt;</span> foovec;
-  foovec.reserve(<span style="color:#ae81ff">2</span>);
+</code></pre>
+    
+  </div>
 
-  std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;emplace back&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
-  foovec.emplace_back(<span style="color:#e6db74">&#34;tom&#34;</span>, <span style="color:#ae81ff">63</span>);
-  std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;------------------------&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
 
-  std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;push back&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
-  foovec.push_back(Foo(<span style="color:#e6db74">&#34;chris&#34;</span>, <span style="color:#ae81ff">44</span>));
-  std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;------------------------&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
 
-  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+
+
+  <div class="collapsable-code">
+    
+    
+      
+      
+      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
+    </label>
+    <pre class="language-cpp match-braces" ><code>
+int main(int argc, char* argv[]) {
+  std::vector&lt;Foo&gt; foovec;
+  foovec.reserve(2);
+
+  std::cout &lt;&lt; &#34;emplace back&#34; &lt;&lt; std::endl;
+  foovec.emplace_back(&#34;tom&#34;, 63);
+  std::cout &lt;&lt; &#34;------------------------&#34; &lt;&lt; std::endl;
+
+  std::cout &lt;&lt; &#34;push back&#34; &lt;&lt; std::endl;
+  foovec.push_back(Foo(&#34;chris&#34;, 44));
+  std::cout &lt;&lt; &#34;------------------------&#34; &lt;&lt; std::endl;
+
+  return 0;
 }
-</code></pre></div><h3 id="result">Result</h3>
+</code></pre>
+    
+  </div>
+
+
+<h3 id="result">Result</h3>
 
   <figure class="left" >
     <img src="/images/cpp/result.png"   />
@@ -430,7 +465,7 @@ v.emplace_back(<span style="color:#ae81ff">10000</span>);
 
 <script src="https://ralpioxxcs.github.io/js/menu.js"></script>
 <script src="https://ralpioxxcs.github.io/js/theme.js"></script>
-<script src="https://ralpioxxcs.github.io/js/prism.js"></script>
+<script src="https://ralpioxxcs.github.io/js/prism_coy.js"></script>
 
 
       
