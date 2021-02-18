@@ -25,7 +25,7 @@ pre[class*="language-"] {
 	color: black;
 	background: none;
 	font-family: Hack, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: 1em;
+  font-size: 13px;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;

@@ -224,15 +224,14 @@
 <h3 id="2-1-define-structure">2-1. define structure</h3>
 <p>
 
-
   <div class="collapsable-code">
     
     
       
-      <span class="collapsable-code__title">Node구조체 정의</span>
+      
       <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
-    </label>
-    <pre class="language-cpp match-braces" ><code>
+    
+    <pre class="language-cpp match-braces"><code>
 typedef struct _node Node;    // 구조체 노드 형명재지정
 struct _node {                 // 데이터를 보관할 노드(자기참조 구조체)
     Node *prev;               // 앞 노드를 가리키는 멤버
@@ -246,7 +245,6 @@ typedef struct _linkedList {   // 리스트 관리 구조체
     int length;               // 실제 데이터노드의 갯수
 } LinkedList;
 </code></pre>
-    
   </div>
 
 

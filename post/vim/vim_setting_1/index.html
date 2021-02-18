@@ -240,22 +240,20 @@ vim으로 갈아타게 된 결정적인 계기는 VSCode에서 지원하는 c/cp
 는 ubuntu이므로 Debian install 가이드를 따라 설치를 진행하였다.</p>
 
 
-
   <div class="collapsable-code">
     
     
       
-      <span class="collapsable-code__title">neovim 설치</span>
+      
       <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
-    </label>
-    <pre class="language-bash match-braces" ><code>
+    
+    <pre class="language-bash match-braces"><code>
 $ sudo add-apt-repository ppa:neovim-ppa/unstable
 $ sudo apt-get update
 $ sudo apt-get install neovim
 $ sudo apt-get install python-dev python-pip
 $ sudo apt-get install python3-dev python3-pip
 </code></pre>
-    
   </div>
 
 
@@ -272,35 +270,32 @@ $ sudo apt-get install python3-dev python3-pip
 설정 파일의 경로는 <code>~/.config/nvim</code>이며 이 경로에 파일을 직접 생성해야 한다.<br>
 
 
-
   <div class="collapsable-code">
     
     
       
       
       <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
-    </label>
-    <pre class="language-bash match-braces" ><code>
+    
+    <pre class="language-bash match-braces"><code>
 $ mkdir ~/.config/nvim
 $ cd ~/.config/nvim
 $ touch init.vim
 </code></pre>
-    
   </div>
 
 </p>
 <p>아래는 현재 사용중인 <code>init.vim</code>의 설정이다.</p>
 
 
-
   <div class="collapsable-code">
     
     
       
       
       <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
-    </label>
-    <pre class="language-vim match-braces" ><code>
+    
+    <pre class="language-vim match-braces"><code>
 set iskeyword&#43;=-
 set formatoptions-=cro
 
@@ -347,7 +342,6 @@ if has(&#34;autocmd&#34;)
     \ endif
 endif
 </code></pre>
-    
   </div>
 
 

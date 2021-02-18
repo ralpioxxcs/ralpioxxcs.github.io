@@ -7,7 +7,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="어떤 프로젝트를 cmake를 이용하여 관리 및 빌드하고자 할때, CMakeLists.txt를작성 시 자주 사용되는 cmake 기본 명령어들이 있다.
-(Root) |- CMakeLists.txt |- README.md |- [src] | |- CMakeListst.txt | |- foo.cpp | |- poo.cpp | |- main.cpp |- [include] | |- foo.h | |- poo.h |- [cmake] | |- options.cmake 이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다.    # [/CMakeListst.txt] cmake_minimum_required(VERSION 3.3) project(foo CXX) # -&amp;gt; &amp;#39;foo&amp;#39;라는 project를 정의한다."/>
+(Root) |- CMakeLists.txt |- README.md |- [src] | |- CMakeListst.txt | |- foo.cpp | |- poo.cpp | |- main.cpp |- [include] | |- foo.h | |- poo.h |- [cmake] | |- options.cmake 이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다.   # [/CMakeListst.txt] cmake_minimum_required(VERSION 3.3) project(foo CXX) # -&amp;gt; &amp;#39;foo&amp;#39;라는 project를 정의한다."/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="https://ralpioxxcs.github.io/post/cmake/cmake_3/" />
@@ -38,13 +38,13 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CMake Part3 - 프로젝트 구성"/>
 <meta name="twitter:description" content="어떤 프로젝트를 cmake를 이용하여 관리 및 빌드하고자 할때, CMakeLists.txt를작성 시 자주 사용되는 cmake 기본 명령어들이 있다.
-(Root) |- CMakeLists.txt |- README.md |- [src] | |- CMakeListst.txt | |- foo.cpp | |- poo.cpp | |- main.cpp |- [include] | |- foo.h | |- poo.h |- [cmake] | |- options.cmake 이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다.    # [/CMakeListst.txt] cmake_minimum_required(VERSION 3.3) project(foo CXX) # -&gt; &#39;foo&#39;라는 project를 정의한다."/>
+(Root) |- CMakeLists.txt |- README.md |- [src] | |- CMakeListst.txt | |- foo.cpp | |- poo.cpp | |- main.cpp |- [include] | |- foo.h | |- poo.h |- [cmake] | |- options.cmake 이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다.   # [/CMakeListst.txt] cmake_minimum_required(VERSION 3.3) project(foo CXX) # -&gt; &#39;foo&#39;라는 project를 정의한다."/>
 
 
 
 <meta property="og:title" content="CMake Part3 - 프로젝트 구성" />
 <meta property="og:description" content="어떤 프로젝트를 cmake를 이용하여 관리 및 빌드하고자 할때, CMakeLists.txt를작성 시 자주 사용되는 cmake 기본 명령어들이 있다.
-(Root) |- CMakeLists.txt |- README.md |- [src] | |- CMakeListst.txt | |- foo.cpp | |- poo.cpp | |- main.cpp |- [include] | |- foo.h | |- poo.h |- [cmake] | |- options.cmake 이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다.    # [/CMakeListst.txt] cmake_minimum_required(VERSION 3.3) project(foo CXX) # -&gt; &#39;foo&#39;라는 project를 정의한다." />
+(Root) |- CMakeLists.txt |- README.md |- [src] | |- CMakeListst.txt | |- foo.cpp | |- poo.cpp | |- main.cpp |- [include] | |- foo.h | |- poo.h |- [cmake] | |- options.cmake 이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다.   # [/CMakeListst.txt] cmake_minimum_required(VERSION 3.3) project(foo CXX) # -&gt; &#39;foo&#39;라는 project를 정의한다." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ralpioxxcs.github.io/post/cmake/cmake_3/" />
 <meta property="article:published_time" content="2020-01-30T14:38:36+09:00" />
@@ -224,15 +224,14 @@
 </code></pre><p>이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다.
 
 
-
   <div class="collapsable-code">
     
     
       
       
       <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
-    </label>
-    <pre class="language-cmake match-braces" ><code>
+    
+    <pre class="language-cmake match-braces"><code>
 # [/CMakeListst.txt]
 cmake_minimum_required(VERSION 3.3)
 project(foo CXX)
@@ -252,12 +251,10 @@ set(CMAKE_VERBOSE_MAKEFILE true)
 include_directories(${CMAKE_CURRENT_LIST_DIR}/include)
 add_subdirectory(src)
 </code></pre>
-    
   </div>
 
 </p>
 <p>src폴더 내, CMakeLists.txt파일은</p>
-
 
 
   <div class="collapsable-code">
@@ -266,8 +263,8 @@ add_subdirectory(src)
       
       
       <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
-    </label>
-    <pre class="language-cmake match-braces" ><code>
+    
+    <pre class="language-cmake match-braces"><code>
 # [src/CMakeListst.txt]
 
 # src files..
@@ -286,7 +283,6 @@ file(MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}/install) # -&gt; install 폴더 생성
 # install 명령 수행
 install(TARGETS ${OUTPUT_ELF} DESTINATION ${CMAKE_SOURCE_DIR}/install)
 </code></pre>
-    
   </div>
 
 
