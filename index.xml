@@ -112,7 +112,8 @@ push_back 이 호출될 때 객체 관점에서 순서는 다음과 같다.
         
           이번에는 neovim에서 coc.nvim를 이용하여 C/C++ 개발환경을 세팅하는 방법에 대해서 알아보겠다.
 coc.nvim은 Language Server Protocol인 LSP를 지원하는 코드 auto-completion 패키지인데 이전에는 ycm을 사용하다가 너무 무겁기도 하고 개인적으로 환경설정 부분에 불편함 점이 있어 coc.nvim을 사용하게 되었다.
-coc.nvim 설치 vim-plug 설정부분에 아래를 추가해준뒤, :PlugInstall을 해준다.   Plug &amp;#39;neoclide/coc.nvim&amp;#39;, {&amp;#39;tag&amp;#39;: &amp;#39;*&amp;#39;, &amp;#39;do&amp;#39;: &amp;#39;./install.sh&amp;#39;}   참고로, node.js 10.12 버전 이상이 설치되어있어야 한다. node.js가 설치되어있지 않다면 여기를 참고하여 다운로드 및 설치를 진행해주자.
+coc.nvim 설치 vim-plug 설정부분에 아래를 추가해준뒤, :PlugInstall을 해준다.
+Plug &amp;#39;neoclide/coc.nvim&amp;#39;, {&amp;#39;tag&amp;#39;: &amp;#39;*&amp;#39;, &amp;#39;do&amp;#39;: &amp;#39;./install.sh&amp;#39;} 참고로, node.js 10.12 버전 이상이 설치되어있어야 한다. node.js가 설치되어있지 않다면 여기를 참고하여 다운로드 및 설치를 진행해주자.
  cpp language server 설치 이곳을 보면 C/C++ language server에 맞는 configuration example을 제공한다.
           
         
@@ -380,7 +381,7 @@ Example message(&amp;#34; &amp;#34;)message( &amp;#34;${BoldGreen}\t\t\t[ BUILD 
         
         
           어떤 프로젝트를 cmake를 이용하여 관리 및 빌드하고자 할때, CMakeLists.txt를작성 시 자주 사용되는 cmake 기본 명령어들이 있다.
-(Root) |- CMakeLists.txt |- README.md |- [src] | |- CMakeListst.txt | |- foo.cpp | |- poo.cpp | |- main.cpp |- [include] | |- foo.h | |- poo.h |- [cmake] | |- options.cmake 이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다.   # [/CMakeListst.txt] cmake_minimum_required(VERSION 3.3) project(foo CXX) # -&amp;gt; &amp;#39;foo&amp;#39;라는 project를 정의한다.
+(Root) |- CMakeLists.txt |- README.md |- [src] | |- CMakeListst.txt | |- foo.cpp | |- poo.cpp | |- main.cpp |- [include] | |- foo.h | |- poo.h |- [cmake] | |- options.cmake 이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다.  # [/CMakeListst.txt] cmake_minimum_required(VERSION 3.3) project(foo CXX) # -&amp;gt; &amp;#39;foo&amp;#39;라는 project를 정의한다.
           
         
         </description>
@@ -429,8 +430,7 @@ I made this blog to improve my development skills and career.
 cmake_minimum_required(VERSION major.minor[.patch[.tweak]][FATAL_ERROR])만약 어떤 오픈소스 라이브러리가 cmake 3.0 버전 이상으로 작성 되었고, 현재 나의 빌드환경은 cmake 2.8버전 미만이라면 빌드 시, 다음의 에러가 출력된다 -&amp;gt;
 CMake 3.0 or higher is required. You are running version 2.8.12.2
 이 커맨드는 반드시 CMakeListst.txt 작성시 맨 처음에 선언 해 놓아야 정상적인 버전 호환 에러를 출력할 수 있다.
-# Bad example project(foo)cmake_minimum_required(VERSION 3.0)message(&amp;#34;Using CMake version ${CMAKE_VERSION}&amp;#34;) PROJECT [용법]
-project(&amp;lt;PROJECT-NAME&amp;gt; [LANGUAGES] [&amp;lt;language-name&amp;gt;...]) project(&amp;lt;PROJECT-NAME&amp;gt; [VERSION &amp;lt;major&amp;gt;[.
+  # Bad example project(foo) cmake_minimum_required(VERSION 3.0) message(&amp;#34;Using CMake version ${CMAKE_VERSION}&amp;#34;)  PROJECT [용법]
           
         
         </description>

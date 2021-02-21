@@ -8,7 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="이번에는 neovim에서 coc.nvim를 이용하여 C/C&#43;&#43; 개발환경을 세팅하는 방법에 대해서 알아보겠다.
 coc.nvim은 Language Server Protocol인 LSP를 지원하는 코드 auto-completion 패키지인데 이전에는 ycm을 사용하다가 너무 무겁기도 하고 개인적으로 환경설정 부분에 불편함 점이 있어 coc.nvim을 사용하게 되었다.
-coc.nvim 설치 vim-plug 설정부분에 아래를 추가해준뒤, :PlugInstall을 해준다.   Plug &amp;#39;neoclide/coc.nvim&amp;#39;, {&amp;#39;tag&amp;#39;: &amp;#39;*&amp;#39;, &amp;#39;do&amp;#39;: &amp;#39;./install.sh&amp;#39;}   참고로, node.js 10.12 버전 이상이 설치되어있어야 한다. node.js가 설치되어있지 않다면 여기를 참고하여 다운로드 및 설치를 진행해주자.
+coc.nvim 설치 vim-plug 설정부분에 아래를 추가해준뒤, :PlugInstall을 해준다.
+Plug &amp;#39;neoclide/coc.nvim&amp;#39;, {&amp;#39;tag&amp;#39;: &amp;#39;*&amp;#39;, &amp;#39;do&amp;#39;: &amp;#39;./install.sh&amp;#39;} 참고로, node.js 10.12 버전 이상이 설치되어있어야 한다. node.js가 설치되어있지 않다면 여기를 참고하여 다운로드 및 설치를 진행해주자.
  cpp language server 설치 이곳을 보면 C/C&#43;&#43; language server에 맞는 configuration example을 제공한다."/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
@@ -41,7 +42,8 @@ coc.nvim 설치 vim-plug 설정부분에 아래를 추가해준뒤, :PlugInstall
 <meta name="twitter:title" content="Vim 사용하기 #3 - C/C&#43;&#43; 개발환경 세팅"/>
 <meta name="twitter:description" content="이번에는 neovim에서 coc.nvim를 이용하여 C/C&#43;&#43; 개발환경을 세팅하는 방법에 대해서 알아보겠다.
 coc.nvim은 Language Server Protocol인 LSP를 지원하는 코드 auto-completion 패키지인데 이전에는 ycm을 사용하다가 너무 무겁기도 하고 개인적으로 환경설정 부분에 불편함 점이 있어 coc.nvim을 사용하게 되었다.
-coc.nvim 설치 vim-plug 설정부분에 아래를 추가해준뒤, :PlugInstall을 해준다.   Plug &#39;neoclide/coc.nvim&#39;, {&#39;tag&#39;: &#39;*&#39;, &#39;do&#39;: &#39;./install.sh&#39;}   참고로, node.js 10.12 버전 이상이 설치되어있어야 한다. node.js가 설치되어있지 않다면 여기를 참고하여 다운로드 및 설치를 진행해주자.
+coc.nvim 설치 vim-plug 설정부분에 아래를 추가해준뒤, :PlugInstall을 해준다.
+Plug &#39;neoclide/coc.nvim&#39;, {&#39;tag&#39;: &#39;*&#39;, &#39;do&#39;: &#39;./install.sh&#39;} 참고로, node.js 10.12 버전 이상이 설치되어있어야 한다. node.js가 설치되어있지 않다면 여기를 참고하여 다운로드 및 설치를 진행해주자.
  cpp language server 설치 이곳을 보면 C/C&#43;&#43; language server에 맞는 configuration example을 제공한다."/>
 
 
@@ -49,7 +51,8 @@ coc.nvim 설치 vim-plug 설정부분에 아래를 추가해준뒤, :PlugInstall
 <meta property="og:title" content="Vim 사용하기 #3 - C/C&#43;&#43; 개발환경 세팅" />
 <meta property="og:description" content="이번에는 neovim에서 coc.nvim를 이용하여 C/C&#43;&#43; 개발환경을 세팅하는 방법에 대해서 알아보겠다.
 coc.nvim은 Language Server Protocol인 LSP를 지원하는 코드 auto-completion 패키지인데 이전에는 ycm을 사용하다가 너무 무겁기도 하고 개인적으로 환경설정 부분에 불편함 점이 있어 coc.nvim을 사용하게 되었다.
-coc.nvim 설치 vim-plug 설정부분에 아래를 추가해준뒤, :PlugInstall을 해준다.   Plug &#39;neoclide/coc.nvim&#39;, {&#39;tag&#39;: &#39;*&#39;, &#39;do&#39;: &#39;./install.sh&#39;}   참고로, node.js 10.12 버전 이상이 설치되어있어야 한다. node.js가 설치되어있지 않다면 여기를 참고하여 다운로드 및 설치를 진행해주자.
+coc.nvim 설치 vim-plug 설정부분에 아래를 추가해준뒤, :PlugInstall을 해준다.
+Plug &#39;neoclide/coc.nvim&#39;, {&#39;tag&#39;: &#39;*&#39;, &#39;do&#39;: &#39;./install.sh&#39;} 참고로, node.js 10.12 버전 이상이 설치되어있어야 한다. node.js가 설치되어있지 않다면 여기를 참고하여 다운로드 및 설치를 진행해주자.
  cpp language server 설치 이곳을 보면 C/C&#43;&#43; language server에 맞는 configuration example을 제공한다." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ralpioxxcs.github.io/post/vim/vim_setting_3/" />
@@ -212,39 +215,12 @@ coc.nvim 설치 vim-plug 설정부분에 아래를 추가해준뒤, :PlugInstall
 
     <div class="post-content">
       
-        <h2>Table of Contents</h2>
-        <aside class="table-of-contents"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#cocnvim-설치">coc.nvim 설치</a></li>
-    <li><a href="#cpp-language-server-설치">cpp language server 설치</a></li>
-    <li><a href="#coc-config">coc config</a>
-      <ul>
-        <li><a href="#example">Example</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav></aside>
-      
       <p>이번에는 neovim에서 <a href="https://github.com/neoclide/coc.nvim">coc.nvim</a>를 이용하여 C/C++ 개발환경을 세팅하는 방법에 대해서 알아보겠다.<br>
 <strong>coc.nvim</strong>은 Language Server Protocol인 LSP를 지원하는 코드 auto-completion 패키지인데 이전에는 ycm을 사용하다가 너무 무겁기도 하고 개인적으로 환경설정 부분에 불편함 점이 있어 coc.nvim을 사용하게 되었다.</p>
 <h2 id="cocnvim-설치">coc.nvim 설치</h2>
-<p>vim-plug 설정부분에 아래를 추가해준뒤, <code>:PlugInstall</code>을 해준다.
-
-
-  <div class="collapsable-code">
-    
-    
-      
-      
-      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
-    
-    <pre class="language-bash match-braces"><code>
-Plug &#39;neoclide/coc.nvim&#39;, {&#39;tag&#39;: &#39;*&#39;, &#39;do&#39;: &#39;./install.sh&#39;}
-</code></pre>
-  </div>
-
-</p>
-<p>참고로, <strong>node.js</strong> 10.12 버전 이상이 설치되어있어야 한다. node.js가 설치되어있지 않다면 <a href="https://nodejs.org/ko/download/">여기</a>를 참고하여 다운로드 및 설치를 진행해주자.</p>
+<p>vim-plug 설정부분에 아래를 추가해준뒤, <code>:PlugInstall</code>을 해준다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">Plug <span style="color:#e6db74">&#39;neoclide/coc.nvim&#39;</span>, <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;tag&#39;</span>: <span style="color:#e6db74">&#39;*&#39;</span>, <span style="color:#e6db74">&#39;do&#39;</span>: <span style="color:#e6db74">&#39;./install.sh&#39;</span><span style="color:#f92672">}</span>
+</code></pre></div><p>참고로, <strong>node.js</strong> 10.12 버전 이상이 설치되어있어야 한다. node.js가 설치되어있지 않다면 <a href="https://nodejs.org/ko/download/">여기</a>를 참고하여 다운로드 및 설치를 진행해주자.</p>
 <p> </p>
 <h2 id="cpp-language-server-설치">cpp language server 설치</h2>
 <p><a href="https://github.com/neoclide/coc.nvim/wiki/Language-servers#ccobjective-c">이곳</a>을 보면 C/C++ language server에 맞는 configuration example을 제공한다.<br>
@@ -260,58 +236,21 @@ clangd, coc-clangd, ccls, cquery등이 여러 language server 패키지가 있�
 </ul>
 </li>
 </ul>
-<p>clagn+llvm 의 include와 lib를 저장하고있는 폴더가 없거나 경로지정이 애매하다면, <a href="https://releases.llvm.org/download.html">여기</a>에서 pre-built binaries를 다운로드 한뒤 특정 폴더에다 해제를 하거나 <strong>wget</strong>을 이용해 다운로드 한다.
-
-
-  <div class="collapsable-code">
-    
-    
-      
-      
-      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
-    
-    <pre class="language-bash match-braces"><code>
-wget -c http://releases.llvm.org/8.0.0/clang&#43;llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz
-tar -C /usr/local -xvf clang&#43;llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz
-</code></pre>
-  </div>
-
-</p>
-<p>위의 조건을 모두 만족하고, llvm을 다운로드 하였으면 빌드 준비가 모두 완료된것이므로, ccls repository를 clone후 아래 명령어를 따라 빌드한다.</p>
-
-
-  <div class="collapsable-code">
-    
-    
-      
-      
-      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
-    
-    <pre class="language-bash match-braces"><code>
-git clone --depth=1 --recursive https://github.com/MaskRay/ccls &amp;&amp; cd ccls
-cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/usr/local/clang&#43;llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04
-cmake --build Release --parallel 4
-</code></pre>
-  </div>
-
-
-<p>시스템 경로에 설치를 원한다면, 아래 명령어로 설치를 완료한다. (기본 경로 : /usr/local/bin/ccs )
-
-
-  <div class="collapsable-code">
-    
-    
-      
-      
-      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
-    
-    <pre class="language-bash match-braces"><code>
-cmake --install Release
-</code></pre>
-  </div>
-
-</p>
-<p> </p>
+<p>clagn+llvm 의 include와 lib를 저장하고있는 폴더가 없거나 경로지정이 애매하다면, <a href="https://releases.llvm.org/download.html">여기</a>에서 pre-built binaries를 다운로드 한뒤, 특정 폴더에다 해제를 한다.</p>
+<p>위의 조건을 모두 만족한다면 빌드 준비가 모두 완료된것이므로, ccls repository를 clone후 아래 명령어를 따라 빌드한다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">git clone --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --recursive https://github.com/MaskRay/ccls
+cd ccls
+cmake -H. -BRelease -DCMAKE_BUILD_TYPE<span style="color:#f92672">=</span>Release -DCMAKE_PREFIX_PATH<span style="color:#f92672">=</span>/path/to/clang+llvm-xxx <span style="color:#75715e"># clang pre-built binaries 폴더</span>
+cmake --build Release
+</code></pre></div><p>wget 커맨드를 이용하는 방법도 있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">wget -c http://releases.llvm.org/8.0.0/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz
+tar xf clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz
+cmake -H. -BRelease -DCMAKE_BUILD_TYPE<span style="color:#f92672">=</span>Release -DCMAKE_PREFIX_PATH<span style="color:#f92672">=</span>$PWD/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04
+cmake --build Release
+</code></pre></div><p>빌드가 끝났다면, 아래 명령어로 설치를 완료한다.<br>
+만약 설치경로를 변경하고 싶다면 <code>CMakeCache.txt</code>파일을 수정하여 <code>CMAKE_INSTALL_PREFIX</code>에 원하는 경로를 입력한다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">cmake --build Release --target install
+</code></pre></div><p> </p>
 <h2 id="coc-config">coc config</h2>
 <p>빌드 및 설치가 완료되었다면, coc.nvim에서 ccls를 사용할 수 있도록 config파일을 수정할 차례이다.<br>
 config파일을 수정하는 방법은 두가지 방법이 있다.</p>
@@ -321,39 +260,25 @@ config파일을 수정하는 방법은 두가지 방법이 있다.</p>
 </ul>
 <p>두 방법 모두 결국엔 같은 파일을 수정하는것이긴 하다.</p>
 <h3 id="example">Example</h3>
-
-
-  <div class="collapsable-code">
-    
-    
-      
-      
-      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
-    
-    <pre class="language-json match-braces"><code>
-{
-  &#34;languageserver&#34;: {
-    &#34;ccls&#34;: {
-      &#34;command&#34;: &#34;ccls&#34;,
-      &#34;filetypes&#34;: [&#34;c&#34;, &#34;cpp&#34;],
-      &#34;rootPatterns&#34;: [&#34;.ccls&#34;, &#34;compile_commands.json&#34;],
-      &#34;initializationOptions&#34;: {
-        &#34;cache&#34;: {
-          &#34;directory&#34;: &#34;.ccls-cache&#34;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Json" data-lang="Json">{
+  <span style="color:#f92672">&#34;languageserver&#34;</span>: {
+    <span style="color:#f92672">&#34;ccls&#34;</span>: {
+      <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;ccls&#34;</span>,
+      <span style="color:#f92672">&#34;filetypes&#34;</span>: [<span style="color:#e6db74">&#34;c&#34;</span>, <span style="color:#e6db74">&#34;cpp&#34;</span>],
+      <span style="color:#f92672">&#34;rootPatterns&#34;</span>: [<span style="color:#e6db74">&#34;.ccls&#34;</span>, <span style="color:#e6db74">&#34;compile_commands.json&#34;</span>],
+      <span style="color:#f92672">&#34;initializationOptions&#34;</span>: {
+        <span style="color:#f92672">&#34;cache&#34;</span>: {
+          <span style="color:#f92672">&#34;directory&#34;</span>: <span style="color:#e6db74">&#34;.ccls-cache&#34;</span>
         },
-        &#34;client&#34;: {
-          &#34;snippetSupport&#34; : true
+        <span style="color:#f92672">&#34;client&#34;</span>: {
+          <span style="color:#f92672">&#34;snippetSupport&#34;</span> : <span style="color:#66d9ef">true</span>
         },
-        &#34;compilationDatabaseDirectory&#34;: &#34;./build/&#34;
+        <span style="color:#f92672">&#34;compilationDatabaseDirectory&#34;</span>: <span style="color:#e6db74">&#34;./build/&#34;</span>
       }
     }
   }
 }
-</code></pre>
-  </div>
-
-
-<p>ccls는 <strong>rootPatterns</strong>에 명시된 파일의 패턴을 기준으로 project전체를 indexing하여 정보를 제공한다. 이 패턴 파일을 생성하는 방법은 2가지가 있다.</p>
+</code></pre></div><p>ccls는 <strong>rootPatterns</strong>에 명시된 파일의 패턴을 기준으로 project전체를 indexing하여 정보를 제공한다. 이 패턴 파일을 생성하는 방법은 2가지가 있다.</p>
 <ul>
 <li><code>compile_commands.json</code> 파일을 사용하는 방법</li>
 <li><code>.ccls</code>파일을 직접 만들어 사용하는 방법</li>

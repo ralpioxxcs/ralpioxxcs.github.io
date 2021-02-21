@@ -209,22 +209,6 @@ push_back 이 호출될 때 객체 관점에서 순서는 다음과 같다.
 
     <div class="post-content">
       
-        <h2>Table of Contents</h2>
-        <aside class="table-of-contents"><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#example">Example</a></li>
-        <li><a href="#result">Result</a></li>
-        <li><a href="#benchmark">Benchmark</a></li>
-      </ul>
-    </li>
-    <li><a href="#push_back-을-언제-사용해야하는가">push_back 을 언제 사용해야하는가</a></li>
-    <li><a href="#결론">결론</a></li>
-    <li><a href="#reference">Reference</a></li>
-  </ul>
-</nav></aside>
-      
       <p><strong>push_back</strong> 과 <strong>emplace_back</strong> 둘 다 실질적으로 수행하는 일은 &ldquo;컨테이너의 끝에 요소를 추가하는것&rdquo; 로 동일하다. 하지만 두 함수를 memory allocation 관점에서 보면 <strong>emplace_back</strong> 이 훨씬 효율적으로 작동한다.</p>
 <p><code>push_back</code> 이 호출될 때 객체 관점에서 순서는 다음과 같다.</p>
 <ol>
@@ -238,14 +222,17 @@ push_back 이 호출될 때 객체 관점에서 순서는 다음과 같다.
 <h3 id="example">Example</h3>
 
 
+
+  
   <div class="collapsable-code">
-    
-    
+    <input id="312574896" type="checkbox"  />
+    <label for="312574896">
       
+      <span class="collapsable-code__title">Example Code</span>
       
-      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
-    
-    <pre class="language-cpp match-braces"><code>
+      <span class="collapsable-code__toggle" data-label-expand="Unfold △" data-label-collapse="Fold ▽"></span>
+    </label>
+    <pre class="language-cpp match-braces" ><code>
 #include &lt;chrono&gt;
 #include &lt;iostream&gt;
 #include &lt;string&gt;
@@ -274,19 +261,25 @@ class Foo {
   int m_age;
 };
 </code></pre>
+    
   </div>
+  
 
 
 
 
+
+  
   <div class="collapsable-code">
-    
-    
+    <input id="253689714" type="checkbox"  />
+    <label for="253689714">
       
       
-      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
-    
-    <pre class="language-cpp match-braces"><code>
+        <span class="collapsable-code__title"></span>
+      
+      <span class="collapsable-code__toggle" data-label-expand="Unfold △" data-label-collapse="Fold ▽"></span>
+    </label>
+    <pre class="language-cpp match-braces" ><code>
 int main(int argc, char* argv[]) {
   std::vector&lt;Foo&gt; foovec;
   foovec.reserve(2);
@@ -302,7 +295,9 @@ int main(int argc, char* argv[]) {
   return 0;
 }
 </code></pre>
+    
   </div>
+  
 
 
 <h3 id="result">Result</h3>
@@ -317,14 +312,17 @@ int main(int argc, char* argv[]) {
 <h3 id="benchmark">Benchmark</h3>
 
 
+
+  
   <div class="collapsable-code">
-    
-    
+    <input id="586217394" type="checkbox"  />
+    <label for="586217394">
       
+      <span class="collapsable-code__title">benchmark</span>
       
-      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
-    
-    <pre class="language-cpp match-braces"><code>
+      <span class="collapsable-code__toggle" data-label-expand="Unfold △" data-label-collapse="Fold ▽"></span>
+    </label>
+    <pre class="language-cpp match-braces" ><code>
 #include &lt;iostream&gt;
 #include &lt;chrono&gt;
 #include &lt;vector&gt;
@@ -356,7 +354,9 @@ int main(int argc, char* argv[]) {
   return 0;
 }
 </code></pre>
+    
   </div>
+  
 
 
 
@@ -374,18 +374,13 @@ int main(int argc, char* argv[]) {
 <p>그렇다면, 모든 <code>push_back</code> 을 <code>emplace_back</code>으로 바꾸면 되는것일까? 라고 생각이 들 수 있다. 하지만 아래의 또 다른 예제를 보면 그렇지 않다는것을 알 수 있다.</p>
 
 
-  <div class="collapsable-code">
-    
-    
-      
-      
-      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
-    
-    <pre class="language-cpp match-braces"><code>
+
+  
+    <pre class="language-cpp match-braces" ><code>
 v.push_back(10000);
 v.emplace_back(10000);
 </code></pre>
-  </div>
+    
 
 
 <p>위의 코드만 봤을때, <code>push_back</code>의 경우 명확하다. 숫자 10000을 vector에 추가한다는것을 나타내지만, <code>emplace_back</code>의 경우 확실히 알 수 없다.<br>

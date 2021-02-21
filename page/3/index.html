@@ -211,7 +211,7 @@
         
           
             어떤 프로젝트를 cmake를 이용하여 관리 및 빌드하고자 할때, CMakeLists.txt를작성 시 자주 사용되는 cmake 기본 명령어들이 있다.
-(Root) |- CMakeLists.txt |- README.md |- [src] | |- CMakeListst.txt | |- foo.cpp | |- poo.cpp | |- main.cpp |- [include] | |- foo.h | |- poo.h |- [cmake] | |- options.cmake 이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다.   # [/CMakeListst.txt] cmake_minimum_required(VERSION 3.3) project(foo CXX) # -&gt; 'foo'라는 project를 정의한다.
+(Root) |- CMakeLists.txt |- README.md |- [src] | |- CMakeListst.txt | |- foo.cpp | |- poo.cpp | |- main.cpp |- [include] | |- foo.h | |- poo.h |- [cmake] | |- options.cmake 이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다.  # [/CMakeListst.txt] cmake_minimum_required(VERSION 3.3) project(foo CXX) # -&gt; 'foo'라는 project를 정의한다.
           
         
       </div>
@@ -260,8 +260,8 @@ cmake_minimum_required(VERSION major.minor[.patch[.tweak]][FATAL_ERROR])만약 �
 CMake 3.0 or higher is required. You are running version 2.8.12.2
 이 커맨드는 반드시 CMakeListst.txt 작성시 맨 처음에 선언 해 놓아야 정상적인 버전 호환 에러를 출력할 수 있다.</li>
 </ol>
-<h1 id="bad-example-projectfoocmake_minimum_requiredversion-30message34using-cmake-version-cmake_version34-project-용법">Bad example project(foo)cmake_minimum_required(VERSION 3.0)message(&quot;Using CMake version ${CMAKE_VERSION}&quot;) PROJECT [용법]</h1>
-<p>project(&lt;PROJECT-NAME&gt; [LANGUAGES] [&lt;language-name&gt;&hellip;]) project(&lt;PROJECT-NAME&gt; [VERSION &lt;major&gt;[.
+<h1 id="bad-example-projectfoo-cmake_minimum_requiredversion-30-message34using-cmake-version-cmake_version34--project-용법">Bad example project(foo) cmake_minimum_required(VERSION 3.0) message(&quot;Using CMake version ${CMAKE_VERSION}&quot;)  PROJECT [용법]</h1>
+
           
         
       </div>
