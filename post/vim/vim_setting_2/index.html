@@ -28,9 +28,8 @@
 
 
 
-<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/prism_coy.css" id="light">    
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/prism_coy2.css" id="light">    
 <link rel="stylesheet" href="https://ralpioxxcs.github.io/css/dracula-prism-old.css" id="dark">    
-
 
 
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://ralpioxxcs.github.io/img/apple-touch-icon-144-precomposed.png">
@@ -223,14 +222,14 @@
 
   
   <div class="collapsable-code">
-    <input id="694372581" type="checkbox"  />
-    <label for="694372581">
+    <input id="468279153" type="checkbox"  />
+    <label for="468279153">
       
       <span class="collapsable-code__title">install vim-plug</span>
       
       <span class="collapsable-code__toggle" data-label-expand="Unfold △" data-label-collapse="Fold ▽"></span>
     </label>
-    <pre class="language-bash match-braces" ><code>
+    <pre class="language-bash match-braces line-numbers no-whitespace-normalization" ><code>
 sh -c &#39;curl -fLo &#34;${XDG_DATA_HOME:-$HOME/.local/share}&#34;/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&#39;
 </code></pre>
@@ -269,14 +268,14 @@ sh -c &#39;curl -fLo &#34;${XDG_DATA_HOME:-$HOME/.local/share}&#34;/nvim/site/au
 
   
   <div class="collapsable-code">
-    <input id="592687314" type="checkbox"  />
-    <label for="592687314">
+    <input id="681752394" type="checkbox"  />
+    <label for="681752394">
       
       <span class="collapsable-code__title">nerdtree config</span>
       
       <span class="collapsable-code__toggle" data-label-expand="Unfold △" data-label-collapse="Fold ▽"></span>
     </label>
-    <pre class="language-vim match-braces" ><code>
+    <pre class="language-vim match-braces line-numbers no-whitespace-normalization" ><code>
 &#34; vim을 열때마다 자동으로 nerdtree를 실행한다.
 &#34; https://github.com/preservim/nerdtree#how-can-i-open-nerdtree-automatically-when-vim-starts-up-on-opening-a-directory 
 autocmd StdinReadPre * let s:std_in=1
@@ -297,14 +296,14 @@ noremap &lt;F9&gt; :NERDTreeToggle&lt;CR&gt;
 
   
   <div class="collapsable-code">
-    <input id="781956243" type="checkbox"  />
-    <label for="781956243">
+    <input id="983147652" type="checkbox"  />
+    <label for="983147652">
       
       <span class="collapsable-code__title">install ctags</span>
       
       <span class="collapsable-code__toggle" data-label-expand="Unfold △" data-label-collapse="Fold ▽"></span>
     </label>
-    <pre class="language-bash match-braces" ><code>
+    <pre class="language-bash match-braces line-numbers no-whitespace-normalization" ><code>
 &#34;Ubuntu&#34;
 sudo apt-get install exuberant-ctags
 &#34;OS X&#34;
@@ -321,14 +320,14 @@ brew install ctags
 
   
   <div class="collapsable-code">
-    <input id="613947825" type="checkbox"  />
-    <label for="613947825">
+    <input id="163429578" type="checkbox"  />
+    <label for="163429578">
       
       <span class="collapsable-code__title">ctags config</span>
       
       <span class="collapsable-code__toggle" data-label-expand="Unfold △" data-label-collapse="Fold ▽"></span>
     </label>
-    <pre class="language-vim match-braces" ><code>
+    <pre class="language-vim match-braces line-numbers no-whitespace-normalization" ><code>
 &#34; ctags 경로 설정
 let g:tagbar_ctags_bin=&#39;/usr/local/bin/ctags&#39;
 let g:tagbar_autoclose=0
@@ -369,14 +368,14 @@ noremap &lt;F8&gt; :TagbarToggle&lt;CR&gt;
 
   
   <div class="collapsable-code">
-    <input id="294578136" type="checkbox"  />
-    <label for="294578136">
+    <input id="196548372" type="checkbox"  />
+    <label for="196548372">
       
       <span class="collapsable-code__title">fzf config</span>
       
       <span class="collapsable-code__toggle" data-label-expand="Unfold △" data-label-collapse="Fold ▽"></span>
     </label>
-    <pre class="language-vim match-braces" ><code>
+    <pre class="language-vim match-braces line-numbers no-whitespace-normalization" ><code>
 &#34; fzf layout
 let g:fzf_layout = {&#39;up&#39;:&#39;~90%&#39;, &#39;window&#39;: { &#39;width&#39;: 0.8, &#39;height&#39;: 0.8,&#39;yoffset&#39;:0.5,&#39;xoffset&#39;: 0.5, &#39;highlight&#39;: &#39;Todo&#39;, &#39;border&#39;: &#39;sharp&#39; } }
 
@@ -411,14 +410,14 @@ let g:fzf_colors =
 
   
   <div class="collapsable-code">
-    <input id="792841365" type="checkbox"  />
-    <label for="792841365">
+    <input id="487536912" type="checkbox"  />
+    <label for="487536912">
       
       <span class="collapsable-code__title">fzf config</span>
       
       <span class="collapsable-code__toggle" data-label-expand="Unfold △" data-label-collapse="Fold ▽"></span>
     </label>
-    <pre class="language-vim match-braces" ><code>
+    <pre class="language-vim match-braces line-numbers no-whitespace-normalization" ><code>
 &#34;Get Files
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(&lt;q-args&gt;, fzf#vim#with_preview({&#39;options&#39;: [&#39;--layout=reverse&#39;, &#39;--inline-info&#39;]}), &lt;bang&gt;0)
@@ -434,14 +433,14 @@ command! -bang -nargs=? -complete=dir Files
 
   
   <div class="collapsable-code">
-    <input id="895217346" type="checkbox"  />
-    <label for="895217346">
+    <input id="547186923" type="checkbox"  />
+    <label for="547186923">
       
       <span class="collapsable-code__title">fzf config</span>
       
       <span class="collapsable-code__toggle" data-label-expand="Unfold △" data-label-collapse="Fold ▽"></span>
     </label>
-    <pre class="language-vim match-braces" ><code>
+    <pre class="language-vim match-braces line-numbers no-whitespace-normalization" ><code>
 &#34; Get text in files with Rg
 &#34; command! -bang -nargs=* Rg
 &#34;   \ call fzf#vim#grep(
