@@ -9,10 +9,30 @@
     <description>Recent content in Tags on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Dec 2020 19:34:14 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 21 Feb 2021 23:16:05 +0900</lastBuildDate>
     
 	<atom:link href="https://ralpioxxcs.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>wsl2</title>
+      <link>https://ralpioxxcs.github.io/tags/wsl2/</link>
+      <pubDate>Sun, 21 Feb 2021 23:16:05 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/tags/wsl2/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>cpp</title>

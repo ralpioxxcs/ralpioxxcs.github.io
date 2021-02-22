@@ -6,7 +6,7 @@
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Plugins vim을 쓰는 가장 큰 이유중 하나는 바로 이 Plugin에 있지않나 싶다. 설치도 비교적 간편하며, 확장성이 뛰어나서 플러그인을 사용하면서 불편한 부분들을 설정파일을 통해 입맛에 맞게 바꿀 수 있다는 점이 매력적이다.
+<meta name="description" content="Vim Plugins vim을 쓰는 가장 큰 이유중 하나는 바로 이 Plugin에 있지않나 싶다. 설치도 비교적 간편하며, 확장성이 뛰어나서 플러그인을 사용하면서 불편한 부분들을 설정파일을 통해 입맛에 맞게 바꿀 수 있다는 점이 매력적이다.
 지금도 유용하게 사용하는 vim 플러그인들에 대한 소개와 설치방법 및 사용법에 대해 간단히 알아보겠다.
  플러그인 매니저 설치 vim에서 Plugin들을 설치, 관리해주는 도구들이 여러개 있는데 (Vundle, Pathogen) 그 중에서 나는 junegunn님이 만드신 vim-plug를 사용중이다.
 현재 neovim을 사용중이므로 설치 방법은 아래와 같다."/>
@@ -39,7 +39,7 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vim 사용하기 #2 - Plugin"/>
-<meta name="twitter:description" content="Plugins vim을 쓰는 가장 큰 이유중 하나는 바로 이 Plugin에 있지않나 싶다. 설치도 비교적 간편하며, 확장성이 뛰어나서 플러그인을 사용하면서 불편한 부분들을 설정파일을 통해 입맛에 맞게 바꿀 수 있다는 점이 매력적이다.
+<meta name="twitter:description" content="Vim Plugins vim을 쓰는 가장 큰 이유중 하나는 바로 이 Plugin에 있지않나 싶다. 설치도 비교적 간편하며, 확장성이 뛰어나서 플러그인을 사용하면서 불편한 부분들을 설정파일을 통해 입맛에 맞게 바꿀 수 있다는 점이 매력적이다.
 지금도 유용하게 사용하는 vim 플러그인들에 대한 소개와 설치방법 및 사용법에 대해 간단히 알아보겠다.
  플러그인 매니저 설치 vim에서 Plugin들을 설치, 관리해주는 도구들이 여러개 있는데 (Vundle, Pathogen) 그 중에서 나는 junegunn님이 만드신 vim-plug를 사용중이다.
 현재 neovim을 사용중이므로 설치 방법은 아래와 같다."/>
@@ -47,7 +47,7 @@
 
 
 <meta property="og:title" content="Vim 사용하기 #2 - Plugin" />
-<meta property="og:description" content="Plugins vim을 쓰는 가장 큰 이유중 하나는 바로 이 Plugin에 있지않나 싶다. 설치도 비교적 간편하며, 확장성이 뛰어나서 플러그인을 사용하면서 불편한 부분들을 설정파일을 통해 입맛에 맞게 바꿀 수 있다는 점이 매력적이다.
+<meta property="og:description" content="Vim Plugins vim을 쓰는 가장 큰 이유중 하나는 바로 이 Plugin에 있지않나 싶다. 설치도 비교적 간편하며, 확장성이 뛰어나서 플러그인을 사용하면서 불편한 부분들을 설정파일을 통해 입맛에 맞게 바꿀 수 있다는 점이 매력적이다.
 지금도 유용하게 사용하는 vim 플러그인들에 대한 소개와 설치방법 및 사용법에 대해 간단히 알아보겠다.
  플러그인 매니저 설치 vim에서 Plugin들을 설치, 관리해주는 도구들이 여러개 있는데 (Vundle, Pathogen) 그 중에서 나는 junegunn님이 만드신 vim-plug를 사용중이다.
 현재 neovim을 사용중이므로 설치 방법은 아래와 같다." />
@@ -210,18 +210,36 @@
 
     <div class="post-content">
       
-      <h1 id="plugins"><strong>Plugins</strong></h1>
+      <h1 id="vim-plugins"><strong>Vim Plugins</strong></h1>
 <p>vim을 쓰는 가장 큰 이유중 하나는 바로 이 <em>Plugin</em>에 있지않나 싶다. 설치도 비교적 간편하며,
 확장성이 뛰어나서 플러그인을 사용하면서 불편한 부분들을 설정파일을 통해 입맛에 맞게 바꿀 수 있다는 점이 매력적이다.</p>
 <p>지금도 유용하게 사용하는 vim 플러그인들에 대한 소개와 설치방법 및 사용법에 대해 간단히 알아보겠다.</p>
 <p> </p>
 <h2 id="플러그인-매니저-설치"><strong>플러그인 매니저 설치</strong></h2>
 <p>vim에서 Plugin들을 설치, 관리해주는 도구들이 여러개 있는데 (<a href="https://github.com/VundleVim/Vundle.vim">Vundle</a>, <a href="https://github.com/tpope/vim-pathogen">Pathogen</a>) 그 중에서 나는 junegunn님이 만드신 <a href="https://github.com/junegunn/vim-plug">vim-plug</a>를 사용중이다.<br>
-현재 neovim을 사용중이므로 설치 방법은 아래와 같다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">sh -c <span style="color:#e6db74">&#39;curl -fLo &#34;${XDG_DATA_HOME:-$HOME/.local/share}&#34;/nvim/site/autoload/plug.vim --create-dirs \
-</span><span style="color:#e6db74">       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&#39;</span>
-</code></pre></div><p>그 외의 설치방법은 <a href="https://github.com/junegunn/vim-plug#installation">여기</a>를 참고하면 된다.</p>
-<p> </p>
+현재 neovim을 사용중이므로 설치 방법은 아래와 같다.
+
+
+
+  
+  <div class="collapsable-code">
+    <input id="694372581" type="checkbox"  />
+    <label for="694372581">
+      
+      <span class="collapsable-code__title">install vim-plug</span>
+      
+      <span class="collapsable-code__toggle" data-label-expand="Unfold △" data-label-collapse="Fold ▽"></span>
+    </label>
+    <pre class="language-bash match-braces" ><code>
+sh -c &#39;curl -fLo &#34;${XDG_DATA_HOME:-$HOME/.local/share}&#34;/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&#39;
+</code></pre>
+    
+  </div>
+  
+
+
+그 외의 설치방법은 <a href="https://github.com/junegunn/vim-plug#installation">여기</a>를 참고하면 된다.</p>
 <h2 id="nerdtree"><strong>NerdTree</strong></h2>
 <p><a href="https://github.com/preservim/nerdtree">nerdtree</a>는 vim에서 파일트리를 보여주는 도구로, 여러 파일을 왔다갔다 할때 유용하게 사용된다.</p>
 <p>
@@ -245,29 +263,84 @@
 <li>r : 탐색기로 선택된 파일을 연다 ( nautilus, finder ..)</li>
 <li>o : 메모장이나 gedit 같은 시스템 편집기로 선택된 파일 연다.</li>
 </ul>
-<p>vim 설정은 아래와 같이 설정해두었다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#75715e">&#34; vim을 열때마다 자동으로 nerdtree를 실행한다.</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34; https://github.com/preservim/nerdtree#how-can-i-open-nerdtree-automatically-when-vim-starts-up-on-opening-a-directory </span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">StdinReadPre</span> * <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">s</span>:<span style="color:#a6e22e">std_in</span>=<span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">VimEnter</span> * <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">argc</span>() == <span style="color:#ae81ff">1</span> &amp;&amp; <span style="color:#a6e22e">isdirectory</span>(<span style="color:#a6e22e">argv</span>()[<span style="color:#ae81ff">0</span>]) &amp;&amp; !<span style="color:#a6e22e">exists</span>(<span style="color:#e6db74">&#34;s:std_in&#34;</span>) | <span style="color:#a6e22e">exe</span> <span style="color:#e6db74">&#39;NERDTree&#39;</span> <span style="color:#a6e22e">argv</span>()[<span style="color:#ae81ff">0</span>] | <span style="color:#a6e22e">wincmd</span> <span style="color:#a6e22e">p</span> | <span style="color:#a6e22e">ene</span> | <span style="color:#a6e22e">exe</span> <span style="color:#e6db74">&#39;cd &#39;</span>.<span style="color:#a6e22e">argv</span>()[<span style="color:#ae81ff">0</span>] | <span style="color:#66d9ef">endif</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34; &lt;F9&gt; NerdTree 열고 닫기 매크로 설정</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">noremap</span> &lt;<span style="color:#a6e22e">F9</span>&gt; :<span style="color:#a6e22e">NERDTreeToggle</span>&lt;<span style="color:#a6e22e">CR</span>&gt;<span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p> </p>
+<p>vim 설정은 아래와 같이 설정해두었다.<br>
+
+
+
+  
+  <div class="collapsable-code">
+    <input id="592687314" type="checkbox"  />
+    <label for="592687314">
+      
+      <span class="collapsable-code__title">nerdtree config</span>
+      
+      <span class="collapsable-code__toggle" data-label-expand="Unfold △" data-label-collapse="Fold ▽"></span>
+    </label>
+    <pre class="language-vim match-braces" ><code>
+&#34; vim을 열때마다 자동으로 nerdtree를 실행한다.
+&#34; https://github.com/preservim/nerdtree#how-can-i-open-nerdtree-automatically-when-vim-starts-up-on-opening-a-directory 
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 &amp;&amp; isdirectory(argv()[0]) &amp;&amp; !exists(&#34;s:std_in&#34;) | exe &#39;NERDTree&#39; argv()[0] | wincmd p | ene | exe &#39;cd &#39;.argv()[0] | endif
+&#34; &lt;F9&gt; NerdTree 열고 닫기 매크로 설정
+noremap &lt;F9&gt; :NERDTreeToggle&lt;CR&gt;
+</code></pre>
+    
+  </div>
+  
+
+</p>
 <h2 id="tagbar"><strong>Tagbar</strong></h2>
 <p><a href="https://github.com/majutsushi/tagbar">Tagbar</a>는 현재 파일의 Class ,Structure 정보 및 <code>ctags</code>가 생성한 tags를 트리 형식으로 보여주는 플러그인이다.
-이 플러그인을 사용하려면 우선적으로 <code>ctags</code>가 설치돼있어야 한다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash"><span style="color:#e6db74">&#34;Ubuntu&#34;</span>
-sudo apt-get install ctags
-<span style="color:#e6db74">&#34;OS X&#34;</span>
+이 플러그인을 사용하려면 우선적으로 <code>ctags</code>가 설치돼있어야 한다.
+
+
+
+  
+  <div class="collapsable-code">
+    <input id="781956243" type="checkbox"  />
+    <label for="781956243">
+      
+      <span class="collapsable-code__title">install ctags</span>
+      
+      <span class="collapsable-code__toggle" data-label-expand="Unfold △" data-label-collapse="Fold ▽"></span>
+    </label>
+    <pre class="language-bash match-braces" ><code>
+&#34;Ubuntu&#34;
+sudo apt-get install exuberant-ctags
+&#34;OS X&#34;
 brew install ctags
-</code></pre></div><p>아래의 vim 설정을 통해 <code>F8</code>을 Tagbar단축키로 설정해두었다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#75715e">&#34; ctags 경로 설정</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">tagbar_ctags_bin</span>=<span style="color:#e6db74">&#39;/usr/local/bin/ctags&#39;</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">tagbar_autoclose</span>=<span style="color:#ae81ff">0</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">tabar_autofocus</span>=<span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34; &lt;F8&gt; Tagbar 열고 닫기 매크로 설정</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">noremap</span> &lt;<span style="color:#a6e22e">F8</span>&gt; :<span style="color:#a6e22e">TagbarToggle</span>&lt;<span style="color:#a6e22e">CR</span>&gt;<span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p> </p>
+</code></pre>
+    
+  </div>
+  
+
+</p>
+<p>아래의 vim 설정을 통해 <code>F8</code>을 Tagbar단축키로 설정해두었다.
+
+
+
+  
+  <div class="collapsable-code">
+    <input id="613947825" type="checkbox"  />
+    <label for="613947825">
+      
+      <span class="collapsable-code__title">ctags config</span>
+      
+      <span class="collapsable-code__toggle" data-label-expand="Unfold △" data-label-collapse="Fold ▽"></span>
+    </label>
+    <pre class="language-vim match-braces" ><code>
+&#34; ctags 경로 설정
+let g:tagbar_ctags_bin=&#39;/usr/local/bin/ctags&#39;
+let g:tagbar_autoclose=0
+let g:tabar_autofocus=1
+&#34; &lt;F8&gt; Tagbar 열고 닫기 매크로 설정
+noremap &lt;F8&gt; :TagbarToggle&lt;CR&gt;
+</code></pre>
+    
+  </div>
+  
+
+</p>
 <h2 id="fzf"><strong>FZF</strong></h2>
 <p>강력한 터미널 파일탐색 도구인 fzf를 vim 플러그인으로 사용할 수 있다.<br>
 기존에는 <a href="https://github.com/kien/ctrlp.vim">ctrlp</a>를 사용하다가 fzf를 알고나서부터는 이것만 주욱 써오고 있다. 아직은 fzf를 완벽하게 사용하지는 못하고 있지만, 파일 탐색, 버퍼, 문자열 찾기 기능등으로 쓰고 있다.</p>
@@ -291,58 +364,113 @@ brew install ctags
 <h3 id="customization"><strong>Customization</strong></h3>
 <p>fzf-vim은 기본적으로 편집창 아래에 검색결과를 나타내주는데, 이것또한 변경이 가능하다.</p>
 <h4 id="1-fzf-layout">1. fzf layout</h4>
-<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#6272a4">&#34; fzf layout</span>
-<span style="color:#ff79c6">let</span> g:fzf_layout = {<span style="color:#f1fa8c">&#39;up&#39;</span>:<span style="color:#f1fa8c">&#39;~90%&#39;</span>, <span style="color:#f1fa8c">&#39;window&#39;</span>: { <span style="color:#f1fa8c">&#39;width&#39;</span>: <span style="color:#bd93f9">0</span>.<span style="color:#bd93f9">8</span>, <span style="color:#f1fa8c">&#39;height&#39;</span>: <span style="color:#bd93f9">0</span>.<span style="color:#bd93f9">8</span>,<span style="color:#f1fa8c">&#39;yoffset&#39;</span>:<span style="color:#bd93f9">0</span>.<span style="color:#bd93f9">5</span>,<span style="color:#f1fa8c">&#39;xoffset&#39;</span>: <span style="color:#bd93f9">0</span>.<span style="color:#bd93f9">5</span>, <span style="color:#f1fa8c">&#39;highlight&#39;</span>: <span style="color:#f1fa8c">&#39;Todo&#39;</span>, <span style="color:#f1fa8c">&#39;border&#39;</span>: <span style="color:#f1fa8c">&#39;sharp&#39;</span> } }
 
-<span style="color:#ff79c6">let</span> $FZF_DEFAULT_OPTS = <span style="color:#f1fa8c">&#39;--layout=reverse --inline-info&#39;</span>
-<span style="color:#ff79c6">let</span> $FZF_DEFAULT_COMMAND=<span style="color:#f1fa8c">&#34;rg --files --hidden --glob &#39;!.git/**&#39;&#34;</span>
-<span style="color:#6272a4">
-</span><span style="color:#6272a4">&#34; Customize fzf colors to match your color scheme</span>
-<span style="color:#6272a4">&#34; - fzf#wrap translates this to a set of `--color` options</span>
-<span style="color:#ff79c6">let</span> g:fzf_colors =
-\ { <span style="color:#f1fa8c">&#39;fg&#39;</span>:      [<span style="color:#f1fa8c">&#39;fg&#39;</span>, <span style="color:#f1fa8c">&#39;Normal&#39;</span>],
-  \ <span style="color:#f1fa8c">&#39;bg&#39;</span>:      [<span style="color:#f1fa8c">&#39;bg&#39;</span>, <span style="color:#f1fa8c">&#39;Normal&#39;</span>],
-  \ <span style="color:#f1fa8c">&#39;hl&#39;</span>:      [<span style="color:#f1fa8c">&#39;fg&#39;</span>, <span style="color:#f1fa8c">&#39;Comment&#39;</span>],
-  \ <span style="color:#f1fa8c">&#39;fg+&#39;</span>:     [<span style="color:#f1fa8c">&#39;fg&#39;</span>, <span style="color:#f1fa8c">&#39;CursorLine&#39;</span>, <span style="color:#f1fa8c">&#39;CursorColumn&#39;</span>, <span style="color:#f1fa8c">&#39;Normal&#39;</span>],
-  \ <span style="color:#f1fa8c">&#39;bg+&#39;</span>:     [<span style="color:#f1fa8c">&#39;bg&#39;</span>, <span style="color:#f1fa8c">&#39;CursorLine&#39;</span>, <span style="color:#f1fa8c">&#39;CursorColumn&#39;</span>],
-  \ <span style="color:#f1fa8c">&#39;hl+&#39;</span>:     [<span style="color:#f1fa8c">&#39;fg&#39;</span>, <span style="color:#f1fa8c">&#39;Statement&#39;</span>],
-  \ <span style="color:#f1fa8c">&#39;info&#39;</span>:    [<span style="color:#f1fa8c">&#39;fg&#39;</span>, <span style="color:#f1fa8c">&#39;PreProc&#39;</span>],
-  \ <span style="color:#f1fa8c">&#39;border&#39;</span>:  [<span style="color:#f1fa8c">&#39;fg&#39;</span>, <span style="color:#f1fa8c">&#39;Ignore&#39;</span>],
-  \ <span style="color:#f1fa8c">&#39;prompt&#39;</span>:  [<span style="color:#f1fa8c">&#39;fg&#39;</span>, <span style="color:#f1fa8c">&#39;Conditional&#39;</span>],
-  \ <span style="color:#f1fa8c">&#39;pointer&#39;</span>: [<span style="color:#f1fa8c">&#39;fg&#39;</span>, <span style="color:#f1fa8c">&#39;Exception&#39;</span>],
-  \ <span style="color:#f1fa8c">&#39;marker&#39;</span>:  [<span style="color:#f1fa8c">&#39;fg&#39;</span>, <span style="color:#f1fa8c">&#39;Keyword&#39;</span>],
-  \ <span style="color:#f1fa8c">&#39;spinner&#39;</span>: [<span style="color:#f1fa8c">&#39;fg&#39;</span>, <span style="color:#f1fa8c">&#39;Label&#39;</span>],
-  \ <span style="color:#f1fa8c">&#39;header&#39;</span>:  [<span style="color:#f1fa8c">&#39;fg&#39;</span>, <span style="color:#f1fa8c">&#39;Comment&#39;</span>] }</code></pre></div>
- </p>
+
+
+  
+  <div class="collapsable-code">
+    <input id="294578136" type="checkbox"  />
+    <label for="294578136">
+      
+      <span class="collapsable-code__title">fzf config</span>
+      
+      <span class="collapsable-code__toggle" data-label-expand="Unfold △" data-label-collapse="Fold ▽"></span>
+    </label>
+    <pre class="language-vim match-braces" ><code>
+&#34; fzf layout
+let g:fzf_layout = {&#39;up&#39;:&#39;~90%&#39;, &#39;window&#39;: { &#39;width&#39;: 0.8, &#39;height&#39;: 0.8,&#39;yoffset&#39;:0.5,&#39;xoffset&#39;: 0.5, &#39;highlight&#39;: &#39;Todo&#39;, &#39;border&#39;: &#39;sharp&#39; } }
+
+let $FZF_DEFAULT_OPTS = &#39;--layout=reverse --inline-info&#39;
+let $FZF_DEFAULT_COMMAND=&#34;rg --files --hidden --glob &#39;!.git/**&#39;&#34;
+
+&#34; Customize fzf colors to match your color scheme
+&#34; - fzf#wrap translates this to a set of `--color` options
+let g:fzf_colors =
+\ { &#39;fg&#39;:      [&#39;fg&#39;, &#39;Normal&#39;],
+  \ &#39;bg&#39;:      [&#39;bg&#39;, &#39;Normal&#39;],
+  \ &#39;hl&#39;:      [&#39;fg&#39;, &#39;Comment&#39;],
+  \ &#39;fg&#43;&#39;:     [&#39;fg&#39;, &#39;CursorLine&#39;, &#39;CursorColumn&#39;, &#39;Normal&#39;],
+  \ &#39;bg&#43;&#39;:     [&#39;bg&#39;, &#39;CursorLine&#39;, &#39;CursorColumn&#39;],
+  \ &#39;hl&#43;&#39;:     [&#39;fg&#39;, &#39;Statement&#39;],
+  \ &#39;info&#39;:    [&#39;fg&#39;, &#39;PreProc&#39;],
+  \ &#39;border&#39;:  [&#39;fg&#39;, &#39;Ignore&#39;],
+  \ &#39;prompt&#39;:  [&#39;fg&#39;, &#39;Conditional&#39;],
+  \ &#39;pointer&#39;: [&#39;fg&#39;, &#39;Exception&#39;],
+  \ &#39;marker&#39;:  [&#39;fg&#39;, &#39;Keyword&#39;],
+  \ &#39;spinner&#39;: [&#39;fg&#39;, &#39;Label&#39;],
+  \ &#39;header&#39;:  [&#39;fg&#39;, &#39;Comment&#39;] }
+</code></pre>
+    
+  </div>
+  
+
+
 <h4 id="2-files">2. Files</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#6272a4">&#34;Get Files</span>
+
+
+
+  
+  <div class="collapsable-code">
+    <input id="792841365" type="checkbox"  />
+    <label for="792841365">
+      
+      <span class="collapsable-code__title">fzf config</span>
+      
+      <span class="collapsable-code__toggle" data-label-expand="Unfold △" data-label-collapse="Fold ▽"></span>
+    </label>
+    <pre class="language-vim match-braces" ><code>
+&#34;Get Files
 command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(&lt;q-args&gt;, fzf#vim#with_preview({<span style="color:#f1fa8c">&#39;options&#39;</span>: [<span style="color:#f1fa8c">&#39;--layout=reverse&#39;</span>, <span style="color:#f1fa8c">&#39;--inline-info&#39;</span>]}), &lt;bang&gt;<span style="color:#bd93f9">0</span>)</code></pre></div>
-<p> </p>
+    \ call fzf#vim#files(&lt;q-args&gt;, fzf#vim#with_preview({&#39;options&#39;: [&#39;--layout=reverse&#39;, &#39;--inline-info&#39;]}), &lt;bang&gt;0)
+</code></pre>
+    
+  </div>
+  
+
+
 <h4 id="3-rg">3. Rg</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#6272a4">&#34; Get text in files with Rg</span>
-<span style="color:#6272a4">&#34; command! -bang -nargs=* Rg</span>
-<span style="color:#6272a4">&#34;   \ call fzf#vim#grep(</span>
-<span style="color:#6272a4">&#34;   \   &#34;rg --column --line-number --no-heading --color=always --smart-case --glob &#39;!.git/**&#39; &#34;.shellescape(&lt;q-args&gt;), 1,</span>
-<span style="color:#6272a4">
-</span><span style="color:#6272a4"> &#34; Make Ripgrep ONLY search file contents and not filenames</span>
+
+
+
+  
+  <div class="collapsable-code">
+    <input id="895217346" type="checkbox"  />
+    <label for="895217346">
+      
+      <span class="collapsable-code__title">fzf config</span>
+      
+      <span class="collapsable-code__toggle" data-label-expand="Unfold △" data-label-collapse="Fold ▽"></span>
+    </label>
+    <pre class="language-vim match-braces" ><code>
+&#34; Get text in files with Rg
+&#34; command! -bang -nargs=* Rg
+&#34;   \ call fzf#vim#grep(
+&#34;   \   &#34;rg --column --line-number --no-heading --color=always --smart-case --glob &#39;!.git/**&#39; &#34;.shellescape(&lt;q-args&gt;), 1,
+
+ &#34; Make Ripgrep ONLY search file contents and not filenames
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   <span style="color:#f1fa8c">&#39;rg --column --line-number --hidden --smart-case --no-heading --color=always &#39;</span>.shellescape(&lt;q-args&gt;), <span style="color:#bd93f9">1</span>,
-  \   &lt;bang&gt;<span style="color:#bd93f9">0</span> ? fzf#vim#with_preview({<span style="color:#f1fa8c">&#39;options&#39;</span>: <span style="color:#f1fa8c">&#39;--delimiter : --nth 4..&#39;</span>}, <span style="color:#f1fa8c">&#39;up:60%&#39;</span>)
-  \           : fzf#vim#with_preview({<span style="color:#f1fa8c">&#39;options&#39;</span>: <span style="color:#f1fa8c">&#39;--delimiter : --nth 4.. -e&#39;</span>}, <span style="color:#f1fa8c">&#39;right:50%&#39;</span>, <span style="color:#f1fa8c">&#39;?&#39;</span>),
-  \   &lt;bang&gt;<span style="color:#bd93f9">0</span>)
-<span style="color:#6272a4">
-</span><span style="color:#6272a4">&#34; Ripgrep advanced</span>
-<span style="color:#ff79c6">function</span>! RipgrepFzf(query, fullscreen)
-  <span style="color:#ff79c6">let</span> command_fmt = <span style="color:#f1fa8c">&#39;rg --column --line-number --no-heading --color=always --smart-case %s || true&#39;</span>
-  <span style="color:#ff79c6">let</span> initial_command = printf(command_fmt, shellescape(a:query))
-  <span style="color:#ff79c6">let</span> reload_command = printf(command_fmt, <span style="color:#f1fa8c">&#39;{q}&#39;</span>)
-  <span style="color:#ff79c6">let</span> spec = {<span style="color:#f1fa8c">&#39;options&#39;</span>: [<span style="color:#f1fa8c">&#39;--phony&#39;</span>, <span style="color:#f1fa8c">&#39;--query&#39;</span>, a:query, <span style="color:#f1fa8c">&#39;--bind&#39;</span>, <span style="color:#f1fa8c">&#39;change:reload:&#39;</span>.reload_command]}
-  call fzf#vim#grep(initial_command, <span style="color:#bd93f9">1</span>, fzf#vim#with_preview(spec), a:fullscreen)
-<span style="color:#ff79c6">endfunction</span>
+  \   &#39;rg --column --line-number --hidden --smart-case --no-heading --color=always &#39;.shellescape(&lt;q-args&gt;), 1,
+  \   &lt;bang&gt;0 ? fzf#vim#with_preview({&#39;options&#39;: &#39;--delimiter : --nth 4..&#39;}, &#39;up:60%&#39;)
+  \           : fzf#vim#with_preview({&#39;options&#39;: &#39;--delimiter : --nth 4.. -e&#39;}, &#39;right:50%&#39;, &#39;?&#39;),
+  \   &lt;bang&gt;0)
 
-command! -nargs=* -bang RG call RipgrepFzf(&lt;q-args&gt;, &lt;bang&gt;<span style="color:#bd93f9">0</span>)</code></pre></div>
+&#34; Ripgrep advanced
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = &#39;rg --column --line-number --no-heading --color=always --smart-case %s || true&#39;
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, &#39;{q}&#39;)
+  let spec = {&#39;options&#39;: [&#39;--phony&#39;, &#39;--query&#39;, a:query, &#39;--bind&#39;, &#39;change:reload:&#39;.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang RG call RipgrepFzf(&lt;q-args&gt;, &lt;bang&gt;0)
+</code></pre>
+    
+  </div>
+  
+
+
 
     </div>
     
@@ -438,7 +566,7 @@ command! -nargs=* -bang RG call RipgrepFzf(&lt;q-args&gt;, &lt;bang&gt;<span sty
 
 <script src="https://ralpioxxcs.github.io/js/menu.js"></script>
 <script src="https://ralpioxxcs.github.io/js/theme.js"></script>
-<script src="https://ralpioxxcs.github.io/js/prism_coy.js"></script>
+<script src="https://ralpioxxcs.github.io/js/prism.js"></script>
 
 
       

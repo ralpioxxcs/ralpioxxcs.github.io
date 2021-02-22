@@ -9,10 +9,32 @@
     <description>Recent content in Post on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Dec 2020 19:34:14 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 21 Feb 2021 23:16:05 +0900</lastBuildDate>
     
 	<atom:link href="https://ralpioxxcs.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>WSL2 메모리 사용량 조절</title>
+      <link>https://ralpioxxcs.github.io/post/wslconfig/</link>
+      <pubDate>Sun, 21 Feb 2021 23:16:05 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/wslconfig/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          WSL 메모리 사용량 wsl2을 사용하다가 메모리 사용량을 체크 해보면 Vmmem 이라는 놈이 메모리를 엄청 잡아먹고 있는걸 볼 수있다. 마소 공식 document에 따르면 총 메모리의 50퍼센트 혹은 특정 빌드 전 단계에서는 총 메모리의 무려 80퍼센트를 사용한다고 한다.
+ 50% of total memory on Windows or 8GB, whichever is less; on builds before 20175: 80% of your total memory on Windows
+ config 파일 작성 다행히도 .wslconfig라는 파일을 사용해서 WSL 설정을 바꿀 수 있다.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>push_back vs. emplace_back</title>
@@ -122,7 +144,7 @@ multitail -s 2 [filename] [filename]    colorscheme 설정 multitail은 자체 c
         
         
         
-          Plugins vim을 쓰는 가장 큰 이유중 하나는 바로 이 Plugin에 있지않나 싶다. 설치도 비교적 간편하며, 확장성이 뛰어나서 플러그인을 사용하면서 불편한 부분들을 설정파일을 통해 입맛에 맞게 바꿀 수 있다는 점이 매력적이다.
+          Vim Plugins vim을 쓰는 가장 큰 이유중 하나는 바로 이 Plugin에 있지않나 싶다. 설치도 비교적 간편하며, 확장성이 뛰어나서 플러그인을 사용하면서 불편한 부분들을 설정파일을 통해 입맛에 맞게 바꿀 수 있다는 점이 매력적이다.
 지금도 유용하게 사용하는 vim 플러그인들에 대한 소개와 설치방법 및 사용법에 대해 간단히 알아보겠다.
  플러그인 매니저 설치 vim에서 Plugin들을 설치, 관리해주는 도구들이 여러개 있는데 (Vundle, Pathogen) 그 중에서 나는 junegunn님이 만드신 vim-plug를 사용중이다.
 현재 neovim을 사용중이므로 설치 방법은 아래와 같다.
