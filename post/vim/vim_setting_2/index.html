@@ -51,9 +51,10 @@
  플러그인 매니저 설치 vim에서 Plugin들을 설치, 관리해주는 도구들이 여러개 있는데 (Vundle, Pathogen) 그 중에서 나는 junegunn님이 만드신 vim-plug를 사용중이다.
 현재 neovim을 사용중이므로 설치 방법은 아래와 같다." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ralpioxxcs.github.io/post/vim/vim_setting_2/" />
+<meta property="og:url" content="https://ralpioxxcs.github.io/post/vim/vim_setting_2/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-08-07T14:26:52+09:00" />
 <meta property="article:modified_time" content="2020-08-07T14:26:52+09:00" /><meta property="og:site_name" content="My Devlog" />
+
 
 
 
@@ -222,8 +223,8 @@
 
   
   <div class="collapsable-code">
-    <input id="468279153" type="checkbox"  />
-    <label for="468279153">
+    <input id="298361745" type="checkbox"  />
+    <label for="298361745">
       
       <span class="collapsable-code__title">install vim-plug</span>
       
@@ -268,8 +269,8 @@ sh -c &#39;curl -fLo &#34;${XDG_DATA_HOME:-$HOME/.local/share}&#34;/nvim/site/au
 
   
   <div class="collapsable-code">
-    <input id="681752394" type="checkbox"  />
-    <label for="681752394">
+    <input id="589143276" type="checkbox"  />
+    <label for="589143276">
       
       <span class="collapsable-code__title">nerdtree config</span>
       
@@ -296,8 +297,8 @@ noremap &lt;F9&gt; :NERDTreeToggle&lt;CR&gt;
 
   
   <div class="collapsable-code">
-    <input id="983147652" type="checkbox"  />
-    <label for="983147652">
+    <input id="713562984" type="checkbox"  />
+    <label for="713562984">
       
       <span class="collapsable-code__title">install ctags</span>
       
@@ -320,8 +321,8 @@ brew install ctags
 
   
   <div class="collapsable-code">
-    <input id="163429578" type="checkbox"  />
-    <label for="163429578">
+    <input id="147632958" type="checkbox"  />
+    <label for="147632958">
       
       <span class="collapsable-code__title">ctags config</span>
       
@@ -344,7 +345,7 @@ noremap &lt;F8&gt; :TagbarToggle&lt;CR&gt;
 <p>강력한 터미널 파일탐색 도구인 fzf를 vim 플러그인으로 사용할 수 있다.<br>
 기존에는 <a href="https://github.com/kien/ctrlp.vim">ctrlp</a>를 사용하다가 fzf를 알고나서부터는 이것만 주욱 써오고 있다. 아직은 fzf를 완벽하게 사용하지는 못하고 있지만, 파일 탐색, 버퍼, 문자열 찾기 기능등으로 쓰고 있다.</p>
 <p>vim-plug를 이용해 설치한다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">Plug</span> <span style="color:#e6db74">&#39;junegunn/fzf&#39;</span>, { <span style="color:#e6db74">&#39;do&#39;</span>: { -&gt; <span style="color:#a6e22e">fzf</span>#<span style="color:#a6e22e">install</span>() } }<span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">Plug</span> <span style="color:#e6db74">&#39;junegunn/fzf&#39;</span>, { <span style="color:#e6db74">&#39;do&#39;</span>: { -&gt; <span style="color:#a6e22e">fzf</span>#<span style="color:#a6e22e">install</span>() } }<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">Plug</span> <span style="color:#e6db74">&#39;junegunn/fzf.vim&#39;</span><span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div>
   <figure class="left" >
@@ -368,8 +369,8 @@ noremap &lt;F8&gt; :TagbarToggle&lt;CR&gt;
 
   
   <div class="collapsable-code">
-    <input id="196548372" type="checkbox"  />
-    <label for="196548372">
+    <input id="147569328" type="checkbox"  />
+    <label for="147569328">
       
       <span class="collapsable-code__title">fzf config</span>
       
@@ -410,8 +411,8 @@ let g:fzf_colors =
 
   
   <div class="collapsable-code">
-    <input id="487536912" type="checkbox"  />
-    <label for="487536912">
+    <input id="764132985" type="checkbox"  />
+    <label for="764132985">
       
       <span class="collapsable-code__title">fzf config</span>
       
@@ -433,8 +434,8 @@ command! -bang -nargs=? -complete=dir Files
 
   
   <div class="collapsable-code">
-    <input id="547186923" type="checkbox"  />
-    <label for="547186923">
+    <input id="582937164" type="checkbox"  />
+    <label for="582937164">
       
       <span class="collapsable-code__title">fzf config</span>
       
@@ -585,7 +586,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
     
   </body>
 </html>

@@ -54,9 +54,10 @@ coc.nvim 설치 vim-plug 설정부분에 아래를 추가해준뒤, :PlugInstall
 Plug &#39;neoclide/coc.nvim&#39;, {&#39;tag&#39;: &#39;*&#39;, &#39;do&#39;: &#39;./install.sh&#39;} 참고로, node.js 10.12 버전 이상이 설치되어있어야 한다. node.js가 설치되어있지 않다면 여기를 참고하여 다운로드 및 설치를 진행해주자.
  cpp language server 설치 이곳을 보면 C/C&#43;&#43; language server에 맞는 configuration example을 제공한다." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ralpioxxcs.github.io/post/vim/vim_setting_3/" />
+<meta property="og:url" content="https://ralpioxxcs.github.io/post/vim/vim_setting_3/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-12-11T20:13:41+09:00" />
 <meta property="article:modified_time" content="2020-12-11T20:13:41+09:00" /><meta property="og:site_name" content="My Devlog" />
+
 
 
 
@@ -218,7 +219,7 @@ Plug &#39;neoclide/coc.nvim&#39;, {&#39;tag&#39;: &#39;*&#39;, &#39;do&#39;: &#3
 <strong>coc.nvim</strong>은 Language Server Protocol인 LSP를 지원하는 코드 auto-completion 패키지인데 이전에는 ycm을 사용하다가 너무 무겁기도 하고 개인적으로 환경설정 부분에 불편함 점이 있어 coc.nvim을 사용하게 되었다.</p>
 <h2 id="cocnvim-설치">coc.nvim 설치</h2>
 <p>vim-plug 설정부분에 아래를 추가해준뒤, <code>:PlugInstall</code>을 해준다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">Plug <span style="color:#e6db74">&#39;neoclide/coc.nvim&#39;</span>, <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;tag&#39;</span>: <span style="color:#e6db74">&#39;*&#39;</span>, <span style="color:#e6db74">&#39;do&#39;</span>: <span style="color:#e6db74">&#39;./install.sh&#39;</span><span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">Plug <span style="color:#e6db74">&#39;neoclide/coc.nvim&#39;</span>, <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;tag&#39;</span>: <span style="color:#e6db74">&#39;*&#39;</span>, <span style="color:#e6db74">&#39;do&#39;</span>: <span style="color:#e6db74">&#39;./install.sh&#39;</span><span style="color:#f92672">}</span>
 </code></pre></div><p>참고로, <strong>node.js</strong> 10.12 버전 이상이 설치되어있어야 한다. node.js가 설치되어있지 않다면 <a href="https://nodejs.org/ko/download/">여기</a>를 참고하여 다운로드 및 설치를 진행해주자.</p>
 <p> </p>
 <h2 id="cpp-language-server-설치">cpp language server 설치</h2>
@@ -237,18 +238,18 @@ clangd, coc-clangd, ccls, cquery등이 여러 language server 패키지가 있�
 </ul>
 <p>clagn+llvm 의 include와 lib를 저장하고있는 폴더가 없거나 경로지정이 애매하다면, <a href="https://releases.llvm.org/download.html">여기</a>에서 pre-built binaries를 다운로드 한뒤, 특정 폴더에다 해제를 한다.</p>
 <p>위의 조건을 모두 만족한다면 빌드 준비가 모두 완료된것이므로, ccls repository를 clone후 아래 명령어를 따라 빌드한다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">git clone --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --recursive https://github.com/MaskRay/ccls
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">git clone --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --recursive https://github.com/MaskRay/ccls
 cd ccls
 cmake -H. -BRelease -DCMAKE_BUILD_TYPE<span style="color:#f92672">=</span>Release -DCMAKE_PREFIX_PATH<span style="color:#f92672">=</span>/path/to/clang+llvm-xxx <span style="color:#75715e"># clang pre-built binaries 폴더</span>
 cmake --build Release
 </code></pre></div><p>wget 커맨드를 이용하는 방법도 있다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">wget -c http://releases.llvm.org/8.0.0/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">wget -c http://releases.llvm.org/8.0.0/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz
 tar xf clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz
 cmake -H. -BRelease -DCMAKE_BUILD_TYPE<span style="color:#f92672">=</span>Release -DCMAKE_PREFIX_PATH<span style="color:#f92672">=</span>$PWD/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04
 cmake --build Release
 </code></pre></div><p>빌드가 끝났다면, 아래 명령어로 설치를 완료한다.<br>
 만약 설치경로를 변경하고 싶다면 <code>CMakeCache.txt</code>파일을 수정하여 <code>CMAKE_INSTALL_PREFIX</code>에 원하는 경로를 입력한다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">cmake --build Release --target install
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">cmake --build Release --target install
 </code></pre></div><p> </p>
 <h2 id="coc-config">coc config</h2>
 <p>빌드 및 설치가 완료되었다면, coc.nvim에서 ccls를 사용할 수 있도록 config파일을 수정할 차례이다.<br>
@@ -259,7 +260,7 @@ config파일을 수정하는 방법은 두가지 방법이 있다.</p>
 </ul>
 <p>두 방법 모두 결국엔 같은 파일을 수정하는것이긴 하다.</p>
 <h3 id="example">Example</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Json" data-lang="Json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Json" data-lang="Json">{
   <span style="color:#f92672">&#34;languageserver&#34;</span>: {
     <span style="color:#f92672">&#34;ccls&#34;</span>: {
       <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;ccls&#34;</span>,
@@ -284,7 +285,7 @@ config파일을 수정하는 방법은 두가지 방법이 있다.</p>
 </ul>
 <p>보통 CMake같은 build system generator를 통해 <code>compile_commands.json</code>파일을 자동적으로 생성할 수 있으므로, 1번 방법을 사용하는편이 간단하다.<br>
 아래와 같이 cmake configuration arguments로 파일을 만들고, project root폴더에서 해당 파일을 심볼릭링크를 해준다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir build <span style="color:#f92672">&amp;&amp;</span> cd build
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir build <span style="color:#f92672">&amp;&amp;</span> cd build
 cmake -DCMAKE_EXPORT_COMPILE_COMMANDS<span style="color:#f92672">=</span>ON ..
 cd ..
 ln -s build/compile_commands.json .
@@ -408,7 +409,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
     
   </body>
 </html>

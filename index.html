@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.80.0" />
+	<meta name="generator" content="Hugo 0.88.1" />
     
       <title>My Devlog — 기록 &amp; 공부용 개발 블로그</title>
     
@@ -43,8 +43,8 @@
 <meta property="og:title" content="My Devlog" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://ralpioxxcs.github.io/" />
-<meta property="og:updated_time" content="2021-02-21T23:16:05+09:00" /><meta property="og:site_name" content="My Devlog" />
+<meta property="og:url" content="https://ralpioxxcs.github.io/" /><meta property="og:site_name" content="My Devlog" />
+
 
 
 
@@ -174,6 +174,52 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/etc/double_vs_single_quote/">쉘 스크립트 삽질</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2021-09-27
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 2 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="https://ralpioxxcs.github.io/tags/shell/">shell</a>&nbsp;
+          
+            #<a href="https://ralpioxxcs.github.io/tags/bash/">bash</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            배경 최근에 간단한 쉘 스크립트 하나를 짜면서 겪은 문제가 하나 있다. ssh로 연결된 특정 보드의 이더넷 네트워크 인터페이스의 설정을 변경해주는 작업이었다. 적용할 보드가 한두개가 아니라서 해당 작업을 간편하게 하기위해서 HOST(노트북)에서 해당 작업을 수행하는 스크립트를 실행시키면 ssh를 통해 보드내 설정을 바꿔주도록 했다. 딱히 어려울것 없는 작업이라 sshpass, scp, ssh, sed 명령어 조합을 사용하였다.
+로컬 터미널에서 위의 명령어들을 쓰면서 잘 바뀌는것을 확인했고 그 로직을 그대로 쉘 스크립트를 작성하였다… 하지만 문제는 로컬 터미널에서만 테스트 한 점이었다.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/etc/double_vs_single_quote/">Read more →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/wslconfig/">WSL2 메모리 사용량 조절</a></h1>
@@ -367,51 +413,6 @@ multitail -s 2 [filename] [filename]    colorscheme 설정 multitail은 자체 c
       
     </div>
     
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/etc/sshd_config/">SSH 서버 설정</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-09-29
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 1 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="https://ralpioxxcs.github.io/tags/ssh/">ssh</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            SSH  시큐어 셸(Secure SHell, SSH)은 네트워크 상의 다른 컴퓨터에 로그인하거나 원격 시스템에서 명령을 실행하고 다른 시스템으로 파일을 복사할 수 있도록 해 주는 응용 프로그램 또는 그 프로토콜을 가리킨다. 기존의 rsh, rlogin, 텔넷 등을 대체하기 위해 설계되었으며, 강력한 인증 방법 및 안전하지 못한 네트워크에서 안전하게 통신을 할 수 있는 기능을 제공한다. -Wiki
-리눅스 개발환경을 구성하다보면 거의 필수적으로 사용하게 되는 ssh(secure shell) 을 구성하는 방법을 알아보자.
- SSH 서버 설치 ubuntu 및 osx 에는 기본적으로 ssh client는 설치돼있다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/etc/sshd_config/">Read more →</a></div>
-      
-    </div>
-    
     <div class="pagination">
   <div class="pagination__buttons">
     
@@ -480,7 +481,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
     
   </body>
 </html>

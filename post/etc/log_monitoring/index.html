@@ -60,9 +60,10 @@ multitail [filename]
 multitail [filename] [filename]    2개의 파일 모니터링 (세로로 분할)
 multitail -s 2 [filename] [filename]    colorscheme 설정 multitail은 자체 config파일을 통해 로그파일 highlighting을 지원한다." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ralpioxxcs.github.io/post/etc/log_monitoring/" />
+<meta property="og:url" content="https://ralpioxxcs.github.io/post/etc/log_monitoring/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-10-09T20:56:41+09:00" />
 <meta property="article:modified_time" content="2020-10-09T20:56:41+09:00" /><meta property="og:site_name" content="My Devlog" />
+
 
 
 
@@ -257,14 +258,14 @@ multitail -s 2 [filename] [filename]    colorscheme 설정 multitail은 자체 c
 <p><code>multitail</code>은 자체 config파일을 통해 로그파일 highlighting을 지원한다.</p>
 <p><code>/usr/local/etc/</code> 경로에 기본 파일이 있고, 기본적으로 <em>syslog, apache</em>등의 여러가지 colorscheme들이 있다.</p>
 <p>기본 명령어에 <code>-cS</code> 옵션을 추가하여 사용하면 된다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">multitail -cS <span style="color:#f92672">[</span>colorscheme<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>logfile<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Bash" data-lang="Bash">multitail -cS <span style="color:#f92672">[</span>colorscheme<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>logfile<span style="color:#f92672">]</span>
 </code></pre></div><p>공식문서에 따르면 <code>/etc/multitail.conf</code>에 파일이 있다면 적용이 된다고 하는데, 계속 <code>-cS</code> 옵션을 줘도 colorscheme을 찾을수 없다고 하면서 오류가 났다</p>
 <p>구글링을 해보니까 <code>.multitailrc</code> 라는 파일을 홈 경로에 만들어주면 된다고 해서 해봤더니 바로 적용이 되었다. 대신 <code>multitail.conf</code>을 참고하여 사용할 colorscheme만 복사해서 사용해야 한다.<br>
  </p>
 <ul>
 <li><code>mutitailrc</code> 예시</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Text" data-lang="Text">colorscheme:syslog:kernel and unsorted messages
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Text" data-lang="Text">colorscheme:syslog:kernel and unsorted messages
 # segfaults
 cs_re_s:red,,bold:kernel: ([^:]*): segfault at [^ ]* rip [^ ]* rsp [^ ]* error
 cs_re:yellow:kernel: .*: segfault at [^ ]* rip [^ ]* rsp [^ ]* error
@@ -280,7 +281,7 @@ cs_re:red:scanlogd.*
 cs_re:yellow:Did.not
 </code></pre></div><p>또한 정규표현식을 지원하므로 자신만의 custom colorscheme을 만들수도 있다.</p>
 <p>예를들어 <code>info</code>, <code>debug</code>, <code>warning</code>등 로그에 사용되는 특정필터들에 색깔을 입혀보고 싶다면, 다음과 같이 설명하면 된다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Text" data-lang="Text"># test
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Text" data-lang="Text"># test
 colorscheme:test
 # date
 cs_re:magenta,,bold: *[a-z]*[0-9]+[a-z]*
@@ -414,7 +415,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
     
   </body>
 </html>

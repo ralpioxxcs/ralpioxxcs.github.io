@@ -45,9 +45,10 @@
 <meta property="og:description" content="Hugo가 어떻게 각각에 컨텐츠에 접근하고, 폴더를 조직화하여 블로그를 구성하는지 알아보자.
 컨텐츠 구성 (root) └── content └── project | └── index.md // &lt;- https://example.com/project/ ├── posts | ├── firstpost.md // &lt;- https://example.com/posts/firstpost/ | └── secondpost.md // &lt;- https://example.com/posts/secondpost/ └── study ├── first.md // &lt;- https://example.com/study/first/ └── second.md // &lt;- https://example.com/study/second/ 위 처럼 각각 project, posts, study 총 3개의 카테고리가 있다고 가정할 때, Hugo는 section, slug, path, url의 변수들을 이용해 컨텐츠를 관리한다." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ralpioxxcs.github.io/post/hugo/hugo_content_management_1_contents_path/" />
+<meta property="og:url" content="https://ralpioxxcs.github.io/post/hugo/hugo_content_management_1_contents_path/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-12-30T15:07:19+09:00" />
 <meta property="article:modified_time" content="2019-12-30T15:07:19+09:00" /><meta property="og:site_name" content="My Devlog" />
+
 
 
 
@@ -205,7 +206,7 @@
       
       <p>Hugo가 어떻게 각각에 컨텐츠에 접근하고, 폴더를 조직화하여 블로그를 구성하는지 알아보자.</p>
 <h3 id="컨텐츠-구성"><strong>컨텐츠 구성</strong></h3>
-<pre><code>(root)
+<pre tabindex="0"><code>(root)
 └── content
     └── project
     |   └── index.md  // &lt;- https://example.com/project/
@@ -223,7 +224,7 @@ Hugo는 <code>section</code>, <code>slug</code>, <code>path</code>, <code>url</c
 <li><code>path</code> : <code>section</code>에서 <code>slug</code> 직전 까지의 경로</li>
 <li><code>url</code> : 컨텐츠의 상대적인 url, <code>section</code>부터 <code>slug</code>가 포함된 경로와 같다.</li>
 </ul>
-<pre><code>.         url
+<pre tabindex="0"><code>.         url
 .       ⊢--^-⊣
 .        path    slug
 .       ⊢--^-⊣⊢---^---⊣
@@ -238,7 +239,7 @@ content/posts/firstpost.md
 <p><strong>slug</strong><br>
 slug를 재정의 하는 방법은 <code>frontmatter</code>에 <code>slug</code>를 추가한다.<br>
 (e.g., content/posts/old-post.md)
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#960050;background-color:#1e0010">+++</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#960050;background-color:#1e0010">+++</span>
 <span style="color:#a6e22e">title</span> =<span style="color:#e6db74">&#34;New Post&#34;</span>
 <span style="color:#a6e22e">slug</span> =<span style="color:#e6db74">&#34;new-post&#34;</span>
 <span style="color:#960050;background-color:#1e0010">+++</span></code></pre></div></p>
@@ -251,7 +252,7 @@ slug를 재정의 하는 방법은 <code>frontmatter</code>에 <code>slug</code>
 URL또한 재정의(override)될 수 있다. url은 baseURL 다음으로 올 경로를 넣으면 된다.
 (참고로 <code>--uglyURLs</code> 옵션을 무시한다)
 (e.g., content/posts/old-url.md)
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#960050;background-color:#1e0010">+++</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#960050;background-color:#1e0010">+++</span>
 <span style="color:#a6e22e">title</span> =<span style="color:#e6db74">&#34;old url&#34;</span>
 <span style="color:#a6e22e">slug</span> =<span style="color:#e6db74">&#34;/blog/new-url&#34;</span>
 <span style="color:#960050;background-color:#1e0010">+++</span></code></pre></div></p>
@@ -376,7 +377,6 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
     
   </body>
 </html>

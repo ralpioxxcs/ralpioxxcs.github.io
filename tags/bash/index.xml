@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>shell on My Devlog</title>
+    <title>bash on My Devlog</title>
     
     
     
-    <link>https://ralpioxxcs.github.io/tags/shell/</link>
-    <description>Recent content in shell on My Devlog</description>
+    <link>https://ralpioxxcs.github.io/tags/bash/</link>
+    <description>Recent content in bash on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 27 Sep 2021 20:32:39 +0900</lastBuildDate>
     
-	<atom:link href="https://ralpioxxcs.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ralpioxxcs.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
