@@ -9,10 +9,32 @@
     <description>Recent content in Post on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Sep 2021 20:32:39 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 22 Nov 2021 23:46:11 +0900</lastBuildDate>
     
 	<atom:link href="https://ralpioxxcs.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C/C&#43;&#43; &lt;-&gt; Go 콜백함수 구현하기</title>
+      <link>https://ralpioxxcs.github.io/post/etc/cgo_callback/</link>
+      <pubDate>Mon, 22 Nov 2021 23:46:11 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/etc/cgo_callback/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          CGo CGo는 Go에서 C언어를 사용할 수 있게해주는 Go의 feature중 하나이다. 이 기능을 이용해 C언어와 Go언어사이의 콜백함수를 만들어 볼 것이다. 주의할 점은 CGo에서 읽을 수 있는것은 C스타일의 심볼을 갖는 함수 뿐이다. 순수 C언어로만 작성된 라이브러리라면 문제가 없겠지만 C++ 베이스의 함수를 이용하고 싶기 때문에 해당 함수를 한번 wrapping해주는 형태로 만들어 볼 것이다
+기본 사용법 함수를 wrapping 해보기 전, 기본적인 사용법을 다시 보자
+package main /* #include &amp;lt;stdio.h&amp;gt; void CFoo() { printf(&amp;#34;Hello from C\n&amp;#34;); } */ import &amp;#34;C&amp;#34; import &amp;#34;fmt&amp;#34; func main() { fmt.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>쉘 스크립트 삽질</title>

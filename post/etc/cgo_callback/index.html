@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>C/C&#43;&#43; &lt;-&gt; Go 콜백함수 구현하기 :: My Devlog — 기록 &amp; 공부용 개발 블로그</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CGo CGo는 Go에서 C언어를 사용할 수 있게해주는 Go의 feature중 하나이다. 이 기능을 이용해 C언어와 Go언어사이의 콜백함수를 만들어 볼 것이다. 주의할 점은 CGo에서 읽을 수 있는것은 C스타일의 심볼을 갖는 함수 뿐이다. 순수 C언어로만 작성된 라이브러리라면 문제가 없겠지만 C&#43;&#43; 베이스의 함수를 이용하고 싶기 때문에 해당 함수를 한번 wrapping해주는 형태로 만들어 볼 것이다
+기본 사용법 함수를 wrapping 해보기 전, 기본적인 사용법을 다시 보자
+package main /* #include &amp;lt;stdio.h&amp;gt; void CFoo() { printf(&amp;#34;Hello from C\n&amp;#34;); } */ import &amp;#34;C&amp;#34; import &amp;#34;fmt&amp;#34; func main() { fmt."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://ralpioxxcs.github.io/post/etc/cgo_callback/" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/style.min.css">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/prism_coy2.css" id="light">    
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/dracula-prism-old.css" id="dark">    
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://ralpioxxcs.github.io/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://ralpioxxcs.github.io/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C/C&#43;&#43; &lt;-&gt; Go 콜백함수 구현하기"/>
+<meta name="twitter:description" content="CGo CGo는 Go에서 C언어를 사용할 수 있게해주는 Go의 feature중 하나이다. 이 기능을 이용해 C언어와 Go언어사이의 콜백함수를 만들어 볼 것이다. 주의할 점은 CGo에서 읽을 수 있는것은 C스타일의 심볼을 갖는 함수 뿐이다. 순수 C언어로만 작성된 라이브러리라면 문제가 없겠지만 C&#43;&#43; 베이스의 함수를 이용하고 싶기 때문에 해당 함수를 한번 wrapping해주는 형태로 만들어 볼 것이다
+기본 사용법 함수를 wrapping 해보기 전, 기본적인 사용법을 다시 보자
+package main /* #include &lt;stdio.h&gt; void CFoo() { printf(&#34;Hello from C\n&#34;); } */ import &#34;C&#34; import &#34;fmt&#34; func main() { fmt."/>
+
+
+
+<meta property="og:title" content="C/C&#43;&#43; &lt;-&gt; Go 콜백함수 구현하기" />
+<meta property="og:description" content="CGo CGo는 Go에서 C언어를 사용할 수 있게해주는 Go의 feature중 하나이다. 이 기능을 이용해 C언어와 Go언어사이의 콜백함수를 만들어 볼 것이다. 주의할 점은 CGo에서 읽을 수 있는것은 C스타일의 심볼을 갖는 함수 뿐이다. 순수 C언어로만 작성된 라이브러리라면 문제가 없겠지만 C&#43;&#43; 베이스의 함수를 이용하고 싶기 때문에 해당 함수를 한번 wrapping해주는 형태로 만들어 볼 것이다
+기본 사용법 함수를 wrapping 해보기 전, 기본적인 사용법을 다시 보자
+package main /* #include &lt;stdio.h&gt; void CFoo() { printf(&#34;Hello from C\n&#34;); } */ import &#34;C&#34; import &#34;fmt&#34; func main() { fmt." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ralpioxxcs.github.io/post/etc/cgo_callback/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-11-22T23:46:11+09:00" />
+<meta property="article:modified_time" content="2021-11-22T23:46:11+09:00" /><meta property="og:site_name" content="My Devlog" />
+
+
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+    <span class="logo__text">My Devlog</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/post">Post</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">
+            Show more
+            <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+          </li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/cs">Computer Science</a></li>
+              
+            
+              
+                <li><a href="/ps">Problem Solving</a></li>
+              
+            
+              
+                <li><a href="/til">Today I Learned</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/post">Post</a></li>
+      
+    
+      
+        <li><a href="/cs">Computer Science</a></li>
+      
+    
+      
+        <li><a href="/ps">Problem Solving</a></li>
+      
+    
+      
+        <li><a href="/til">Today I Learned</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/etc/cgo_callback/">C/C++ &lt;-&gt; Go 콜백함수 구현하기</a></h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2021-11-22
+        </span>
+
+        
+          
+            
+
+
+
+          
+        
+      
+
+      
+      
+        <span class="post-read-time">— 3 min read</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="https://ralpioxxcs.github.io/tags/golang/">golang</a>&nbsp;
+        
+          #<a href="https://ralpioxxcs.github.io/tags/c/">c</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      <h1 id="cgo">CGo</h1>
+<p>CGo는 Go에서 C언어를 사용할 수 있게해주는 Go의 feature중 하나이다. 이 기능을 이용해 C언어와 Go언어사이의 콜백함수를 만들어 볼 것이다. 주의할 점은 CGo에서 읽을 수 있는것은 C스타일의 심볼을 갖는 함수 뿐이다. 순수 C언어로만 작성된 라이브러리라면 문제가 없겠지만 C++ 베이스의 함수를 이용하고 싶기 때문에 해당 함수를 한번 <strong>wrapping</strong>해주는 형태로 만들어 볼 것이다</p>
+<h2 id="기본-사용법">기본 사용법</h2>
+<p>함수를 wrapping 해보기 전, 기본적인 사용법을 다시 보자</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Go" data-lang="Go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">#include &lt;stdio.h&gt;
+</span><span style="color:#75715e">void CFoo() {
+</span><span style="color:#75715e">    printf(&#34;Hello from C\n&#34;);
+</span><span style="color:#75715e">}
+</span><span style="color:#75715e">*/</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;C&#34;</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Hello from Go&#34;</span>)
+    <span style="color:#a6e22e">C</span>.<span style="color:#a6e22e">CFoo</span>()
+}
+</code></pre></div><p>출력결과는 다음과 같을 것이다</p>
+<pre tabindex="0"><code>Hello from Go
+Hello from C
+</code></pre><h2 id="c-함수-래핑">C++ 함수 래핑</h2>
+<p>Cpp함수를 래핑하여 Go에서 호출하는 방법이다</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CPP" data-lang="CPP"><span style="color:#75715e">// foo.h
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Foo</span>(std<span style="color:#f92672">::</span>string str);
+
+<span style="color:#75715e">// ------------------------------------------------
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// foo.cpp
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;foo.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Foo</span>(std<span style="color:#f92672">::</span>string str) {
+    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> str <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+}
+</code></pre></div><p>위의 함수를 가지는<code>libfoo.so</code> 라이브러리가 있다고 했을 때, Go에서 위 함수를 사용하기 위해선 CGo에서 wrapper함수를 만들어 호출하는 방식을 사용하면 된다. CGo에서는 C스타일의 심볼만 읽을 수 있기 때문에 래퍼함수의 헤더파일은 반드시 <strong>C</strong> 스타일로 작성하여야 한다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CPP" data-lang="CPP"><span style="color:#75715e">// fooWrapper.h
+</span><span style="color:#75715e"></span><span style="color:#75715e">#ifdef __cplusplus
+</span><span style="color:#75715e">#define extern &#34;C&#34; {
+</span><span style="color:#75715e">#endif
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">FooCGo</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> str);
+
+<span style="color:#75715e">#ifdef __cplusplus
+</span><span style="color:#75715e"></span>}
+<span style="color:#75715e">#endif
+</span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CPP" data-lang="CPP"><span style="color:#75715e">// fooWrapper.cpp
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;fooWrapper.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;foo.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">FooCGo</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> str) {
+    Foo(str);
+}
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Go" data-lang="Go"><span style="color:#75715e">// fooWrapper.go
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">fooWrapper</span>
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">#cgo CFLAGS: -I/path/to/cpp_lib
+</span><span style="color:#75715e">#cgo CXXFLAGS: -I/path/to/cpp_lib
+</span><span style="color:#75715e">#cgo LDFLAGS: -L/path/to/cpp_lib -lfoo
+</span><span style="color:#75715e">#include &#34;fooWrapper.h&#34;
+</span><span style="color:#75715e">*/</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;C&#34;</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Foo</span>() {
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Hello from Go&#34;</span>)
+    <span style="color:#a6e22e">C</span>.<span style="color:#a6e22e">FooCGo</span>(<span style="color:#a6e22e">C</span>.<span style="color:#a6e22e">CString</span>(<span style="color:#e6db74">&#34;Hello from CGo&#34;</span>))
+}
+</code></pre></div><h3 id="출력결과">출력결과</h3>
+<pre tabindex="0"><code>Hello from Go
+Hello from CGo
+</code></pre><p>소스 파일에서 <code>foo.h</code>를 인클루드하고, <code>libfoo.so</code>의 함수<code>Foo()</code>를 호출해주면 된다. 중요한 점은 CGo에서 컴파일 될 수 있도록 <code>extern &quot;C&quot;</code>키워드를 사용하는 것이다.</p>
+<h2 id="go콜백함수-부르기">Go콜백함수 부르기</h2>
+<p>그렇다면, Go함수에서 콜백함수를 정의하고 그 함수를 C언어에서 콜백함수를 등록하는 방법이 있을까? CGo에서는 <code>export</code>를 사용하여 Go로 작성된 함수를 C언어 심볼로 <strong>export</strong>할 수 있다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CPP" data-lang="CPP"><span style="color:#75715e">// foo.h
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;functional&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> callbackFn <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>function<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">void</span>(<span style="color:#66d9ef">int</span> a)<span style="color:#f92672">&gt;</span>;
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">DoSomething</span>(callbackFn fn)
+
+<span style="color:#75715e">// ------------------------------------------------
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// foo.cpp
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;foo.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> DoSomething(callbackFn fn) {
+    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;foo::DoSomething()&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+    fn(<span style="color:#ae81ff">7</span>);
+}
+</code></pre></div><p>위 형태의 콜백함수를 인자로 갖는 호출하는 함수가 있다고 해보자, 우리는 위에서 CPP함수를 래핑하는 방법을 통해서 CPP함수를 호출할 수 있었다. 그리고 Go에서 작성된 콜백함수를 <code>DoSomething()</code>함수의 함수포인터로 보내고 싶다고 하자</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CPP" data-lang="CPP"><span style="color:#75715e">// fooWrapper.h
+</span><span style="color:#75715e"></span><span style="color:#75715e">#ifdef __cplusplus
+</span><span style="color:#75715e">#define extern &#34;C&#34; {
+</span><span style="color:#75715e">#endif
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#a6e22e">void</span>(<span style="color:#f92672">*</span>callbackFnCGO)(<span style="color:#66d9ef">int</span> a);
+
+<span style="color:#66d9ef">void</span> DoSomethingCGO(callbackFnCGO fn)
+
+<span style="color:#75715e">#ifdef __cplusplus
+</span><span style="color:#75715e"></span>}
+<span style="color:#75715e">#endif
+</span></code></pre></div><p>아까 했던 방법과 같은 방식으로 <code>DoSomething()</code>래퍼 함수를 만들고, C스타일 자료형 지정자 <code>typedef</code> 키워드로 콜백함수 형식을 만든다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Go" data-lang="Go"><span style="color:#75715e">// fooWrapper.go
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">wrapper</span>
+
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">#cgo CFLAGS: -I/path/to/cpp_lib
+</span><span style="color:#75715e">#cgo CXXFLAGS: -I/path/to/cpp_lib
+</span><span style="color:#75715e">#cgo LDFLAGS: -L/path/to/cpp_lib -lfoo
+</span><span style="color:#75715e">#include &#34;fooWrapper.h&#34;
+</span><span style="color:#75715e">void myCallback(int a);
+</span><span style="color:#75715e">*/</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;C&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">DoSomething</span>() {
+	<span style="color:#a6e22e">C</span>.<span style="color:#a6e22e">DoSomethingCGO</span>(<span style="color:#a6e22e">C</span>.<span style="color:#a6e22e">callbackFnCGO</span>(<span style="color:#a6e22e">C</span>.<span style="color:#a6e22e">myCallback</span>))
+}
+
+<span style="color:#75715e">//export myCallback
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">myCallback</span>(<span style="color:#a6e22e">a</span> <span style="color:#a6e22e">C</span>.<span style="color:#66d9ef">int</span>) {
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;callback from go context (%v)\n&#34;</span>, int(<span style="color:#a6e22e">a</span>))
+}
+</code></pre></div><p>(<a href="https://github.com/ralpioxxcs/cgo_callback_example">예제 코드 보기</a>)</p>
+<p>Go에서 콜백함수를 작성하고 주석으로 <code>//export [함수이름]</code>의 형태로 작성한다. CGo에서 이 부분을 보고 C함수심볼로 만들어주고 그것을 코드내에서 <code>C.[export한 함수이름]</code>로 사용할 수 있다. 그 함수를 래핑함수의 파라미터로 넘겨주면 된다. 주의할 점은 <code>//</code>와 <code>export</code>사이에 공백이 있으면 안된다. 이 점을 유의하여 삽질하지 않도록 주의하자..</p>
+<h3 id="출력결과-1">출력결과</h3>
+<pre tabindex="0"><code>foo::DoSomething()
+callback from go context (7)
+</code></pre><p>c/c++ 베이스로 작성된 라이브러리가 있고, 해당 라이브러리를 사용하는 REST API, GraphQL등의 서버 어플리케이션을 만들어야 할 때 자주 사용하는 방법인데 함수를 래핑하는 방법이 약간 노가다성이 있기도 하지만.. 생산성 및 효율성 등을 고려하면 사용하는 방법만 알아두면 유용하게 쓰일 수 있을 것 같다.</p>
+
+    </div>
+    
+    <div class="pagination">
+        <div class="pagination__title">
+            <span class="pagination__title-h">
+                Read other posts
+            </span>
+            <hr />
+        </div>
+        <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="https://ralpioxxcs.github.io/post/etc/double_vs_single_quote/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">쉘 스크립트 삽질</span>
+                </a>
+              </span>
+            
+            
+
+                
+        </div>
+    </div>
+      
+
+    
+
+    
+      
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-ralpioxxcs-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+    <span class="logo__text">My Devlog</span>
+    <span class="logo__cursor_foot"></span>
+  
+</a>
+
+      <div class="copyright">
+         
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a> & customized by <a href="https://github.com/ralpioxxcs">ralpioxxcs</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+
+
+
+
+<script src="https://ralpioxxcs.github.io/js/menu.js"></script>
+<script src="https://ralpioxxcs.github.io/js/theme.js"></script>
+<script src="https://ralpioxxcs.github.io/js/prism.js"></script>
+
+
+      
+    </div>
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-189380926-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+  </body>
+</html>

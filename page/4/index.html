@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.88.1" />
+	<meta name="generator" content="Hugo 0.89.4" />
     
       <title>My Devlog — 기록 &amp; 공부용 개발 블로그</title>
     
@@ -174,6 +174,50 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/cmake/cmake_1/">CMake Part1 - Overview</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-01-19
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 1 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="https://ralpioxxcs.github.io/tags/cmake/">cmake</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            CMake? cmake란 cross platform 기반의 프로젝트 전체 빌드 프로세스를 관리해주는 유용한 툴이다. 직접 빌드를 수행하지는 않지만 지정된 OS에 맞는 Make파일 혹은 **솔루션(sln)**파일의 생성을 도와주어 소스코드 빌드를 편리하게 해준다.
+Cmake의 장점  (root) |- foo.cpp |- CMakeLists.txt foo.cpp 라는 소스코드가 하나 있다고 가정하자. 이 소스코드를 각각의 다른 OS에서 빌드할 때, 윈도우즈라면 Visual Studio를, OSX라면 Xcode, Linux라면 Makefile을 이용할것이다. Cmake는 이런 귀찮은 과정을 CMakeLists.txt라는 프로젝트를 정의하는 파일을 하나 만듦으로써, 각 OS에 맞는 Build tool을 파악해 build command만 입력하면 될수 있도록 해준다.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/cmake/cmake_1/">Read more →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/hugo/hugo_content_management_4_shortcodes/">Hugo Content Management [4] - Shortcodes</a></h1>
@@ -353,52 +397,6 @@ Leaf Bundle Branch Bundle   Left Bundle left bundle은 단독 페이지를 구�
       </div>
       
         <div><a class="read-more button" href="/post/hugo/hugo_content_management_1_contents_path/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_4_remote_repo_link/">Getting Started Hugo [4] - 레포지토리 연동 및 웹 호스팅</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2019-12-29
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 1 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="https://ralpioxxcs.github.io/tags/hugo/">Hugo</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            나만의 블로그를 구축하는데 성공하였다. 이제 로컬에 저장돼있는 hugo 사이트를 github repository와 연동하여 실제로 주소를 갖는 블로그를 만들어보자.
- Step 1. github repository 생성 github에 로그인하여 총 2개의 repository를 생성한다.
-blog 폴더 자체를 저장할 repository hugo로 빌드된 결과파일들을 저장할 repository
-두번째 repository의 이름은 [github계정명].github.io의 형식으로 만들어야 한다.   remote repository 연동  c://hugo/blog 경로에서 $ git init .으로 로컬 repository를 생성한다. $ git remote add origin [첫번째 repository url]를 입력한다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/hugo/hugo_start_4_remote_repo_link/">Read more →</a></div>
       
     </div>
     

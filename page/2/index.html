@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.88.1" />
+	<meta name="generator" content="Hugo 0.89.4" />
     
       <title>My Devlog — 기록 &amp; 공부용 개발 블로그</title>
     
@@ -174,6 +174,57 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/etc/log_monitoring/">multitail을 이용한 로그 모니터링</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-10-09
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 2 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="https://ralpioxxcs.github.io/tags/multitail/">multitail</a>&nbsp;
+          
+            #<a href="https://ralpioxxcs.github.io/tags/log/">log</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            보통 로그파일 실시간으로 보고싶을때 tail 명령어를 사용한다. 하지만 여러 로그를 보고싶을때는 tmux등 화면 분할을 해서 봐야하는데 이 방법은 귀찮다. 이럴때 multitail을 사용하면 간단하게 여러 로그를 모니터링할수 있다.
+설치 apt install multitail을 입력하여 간단하게 설치한다. 맥 유저라면 brew install multitai을 쓴다.
+사용법   1개의 파일 모니터링
+multitail [filename]
+2개의 파일 모니터링 (가로로 분할)
+multitail [filename] [filename]    2개의 파일 모니터링 (세로로 분할)
+multitail -s 2 [filename] [filename]    colorscheme 설정 multitail은 자체 config파일을 통해 로그파일 highlighting을 지원한다.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/etc/log_monitoring/">Read more →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/etc/sshd_config/">SSH 서버 설정</a></h1>
@@ -360,51 +411,6 @@
       </div>
       
         <div><a class="read-more button" href="/post/etc/change_compiler/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/vim/vim_setting_1/">Vim 사용하기 #1 - Install</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-06-19
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 2 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="https://ralpioxxcs.github.io/tags/vim/">vim</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            나에게 vim이란 라즈베리파이 같은 리소스나 메모리등 작업 환경이 열악하거나 불가피한 사유로 인터넷을 사용하지 못하는 상황에서 가끔 쓰던 편집기였다.
-hjkl로 움직이고, visual mode, normal mode 등등 처음에는 진입장벽이 높게 느껴져서 손이 안가다가, 마우스를 쓰는게 너무 귀찮아서 일주일만 마음먹고 연습(?)을 했더니 이제는 vim이 없으면 코딩을 할 맛이 안나게 될 정도로 익숙해져버렸다.
-vim으로 갈아타게 된 결정적인 계기는 VSCode에서 지원하는 c/cpp extension이 메모리를 너무 잡아먹어서이다.. (물론 vim도 이것저것 많이 깔면 느려지겠지만)
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/vim/vim_setting_1/">Read more →</a></div>
       
     </div>
     

@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     
-      <title>Tags :: My Devlog — 기록 &amp; 공부용 개발 블로그</title>
+      <title>golang :: My Devlog — 기록 &amp; 공부용 개발 블로그</title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
-<link rel="canonical" href="https://ralpioxxcs.github.io/tags/" />
+<link rel="canonical" href="https://ralpioxxcs.github.io/tags/golang/" />
 
 
 
@@ -34,20 +34,20 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Tags"/>
+<meta name="twitter:title" content="golang"/>
 <meta name="twitter:description" content=""/>
 
 
 
-<meta property="og:title" content="Tags" />
+<meta property="og:title" content="golang" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://ralpioxxcs.github.io/tags/" /><meta property="og:site_name" content="My Devlog" />
+<meta property="og:url" content="https://ralpioxxcs.github.io/tags/golang/" /><meta property="og:site_name" content="My Devlog" />
 
 
 
 
-<link rel="alternate" type="application/rss+xml" href="/tags/index.xml" title="My Devlog" />
+<link rel="alternate" type="application/rss+xml" href="/tags/golang/index.xml" title="My Devlog" />
 
 
 
@@ -161,190 +161,64 @@
 
       <div class="content">
         
+  <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/etc/cgo_callback/">C/C++ &lt;-&gt; Go 콜백함수 구현하기</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2021-11-22
+          </span>
 
-<div class="terms">
-  <h1>Tags</h1>
-  <ul class="terms__list">
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 3 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="https://ralpioxxcs.github.io/tags/golang/">golang</a>&nbsp;
+          
+            #<a href="https://ralpioxxcs.github.io/tags/c/">c</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            CGo CGo는 Go에서 C언어를 사용할 수 있게해주는 Go의 feature중 하나이다. 이 기능을 이용해 C언어와 Go언어사이의 콜백함수를 만들어 볼 것이다. 주의할 점은 CGo에서 읽을 수 있는것은 C스타일의 심볼을 갖는 함수 뿐이다. 순수 C언어로만 작성된 라이브러리라면 문제가 없겠지만 C++ 베이스의 함수를 이용하고 싶기 때문에 해당 함수를 한번 wrapping해주는 형태로 만들어 볼 것이다
+기본 사용법 함수를 wrapping 해보기 전, 기본적인 사용법을 다시 보자
+package main /* #include &lt;stdio.h&gt; void CFoo() { printf(&#34;Hello from C\n&#34;); } */ import &#34;C&#34; import &#34;fmt&#34; func main() { fmt.
+            
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/etc/cgo_callback/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="pagination">
+  <div class="pagination__buttons">
     
     
-      
-      
-      
-        <li class="terms__term">
-          <a href="https://ralpioxxcs.github.io/tags/bash/">#bash <span class="terms__term-count">1</span></a>
-        </li>
-      
-    
-      
-      
-      
-        <li class="terms__term">
-          <a href="https://ralpioxxcs.github.io/tags/blog/">#Blog <span class="terms__term-count">2</span></a>
-        </li>
-      
-    
-      
-      
-      
-        <li class="terms__term">
-          <a href="https://ralpioxxcs.github.io/tags/c/">#c <span class="terms__term-count">1</span></a>
-        </li>
-      
-    
-      
-      
-      
-        <li class="terms__term">
-          <a href="https://ralpioxxcs.github.io/tags/clang/">#Clang <span class="terms__term-count">2</span></a>
-        </li>
-      
-    
-      
-      
-      
-        <li class="terms__term">
-          <a href="https://ralpioxxcs.github.io/tags/cmake/">#cmake <span class="terms__term-count">4</span></a>
-        </li>
-      
-    
-      
-      
-      
-        <li class="terms__term">
-          <a href="https://ralpioxxcs.github.io/tags/cpp/">#cpp <span class="terms__term-count">1</span></a>
-        </li>
-      
-    
-      
-      
-      
-        <li class="terms__term">
-          <a href="https://ralpioxxcs.github.io/tags/data-structure/">#Data Structure <span class="terms__term-count">4</span></a>
-        </li>
-      
-    
-      
-      
-      
-        <li class="terms__term">
-          <a href="https://ralpioxxcs.github.io/tags/docker/">#docker <span class="terms__term-count">1</span></a>
-        </li>
-      
-    
-      
-      
-      
-        <li class="terms__term">
-          <a href="https://ralpioxxcs.github.io/tags/environment/">#environment <span class="terms__term-count">1</span></a>
-        </li>
-      
-    
-      
-      
-      
-        <li class="terms__term">
-          <a href="https://ralpioxxcs.github.io/tags/gdb/">#gdb <span class="terms__term-count">1</span></a>
-        </li>
-      
-    
-      
-      
-      
-        <li class="terms__term">
-          <a href="https://ralpioxxcs.github.io/tags/golang/">#golang <span class="terms__term-count">1</span></a>
-        </li>
-      
-    
-      
-      
-      
-        <li class="terms__term">
-          <a href="https://ralpioxxcs.github.io/tags/hugo/">#Hugo <span class="terms__term-count">8</span></a>
-        </li>
-      
-    
-      
-      
-      
-        <li class="terms__term">
-          <a href="https://ralpioxxcs.github.io/tags/linux/">#linux <span class="terms__term-count">2</span></a>
-        </li>
-      
-    
-      
-      
-      
-        <li class="terms__term">
-          <a href="https://ralpioxxcs.github.io/tags/llvm/">#llvm <span class="terms__term-count">1</span></a>
-        </li>
-      
-    
-      
-      
-      
-        <li class="terms__term">
-          <a href="https://ralpioxxcs.github.io/tags/log/">#log <span class="terms__term-count">1</span></a>
-        </li>
-      
-    
-      
-      
-      
-        <li class="terms__term">
-          <a href="https://ralpioxxcs.github.io/tags/multitail/">#multitail <span class="terms__term-count">1</span></a>
-        </li>
-      
-    
-      
-      
-      
-        <li class="terms__term">
-          <a href="https://ralpioxxcs.github.io/tags/ps/">#ps <span class="terms__term-count">1</span></a>
-        </li>
-      
-    
-      
-      
-      
-        <li class="terms__term">
-          <a href="https://ralpioxxcs.github.io/tags/shell/">#shell <span class="terms__term-count">1</span></a>
-        </li>
-      
-    
-      
-      
-      
-        <li class="terms__term">
-          <a href="https://ralpioxxcs.github.io/tags/ssh/">#ssh <span class="terms__term-count">1</span></a>
-        </li>
-      
-    
-      
-      
-      
-        <li class="terms__term">
-          <a href="https://ralpioxxcs.github.io/tags/std/">#std <span class="terms__term-count">1</span></a>
-        </li>
-      
-    
-      
-      
-      
-        <li class="terms__term">
-          <a href="https://ralpioxxcs.github.io/tags/vim/">#vim <span class="terms__term-count">3</span></a>
-        </li>
-      
-    
-      
-      
-      
-        <li class="terms__term">
-          <a href="https://ralpioxxcs.github.io/tags/wsl2/">#wsl2 <span class="terms__term-count">1</span></a>
-        </li>
-      
-    
-  </ul>
+  </div>
 </div>
+
+  </div>
 
       </div>
 
