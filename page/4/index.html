@@ -176,6 +176,56 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/cmake/cmake_2/">CMake Part2 - Commands &amp; Vars</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-01-20
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 4 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="https://ralpioxxcs.github.io/tags/cmake/">cmake</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            <ol>
+<li>project 초기 설정 CMAKE_MINIMUM_REQUIRED [용법]
+cmake_minimum_required(VERSION major.minor[.patch[.tweak]][FATAL_ERROR])만약 어떤 오픈소스 라이브러리가 cmake 3.0 버전 이상으로 작성 되었고, 현재 나의 빌드환경은 cmake 2.8버전 미만이라면 빌드 시, 다음의 에러가 출력된다 -&gt;
+CMake 3.0 or higher is required. You are running version 2.8.12.2
+이 커맨드는 반드시 CMakeListst.txt 작성시 맨 처음에 선언 해 놓아야 정상적인 버전 호환 에러를 출력할 수 있다.</li>
+</ol>
+<h1 id="bad-example-projectfoo-cmake_minimum_requiredversion-30-message34using-cmake-version-cmake_version34--project-용법">Bad example project(foo) cmake_minimum_required(VERSION 3.0) message(&quot;Using CMake version ${CMAKE_VERSION}&quot;)  PROJECT [용법]</h1>
+
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/cmake/cmake_2/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/cmake/cmake_1/">CMake Part1 - Overview</a></h1>
       <div class="post-meta">
         
@@ -356,50 +406,6 @@ Leaf Bundle Branch Bundle   Left Bundle left bundle은 단독 페이지를 구�
       
     </div>
     
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/hugo/hugo_content_management_1_contents_path/">Hugo Content Management [1] - Contents Path</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2019-12-30
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 1 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="https://ralpioxxcs.github.io/tags/hugo/">Hugo</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Hugo가 어떻게 각각에 컨텐츠에 접근하고, 폴더를 조직화하여 블로그를 구성하는지 알아보자.
-컨텐츠 구성 (root) └── content └── project | └── index.md // &lt;- <a href="https://example.com/project/">https://example.com/project/</a> ├── posts | ├── firstpost.md // &lt;- <a href="https://example.com/posts/firstpost/">https://example.com/posts/firstpost/</a> | └── secondpost.md // &lt;- <a href="https://example.com/posts/secondpost/">https://example.com/posts/secondpost/</a> └── study ├── first.md // &lt;- <a href="https://example.com/study/first/">https://example.com/study/first/</a> └── second.md // &lt;- <a href="https://example.com/study/second/">https://example.com/study/second/</a> 위 처럼 각각 project, posts, study 총 3개의 카테고리가 있다고 가정할 때, Hugo는 section, slug, path, url의 변수들을 이용해 컨텐츠를 관리한다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/hugo/hugo_content_management_1_contents_path/">Read more →</a></div>
-      
-    </div>
-    
     <div class="pagination">
   <div class="pagination__buttons">
     
@@ -446,6 +452,7 @@ Leaf Bundle Branch Bundle   Left Bundle left bundle은 단독 페이지를 구�
         <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a> & customized by <a href="https://github.com/ralpioxxcs">ralpioxxcs</a></span>
       </div>
     
+    
   </div>
 </footer>
 
@@ -476,5 +483,7 @@ if (!doNotTrack) {
 }
 </script>
     
+
   </body>
+  
 </html>

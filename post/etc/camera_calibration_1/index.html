@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>카메라 캘리브레이션 - 좌표계 :: My Devlog — 기록 &amp; 공부용 개발 블로그</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="카메라 캘리브레이션 3차원의 장면이 카메라를 통해 2차원의 평면으로 구현될 때, 각각의 3차원 상의 점들은 카메라의 위치, 방향 같은 기하학적인 요소와 이미지 센서의 초점 거리, 렌즈의 왜곡 등 여러 내부적인 요소(parameters) 들에 의해 결정된다. 이 내부 요소들을 통해 렌즈의 왜곡, 3D상의 물체에 대한 크기 및 면적, 카메라의 위치등을 계산할 수 있으며, 이 값들을 구하는 과정을 카메라 캘리브레이션 이라고 부른다.
+좌표계 카메라 캘리브레이션에서는 4가지의 좌표계를 사용한다
+ 월드 좌표계 (3D) 픽셀 좌표계 정규 좌표계 카메라 좌표계  월드 좌표계 사물의 위치를 나타내는 좌표계로 3차원(X,Y,Z)을 사용하는 좌표계이다."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://ralpioxxcs.github.io/post/etc/camera_calibration_1/" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/style.min.css">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/prism_coy2.css" id="light">    
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/dracula-prism-old.css" id="dark">    
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://ralpioxxcs.github.io/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://ralpioxxcs.github.io/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="카메라 캘리브레이션 - 좌표계"/>
+<meta name="twitter:description" content="카메라 캘리브레이션 3차원의 장면이 카메라를 통해 2차원의 평면으로 구현될 때, 각각의 3차원 상의 점들은 카메라의 위치, 방향 같은 기하학적인 요소와 이미지 센서의 초점 거리, 렌즈의 왜곡 등 여러 내부적인 요소(parameters) 들에 의해 결정된다. 이 내부 요소들을 통해 렌즈의 왜곡, 3D상의 물체에 대한 크기 및 면적, 카메라의 위치등을 계산할 수 있으며, 이 값들을 구하는 과정을 카메라 캘리브레이션 이라고 부른다.
+좌표계 카메라 캘리브레이션에서는 4가지의 좌표계를 사용한다
+ 월드 좌표계 (3D) 픽셀 좌표계 정규 좌표계 카메라 좌표계  월드 좌표계 사물의 위치를 나타내는 좌표계로 3차원(X,Y,Z)을 사용하는 좌표계이다."/>
+
+
+
+<meta property="og:title" content="카메라 캘리브레이션 - 좌표계" />
+<meta property="og:description" content="카메라 캘리브레이션 3차원의 장면이 카메라를 통해 2차원의 평면으로 구현될 때, 각각의 3차원 상의 점들은 카메라의 위치, 방향 같은 기하학적인 요소와 이미지 센서의 초점 거리, 렌즈의 왜곡 등 여러 내부적인 요소(parameters) 들에 의해 결정된다. 이 내부 요소들을 통해 렌즈의 왜곡, 3D상의 물체에 대한 크기 및 면적, 카메라의 위치등을 계산할 수 있으며, 이 값들을 구하는 과정을 카메라 캘리브레이션 이라고 부른다.
+좌표계 카메라 캘리브레이션에서는 4가지의 좌표계를 사용한다
+ 월드 좌표계 (3D) 픽셀 좌표계 정규 좌표계 카메라 좌표계  월드 좌표계 사물의 위치를 나타내는 좌표계로 3차원(X,Y,Z)을 사용하는 좌표계이다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ralpioxxcs.github.io/post/etc/camera_calibration_1/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-04-05T23:30:57+09:00" />
+<meta property="article:modified_time" content="2022-04-05T23:30:57+09:00" /><meta property="og:site_name" content="My Devlog" />
+
+
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+    <span class="logo__text">My Devlog</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/post">Post</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">
+            Show more
+            <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+          </li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/cs">Computer Science</a></li>
+              
+            
+              
+                <li><a href="/ps">Problem Solving</a></li>
+              
+            
+              
+                <li><a href="/til">Today I Learned</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/post">Post</a></li>
+      
+    
+      
+        <li><a href="/cs">Computer Science</a></li>
+      
+    
+      
+        <li><a href="/ps">Problem Solving</a></li>
+      
+    
+      
+        <li><a href="/til">Today I Learned</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/etc/camera_calibration_1/">카메라 캘리브레이션 - 좌표계</a></h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2022-04-05
+        </span>
+
+        
+          
+            
+
+
+
+          
+        
+      
+
+      
+      
+        <span class="post-read-time">— 2 min read</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="https://ralpioxxcs.github.io/tags/calibration/">calibration</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      
+        <h2>Table of Contents</h2>
+        <aside class="table-of-contents"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#카메라-캘리브레이션">카메라 캘리브레이션</a></li>
+    <li><a href="#좌표계">좌표계</a>
+      <ul>
+        <li><a href="#월드-좌표계">월드 좌표계</a></li>
+        <li><a href="#카메라-좌표계">카메라 좌표계</a></li>
+        <li><a href="#영상-좌표계-image-coordinate">영상 좌표계 (Image coordinate)</a></li>
+        <li><a href="#정규-좌표계-normalized-image-coordinate">정규 좌표계 (Normalized Image coordinate)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></aside>
+      
+      <h2 id="카메라-캘리브레이션">카메라 캘리브레이션</h2>
+<p>3차원의 장면이 카메라를 통해 2차원의 평면으로 구현될 때, 각각의 3차원 상의 점들은 카메라의 위치, 방향 같은 기하학적인 요소와 이미지 센서의 초점 거리, 렌즈의 왜곡 등 여러 내부적인 요소(parameters) 들에 의해 결정된다. 이 내부 요소들을 통해 렌즈의 왜곡, 3D상의 물체에 대한 크기 및 면적, 카메라의 위치등을 계산할 수 있으며, 이 값들을 구하는 과정을 <strong>카메라 캘리브레이션</strong> 이라고 부른다.</p>
+<h2 id="좌표계">좌표계</h2>
+<p>카메라 캘리브레이션에서는 4가지의 좌표계를 사용한다</p>
+<ul>
+<li>월드 좌표계 (3D)</li>
+<li>픽셀 좌표계</li>
+<li>정규 좌표계</li>
+<li>카메라 좌표계</li>
+</ul>
+<h3 id="월드-좌표계">월드 좌표계</h3>
+<p>사물의 위치를 나타내는 좌표계로 3차원(X,Y,Z)을 사용하는 좌표계이다. 목표로 하는 사물의 위치를 기준으로 잡아 사용할 수 있으며, X축 Y축 또한 기준 원점을 어디로 삼느냐에 따라 달라질 수 있다.</p>
+<p>$$
+P = (X,Y,Z)
+$$</p>
+<h3 id="카메라-좌표계">카메라 좌표계</h3>
+<p>월드 좌표계와 비슷하지만 어떤 공간상의 한 지점이 아닌 카메라의 광학축을 기준으로 한 3차원 좌표계이다. 카메라 렌즈의 정면 방향을 Z축, 카메라 렌즈의 아래쪽이 Y축, 렌즈의 오른쪽 방향을 X축으로 잡는다. 월드 좌표계와 동일한 단위(unit)을 사용해야 한다.</p>
+<p>$$
+P_c = (X_c,Y_c,Z_c)
+$$</p>
+<h3 id="영상-좌표계-image-coordinate">영상 좌표계 (Image coordinate)</h3>
+<p>영상에서 사용하는 좌표계로, 이미지의 좌상단을 원점으로 오른쪽 방향이 x축, 아래쪽이 y축인 2차원 좌표계이다. 월드 좌표계의 한 점 <code>P</code> 는 영상 좌표계 평면의 한 점 <code>p</code> 로 투영된다.</p>
+<p>$$
+p_i = (x,y)
+$$</p>
+<h3 id="정규-좌표계-normalized-image-coordinate">정규 좌표계 (Normalized Image coordinate)</h3>
+<p>카메라 parameter의 영향을 받지 않는 이미지 좌표계로, 카메라의 초점거리가(f) 1인 가상의 이미지 좌표계를 뜻한다. 이상적인 카메라 모델인 <a href="https://en.wikipedia.org/wiki/Pinhole_camera_model">핀홀 카메라 모델</a> 이 정의하는 좌표계와 같다. 각 카메라간의 서로 다른 parameter들의 종속성을 없애기 위해, 불필요한 요소가 제거된 정규화된 이미지 평면 좌표계를 사용한다.</p>
+<p>$$
+p_n = (u,v)
+$$</p>
+
+    </div>
+    
+    <div class="pagination">
+        <div class="pagination__title">
+            <span class="pagination__title-h">
+                Read other posts
+            </span>
+            <hr />
+        </div>
+        <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="https://ralpioxxcs.github.io/post/etc/cgo_callback/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">C/C&#43;&#43; &lt;-&gt; Go 콜백함수 구현하기</span>
+                </a>
+              </span>
+            
+            
+
+                
+        </div>
+    </div>
+      
+
+    
+
+    
+      
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-ralpioxxcs-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+    <span class="logo__text">My Devlog</span>
+    <span class="logo__cursor_foot"></span>
+  
+</a>
+
+      <div class="copyright">
+         
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a> & customized by <a href="https://github.com/ralpioxxcs">ralpioxxcs</a></span>
+      </div>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+  </div>
+</footer>
+
+
+
+
+
+<script src="https://ralpioxxcs.github.io/js/menu.js"></script>
+<script src="https://ralpioxxcs.github.io/js/theme.js"></script>
+<script src="https://ralpioxxcs.github.io/js/prism.js"></script>
+
+
+      
+    </div>
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-189380926-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+
+  </body>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+</html>
