@@ -176,6 +176,53 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/cpp/stdvector/">push_back vs. emplace_back</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2020-12-20
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 3 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="https://ralpioxxcs.github.io/tags/cpp/">cpp</a>&nbsp;
+          
+            #<a href="https://ralpioxxcs.github.io/tags/std/">std</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            push_back 과 emplace_back 둘 다 실질적으로 수행하는 일은 “컨테이너의 끝에 요소를 추가하는것” 로 동일하다. 하지만 두 함수를 memory allocation 관점에서 보면 emplace_back 이 훨씬 효율적으로 작동한다.
+push_back 이 호출될 때 객체 관점에서 순서는 다음과 같다.
+Stack 영역에 생성자를 호출 하면서 임시객체(temporary object)가 할당 된다. 복사 생성자(copy constructor) 혹은 이동 생성자 통해 함수 안에서 또 하나의 temporay object를 생성한다. 생성된 temporary object를 벡터 컨테이너의 끝에 추가한다. 1번의 임시객체가 소멸된다.  이렇게, push_back 함수는 “객체” 자체를 집어넣는 방식으로, R-value의 임시객체가 필요하다.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/cpp/stdvector/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/vim/vim_setting_3/">Vim 사용하기 #3 - C/C++ 개발환경 세팅</a></h1>
       <div class="post-meta">
         
@@ -366,55 +413,6 @@ multitail -s 2 [filename] [filename]    colorscheme 설정 multitail은 자체 c
       
     </div>
     
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/etc/llvm_install/">Ubuntu LLVM Package 설치</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-07-04
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 1 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="https://ralpioxxcs.github.io/tags/llvm/">llvm</a>&nbsp;
-          
-            #<a href="https://ralpioxxcs.github.io/tags/clang/">clang</a>&nbsp;
-          
-            #<a href="https://ralpioxxcs.github.io/tags/linux/">linux</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            이 링크 로 들어가면 아래 사진과 같은 화면이 나오며 각 Release 버전에 맞는 llvm 패키지들을 다운로드 받을 수 있다.  llvm, clang, lld, lldb등 각 패키지에 대한 설명은 여기에 잘 나와있다.
-아무튼 위의 사진에 나온것처럼 설치방법으로는 크게 4가지로 나눌 수 있다.
-소스코드 다운로드 후 직접 빌드 미리 빌드된 바이너리 설치 Automatic Installation Script apt install 커맨드 사용하여 설치  이 포스팅에서는 3번째인 Automatic installation script를 이용하여 설치하는 방법을 다루려고 한다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/etc/llvm_install/">Read more →</a></div>
-      
-    </div>
-    
     <div class="pagination">
   <div class="pagination__buttons">
     
@@ -460,7 +458,6 @@ multitail -s 2 [filename] [filename]    colorscheme 설정 multitail은 자체 c
          
         <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a> & customized by <a href="https://github.com/ralpioxxcs">ralpioxxcs</a></span>
       </div>
-    
     
   </div>
 </footer>

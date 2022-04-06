@@ -164,6 +164,54 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/etc/camera_calibration_2/">카메라 캘리브레이션 - 좌표변환</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2022-04-05
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 3 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="https://ralpioxxcs.github.io/tags/calibration/">calibration</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            좌표 변환  투영  카메라 parameter를 알고 있다고 가정하고, normalized 좌표는 다음 계산식을 통해 영상 좌표로 변환된다.
+\[ x_{img} = x_{norm}*f_x + c_x \\ y_{img} = y_{norm}*f_y + c_y \]
+반대로, 식을 바꿔 image plane 좌표 또한 normalized 좌표로 변환될 수 있다.
+\[ x_{norm} = (x_{img}-c_x)/f_x \\ y_{norm} = (y_{img}-c_y)/f_y \]
+fx, fy는 focal length, 초점거리, cx,cy는 principal point 즉, 주점이라고 부른다. 이 요소들을 3x3 행렬로 만든것을 camera matrix 혹은 intrinsic paramter라고 한다.
+            
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/etc/camera_calibration_2/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/etc/camera_calibration_1/">카메라 캘리브레이션 - 좌표계</a></h1>
       <div class="post-meta">
         
@@ -198,7 +246,7 @@
         
           
             카메라 캘리브레이션 3차원의 장면이 카메라를 통해 2차원의 평면으로 구현될 때, 각각의 3차원 상의 점들은 카메라의 위치, 방향 같은 기하학적인 요소와 이미지 센서의 초점 거리, 렌즈의 왜곡 등 여러 내부적인 요소(parameters) 들에 의해 결정된다. 이 내부 요소들을 통해 렌즈의 왜곡, 3D상의 물체에 대한 크기 및 면적, 카메라의 위치등을 계산할 수 있으며, 이 값들을 구하는 과정을 카메라 캘리브레이션 이라고 부른다.
-좌표계 카메라 캘리브레이션에서는 4가지의 좌표계를 사용한다
+좌표계  좌표계  카메라 캘리브레이션에서는 주로 4가지의 좌표계가 사용된다
  월드 좌표계 (3D) 픽셀 좌표계 정규 좌표계 카메라 좌표계  월드 좌표계 사물의 위치를 나타내는 좌표계로 3차원(X,Y,Z)을 사용하는 좌표계이다.
             
           
@@ -1374,7 +1422,6 @@ OSX brew install hugo Debian, Ubuntu sudo apt-get install hugo package installer
          
         <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a> & customized by <a href="https://github.com/ralpioxxcs">ralpioxxcs</a></span>
       </div>
-    
     
   </div>
 </footer>
