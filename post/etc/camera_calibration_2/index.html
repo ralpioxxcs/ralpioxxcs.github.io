@@ -6,7 +6,7 @@
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="좌표 변환  투영  카메라 parameter를 알고 있다고 가정하고, normalized 좌표는 다음 계산식을 통해 영상 좌표로 변환된다.
+<meta name="description" content="좌표 정규화  투영  카메라 parameter를 알고 있다고 가정하고, normalized 좌표는 다음 계산식을 통해 영상 좌표로 변환된다.
 \[ x_{img} = x_{norm}*f_x &#43; c_x \\ y_{img} = y_{norm}*f_y &#43; c_y \]
 반대로, 식을 바꿔 image plane 좌표 또한 normalized 좌표로 변환될 수 있다.
 \[ x_{norm} = (x_{img}-c_x)/f_x \\ y_{norm} = (y_{img}-c_y)/f_y \]
@@ -39,7 +39,7 @@ fx, fy는 focal length, 초점거리, cx,cy는 principal point 즉, 주점이라
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="카메라 캘리브레이션 - 좌표변환"/>
-<meta name="twitter:description" content="좌표 변환  투영  카메라 parameter를 알고 있다고 가정하고, normalized 좌표는 다음 계산식을 통해 영상 좌표로 변환된다.
+<meta name="twitter:description" content="좌표 정규화  투영  카메라 parameter를 알고 있다고 가정하고, normalized 좌표는 다음 계산식을 통해 영상 좌표로 변환된다.
 \[ x_{img} = x_{norm}*f_x &#43; c_x \\ y_{img} = y_{norm}*f_y &#43; c_y \]
 반대로, 식을 바꿔 image plane 좌표 또한 normalized 좌표로 변환될 수 있다.
 \[ x_{norm} = (x_{img}-c_x)/f_x \\ y_{norm} = (y_{img}-c_y)/f_y \]
@@ -48,7 +48,7 @@ fx, fy는 focal length, 초점거리, cx,cy는 principal point 즉, 주점이라
 
 
 <meta property="og:title" content="카메라 캘리브레이션 - 좌표변환" />
-<meta property="og:description" content="좌표 변환  투영  카메라 parameter를 알고 있다고 가정하고, normalized 좌표는 다음 계산식을 통해 영상 좌표로 변환된다.
+<meta property="og:description" content="좌표 정규화  투영  카메라 parameter를 알고 있다고 가정하고, normalized 좌표는 다음 계산식을 통해 영상 좌표로 변환된다.
 \[ x_{img} = x_{norm}*f_x &#43; c_x \\ y_{img} = y_{norm}*f_y &#43; c_y \]
 반대로, 식을 바꿔 image plane 좌표 또한 normalized 좌표로 변환될 수 있다.
 \[ x_{norm} = (x_{img}-c_x)/f_x \\ y_{norm} = (y_{img}-c_y)/f_y \]
@@ -213,7 +213,7 @@ fx, fy는 focal length, 초점거리, cx,cy는 principal point 즉, 주점이라
 
     <div class="post-content">
       
-      <h2 id="좌표-변환">좌표 변환</h2>
+      <h2 id="좌표-정규화">좌표 정규화</h2>
 
 <p>
   <figure class="center" >
@@ -248,6 +248,8 @@ f_x & 0 & c_x \\
 \end{bmatrix}
 \]</span></p>
 
+<h2 id="3d2d-projection">3D-2D Projection</h2>
+
 <p>
   <figure class="center" >
     <img width="" src="/images/pinholeCamera.jpg"   />
@@ -272,12 +274,6 @@ s {\begin{bmatrix}     u \\     v \\     1 \end{bmatrix}}  = K[R | t]\begin{bmat
 
 <p><strong>[R|t]</strong>를 행렬 카메라 외부 파라미터인 <strong>extrinsic parameter</strong>라고 칭한다.</p>
 
-<ul>
-<li>intrinsic parameter (내부 파라미터)</li>
-<li>extrinsic parameter (외부 파라미터)</li>
-<li>distortion coefficients (왜곡 계수)</li>
-</ul>
-
 <h3 id="내부-파라미터-intrinsic">내부 파라미터 (intrinsic)</h3>
 
 <p>
@@ -290,28 +286,24 @@ s {\begin{bmatrix}     u \\     v \\     1 \end{bmatrix}}  = K[R | t]\begin{bmat
 내부 파라미터는 카메라 focal length 를 나타내는 <code>fx,fy</code>  principal point를 나타내는 <code>cx,cy</code>  로 구성된다. 초점 거리는 렌즈의 중심과 이미지 센서 (CMOS)의 중심간의 거리를 뜻한다. 카메라 캘리브레이션에서 사용하는 초점 거리의 단위(unit)는 <strong>pixel</strong> 단위로 표현된다.</p>
 
 <p><span  class="math">\[
-Fx = f_x * W/w \\ Fy = f_y * H/h
+Fx = f_x * W/w \\
+Fy = f_y * H/h \\
 \]</span></p>
 
-<p>위의 관계식을 통해 실제 초점거리를 구할 수 있다.
-(F : mm단위, f : pixel 단위, W,H : 이미지 센서 너비,높이 , w,h : 이미지 센서 픽셀 너비,높이)</p>
+<p><em>(F : mm단위, f : pixel 단위, W,H : 이미지 센서 너비,높이 , w,h : 이미지 센서 픽셀 너비,높이)</em></p>
 
-<ul>
-<li><p><strong>example)</strong> focal length 가 4.2mm 이고 image sensor의 크기가 1/2.9' 일때, pixel 단위는?</p>
+<p>위의 관계식을 통해 실제 초점거리를 구할 수 있다.</p>
 
-<p>W: 4.96mm, H: 3.72mm, w: 728pix , h: 533pix</p>
+<h3 id="example">Example</h3>
 
-<p><span  class="math">\(
-f_x = (4.2mm * 728pix) / 4.96mm
-\)</span>
-약, <em>616pix</em></p>
+<p>focal length 가 4.2mm 이고 image sensor의 크기가 1/2.9' 일때, pixel 단위는?</p>
+<pre tabindex="0"><code>1/2.9&#39; 이미지 센서
+- W: 4.96mm, H: 3.72mm
+- w: 728pix, h: 544pix
 
-<p><span  class="math">\(
-f_y = (4.2mm * 544pix) / 3.72mm
-\)</span> 약, <em>614pix</em></p></li>
-</ul>
-
-<p>주점을 나타내는 <code>cx, cy</code> 는 렌즈의 중심점이 이미지 센서로 투영된 점을 뜻한다. 언뜻 영상의 중심점으로 해석될 수 있으나, 카메라 조립 과정중 이미지 센서와 렌즈가 수평을 이루지 못하면, 영상 중심점과 주점은 서로 다른 값을 가질 수 있다. 이 외에 비대칭 계수(skew coefficients)가 있지만, 무시할 만큼 작은 값이고 요즘 카메라에서는 skew가 없기 때문에 고려하지 않는다.</p>
+f_x = (4.2mm * 728pix) / 4.96mm -&gt; 약, 616pix
+f_y = (4.2mm * 544pix) / 3.72mm -&gt; 약, 614pix</code></pre>
+<p>주점을 나타내는 <code>cx, cy</code> 는 렌즈의 중심점이 이미지 센서로 투영된 점을 뜻한다. 언뜻 영상의 중심점으로 해석될 수 있으나, 카메라 조립 과정중 이미지 센서와 렌즈가 수평을 이루지 못하면, 영상 중심점과 주점은 서로 다른 값을 가질 수 있다. 이 외에 비대칭 계수(skew coefficients)가 있지만, 무시할 만큼 작은 값이고 현대의 카메라에서는 skew가 없기 때문에 고려하지 않는다.</p>
 
 <h3 id="외부-파라미터-extrinsic">외부 파라미터 (extrinsic)</h3>
 
