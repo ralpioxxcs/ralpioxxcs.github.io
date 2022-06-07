@@ -176,6 +176,98 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/hugo/hugo_content_management_3_frontmatter/">Hugo Content Management [3] - Front Matter</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2019-12-30
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 1 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="https://ralpioxxcs.github.io/tags/hugo/">Hugo</a>&nbsp;
+          
+            #<a href="https://ralpioxxcs.github.io/tags/blog/">Blog</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Front Matter? front matter란 작성하고자 하는 컨텐츠(파일)의 제목, 날짜, 작성자 등의 기본적인 속성들을 나타내는 meta-data 형식이다.  Formats Hugo는 다음 3가지의 마크업 언어를 지원한다.
+TOML : +++ YAML : &mdash; JSON : {, }
+을 이용해 front matter의 시작과 끝을 지정한다.  예를들어, a.md라는 새로운 파일을 만들었다면 &mdash; title: &quot;this is title!&quot; date: 2019-12-27T13:39:03+09:00 draft: true &mdash; this is the markdown file 이렇게 파일의 시작 부분에 front matter를 설정해주면,
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/hugo/hugo_content_management_3_frontmatter/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/hugo/hugo_content_management_2_page/">Hugo Content Management [2] - Page Bundle</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2019-12-30
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 2 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="https://ralpioxxcs.github.io/tags/hugo/">Hugo</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Hugo에서는 Page Bundles이라는 개념을 사용해 컨텐츠를 관리한다. Page Bundles에는 2가지 종류가 있다.
+Leaf Bundle Branch Bundle   Left Bundle left bundle은 단독 페이지를 구성하는데 사용되고, index.md 파일을 포함하는 폴더로 구성된다.
+3 of Leaf Bundle Example content/ ├── project │ ├── index.md ├── posts │ ├── my-post │ │ ├── content1.md │ │ ├── content2.md │ | ├── image1.png │ | └── index.md │ └── study │ ├── first.md │ └── second.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/hugo/hugo_content_management_2_page/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/hugo/hugo_content_management_1_contents_path/">Hugo Content Management [1] - Contents Path</a></h1>
       <div class="post-meta">
         
@@ -309,98 +401,6 @@ blog 폴더 자체를 저장할 repository hugo로 빌드된 결과파일들을 
       
     </div>
     
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_2_quick_start/">Getting Started Hugo [2] - 블로그 생성</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2019-12-28
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 2 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="https://ralpioxxcs.github.io/tags/hugo/">Hugo</a>&nbsp;
-          
-            #<a href="https://ralpioxxcs.github.io/tags/blog/">blog</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Let’s create own blog 　Step 1. 블로그 폴더 생성   c://hugo 의 경로에서 $ hugo new site [폴더이름] 을 입력한다. 여기서 폴더이름은 말 그대로 터미널 상에서 접근할 폴더이름일 뿐, 생성하고자 하는 블로그의 이름이 되진 않는다. (예시는 blog로 하였다.)
-폴더를 만들었으면 $ cd blog &amp;&amp; ls  를 입력해 생성된 폴더의 내부를 확인한다.
--&gt; 정상적으로 생성이 되었으면 archtypes, assets, config.toml 등 여러 파일과 폴더들이 생성된 것을 확인할 수 있다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/hugo/hugo_start_2_quick_start/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/hugo/hugo_start_1_install/">Getting Started Hugo [1] - 설치 및 환경설정</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2019-12-28
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 3 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="https://ralpioxxcs.github.io/tags/hugo/">Hugo</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Hugo? Hugo는 웹사이트를 간편하게 만들어주는 정적 사이트 생성기 (static site generator)중 하나이며, 비슷한 생성기들 중 대표적인 예로는 Jekyll (지킬이라고 부른다)이 있다. 처음에는 지킬을 사용하여 블로그를 만들려했다가 단순하게 뭔가 Jekyll보다는 Hugo의 네이밍이 마음에 들어서 Hugo를 선택하여 블로그를 개설하게 되었다.
-Install 설치방법은 install hugo에 각 OS별로 설치를 하는 방법이 잘 안내되어 있다.
-OSX brew install hugo Debian, Ubuntu sudo apt-get install hugo package installer를 이용하는 방법외에는 Release 다운로드 사이트에서 직접 다운로드하여 설치하는 방법도 있다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/hugo/hugo_start_1_install/">Read more →</a></div>
-      
-    </div>
-    
     <div class="pagination">
   <div class="pagination__buttons">
     
@@ -411,6 +411,13 @@ OSX brew install hugo Debian, Ubuntu sudo apt-get install hugo package installer
         </a>
       </span>
     
+    
+      <span class="button next">
+        <a href="/page/6/">
+          <span class="button__text">Older posts</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
     
   </div>
 </div>
@@ -470,5 +477,7 @@ if (!doNotTrack) {
 }
 </script>
     
+
   </body>
+  
 </html>

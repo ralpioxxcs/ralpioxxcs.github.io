@@ -222,6 +222,98 @@ package main import ( &quot;os&quot; &quot;time&quot; log &quot;github.com/sirup
     </div>
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/etc/camera_calibration_2/">카메라 캘리브레이션 - 좌표변환</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2022-04-05
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 3 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="https://ralpioxxcs.github.io/tags/calibration/">calibration</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            좌표 정규화  투영  카메라 parameter를 알고 있다고 가정하고, normalized 좌표는 다음 계산식을 통해 영상 좌표로 변환된다.
+[ x_{img} = x_{norm}*f_x + c_x \ y_{img} = y_{norm}*f_y + c_y ]
+반대로, 식을 바꿔 image plane 좌표 또한 normalized 좌표로 변환될 수 있다.
+[ x_{norm} = (x_{img}-c_x)/f_x \ y_{norm} = (y_{img}-c_y)/f_y ]
+fx, fy는 focal length, 초점거리, cx,cy는 principal point 즉, 주점이라고 부른다. 이 요소들을 3x3 행렬로 만든것을 camera matrix 혹은 intrinsic paramter라고 한다.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/etc/camera_calibration_2/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/etc/camera_calibration_1/">카메라 캘리브레이션 - 좌표계</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2022-04-05
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 2 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="https://ralpioxxcs.github.io/tags/calibration/">calibration</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            카메라 캘리브레이션 3차원의 장면이 카메라를 통해 2차원의 평면으로 구현될 때, 각각의 3차원 상의 점들은 카메라의 위치, 방향 같은 기하학적인 요소와 이미지 센서의 초점 거리, 렌즈의 왜곡 등 여러 내부적인 요소(parameters) 들에 의해 결정된다. 이 내부 요소들을 통해 렌즈의 왜곡, 3D상의 물체에 대한 크기 및 면적, 카메라의 위치등을 계산할 수 있으며, 이 값들을 구하는 과정을 카메라 캘리브레이션 이라고 부른다.
+좌표계  좌표계  카메라 캘리브레이션에서는 주로 4가지의 좌표계가 사용된다
+월드 좌표계 (3D) 픽셀 좌표계 정규 좌표계 카메라 좌표계  월드 좌표계 사물의 위치를 나타내는 좌표계로 3차원(X,Y,Z)을 사용하는 좌표계이다.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/etc/camera_calibration_1/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/etc/cgo_callback/">C/C++ &lt;-&gt; Go 콜백함수 구현하기</a></h1>
       <div class="post-meta">
         
@@ -314,98 +406,6 @@ package main /* #include &lt;stdio.h&gt; void CFoo() { printf(&quot;Hello from C
       
     </div>
     
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/wslconfig/">WSL2 메모리 사용량 조절</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2021-02-21
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 1 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="https://ralpioxxcs.github.io/tags/wsl2/">wsl2</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            WSL 메모리 사용량 wsl2을 사용하다가 메모리 사용량을 체크 해보면 Vmmem 이라는 놈이 메모리를 엄청 잡아먹고 있는걸 볼 수있다. 마소 공식 document에 따르면 총 메모리의 50퍼센트 혹은 특정 빌드 전 단계에서는 총 메모리의 무려 80퍼센트를 사용한다고 한다.
-50% of total memory on Windows or 8GB, whichever is less; on builds before 20175: 80% of your total memory on Windows
-config 파일 작성 다행히도 .wslconfig라는 파일을 사용해서 WSL 설정을 바꿀 수 있다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/wslconfig/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/cpp/stdvector/">push_back vs. emplace_back</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-12-20
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 3 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="https://ralpioxxcs.github.io/tags/cpp/">cpp</a>&nbsp;
-          
-            #<a href="https://ralpioxxcs.github.io/tags/std/">std</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            push_back 과 emplace_back 둘 다 실질적으로 수행하는 일은 “컨테이너의 끝에 요소를 추가하는것” 로 동일하다. 하지만 두 함수를 memory allocation 관점에서 보면 emplace_back 이 훨씬 효율적으로 작동한다.
-push_back 이 호출될 때 객체 관점에서 순서는 다음과 같다.
-Stack 영역에 생성자를 호출 하면서 임시객체(temporary object)가 할당 된다. 복사 생성자(copy constructor) 혹은 이동 생성자 통해 함수 안에서 또 하나의 temporay object를 생성한다. 생성된 temporary object를 벡터 컨테이너의 끝에 추가한다. 1번의 임시객체가 소멸된다.  이렇게, push_back 함수는 “객체” 자체를 집어넣는 방식으로, R-value의 임시객체가 필요하다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/cpp/stdvector/">Read more →</a></div>
-      
-    </div>
-    
     <div class="pagination">
   <div class="pagination__buttons">
     
@@ -475,5 +475,7 @@ if (!doNotTrack) {
 }
 </script>
     
+
   </body>
+  
 </html>
