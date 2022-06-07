@@ -9,17 +9,17 @@
     <description>Recent content in Post on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Apr 2022 23:46:57 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jun 2022 22:36:04 +0900</lastBuildDate>
     
 	<atom:link href="https://ralpioxxcs.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>카메라 캘리브레이션 - 좌표변환</title>
-      <link>https://ralpioxxcs.github.io/post/etc/camera_calibration_2/</link>
-      <pubDate>Tue, 05 Apr 2022 23:46:57 +0900</pubDate>
+      <title>Golang Logrus Hook을 이용한 mutisink 로깅</title>
+      <link>https://ralpioxxcs.github.io/post/logging/</link>
+      <pubDate>Tue, 07 Jun 2022 22:36:04 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/post/etc/camera_calibration_2/</guid>
+      <guid>https://ralpioxxcs.github.io/post/logging/</guid>
       <description>
         
           
@@ -28,33 +28,10 @@
         
         
         
-          좌표 정규화  투영  카메라 parameter를 알고 있다고 가정하고, normalized 좌표는 다음 계산식을 통해 영상 좌표로 변환된다.
-\[ x_{img} = x_{norm}*f_x + c_x \\ y_{img} = y_{norm}*f_y + c_y \]
-반대로, 식을 바꿔 image plane 좌표 또한 normalized 좌표로 변환될 수 있다.
-\[ x_{norm} = (x_{img}-c_x)/f_x \\ y_{norm} = (y_{img}-c_y)/f_y \]
-fx, fy는 focal length, 초점거리, cx,cy는 principal point 즉, 주점이라고 부른다. 이 요소들을 3x3 행렬로 만든것을 camera matrix 혹은 intrinsic paramter라고 한다.
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>카메라 캘리브레이션 - 좌표계</title>
-      <link>https://ralpioxxcs.github.io/post/etc/camera_calibration_1/</link>
-      <pubDate>Tue, 05 Apr 2022 23:30:57 +0900</pubDate>
-      
-      <guid>https://ralpioxxcs.github.io/post/etc/camera_calibration_1/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          카메라 캘리브레이션 3차원의 장면이 카메라를 통해 2차원의 평면으로 구현될 때, 각각의 3차원 상의 점들은 카메라의 위치, 방향 같은 기하학적인 요소와 이미지 센서의 초점 거리, 렌즈의 왜곡 등 여러 내부적인 요소(parameters) 들에 의해 결정된다. 이 내부 요소들을 통해 렌즈의 왜곡, 3D상의 물체에 대한 크기 및 면적, 카메라의 위치등을 계산할 수 있으며, 이 값들을 구하는 과정을 카메라 캘리브레이션 이라고 부른다.
-좌표계  좌표계  카메라 캘리브레이션에서는 주로 4가지의 좌표계가 사용된다
- 월드 좌표계 (3D) 픽셀 좌표계 정규 좌표계 카메라 좌표계  월드 좌표계 사물의 위치를 나타내는 좌표계로 3차원(X,Y,Z)을 사용하는 좌표계이다.
+          Logrus? golang에서 사용하는 대표적인 logging 패키지인 logrus는 stdout, stderr등 다양한 output 및 커스터마이징이 가능한 formatter등 구조화된 로깅을 지원한다.
+구조화된(structured) 로깅? 로그를 단순한 텍스트의 연속이 아닌 특정 데이터 세트(날짜, 사용자, 각종 필드)로 처리할 수 있도록 특정한 메시지 포맷을 구현하는 방식이다.
+기본 사용법 간단하게 콘솔창에 로그를 찍는 예제는 다음과 같다
+package main import ( &amp;#34;os&amp;#34; &amp;#34;time&amp;#34; log &amp;#34;github.com/sirupsen/logrus&amp;#34; ) func main() { log.SetOutput(os.Stdout) log.SetFormatter(&amp;amp;log.TextFormatter{ FullTimestamp: true, TimestampFormat: time.RFC822, }) log.SetLevel(log.InfoLevel) log.Info(&amp;#34;Info message&amp;#34;) log.
           
         
         </description>

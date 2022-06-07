@@ -9,10 +9,33 @@
     <description>Recent content in golang on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Nov 2021 23:46:11 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jun 2022 22:36:04 +0900</lastBuildDate>
     
 	<atom:link href="https://ralpioxxcs.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Golang Logrus Hook을 이용한 mutisink 로깅</title>
+      <link>https://ralpioxxcs.github.io/post/logging/</link>
+      <pubDate>Tue, 07 Jun 2022 22:36:04 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/logging/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Logrus? golang에서 사용하는 대표적인 logging 패키지인 logrus는 stdout, stderr등 다양한 output 및 커스터마이징이 가능한 formatter등 구조화된 로깅을 지원한다.
+구조화된(structured) 로깅? 로그를 단순한 텍스트의 연속이 아닌 특정 데이터 세트(날짜, 사용자, 각종 필드)로 처리할 수 있도록 특정한 메시지 포맷을 구현하는 방식이다.
+기본 사용법 간단하게 콘솔창에 로그를 찍는 예제는 다음과 같다
+package main import ( &amp;#34;os&amp;#34; &amp;#34;time&amp;#34; log &amp;#34;github.com/sirupsen/logrus&amp;#34; ) func main() { log.SetOutput(os.Stdout) log.SetFormatter(&amp;amp;log.TextFormatter{ FullTimestamp: true, TimestampFormat: time.RFC822, }) log.SetLevel(log.InfoLevel) log.Info(&amp;#34;Info message&amp;#34;) log.
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>C/C&#43;&#43; &lt;-&gt; Go 콜백함수 구현하기</title>

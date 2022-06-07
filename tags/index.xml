@@ -9,17 +9,17 @@
     <description>Recent content in Tags on My Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Apr 2022 23:46:57 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jun 2022 22:36:04 +0900</lastBuildDate>
     
 	<atom:link href="https://ralpioxxcs.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>calibration</title>
-      <link>https://ralpioxxcs.github.io/tags/calibration/</link>
-      <pubDate>Tue, 05 Apr 2022 23:46:57 +0900</pubDate>
+      <title>golang</title>
+      <link>https://ralpioxxcs.github.io/tags/golang/</link>
+      <pubDate>Tue, 07 Jun 2022 22:36:04 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/tags/calibration/</guid>
+      <guid>https://ralpioxxcs.github.io/tags/golang/</guid>
       <description>
         
           
@@ -40,26 +40,6 @@
       <pubDate>Mon, 22 Nov 2021 23:46:11 +0900</pubDate>
       
       <guid>https://ralpioxxcs.github.io/tags/c/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>golang</title>
-      <link>https://ralpioxxcs.github.io/tags/golang/</link>
-      <pubDate>Mon, 22 Nov 2021 23:46:11 +0900</pubDate>
-      
-      <guid>https://ralpioxxcs.github.io/tags/golang/</guid>
       <description>
         
           

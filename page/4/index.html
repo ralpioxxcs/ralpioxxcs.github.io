@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.89.4" />
+	<meta name="generator" content="Hugo 0.88.1" />
     
       <title>My Devlog — 기록 &amp; 공부용 개발 블로그</title>
     
@@ -174,50 +174,6 @@
   
 
   <div class="posts">
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/cmake/cmake_3/">CMake Part3 - 프로젝트 구성</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-01-30
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 1 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="https://ralpioxxcs.github.io/tags/cmake/">cmake</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            어떤 프로젝트를 cmake를 이용하여 관리 및 빌드하고자 할때, CMakeLists.txt를작성 시 자주 사용되는 cmake 기본 명령어들이 있다.
-(Root) |- CMakeLists.txt |- README.md |- [src] | |- CMakeListst.txt | |- foo.cpp | |- poo.cpp | |- main.cpp |- [include] | |- foo.h | |- poo.h |- [cmake] | |- options.cmake 이런 구조를 가지는 프로젝트 폴더가 있다고 할 때, CMakeLists.txt는 아래와 같다.  # [/CMakeListst.txt] cmake_minimum_required(VERSION 3.3) project(foo CXX) # -&gt; 'foo'라는 project를 정의한다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/cmake/cmake_3/">Read more →</a></div>
-      
-    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/cmake/cmake_2/">CMake Part2 - Commands &amp; Vars</a></h1>
@@ -405,6 +361,51 @@ TOML : +++ YAML : &mdash; JSON : {, }
       
     </div>
     
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/hugo/hugo_content_management_2_page/">Hugo Content Management [2] - Page Bundle</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2019-12-30
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 2 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="https://ralpioxxcs.github.io/tags/hugo/">Hugo</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Hugo에서는 Page Bundles이라는 개념을 사용해 컨텐츠를 관리한다. Page Bundles에는 2가지 종류가 있다.
+Leaf Bundle Branch Bundle   Left Bundle left bundle은 단독 페이지를 구성하는데 사용되고, index.md 파일을 포함하는 폴더로 구성된다.
+3 of Leaf Bundle Example content/ ├── project │ ├── index.md ├── posts │ ├── my-post │ │ ├── content1.md │ │ ├── content2.md │ | ├── image1.png │ | └── index.md │ └── study │ ├── first.md │ └── second.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/hugo/hugo_content_management_2_page/">Read more →</a></div>
+      
+    </div>
+    
     <div class="pagination">
   <div class="pagination__buttons">
     
@@ -481,7 +482,5 @@ if (!doNotTrack) {
 }
 </script>
     
-
   </body>
-  
 </html>

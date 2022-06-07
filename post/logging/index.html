@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>Golang Logrus Hook을 이용한 mutisink 로깅 :: My Devlog — 기록 &amp; 공부용 개발 블로그</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Logrus? golang에서 사용하는 대표적인 logging 패키지인 logrus는 stdout, stderr등 다양한 output 및 커스터마이징이 가능한 formatter등 구조화된 로깅을 지원한다.
+구조화된(structured) 로깅? 로그를 단순한 텍스트의 연속이 아닌 특정 데이터 세트(날짜, 사용자, 각종 필드)로 처리할 수 있도록 특정한 메시지 포맷을 구현하는 방식이다.
+기본 사용법 간단하게 콘솔창에 로그를 찍는 예제는 다음과 같다
+package main import ( &amp;#34;os&amp;#34; &amp;#34;time&amp;#34; log &amp;#34;github.com/sirupsen/logrus&amp;#34; ) func main() { log.SetOutput(os.Stdout) log.SetFormatter(&amp;amp;log.TextFormatter{ FullTimestamp: true, TimestampFormat: time.RFC822, }) log.SetLevel(log.InfoLevel) log.Info(&amp;#34;Info message&amp;#34;) log."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://ralpioxxcs.github.io/post/logging/" />
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/style.min.css">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/prism_coy2.css" id="light">    
+<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/dracula-prism-old.css" id="dark">    
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://ralpioxxcs.github.io/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://ralpioxxcs.github.io/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Golang Logrus Hook을 이용한 mutisink 로깅"/>
+<meta name="twitter:description" content="Logrus? golang에서 사용하는 대표적인 logging 패키지인 logrus는 stdout, stderr등 다양한 output 및 커스터마이징이 가능한 formatter등 구조화된 로깅을 지원한다.
+구조화된(structured) 로깅? 로그를 단순한 텍스트의 연속이 아닌 특정 데이터 세트(날짜, 사용자, 각종 필드)로 처리할 수 있도록 특정한 메시지 포맷을 구현하는 방식이다.
+기본 사용법 간단하게 콘솔창에 로그를 찍는 예제는 다음과 같다
+package main import ( &#34;os&#34; &#34;time&#34; log &#34;github.com/sirupsen/logrus&#34; ) func main() { log.SetOutput(os.Stdout) log.SetFormatter(&amp;log.TextFormatter{ FullTimestamp: true, TimestampFormat: time.RFC822, }) log.SetLevel(log.InfoLevel) log.Info(&#34;Info message&#34;) log."/>
+
+
+
+<meta property="og:title" content="Golang Logrus Hook을 이용한 mutisink 로깅" />
+<meta property="og:description" content="Logrus? golang에서 사용하는 대표적인 logging 패키지인 logrus는 stdout, stderr등 다양한 output 및 커스터마이징이 가능한 formatter등 구조화된 로깅을 지원한다.
+구조화된(structured) 로깅? 로그를 단순한 텍스트의 연속이 아닌 특정 데이터 세트(날짜, 사용자, 각종 필드)로 처리할 수 있도록 특정한 메시지 포맷을 구현하는 방식이다.
+기본 사용법 간단하게 콘솔창에 로그를 찍는 예제는 다음과 같다
+package main import ( &#34;os&#34; &#34;time&#34; log &#34;github.com/sirupsen/logrus&#34; ) func main() { log.SetOutput(os.Stdout) log.SetFormatter(&amp;log.TextFormatter{ FullTimestamp: true, TimestampFormat: time.RFC822, }) log.SetLevel(log.InfoLevel) log.Info(&#34;Info message&#34;) log." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ralpioxxcs.github.io/post/logging/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-06-07T22:36:04+09:00" />
+<meta property="article:modified_time" content="2022-06-07T22:36:04+09:00" /><meta property="og:site_name" content="My Devlog" />
+
+
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+    <span class="logo__text">My Devlog</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/post">Post</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">
+            Show more
+            <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+          </li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/cs">Computer Science</a></li>
+              
+            
+              
+                <li><a href="/ps">Problem Solving</a></li>
+              
+            
+              
+                <li><a href="/til">Today I Learned</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/post">Post</a></li>
+      
+    
+      
+        <li><a href="/cs">Computer Science</a></li>
+      
+    
+      
+        <li><a href="/ps">Problem Solving</a></li>
+      
+    
+      
+        <li><a href="/til">Today I Learned</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/logging/">Golang Logrus Hook을 이용한 mutisink 로깅</a></h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2022-06-07
+        </span>
+
+        
+          
+            
+
+
+
+          
+        
+      
+
+      
+      
+        <span class="post-read-time">— 4 min read</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="https://ralpioxxcs.github.io/tags/golang/">golang</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      <h2 id="logrus">Logrus?</h2>
+<p>golang에서 사용하는 대표적인 logging 패키지인 <a href="https://github.com/sirupsen/logrus">logrus</a>는 <code>stdout</code>, <code>stderr</code>등 다양한 output 및 커스터마이징이 가능한 formatter등 구조화된 로깅을 지원한다.</p>
+<h3 id="구조화된structured-로깅">구조화된(structured) 로깅?</h3>
+<p>로그를 단순한 텍스트의 연속이 아닌 특정 데이터 세트(날짜, 사용자, 각종 필드)로 처리할 수 있도록 특정한 메시지 포맷을 구현하는 방식이다.</p>
+<h2 id="기본-사용법">기본 사용법</h2>
+<p>간단하게 콘솔창에 로그를 찍는 예제는 다음과 같다</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;os&#34;</span>
+	<span style="color:#e6db74">&#34;time&#34;</span>
+
+	<span style="color:#a6e22e">log</span> <span style="color:#e6db74">&#34;github.com/sirupsen/logrus&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">SetOutput</span>(<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Stdout</span>)
+
+	<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">SetFormatter</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">TextFormatter</span>{
+		<span style="color:#a6e22e">FullTimestamp</span>:   <span style="color:#66d9ef">true</span>,
+		<span style="color:#a6e22e">TimestampFormat</span>: <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">RFC822</span>,
+	})
+
+	<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">SetLevel</span>(<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">InfoLevel</span>)
+	<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#e6db74">&#34;Info message&#34;</span>)
+	<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">WithFields</span>(<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fields</span>{
+		<span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Neymar&#34;</span>,
+		<span style="color:#e6db74">&#34;age&#34;</span>:  <span style="color:#ae81ff">32</span>,
+		<span style="color:#e6db74">&#34;club&#34;</span>: <span style="color:#e6db74">&#34;PSG&#34;</span>,
+	}).<span style="color:#a6e22e">Info</span>(<span style="color:#e6db74">&#34;Info message with fields&#34;</span>)
+	<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Debug</span>(<span style="color:#e6db74">&#34;Debug message&#34;</span>)
+
+	<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">SetLevel</span>(<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">DebugLevel</span>)
+	<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#e6db74">&#34;Info message&#34;</span>)
+	<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Debug</span>(<span style="color:#e6db74">&#34;Debug message&#34;</span>)
+}
+<span style="color:#f92672">import</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">INFO[07 Jun 22 23:08 KST] Info message     
+INFO[07 Jun 22 23:54 KST] Info message with fields                      age=32 club=PSG name=Neymar                            
+INFO[07 Jun 22 23:08 KST] Info message                                 
+DEBU[07 Jun 22 23:08 KST] Debug message  
+</code></pre></div><p>이외에 다양한 사용방법에 대해서는 logrus <a href="https://github.com/sirupsen/logrus">공식레포</a>에서 확인하도록 하자</p>
+<hr>
+<h2 id="multisink-로깅">Multisink 로깅</h2>
+<p>개발을 하다보면 단순히 콘솔창뿐만 아니라 파일에 로그를 남겨야 할 경우가 있다. 당연하게도 logrus 패키지에서는 <code>io.Writer</code>를 파라미터로 받는 <code>logrus.SetOutput</code>를 사용하여 콘솔, 파일 둘 다 동시에 로깅을 할 수 있다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">file</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">OpenFile</span>(<span style="color:#e6db74">&#34;test.log&#34;</span>, <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">O_CREATE</span>|<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">O_WRONLY</span>|<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">O_APPEND</span>, <span style="color:#ae81ff">0755</span>)
+<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+	panic(<span style="color:#a6e22e">err</span>)
+}
+<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">SetOutput</span>(<span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">MultiWriter</span>(<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Stdout</span>, <span style="color:#a6e22e">file</span>))
+</code></pre></div><p>위 코드를 실행하게 되면 아래와 같은 출력과 로그파일을 볼수있다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">time=&#34;07 Jun 22 23:21 KST&#34; level=info msg=&#34;Info message&#34;
+time=&#34;07 Jun 22 23:21 KST&#34; level=info msg=&#34;Info message&#34;
+time=&#34;07 Jun 22 23:21 KST&#34; level=debug msg=&#34;Debug message&#34;
+</code></pre></div><h3 id="로깅-형식이-바뀐-이유">로깅 형식이 바뀐 이유</h3>
+<p>단순히 output을 바꿔주기만 했을뿐인데 로깅 포맷이 바뀌었다. 그 이유가 너무 궁금해서 패키지 내부 코드를 살펴보았다</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">entry</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Entry</span>) <span style="color:#a6e22e">write</span>() {
+	<span style="color:#a6e22e">serialized</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">entry</span>.<span style="color:#a6e22e">Logger</span>.<span style="color:#a6e22e">Formatter</span>.<span style="color:#a6e22e">Format</span>(<span style="color:#a6e22e">entry</span>)
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Fprintf</span>(<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Stderr</span>, <span style="color:#e6db74">&#34;Failed to obtain reader, %v\n&#34;</span>, <span style="color:#a6e22e">err</span>)
+		<span style="color:#66d9ef">return</span>
+	}
+	<span style="color:#a6e22e">entry</span>.<span style="color:#a6e22e">Logger</span>.<span style="color:#a6e22e">mu</span>.<span style="color:#a6e22e">Lock</span>()
+	<span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">entry</span>.<span style="color:#a6e22e">Logger</span>.<span style="color:#a6e22e">mu</span>.<span style="color:#a6e22e">Unlock</span>()
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">entry</span>.<span style="color:#a6e22e">Logger</span>.<span style="color:#a6e22e">Out</span>.<span style="color:#a6e22e">Write</span>(<span style="color:#a6e22e">serialized</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Fprintf</span>(<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Stderr</span>, <span style="color:#e6db74">&#34;Failed to write to log, %v\n&#34;</span>, <span style="color:#a6e22e">err</span>)
+	}
+}
+</code></pre></div><p>logrus 내부에서 실질적으로 로깅을 하는 부분을 봤더니 formatting된 byte slice를 받아서 logger에 등록된 <code>io.Writer</code>을 통해 <code>write</code>를 하는부분을 볼수 있었다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	<span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">terminalInitOnce</span>.<span style="color:#a6e22e">Do</span>(<span style="color:#66d9ef">func</span>() { <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">init</span>(<span style="color:#a6e22e">entry</span>) })
+
+	<span style="color:#a6e22e">timestampFormat</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">TimestampFormat</span>
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">timestampFormat</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span> {
+		<span style="color:#a6e22e">timestampFormat</span> = <span style="color:#a6e22e">defaultTimestampFormat</span>
+	}
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">isColored</span>() {
+		<span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">printColored</span>(<span style="color:#a6e22e">b</span>, <span style="color:#a6e22e">entry</span>, <span style="color:#a6e22e">keys</span>, <span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">timestampFormat</span>)
+	} <span style="color:#66d9ef">else</span> {
+    <span style="color:#75715e">// ...
+</span></code></pre></div><p>출력 형식이 바뀐 이유가 된 핵심 부분이다. logrus내부에서 각 formatter에 맞게 형식을 변환시키는데 기본 TextFormatter의 경우, <code>isTerminal</code>이라는 변수로 터미널 여부를 판단한다. <code>f.isColored</code> 의 조건에 맞으면 원했던 로깅 포맷을 출력하게 되어있다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">isColored</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">ForceColors</span> <span style="color:#f92672">||</span> (<span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">isTerminal</span> <span style="color:#f92672">&amp;&amp;</span> (<span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">GOOS</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;windows&#34;</span>))
+</code></pre></div><p><code>isColored</code>의 조건은 위와 같다. 따라서 Formatter의 옵션중 하나인 <code>ForceColors</code>를 true로 설정해주면 이 문제는 해결된다.</p>
+<p>아래에서 서술할 내용이지만, 터미널 출력이 아닐경우 color code값이 로그파일에 남게되어 지저분해지니까 위와 같은 처리를 한 것같다.</p>
+<h3 id="forcecolor-옵션의-문제점">ForceColor 옵션의 문제점</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[36mINFO[0m[08 Jun 22 00:35 KST] Info message                                 
+[36mINFO[0m[08 Jun 22 00:35 KST] Info message with fields                      [36mage[0m=32 [36mclub[0m=PSG [36mname[0m=Neymar
+[36mINFO[0m[08 Jun 22 00:35 KST] Info message                                 
+[37mDEBU[0m[08 Jun 22 00:35 KST] Debug message                                
+</code></pre></div><p><code>ForceColors</code>옵션을 주어 강제로 색상을 주고 로그파일을 보면 위와같이 콘솔에서 색상을 출력해주기위한 color code값이 그대로 적혀있다.</p>
+<p>로깅 자체에는 문제가 없지만 파일을 열어서 봤을때 보기도 힘들고 아무래도 뭔가 찝찝하다&hellip; 그렇다고 <code>DisableColors</code>값을 <strong>false</strong>로 주어 위 color code값을 없애자니 콘솔창에서 색상 highlight가 되지 않는다.</p>
+<p>사실 로그파일을 읽을때 <code>grep</code> 으로 level keyword를 highlight를 하는 등의 특정 키워드를 <strong>highlight</strong>하는 방법은 여러가지가 있다.</p>
+<p>그래도 이렇게 마무리하면 아쉬울 것 같아서</p>
+<ul>
+<li>같은 로깅 포맷을 사용</li>
+<li>콘솔에서는 highlight를 그대로 사용</li>
+<li>파일 로깅시에는 color code값을 제거</li>
+</ul>
+<p>위를 모두 만족하는 방법은 없을까 해서 열심히 구글링을 해보다가. 비슷한 문제로 <a href="https://github.com/sirupsen/logrus/issues/784">issue</a>가 올라온걸 보았다.</p>
+<p>답변을 요약하면 <code>SetOutput(os.Stdout)</code>은 그대로 적용해 coloring을 하고, 별도의 formatter를 갖는 Hook을 추가하는 방법으로 문제를 해결하는 방법을 말하고 있다.</p>
+<h2 id="file-hooking">File Hooking</h2>
+<p>logrus는 <a href="https://github.com/sirupsen/logrus#hooks"><code>hook</code></a>기능을 제공하는데 hook을 이용해 지정된 곳에 한번에 로그를 남길 수 있다.</p>
+<p>우선 color code가 없는 형태의 custom formatter 인터페이스를 구현한다</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">PlainFormatter</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">TextFormatter</span>
+	<span style="color:#a6e22e">TimestampFormat</span> <span style="color:#66d9ef">string</span>
+	<span style="color:#a6e22e">LevelDesc</span>       []<span style="color:#66d9ef">string</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">NewPlainFormatter</span>() <span style="color:#f92672">*</span><span style="color:#a6e22e">PlainFormatter</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">PlainFormatter</span>{
+		<span style="color:#a6e22e">TimestampFormat</span>: <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">RFC3339</span>,
+		<span style="color:#a6e22e">LevelDesc</span>:       []<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;PANC&#34;</span>, <span style="color:#e6db74">&#34;FATL&#34;</span>, <span style="color:#e6db74">&#34;ERRO&#34;</span>, <span style="color:#e6db74">&#34;WARN&#34;</span>, <span style="color:#e6db74">&#34;INFO&#34;</span>, <span style="color:#e6db74">&#34;DEBG&#34;</span>},
+	}
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">f</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">PlainFormatter</span>) <span style="color:#a6e22e">Format</span>(<span style="color:#a6e22e">entry</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Entry</span>) ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>) {
+	<span style="color:#a6e22e">timestamp</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;%v&#34;</span>, <span style="color:#a6e22e">entry</span>.<span style="color:#a6e22e">Time</span>.<span style="color:#a6e22e">Format</span>(<span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">TimestampFormat</span>))
+	<span style="color:#66d9ef">return</span> []byte(<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;[%s] [%s] %s\n&#34;</span>, <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">LevelDesc</span>[<span style="color:#a6e22e">entry</span>.<span style="color:#a6e22e">Level</span>], <span style="color:#a6e22e">timestamp</span>, <span style="color:#a6e22e">entry</span>.<span style="color:#a6e22e">Message</span>)), <span style="color:#66d9ef">nil</span>
+}
+</code></pre></div><p>다음으로 file을 생성하는 Hook 인터페이스를 구현한다</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">FileHook</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">Formatter</span> <span style="color:#a6e22e">logrus</span>.<span style="color:#a6e22e">Formatter</span>
+	<span style="color:#a6e22e">Level</span>     []<span style="color:#a6e22e">logrus</span>.<span style="color:#a6e22e">Level</span>
+	<span style="color:#a6e22e">Writer</span>    <span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">Writer</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">NewFileHook</span>() <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Hook</span> {
+	<span style="color:#a6e22e">file</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">OpenFile</span>(<span style="color:#e6db74">&#34;test.log&#34;</span>, <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">O_CREATE</span>|<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">O_WRONLY</span>|<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">O_APPEND</span>, <span style="color:#ae81ff">0755</span>)
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+		panic(<span style="color:#a6e22e">err</span>)
+	}
+
+	<span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">FileHook</span>{
+		<span style="color:#a6e22e">Formatter</span>: <span style="color:#a6e22e">NewPlainFormatter</span>(),
+		<span style="color:#a6e22e">Level</span>: []<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Level</span>{
+			<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">InfoLevel</span>,
+		},
+		<span style="color:#a6e22e">Writer</span>: <span style="color:#a6e22e">file</span>,
+	}
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">h</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">FileHook</span>) <span style="color:#a6e22e">Fire</span>(<span style="color:#a6e22e">entry</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Entry</span>) <span style="color:#66d9ef">error</span> {
+	<span style="color:#a6e22e">bytes</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">h</span>.<span style="color:#a6e22e">Formatter</span>.<span style="color:#a6e22e">Format</span>(<span style="color:#a6e22e">entry</span>)
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">err</span>
+	}
+	<span style="color:#a6e22e">h</span>.<span style="color:#a6e22e">Writer</span>.<span style="color:#a6e22e">Write</span>(<span style="color:#a6e22e">bytes</span>)
+
+	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">h</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">FileHook</span>) <span style="color:#a6e22e">Levels</span>() []<span style="color:#a6e22e">logrus</span>.<span style="color:#a6e22e">Level</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">h</span>.<span style="color:#a6e22e">Level</span>
+}
+</code></pre></div><p>중요한 부분은 FileHook 구조체에 별도의 <code>Formatter</code>와 <code>Writer</code>를 설정하는것이다.</p>
+<p>built-in formatter인 <code>TextFormatter</code>를 사용하지 않는 이유는 color code값을 제거하기 위해서다.</p>
+<p>위 설정을 모두 추가한 후, 실제 사용부분에서 <code>log.AddHook(NewFileHook)</code> 만 추가해주면 완성이다.</p>
+<p>실제 쓰여진 파일로그를 보면, <code>WithFields</code>를 사용한 로그는 적용되지 않는데, 그 부분은 PlainFormatter의 interface method인 <code>Format()</code>에서 별도로 처리해야 한다.</p>
+<hr>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/sirupsen/logrus/issues/784">https://github.com/sirupsen/logrus/issues/784</a></li>
+</ul>
+
+    </div>
+    
+    <div class="pagination">
+        <div class="pagination__title">
+            <span class="pagination__title-h">
+                Read other posts
+            </span>
+            <hr />
+        </div>
+        <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="https://ralpioxxcs.github.io/post/etc/cgo_callback/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">C/C&#43;&#43; &lt;-&gt; Go 콜백함수 구현하기</span>
+                </a>
+              </span>
+            
+            
+
+                
+        </div>
+    </div>
+      
+
+    
+
+    
+      
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-ralpioxxcs-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+
+</span>
+    <span class="logo__text">My Devlog</span>
+    <span class="logo__cursor_foot"></span>
+  
+</a>
+
+      <div class="copyright">
+         
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a> & customized by <a href="https://github.com/ralpioxxcs">ralpioxxcs</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+
+
+
+
+<script src="https://ralpioxxcs.github.io/js/menu.js"></script>
+<script src="https://ralpioxxcs.github.io/js/theme.js"></script>
+<script src="https://ralpioxxcs.github.io/js/prism.js"></script>
+
+
+      
+    </div>
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-189380926-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+  </body>
+</html>

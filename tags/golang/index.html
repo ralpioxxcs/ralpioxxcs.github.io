@@ -164,6 +164,53 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/logging/">Golang Logrus Hook을 이용한 mutisink 로깅</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2022-06-07
+          </span>
+
+          
+            
+
+
+
+          
+        
+        
+        
+          <span class="post-read-time">— 4 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="https://ralpioxxcs.github.io/tags/golang/">golang</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Logrus? golang에서 사용하는 대표적인 logging 패키지인 logrus는 stdout, stderr등 다양한 output 및 커스터마이징이 가능한 formatter등 구조화된 로깅을 지원한다.
+구조화된(structured) 로깅? 로그를 단순한 텍스트의 연속이 아닌 특정 데이터 세트(날짜, 사용자, 각종 필드)로 처리할 수 있도록 특정한 메시지 포맷을 구현하는 방식이다.
+기본 사용법 간단하게 콘솔창에 로그를 찍는 예제는 다음과 같다
+package main import ( &#34;os&#34; &#34;time&#34; log &#34;github.com/sirupsen/logrus&#34; ) func main() { log.SetOutput(os.Stdout) log.SetFormatter(&amp;log.TextFormatter{ FullTimestamp: true, TimestampFormat: time.RFC822, }) log.SetLevel(log.InfoLevel) log.Info(&#34;Info message&#34;) log.
+            
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/logging/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/etc/cgo_callback/">C/C++ &lt;-&gt; Go 콜백함수 구현하기</a></h1>
       <div class="post-meta">
         
@@ -273,7 +320,5 @@ if (!doNotTrack) {
 }
 </script>
     
-
   </body>
-  
 </html>
