@@ -1,481 +1,154 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-	<meta name="generator" content="Hugo 0.88.1" />
-    
-      <title>My Devlog — 기록 &amp; 공부용 개발 블로그</title>
-    
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="기록 &amp; 공부용 개발 블로그"/>
-<meta name="keywords" content=""/>
-<meta name="robots" content="noodp"/>
-<link rel="canonical" href="https://ralpioxxcs.github.io/" />
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/style.min.css">
-
-
-
-
-
-
-<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/prism_coy2.css" id="light">    
-<link rel="stylesheet" href="https://ralpioxxcs.github.io/css/dracula-prism-old.css" id="dark">    
-
-
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://ralpioxxcs.github.io/img/apple-touch-icon-144-precomposed.png">
-<link rel="shortcut icon" href="https://ralpioxxcs.github.io/favicon.png">
-
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="My Devlog"/>
-<meta name="twitter:description" content=""/>
-
-
-
-<meta property="og:title" content="My Devlog" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://ralpioxxcs.github.io/" /><meta property="og:site_name" content="My Devlog" />
-
-
-
-
-<link rel="alternate" type="application/rss+xml" href="/index.xml" title="My Devlog" />
-
-
-
-
-  </head>
-  <body class="dark-theme">
-    <div class="container">
-      <header class="header">
-  <span class="header__inner">
-    <a href="/" class="logo" style="text-decoration: none;">
-  
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
-</svg>
-
-</span>
-    <span class="logo__text">My Devlog</span>
-    <span class="logo__cursor"></span>
-  
+<!doctype html><html lang=en dir=auto>
+<head>
+<meta name=generator content="Hugo 0.88.1"><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>Devlog</title>
+<meta name=description content="Archiving develop logs">
+<meta name=author content="ralpioxxcs">
+<link rel=canonical href=https://ralpioxxcs.github.io/>
+<link crossorigin=anonymous href=/assets/css/stylesheet.2fa81e4e41b651138d4bd9c99e87f40e4afec565d5da1afdac3e7aed9f2b96ec.css integrity="sha256-L6geTkG2URONS9nJnof0Dkr+xWXV2hr9rD567Z8rluw=" rel="preload stylesheet" as=style>
+<link rel=icon href=https://ralpioxxcs.github.io/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://ralpioxxcs.github.io/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://ralpioxxcs.github.io/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://ralpioxxcs.github.io/apple-touch-icon.png>
+<link rel=mask-icon href=https://ralpioxxcs.github.io/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<link rel=alternate type=application/rss+xml href=https://ralpioxxcs.github.io/index.xml>
+<link rel=alternate type=application/json href=https://ralpioxxcs.github.io/index.json>
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-189380926-2','auto'),ga('send','pageview'))</script><meta property="og:title" content="Devlog">
+<meta property="og:description" content="Archiving develop logs">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ralpioxxcs.github.io/"><meta property="og:site_name" content="Devlog">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Devlog">
+<meta name=twitter:description content="Archiving develop logs">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Organization","name":"Devlog","url":"https://ralpioxxcs.github.io/","description":"Archiving develop logs","thumbnailUrl":"https://ralpioxxcs.github.io/favicon.ico","sameAs":[]}</script>
+</head>
+<body class=list id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://ralpioxxcs.github.io/ accesskey=h title="Devlog (Alt + H)">
+<img src=https://ralpioxxcs.github.io/apple-touch-icon.png alt=logo aria-label=logo height=20>Devlog</a>
+<div class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</div>
+</div>
+<ul id=menu>
+<li>
+<a href=https://ralpioxxcs.github.io/archives/ title=Archive>
+<span>Archive</span>
 </a>
-
-    <span class="header__right">
-      
-        <nav class="menu">
-  <ul class="menu__inner menu__inner--desktop">
-    
-      
-        
-          <li><a href="/about">About</a></li>
-        
-      
-        
-          <li><a href="/post">Post</a></li>
-        
-      
-      
-        <ul class="menu__sub-inner">
-          <li class="menu__sub-inner-more-trigger">
-            Show more
-            <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
-</svg>
-
-</span>
-          </li>
-
-          <ul class="menu__sub-inner-more hidden">
-            
-              
-                <li><a href="/cs">Computer Science</a></li>
-              
-            
-              
-                <li><a href="/ps">Problem Solving</a></li>
-              
-            
-              
-                <li><a href="/til">Today I Learned</a></li>
-              
-            
-          </ul>
-        </ul>
-      
-    
-  </ul>
-
-  <ul class="menu__inner menu__inner--mobile">
-    
-      
-        <li><a href="/about">About</a></li>
-      
-    
-      
-        <li><a href="/post">Post</a></li>
-      
-    
-      
-        <li><a href="/cs">Computer Science</a></li>
-      
-    
-      
-        <li><a href="/ps">Problem Solving</a></li>
-      
-    
-      
-        <li><a href="/til">Today I Learned</a></li>
-      
-    
-  </ul>
+</li>
+<li>
+<a href=https://ralpioxxcs.github.io/tags/ title=Tags>
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href=https://ralpioxxcs.github.io/search/ title="Search (Alt + /)" accesskey=/>
+<span>Search</span>
+</a>
+</li>
+</ul>
 </nav>
-
-        <span class="menu-trigger">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-          </svg>
-        </span>
-      
-      <span class="theme-toggle">
-        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
-  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
-</svg>
-
-      </span>
-    </span>
-  </span>
 </header>
-
-
-      <div class="content">
-        
-  
-  
-
-  
-  
-    
-  
-  
-
-  
-
-  <div class="posts">
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/logging/">Golang Logrus Hook을 이용한 mutisink 로깅</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2022-06-07
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 4 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="https://ralpioxxcs.github.io/tags/golang/">golang</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            Logrus? golang에서 사용하는 대표적인 logging 패키지인 logrus는 stdout, stderr등 다양한 output 및 커스터마이징이 가능한 formatter등 구조화된 로깅을 지원한다.
+<main class=main>
+<article class=first-entry>
+<header class=entry-header>
+<h2>Golang Logrus Hook을 이용한 mutisink 로깅
+</h2>
+</header>
+<div class=entry-content>
+<p>Logrus? golang에서 사용하는 대표적인 logging 패키지인 logrus는 stdout, stderr등 다양한 output 및 커스터마이징이 가능한 formatter등 구조화된 로깅을 지원한다.
 구조화된(structured) 로깅? 로그를 단순한 텍스트의 연속이 아닌 특정 데이터 세트(날짜, 사용자, 각종 필드)로 처리할 수 있도록 특정한 메시지 포맷을 구현하는 방식이다.
 기본 사용법 간단하게 콘솔창에 로그를 찍는 예제는 다음과 같다
-package main import ( &quot;os&quot; &quot;time&quot; log &quot;github.com/sirupsen/logrus&quot; ) func main() { log.SetOutput(os.Stdout) log.SetFormatter(&amp;log.TextFormatter{ FullTimestamp: true, TimestampFormat: time.RFC822, }) log.SetLevel(log.InfoLevel) log.Info(&quot;Info message&quot;) log.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/logging/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/etc/camera_calibration_2/">카메라 캘리브레이션 - 좌표변환</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2022-04-05
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 3 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="https://ralpioxxcs.github.io/tags/calibration/">calibration</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            좌표 정규화  투영  카메라 parameter를 알고 있다고 가정하고, normalized 좌표는 다음 계산식을 통해 영상 좌표로 변환된다.
-[ x_{img} = x_{norm}*f_x + c_x \ y_{img} = y_{norm}*f_y + c_y ]
-반대로, 식을 바꿔 image plane 좌표 또한 normalized 좌표로 변환될 수 있다.
-[ x_{norm} = (x_{img}-c_x)/f_x \ y_{norm} = (y_{img}-c_y)/f_y ]
-fx, fy는 focal length, 초점거리, cx,cy는 principal point 즉, 주점이라고 부른다. 이 요소들을 3x3 행렬로 만든것을 camera matrix 혹은 intrinsic paramter라고 한다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/etc/camera_calibration_2/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/etc/camera_calibration_1/">카메라 캘리브레이션 - 좌표계</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2022-04-05
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 2 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="https://ralpioxxcs.github.io/tags/calibration/">calibration</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            카메라 캘리브레이션 3차원의 장면이 카메라를 통해 2차원의 평면으로 구현될 때, 각각의 3차원 상의 점들은 카메라의 위치, 방향 같은 기하학적인 요소와 이미지 센서의 초점 거리, 렌즈의 왜곡 등 여러 내부적인 요소(parameters) 들에 의해 결정된다. 이 내부 요소들을 통해 렌즈의 왜곡, 3D상의 물체에 대한 크기 및 면적, 카메라의 위치등을 계산할 수 있으며, 이 값들을 구하는 과정을 카메라 캘리브레이션 이라고 부른다.
-좌표계  좌표계  카메라 캘리브레이션에서는 주로 4가지의 좌표계가 사용된다
-월드 좌표계 (3D) 픽셀 좌표계 정규 좌표계 카메라 좌표계  월드 좌표계 사물의 위치를 나타내는 좌표계로 3차원(X,Y,Z)을 사용하는 좌표계이다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/etc/camera_calibration_1/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/etc/cgo_callback/">C/C++ &lt;-&gt; Go 콜백함수 구현하기</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2021-11-22
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 3 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="https://ralpioxxcs.github.io/tags/golang/">golang</a>&nbsp;
-          
-            #<a href="https://ralpioxxcs.github.io/tags/c/">c</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            CGo CGo는 Go에서 C언어를 사용할 수 있게해주는 Go의 feature중 하나이다. 이 기능을 이용해 C언어와 Go언어사이의 콜백함수를 만들어 볼 것이다. 주의할 점은 CGo에서 읽을 수 있는것은 C스타일의 심볼을 갖는 함수 뿐이다. 순수 C언어로만 작성된 라이브러리라면 문제가 없겠지만 C++ 베이스의 함수를 이용하고 싶기 때문에 해당 함수를 한번 wrapping해주는 형태로 만들어 볼 것이다
-기본 사용법 함수를 wrapping 해보기 전, 기본적인 사용법을 다시 보자
-package main /* #include &lt;stdio.h&gt; void CFoo() { printf(&quot;Hello from C\n&quot;); } */ import &quot;C&quot; import &quot;fmt&quot; func main() { fmt.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/etc/cgo_callback/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="https://ralpioxxcs.github.io/post/etc/double_vs_single_quote/">쉘 스크립트 삽질</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2021-09-27
-          </span>
-
-          
-            
-
-
-
-          
-        
-        
-        
-          <span class="post-read-time">— 2 min read</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="https://ralpioxxcs.github.io/tags/shell/">shell</a>&nbsp;
-          
-            #<a href="https://ralpioxxcs.github.io/tags/bash/">bash</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            배경 최근에 간단한 쉘 스크립트 하나를 짜면서 겪은 문제가 하나 있다. ssh로 연결된 특정 보드의 이더넷 네트워크 인터페이스의 설정을 변경해주는 작업이었다. 적용할 보드가 한두개가 아니라서 해당 작업을 간편하게 하기위해서 HOST(노트북)에서 해당 작업을 수행하는 스크립트를 실행시키면 ssh를 통해 보드내 설정을 바꿔주도록 했다. 딱히 어려울것 없는 작업이라 sshpass, scp, ssh, sed 명령어 조합을 사용하였다.
-로컬 터미널에서 위의 명령어들을 쓰면서 잘 바뀌는것을 확인했고 그 로직을 그대로 쉘 스크립트를 작성하였다… 하지만 문제는 로컬 터미널에서만 테스트 한 점이었다.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/etc/double_vs_single_quote/">Read more →</a></div>
-      
-    </div>
-    
-    <div class="pagination">
-  <div class="pagination__buttons">
-    
-    
-      <span class="button next">
-        <a href="/page/2/">
-          <span class="button__text">Older posts</span>
-          <span class="button__icon">→</span>
-        </a>
-      </span>
-    
-  </div>
+package main import ( "os" "time" log "github.com/sirupsen/logrus" ) func main() { log.SetOutput(os.Stdout) log.SetFormatter(&log.TextFormatter{ FullTimestamp: true, TimestampFormat: time.RFC822, }) log.SetLevel(log.InfoLevel) log.Info("Info message") log....</p>
 </div>
-
-  </div>
-
-      </div>
-
-      
-        <footer class="footer">
-  <div class="footer__inner">
-    
-      <a href="/" class="logo" style="text-decoration: none;">
-  
-    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
-  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
-</svg>
-
-</span>
-    <span class="logo__text">My Devlog</span>
-    <span class="logo__cursor_foot"></span>
-  
-</a>
-
-      <div class="copyright">
-         
-        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a> & customized by <a href="https://github.com/ralpioxxcs">ralpioxxcs</a></span>
-      </div>
-    
-  </div>
+<footer class=entry-footer><span title="2022-06-07 22:36:04 +0900 KST">June 7, 2022</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;730 words&nbsp;·&nbsp;ralpioxxcs</footer>
+<a class=entry-link aria-label="post link to Golang Logrus Hook을 이용한 mutisink 로깅" href=https://ralpioxxcs.github.io/post/logging/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>카메라 캘리브레이션 - 좌표변환
+</h2>
+</header>
+<div class=entry-content>
+<p>좌표 정규화 투영
+카메라 parameter를 알고 있다고 가정하고, normalized 좌표는 다음 계산식을 통해 영상 좌표로 변환된다.
+\[ x_{img} = x_{norm}*f_x + c_x \\ y_{img} = y_{norm}*f_y + c_y \]
+반대로, 식을 바꿔 image plane 좌표 또한 normalized 좌표로 변환될 수 있다.
+\[ x_{norm} = (x_{img}-c_x)/f_x \\ y_{norm} = (y_{img}-c_y)/f_y \]
+fx, fy는 focal length, 초점거리, cx,cy는 principal point 즉, 주점이라고 부른다. 이 요소들을 3x3 행렬로 만든것을 camera matrix 혹은 intrinsic paramter라고 한다....</p>
+</div>
+<footer class=entry-footer><span title="2022-04-05 23:46:57 +0900 KST">April 5, 2022</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;435 words&nbsp;·&nbsp;ralpioxxcs</footer>
+<a class=entry-link aria-label="post link to 카메라 캘리브레이션 - 좌표변환" href=https://ralpioxxcs.github.io/post/etc/camera_calibration_2/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>카메라 캘리브레이션 - 좌표계
+</h2>
+</header>
+<div class=entry-content>
+<p>카메라 캘리브레이션 3차원의 장면이 카메라를 통해 2차원의 평면으로 구현될 때, 각각의 3차원 상의 점들은 카메라의 위치, 방향 같은 기하학적인 요소와 이미지 센서의 초점 거리, 렌즈의 왜곡 등 여러 내부적인 요소(parameters) 들에 의해 결정된다. 이 내부 요소들을 통해 렌즈의 왜곡, 3D상의 물체에 대한 크기 및 면적, 카메라의 위치등을 계산할 수 있으며, 이 값들을 구하는 과정을 카메라 캘리브레이션 이라고 부른다.
+좌표계 좌표계
+카메라 캘리브레이션에서는 주로 4가지의 좌표계가 사용된다...</p>
+</div>
+<footer class=entry-footer><span title="2022-04-05 23:30:57 +0900 KST">April 5, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;237 words&nbsp;·&nbsp;ralpioxxcs</footer>
+<a class=entry-link aria-label="post link to 카메라 캘리브레이션 - 좌표계" href=https://ralpioxxcs.github.io/post/etc/camera_calibration_1/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>C/C++ &lt;-> Go 콜백함수 구현하기
+</h2>
+</header>
+<div class=entry-content>
+<p>CGo CGo는 Go에서 C언어를 사용할 수 있게해주는 Go의 feature중 하나이다. 이 기능을 이용해 C언어와 Go언어사이의 콜백함수를 만들어 볼 것이다. 주의할 점은 CGo에서 읽을 수 있는것은 C스타일의 심볼을 갖는 함수 뿐이다. 순수 C언어로만 작성된 라이브러리라면 문제가 없겠지만 C++ 베이스의 함수를 이용하고 싶기 때문에 해당 함수를 한번 wrapping해주는 형태로 만들어 볼 것이다
+기본 사용법 함수를 wrapping 해보기 전, 기본적인 사용법을 다시 보자
+package main /* #include &lt;stdio.h> void CFoo() { printf("Hello from C\n"); } */ import "C" import "fmt" func main() { fmt....</p>
+</div>
+<footer class=entry-footer><span title="2021-11-22 23:46:11 +0900 KST">November 22, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;489 words&nbsp;·&nbsp;ralpioxxcs</footer>
+<a class=entry-link aria-label="post link to C/C++  Go 콜백함수 구현하기" href=https://ralpioxxcs.github.io/post/etc/cgo_callback/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>쉘 스크립트 삽질
+</h2>
+</header>
+<div class=entry-content>
+<p>배경 최근에 간단한 쉘 스크립트 하나를 짜면서 겪은 문제가 하나 있다. ssh로 연결된 특정 보드의 이더넷 네트워크 인터페이스의 설정을 변경해주는 작업이었다. 적용할 보드가 한두개가 아니라서 해당 작업을 간편하게 하기위해서 HOST(노트북)에서 해당 작업을 수행하는 스크립트를 실행시키면 ssh를 통해 보드내 설정을 바꿔주도록 했다. 딱히 어려울것 없는 작업이라 sshpass, scp, ssh, sed 명령어 조합을 사용하였다.
+로컬 터미널에서 위의 명령어들을 쓰면서 잘 바뀌는것을 확인했고 그 로직을 그대로 쉘 스크립트를 작성하였다… 하지만 문제는 로컬 터미널에서만 테스트 한 점이었다....</p>
+</div>
+<footer class=entry-footer><span title="2021-09-27 20:32:39 +0900 KST">September 27, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;287 words&nbsp;·&nbsp;ralpioxxcs</footer>
+<a class=entry-link aria-label="post link to 쉘 스크립트 삽질" href=https://ralpioxxcs.github.io/post/etc/double_vs_single_quote/></a>
+</article>
+<footer class=page-footer>
+<nav class=pagination>
+<a class=next href=https://ralpioxxcs.github.io/page/2/>Next »</a>
+</nav>
 </footer>
-
-
-
-
-
-<script src="https://ralpioxxcs.github.io/js/menu.js"></script>
-<script src="https://ralpioxxcs.github.io/js/theme.js"></script>
-<script src="https://ralpioxxcs.github.io/js/prism.js"></script>
-
-
-      
-    </div>
-
-    
-      
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-189380926-2', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-    
-
-  </body>
-  
+</main>
+<footer class=footer>
+<span>&copy; 2022 <a href=https://ralpioxxcs.github.io/>Devlog</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
 </html>

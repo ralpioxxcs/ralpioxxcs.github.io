@@ -1,41 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>environment on My Devlog</title>
-    
-    
-    
+    <title>environment on Devlog</title>
     <link>https://ralpioxxcs.github.io/tags/environment/</link>
-    <description>Recent content in environment on My Devlog</description>
+    <description>Recent content in environment on Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 11 Dec 2020 20:13:41 +0900</lastBuildDate>
-    
-	<atom:link href="https://ralpioxxcs.github.io/tags/environment/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 11 Dec 2020 20:13:41 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/tags/environment/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vim 사용하기 #3 - C/C&#43;&#43; 개발환경 세팅</title>
-      <link>https://ralpioxxcs.github.io/post/vim/vim_setting_3/</link>
+      <link>https://ralpioxxcs.github.io/post/vim/vim_3/</link>
       <pubDate>Fri, 11 Dec 2020 20:13:41 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/post/vim/vim_setting_3/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          이번에는 neovim에서 coc.nvim를 이용하여 C/C++ 개발환경을 세팅하는 방법에 대해서 알아보겠다.
+      <guid>https://ralpioxxcs.github.io/post/vim/vim_3/</guid>
+      <description>이번에는 neovim에서 coc.nvim를 이용하여 C/C++ 개발환경을 세팅하는 방법에 대해서 알아보겠다.
 coc.nvim은 Language Server Protocol인 LSP를 지원하는 코드 auto-completion 패키지인데 이전에는 ycm을 사용하다가 너무 무겁기도 하고 개인적으로 환경설정 부분에 불편함 점이 있어 coc.nvim을 사용하게 되었다.
 coc.nvim 설치 vim-plug 설정부분에 아래를 추가해준뒤, :PlugInstall을 해준다.
 Plug &amp;#39;neoclide/coc.nvim&amp;#39;, {&amp;#39;tag&amp;#39;: &amp;#39;*&amp;#39;, &amp;#39;do&amp;#39;: &amp;#39;./install.sh&amp;#39;} 참고로, node.js 10.12 버전 이상이 설치되어있어야 한다. node.js가 설치되어있지 않다면 여기를 참고하여 다운로드 및 설치를 진행해주자.
- cpp language server 설치 이곳을 보면 C/C++ language server에 맞는 configuration example을 제공한다.
-          
-        
-        </description>
+ cpp language server 설치 이곳을 보면 C/C++ language server에 맞는 configuration example을 제공한다.</description>
     </item>
     
   </channel>

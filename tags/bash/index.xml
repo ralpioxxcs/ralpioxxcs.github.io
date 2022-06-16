@@ -1,38 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>bash on My Devlog</title>
-    
-    
-    
+    <title>bash on Devlog</title>
     <link>https://ralpioxxcs.github.io/tags/bash/</link>
-    <description>Recent content in bash on My Devlog</description>
+    <description>Recent content in bash on Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 27 Sep 2021 20:32:39 +0900</lastBuildDate>
-    
-	<atom:link href="https://ralpioxxcs.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 27 Sep 2021 20:32:39 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>쉘 스크립트 삽질</title>
       <link>https://ralpioxxcs.github.io/post/etc/double_vs_single_quote/</link>
       <pubDate>Mon, 27 Sep 2021 20:32:39 +0900</pubDate>
       
       <guid>https://ralpioxxcs.github.io/post/etc/double_vs_single_quote/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          배경 최근에 간단한 쉘 스크립트 하나를 짜면서 겪은 문제가 하나 있다. ssh로 연결된 특정 보드의 이더넷 네트워크 인터페이스의 설정을 변경해주는 작업이었다. 적용할 보드가 한두개가 아니라서 해당 작업을 간편하게 하기위해서 HOST(노트북)에서 해당 작업을 수행하는 스크립트를 실행시키면 ssh를 통해 보드내 설정을 바꿔주도록 했다. 딱히 어려울것 없는 작업이라 sshpass, scp, ssh, sed 명령어 조합을 사용하였다.
-로컬 터미널에서 위의 명령어들을 쓰면서 잘 바뀌는것을 확인했고 그 로직을 그대로 쉘 스크립트를 작성하였다&amp;hellip; 하지만 문제는 로컬 터미널에서만 테스트 한 점이었다.
-          
-        
-        </description>
+      <description>배경 최근에 간단한 쉘 스크립트 하나를 짜면서 겪은 문제가 하나 있다. ssh로 연결된 특정 보드의 이더넷 네트워크 인터페이스의 설정을 변경해주는 작업이었다. 적용할 보드가 한두개가 아니라서 해당 작업을 간편하게 하기위해서 HOST(노트북)에서 해당 작업을 수행하는 스크립트를 실행시키면 ssh를 통해 보드내 설정을 바꿔주도록 했다. 딱히 어려울것 없는 작업이라 sshpass, scp, ssh, sed 명령어 조합을 사용하였다.
+로컬 터미널에서 위의 명령어들을 쓰면서 잘 바뀌는것을 확인했고 그 로직을 그대로 쉘 스크립트를 작성하였다&amp;hellip; 하지만 문제는 로컬 터미널에서만 테스트 한 점이었다.</description>
     </item>
     
   </channel>

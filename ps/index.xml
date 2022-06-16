@@ -1,39 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Ps on My Devlog</title>
-    
-    
-    
+    <title>Ps on Devlog</title>
     <link>https://ralpioxxcs.github.io/ps/</link>
-    <description>Recent content in Ps on My Devlog</description>
+    <description>Recent content in Ps on Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 04 Oct 2020 15:49:50 +0900</lastBuildDate>
-    
-	<atom:link href="https://ralpioxxcs.github.io/ps/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 04 Oct 2020 15:49:50 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/ps/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>백준 7576 토마토</title>
       <link>https://ralpioxxcs.github.io/ps/bj_7576/</link>
       <pubDate>Sun, 04 Oct 2020 15:49:50 +0900</pubDate>
       
       <guid>https://ralpioxxcs.github.io/ps/bj_7576/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          입력 : 세로 크기 N, 가로 크기 M ( 2 &amp;lt;= M,N &amp;lt;= 1,000 )
+      <description>입력 : 세로 크기 N, 가로 크기 M ( 2 &amp;lt;= M,N &amp;lt;= 1,000 )
  1 = 익은 토마토 0 = 익지 않은 토마토 -1 = 토마토가 들어있지 않은 칸    출력 : 토마토가 모두 익을 때까지의 최소 날짜 출력
- 저장될 때부터 모든 토마토가 익었다면 0 모두 익지 못하는 상황이면 -1     문제 해결   입력을 받으면서 익은토마토의 위치를 큐에 PUSH하고 (BFS를사용), 안 익은 토마토의 갯수를 저장한다.
-          
-        
-        </description>
+ 저장될 때부터 모든 토마토가 익었다면 0 모두 익지 못하는 상황이면 -1     문제 해결   입력을 받으면서 익은토마토의 위치를 큐에 PUSH하고 (BFS를사용), 안 익은 토마토의 갯수를 저장한다.</description>
     </item>
     
   </channel>

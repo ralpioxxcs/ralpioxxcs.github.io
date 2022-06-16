@@ -1,37 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Categories on My Devlog</title>
-    
-    
-    
+    <title>Categories on Devlog</title>
     <link>https://ralpioxxcs.github.io/categories/</link>
-    <description>Recent content in Categories on My Devlog</description>
+    <description>Recent content in Categories on Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 04 Jul 2020 13:53:55 +0900</lastBuildDate>
-    
-	<atom:link href="https://ralpioxxcs.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 04 Jul 2020 13:53:55 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux</title>
       <link>https://ralpioxxcs.github.io/categories/linux/</link>
       <pubDate>Sat, 04 Jul 2020 13:53:55 +0900</pubDate>
       
       <guid>https://ralpioxxcs.github.io/categories/linux/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          
-          
-        
-        </description>
+      <description></description>
     </item>
     
   </channel>
