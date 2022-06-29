@@ -11,7 +11,7 @@ vim으로 갈아타게 된 결정적인 계기는 VSCode에서 지원하는 c/cp
 아무튼 내가 생각하는 vim의 장점은 이렇다">
 <meta name=author content="ralpioxxcs">
 <link rel=canonical href=https://ralpioxxcs.github.io/post/vim/vim_1/>
-<link crossorigin=anonymous href=/assets/css/stylesheet.db9b8f0d40367bfdd814a7971f7995627cb01464733d8dc3699e522aa07e6f95.css integrity="sha256-25uPDUA2e/3YFKeXH3mVYnywFGRzPY3DaZ5SKqB+b5U=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/assets/css/stylesheet.0d41883a16bc74b0e0b783e6e4a639ca1ddb8af4148ffe844f94a45cfbe71934.css integrity="sha256-DUGIOha8dLDgt4Pm5KY5yh3bivQUj/6ET5SkXPvnGTQ=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://ralpioxxcs.github.io/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://ralpioxxcs.github.io/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://ralpioxxcs.github.io/favicon-32x32.png>
@@ -23,6 +23,8 @@ vim으로 갈아타게 된 결정적인 계기는 VSCode에서 지원하는 c/cp
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
 </noscript>
+<link rel=stylesheet href=/prism-themes/prism.css>
+<link rel=stylesheet href=/prism-themes/prism-nord.css>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-189380926-2','auto'),ga('send','pageview'))</script><meta property="og:title" content="Vim 사용하기 #1 - Install">
 <meta property="og:description" content="나에게 vim이란 라즈베리파이 같은 리소스나 메모리등 작업 환경이 열악하거나 불가피한 사유로 인터넷을 사용하지 못하는 상황에서 가끔 쓰던 편집기였다.
 hjkl로 움직이고, visual mode, normal mode 등등 처음에는 진입장벽이 높게 느껴져서 손이 안가다가, 마우스를 쓰는게 너무 귀찮아서 일주일만 마음먹고 연습(?)을 했더니 이제는 vim이 없으면 코딩을 할 맛이 안나게 될 정도로 익숙해져버렸다.
@@ -210,6 +212,7 @@ Powered by
 </footer>
 <a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
 </a>
+<script src=/js/prism.js></script>
 <script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
 <script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
 <script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>

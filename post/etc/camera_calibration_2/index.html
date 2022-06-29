@@ -13,7 +13,7 @@
 fx, fy는 focal length, 초점거리, cx,cy는 principal point 즉, 주점이라고 부른다. 이 요소들을 3x3 행렬로 만든것을 camera matrix 혹은 intrinsic paramter라고 한다.">
 <meta name=author content="ralpioxxcs">
 <link rel=canonical href=https://ralpioxxcs.github.io/post/etc/camera_calibration_2/>
-<link crossorigin=anonymous href=/assets/css/stylesheet.db9b8f0d40367bfdd814a7971f7995627cb01464733d8dc3699e522aa07e6f95.css integrity="sha256-25uPDUA2e/3YFKeXH3mVYnywFGRzPY3DaZ5SKqB+b5U=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/assets/css/stylesheet.0d41883a16bc74b0e0b783e6e4a639ca1ddb8af4148ffe844f94a45cfbe71934.css integrity="sha256-DUGIOha8dLDgt4Pm5KY5yh3bivQUj/6ET5SkXPvnGTQ=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://ralpioxxcs.github.io/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://ralpioxxcs.github.io/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://ralpioxxcs.github.io/favicon-32x32.png>
@@ -29,6 +29,8 @@ fx, fy는 focal length, 초점거리, cx,cy는 principal point 즉, 주점이라
 <script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js integrity=sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja crossorigin=anonymous></script>
 <script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
 <script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:!0},{left:'$',right:'$',display:!1},{left:'\\(',right:'\\)',display:!1},{left:'\\[',right:'\\]',display:!0}],throwOnError:!1})})</script>
+<link rel=stylesheet href=/prism-themes/prism.css>
+<link rel=stylesheet href=/prism-themes/prism-nord.css>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-189380926-2','auto'),ga('send','pageview'))</script><meta property="og:title" content="카메라 캘리브레이션 - 좌표변환">
 <meta property="og:description" content="좌표 정규화   투영
   카메라 parameter를 알고 있다고 가정하고, normalized 좌표는 다음 계산식을 통해 영상 좌표로 변환된다.
@@ -205,6 +207,7 @@ Powered by
 </footer>
 <a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
 </a>
+<script src=/js/prism.js></script>
 <script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
 <script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
 <script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
