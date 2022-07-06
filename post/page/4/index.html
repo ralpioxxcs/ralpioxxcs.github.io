@@ -71,19 +71,6 @@ Post
 </header>
 <article class=post-entry>
 <header class=entry-header>
-<h2>CMake Part4 - 색상 지정
-</h2>
-</header>
-<div class=entry-content>
-<p>set 변수를 사용해 Shell에 출력되는 문자들의 색상을 지정할 수 있다.
-if(NOT WIN32) string(ASCII 27 Esc) set(ColourReset "${Esc}[m") set(ColourBold "${Esc}[1m") set(Red "${Esc}[31m") set(Green "${Esc}[32m") set(Yellow "${Esc}]33m") set(Blue "${Esc}]34") set(Magenta "${Esc}]35m") set(Cyan "${Esc}]36m") set(White "${Esc}[37m") set(BoldRed "${Esc}[1;31m") set(BoldGreen "${Esc}[1;32m") set(BoldYellow "${Esc}[1;33m") set(BoldBlue "${Esc}[1;34m") set(BoldMagenta "${Esc}[1;35m") set(BoldCyan "${Esc}[1;36m") set(BoldWhite "${Esc}[1;37m")endif()위의 내용을 .cmkae파일로 만들어 include하거나 CmakeLists.txt 의 상단에 삽입한다.
-Example message(" ")message( "${BoldGreen}\t\t\t[ BUILD SUMMARY ] ${White}" )message( "${BoldWhite}------------------------------------------------------------------------${ColourReset}" </p>
-</div>
-<footer class=entry-footer><span title="2020-02-01 15:32:40 +0900 KST">February 1, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;65 words&nbsp;·&nbsp;ralpioxxcs</footer>
-<a class=entry-link aria-label="post link to CMake Part4 - 색상 지정" href=https://ralpioxxcs.github.io/post/cmake/cmake_4/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
 <h2>CMake Part3 - 프로젝트 구성
 </h2>
 </header>
@@ -136,6 +123,20 @@ shortcodename : 사용할 shortcode의 이름 (ex. highlight, figure..) paramete
 </div>
 <footer class=entry-footer><span title="2019-12-30 18:07:57 +0900 KST">December 30, 2019</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;128 words&nbsp;·&nbsp;ralpioxxcs</footer>
 <a class=entry-link aria-label="post link to Hugo Content Management [4] - Shortcodes" href=https://ralpioxxcs.github.io/post/hugo/hugo_content_management_4_shortcodes/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Hugo Content Management [3] - Front Matter
+</h2>
+</header>
+<div class=entry-content>
+<p>Front Matter? front matter란 작성하고자 하는 컨텐츠(파일)의 제목, 날짜, 작성자 등의 기본적인 속성들을 나타내는 meta-data 형식이다.
+Formats Hugo는 다음 3가지의 마크업 언어를 지원한다.
+TOML : +++ YAML : --- JSON : {, }
+을 이용해 front matter의 시작과 끝을 지정한다. 예를들어, a.md라는 새로운 파일을 만들었다면 --- title: "this is title!" date: 2019-12-27T13:39:03+09:00 draft: true --- this is the markdown file 이렇게 파일의 시작 부분에 front matter를 설정해주면,...</p>
+</div>
+<footer class=entry-footer><span title="2019-12-30 16:09:14 +0900 KST">December 30, 2019</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;123 words&nbsp;·&nbsp;ralpioxxcs</footer>
+<a class=entry-link aria-label="post link to Hugo Content Management [3] - Front Matter" href=https://ralpioxxcs.github.io/post/hugo/hugo_content_management_3_frontmatter/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
