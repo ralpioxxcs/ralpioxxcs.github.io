@@ -71,6 +71,20 @@ Post
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Hugo Content Management [3] - Front Matter
+</h2>
+</header>
+<div class=entry-content>
+<p>Front Matter? front matter란 작성하고자 하는 컨텐츠(파일)의 제목, 날짜, 작성자 등의 기본적인 속성들을 나타내는 meta-data 형식이다.
+Formats Hugo는 다음 3가지의 마크업 언어를 지원한다.
+TOML : +++ YAML : --- JSON : {, }
+을 이용해 front matter의 시작과 끝을 지정한다. 예를들어, a.md라는 새로운 파일을 만들었다면 --- title: "this is title!" date: 2019-12-27T13:39:03+09:00 draft: true --- this is the markdown file 이렇게 파일의 시작 부분에 front matter를 설정해주면,...</p>
+</div>
+<footer class=entry-footer><span title="2019-12-30 16:09:14 +0900 KST">December 30, 2019</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;123 words&nbsp;·&nbsp;ralpioxxcs</footer>
+<a class=entry-link aria-label="post link to Hugo Content Management [3] - Front Matter" href=https://ralpioxxcs.github.io/post/hugo/hugo_content_management_3_frontmatter/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>Hugo Content Management [2] - Page Bundle
 </h2>
 </header>
@@ -119,19 +133,6 @@ blog 폴더 자체를 저장할 repository hugo로 빌드된 결과파일들을 
 </div>
 <footer class=entry-footer><span title="2019-12-29 14:57:28 +0900 KST">December 29, 2019</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;227 words&nbsp;·&nbsp;ralpioxxcs</footer>
 <a class=entry-link aria-label="post link to Getting Started Hugo [3] - 디렉터리 구조" href=https://ralpioxxcs.github.io/post/hugo/hugo_start_3_directory/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Getting Started Hugo [2] - 블로그 생성
-</h2>
-</header>
-<div class=entry-content>
-<p>Let’s create own blog 　Step 1. 블로그 폴더 생성 c://hugo 의 경로에서 $ hugo new site [폴더이름] 을 입력한다. 여기서 폴더이름은 말 그대로 터미널 상에서 접근할 폴더이름일 뿐, 생성하고자 하는 블로그의 이름이 되진 않는다. (예시는 blog로 하였다.)
-폴더를 만들었으면 $ cd blog && ls 를 입력해 생성된 폴더의 내부를 확인한다.
--> 정상적으로 생성이 되었으면 archtypes, assets, config.toml 등 여러 파일과 폴더들이 생성된 것을 확인할 수 있다....</p>
-</div>
-<footer class=entry-footer><span title="2019-12-28 15:34:07 +0900 KST">December 28, 2019</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;241 words&nbsp;·&nbsp;ralpioxxcs</footer>
-<a class=entry-link aria-label="post link to Getting Started Hugo [2] - 블로그 생성" href=https://ralpioxxcs.github.io/post/hugo/hugo_start_2_quick_start/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

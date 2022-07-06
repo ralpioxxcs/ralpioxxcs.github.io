@@ -65,6 +65,18 @@
 <main class=main>
 <article class=post-entry>
 <header class=entry-header>
+<h2>쉘 스크립트 삽질
+</h2>
+</header>
+<div class=entry-content>
+<p>배경 최근에 간단한 쉘 스크립트 하나를 짜면서 겪은 문제가 하나 있다. ssh로 연결된 특정 보드의 이더넷 네트워크 인터페이스의 설정을 변경해주는 작업이었다. 적용할 보드가 한두개가 아니라서 해당 작업을 간편하게 하기위해서 HOST(노트북)에서 해당 작업을 수행하는 스크립트를 실행시키면 ssh를 통해 보드내 설정을 바꿔주도록 했다. 딱히 어려울것 없는 작업이라 sshpass, scp, ssh, sed 명령어 조합을 사용하였다.
+로컬 터미널에서 위의 명령어들을 쓰면서 잘 바뀌는것을 확인했고 그 로직을 그대로 쉘 스크립트를 작성하였다… 하지만 문제는 로컬 터미널에서만 테스트 한 점이었다....</p>
+</div>
+<footer class=entry-footer><span title="2021-09-27 20:32:39 +0900 KST">September 27, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;287 words&nbsp;·&nbsp;ralpioxxcs</footer>
+<a class=entry-link aria-label="post link to 쉘 스크립트 삽질" href=https://ralpioxxcs.github.io/post/etc/double_vs_single_quote/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>push_back vs. emplace_back
 </h2>
 </header>
@@ -120,20 +132,6 @@ multitail -s 2 [filename] [filename] colorscheme 설정 multitail은 자체 conf
 </div>
 <footer class=entry-footer><span title="2020-09-29 19:54:24 +0900 KST">September 29, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;202 words&nbsp;·&nbsp;ralpioxxcs</footer>
 <a class=entry-link aria-label="post link to SSH 서버 설정" href=https://ralpioxxcs.github.io/post/etc/sshd_config/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Vim 사용하기 #2 - Plugin
-</h2>
-</header>
-<div class=entry-content>
-<p>Vim Plugins vim을 쓰는 가장 큰 이유중 하나는 바로 이 Plugin에 있지않나 싶다. 설치도 비교적 간편하며, 확장성이 뛰어나서 플러그인을 사용하면서 불편한 부분들을 설정파일을 통해 입맛에 맞게 바꿀 수 있다는 점이 매력적이다.
-지금도 유용하게 사용하는 vim 플러그인들에 대한 소개와 설치방법 및 사용법에 대해 간단히 알아보겠다.
- 플러그인 매니저 설치 vim에서 Plugin들을 설치, 관리해주는 도구들이 여러개 있는데 (Vundle, Pathogen) 그 중에서 나는 junegunn님이 만드신 vim-plug를 사용중이다.
-현재 neovim을 사용중이므로 설치 방법은 아래와 같다....</p>
-</div>
-<footer class=entry-footer><span title="2020-08-07 14:26:52 +0900 KST">August 7, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;595 words&nbsp;·&nbsp;ralpioxxcs</footer>
-<a class=entry-link aria-label="post link to Vim 사용하기 #2 - Plugin" href=https://ralpioxxcs.github.io/post/vim/vim_2/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

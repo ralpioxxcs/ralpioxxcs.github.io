@@ -5,7 +5,7 @@
     <link>https://ralpioxxcs.github.io/</link>
     <description>Recent content on Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 07 Jun 2022 22:36:04 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Jul 2022 23:58:27 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Stack</title>
       <link>https://ralpioxxcs.github.io/cs/stack/</link>
@@ -22,6 +22,15 @@
       
       <guid>https://ralpioxxcs.github.io/cs/circulaqueue/</guid>
       <description>선입선출(先入先出, First In First Out; FIFO)의 자료구조로써, 데이터가 나가는 위치, 큐의 첫번째 위치를 Front 라고 하고 데이터가 삽입되는 지점, 큐의 마지막 데이터의 한 칸 다음 위치를 Rear 혹은 Back이라고 한다.</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>https://ralpioxxcs.github.io/post/test/</link>
+      <pubDate>Wed, 06 Jul 2022 23:58:27 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/test/</guid>
+      <description>Test </description>
     </item>
     
     <item>
