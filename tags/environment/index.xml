@@ -16,7 +16,7 @@
 coc.nvim은 Language Server Protocol인 LSP를 지원하는 코드 auto-completion 패키지인데 이전에는 ycm을 사용하다가 너무 무겁기도 하고 개인적으로 환경설정 부분에 불편함 점이 있어 coc.nvim을 사용하게 되었다.
 coc.nvim 설치 vim-plug 설정부분에 아래를 추가해준뒤, :PlugInstall을 해준다.
 Plug &amp;#39;neoclide/coc.nvim&amp;#39;, {&amp;#39;tag&amp;#39;: &amp;#39;*&amp;#39;, &amp;#39;do&amp;#39;: &amp;#39;./install.sh&amp;#39;} 참고로, node.js 10.12 버전 이상이 설치되어있어야 한다. node.js가 설치되어있지 않다면 여기를 참고하여 다운로드 및 설치를 진행해주자.
- cpp language server 설치 이곳을 보면 C/C++ language server에 맞는 configuration example을 제공한다.</description>
+cpp language server 설치 이곳을 보면 C/C++ language server에 맞는 configuration example을 제공한다.</description>
     </item>
     
   </channel>

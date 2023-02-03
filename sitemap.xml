@@ -2,10 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ralpioxxcs.github.io/cs/stack/</loc>
+    <loc>https://ralpioxxcs.github.io/post/cs/stack/</loc>
     <lastmod>2019-09-13T13:54:02+09:00</lastmod>
   </url><url>
-    <loc>https://ralpioxxcs.github.io/cs/circulaqueue/</loc>
+    <loc>https://ralpioxxcs.github.io/post/cs/circulaqueue/</loc>
     <lastmod>2019-09-18T21:59:22+09:00</lastmod>
   </url><url>
     <loc>https://ralpioxxcs.github.io/</loc>
@@ -74,22 +74,22 @@
     <loc>https://ralpioxxcs.github.io/post/etc/log_monitoring/</loc>
     <lastmod>2020-10-09T20:56:41+09:00</lastmod>
   </url><url>
-    <loc>https://ralpioxxcs.github.io/ps/</loc>
-    <lastmod>2020-10-04T15:49:50+09:00</lastmod>
-  </url><url>
     <loc>https://ralpioxxcs.github.io/tags/ps/</loc>
     <lastmod>2020-10-04T15:49:50+09:00</lastmod>
   </url><url>
-    <loc>https://ralpioxxcs.github.io/ps/bj_7576/</loc>
+    <loc>https://ralpioxxcs.github.io/post/ps/boj_1026/</loc>
     <lastmod>2020-10-04T15:49:50+09:00</lastmod>
   </url><url>
-    <loc>https://ralpioxxcs.github.io/cs/</loc>
-    <lastmod>2020-10-04T15:04:49+09:00</lastmod>
+    <loc>https://ralpioxxcs.github.io/post/ps/boj_10815/</loc>
+    <lastmod>2020-10-04T15:49:50+09:00</lastmod>
+  </url><url>
+    <loc>https://ralpioxxcs.github.io/post/ps/boj_7576/</loc>
+    <lastmod>2020-10-04T15:49:50+09:00</lastmod>
   </url><url>
     <loc>https://ralpioxxcs.github.io/tags/data-structure/</loc>
     <lastmod>2020-10-04T15:04:49+09:00</lastmod>
   </url><url>
-    <loc>https://ralpioxxcs.github.io/cs/graph_matrix/</loc>
+    <loc>https://ralpioxxcs.github.io/post/cs/graph_matrix/</loc>
     <lastmod>2020-10-04T15:04:49+09:00</lastmod>
   </url><url>
     <loc>https://ralpioxxcs.github.io/tags/ssh/</loc>
@@ -107,10 +107,10 @@
     <loc>https://ralpioxxcs.github.io/tags/clang/</loc>
     <lastmod>2020-07-04T13:53:55+09:00</lastmod>
   </url><url>
-    <loc>https://ralpioxxcs.github.io/categories/linux/</loc>
+    <loc>https://ralpioxxcs.github.io/tags/linux/</loc>
     <lastmod>2020-07-04T13:53:55+09:00</lastmod>
   </url><url>
-    <loc>https://ralpioxxcs.github.io/tags/linux/</loc>
+    <loc>https://ralpioxxcs.github.io/categories/linux/</loc>
     <lastmod>2020-07-04T13:53:55+09:00</lastmod>
   </url><url>
     <loc>https://ralpioxxcs.github.io/tags/llvm/</loc>

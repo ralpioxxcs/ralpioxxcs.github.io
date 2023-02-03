@@ -12,9 +12,10 @@
       <pubDate>Sat, 04 Jul 2020 13:53:55 +0900</pubDate>
       
       <guid>https://ralpioxxcs.github.io/post/etc/llvm_install/</guid>
-      <description>이 링크 로 들어가면 아래 사진과 같은 화면이 나오며 각 Release 버전에 맞는 llvm 패키지들을 다운로드 받을 수 있다.   llvm, clang, lld, lldb등 각 패키지에 대한 설명은 여기에 잘 나와있다.
+      <description>이 링크 로 들어가면 아래 사진과 같은 화면이 나오며 각 Release 버전에 맞는 llvm 패키지들을 다운로드 받을 수 있다. llvm, clang, lld, lldb등 각 패키지에 대한 설명은 여기에 잘 나와있다.
 아무튼 위의 사진에 나온것처럼 설치방법으로는 크게 4가지로 나눌 수 있다.
- 소스코드 다운로드 후 직접 빌드 미리 빌드된 바이너리 설치 Automatic Installation Script apt install 커맨드 사용하여 설치  이 포스팅에서는 3번째인 Automatic installation script를 이용하여 설치하는 방법을 다루려고 한다.</description>
+소스코드 다운로드 후 직접 빌드 미리 빌드된 바이너리 설치 Automatic Installation Script apt install 커맨드 사용하여 설치 이 포스팅에서는 3번째인 Automatic installation script를 이용하여 설치하는 방법을 다루려고 한다.
+Automatic installation script llvm에서는 llvm 저장소와 apt insatll 커맨드를 간편하게 하나의 스크립트로 설치 해주는 Automactic installation script를 제공하여 간편하게 llvm package들을 다운로드 받을 수 있다.</description>
     </item>
     
   </channel>

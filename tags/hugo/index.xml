@@ -13,8 +13,8 @@
       
       <guid>https://ralpioxxcs.github.io/post/hugo/hugo_content_management_4_shortcodes/</guid>
       <description>Shortcode Hugo는 다양한 shortcode 플러그인들을 제공하고 있다. markdown이 제공하는 편리한 문법들로도 충분하지만, code snippet이나 유튜브 영상등을 추가할 때 유용하게 사용할 수 있다.
- 　Shotcode 사용하기 shortcode는 { {&amp;lt; shortcodename parameters &amp;gt;} } 의 용법으로 간단하게 사용할 수 있다.
- shortcodename : 사용할 shortcode의 이름 (ex. highlight, figure..) parameter : 사용할 shortcode가 어떻게 정의되었느냐에 따라 달라짐   Built-in Shortcodes figure figure는 마크다운이 제공하는 이미지관련 문법보다 더 다양한 기능을 제공한다. parameter를 통해 첨부할 이미지의 title, caption, link등을 지정할 수 있다.</description>
+Shotcode 사용하기 shortcode는 { {&amp;lt; shortcodename parameters &amp;gt;} } 의 용법으로 간단하게 사용할 수 있다.
+shortcodename : 사용할 shortcode의 이름 (ex. highlight, figure..) parameter : 사용할 shortcode가 어떻게 정의되었느냐에 따라 달라짐 Built-in Shortcodes figure figure는 마크다운이 제공하는 이미지관련 문법보다 더 다양한 기능을 제공한다. parameter를 통해 첨부할 이미지의 title, caption, link등을 지정할 수 있다.</description>
     </item>
     
     <item>
@@ -23,10 +23,10 @@
       <pubDate>Mon, 30 Dec 2019 16:09:14 +0900</pubDate>
       
       <guid>https://ralpioxxcs.github.io/post/hugo/hugo_content_management_3_frontmatter/</guid>
-      <description>Front Matter? front matter란 작성하고자 하는 컨텐츠(파일)의 제목, 날짜, 작성자 등의 기본적인 속성들을 나타내는 meta-data 형식이다. 
- Formats Hugo는 다음 3가지의 마크업 언어를 지원한다.
- TOML : +++ YAML : --- JSON : {, }
-을 이용해 front matter의 시작과 끝을 지정한다.  예를들어, a.md라는 새로운 파일을 만들었다면 --- title: &amp;#34;this is title!&amp;#34; date: 2019-12-27T13:39:03+09:00 draft: true --- this is the markdown file 이렇게 파일의 시작 부분에 front matter를 설정해주면,</description>
+      <description>Front Matter? front matter란 작성하고자 하는 컨텐츠(파일)의 제목, 날짜, 작성자 등의 기본적인 속성들을 나타내는 meta-data 형식이다. Formats Hugo는 다음 3가지의 마크업 언어를 지원한다.
+TOML : +++ YAML : --- JSON : {, }
+을 이용해 front matter의 시작과 끝을 지정한다. 예를들어, a.md라는 새로운 파일을 만들었다면 --- title: &amp;#34;this is title!&amp;#34; date: 2019-12-27T13:39:03+09:00 draft: true --- this is the markdown file 이렇게 파일의 시작 부분에 front matter를 설정해주면,
+위처럼 front matter에 설정한대로, title과 date가 입력이된것을 볼수있다.</description>
     </item>
     
     <item>
@@ -36,8 +36,8 @@
       
       <guid>https://ralpioxxcs.github.io/post/hugo/hugo_content_management_2_page/</guid>
       <description>Hugo에서는 Page Bundles이라는 개념을 사용해 컨텐츠를 관리한다. Page Bundles에는 2가지 종류가 있다.
- Leaf Bundle Branch Bundle   Left Bundle left bundle은 단독 페이지를 구성하는데 사용되고, index.md 파일을 포함하는 폴더로 구성된다.
-3 of Leaf Bundle Example content/ ├── project │ ├── index.md ├── posts │ ├── my-post │ │ ├── content1.md │ │ ├── content2.md │ | ├── image1.png │ | └── index.md │ └── study │ ├── first.md │ └── second.</description>
+Leaf Bundle Branch Bundle Left Bundle left bundle은 단독 페이지를 구성하는데 사용되고, index.md 파일을 포함하는 폴더로 구성된다.
+3 of Leaf Bundle Example content/ ├── project │ ├── index.md ├── posts │ ├── my-post │ │ ├── content1.md │ │ ├── content2.md │ | ├── image1.png │ | └── index.md │ └── study │ ├── first.md │ └── second.md │ └── index.</description>
     </item>
     
     <item>
@@ -57,9 +57,9 @@
       
       <guid>https://ralpioxxcs.github.io/post/hugo/hugo_start_4_remote_repo_link/</guid>
       <description>나만의 블로그를 구축하는데 성공하였다. 이제 로컬에 저장돼있는 hugo 사이트를 github repository와 연동하여 실제로 주소를 갖는 블로그를 만들어보자.
- Step 1. github repository 생성 github에 로그인하여 총 2개의 repository를 생성한다.
- blog 폴더 자체를 저장할 repository hugo로 빌드된 결과파일들을 저장할 repository
-두번째 repository의 이름은 [github계정명].github.io의 형식으로 만들어야 한다.   remote repository 연동  c://hugo/blog 경로에서 $ git init .으로 로컬 repository를 생성한다. $ git remote add origin [첫번째 repository url]를 입력한다.</description>
+Step 1. github repository 생성 github에 로그인하여 총 2개의 repository를 생성한다.
+blog 폴더 자체를 저장할 repository hugo로 빌드된 결과파일들을 저장할 repository
+두번째 repository의 이름은 [github계정명].github.io의 형식으로 만들어야 한다. remote repository 연동 c://hugo/blog 경로에서 $ git init .으로 로컬 repository를 생성한다. $ git remote add origin [첫번째 repository url]를 입력한다. $ git submodule add -b master [두번째 repository url] public을 입력하여 hugo로 빌드될 public폴더를 서브모듈로 연결한다.</description>
     </item>
     
     <item>
@@ -69,7 +69,7 @@
       
       <guid>https://ralpioxxcs.github.io/post/hugo/hugo_start_3_directory/</guid>
       <description>명령창에 $ hugo new site를 입력하면 아래의 구조를 가진 폴더가 하나 생성되는것을 보았을것이다. 각각의 폴더의 역할은 다음과 같다.
-( root ) ├─ archetypes ├─ content ├─ data ├─ layouts ├─ static ├─ themes ├─ config.toml  archetypes $ hugo new 커맨드를 이용해 새로운 contents 파일을 만들때, 이 폴더내의 default.md 의 front matter 형태를 갖는 content를 자동으로 초기화 하여 만들어준다. 많은양의 content를 만들 때 유용하게 사용될수 있고, front matter field를 직접 수정하여 하나의 archtypes로 만들 수 있다.</description>
+( root ) ├─ archetypes ├─ content ├─ data ├─ layouts ├─ static ├─ themes ├─ config.toml archetypes $ hugo new 커맨드를 이용해 새로운 contents 파일을 만들때, 이 폴더내의 default.md 의 front matter 형태를 갖는 content를 자동으로 초기화 하여 만들어준다. 많은양의 content를 만들 때 유용하게 사용될수 있고, front matter field를 직접 수정하여 하나의 archtypes로 만들 수 있다.</description>
     </item>
     
     <item>
@@ -78,9 +78,10 @@
       <pubDate>Sat, 28 Dec 2019 15:34:07 +0900</pubDate>
       
       <guid>https://ralpioxxcs.github.io/post/hugo/hugo_start_2_quick_start/</guid>
-      <description>Let&amp;rsquo;s create own blog 　Step 1. 블로그 폴더 생성   c://hugo 의 경로에서 $ hugo new site [폴더이름] 을 입력한다. 여기서 폴더이름은 말 그대로 터미널 상에서 접근할 폴더이름일 뿐, 생성하고자 하는 블로그의 이름이 되진 않는다. (예시는 blog로 하였다.)
-  폴더를 만들었으면 $ cd blog &amp;amp;&amp;amp; ls  를 입력해 생성된 폴더의 내부를 확인한다.
--&amp;gt; 정상적으로 생성이 되었으면 archtypes, assets, config.toml 등 여러 파일과 폴더들이 생성된 것을 확인할 수 있다.</description>
+      <description>Let&amp;rsquo;s create own blog Step 1. 블로그 폴더 생성 c://hugo 의 경로에서 $ hugo new site [폴더이름] 을 입력한다. 여기서 폴더이름은 말 그대로 터미널 상에서 접근할 폴더이름일 뿐, 생성하고자 하는 블로그의 이름이 되진 않는다. (예시는 blog로 하였다.)
+폴더를 만들었으면 $ cd blog &amp;amp;&amp;amp; ls 를 입력해 생성된 폴더의 내부를 확인한다.
+-&amp;gt; 정상적으로 생성이 되었으면 archtypes, assets, config.toml 등 여러 파일과 폴더들이 생성된 것을 확인할 수 있다.
+테스트 $ hugo server 명령어를 입력하고 localhost:1313 을 크롬, 파이어폭스등 웹브라우저 주소창에 입력해 생성된 사이트를 확인해보자.</description>
     </item>
     
     <item>

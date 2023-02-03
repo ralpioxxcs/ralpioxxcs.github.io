@@ -7,14 +7,36 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 04 Oct 2020 15:49:50 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/tags/ps/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>백준 7576 토마토</title>
-      <link>https://ralpioxxcs.github.io/ps/bj_7576/</link>
+      <title>백준 1026 보물</title>
+      <link>https://ralpioxxcs.github.io/post/ps/boj_1026/</link>
       <pubDate>Sun, 04 Oct 2020 15:49:50 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/ps/bj_7576/</guid>
+      <guid>https://ralpioxxcs.github.io/post/ps/boj_1026/</guid>
+      <description>문제 링크 문제 해결 단순 정렬 문제, 각 배열 원소들의 곱 S가 최솟값이 나와야하므로, 큰 수와 작은 수 끼리 곱해주면 된다.
+A는 오름차순 정렬, B는 내림차순 정렬을 한 뒤, 반복문을 이용하여 해결
+Code a = [] b = [] n = int(input()) a = list(map(int, input().split())) b = list(map(int, input().split())) a = sorted(a, reverse=True) b = sorted(b) sum = 0 for i in range(n): sum += a[i] * b[i] print(sum) </description>
+    </item>
+    
+    <item>
+      <title>백준 10815 숫자카드</title>
+      <link>https://ralpioxxcs.github.io/post/ps/boj_10815/</link>
+      <pubDate>Sun, 04 Oct 2020 15:49:50 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/ps/boj_10815/</guid>
+      <description>문제 링크 문제 해결 정수 M개의 입력이 50만개이기때문에 단순 순차 탐색으로는 시간초과가 나온다. 숫자 카드 배열을 먼저 정렬한 후 binary search를 이용하여 해결하였다.
+Code # binary search def search(key, left, right): mid = (left + right) // 2 # 종료 조건 if cards[mid] == key: return True if left &amp;gt; right: return False if key &amp;gt; cards[mid]: return search(key, mid+1, right) elif key &amp;lt; cards[mid]: return search(key, left, mid-1) n = int(input()) cards = sorted(list(map(int, input().</description>
+    </item>
+    
+    <item>
+      <title>백준 7576 토마토</title>
+      <link>https://ralpioxxcs.github.io/post/ps/boj_7576/</link>
+      <pubDate>Sun, 04 Oct 2020 15:49:50 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/ps/boj_7576/</guid>
       <description>입력 : 세로 크기 N, 가로 크기 M ( 2 &amp;lt;= M,N &amp;lt;= 1,000 )
- 1 = 익은 토마토 0 = 익지 않은 토마토 -1 = 토마토가 들어있지 않은 칸    출력 : 토마토가 모두 익을 때까지의 최소 날짜 출력
- 저장될 때부터 모든 토마토가 익었다면 0 모두 익지 못하는 상황이면 -1     문제 해결   입력을 받으면서 익은토마토의 위치를 큐에 PUSH하고 (BFS를사용), 안 익은 토마토의 갯수를 저장한다.</description>
+1 = 익은 토마토 0 = 익지 않은 토마토 -1 = 토마토가 들어있지 않은 칸 출력 : 토마토가 모두 익을 때까지의 최소 날짜 출력
+저장될 때부터 모든 토마토가 익었다면 0 모두 익지 못하는 상황이면 -1 문제 해결 입력을 받으면서 익은토마토의 위치를 큐에 PUSH하고 (BFS를사용), 안 익은 토마토의 갯수를 저장한다.
+안익은 토마토가 없다면 모두 익은것이므로 0을 출력하고 끝낸다.</description>
     </item>
     
   </channel>
