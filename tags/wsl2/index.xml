@@ -1,39 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>wsl2 on My Devlog</title>
-    
-    
-    
+    <title>wsl2 on Devlog</title>
     <link>https://ralpioxxcs.github.io/tags/wsl2/</link>
-    <description>Recent content in wsl2 on My Devlog</description>
+    <description>Recent content in wsl2 on Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 21 Feb 2021 23:16:05 +0900</lastBuildDate>
-    
-	<atom:link href="https://ralpioxxcs.github.io/tags/wsl2/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 21 Feb 2021 23:16:05 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/tags/wsl2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WSL2 메모리 사용량 조절</title>
-      <link>https://ralpioxxcs.github.io/post/wslconfig/</link>
+      <link>https://ralpioxxcs.github.io/post/etc/wsl_config/</link>
       <pubDate>Sun, 21 Feb 2021 23:16:05 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/post/wslconfig/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          WSL 메모리 사용량 wsl2을 사용하다가 메모리 사용량을 체크 해보면 Vmmem 이라는 놈이 메모리를 엄청 잡아먹고 있는걸 볼 수있다. 마소 공식 document에 따르면 총 메모리의 50퍼센트 혹은 특정 빌드 전 단계에서는 총 메모리의 무려 80퍼센트를 사용한다고 한다.
- 50% of total memory on Windows or 8GB, whichever is less; on builds before 20175: 80% of your total memory on Windows
- config 파일 작성 다행히도 .wslconfig라는 파일을 사용해서 WSL 설정을 바꿀 수 있다.
-          
-        
-        </description>
+      <guid>https://ralpioxxcs.github.io/post/etc/wsl_config/</guid>
+      <description>WSL 메모리 사용량 wsl2을 사용하다가 메모리 사용량을 체크 해보면 Vmmem 이라는 놈이 메모리를 엄청 잡아먹고 있는걸 볼 수있다. 마소 공식 document에 따르면 총 메모리의 50퍼센트 혹은 특정 빌드 전 단계에서는 총 메모리의 무려 80퍼센트를 사용한다고 한다.
+50% of total memory on Windows or 8GB, whichever is less; on builds before 20175: 80% of your total memory on Windows
+config 파일 작성 다행히도 .wslconfig라는 파일을 사용해서 WSL 설정을 바꿀 수 있다. 아래는 설정 파일의 예시이다.</description>
     </item>
     
   </channel>
