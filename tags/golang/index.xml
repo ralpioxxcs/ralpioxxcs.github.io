@@ -8,10 +8,10 @@
     <lastBuildDate>Tue, 07 Jun 2022 22:36:04 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang Logrus Hook을 이용한 mutisink 로깅</title>
-      <link>https://ralpioxxcs.github.io/post/logging/</link>
+      <link>https://ralpioxxcs.github.io/post/etc/logging/</link>
       <pubDate>Tue, 07 Jun 2022 22:36:04 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/post/logging/</guid>
+      <guid>https://ralpioxxcs.github.io/post/etc/logging/</guid>
       <description>Logrus? golang에서 사용하는 대표적인 logging 패키지인 logrus는 stdout, stderr등 다양한 output 및 커스터마이징이 가능한 formatter등 구조화된 로깅을 지원한다.
 구조화된(structured) 로깅? 로그를 단순한 텍스트의 연속이 아닌 특정 데이터 세트(날짜, 사용자, 각종 필드)로 처리할 수 있도록 특정한 메시지 포맷을 구현하는 방식이다.
 기본 사용법 간단하게 콘솔창에 로그를 찍는 예제는 다음과 같다
@@ -24,7 +24,7 @@ package main import ( &amp;#34;os&amp;#34; &amp;#34;time&amp;#34; log &amp;#34;g
       <pubDate>Mon, 22 Nov 2021 23:46:11 +0900</pubDate>
       
       <guid>https://ralpioxxcs.github.io/post/etc/cgo_callback/</guid>
-      <description>CGo CGo는 Go에서 C언어를 사용할 수 있게해주는 Go의 feature중 하나이다. 이 기능을 이용해 C언어와 Go언어사이의 콜백함수를 만들어 볼 것이다. 주의할 점은 CGo에서 읽을 수 있는것은 C스타일의 심볼을 갖는 함수 뿐이다. 순수 C언어로만 작성된 라이브러리라면 문제가 없겠지만 C++ 베이스의 함수를 이용하고 싶기 때문에 해당 함수를 한번 wrapping해주는 형태로 만들어 볼 것이다
+      <description>Cgo CGo는 Go에서 C언어를 사용할 수 있게해주는 Go의 feature중 하나이다. 이 기능을 이용해 C언어와 Go언어사이의 콜백함수를 만들어 볼 것이다. 주의할 점은 CGo에서 읽을 수 있는것은 C스타일의 심볼을 갖는 함수 뿐이다. 순수 C언어로만 작성된 라이브러리라면 문제가 없겠지만 C++ 베이스의 함수를 이용하고 싶기 때문에 해당 함수를 한번 wrapping해주는 형태로 만들어 볼 것이다
 기본 사용법 함수를 wrapping 해보기 전, 기본적인 사용법을 다시 보자
 package main /* #include &amp;lt;stdio.h&amp;gt; void CFoo() { printf(&amp;#34;Hello from C\n&amp;#34;); } */ import &amp;#34;C&amp;#34; import &amp;#34;fmt&amp;#34; func main() { fmt.</description>
     </item>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>arm64 on Devlog</title>
+    <link>https://ralpioxxcs.github.io/tags/arm64/</link>
+    <description>Recent content in arm64 on Devlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 06 Jul 2022 23:19:44 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/tags/arm64/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>aarch64 크로스 컴파일 환경 구성하기</title>
+      <link>https://ralpioxxcs.github.io/post/etc/cross_compilation_arm/</link>
+      <pubDate>Wed, 06 Jul 2022 23:19:44 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/etc/cross_compilation_arm/</guid>
+      <description>애플에서 M1 프로세서를 출시하고 나서부터 ARM 아키텍처가 각광받고 있지만, 보통 ARM 아키텍처를 사용하는 환경은 저전력, 제한된 리소스를 사용하기 때문에 쾌적한 빌드환경을 갖추기가 어렵다. 보통은 이러한 제한때문에 대부분의 개발 작업을 x86환경에서 크로스 컴파일을 사용해 타겟 아키텍처에서 실행가능한 형태로 빌드한다.
+회사에서 raspberry PI 혹은 nvidia jetson 보드를 이용해 신제품을 프로토타이핑 하는 경우가 잦았는데, 타겟 보드에서 테스트를 하려고 할 때마다 빌드 시간이 너무 느려 답답한 경우가 많았다. 그래서 크로스 컴파일 환경을 한번 갖춰놓으니 빌드 시간도 단축시킬 수 있었고, CI 서버에도 크로스 컴파일 자동화를 적용하여 전체적인 개발 속도를 높일 수 있었다.</description>
+    </item>
+    
+  </channel>
+</rss>

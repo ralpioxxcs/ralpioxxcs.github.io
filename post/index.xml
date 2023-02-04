@@ -5,13 +5,33 @@
     <link>https://ralpioxxcs.github.io/post/</link>
     <description>Recent content in Post on Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 07 Jun 2022 22:36:04 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Nov 2022 22:15:21 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GStreamer 사용하기 [1] - 파이프라인 구성요소 및 개념</title>
+      <link>https://ralpioxxcs.github.io/post/gstreamer/0_gst/</link>
+      <pubDate>Wed, 02 Nov 2022 22:15:21 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/gstreamer/0_gst/</guid>
+      <description>최근에 멀티미디어 관련 프로젝트를 진행하면서 GStreamer를 사용할 일이 생겼다. 간단하게 사용하기에는 알아야할 것들이나 개념들이 꽤나 많기 때문에 GStreamer를 사용하면서 정리한 내용들 및 추가적으로 학습한 내용들을 포스팅할 예정이다.
+GStreamer gstreamer overview Gstreamer는 스트리밍 미디어 어플리케이션 생성을 위한 통합 미디어 프레임워크로, 수많은 모듈형식으로 구성된 멀티미디어 프레임워크이다. 주로 오디오, 비디오 스트림등 다양한 데이터 프로토콜의 흐름을 설계할 수 있도록 도와준다. 예를들어 어떤 영상 파일을 rtsp클라이언트를(ex. VLC)이용해서 접근할 수 있도록 rtp 데이터 스트림을 생성하는 rtsp서버를 간단하게 구현할 수 있게 해준다.</description>
+    </item>
+    
+    <item>
+      <title>aarch64 크로스 컴파일 환경 구성하기</title>
+      <link>https://ralpioxxcs.github.io/post/etc/cross_compilation_arm/</link>
+      <pubDate>Wed, 06 Jul 2022 23:19:44 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/etc/cross_compilation_arm/</guid>
+      <description>애플에서 M1 프로세서를 출시하고 나서부터 ARM 아키텍처가 각광받고 있지만, 보통 ARM 아키텍처를 사용하는 환경은 저전력, 제한된 리소스를 사용하기 때문에 쾌적한 빌드환경을 갖추기가 어렵다. 보통은 이러한 제한때문에 대부분의 개발 작업을 x86환경에서 크로스 컴파일을 사용해 타겟 아키텍처에서 실행가능한 형태로 빌드한다.
+회사에서 raspberry PI 혹은 nvidia jetson 보드를 이용해 신제품을 프로토타이핑 하는 경우가 잦았는데, 타겟 보드에서 테스트를 하려고 할 때마다 빌드 시간이 너무 느려 답답한 경우가 많았다. 그래서 크로스 컴파일 환경을 한번 갖춰놓으니 빌드 시간도 단축시킬 수 있었고, CI 서버에도 크로스 컴파일 자동화를 적용하여 전체적인 개발 속도를 높일 수 있었다.</description>
+    </item>
+    
     <item>
       <title>Golang Logrus Hook을 이용한 mutisink 로깅</title>
-      <link>https://ralpioxxcs.github.io/post/logging/</link>
+      <link>https://ralpioxxcs.github.io/post/etc/logging/</link>
       <pubDate>Tue, 07 Jun 2022 22:36:04 +0900</pubDate>
       
-      <guid>https://ralpioxxcs.github.io/post/logging/</guid>
+      <guid>https://ralpioxxcs.github.io/post/etc/logging/</guid>
       <description>Logrus? golang에서 사용하는 대표적인 logging 패키지인 logrus는 stdout, stderr등 다양한 output 및 커스터마이징이 가능한 formatter등 구조화된 로깅을 지원한다.
 구조화된(structured) 로깅? 로그를 단순한 텍스트의 연속이 아닌 특정 데이터 세트(날짜, 사용자, 각종 필드)로 처리할 수 있도록 특정한 메시지 포맷을 구현하는 방식이다.
 기본 사용법 간단하게 콘솔창에 로그를 찍는 예제는 다음과 같다
@@ -50,7 +70,7 @@ fx, fy는 focal length, 초점거리, cx,cy는 principal point 즉, 주점이라
       <pubDate>Mon, 22 Nov 2021 23:46:11 +0900</pubDate>
       
       <guid>https://ralpioxxcs.github.io/post/etc/cgo_callback/</guid>
-      <description>CGo CGo는 Go에서 C언어를 사용할 수 있게해주는 Go의 feature중 하나이다. 이 기능을 이용해 C언어와 Go언어사이의 콜백함수를 만들어 볼 것이다. 주의할 점은 CGo에서 읽을 수 있는것은 C스타일의 심볼을 갖는 함수 뿐이다. 순수 C언어로만 작성된 라이브러리라면 문제가 없겠지만 C++ 베이스의 함수를 이용하고 싶기 때문에 해당 함수를 한번 wrapping해주는 형태로 만들어 볼 것이다
+      <description>Cgo CGo는 Go에서 C언어를 사용할 수 있게해주는 Go의 feature중 하나이다. 이 기능을 이용해 C언어와 Go언어사이의 콜백함수를 만들어 볼 것이다. 주의할 점은 CGo에서 읽을 수 있는것은 C스타일의 심볼을 갖는 함수 뿐이다. 순수 C언어로만 작성된 라이브러리라면 문제가 없겠지만 C++ 베이스의 함수를 이용하고 싶기 때문에 해당 함수를 한번 wrapping해주는 형태로 만들어 볼 것이다
 기본 사용법 함수를 wrapping 해보기 전, 기본적인 사용법을 다시 보자
 package main /* #include &amp;lt;stdio.h&amp;gt; void CFoo() { printf(&amp;#34;Hello from C\n&amp;#34;); } */ import &amp;#34;C&amp;#34; import &amp;#34;fmt&amp;#34; func main() { fmt.</description>
     </item>

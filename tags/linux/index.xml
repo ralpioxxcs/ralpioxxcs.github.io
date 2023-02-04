@@ -5,7 +5,28 @@
     <link>https://ralpioxxcs.github.io/tags/linux/</link>
     <description>Recent content in linux on Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 04 Jul 2020 13:53:55 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Jul 2022 23:19:44 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>aarch64 크로스 컴파일 환경 구성하기</title>
+      <link>https://ralpioxxcs.github.io/post/etc/cross_compilation_arm/</link>
+      <pubDate>Wed, 06 Jul 2022 23:19:44 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/etc/cross_compilation_arm/</guid>
+      <description>애플에서 M1 프로세서를 출시하고 나서부터 ARM 아키텍처가 각광받고 있지만, 보통 ARM 아키텍처를 사용하는 환경은 저전력, 제한된 리소스를 사용하기 때문에 쾌적한 빌드환경을 갖추기가 어렵다. 보통은 이러한 제한때문에 대부분의 개발 작업을 x86환경에서 크로스 컴파일을 사용해 타겟 아키텍처에서 실행가능한 형태로 빌드한다.
+회사에서 raspberry PI 혹은 nvidia jetson 보드를 이용해 신제품을 프로토타이핑 하는 경우가 잦았는데, 타겟 보드에서 테스트를 하려고 할 때마다 빌드 시간이 너무 느려 답답한 경우가 많았다. 그래서 크로스 컴파일 환경을 한번 갖춰놓으니 빌드 시간도 단축시킬 수 있었고, CI 서버에도 크로스 컴파일 자동화를 적용하여 전체적인 개발 속도를 높일 수 있었다.</description>
+    </item>
+    
+    <item>
+      <title>SSH 서버 설정</title>
+      <link>https://ralpioxxcs.github.io/post/etc/sshd_config/</link>
+      <pubDate>Tue, 29 Sep 2020 19:54:24 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/etc/sshd_config/</guid>
+      <description>SSH 시큐어 셸(Secure SHell, SSH)은 네트워크 상의 다른 컴퓨터에 로그인하거나 원격 시스템에서 명령을 실행하고 다른 시스템으로 파일을 복사할 수 있도록 해 주는 응용 프로그램 또는 그 프로토콜을 가리킨다. 기존의 rsh, rlogin, 텔넷 등을 대체하기 위해 설계되었으며, 강력한 인증 방법 및 안전하지 못한 네트워크에서 안전하게 통신을 할 수 있는 기능을 제공한다. -Wiki
+리눅스 개발환경을 구성하다보면 거의 필수적으로 사용하게 되는 ssh(secure shell) 을 구성하는 방법을 알아보자.
+SSH 서버 설치 ubuntu 및 osx 에는 기본적으로 ssh client는 설치돼있다.</description>
+    </item>
+    
     <item>
       <title>Ubuntu LLVM Package 설치</title>
       <link>https://ralpioxxcs.github.io/post/etc/llvm_install/</link>
