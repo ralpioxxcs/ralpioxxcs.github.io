@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>data structure on Devlog</title>
-    <link>https://ralpioxxcs.github.io/tags/data-structure/</link>
-    <description>Recent content in data structure on Devlog</description>
+    <title>cs on Devlog</title>
+    <link>https://ralpioxxcs.github.io/tags/cs/</link>
+    <description>Recent content in cs on Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 18 Sep 2019 21:59:22 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/tags/data-structure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Sep 2019 21:59:22 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/tags/cs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C로 구현하는 자료구조 - Queue</title>
       <link>https://ralpioxxcs.github.io/post/cs/queue/</link>
