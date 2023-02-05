@@ -5,7 +5,17 @@
     <link>https://ralpioxxcs.github.io/post/</link>
     <description>Recent content in Post on Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 05 Feb 2023 16:16:42 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Feb 2023 21:18:17 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>백준 1261 알고스팟</title>
+      <link>https://ralpioxxcs.github.io/post/ps/boj_1261/</link>
+      <pubDate>Sun, 05 Feb 2023 21:18:17 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/ps/boj_1261/</guid>
+      <description>문제 링크 문제 해결 bfs를 이용하여 풀었다. 현재위치 (1,1)에서 맵을 탐색해 나가면서 벽이 있으면 카운팅, 없으면 계속해서 탐색한다. 단, 최소한의 갯수로 벽을 부숴 도착지로 이동해야 하므로 경로좌표를 queue에 삽입할 때, 빈 공간이 있으면 해당 좌표를 우선순위로 삽입하여 불 필요한 벽을 카운팅하는 일이 없도록 해야한다.
+코드 from collections import deque # move helper mx = [0, 0, -1, 1] my = [1, -1, 0, 0] def check_range(x, y: int): return x &amp;lt; m and y &amp;lt; n and x &amp;gt;= 0 and y &amp;gt;= 0 def solve(): paths = deque() paths.</description>
+    </item>
+    
     <item>
       <title>백준 1038 감소하는 수</title>
       <link>https://ralpioxxcs.github.io/post/ps/boj_1038/</link>
