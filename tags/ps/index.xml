@@ -5,7 +5,29 @@
     <link>https://ralpioxxcs.github.io/tags/ps/</link>
     <description>Recent content in ps on Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 04 Oct 2020 15:49:50 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/tags/ps/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Feb 2023 16:16:42 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/tags/ps/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>백준 1038 감소하는 수</title>
+      <link>https://ralpioxxcs.github.io/post/ps/boj_1038/</link>
+      <pubDate>Sun, 05 Feb 2023 16:16:42 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/ps/boj_1038/</guid>
+      <description>문제 링크 문제 해결 N번째 감소하는 수가 몇인지 출력하는 문제, N은 최대 100만까지 입력된다.
+간단하게 0부터 987654321까지 감소하는 수인지 판별하는것은 시간초과가 나오므로, 감소하는 수의 특성을 이용하여 풀어야한다.
+감소하는 수는 955같이 중복이 나오면 안되고 맨 앞자리의 수에 의해 나머지가 결정된다. 예를들어 특정 감소하는 수가 5로 시작된다면 나머지는 반드시 {1,2,3,4}의 조합으로 이루어져야 한다. 이런 성질을 이용해서 1부터 10까지 대표 앞자리를 설정한 후 각 앞자리마다 파생되는 나머지 숫자들을 조합하면 된다.
+1 10 21 -&amp;gt; 210 -&amp;gt; 20 -&amp;gt; 20 32 -&amp;gt; 321 -&amp;gt; 3210 -&amp;gt; 320 31 -&amp;gt; 310 30 43 -&amp;gt; 432 -&amp;gt; 4321 -&amp;gt; 43210 -&amp;gt; 431 -&amp;gt; 430 .</description>
+    </item>
+    
+    <item>
+      <title>백준 9328 열쇠</title>
+      <link>https://ralpioxxcs.github.io/post/ps/boj_9328/</link>
+      <pubDate>Sun, 05 Feb 2023 14:35:42 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/ps/boj_9328/</guid>
+      <description>문제 링크 문제 해결 맵에 있는 탐색 가능한 모든 문서의 갯수를 찾는 문제로, BFS를 이용하여 풀었다. 특이한 점은 주어진 열쇠로 맵에 있는 문을 열어서 이동할 수 가 있다는것인데, 열쇠를 맵을 탐색하면서 추가적으로 획득할 수 있기 때문에 이 부분을 유의하여 풀어야 한다.
+입력 for _ in range(int(input())): height, width = map(int, input().split()) floor = [list(input()) for _ in range(height)] keys = set(input()) visited = [[0 for _ in row] for row in floor] documents = 0 doors = {} # 열리지 않은 문 리스트 for door in &amp;#34;ABCDEFGHIJKLMNOPQRSTUVWXYZ&amp;#34;: doors.</description>
+    </item>
+    
     <item>
       <title>백준 1026 보물</title>
       <link>https://ralpioxxcs.github.io/post/ps/boj_1026/</link>
