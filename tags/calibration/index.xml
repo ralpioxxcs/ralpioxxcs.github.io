@@ -14,9 +14,9 @@
       <guid>https://ralpioxxcs.github.io/post/etc/camera_calibration_2/</guid>
       <description>좌표 정규화 투영
 카메라 parameter를 알고 있다고 가정하고, normalized 좌표는 다음 계산식을 통해 영상 좌표로 변환된다.
-$$ x_{img} = x_{norm}*f_x + c_x \ y_{img} = y_{norm}*f_y + c_y $$
+$$ x_{img} = x_{norm}*f_x + c_x \newline y_{img} = y_{norm}*f_y + c_y $$
 반대로, 식을 바꿔 image plane 좌표 또한 normalized 좌표로 변환될 수 있다.
-$$ x_{norm} = (x_{img}-c_x)/f_x \ y_{norm} = (y_{img}-c_y)/f_y $$
+$$ x_{norm} = (x_{img}-c_x)/f_x \newline y_{norm} = (y_{img}-c_y)/f_y $$
 fx, fy는 focal length, 초점거리, cx,cy는 principal point 즉, 주점이라고 부른다. 이 요소들을 3x3 행렬로 만든것을 camera matrix 혹은 intrinsic paramter라고 한다.</description>
     </item>
     
