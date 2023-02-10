@@ -5,7 +5,20 @@
     <link>https://ralpioxxcs.github.io/</link>
     <description>Recent content on Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 09 Feb 2023 23:03:22 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Feb 2023 21:16:42 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>백준 1260 DFS와 BFS</title>
+      <link>https://ralpioxxcs.github.io/post/ps/boj_1260/</link>
+      <pubDate>Fri, 10 Feb 2023 21:16:42 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/ps/boj_1260/</guid>
+      <description>문제 링크 문제 해결 별다른 조건이 없는 DFS, BFS 문제
+입력으로 주어지는 정점은 key로 하고 각 간선들을 담는 리스트를 value로 하여 dictionary 자료형으로 구현하였다.
+정석적인 방법으로 DFS는 초기 정점으로 시작하여 정점이 가지고있는 간선들을 순회하면서 재귀호출로 풀고, BFS는 간선들을 순회하면서 queue에 추가하는 방식으로 풀이하였다.
+처음에 양방향의 조건을 못보고 단방향 그래프로 구현했다가 테케2번이 꼬여서 잠깐 헤맸다.
+이전에 c++로 풀었던 풀이가 있어서 봤는데, 그래프를 key,value형태가 아닌 2차원 배열로 저장하여 풀었었다. 이 방법도 나중에 다시 파이썬 이중리스트로 구현해서 속도를 비교해봐야겠다.</description>
+    </item>
+    
     <item>
       <title>프로그래머스 카펫</title>
       <link>https://ralpioxxcs.github.io/post/ps/programmers_carpet/</link>
