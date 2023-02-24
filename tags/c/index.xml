@@ -5,7 +5,7 @@
     <link>https://ralpioxxcs.github.io/tags/c/</link>
     <description>Recent content in c on Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 02 Nov 2022 22:15:21 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/tags/c/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Nov 2022 23:35:14 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/tags/c/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C/C&#43;&#43; &lt;-&gt; Go 콜백함수 구현하기</title>
       <link>https://ralpioxxcs.github.io/post/etc/cgo_callback/</link>
