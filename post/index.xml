@@ -5,7 +5,17 @@
     <link>https://ralpioxxcs.github.io/post/</link>
     <description>Recent content in Post on Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 10 Feb 2023 21:16:42 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 03 Sep 2023 18:01:00 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vcpkg 사용하기</title>
+      <link>https://ralpioxxcs.github.io/post/vcpkg/vcpkg_1/</link>
+      <pubDate>Sun, 03 Sep 2023 18:01:00 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/vcpkg/vcpkg_1/</guid>
+      <description>C++기반 프로젝트를 개발할 때 오픈소스 라이브러리를 사용하기 위해서는 다양한 방법이 있다. 원하는 패키지의 소스 코드를 다운로드하여 직접 빌드 하는 방법 혹은 apt 같은 패키지 매니저를 통해 설치하는 방법 등 표준화된 방법은 없지만 python의 pip, golang의 mod, node등 다른 언어로 개발할 때 사용되는 종속성 설치 도구와 비교하면 다소 불편한 것은 사실이다.
+이런 불편함을 해소하기 위해 Microsoft에서 오픈소스 프로젝트로 멀티 플랫폼에서 사용하능한 C++ 패키지 매니저를 제공하고 있다. 본 글에서는 vcpkg를 설치 및 사용하는 방법에 대해서 다룰것이다.</description>
+    </item>
+    
     <item>
       <title>백준 1260 DFS와 BFS</title>
       <link>https://ralpioxxcs.github.io/post/ps/boj_1260/</link>
