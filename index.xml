@@ -5,7 +5,19 @@
     <link>https://ralpioxxcs.github.io/</link>
     <description>Recent content on Devlog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 03 Sep 2023 18:01:00 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Jan 2024 22:53:08 +0900</lastBuildDate><atom:link href="https://ralpioxxcs.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Node.js기반 타입스크립트 프로젝트 세팅하기</title>
+      <link>https://ralpioxxcs.github.io/post/typescript/setup/</link>
+      <pubDate>Mon, 22 Jan 2024 22:53:08 +0900</pubDate>
+      
+      <guid>https://ralpioxxcs.github.io/post/typescript/setup/</guid>
+      <description>NestJS같은 Typescript를 사용하는 프레임워크의 경우 프로젝트 셋업시에 모두 자동으로 처리되므로 별도로 타입스크립트 프로젝트 관련 설정을 해줄일이 딱히 없다.
+하지만 기본 구성을 아는것은 중요하기때문에 프레임워크의 도움없이 tsconfig.json파일을 수정하고 직접 컴파일러를 통해 타입스크립트에서 자바스크립트로 컴파일되는 과정 등 타입스크립트를 사용하기위해 간단한 프로젝트 셋업 방법에 대해서 알아보자.
+패키지 설치 우선 typescript 코드를 javascript 코드로 변환 해주기위해 typescript 컴파일러를 npm을 이용하여 설치한다. (개발 환경 전역적으로 사용하기 위해 global 옵션을 추가하였다)
+$ npm install -g typescript # typescript 컴파일러 명령어 사용은 tsc이고 기본적으로 tsconfig.</description>
+    </item>
+    
     <item>
       <title>vcpkg 사용하기</title>
       <link>https://ralpioxxcs.github.io/post/vcpkg/vcpkg_1/</link>
